@@ -1,5 +1,9 @@
 <template>
-  <article>
+  <NavFooter
+    wrapperEl="article"
+    :leftButtons="navButtons.left"
+    :rightButtons="navButtons.right"
+  >
     <BasePageIntro
       :title="$t('summary.title')"
       :blurb="$t('summary.intro')"
@@ -43,8 +47,8 @@
               </tr>
               <!-- activity row -->
               <ActivitiesItemSummary
-                v-for="(activity, index) in activities.activityObjects"
-                :key="`activity-${index}`"
+                v-for="activity in activities.activityObjects"
+                :key="`activity-${activity.id}`"
                 :text="activity.text"
                 :budget="activity.budget"
                 :youth="activity.youthCentric"
@@ -55,10 +59,11 @@
         </ActivitiesTable>
       </BaseWidthWrapper>
     </section>
-  </article>
+  </NavFooter>
 </template>
 
 <script>
+import NavFooter from '@/components/NavFooter.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
@@ -71,6 +76,7 @@ export default {
   name: 'Summary',
   mixins: [ activityTypes, dataMethods ],
   components: {
+    NavFooter,
     BaseWidthWrapper,
     BasePageIntro,
     BaseHeading,
@@ -80,7 +86,22 @@ export default {
   data () {
     return {
       groupedActivities: this.getGroupedActivites(),
-      cipTitle: this.getItemValue('setup', 'title')
+      cipTitle: this.getItemValue('setup', 'title'),
+      navButtons: {
+        left: [
+          {
+            to: {name: 'setup'},
+            label: this.$t('summary.backToSetup')
+          }
+        ],
+        right: [
+          {
+            to: {name: 'evidence-informed-practices'},
+            label: 'About EIPs',
+            role: 'primary'
+          }
+        ]
+      }
     }
   }
 }
