@@ -4,7 +4,7 @@
 3) Run `yarn serve` in the root dir to run a server on localhost
 4) Go to `localhost:8080` to view the app
 5) To package the app for desktop use run `yarn build:electron --windows` or `yarn build:electron --macos`
-6) To package the app for deskop web use run `yarn build`
+6) To package the app for hosting use run `yarn build` (the final files will be in the `/dist` folder)
 
 # Data Structure / ERD
 We are using [Vuex ORM](https://vuex-orm.github.io/vuex-orm/) for data management.
