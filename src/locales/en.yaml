@@ -78,7 +78,8 @@ activityTypes:
     body: |-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
 
-# Best practices
+# Evidence-Informed Practices
+readMore: "Read More"
 bestPracticeTitle: About Evidence-Informed Practices (EIPs)
 backToBestPractices: Back to Evidence-Informed Practices (EIPs)
 bestPracticeIntro: |-
@@ -86,7 +87,7 @@ bestPracticeIntro: |-
 bestPracticeSubtitle: Evidence-Informed Practices
 bestPractices:
   bestPractice1:
-    title: Best Practice 1
+    title: Provision of adolescent and youth-friendly SRH services
     icon: http://placehold.it/600x600
     teaser: |-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
@@ -97,7 +98,7 @@ bestPractices:
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
   bestPractice2:
-    title: Best Practice 2
+    title: "Expanding the range of contraceptive methods available to adolescents and young people (including LARCs and DMPA-SC)"
     icon: http://placehold.it/600x600
     teaser: |-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
@@ -108,7 +109,8 @@ bestPractices:
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
   bestPractice3:
-    title: Best Practice 3
+    title: "Inclusion of vulnerable and underserved youth groups (including married adolescent girls ad
+FTPs)"
     icon: http://placehold.it/600x600
     teaser: |-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
@@ -119,7 +121,7 @@ bestPractices:
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
   bestPractice4:
-    title: Best Practice 4
+    title: "Youth participation and leadership in AYSRH programs"
     icon: http://placehold.it/600x600
     teaser: |-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
@@ -130,7 +132,7 @@ bestPractices:
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
   bestPractice5:
-    title: Best Practice 5
+    title: "Multi-sectoral coordination for AYSRH"
     icon: http://placehold.it/600x600
     teaser: |-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
@@ -141,7 +143,7 @@ bestPractices:
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
   bestPractice6:
-    title: Best Practice 6
+    title: "Comprehensive sexuality education"
     icon: http://placehold.it/600x600
     teaser: |-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
@@ -152,7 +154,7 @@ bestPractices:
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
   bestPractice7:
-    title: Best Practice 7
+    title: "Support to families and communities for AYSRH"
     icon: http://placehold.it/600x600
     teaser: |-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
@@ -163,7 +165,7 @@ bestPractices:
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
   bestPractice8:
-    title: Best Practice 8
+    title: "Girls' empowerment"
     icon: http://placehold.it/600x600
     teaser: |-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
@@ -214,21 +216,28 @@ fileUpload:
   csv: CSV - preferred for subsequent analysis
   successImport: Successfully imported
   textReaderImport: Import Data
-  jsonFileName: e2a-export-${timestamp}.json
+  jsonFileName: e2a-export-{timestamp}.json
+  csvFileName: e2a-{exportName}-export-{timestamp}.csv
 
 # Nav Text:
 nav:
-  activites: 'Activities'
+  activities: 'Activities'
   summary: 'Summary'
-  bestPractices: 'Best Practices'
+  bestPractices: 'Evidence-Informed Practices'
   assessment: 'Analysis'
   results: 'Results'
   advocate: 'Advocate'
   addAssessment: You must enter assessments before you can view results.
   removeAssessment: You must remove all assessments before you can edit activites.
 
+# Activity Table
+activityTable:
+  defaultTitle: 'Activity text'
+  defaultBudget: 'Budget'
+  defaultYouthCentered: 'Youth-centered?'
 
 # Misc Keys
+uniquenessError: The value entered in {field} is not unique amoung {entityType}
 edit: Edit
 yesRaw: "Yes"
 noRaw: "No"

@@ -74,7 +74,7 @@ export default {
           active: true
         },
         bestPractices: {
-          url: '/best-practices',
+          url: '/evidence-informed-practices',
           text: this.$t('nav.bestPractices'),
           active: true
         },
