@@ -109,7 +109,7 @@ export default {
         this.links.advocate.active = true
       }
 
-      if (this.getItemCount('activities') === 0 && this.getItemCount('setup') === 0) {
+      if (this.getItemCount('activities') === 0 && (this.getItemCount('setup') === 0 || !this.setupPresent())) {
         this.links.activities.active = false
         this.links.summary.active = false
         this.links.results.active = false
@@ -118,7 +118,7 @@ export default {
         this.links.assessment.active = false
       }
 
-      if (this.getItemCount('activities') === 0 && this.getItemCount('setup') > 0) {
+      if (this.getItemCount('activities') === 0 && this.setupPresent()) {
         this.links.activities.active = true
         this.links.summary.active = false
         this.links.results.active = false

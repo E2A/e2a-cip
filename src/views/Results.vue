@@ -48,10 +48,11 @@ import ClearItems from '@/components/ClearItems.vue'
 import ChartItems from '@/components/ChartItems.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { dataMethods } from '@/components/mixins/dataMethods'
+import { electronPDF } from '@/components/mixins/electronPDF'
 
 export default {
   name: 'Results',
-  mixins: [activityTypes, dataMethods],
+  mixins: [activityTypes, dataMethods, electronPDF],
   components: {
     BaseHeading,
     BaseButton,
@@ -72,13 +73,15 @@ export default {
   },
   methods: {
     printPage: function () {
-      var userAgent = navigator.userAgent.toLowerCase();
+      // Check if in electron, and use specific electron PDF creation code
+      var userAgent = navigator.userAgent.toLowerCase()
       if (userAgent.indexOf(' electron/') > -1) {
-         // Electron-specific code
-         alert('YAY')
-         alert(userAgent)
+        // Electron-specific PDF printing
+        this.printElectronPDF()
+      } else {
+        // Default browser printing
+        window.print()
       }
-      window.print()
     }
   }
 }

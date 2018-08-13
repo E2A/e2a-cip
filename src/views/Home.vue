@@ -30,6 +30,37 @@
       />
       <ClearItems :clearType="['All']" />
     </BaseSectionWrapper>
+    <BaseSectionWrapper el="div" :class="type.center" border>
+      <BaseHeading :level="4" centered>Download offline versions</BaseHeading>
+      <BaseWidthWrapper width="wide" :class="space.paddingTop">
+        <BaseBodyText
+          size="zeta"
+          content="Download the following things to be able to access stuff offline"
+        />
+
+        <BaseButtonLink
+          :to="{name: 'setup'}"
+          size="large"
+          role="primary"
+          :label="$t('home.downloadMac')"
+          :class="space.marginBottom"
+        />
+        <BaseButtonLink
+          :to="{name: 'setup'}"
+          size="large"
+          role="primary"
+          :label="$t('home.downloadMac')"
+          :class="space.marginBottom"
+        />
+        <BaseButtonLink
+          :to="{name: 'setup'}"
+          size="large"
+          role="primary"
+          :label="$t('home.downloadMac')"
+          :class="space.marginBottom"
+        />
+      </BaseWidthWrapper>
+    </BaseSectionWrapper>
   </article>
 </template>
 

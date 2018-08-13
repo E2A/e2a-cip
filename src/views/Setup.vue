@@ -3,7 +3,7 @@
     <BaseSectionWrapper>
       <BaseWidthWrapper>
         <BaseHeading :class="space.paddingBottomWide">{{$t('setup.configureCIP')}}</BaseHeading>
-        <SetupInput :key="this.getItemCount('all')"/>
+        <SetupInput :key="inputKey"/>
         <div :class="[type.center, space.paddingTopWide]">
           <BaseBodyText
             v-if="!this.setupPresent()"
@@ -29,7 +29,7 @@
       >
         {{$t('setup.restoreActivities')}}
       </BaseHeading>
-      <FileUpload :exportType="['Import']"/>
+      <FileUpload :exportType="['Import']" @import-success="updateInput"/>
     </BaseSectionWrapper>
   </div>
 </template>
@@ -56,6 +56,11 @@ export default {
     BaseButtonLink,
     FileUpload
   },
+  data () {
+    return {
+      inputKey: null
+    }
+  },
   computed: {
     readyToAdd: function () {
       return this.setupPresent()
@@ -69,15 +74,8 @@ export default {
     }
   },
   methods: {
-    setupPresent: function () {
-      const setup = this.getItemValue('setup')
-
-      // if setup entitly exists, ensure all fields are present
-      if (setup) {
-        return (setup.title && setup.country && setup.role && setup.currencyCode && setup.currencyName)
-      } else {
-        return false
-      }
+    updateInput: function () {
+      this.inputKey = this.getItemCount('all')
     }
   }
 }

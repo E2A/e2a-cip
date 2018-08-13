@@ -219,6 +219,7 @@ fileUpload:
   textReaderImport: Import Data
   jsonFileName: e2a-export-{timestamp}.json
   csvFileName: e2a-{exportName}-export-{timestamp}.csv
+  pdfFileName: e2a-report-{timestamp}.pdf
 
 # Nav Text:
 nav:
