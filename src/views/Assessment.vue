@@ -68,7 +68,7 @@ export default {
   data () {
     return {
       groupedActivities: this.getGroupedActivites(),
-      cipTitle: this.getItemValue('setup','title')
+      cipTitle: this.getItemValue('setup', 'title')
     }
   }
 }
