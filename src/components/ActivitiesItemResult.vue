@@ -9,15 +9,15 @@
       <p>{{activityInstance.text}}</p>
       <div v-for="(assessment,index) of activeAssessments" :key="`ass-${index}`" class='assessments-present'>
         <div class='dot' :class="assessment.value.toLowerCase()">
-          <div>Value:{{assessment.value}}</div>
-          <div>Text:{{assessment.text}}</div>
+          <div>{{$t('results.value')}} {{assessment.value}}</div>
+          <div>{{$t('results.text')}} {{assessment.text}}</div>
         </div>
       </div>
       <div class="detailedView">
-        <p>Budget: {{activityInstance.budget}} {{getItemValue('setup', 'currencyCode')}}</p>
-        <p>Youth Centric?: <span v-if="activityInstance.youthCentric">Yes</span>
-        <span v-else>No</span></p>
-        <p>Full best practice data:</p>
+        <p>{{$t('results.budget')}} {{activityInstance.budget}} {{getItemValue('setup', 'currencyCode')}}</p>
+        <p>{{$t('results.youthCentric')}} <span v-if="activityInstance.youthCentric">{{$t('yesRaw')}}</span>
+        <span v-else>{{$t('noRaw')}}</span></p>
+        <p>{{$t('results.allBestPractice')}}</p>
         <div v-for="(bestPractice, index) of bestPractices" :key="`bp-${index}`" class='all-assessments'>
           <div class='dot' :class="getBestPracticePresence(bestPractice.title)">
           </div>

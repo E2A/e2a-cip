@@ -12,7 +12,7 @@
           :level="3"
           align="center"
         >
-          CIP name lorem ipsum
+          {{cipTitle}}
         </BaseHeading>
 
         <!-- table of activities -->
@@ -51,10 +51,11 @@ import ActivitiesItemAssessment from '@/components/ActivitiesItemAssessment.vue'
 import FileUpload from '@/components/FileUpload.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
+import { dataMethods } from '@/components/mixins/dataMethods'
 
 export default {
   name: 'Assessment',
-  mixins: [activityTypes],
+  mixins: [activityTypes, dataMethods],
   components: {
     BaseWidthWrapper,
     BasePageIntro,
@@ -66,7 +67,8 @@ export default {
   },
   data () {
     return {
-      groupedActivities: this.getGroupedActivites()
+      groupedActivities: this.getGroupedActivites(),
+      cipTitle: this.getItemValue('setup','title')
     }
   }
 }

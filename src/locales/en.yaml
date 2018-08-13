@@ -32,6 +32,10 @@ setup:
   restoreActivities: Restore your activities
   addActivities: Add your Activites
 
+userRoles:
+  role1: NGO
+  role2: Youth Advocate
+
 # Activity Input
 addActivity: Add a new activity
 editActivity: Edit your activity
@@ -46,7 +50,9 @@ activityBudget: Activity budget
 activityType: Activity type
 activityYouthCentric: Is this activity youth-centric?
 inputNextActivity: Input Another Activity
-activitiesDone: I'm done!
+activitiesDone: "I'm done!"
+save: Save Activity
+deleteActivity: Delete
 
 # Activity Type
 activityTypeLink: Learn more
@@ -189,22 +195,54 @@ chartTitles:
   youthCentricLabel: "Youth Centric"
   notYouthCentricLabel: "Not Youth Centric"
 
-# misc keys of shame
+resultsSubhead: "Here's how your activities rate lorem ipsum:"
+addRecommendation: Add Recommendation
+addAnotherRecommendation: Add Another Recommendation
+suggestedImprovements: Suggested Improvements
+
+results:
+  value: "Value:"
+  text: "Text:"
+  budget: "Budget:"
+  youthCentric: "Youth Centric?:"
+  allBestPractice: "Full best practice data:"
+
+# File Upload & Download
+fileUpload:
+  selectFormat: Select an export format
+  json: JSON - preferred for import
+  csv: CSV - preferred for subsequent analysis
+  successImport: Successfully imported
+  textReaderImport: Import Data
+  jsonFileName: e2a-export-${timestamp}.json
+
+# Nav Text:
+nav:
+  activites: 'Activities'
+  summary: 'Summary'
+  bestPractices: 'Best Practices'
+  assessment: 'Analysis'
+  results: 'Results'
+  advocate: 'Advocate'
+  addAssessment: You must enter assessments before you can view results.
+  removeAssessment: You must remove all assessments before you can edit activites.
+
+
+# Misc Keys
 edit: Edit
+yesRaw: "Yes"
+noRaw: "No"
 printPage: Print Page
 goBack: Go back
 bestPracticeOptions:
-  yesText: 'Yes'
-  noText: 'No'
+  yesText: '@:yesRaw'
+  noText: '@:noRaw'
   maybeText: Maybe
   yesKey: 'yes'
   noKey: 'no'
-  maybeKey: maybe
+  maybeKey: 'maybe'
 enterSuggestion: Enter a suggestion
 item: no items | item | items
-userRoles:
-  role1: NGO
-  role2: Youth Advocate
 successRemoved: Successfully removed
 successRemovedAll: items, this is all the currently stored data.
 clearItems:
@@ -213,15 +251,5 @@ clearItems:
   Activities: Activities
   Recommendations: Recommendations
   All: All
-fileUpload:
-  selectFormat: Select an export format
-  json: JSON - preferred for import
-  csv: CSV - preferred for subsequent analysis
-  successImport: Successfully imported
-  textReaderImport: Import Data
-addRecommendation: Add Recommendation
-addAnotherRecommendation: Add Another Recommendation
-suggestedImprovements: Suggested Improvements
 delete: delete
 activities: activities
-resultsSubhead: "Here's how your activities rate lorem ipsum:"
