@@ -25,12 +25,12 @@ export default {
       default: function () {
         return [
           {
-            title: 'Activity text'
+            title: this.$t('activityTable.defaultTitle')
           }, {
-            title: 'Budget',
+            title: this.$t('activityTable.defaultBudget'),
             align: 'right'
           }, {
-            title: 'Youth-centered?',
+            title: this.$t('activityTable.defaultYouthCentered'),
             align: 'center'
           }
         ]

@@ -3,7 +3,7 @@
     <BaseSectionWrapper :class="space.paddingTopNarrow">
       <div :class="[space.paddingBottomNarrow, border.bottom]">
         <router-link
-          :to="{name: 'best-practices'}"
+          :to="{name: 'evidence-informed-practices'}"
           :class="base.back"
         >
           &lsaquo; {{$t('backToBestPractices')}}

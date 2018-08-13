@@ -34,10 +34,10 @@
 
     <!-- convert these to notifications -->
     <p v-if="this.getItemCount('assessments') === 0">
-      You must enter assessments before you can view results.
+      {{$t('nav.addAssessment')}}
     </p>
     <p v-if="this.getItemCount('assessments') > 0">
-      You must remove all assessments before you can edit activites.
+      {{$t('nav.removeAssessment')}}
     </p>
   </div>
 </template>
@@ -65,32 +65,32 @@ export default {
         // Therefore we don't need summary in the header
         activities: {
           url: '/activity/1',
-          text: 'Activities',
+          text: this.$t('nav.activities'),
           active: true
         },
         summary: {
           url: '/summary',
-          text: 'Summary',
+          text: this.$t('nav.summary'),
           active: true
         },
         bestPractices: {
-          url: '/best-practices',
-          text: 'Best Practices',
+          url: '/evidence-informed-practices',
+          text: this.$t('nav.bestPractices'),
           active: true
         },
         assessment: {
           url: '/assessment',
-          text: 'Analysis',
+          text: this.$t('nav.assessment'),
           active: true
         },
         results: {
           url: '/results',
-          text: 'Results',
+          text: this.$t('nav.results'),
           active: false
         },
         advocate: {
           url: '/advocate',
-          text: 'Advocate',
+          text: this.$t('nav.advocate'),
           active: false
         }
       }

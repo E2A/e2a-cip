@@ -103,7 +103,7 @@
             <li :class="base.buttonWrapper">
               <BaseButton
                 @click="addActivity"
-                label="Save Activity"
+                :label="$t('save')"
                 size="small"
               />
             </li>
@@ -111,7 +111,7 @@
               <BaseButton
                 v-if="this.getActivity()"
                 @click="deleteActivity"
-                label="Delete"
+                :label="$t('deleteActivity')"
                 size="small"
               />
             </li>

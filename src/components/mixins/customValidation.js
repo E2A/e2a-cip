@@ -13,7 +13,7 @@ export const customValidation = {
     Validator.extend('uniqueness', {
       getMessage: (field, args) => {
         const entityType = args[1]
-        return `The value entered in ${field} is not unique amoung ${entityType}`
+        return this.$t('uniquenessError', {field: field, entityType: entityType})
       },
       validate: (value, args) => {
         const fieldFormat = args[3]

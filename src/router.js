@@ -48,13 +48,13 @@ export default new Router({
       component: Assessment
     },
     {
-      path: '/best-practices',
-      name: 'best-practices',
+      path: '/evidence-informed-practices',
+      name: 'evidence-informed-practices',
       component: BestPractices
     },
     {
-      path: '/best-practice/:id',
-      name: 'best-practice',
+      path: '/evidence-informed-practice/:id',
+      name: 'evidence-informed-practice',
       component: BestPractice,
       props: true
     },

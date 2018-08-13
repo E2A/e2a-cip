@@ -33,8 +33,8 @@
                 size="zeta"
               />
               <BaseButtonLink
-                :to="`/best-practice/${item.id}`"
-                label="Read more"
+                :to="`/evidence-informed-practice/${item.id}`"
+                :label="$t('readMore')"
                 size="small"
                 :class="space.marginTopNarrow"
               />

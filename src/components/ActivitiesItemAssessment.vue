@@ -14,7 +14,7 @@
       params: {
         activityId: String(id)
       }
-    }">Edit</router-link>
+    }">{{$t('edit')}}</router-link>
 
     <!-- list of best practice icons -->
     <ul>
