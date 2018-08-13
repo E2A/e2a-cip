@@ -14,20 +14,6 @@ This project is for E2A's CIP evaluation tool.
 6) To package the app for deskop web use run `yarn build`
 
 # Data Structure / ERD
-- Activities
-  - id (int)
-  - Text (string)
-  - Type (string) note: select from array of options
-  - Youth Focused (bool)
-  - Budget (int)
-  - Assessments [{id: 1, text: "Multi sectoral inclusion", state: "Y"}, {id: 7, text: "Best practice 7", state: "M"}] * note "No" = implied, if not included it would not be viewed as having X best practice
-  - Improvement {text: "Do things better", budget: 200000}
-- Setup Info
-  - Title (txt)
-  - Currency (string)
-  - Country (string)
-  - Role (string) note: select from array of options
-
 We are using [Vuex ORM](https://vuex-orm.github.io/vuex-orm/) for data management.
 
 Edit ERD by going to [draw.io](https://draw.io) and upload the [E2A_ERD.xml](/docs/E2A_ERD.xml) file.
