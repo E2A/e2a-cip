@@ -1,10 +1,3 @@
-# Codename Karaw
-Ngalakh’s primary ingredient is araw (or Karaw), which is some sort of couscous prepared from millet.
-
-We like pastries. A major target audience for this tool is in West Africa. Therefore, West African pastries. Kudos to Jon.
-
-This project is for E2A's CIP evaluation tool.
-
 # Get Started
 1) Install [yarn](https://yarnpkg.com/lang/en/)
 2) In the root of this directory run `yarn install` to install dependencies
