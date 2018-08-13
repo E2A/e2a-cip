@@ -33,4 +33,4 @@ We are using [Vuex ORM](https://vuex-orm.github.io/vuex-orm/) for data managemen
 Edit ERD by going to [draw.io](https://draw.io) and upload the [E2A_ERD.xml](/docs/E2A_ERD.xml) file.
 
 ### ERD Diagram for Application
-![ERD](E2A_ERD.png)
+![ERD](docs/E2A_ERD.png)
