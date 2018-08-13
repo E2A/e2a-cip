@@ -78,6 +78,6 @@ export default {
 }
 </script>
 
-<style src="../stylesheets/utilities/spacing.scss" lang="scss" module="space"></style>
-<style src="../stylesheets/utilities/type.scss" lang="scss" module="type"></style>
-<style src="../stylesheets/utilities/borders.scss" lang="scss" module="border"></style>
+<style src="styles/spacing.scss" lang="scss" module="space"></style>
+<style src="styles/type.scss" lang="scss" module="type"></style>
+<style src="styles/borders.scss" lang="scss" module="border"></style>
