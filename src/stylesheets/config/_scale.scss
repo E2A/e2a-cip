@@ -1,0 +1,27 @@
+// Type & layout scale
+@import '~modularscale-sass';
+
+// modular scale config
+// -> for layout and spacing
+// -> 1:1.2 scale
+// -> http://www.modularscale.com/?16&&1.2&sass&text
+$ms-base: 1;
+$ms-ratio: 1.2;
+
+// global type scale
+// $font-scale: 11px 13px 16px 19px 23px 28px 33px 39px 48px 57px 69px 99px 119px;
+// -> we could compute this via the modular scale mixins,
+// -> but doing it by hand allows us to tweak certain sizes to suit the fonts we're using
+$scale-type: (
+  'alpha': 3.7rem,
+  'beta': 2.5rem,
+  'gamma': 2rem,
+  'delta': 1.44rem,
+  'epsilon': 1.2rem,
+  'zeta': 1rem,
+  'eta': 0.8rem
+) !default;
+
+@function scale-type($size) {
+  @return map-get($scale-type, $size);
+}

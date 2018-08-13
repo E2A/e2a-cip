@@ -1,0 +1,17 @@
+// Global breakpoints
+@import '~include-media/dist/include-media';
+
+// Global breakpoints map
+// -> also used by include-media library
+$breakpoints: (
+  'xsmall': 30em,
+  'small': 42em,
+  'medium': 62em,
+  'large': 75em,
+  'huge': 100em
+);
+
+// getter/helper function to pull breakpoints from the map
+@function screen($size) {
+  @return map-get($breakpoints, $size);
+}

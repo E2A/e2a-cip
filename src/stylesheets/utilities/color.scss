@@ -1,0 +1,19 @@
+// Global color utilities
+@import '../config/color';
+
+@each $name, $color in $colors {
+  // foreground
+  .#{$name} {
+    color: $color;
+  }
+
+  // background
+  .#{$name}Bg {
+    background-color: $color;
+  }
+
+  // border
+  .#{$name}Border {
+    border-color: $color;
+  }
+}

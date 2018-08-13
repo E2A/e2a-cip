@@ -1,0 +1,31 @@
+@import '~styleConfig/color';
+@import '~styleConfig/scale';
+@import '~styleConfig/borders';
+
+.default {
+  composes: bold from 'styles/type.scss';
+  @include border($w: 'medium', $color: 'dark');
+  background-color: transparent;
+  border-radius: 0.3em;
+  color: color('dark');
+  cursor: pointer;
+  display: inline-block;
+  font-size: scale-type('zeta');
+  padding: 0.6em 1.6em;
+  text-decoration: none;
+}
+
+.large {
+  font-size: scale-type('epsilon');
+  padding: 1em 2.4em;
+}
+
+.small {
+  font-size: scale-type('eta');
+  padding: 0.4em 1.2em;
+}
+
+.primary {
+  background-color: color('dark');
+  color: color('light');
+}

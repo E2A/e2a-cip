@@ -1,0 +1,125 @@
+# Discuss:
+ ☐ Methods in mixin dont seem to be able to easily pick up data elements. Does that matter re: approach.
+ ☐ Live updating of things requires connection to method vs. data - is this ok? It seems like that has been changed in a few places.
+ ☐ Btw vue-validate seems to change aria-invalid to true on elements
+
+# General To Does
+ ☐ Add electron / package.json author / description / icon etc...
+ ☐ Add PDF export for electron using -> https://electronjs.org/docs/api/web-contents
+
+# Activity Input
+
+# Pages to set up
+ ☐ Setup print page with an instruction area on how to print to PDF in your browser instruction area that gets removed on print
+
+# Pages to do a design pass on
+  ☐ Activity type info page
+  ☐ Summary
+  ☐ Analysis
+  ☐ Results
+  ☐ Advocacy Page
+
+# Components to build
+ ☐ Icons
+ ☐ Activity timeline nav
+ ☐ Activity lists:
+   ☐ Assessment
+   ☐ Results
+ ☐ Best practice page component
+ ☐ Suggestion component
+ ☐ Resource item
+ ☐ Charts
+ ☐ Card grid for best practice/type resources
+
+# Styling
+ ☐ Tables
+   ☐ Desktop
+   ☐ Mobile
+ ☐ Yes/No/Maybe colors
+ ☐ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling.
+
+# Copy Writing
+  ☐ Go through app and update any text strings to use i18n formats @haley
+    - Info: http://kazupon.github.io/vue-i18n/guide/started.html#html
+
+# Nice to have
+ ☐ Update ERD to not show Activity -> improvement many to many relationships
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ Setup refresh on import of data on setup @done (18-08-12 11:47)
+ ✔ Look into browswer compatibility for old browsers (ES6 fails in IE11)  ? https://github.com/paulmillr/es6-shim @done (18-08-12 11:43)
+ ✔ How to trigger PDF / print from button (might be needed for desktop app) @done (18-08-12 11:43)
+ ✔ Activity type info page @done (18-08-09 18:09)
+ ✔ Fix validation on custom form elements. @done (18-08-09 16:39)
+ ✔ Make sure that clearing data adjusts navigation and on-page items. @done (18-08-09 14:28)
+ ✔ Go through and update navigation refreshing (call events?) @done (18-08-09 14:28)
+ ✔ Best practice learn more pages @jay @done (18-08-09 11:39)
+ ✔ Refactor the bestPractice option to be its own component @done (18-08-09 04:05)
+ ✔ Best practice learn more pages @done (18-08-09 04:05)
+ ✔ Main header @done (18-08-09 02:58)
+ ✔ Back/forward bottom nav @done (18-08-09 01:31)
+ ✔ Activity input @done (18-08-09 00:17)
+ ✔ Buttons @done (18-08-08 23:13)
+ ✔ Setup input page @done (18-08-08 21:51)
+ ✔ Best practice explanation interstatial @done (18-08-08 17:46)
+ ✔ Home page @jay @done (18-08-08 17:45)
+ ✔ Best practice icon + title lockup etc @done (18-08-08 17:45)
+ ✔ Best practice explanation interstatial @jay @done (18-08-08 17:45)
+ ✔ Home page @done (18-08-08 17:44)
+ ✔ Setup chating with https://frappe.io/charts @done (18-08-07 17:10)
+ ✔ Setup truncated versions of the activity txt (maybe via model) @done (18-08-07 15:00)
+ ✔ Go through wireframes and make sure that other data that needs to show up on a given page is accessible. @done (18-08-07 14:46)
+ ✔ Add activity counts to places that need it? @scott @done (18-08-07 14:46)
+ ✔ Make setup data reqiured. @scott @done (18-08-07 14:35)
+ ✔ Change order of the get object thing to be type, id, field @done (18-08-07 14:06)
+ ✔ Change check box validation to allow false @scott @done (18-08-07 14:05)
+ ✔ Check what is going with activity text being unique error @scott @done (18-08-07 10:40)
+ ✔ Add initial value to activity number (and change to not numeric) @scott @done (18-08-07 10:40)
+ ✔ Debug selected items in assessments @scott @done (18-08-06 18:47)
+ ✔ Do we want to stop in-line editing of activities during assessment? (Im guessing yes, we just then have to remove those edit buttons) @done (18-08-06 12:01)
+ ✔ Include country & currecny data in a more robust way via NPM etc @done (18-08-03 15:44)
+ ✔ Figure out results / print page (including meta data) @done (18-08-03 15:43)
+ ✔ Add setup data CIP title as subhead to activity input @done (18-08-03 15:13)
+ ✔ Figure out how to trigger update of render of child items @scott @done (18-08-03 14:56)
+ ✔ Use some more friendly select component (select2?) @scott @done (18-08-03 13:46)
+ ✔ Add validation on ID / text on activity to be unique. @done (18-08-02 13:39)
+ ✔ Setup navigation to be one way only? @scott @done (18-08-01 16:44)
+ ✔ Disable links on certain pages. @done (18-08-01 16:44)
+ ✔ Advocacy Page @done (18-08-01 16:36)
+ ✔ USE: https://baianat.github.io/vee-validate/ @done (18-08-01 14:59)
+ ✔ Create custom mixin for checking validation of presence / uniqueness of items @done (18-08-01 14:59)
+ ✔ Add validation to all field inputs! @scott @done (18-08-01 14:59)
+ ✔ Should we require people to click add to add (allows for validation, realization you are adding it etc) @done (18-08-01 09:07)
+ ✔ Make props required where we are passing activity objects @done (18-07-31 06:56)
+ ✔ Add sorting by activity Type @done (18-07-30 17:33)
+ ✔ Summary page @done (18-07-29 16:13)
+ ✔ Add sorting by activity type @done (18-07-29 16:13)
+ ✔ Suggestion / review results page @done (18-07-29 15:38)
+ ✔ Run data we'd need for charts @done (18-07-29 15:38)
+ ✔ Export chat data @done (18-07-29 15:38)
+ ✔ Make best practice JSON file just have keys that then point to internationalization (put file in authorities) @done (18-07-27 14:57)
+ ✔ Figure out how we want to manage large text copy. @done (18-07-27 14:57)
+ ✔ Figure out how we want to do string mgmt (checkout localization packages) @done (18-07-27 13:41)
+ ✔ https://github.com/jgile/vue-csv-import @done (18-07-27 07:22)
+ ✔ https://github.com/jecovier/vue-json-excel#readme @done (18-07-27 07:22)
+ ✔ Research the possibility of importing / exporting as CSV @done (18-07-27 07:22)
+ ✔ Add a clear suggestions button @done (18-07-27 05:08)
+ ✔ Add a clear analysis button @done (18-07-27 05:08)
+ ✔ Add a "clear data" button at the advocacy page - export before you nuke. @done (18-07-27 05:08)
+ ✔ State export / import @done (18-07-26 18:28)
+ ✔ Figure out file handling for import / export @done (18-07-26 18:28)
+ ✔ Add JSON file of all best practices data @done (18-07-26 16:08)
+ ✔ Make activity ID an enterable ID. @done (18-07-26 16:07)
+ ✔ Add deletion to activity input. @done (18-07-26 16:05)
+ ✔ Summary @done (18-07-25 17:13)
+ ✔ Basic layout @done (18-07-25 17:11)
+ ✔ Showcase each assessment outcomes @done (18-07-25 12:31)
+ ✔ Add suggestion input @done (18-07-25 12:31)
+ ✔ Figure out how to get the activity data to update when its present / routing moves between things @done (18-07-25 09:58)
+ ✔ Assessment page @done (18-07-25 09:12)
+ ✔ Assessment individual component @done (18-07-25 09:12)
+ ✔ Setup input @done (18-07-24 17:04)
+ ✔ Activity input @done (18-07-24 17:04)
+ ✔ Setup input page @done (18-07-24 16:55)
+ ✔ Activity input @done (18-07-24 16:54)

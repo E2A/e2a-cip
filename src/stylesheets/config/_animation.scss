@@ -1,0 +1,10 @@
+//  Global animation settings
+
+// default duration in seconds
+$transition-duration: 0.25s !default;
+$transition-ease: ease-in-out !default;
+
+// base transition used globally
+@mixin transition($props: all, $duration: $transition-duration, $ease: $transition-ease) {
+  transition: #{$props} #{$duration} #{$ease};
+}

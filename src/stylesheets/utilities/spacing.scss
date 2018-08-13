@@ -1,0 +1,146 @@
+// Spacing layout utilities
+// -> used to keep whitespace in the layout consistent
+// sass-lint:disable no-important
+
+@import '../config/helpers';
+@import '../config/spacing';
+
+// Add space (padding or margin)
+// -----------------------------------------------------------------------------
+
+@each $prop in [padding, margin] {
+  // add space on all sides, e.g. padding or margin
+  .#{$prop} {
+    #{$prop}: space();
+  }
+
+  // remove space from all sides
+  .no#{$prop} {
+    #{$prop}: 0 !important;
+  }
+
+  // add space on x and y axes, e.g. paddingY, marginX
+  .#{$prop}Horizontal {
+    #{$prop}-left: space();
+    #{$prop}-right: space();
+  }
+
+  .#{$prop}Vertical {
+    #{$prop}-bottom: space();
+    #{$prop}-top: space();
+  }
+
+  // add space between all children on a given axis
+  .#{$prop}HorizontalBetween {
+    > * + * {
+      #{$prop}-left: space();
+    }
+  }
+
+  .#{$prop}VerticalBetween {
+    > * + * {
+      #{$prop}-top: space();
+    }
+  }
+
+  // remove space on x and y axes
+  .no#{capitalize($prop)}Horizontal {
+    #{$prop}-left: 0 !important;
+    #{$prop}-right: 0 !important;
+  }
+
+  .no#{capitalize($prop)}Vertical {
+    #{$prop}-bottom: 0 !important;
+    #{$prop}-top: 0 !important;
+  }
+
+  // spacing variations
+  @each $name, $length in $spacing {
+    @if $name != 'medium' {
+      // e.g. .paddingWide
+      .#{$prop}#{capitalize($name)} {
+        #{$prop}: space($name) !important;
+      }
+
+      // e.g. .paddingHorizontalWide
+      .#{$prop}Horizontal#{capitalize($name)} {
+        #{$prop}-left: space($name) !important;
+        #{$prop}-right: space($name) !important;
+      }
+
+      // e.g. .paddingVerticalWide
+      .#{$prop}Vertical#{capitalize($name)} {
+        #{$prop}-bottom: space($name) !important;
+        #{$prop}-top: space($name) !important;
+      }
+
+      // add space between all children
+      // e.g. .paddingHorizontalBetweenWide
+      .#{$prop}HorizontalBetween#{capitalize($name)} {
+        > * + * {
+          #{$prop}-left: space($name) !important;
+        }
+      }
+
+      // e.g. .paddingVerticalBetweenWide
+      .#{$prop}VerticalBetween#{capitalize($name)} {
+        > * + * {
+          #{$prop}-top: space($name) !important;
+        }
+      }
+    }
+  }
+
+  // add or remove space from a specific side
+  @each $side in $sides {
+    // e.g. .paddingTop
+    .#{$prop}#{capitalize($side)} {
+      #{$prop}-#{$side}: space() !important;
+    }
+
+    // e.g. .noPaddingTop
+    .no#{capitalize($prop)}#{capitalize($side)} {
+      #{$prop}-#{$side}: 0 !important;
+    }
+
+    // variations
+    @each $name, $length in $spacing {
+      @if $name != 'medium' {
+        // e.g. .paddingTopWide
+        .#{$prop}#{capitalize($side)}#{capitalize($name)} {
+          #{$prop}-#{$side}: space($name) !important;
+        }
+      }
+    }
+  }
+}
+
+// Offset: add negative margin
+// -----------------------------------------------------------------------------
+
+.offset {
+  margin: -(space());
+}
+
+@each $side in $sides {
+  // e.g. .offsetTop
+  .offset#{capitalize($side)} {
+    margin-#{$side}: -(space());
+  }
+}
+
+@each $name, $length in $spacing {
+  @if $name != 'medium' {
+    // e.g. .offsetWide
+    .offset#{capitalize($name)} {
+      margin: -(space($name));
+    }
+
+    @each $side in $sides {
+      // e.g. .offsetTopWide
+      .offset#{capitalize($side)}#{capitalize($name)} {
+        margin-#{$side}: -(space($name));
+      }
+    }
+  }
+}

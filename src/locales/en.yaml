@@ -1,0 +1,227 @@
+---
+# Home
+home:
+  title: Costed Implementation Plan Country Analysis
+  intro: |-
+    Intro blurb ipsum dolor sit amet, consectetur adipiscing elit. Hoc ille tuus non vult omnibusque ex rebus voluptatem quasi mercedem exigit. Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Iam doloris medicamenta illa Epicurea tamquam de narthecio proment: Si gravis, brevis; Ne in odium veniam, si amicum destitero tueri. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Vadem te ad mortem tyranno dabis pro amico, ut Pythagoreus ille Siculo fecit tyranno.
+  stepsTitle: How it works
+  steps:
+    step1:
+      title: Enter your Activities
+      blurb: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dici enim nihil potest verius. Quae quidem vel cum periculo est quaerenda vobis; Perge porro; Quae quidem vel cum periculo est quaerenda vobis; Ea possunt paria non esse. Duo Reges: constructio interrete.
+    step2:
+      title: Analyze your activities
+      blurb: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dici enim nihil potest verius. Quae quidem vel cum periculo est quaerenda vobis; Perge porro; Quae quidem vel cum periculo est quaerenda vobis; Ea possunt paria non esse. Duo Reges: constructio interrete.
+    step3:
+      title: Review and improve
+      blurb: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dici enim nihil potest verius. Quae quidem vel cum periculo est quaerenda vobis; Perge porro; Quae quidem vel cum periculo est quaerenda vobis; Ea possunt paria non esse. Duo Reges: constructio interrete.
+  getStartedButton: Get started
+
+# Setup
+setup:
+  CIPTitle: Enter your CIP title
+  configureCIP: "First, let's configure your CIP"
+  selectCountry: Select a country
+  selectCurrency: Select a currency
+  selectRole: Select a role
+  selectActivityType: Select activity type
+  setupRequired: Please enter all setup fields before adding activities.
+  restoreActivities: Restore your activities
+  addActivities: Add your Activites
+
+# Activity Input
+addActivity: Add a new activity
+editActivity: Edit your activity
+enterActivity: Enter an activity
+for: for
+number: number
+budget: budget
+selectActivityType: Select activity type
+activityNumber: Activity number
+activityText: Activity text
+activityBudget: Activity budget
+activityType: Activity type
+activityYouthCentric: Is this activity youth-centric?
+inputNextActivity: Input Another Activity
+activitiesDone: I'm done!
+
+# Activity Type
+activityTypeLink: Learn more
+activityTypeTitle: Learn more about activity types
+backToActivities: Back to Activity Input
+activityTypeIntro: |-
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Age, inquies, ista parva sunt. Praeteritis, inquit, gaudeo. Plane idem, inquit, et maxima quidem, qua fieri nulla maior potest. Quis hoc dicit? D
+activityTypes:
+  type1:
+    title: Demand generation
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+  type2:
+    title: Service delivery
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+  type3:
+    title: Enabling environment
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+  type4:
+    title: Coordination
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+
+# Best practices
+bestPracticeTitle: About Evidence-Informed Practices (EIPs)
+backToBestPractices: Back to Evidence-Informed Practices (EIPs)
+bestPracticeIntro: |-
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Age, inquies, ista parva sunt. Praeteritis, inquit, gaudeo. Plane idem, inquit, et maxima quidem, qua fieri nulla maior potest. Quis hoc dicit? Duo Reges: constructio interrete. Atqui haec patefactio quasi rerum opertarum, cum quid quidque sit aperitur, definitio est.
+bestPracticeSubtitle: Evidence-Informed Practices
+bestPractices:
+  bestPractice1:
+    title: Best Practice 1
+    icon: http://placehold.it/600x600
+    teaser: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Indicant pueri, in quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, inquit, propter se expetendam. In quibus doctissimi illi veteres inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti in bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
+
+      At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+  bestPractice2:
+    title: Best Practice 2
+    icon: http://placehold.it/600x600
+    teaser: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Indicant pueri, in quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, inquit, propter se expetendam. In quibus doctissimi illi veteres inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti in bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
+
+      At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+  bestPractice3:
+    title: Best Practice 3
+    icon: http://placehold.it/600x600
+    teaser: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Indicant pueri, in quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, inquit, propter se expetendam. In quibus doctissimi illi veteres inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti in bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
+
+      At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+  bestPractice4:
+    title: Best Practice 4
+    icon: http://placehold.it/600x600
+    teaser: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Indicant pueri, in quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, inquit, propter se expetendam. In quibus doctissimi illi veteres inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti in bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
+
+      At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+  bestPractice5:
+    title: Best Practice 5
+    icon: http://placehold.it/600x600
+    teaser: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Indicant pueri, in quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, inquit, propter se expetendam. In quibus doctissimi illi veteres inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti in bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
+
+      At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+  bestPractice6:
+    title: Best Practice 6
+    icon: http://placehold.it/600x600
+    teaser: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Indicant pueri, in quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, inquit, propter se expetendam. In quibus doctissimi illi veteres inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti in bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
+
+      At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+  bestPractice7:
+    title: Best Practice 7
+    icon: http://placehold.it/600x600
+    teaser: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Indicant pueri, in quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, inquit, propter se expetendam. In quibus doctissimi illi veteres inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti in bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
+
+      At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+  bestPractice8:
+    title: Best Practice 8
+    icon: http://placehold.it/600x600
+    teaser: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Indicant pueri, in quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, inquit, propter se expetendam. In quibus doctissimi illi veteres inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti in bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
+
+      At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+
+# Summary page
+summary:
+  title: Well done lorem ipsum!
+  intro: |-
+    You’ve finished entering activities; now have a look and check them over lorem ipsum dolor sit amet, consectetur adipiscing elit. Sint modo partes vitae beatae. Nemo nostrum istius generis asotos iucunde putat vivere. Positum est a nostris in iis esse rebus, quae secundum naturam essent, non dolere; Duo Reges: constructio interrete. Se dicere inter honestum et turpe nimium quantum, nescio quid inmensum, inter ceteras res nihil omnino interesse.
+
+# Analysis page
+analysis:
+  title: Analyze your activities
+  intro: |-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maximas vero virtutes iacere omnis necesse est _voluptate dominante_. Mihi quidem Antiochum, quem audis, satis belle videris attendere. **Rationis** enim perfectio est virtus; Unum nescio, quo modo possit, si luxuriosus sit, finitas cupiditates habere. Duo Reges: constructio interrete. Octavio fuit, cum illam severitatem in eo filio adhibuit, quem in adoptionem.
+
+# Results page
+chartTitles:
+  activityTypeCount: "% Activity count by type"
+  activityTypeBudget: "Budget % of total by activity types"
+  youthFocusBudget: "Budget % youth focused"
+  youthFocusCount: "% activity count by youth focused"
+  youthCentricLabel: "Youth Centric"
+  notYouthCentricLabel: "Not Youth Centric"
+
+# misc keys of shame
+edit: Edit
+printPage: Print Page
+goBack: Go back
+bestPracticeOptions:
+  yesText: 'Yes'
+  noText: 'No'
+  maybeText: Maybe
+  yesKey: 'yes'
+  noKey: 'no'
+  maybeKey: maybe
+enterSuggestion: Enter a suggestion
+item: no items | item | items
+userRoles:
+  role1: NGO
+  role2: Youth Advocate
+successRemoved: Successfully removed
+successRemovedAll: items, this is all the currently stored data.
+clearItems:
+  clear: Clear
+  Assessments: Assessments
+  Activities: Activities
+  Recommendations: Recommendations
+  All: All
+fileUpload:
+  selectFormat: Select an export format
+  json: JSON - preferred for import
+  csv: CSV - preferred for subsequent analysis
+  successImport: Successfully imported
+  textReaderImport: Import Data
+addRecommendation: Add Recommendation
+addAnotherRecommendation: Add Another Recommendation
+suggestedImprovements: Suggested Improvements
+delete: delete
+activities: activities
+resultsSubhead: "Here's how your activities rate lorem ipsum:"

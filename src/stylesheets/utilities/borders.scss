@@ -1,0 +1,28 @@
+// Global border classes
+
+@import '../config/helpers';
+@import '../config/borders';
+
+// default border on all sides
+.default {
+  @include border;
+}
+
+// default border on a given side, e.g. .top
+@each $side in $sides {
+  .#{$side} {
+    @include border($side);
+  }
+}
+
+// border width, e.g. '.thick'
+@each $name, $width in $border-widths {
+  .#{$width} {
+    border-width: $width;
+  }
+}
+
+// round corners
+.round {
+  border-radius: $border-radius;
+}

@@ -1,0 +1,95 @@
+// Global type utilities
+
+@import '../config/helpers';
+@import '../config/scale';
+@import '../config/type';
+
+// --- weight, style, and typeface ---------------------------------------------
+
+.bold {
+  @include font('body', 'bold');
+}
+
+.italic {
+  @include font('body', $style: 'italic');
+}
+
+@each $font in ('body', 'display', 'accent') {
+  .#{$font} {
+    @include font($font);
+
+    @if $font != 'body' {
+      &.bold {
+        @include font($font, 'bold');
+      }
+      &.italic {
+        @include font($font, $style: 'italic');
+      }
+    }
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+// --- leading -----------------------------------------------------------------
+
+@each $name, $height in $leading {
+  .leading#{capitalize($name)} {
+    line-height: $height;
+  }
+}
+
+// --- alignment ---------------------------------------------------------------
+
+.centered {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+// --- scale -------------------------------------------------------------------
+
+.scaleAlpha {
+  @include type-fluid(font-size, 'gamma', 'alpha');
+}
+
+.scaleBeta {
+  @include type-fluid(font-size, 'gamma', 'beta');
+}
+
+.scaleGamma {
+  @include type-fluid(font-size, 'delta', 'gamma');
+}
+
+.scaleDelta {
+  @include type-fluid(font-size, 'epsilon', 'delta');
+}
+
+.scaleEpsilon {
+  font-size: scale-type('epsilon');
+}
+
+.scaleZeta {
+  font-size: scale-type('zeta');
+}
+
+.scaleEta {
+  font-size: scale-type('eta');
+}
+
+// --- position ----------------------------------------------------------------
+// -> align text, e.g. .center
+
+@each $side in [center, left, right] {
+  .#{$side)} {
+    text-align: $side;
+  }
+}

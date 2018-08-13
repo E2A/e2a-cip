@@ -1,0 +1,38 @@
+// some basic helpers for manipulating strings
+// -> used, e.g., to match camel-cased class names
+export const stringHelpers = {
+  methods: {
+    // https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
+    capitalize: function (string) {
+      return `${string.charAt(0).toUpperCase()}${string.slice(1)}`
+    }
+  }
+}
+
+// some helpers for generating class names
+// -> use these helpers so we can manage class names in one place
+export const styleHelpers = {
+  methods: {
+    // generate a type scale class name, e.g. scaleAlpha
+    // usage: in your component, do type[typeScaleClass('alpha')]
+    typeScaleClass: function (size) {
+      return `scale${stringHelpers.methods.capitalize(size)}`
+    },
+    // generate a spacing class name, e.g. scaleAlpha
+    // usage: in your component, do space[spaceClass('padding', 'wide', 'top')]
+    // 'side' can be 'horizontal' or 'vertical' too
+    spaceClass: function ({
+      prop = 'padding',
+      size = 'medium',
+      side = 'all',
+      between = false
+    } = {}) {
+      const caps = stringHelpers.methods.capitalize
+
+      if (side === 'all') {
+        return `${prop}${size !== 'medium' ? caps(size) : ''}`
+      }
+      return `${prop}${caps(side)}${between ? 'Between' : ''}${size !== 'medium' ? caps(size) : ''}`
+    }
+  }
+}

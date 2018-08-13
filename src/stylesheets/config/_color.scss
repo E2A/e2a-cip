@@ -1,0 +1,67 @@
+// Global color config and mixins
+@import '~bourbon/core/bourbon';
+
+// Base Palette
+// -----------------------------------------------------------------------------
+// -> PRIVATE, do not use outside this settings file
+
+// Neutrals
+$white: #fff;
+$black: #333;
+$gray: #666;
+
+// Color roles
+// -----------------------------------------------------------------------------
+// -> PUBLIC, use these for color references
+
+$colors: (
+  'dark': $black,
+  'midtone': $gray,
+  'light': $white,
+  'highlight': $gray,
+  'accent': $gray
+);
+
+@function color($color, $grade: 0, $opacity: 1) {
+  // get the hex of the color
+  $c: map-get($colors, $color);
+
+  // lighten the color
+  @if ($grade < 0) {
+    $c: shade($c, abs($grade));
+  }
+
+  // darken the color
+  @if ($grade > 0) {
+    $c: tint($c, abs($grade));
+  }
+
+  // make the color translucent
+  @if ($opacity < 1) {
+    $c: rgba($c, $opacity);
+  }
+
+  @return $c;
+}
+
+// --- decorators for special variations ---------------------------------------
+
+// a 'well' appears sunken
+@function well($color) {
+  @return color($color, $grade: -3);
+}
+
+// an 'island' appears raised
+@function island($color) {
+  @return color($color, $grade: 10);
+}
+
+// borders are darker shades of the bg color
+@function border($color) {
+  @return color($color, $grade: -20);
+}
+
+// a shadow is darker, translucent shade of the bg color
+@function shadow($color) {
+  @return color($color, $grade: -30, $opacity: 40);
+}

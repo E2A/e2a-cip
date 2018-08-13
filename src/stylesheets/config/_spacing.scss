@@ -1,0 +1,29 @@
+// Global spacing
+// -> used to keep whitespace in the layout consistent
+
+@import '~modularscale-sass';
+@import '../config/scale';
+
+@function space-scale($size: 0) {
+  @return ms($size, 1rem);
+}
+
+// standard spacing for margins and padding, etc.
+$spacing: (
+  'xxwide': space-scale(11),
+  'xwide': space-scale(8),
+  'wide': space-scale(4),
+  'medium': space-scale(2),
+  'narrow': space-scale(0),
+  'xnarrow': space-scale(-2),
+  'xxnarrow': space-scale(-6)
+);
+
+// getter function for $gutters map
+@function space($name: 'medium', $split: false) {
+  @if $split == false {
+    @return map-get($spacing, $name);
+  } @else {
+    @return (map-get($spacing, $name) / 2);
+  }
+}

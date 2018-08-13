@@ -1,0 +1,48 @@
+// Border settings & helpers
+
+@import 'color';
+
+// Rounded corners
+// -----------------------------------------------------------------------------
+
+$border-radius: 3px;
+
+// Border width & style
+// -----------------------------------------------------------------------------
+
+$border-w--default: 'thin';
+$border-style: solid;
+
+$border-widths: (
+  'thin' : 1px,
+  'medium': 2px,
+  'thick': 4px,
+);
+
+// get function for border widths
+@function border-w($w: $border-w--default) {
+  @if (type-of($w) == 'number') {
+    @return #{$w};
+  } @else {
+    @return map-get($border-widths, $w);
+  }
+}
+
+@function border-color($color) {
+  @if (type-of($color) != 'color') {
+    @return border($color);
+  }
+  @return $color;
+}
+
+// make a standard border/hairline that works with the parent color theme
+@mixin border($sides: all, $w: $border-w--default, $color: 'light', $style: $border-style, $important: false) {
+  @if ($sides == all) {
+    border: #{border-w($w)} #{$style} #{border-color($color)}#{if($important == true, ' !important', '')};
+  } @else {
+    @each $side in $sides {
+      border-#{$side}: #{border-w($w)} #{$style} #{border-color($color)}#{if($important == true, ' !important', '')};
+    }
+  }
+}
+
