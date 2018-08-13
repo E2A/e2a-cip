@@ -1,5 +1,9 @@
 <template>
-  <article style="padding-bottom: 5rem;">
+  <NavFooter
+    wrapperEl="article"
+    :leftButtons="navButtons.left"
+    :rightButtons="navButtons.right"
+  >
     <BasePageIntro
       :title="$t('bestPracticeTitle')"
       :blurb="$t('bestPracticeIntro')"
@@ -43,11 +47,7 @@
         </BaseVerticalList>
       </BaseWidthWrapper>
     </div>
-    <NavFooter
-      :leftButtons="navButtons.left"
-      :rightButtons="navButtons.right"
-    />
-  </article>
+  </NavFooter>
 </template>
 
 <script>
