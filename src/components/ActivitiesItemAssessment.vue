@@ -6,36 +6,41 @@
 
 <template>
   <li class="ActivityItemAssessment, sad-style">
-    <BaseHeading :level="6" :sub="true">{{text}}</BaseHeading>
+    <BaseDetails>
+      <template slot="summary">
+        <BaseHeading :level="6" :sub="true">{{text}}</BaseHeading>
 
-    <!-- edit button -->
-    <router-link :to="{
-      name: 'activity',
-      params: {
-        activityId: String(id)
-      }
-    }">{{$t('edit')}}</router-link>
+        <!-- edit button -->
+        <router-link :to="{
+          name: 'activity',
+          params: {
+            activityId: String(id)
+          }
+        }">{{$t('edit')}}</router-link>
 
-    <!-- list of best practice icons -->
-    <ul>
-      <li v-for="(bestPractice, index) of bestPractices" :key="index">
-        <img :src="bestPractice.icon" />
+        <!-- list of best practice icons -->
+        <ul>
+          <li v-for="(bestPractice, index) of bestPractices" :key="index">
+            <img :src="bestPractice.icon" />
 
-        <!-- flyout for best practice choices -->
-        <div class='modal-select'>
-          <p> {{bestPractice.title}}</p>
-          <div class='button-group'>
-            <button v-for="(bestPracticeOption,index) of bestPracticeOptions" :key="index" @click="addAssessment(bestPractice.title,bestPracticeOption.text)" class="dot" :class="[bestPracticeOption.value,getSelectedAssessment(bestPractice.title,bestPracticeOption.text)]">
-              {{bestPracticeOption.text}}
-            </button>
-          </div>
-        </div>
-      </li>
-    </ul>
+            <!-- flyout for best practice choices -->
+            <div class='modal-select'>
+              <p> {{bestPractice.title}}</p>
+              <div class='button-group'>
+                <button v-for="(bestPracticeOption,index) of bestPracticeOptions" :key="index" @click="addAssessment(bestPractice.title,bestPracticeOption.text)" class="dot" :class="[bestPracticeOption.value,getSelectedAssessment(bestPractice.title,bestPracticeOption.text)]">
+                  {{bestPracticeOption.text}}
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </template>
+    </BaseDetails>
   </li>
 </template>
 
 <script>
+import BaseDetails from './BaseDetails'
 import BaseHeading from './BaseHeading'
 import { bestPracticeData } from './mixins/bestPracticeData'
 
@@ -62,7 +67,8 @@ export default {
     }
   },
   components: {
-    BaseHeading
+    BaseHeading,
+    BaseDetails
   },
   methods: {
     getSelectedAssessment: function (bestPracticeText, bestPracticeValue) {
