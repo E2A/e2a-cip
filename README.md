@@ -30,7 +30,7 @@ This project is for E2A's CIP evaluation tool.
 
 We are using [Vuex ORM](https://vuex-orm.github.io/vuex-orm/) for data management.
 
-Edit ERD by going to draw.io and upload the E2A_ERD.xml file.
+Edit ERD by going to [draw.io](https://draw.io) and upload the [E2A_ERD.xml](/docs/E2A_ERD.xml) file.
 
 ### ERD Diagram for Application
 ![ERD](E2A_ERD.png)
