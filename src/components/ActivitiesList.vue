@@ -4,8 +4,7 @@
       <div :class="base.header">
         <BaseHeading
           v-for="(heading, index) in headings"
-          :level="5"
-          :align="heading.align || 'left'"
+          :level="6"
           :key="index"
           :sub="true"
         >

@@ -91,13 +91,13 @@ export default {
         left: [
           {
             to: {name: 'setup'},
-            label: this.$t('summary.backToSetup')
+            label: this.$t('summary.previousStep')
           }
         ],
         right: [
           {
             to: {name: 'evidence-informed-practices'},
-            label: 'About EIPs',
+            label: this.$t('summary.previousStep'),
             role: 'primary'
           }
         ]

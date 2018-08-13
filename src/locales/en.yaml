@@ -181,13 +181,16 @@ summary:
   title: Well done lorem ipsum!
   intro: |-
     You’ve finished entering activities; now have a look and check them over lorem ipsum dolor sit amet, consectetur adipiscing elit. Sint modo partes vitae beatae. Nemo nostrum istius generis asotos iucunde putat vivere. Positum est a nostris in iis esse rebus, quae secundum naturam essent, non dolere; Duo Reges: constructio interrete. Se dicere inter honestum et turpe nimium quantum, nescio quid inmensum, inter ceteras res nihil omnino interesse.
-  backToSetup: Go back to setup
+  previousStep: Go back to setup
+  nextStep: About EIPs
 
 # Analysis page
 analysis:
   title: Analyze your activities
   intro: |-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maximas vero virtutes iacere omnis necesse est _voluptate dominante_. Mihi quidem Antiochum, quem audis, satis belle videris attendere. **Rationis** enim perfectio est virtus; Unum nescio, quo modo possit, si luxuriosus sit, finitas cupiditates habere. Duo Reges: constructio interrete. Octavio fuit, cum illam severitatem in eo filio adhibuit, quem in adoptionem.
+  previousStep: Go back to activities
+  nextStep: Your results
 
 # Results page
 chartTitles:
