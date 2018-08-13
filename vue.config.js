@@ -26,7 +26,7 @@ module.exports = {
     electronBuilder: {
       builderOptions: {
         'appId': 'com.electron.karaw',
-        'productName': 'Karaw',
+        'productName': 'E2A Analysis',
         'win': {
           'target': [
             {
@@ -36,10 +36,12 @@ module.exports = {
                 'ia32'
               ]
             }
-          ]
+          ],
+          'icon': 'src/assets/electron/icon.ico'
         },
         'mac': {
-          target: 'dmg'
+          'target': 'dmg',
+          'icon': 'src/assets/electron/icon.png'
         }
       }
     }

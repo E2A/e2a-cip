@@ -31,6 +31,7 @@ setup:
   setupRequired: Please enter all setup fields before adding activities.
   restoreActivities: Restore your activities
   addActivities: Add your Activites
+  editActivities: Edit your Activites
 
 userRoles:
   role1: NGO

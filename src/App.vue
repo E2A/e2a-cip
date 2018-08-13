@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NavHeader/>
+    <NavHeader :key="this.getItemCount('all')" />
     <router-view :key="$route.fullPath"></router-view>
   </div>
 </template>
@@ -8,9 +8,11 @@
 <script>
 // @ is an alias to /src
 import NavHeader from '@/components/NavHeader.vue'
+import { dataMethods } from '@/components/mixins/dataMethods.js'
 
 export default {
   name: 'AppRoot',
+  mixins: [ dataMethods ],
   components: {
     NavHeader
   }

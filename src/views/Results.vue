@@ -72,6 +72,12 @@ export default {
   },
   methods: {
     printPage: function () {
+      var userAgent = navigator.userAgent.toLowerCase();
+      if (userAgent.indexOf(' electron/') > -1) {
+         // Electron-specific code
+         alert('YAY')
+         alert(userAgent)
+      }
       window.print()
     }
   }
