@@ -6,7 +6,7 @@
 
 <template>
   <component
-    :is="this.tag"
+    :is="this.el || this.tag"
     :class="[base.heading, scaleClass, centered === true && type.centered]"
   >
     <slot>Add a heading!</slot>
@@ -38,7 +38,10 @@ export default {
     sub: {
       type: Boolean,
       default: false
-    }
+    },
+    // specify an html element, for special cases (e.g. td, dt, etc.)
+    // -> will override level and sub props above
+    el: String
   },
   data () {
     return {

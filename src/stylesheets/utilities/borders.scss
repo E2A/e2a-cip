@@ -17,8 +17,8 @@
 
 // border width, e.g. '.thick'
 @each $name, $width in $border-widths {
-  .#{$width} {
-    border-width: $width;
+  .#{$name} {
+    border-width: $width !important;
   }
 }
 

@@ -13,9 +13,7 @@
           {{cipTitle}}
         </BaseHeading>
         <!-- table here -->
-        <ActivitiesTable
-            v-for="(activities, index) in groupedActivities"
-            :key="`gA-${index}`">
+        <ActivitiesTable>
           <!-- dummy for styling -->
           <ActivitiesItemSummary
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si longus, levis dictata sunt. Videamus igitur sententias eorum, tum ad verba redeamus."
@@ -23,21 +21,37 @@
             :youth="true"
           />
           <!-- real content -->
-            <BaseHeading
-              :level="2"
-              align="center"
-            >
-              {{activities.activityTypeName}}
-            </BaseHeading>
-            <ActivitiesItemSummary
-              v-for="(activity, index) in activities.activityObjects"
-              :key="`activity-${index}`"
-              :text="activity.text"
-              :budget="activity.budget"
-              :youth="activity.youthCentric"
-              :id="activity.id"
-            />
-            <hr />
+          <template
+            v-for="(activities, index) in groupedActivities"
+          >
+            <template v-if="activities.activityObjects.length > 0">
+              <!-- category subheading -->
+              <tr :key="`gA-${index}`">
+                <td
+                  :class="[color.midtoneBg, border.top]"
+                  colspan="4"
+                >
+                  <BaseHeading
+                    :level="3"
+                    scale="eta"
+                    :centered="false"
+                    :class="[space.paddingXxnarrow, color.light, type.uppercase]"
+                  >
+                    {{activities.activityTypeName}}
+                  </BaseHeading>
+                </td>
+              </tr>
+              <!-- activity row -->
+              <ActivitiesItemSummary
+                v-for="(activity, index) in activities.activityObjects"
+                :key="`activity-${index}`"
+                :text="activity.text"
+                :budget="activity.budget"
+                :youth="activity.youthCentric"
+                :id="activity.id"
+              />
+            </template>
+          </template>
         </ActivitiesTable>
       </BaseWidthWrapper>
     </section>
@@ -72,5 +86,7 @@ export default {
 }
 </script>
 
+<style src="../stylesheets/utilities/type.scss" lang="scss" module="type"></style>
 <style src="../stylesheets/utilities/borders.scss" lang="scss" module="border"></style>
 <style src="../stylesheets/utilities/spacing.scss" lang="scss" module="space"></style>
+<style src="../stylesheets/utilities/color.scss" lang="scss" module="color"></style>
