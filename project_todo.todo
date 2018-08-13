@@ -39,14 +39,14 @@
  ☐ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling.
 
 # Copy Writing
-  ☐ Go through app and update any text strings to use i18n formats @haley
+  ☐ Go through app and update any text strings to use i18n formats @scott
     - Info: http://kazupon.github.io/vue-i18n/guide/started.html#html
 
 # Nice to have
- ☐ Update ERD to not show Activity -> improvement many to many relationships
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Update ERD to not show Activity -> improvement many to many relationships @done (18-08-13 11:18)
  ✔ Setup refresh on import of data on setup @done (18-08-12 11:47)
  ✔ Look into browswer compatibility for old browsers (ES6 fails in IE11)  ? https://github.com/paulmillr/es6-shim @done (18-08-12 11:43)
  ✔ How to trigger PDF / print from button (might be needed for desktop app) @done (18-08-12 11:43)
