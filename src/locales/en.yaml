@@ -30,7 +30,7 @@ home:
   downloadMacUrl: https://github.com/biveeco/e2a-electron-builds/raw/master/mac-installer.zip
   downloadWindows: Windows (45MB)
   downloadWindowsUrl: https://github.com/biveeco/e2a-electron-builds/raw/master/windows-installer.zip
-  downloadWindowsPortable: Windows (67MB)
+  downloadWindowsPortable: Windows Portable (67MB)
   downloadWindowsPortableUrl: https://github.com/biveeco/e2a-electron-builds/raw/master/windows-installer-portable.zip
 
 # Setup
