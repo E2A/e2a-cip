@@ -20,6 +20,30 @@
         </BaseGutterWrapper>
       </BaseWidthWrapper>
     </BaseSectionWrapper>
+    <BaseSectionWrapper v-if="!electron" el="div" :class="type.center" border>
+      <BaseHeading :level="2" centered>{{$t('home.downloadTitle')}}</BaseHeading>
+      <BaseWidthWrapper width="wide" :class="space.paddingTop">
+        <BaseBodyText
+          size="zeta"
+          :content="$t('home.downloadBlurb')"
+        />
+
+        <BaseButtonLink
+          to="/electron/mac-installer.dmg"
+          size="large"
+          role="primary"
+          :label="$t('home.downloadMac')"
+          :class="space.marginBottom"
+        />
+        <BaseButtonLink
+          to="/electron/win-installer.dmg"
+          size="large"
+          role="primary"
+          :label="$t('home.downloadWindows')"
+          :class="space.marginBottom"
+        />
+      </BaseWidthWrapper>
+    </BaseSectionWrapper>
     <BaseSectionWrapper el="div" :class="type.center" border>
       <BaseButtonLink
         :to="{name: 'setup'}"
@@ -29,37 +53,6 @@
         :class="space.marginBottom"
       />
       <ClearItems :clearType="['All']" />
-    </BaseSectionWrapper>
-    <BaseSectionWrapper el="div" :class="type.center" border>
-      <BaseHeading :level="4" centered>Download offline versions</BaseHeading>
-      <BaseWidthWrapper width="wide" :class="space.paddingTop">
-        <BaseBodyText
-          size="zeta"
-          content="Download the following things to be able to access stuff offline"
-        />
-
-        <BaseButtonLink
-          :to="{name: 'setup'}"
-          size="large"
-          role="primary"
-          :label="$t('home.downloadMac')"
-          :class="space.marginBottom"
-        />
-        <BaseButtonLink
-          :to="{name: 'setup'}"
-          size="large"
-          role="primary"
-          :label="$t('home.downloadMac')"
-          :class="space.marginBottom"
-        />
-        <BaseButtonLink
-          :to="{name: 'setup'}"
-          size="large"
-          role="primary"
-          :label="$t('home.downloadMac')"
-          :class="space.marginBottom"
-        />
-      </BaseWidthWrapper>
     </BaseSectionWrapper>
   </article>
 </template>
@@ -74,9 +67,11 @@ import BaseBodyText from '@/components/BaseBodyText.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import ClearItems from '@/components/ClearItems.vue'
+import { dataMethods } from '@/components/mixins/dataMethods'
 
 export default {
   name: 'Home',
+  mixins: [dataMethods],
   components: {
     BasePageIntro,
     BaseSectionWrapper,
@@ -94,7 +89,8 @@ export default {
           title: this.$t(`home.steps.step${index + 1}.title`),
           blurb: this.$t(`home.steps.step${index + 1}.blurb`)
         }
-      })
+      }),
+      electron: this.checkElectron()
     }
   }
 }

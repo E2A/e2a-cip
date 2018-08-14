@@ -47,6 +47,11 @@ export const dataMethods = {
       } else {
         return false
       }
+    },
+    checkElectron: function () {
+      // Check if electron is being used
+      var userAgent = navigator.userAgent.toLowerCase()
+      return userAgent.indexOf(' electron/') > -1
     }
   }
 }

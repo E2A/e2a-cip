@@ -74,8 +74,7 @@ export default {
   methods: {
     printPage: function () {
       // Check if in electron, and use specific electron PDF creation code
-      var userAgent = navigator.userAgent.toLowerCase()
-      if (userAgent.indexOf(' electron/') > -1) {
+      if (this.checkElectron()) {
         // Electron-specific PDF printing
         this.printElectronPDF()
       } else {
