@@ -1,7 +1,14 @@
 <template>
   <details>
-    <summary>
-      <slot name="summary">Add summary here</slot>
+    <summary :class="base.summary">
+      <div :class="base.summaryContent">
+        <div :class="base.item">
+          <slot name="collapsedLeft">Add summary here</slot>
+        </div>
+        <div :class="base.item">
+          <slot name="collapsedRight">Add summary here</slot>
+        </div>
+      </div>
     </summary>
     <div>
       <slot name="expanded">Add expanded details here</slot>
@@ -19,3 +26,44 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" module="base">
+.summary {
+  display: block;
+
+  @supports (display: flex) {
+    display: flex;
+    align-items: center;
+  }
+
+  &::before {
+    $size: 1rem;
+    content: '[+]';
+    display: block;
+    position: relative;
+    font-size: $size;
+    line-height: 1;
+    width: ($size + 0.5rem);
+
+    [open] & {
+      content: '[-]';
+    }
+  }
+}
+
+.summaryContent {
+  display: block;
+  position: relative;
+
+  @supports (display: flex) {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.item {
+  display: inline-block;
+}
+</style>
