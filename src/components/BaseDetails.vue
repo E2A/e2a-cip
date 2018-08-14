@@ -3,15 +3,15 @@
     <summary :class="base.summary">
       <div :class="base.summaryContent">
         <div :class="base.item">
-          <slot name="collapsedLeft">Add summary here</slot>
+          <slot name="summaryLeft">Add summary here</slot>
         </div>
         <div :class="base.item">
-          <slot name="collapsedRight">Add summary here</slot>
+          <slot name="summaryRight">Add summary here</slot>
         </div>
       </div>
     </summary>
     <div>
-      <slot name="expanded">Add expanded details here</slot>
+      <slot>Add expanded details here</slot>
     </div>
   </details>
 </template>
@@ -65,5 +65,9 @@ export default {
 
 .item {
   display: inline-block;
+
+  @supports (flex: 1) {
+    flex: 1;
+  }
 }
 </style>

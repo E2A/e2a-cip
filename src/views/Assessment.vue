@@ -15,6 +15,7 @@
         <BaseHeading
           :level="2"
           scale="gamma"
+          :class="space.paddingBottomNarrow"
         >
           {{cipTitle}}
         </BaseHeading>
@@ -26,8 +27,10 @@
             :key="`gA-${index}`"
           >
             <BaseHeading
-              :level="2"
-              align="center"
+              :level="3"
+              scale="eta"
+              :centered="false"
+              :class="[space.paddingXxnarrow, color.light, type.uppercase, color.midtoneBg, border.top]"
             >
               {{activities.activityTypeName}}
             </BaseHeading>
@@ -38,7 +41,6 @@
               :text="activity.text"
               :id="activity.id"
             />
-            <hr />
           </div>
         </ActivitiesList>
       </BaseWidthWrapper>
@@ -97,3 +99,5 @@ export default {
 
 <style src="styles/borders.scss" lang="scss" module="border"></style>
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
+<style src="styles/color.scss" lang="scss" module="color"></style>
+<style src="styles/type.scss" lang="scss" module="type"></style>

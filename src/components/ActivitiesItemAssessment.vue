@@ -7,13 +7,18 @@
 <template>
   <li :class="base.wrapper">
     <BaseDetails>
-      <template slot="collapsedLeft">
-        <BaseHeading :level="6" :sub="true">{{text}}</BaseHeading>
+      <template slot="summaryLeft">
+        <BaseHeading
+          :level="6"
+          :centered="false"
+          sub
+        >{{text}}</BaseHeading>
       </template>
-      <template slot="collapsedRight">
+      <template slot="summaryRight">
         <!-- list of best practice icons -->
         <BaseGutterWrapper
-          spacing="xnarrow"
+          gutterX="xnarrow"
+          gutterY="xnarrow"
           :class="base.icons"
         >
           <li
@@ -73,13 +78,14 @@ export default {
 <style lang="scss" module="base">
 .wrapper {
   composes: top from 'styles/borders.scss';
-  composes: paddingVerticalXnarrow from 'styles/spacing.scss';
+  composes: paddingVerticalNarrow from 'styles/spacing.scss';
   display: block;
   position: relative;
 }
 
 .icons {
   list-style: none;
+  text-align: right;
 }
 
 .icon {

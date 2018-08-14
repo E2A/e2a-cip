@@ -11,11 +11,10 @@
     <section :class="space.paddingWide">
       <BaseWidthWrapper width="wide">
         <BaseHeading
-          :level="3"
-          align="center"
-        >
-          {{cipTitle}}
-        </BaseHeading>
+          :level="2"
+          scale="gamma"
+          :class="space.paddingBottomNarrow"
+        >{{cipTitle}}</BaseHeading>
         <!-- table here -->
         <ActivitiesTable>
           <!-- dummy for styling -->

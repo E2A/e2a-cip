@@ -1,20 +1,20 @@
 <template>
-  <div>
-    <div v-if="!table">
-      <div :class="base.header">
-        <BaseHeading
-          v-for="(heading, index) in headings"
-          :level="6"
-          :key="index"
-          :sub="true"
-        >
-          {{ heading.title }}
-        </BaseHeading>
-      </div>
-      <ul>
-        <slot>Add activity items here</slot>
-      </ul>
+  <div v-if="!table">
+    <div :class="base.header">
+      <BaseHeading
+        v-for="(heading, index) in headings"
+        :key="index"
+        :centered="false"
+        :class="base.heading"
+        scale="eta"
+        sub
+      >
+        {{ heading.title }}
+      </BaseHeading>
     </div>
+    <ul :class="base.list">
+      <slot>Add activity items here</slot>
+    </ul>
   </div>
 </template>
 
@@ -51,7 +51,24 @@ export default {
 
 <style lang="scss" module="base">
   .header {
-    display: flex;
-    justify-content: space-between;
+    composes: bottom thick from 'styles/borders.scss';
+    composes: darkBorder from 'styles/color.scss';
+    composes: paddingVerticalXxnarrow from 'styles/spacing.scss';
+
+    @supports (display: flex) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .heading {
+    composes: bold from 'styles/type.scss';
+    vertical-align: bottom;
+  }
+
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 </style>
