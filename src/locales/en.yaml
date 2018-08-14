@@ -19,6 +19,18 @@ home:
       blurb: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dici enim nihil potest verius. Quae quidem vel cum periculo est quaerenda vobis; Perge porro; Quae quidem vel cum periculo est quaerenda vobis; Ea possunt paria non esse. Duo Reges: constructio interrete.
   getStartedButton: Get started
+  downloadTitle: Download offline versions
+  downloadBlurb: |-
+        If you are having issues with your browser, want to access the application offline, or you just want to use the application on your desktop without using a browser, you can download any of the following versions for your needs.
+        *Note*: The application will still work in the browser even if internet disconnects.
+        ### Installation Instructions:
+        - For **Macintosh** use the DMG to install the application.
+        - For **Windows** unzip the folder and run the .exe file in the folder.
+
+        The downloadable files are *55MB*
+  downloadMac: Macintosh
+  downloadWindows: Windows
+
 
 # Setup
 setup:
@@ -31,6 +43,7 @@ setup:
   setupRequired: Please enter all setup fields before adding activities.
   restoreActivities: Restore your activities
   addActivities: Add your Activites
+  editActivities: Edit your Activites
 
 userRoles:
   role1: NGO
@@ -218,6 +231,7 @@ fileUpload:
   textReaderImport: Import Data
   jsonFileName: e2a-export-{timestamp}.json
   csvFileName: e2a-{exportName}-export-{timestamp}.csv
+  pdfFileName: e2a-report-{timestamp}.pdf
 
 # Nav Text:
 nav:
