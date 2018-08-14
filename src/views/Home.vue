@@ -29,7 +29,7 @@
         />
 
         <BaseButtonLink
-          to="/electron/mac-installer.zip"
+          :to="$t('home.downloadMacUrl')"
           size="small"
           role="primary"
           :label="$t('home.downloadMac')"
@@ -37,7 +37,7 @@
           :router="false"
         />
         <BaseButtonLink
-          to="/electron/win-installer.zip"
+          :to="$t('home.downloadWindowsUrl')"
           size="small"
           role="primary"
           :label="$t('home.downloadWindows')"
@@ -45,7 +45,7 @@
           :router="false"
         />
         <BaseButtonLink
-          to="/electron/win-installer-portable.zip"
+          :to="$t('home.downloadWindowsPortableUrl')"
           size="small"
           role="primary"
           :label="$t('home.downloadWindowsPortable')"
