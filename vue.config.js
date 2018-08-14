@@ -29,9 +29,7 @@ module.exports = {
           'dist_electron/bundled/**/*',
           'node_modules/**/*',
           'package.json',
-          '!*.dmg',
-          '!*.zip',
-          '!*.exe'
+          '!public/electron/*'
         ],
         'appId': 'com.electron.karaw',
         'productName': 'E2A-Analysis',
