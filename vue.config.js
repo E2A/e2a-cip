@@ -25,11 +25,6 @@ module.exports = {
     },
     electronBuilder: {
       builderOptions: {
-        'files': [
-          'dist_electron/bundled/**/*',
-          'node_modules/**/*',
-          'package.json'
-        ],
         'appId': 'com.electron.karaw',
         'productName': 'E2A-Analysis',
         'win': {

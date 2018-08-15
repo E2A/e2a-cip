@@ -30,7 +30,10 @@ export const dataIO = {
       }
     },
     parseFileData: function (fileData) {
-      if (fileData.fileObject.type === 'text/csv') {
+      // Check file extension (windows cant seem find to find MIME data)
+      const extension = fileData.fileObject.name.split('.').pop()
+
+      if (fileData.fileObject.type === 'text/csv' || extension === 'csv') {
         for (const entity of this.entityTypes) {
           // Look for type of entity in file name
           const fileEntity = fileData.fileObject.name.search(entity)
@@ -40,7 +43,7 @@ export const dataIO = {
             return entity
           }
         }
-      } else if (fileData.fileObject.type === 'application/json') {
+      } else if (fileData.fileObject.type === 'application/json' || extension === 'json') {
         const importDataObj = JSON.parse(fileData.text)
         this.$store.dispatch('entities/setup/create', { data: importDataObj.setupData })
         this.$store.dispatch('entities/activities/create', { data: importDataObj.activityData })
