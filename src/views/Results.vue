@@ -10,11 +10,9 @@
     <section :class="[space.paddingBottomWide, space.paddingHorizontalWide]">
       <ChartItems />
     </section>
-    <!-- Print & Export -->
-    <BaseButton v-if="electron" @click="exportPDF" :label="$t('results.exportPDF')"></BaseButton>
-    <BaseButton @click="printPage" :label="$t('results.printPage')"></BaseButton>
 
-    <p v-if="pdfPrintError">{{$t('results.pdfPrintError')}}</p>
+    <!-- Print & Export -->
+    <PrintPage />
 
     <!-- Activity Table -->
     <p><strong>{{getItemCount('activities')}}</strong> {{$t('activities')}}</p>
@@ -52,17 +50,18 @@ import ActivitiesItemResult from '@/components/ActivitiesItemResult.vue'
 import FileUpload from '@/components/FileUpload.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import ChartItems from '@/components/ChartItems.vue'
+import PrintPage from '@/components/PrintPage.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { dataMethods } from '@/components/mixins/dataMethods'
-import { electronPDF } from '@/components/mixins/electronPDF'
 
 export default {
   name: 'Results',
-  mixins: [activityTypes, dataMethods, electronPDF],
+  mixins: [activityTypes, dataMethods],
   components: {
     BaseHeading,
     BaseButton,
     BaseWidthWrapper,
+    PrintPage,
     ActivitiesList,
     ActivitiesItemResult,
     FileUpload,
@@ -74,19 +73,7 @@ export default {
       groupedActivities: this.getGroupedActivites(),
       setupTitle: this.getItemValue('setup', 'title'),
       setupRole: this.getItemValue('setup', 'role'),
-      setupCountry: this.getItemValue('setup', 'country'),
-      pdfPrintError: false,
-      electron: this.checkElectron()
-    }
-  },
-  methods: {
-    printPage: function () {
-      // Default browser printing
-      window.print()
-    },
-    exportPDF: function () {
-      // Electron printing - show error if electron PDF is false (ie could not open)
-      this.pdfPrintError = !this.printElectronPDF()
+      setupCountry: this.getItemValue('setup', 'country')
     }
   }
 }

@@ -4,7 +4,6 @@
  ☐ Btw vue-validate seems to change aria-invalid to true on elements
 
 # General To Does
- ☐ Debug electron windows version
 
 # Activity Input
 
@@ -43,6 +42,7 @@
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Debug electron windows version @done (18-08-15 15:12)
  ✔ Change buttons on home page to not use router @done (18-08-14 09:03)
  ✔ Add PDF export for electron using -> https://electronjs.org/docs/api/web-contents @done (18-08-13 16:56)
  ✔ Based on -> https://www.electron.build/icons @done (18-08-13 14:10)

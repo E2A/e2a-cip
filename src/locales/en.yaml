@@ -276,7 +276,7 @@ results:
   budget: "Budget:"
   youthCentric: "Youth Centric?:"
   allBestPractice: "Full best practice data:"
-  pdfPrintError: "There was an error with PDF printing, please ensure you have a PDF reader installed"
+  pdfPrintError: "There was an error with PDF printing."
   exportPDF: 'Export PDF'
   printPage: Print Page
 
