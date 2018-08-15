@@ -276,6 +276,9 @@ results:
   budget: "Budget:"
   youthCentric: "Youth Centric?:"
   allBestPractice: "Full best practice data:"
+  pdfPrintError: "There was an error with PDF printing, please ensure you have a PDF reader installed"
+  exportPDF: 'Export PDF'
+  printPage: Print Page
 
 # File Upload & Download
 fileUpload:
@@ -310,7 +313,6 @@ uniquenessError: The value entered in {field} is not unique amoung {entityType}
 edit: Edit
 yesRaw: "Yes"
 noRaw: "No"
-printPage: Print Page
 goBack: Go back
 bestPracticeOptions:
   yesText: '@:yesRaw'

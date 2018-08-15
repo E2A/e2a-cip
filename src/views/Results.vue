@@ -10,7 +10,13 @@
     <section :class="[space.paddingBottomWide, space.paddingHorizontalWide]">
       <ChartItems />
     </section>
-    <BaseButton @click="printPage" :label="$t('printPage')"></BaseButton>
+    <!-- Print & Export -->
+    <BaseButton v-if="electron" @click="exportPDF" :label="$t('results.exportPDF')"></BaseButton>
+    <BaseButton @click="printPage" :label="$t('results.printPage')"></BaseButton>
+
+    <p v-if="pdfPrintError">{{$t('results.pdfPrintError')}}</p>
+
+    <!-- Activity Table -->
     <p><strong>{{getItemCount('activities')}}</strong> {{$t('activities')}}</p>
     <section :class="[space.paddingWide, border.top]">
       <ActivitiesList ref="activityList">
@@ -68,19 +74,19 @@ export default {
       groupedActivities: this.getGroupedActivites(),
       setupTitle: this.getItemValue('setup', 'title'),
       setupRole: this.getItemValue('setup', 'role'),
-      setupCountry: this.getItemValue('setup', 'country')
+      setupCountry: this.getItemValue('setup', 'country'),
+      pdfPrintError: false,
+      electron: this.checkElectron()
     }
   },
   methods: {
     printPage: function () {
-      // Check if in electron, and use specific electron PDF creation code
-      if (this.checkElectron()) {
-        // Electron-specific PDF printing
-        this.printElectronPDF()
-      } else {
-        // Default browser printing
-        window.print()
-      }
+      // Default browser printing
+      window.print()
+    },
+    exportPDF: function () {
+      // Electron printing - show error if electron PDF is false (ie could not open)
+      this.pdfPrintError = !this.printElectronPDF()
     }
   }
 }
