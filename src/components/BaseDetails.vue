@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div :class="base.summary">
+  <details>
+    <summary :class="base.summary">
       <div :class="base.summaryContent">
         <div :class="base.item">
           <slot name="summaryLeft">Add summary here</slot>
@@ -9,11 +9,11 @@
           <slot name="summaryRight">Add summary here</slot>
         </div>
       </div>
-    </div>
+    </summary>
     <div>
       <slot>Add expanded details here</slot>
     </div>
-  </div>
+  </details>
 </template>
 
 <script>

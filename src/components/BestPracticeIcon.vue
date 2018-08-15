@@ -1,7 +1,7 @@
 <template>
   <div :class="base.wrapper">
     <a
-      :class="[base.iconLink, base[getSelectedAssessment().class]]"
+      :class="[base.iconLink]"
       :href="`#${flyoutID}`"
       @click.prevent="toggleFlyout"
     >
@@ -14,31 +14,34 @@
 
     <!-- flyout for best practice choices -->
     <template v-if="editable">
-      <aside
+      <BaseFlyout
         v-show="flyoutOpen"
         :class="base.flyout"
         :id="flyoutID"
+        :align="align"
       >
-        <p>{{name}}</p>
-        <div :class="base.dots">
-          <button v-for="(bestPracticeOption, index) of bestPracticeOptions"
-            :key="index"
-            @click="updateAssessment(name, bestPracticeOption.text)"
-            :class="[
-              base.dot,
-              base[bestPracticeOption.class],
-              {[base.selected]: bestPracticeOption.selected}
-            ]"
-          >
-            {{bestPracticeOption.text}}
-          </button>
+        <div :class="space.paddingXxnarrow">
+          <p>{{name}}</p>
+          <div :class="base.dots">
+            <button v-for="(option, index) of bestPracticeOptions"
+              :key="index"
+              @click="updateAssessment(name, option.text)"
+              :class="[
+                base.dot,
+                base[option.class],
+                // {[base.selected]: selectedAssessment.value === option.value}
+              ]"
+            >
+              {{option.text}}
+            </button>
+          </div>
         </div>
         <div :class="base.resourceLink">
           <router-link :to="{name: 'evidence-informed-practice', params: {id: id}}">
             Read more about this EIP &rsaquo;
           </router-link>
         </div>
-      </aside>
+      </BaseFlyout>
     </template>
   </div>
 </template>
@@ -46,77 +49,101 @@
 <script>
 import { bestPracticeData } from './mixins/bestPracticeData'
 import BaseHeading from './BaseHeading'
+import BaseFlyout from './BaseFlyout'
 
 export default {
   name: 'bestPracticeIcon',
   mixins: [bestPracticeData],
   props: {
-    icon: String,
-    name: String,
-    url: [String, Object],
-    id: [String, Number],
+    icon: {
+      type: String,
+      required: true
+    },
+    name: {
+      type: String,
+      required: true
+    },
+    id: {
+      type: [String, Number],
+      required: true
+    },
+    activityID: {
+      type: [String, Number],
+      required: true
+    },
+    // can you edit the status, e.g. yes, maybe, etc.?
+    // -> if so, we'll show the flyout on click
     editable: {
       type: Boolean,
       default: false
+    },
+    // align the flyout to center or right
+    align: {
+      type: String,
+      default: 'center'
     }
   },
   computed: {
+    // html id for flyout, for anchor to target
     flyoutID: function () {
-      return `${this.id}-flyout`
+      return `${this.activityID}-${this.id}-flyout`
+    },
+    flyoutOpen: function () {
+      const flyoutPresent = this.$store.getters['entities/bestpracticeicons/query']()
+        .where('activity_id', this.activityID)
+        .where('best_practice_id', this.id).first()
+
+      return flyoutPresent && flyoutPresent.flyout
     }
   },
   components: {
-    BaseHeading
+    BaseHeading,
+    BaseFlyout
   },
   data: function () {
     return {
-      flyoutOpen: false,
-      bestPracticeOptions: [
-        // Yes
-        {
+      bestPracticeOptions: {
+        yes: {
           class: 'yes',
-          selected: false,
           text: this.$t('bestPracticeOptions.yesText'),
           value: this.$t('bestPracticeOptions.yesKey')
         },
-        // Maybe
-        {
+        maybe: {
           class: 'maybe',
-          selected: false,
           text: this.$t('bestPracticeOptions.maybeText'),
           value: this.$t('bestPracticeOptions.maybeKey')
         },
-        // No
-        // -> selected by default
-        {
+        no: {
           class: 'no',
-          selected: true,
           text: this.$t('bestPracticeOptions.noText'),
           value: this.$t('bestPracticeOptions.noKey')
         }
-      ]
+      },
+      selectedAssessment: this.getSelectedAssessment(this.name)
     }
   },
   methods: {
-    getSelectedAssessment: function () {
-      // Find the best practice option that is selected
-      return this.bestPracticeOptions.find(bp => bp.selected === true)
-    },
-    setSelectedAssessment: function (bestPracticeValue) {
-      // unselect the previously selected assessment
-      this.getSelectedAssessment().selected = false
-      // select the new one
-      this.bestPracticeOptions.find(bp => bp.text === bestPracticeValue).selected = true
+    getSelectedAssessment: function (bestPracticeText) {
+      // Check if assessment is present, if so add 'assessment-selected' class to selection
+      const assessmentPresent = this.$store.getters['entities/activities/query']()
+        .with('assessments', (query) => {
+          query
+            .where('text', bestPracticeText)
+        }).find(this.activityID).assessments
+
+      if (assessmentPresent && assessmentPresent.length > 0) {
+        return assessmentPresent[0]
+      }
+      return false
     },
     updateAssessment: function (bestPracticeText, bestPracticeValue) {
-      console.log('updated')
       // Check if assessment for current activity is store
       const assessmentPresent = this.$store.getters['entities/activities/query']().with('assessments', (query) => {
         query.where('text', bestPracticeText)
       }).with('recommendations').find(this.id).assessments[0]
 
       // update selected assessment in local state
-      this.setSelectedAssessment(bestPracticeValue)
+      // this.setSelectedAssessment(bestPracticeValue)
 
       if (assessmentPresent) {
         // Update assessment value if it already exists
@@ -137,17 +164,34 @@ export default {
         }
       })
     },
-    toggleFlyout: function (event) {
-      this.flyoutOpen ? this.flyoutOpen = false : this.flyoutOpen = true
+    toggleFlyout: function () {
+      if (this.flyoutOpen) {
+        // Tell the store this flyout is closed
+        this.$store.dispatch('entities/bestpracticeicons/create', {
+          data: {
+            activity_id: this.activityID,
+            best_practice_id: this.id,
+            flyout: false
+          }
+        })
+      } else {
+        // Tell the store this flyout is open
+        this.$store.dispatch('entities/bestpracticeicons/create', {
+          data: {
+            activity_id: this.activityID,
+            best_practice_id: this.id,
+            flyout: true
+          }
+        })
+      }
     }
   }
 }
 </script>
 
-<style lang="scss" module="base">
-@import '~styleConfig/zindex';
-@import '~styleConfig/color';
+<style src="styles/spacing.scss" lang="scss" module="space"></style>
 
+<style lang="scss" module="base">
 $icon-size: 2.25rem;
 
 .wrapper {
@@ -164,23 +208,6 @@ $icon-size: 2.25rem;
   height: $icon-size;
 }
 
-.flyout {
-  $size: 12rem;
-  composes: lightBg from 'styles/color.scss';
-  composes: default round from 'styles/borders.scss';
-  box-shadow: 0 1px 0.3rem shadow('light');
-  display: block;
-  left: 50%;
-  margin-left: -($size / 2);
-  max-height: $size;
-  overflow-y: scroll;
-  position: absolute;
-  text-align: center;
-  top: $icon-size + 1rem;
-  width: $size;
-  z-index: z('high');
-}
-
 .dots {
   display: block;
 }
@@ -190,6 +217,11 @@ $icon-size: 2.25rem;
   width: 1rem;
   border-radius: 50%;
   display: inline-block;
+}
+
+.flyout {
+  composes: scaleEta from 'styles/type.scss';
+  top: ($icon-size + 1rem);
 }
 
 .yes {
@@ -213,6 +245,5 @@ $icon-size: 2.25rem;
 .resourceLink {
   composes: paddingXxnarrow from 'styles/spacing.scss';
   composes: top from 'styles/borders.scss';
-  composes: scaleEta from 'styles/type.scss';
 }
 </style>

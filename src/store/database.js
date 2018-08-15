@@ -7,6 +7,8 @@ import Assessment from '@/models/Assessment'
 import assessments from './modules/assessments'
 import Recommendation from '@/models/Recommendation'
 import recommendations from './modules/recommendations'
+import BestPracticeIcon from '@/models/BestPracticeIcon'
+import bestpracticeicons from './modules/bestpracticeicons'
 
 const database = new Database()
 
@@ -14,5 +16,6 @@ database.register(Activity, activities)
 database.register(Setup, setup)
 database.register(Assessment, assessments)
 database.register(Recommendation, recommendations)
+database.register(BestPracticeIcon, bestpracticeicons)
 
 export default database

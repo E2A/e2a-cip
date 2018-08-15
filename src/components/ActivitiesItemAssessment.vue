@@ -30,6 +30,8 @@
               :icon="bestPractice.icon"
               :name="bestPractice.title"
               :id="bestPractice.id"
+              :activityID="id"
+              :align="index > 5 ? 'right' : 'center'"
               editable
             />
           </li>
