@@ -13,13 +13,14 @@
 
 # Pages to do a design pass on
   ☐ Activity type info page
-  ☐ Summary
+  ✔ Summary @done (18-08-15 09:13)
   ☐ Analysis
   ☐ Results
   ☐ Advocacy Page
 
 # Components to build
  ☐ Icons
+   - This will take a little figuring out - not sure the best way to handle icon sprites in a render context like Vue. Avoiding icons/using placeholders in first prototype.
  ☐ Activity timeline nav
  ☐ Activity lists:
    ☐ Assessment

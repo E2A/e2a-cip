@@ -1,6 +1,6 @@
 <template>
-  <details>
-    <summary :class="base.summary">
+  <div>
+    <div :class="base.summary">
       <div :class="base.summaryContent">
         <div :class="base.item">
           <slot name="summaryLeft">Add summary here</slot>
@@ -9,11 +9,11 @@
           <slot name="summaryRight">Add summary here</slot>
         </div>
       </div>
-    </summary>
+    </div>
     <div>
       <slot>Add expanded details here</slot>
     </div>
-  </details>
+  </div>
 </template>
 
 <script>
@@ -36,6 +36,7 @@ export default {
     align-items: center;
   }
 
+  // replace with actual icon
   &::before {
     $size: 1rem;
     content: '[+]';

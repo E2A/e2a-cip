@@ -26,21 +26,23 @@
             v-for="(activities, index) in groupedActivities"
             :key="`gA-${index}`"
           >
-            <BaseHeading
-              :level="3"
-              scale="eta"
-              :centered="false"
-              :class="[space.paddingXxnarrow, color.light, type.uppercase, color.midtoneBg, border.top]"
-            >
-              {{activities.activityTypeName}}
-            </BaseHeading>
-            <ActivitiesItemAssessment
-              v-for="(activity, index) in activities.activityObjects"
-              :key="`activity-${index}`"
-              :activityInstance="activity"
-              :text="activity.text"
-              :id="activity.id"
-            />
+            <template v-if="activities.activityObjects.length > 0">
+              <BaseHeading
+                :level="3"
+                scale="eta"
+                :centered="false"
+                :class="[space.paddingXxnarrow, color.light, type.uppercase, color.midtoneBg, border.top]"
+              >
+                {{activities.activityTypeName}}
+              </BaseHeading>
+              <ActivitiesItemAssessment
+                v-for="(activity, index) in activities.activityObjects"
+                :key="`activity-${index}`"
+                :activityInstance="activity"
+                :text="activity.text"
+                :id="activity.id"
+              />
+            </template>
           </div>
         </ActivitiesList>
       </BaseWidthWrapper>

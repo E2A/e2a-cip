@@ -1,0 +1,13 @@
+// Global z-index values
+
+$z-indexes: (
+  'low': 0,
+  'middle': 1,
+  'high': 2
+);
+
+// getter function for z-index map
+// USAGE: z-index: z('low');
+@function z($name) {
+  @return map-get($z-indexes, $name);
+}

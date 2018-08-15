@@ -63,5 +63,5 @@ $colors: (
 
 // a shadow is darker, translucent shade of the bg color
 @function shadow($color) {
-  @return color($color, $grade: -30, $opacity: 40);
+  @return color($color, $grade: -30, $opacity: 0.4);
 }

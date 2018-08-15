@@ -29,6 +29,8 @@
             <BestPracticeIcon
               :icon="bestPractice.icon"
               :name="bestPractice.title"
+              :id="bestPractice.id"
+              editable
             />
           </li>
         </BaseGutterWrapper>

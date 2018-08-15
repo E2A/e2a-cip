@@ -1,32 +1,51 @@
 <template>
-  <div>
-    <img
-      :src="icon"
-      :class="base.icon"
-    />
+  <div :class="base.wrapper">
+    <a
+      :class="[base.iconLink, base[getSelectedAssessment().class]]"
+      :href="`#${flyoutID}`"
+      @click.prevent="toggleFlyout"
+    >
+      <img
+        :class="base.icon"
+        :src="icon"
+        :alt="name"
+      />
+    </a>
 
     <!-- flyout for best practice choices -->
-    <div :class="base.flyout">
-      <p>{{name}}</p>
-      <div :class="base.dots">
-        <button v-for="(bestPracticeOption, index) of bestPracticeOptions"
-          :key="index"
-          @click="addAssessment(name, bestPracticeOption.text)"
-          :class="[
-            base.dot,
-            base[bestPracticeOption.value],
-            {[base.selected]: bestPracticeOption.selected}
-          ]"
-        >
-          {{bestPracticeOption.text}}
-        </button>
-      </div>
-    </div>
+    <template v-if="editable">
+      <aside
+        v-show="flyoutOpen"
+        :class="base.flyout"
+        :id="flyoutID"
+      >
+        <p>{{name}}</p>
+        <div :class="base.dots">
+          <button v-for="(bestPracticeOption, index) of bestPracticeOptions"
+            :key="index"
+            @click="updateAssessment(name, bestPracticeOption.text)"
+            :class="[
+              base.dot,
+              base[bestPracticeOption.class],
+              {[base.selected]: bestPracticeOption.selected}
+            ]"
+          >
+            {{bestPracticeOption.text}}
+          </button>
+        </div>
+        <div :class="base.resourceLink">
+          <router-link :to="{name: 'evidence-informed-practice', params: {id: id}}">
+            Read more about this EIP &rsaquo;
+          </router-link>
+        </div>
+      </aside>
+    </template>
   </div>
 </template>
 
 <script>
 import { bestPracticeData } from './mixins/bestPracticeData'
+import BaseHeading from './BaseHeading'
 
 export default {
   name: 'bestPracticeIcon',
@@ -35,40 +54,69 @@ export default {
     icon: String,
     name: String,
     url: [String, Object],
-    flyout: {
+    id: [String, Number],
+    editable: {
       type: Boolean,
       default: false
     }
   },
+  computed: {
+    flyoutID: function () {
+      return `${this.id}-flyout`
+    }
+  },
+  components: {
+    BaseHeading
+  },
   data: function () {
     return {
+      flyoutOpen: false,
       bestPracticeOptions: [
+        // Yes
         {
-          value: this.$t('bestPracticeOptions.yesKey'),
+          class: 'yes',
+          selected: false,
           text: this.$t('bestPracticeOptions.yesText'),
-          selected: false
+          value: this.$t('bestPracticeOptions.yesKey')
         },
+        // Maybe
         {
-          value: this.$t('bestPracticeOptions.maybeKey'),
+          class: 'maybe',
+          selected: false,
           text: this.$t('bestPracticeOptions.maybeText'),
-          selected: false
+          value: this.$t('bestPracticeOptions.maybeKey')
         },
+        // No
+        // -> selected by default
         {
-          value: this.$t('bestPracticeOptions.noKey'),
+          class: 'no',
+          selected: true,
           text: this.$t('bestPracticeOptions.noText'),
-          selected: false
+          value: this.$t('bestPracticeOptions.noKey')
         }
       ]
     }
   },
   methods: {
-    addAssessment: function (bestPracticeText, bestPracticeValue) {
+    getSelectedAssessment: function () {
+      // Find the best practice option that is selected
+      return this.bestPracticeOptions.find(bp => bp.selected === true)
+    },
+    setSelectedAssessment: function (bestPracticeValue) {
+      // unselect the previously selected assessment
+      this.getSelectedAssessment().selected = false
+      // select the new one
+      this.bestPracticeOptions.find(bp => bp.text === bestPracticeValue).selected = true
+    },
+    updateAssessment: function (bestPracticeText, bestPracticeValue) {
+      console.log('updated')
       // Check if assessment for current activity is store
       const assessmentPresent = this.$store.getters['entities/activities/query']().with('assessments', (query) => {
         query.where('text', bestPracticeText)
-      }).with('recomemndations').find(this.id).assessments[0]
+      }).with('recommendations').find(this.id).assessments[0]
 
-      this.bestPracticeOptions.find(bp => bp.text === bestPracticeText).selected = true
+      // update selected assessment in local state
+      this.setSelectedAssessment(bestPracticeValue)
 
       if (assessmentPresent) {
         // Update assessment value if it already exists
@@ -89,41 +137,48 @@ export default {
         }
       })
     },
-    getSelectedAssessment: function (bestPracticeText, bestPracticeValue) {
-      // Check if assessment is present, if so add 'selected' class to selection
-
-      return this.$store.getters['entities/activities/query']()
-        .with('assessments', (query) => {
-          query
-            .where('text', bestPracticeText)
-            .where('value', bestPracticeValue)
-        }).find(this.id).assessments !== null
-
-      // const assessmentPresent = this.$store.getters['entities/activities/query']()
-      //   .with('assessments', (query) => {
-      //     query
-      //       .where('text', bestPracticeText)
-      //       .where('value', bestPracticeValue)
-      //   }).find(this.id).assessments
-
-      // if (assessmentPresent && assessmentPresent.length > 0) {
-      //   return 'selected'
-      // } else {
-      //   return null
-      // }
+    toggleFlyout: function (event) {
+      this.flyoutOpen ? this.flyoutOpen = false : this.flyoutOpen = true
     }
   }
 }
 </script>
 
 <style lang="scss" module="base">
-.icon {
+@import '~styleConfig/zindex';
+@import '~styleConfig/color';
+
+$icon-size: 2.25rem;
+
+.wrapper {
+  display: block;
+  position: relative;
+}
+
+.iconLink {
   border-radius: 50%;
-  max-width: 2.25rem;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.25rem;
+  width: $icon-size;
+  height: $icon-size;
 }
 
 .flyout {
-  display: none;
+  $size: 12rem;
+  composes: lightBg from 'styles/color.scss';
+  composes: default round from 'styles/borders.scss';
+  box-shadow: 0 1px 0.3rem shadow('light');
+  display: block;
+  left: 50%;
+  margin-left: -($size / 2);
+  max-height: $size;
+  overflow-y: scroll;
+  position: absolute;
+  text-align: center;
+  top: $icon-size + 1rem;
+  width: $size;
+  z-index: z('high');
 }
 
 .dots {
@@ -153,5 +208,11 @@ export default {
   padding: 20px;
   border-width: 6px;
   border-color: red;
+}
+
+.resourceLink {
+  composes: paddingXxnarrow from 'styles/spacing.scss';
+  composes: top from 'styles/borders.scss';
+  composes: scaleEta from 'styles/type.scss';
 }
 </style>
