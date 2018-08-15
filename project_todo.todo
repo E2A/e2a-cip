@@ -4,8 +4,7 @@
  ☐ Btw vue-validate seems to change aria-invalid to true on elements
 
 # General To Does
- ☐ Add electron / package.json author / description / icon etc...
- ☐ Add PDF export for electron using -> https://electronjs.org/docs/api/web-contents
+ ☐ Change buttons on home page to not use router
 
 # Activity Input
 
@@ -39,13 +38,17 @@
  ☐ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling.
 
 # Copy Writing
-  ☐ Go through app and update any text strings to use i18n formats @scott
-    - Info: http://kazupon.github.io/vue-i18n/guide/started.html#html
 
 # Nice to have
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Add PDF export for electron using -> https://electronjs.org/docs/api/web-contents @done (18-08-13 16:56)
+ ✔ Based on -> https://www.electron.build/icons @done (18-08-13 14:10)
+ ✔ Add electron icon @jay @done (18-08-13 14:10)
+ ✔ Add electron / package.json author / description / icon etc... @done (18-08-13 13:02)
+ ✔ Info: http://kazupon.github.io/vue-i18n/guide/started.html#html @done (18-08-13 12:53)
+ ✔ Go through app and update any text strings to use i18n formats @scott @done (18-08-13 12:53)
  ✔ Update ERD to not show Activity -> improvement many to many relationships @done (18-08-13 11:18)
  ✔ Setup refresh on import of data on setup @done (18-08-12 11:47)
  ✔ Look into browswer compatibility for old browsers (ES6 fails in IE11)  ? https://github.com/paulmillr/es6-shim @done (18-08-12 11:43)

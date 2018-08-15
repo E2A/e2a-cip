@@ -1,6 +1,9 @@
 {
-  "name": "karaw",
+  "name": "E2A-Analysis",
+  "description": "A tool to analyze CIP and other AYSHR resources. Developed by Bivee Inc for Pathfinder & E2A.",
+  "author": "Bivee Inc <getstarted@bivee.co> (http://bivee.co)",
   "version": "0.1.0",
+  "license": "SEE LICENSE IN LICENSE and CONTENT_LICENSE.MD",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

@@ -52,7 +52,7 @@ export const dataIO = {
       const entityData = JSON.stringify(item)
       const parsedData = Papa.unparse(entityData)
       var csvExport = new Blob([parsedData], {type: 'text/csv;charset=utf-8'})
-      saveAs(csvExport, this.$t('fileUpload.jsonFileName', {timestamp: timestamp, exportName: exportName}))
+      saveAs(csvExport, this.$t('fileUpload.csvFileName', {timestamp: timestamp, exportName: exportName}))
     }
   }
 }

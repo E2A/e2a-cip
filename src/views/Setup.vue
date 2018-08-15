@@ -3,7 +3,7 @@
     <BaseSectionWrapper>
       <BaseWidthWrapper>
         <BaseHeading :class="space.paddingBottomWide">{{$t('setup.configureCIP')}}</BaseHeading>
-        <SetupInput :key="this.getItemCount('all')"/>
+        <SetupInput :key="inputKey"/>
         <div :class="[type.center, space.paddingTopWide]">
           <BaseBodyText
             v-if="!this.setupPresent()"
@@ -16,12 +16,12 @@
             :to="{name: 'activity', params: {activityId: 1}}"
             size="large"
             role="primary"
-            :label="$t('setup.addActivities')"
+            :label="activityText"
           />
         </div>
       </BaseWidthWrapper>
     </BaseSectionWrapper>
-    <BaseSectionWrapper :key="this.getItemCount('all')" border :class="type.center">
+    <BaseSectionWrapper border :class="type.center">
       <BaseHeading
         :level="2"
         scale="gamma"
@@ -29,7 +29,7 @@
       >
         {{$t('setup.restoreActivities')}}
       </BaseHeading>
-      <FileUpload :exportType="['Import']" @import-success="setupRefresh"/>
+      <FileUpload :exportType="['Import']" @import-success="updateInput"/>
     </BaseSectionWrapper>
   </div>
 </template>
@@ -56,24 +56,26 @@ export default {
     BaseButtonLink,
     FileUpload
   },
+  data () {
+    return {
+      inputKey: null
+    }
+  },
   computed: {
     readyToAdd: function () {
-      return this.getItemCount('assessments') === 0 && this.setupPresent()
+      return this.setupPresent()
+    },
+    activityText: function () {
+      if (this.getItemCount('activities') === 0) {
+        return this.$t('setup.addActivities')
+      } else {
+        return this.$t('setup.editActivities')
+      }
     }
   },
   methods: {
-    setupPresent: function () {
-      const setup = this.getItemValue('setup')
-
-      // if setup entitly exists, ensure all fields are present
-      if (setup) {
-        return (setup.title && setup.country && setup.role && setup.currencyCode && setup.currencyName)
-      } else {
-        return false
-      }
-    },
-    setupRefresh: function () {
-      console.log('refresh')
+    updateInput: function () {
+      this.inputKey = this.getItemCount('all')
     }
   }
 }

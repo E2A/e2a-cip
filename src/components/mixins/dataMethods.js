@@ -37,6 +37,21 @@ export const dataMethods = {
     getLastItem: function () {
       const lastActivity = this.$store.getters['entities/activities/query']().last()
       return lastActivity ? lastActivity.id : 0
+    },
+    setupPresent: function () {
+      const setup = this.getItemValue('setup')
+
+      // if setup entitly exists, ensure all fields are present
+      if (setup) {
+        return (setup.title && setup.country && setup.role && setup.currencyCode && setup.currencyName)
+      } else {
+        return false
+      }
+    },
+    checkElectron: function () {
+      // Check if electron is being used
+      var userAgent = navigator.userAgent.toLowerCase()
+      return userAgent.indexOf(' electron/') > -1
     }
   }
 }
