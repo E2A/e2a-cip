@@ -4,42 +4,66 @@
     :leftButtons="navButtons.left"
     :rightButtons="navButtons.right"
   >
-    <FileUpload :exportType="['Export']" />
-    <ClearItems :clearType="['Recommendations']" />
-    <header :class="[type.center, space.paddingWide]">
-      <BaseHeading :class="space.paddingBottomNarrow">{{getItemValue('setup','title')}}</BaseHeading>
-      <BaseGutterWrapper
-        gutterX="medium"
-        gutterY="xnarrow"
-      >
+    <BaseSectionWrapper el="div">
+      <header :class="[type.center, space.paddingTop]">
+        <BaseHeading :class="space.paddingBottomNarrow">{{getItemValue('setup','title')}}</BaseHeading>
+        <BaseGutterWrapper
+          gutterX="medium"
+          gutterY="xnarrow"
+        >
+          <BaseHeading
+            scale="zeta"
+            :class="base.byline"
+            sub
+          >
+            {{setupRole}}
+          </BaseHeading>
+          <BaseHeading
+            scale="zeta"
+            :class="base.byline"
+            sub
+          >
+            {{setupCountry}}
+          </BaseHeading>
+        </BaseGutterWrapper>
+      </header>
+
+      <!-- charts -->
+      <section>
         <BaseHeading
-          scale="zeta"
-          :class="base.byline"
+          :class="space.paddingVerticalWide"
+          scale="gamma"
           sub
         >
-          {{setupRole}}
+          {{$t('resultsSubhead')}}
         </BaseHeading>
+        <ChartItems />
+      </section>
+    </BaseSectionWrapper>
+
+    <!-- Activities list -->
+    <BaseSectionWrapper border>
+
+      <!-- Count & export tools -->
+      <header :class="base.toolTray">
         <BaseHeading
-          scale="zeta"
-          :class="base.byline"
-          sub
+          :centered="false"
+          :level="2"
+          scale="delta"
         >
-          {{setupCountry}}
+          <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
         </BaseHeading>
-      </BaseGutterWrapper>
-    </header>
-    <section :class="[space.paddingBottomWide, space.paddingHorizontalWide]">
-      <BaseHeading
-        :level="3"
-        :class="space.paddingBottomWide"
-        sub
-      >
-        {{$t('resultsSubhead')}}
-      </BaseHeading>
-      <ChartItems />
-    </section>
-    <p><strong>{{getItemCount('activities')}}</strong> {{$t('activities')}}</p>
-    <section :class="[space.paddingWide, border.top]">
+        <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
+          <div :class="base.toolTrayItem">
+            <FileUpload :exportType="['Export']" />
+          </div>
+          <div :class="base.toolTrayItem">
+            <ClearItems :clearType="['Recommendations']" />
+          </div>
+        </BaseGutterWrapper>
+      </header>
+
+      <!-- Table -->
       <ActivitiesList ref="activityList">
         <div
           v-for="(activities, index) in groupedActivities"
@@ -47,8 +71,10 @@
         >
           <template v-if="activities.activityObjects.length > 0">
             <BaseHeading
-              :level="2"
-              align="center"
+              :level="3"
+              scale="eta"
+              :centered="false"
+              :class="[space.paddingXxnarrow, color.light, type.uppercase, color.midtoneBg, border.top]"
             >
               {{activities.activityTypeName}}
             </BaseHeading>
@@ -60,7 +86,7 @@
           </template>
         </div>
       </ActivitiesList>
-    </section>
+    </BaseSectionWrapper>
   </NavFooter>
 </template>
 
@@ -68,6 +94,7 @@
 // @ is an alias to /src
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseButton from '@/components/BaseButton.vue'
+import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
@@ -86,6 +113,7 @@ export default {
   components: {
     BaseHeading,
     BaseButton,
+    BaseSectionWrapper,
     BaseWidthWrapper,
     BaseGutterWrapper,
     ActivitiesList,
@@ -159,5 +187,20 @@ export default {
       @include border('left');
     }
   }
+}
+
+.toolTray {
+  composes: paddingBottomWide from 'styles/spacing.scss';
+  display: block;
+
+  @supports (display: flex) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.toolTrayItem {
+  display: inline-block;
 }
 </style>

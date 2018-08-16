@@ -3,7 +3,7 @@
     el="dl"
     gutterX="narrow"
     gutterY="narrow"
-    :class="wrapper"
+    :class="base.wrapper"
   >
     <div
       v-for="(value, key, index) in data"

@@ -215,9 +215,10 @@ chartTitles:
   notYouthCentricLabel: "Not Youth Centric"
 
 resultsSubhead: "Here's how your activities rate lorem ipsum:"
-addRecommendation: Add Recommendation
-addAnotherRecommendation: Add Another Recommendation
-suggestedImprovements: Suggested Improvements
+addRecommendation: Add recommendation
+addAnotherRecommendation: Add another recommendation
+suggestedImprovements: Suggested improvements
+suggestImprovements: Suggest improvements
 
 results:
   value: "Value:"
@@ -284,3 +285,4 @@ clearItems:
   All: All
 delete: delete
 activities: activities
+activity: activity

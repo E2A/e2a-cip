@@ -12,14 +12,17 @@
           :level="6"
           :centered="false"
           sub
-        >{{text}}</BaseHeading>
+        >
+          {{text}}
+        </BaseHeading>
       </template>
       <template slot="summaryRight">
         <!-- list of best practice icons -->
         <BaseGutterWrapper
+          :class="base.icons"
+          el="ul"
           gutterX="xnarrow"
           gutterY="xnarrow"
-          :class="base.icons"
         >
           <li
             v-for="(bestPractice, index) of bestPractices"
