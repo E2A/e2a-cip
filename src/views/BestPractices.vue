@@ -17,11 +17,16 @@
             slot-scope="{ item }"
           >
             <div :class="base.iconWrapper">
-              <img
-                :class="base.icon"
-                :src="item.icon"
-                :alt="item.title"
-              />
+              <router-link :to="{
+                name: 'evidence-informed-practice',
+                params: {id: item.id}
+              }">
+                <img
+                  :class="base.icon"
+                  :src="item.icon"
+                  :alt="item.title"
+                />
+              </router-link>
             </div>
             <div :class="base.summary">
               <BaseHeading
@@ -30,14 +35,22 @@
                 :class="space.paddingBottomXnarrow"
                 :centered="false"
               >
-                {{ item.title }}
+                <router-link :to="{
+                  name: 'evidence-informed-practice',
+                  params: {id: item.id}
+                }">
+                  {{ item.title }}
+                </router-link>
               </BaseHeading>
               <BaseBodyText
                 :content="item.teaser"
                 size="zeta"
               />
               <BaseButtonLink
-                :to="`/evidence-informed-practice/${item.id}`"
+                :to="{
+                  name: 'evidence-informed-practice',
+                  params: {id: item.id}
+                }"
                 :label="$t('readMore')"
                 size="small"
                 :class="space.marginTopNarrow"

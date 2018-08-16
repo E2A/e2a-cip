@@ -29,7 +29,7 @@ export default {
     label: String,
     to: [Object, String],
     router: {
-      type: [Boolean],
+      type: Boolean,
       default: true
     }
   }
