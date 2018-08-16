@@ -10,7 +10,11 @@
     <section :class="[space.paddingBottomWide, space.paddingHorizontalWide]">
       <ChartItems />
     </section>
-    <BaseButton @click="printPage" :label="$t('printPage')"></BaseButton>
+
+    <!-- Print & Export -->
+    <PrintPage />
+
+    <!-- Activity Table -->
     <p><strong>{{getItemCount('activities')}}</strong> {{$t('activities')}}</p>
     <section :class="[space.paddingWide, border.top]">
       <ActivitiesList ref="activityList">
@@ -46,17 +50,18 @@ import ActivitiesItemResult from '@/components/ActivitiesItemResult.vue'
 import FileUpload from '@/components/FileUpload.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import ChartItems from '@/components/ChartItems.vue'
+import PrintPage from '@/components/PrintPage.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { dataMethods } from '@/components/mixins/dataMethods'
-import { electronPDF } from '@/components/mixins/electronPDF'
 
 export default {
   name: 'Results',
-  mixins: [activityTypes, dataMethods, electronPDF],
+  mixins: [activityTypes, dataMethods],
   components: {
     BaseHeading,
     BaseButton,
     BaseWidthWrapper,
+    PrintPage,
     ActivitiesList,
     ActivitiesItemResult,
     FileUpload,
@@ -69,18 +74,6 @@ export default {
       setupTitle: this.getItemValue('setup', 'title'),
       setupRole: this.getItemValue('setup', 'role'),
       setupCountry: this.getItemValue('setup', 'country')
-    }
-  },
-  methods: {
-    printPage: function () {
-      // Check if in electron, and use specific electron PDF creation code
-      if (this.checkElectron()) {
-        // Electron-specific PDF printing
-        this.printElectronPDF()
-      } else {
-        // Default browser printing
-        window.print()
-      }
     }
   }
 }

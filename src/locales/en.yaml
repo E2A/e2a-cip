@@ -22,15 +22,16 @@ home:
   downloadTitle: Download offline versions
   downloadBlurb: |-
         If you are having issues with your browser, want to access the application offline, or you just want to use the application on your desktop without using a browser, you can download any of the following versions for your needs.
-        *Note*: The application will still work in the browser even if internet disconnects.
+        *Note*: The application will still work in the browser even if internet disconnects. A portable option with no installation necessary (ie a single .exe) version of the app is available for windows but is a higer file size.
         ### Installation Instructions:
-        - For **Macintosh** use the DMG to install the application.
+        - For **Macintosh** unzip the file and use the DMG to install the application.
         - For **Windows** unzip the folder and run the .exe file in the folder.
-
-        The downloadable files are *55MB*
-  downloadMac: Macintosh
-  downloadWindows: Windows
-
+  downloadMac: Macintosh (51MB)
+  downloadMacUrl: https://github.com/biveeco/e2a-electron-builds/raw/master/mac-installer.zip
+  downloadWindows: Windows (45MB)
+  downloadWindowsUrl: https://github.com/biveeco/e2a-electron-builds/raw/master/windows-installer.zip
+  downloadWindowsPortable: Windows Portable (67MB)
+  downloadWindowsPortableUrl: https://github.com/biveeco/e2a-electron-builds/raw/master/windows-installer-portable.zip
 
 # Setup
 setup:
@@ -71,6 +72,7 @@ deleteActivity: Delete
 activityTypeLink: Learn more
 activityTypeTitle: Learn more about activity types
 backToActivities: Back to Activity Input
+downloadResource: Download Resource
 activityTypeIntro: |-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Age, inquies, ista parva sunt. Praeteritis, inquit, gaudeo. Plane idem, inquit, et maxima quidem, qua fieri nulla maior potest. Quis hoc dicit? D
 activityTypes:
@@ -110,6 +112,12 @@ bestPractices:
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /assets/resources/bestpractice1.png
   bestPractice2:
     title: "Expanding the range of contraceptive methods available to adolescents and young people (including LARCs and DMPA-SC)"
     icon: http://placehold.it/600x600
@@ -121,6 +129,12 @@ bestPractices:
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /assets/resources/bestpractice1.png
   bestPractice3:
     title: "Inclusion of vulnerable and underserved youth groups (including married adolescent girls ad
 FTPs)"
@@ -133,6 +147,12 @@ FTPs)"
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /assets/resources/bestpractice1.png
   bestPractice4:
     title: "Youth participation and leadership in AYSRH programs"
     icon: http://placehold.it/600x600
@@ -144,6 +164,12 @@ FTPs)"
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /assets/resources/bestpractice1.png
   bestPractice5:
     title: "Multi-sectoral coordination for AYSRH"
     icon: http://placehold.it/600x600
@@ -155,6 +181,12 @@ FTPs)"
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /assets/resources/bestpractice1.png
   bestPractice6:
     title: "Comprehensive sexuality education"
     icon: http://placehold.it/600x600
@@ -166,6 +198,12 @@ FTPs)"
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /assets/resources/bestpractice1.png
   bestPractice7:
     title: "Support to families and communities for AYSRH"
     icon: http://placehold.it/600x600
@@ -177,6 +215,12 @@ FTPs)"
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /assets/resources/bestpractice1.png
   bestPractice8:
     title: "Girls' empowerment"
     icon: http://placehold.it/600x600
@@ -188,6 +232,17 @@ FTPs)"
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /assets/resources/bestpractice1.png
+      - resource:
+          title: Resource Title 2
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /assets/resources/bestpractice2.png
 
 # Summary page
 summary:
@@ -221,6 +276,9 @@ results:
   budget: "Budget:"
   youthCentric: "Youth Centric?:"
   allBestPractice: "Full best practice data:"
+  pdfPrintError: "There was an error with PDF printing."
+  exportPDF: 'Export PDF'
+  printPage: Print Page
 
 # File Upload & Download
 fileUpload:
@@ -255,7 +313,6 @@ uniquenessError: The value entered in {field} is not unique amoung {entityType}
 edit: Edit
 yesRaw: "Yes"
 noRaw: "No"
-printPage: Print Page
 goBack: Go back
 bestPracticeOptions:
   yesText: '@:yesRaw'

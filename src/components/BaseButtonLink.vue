@@ -6,9 +6,17 @@
   <router-link
     :to="to"
     :class="[button.default, sizeClass, roleClass]"
+    v-if="router"
   >
     {{label}}
   </router-link>
+  <a
+    :href="to"
+    :class="[button.default, sizeClass, roleClass]"
+    v-else
+  >
+    {{label}}
+  </a>
 </template>
 
 <script>
@@ -19,7 +27,11 @@ export default {
   mixins: [buttonStyles],
   props: {
     label: String,
-    to: [Object, String]
+    to: [Object, String],
+    router: {
+      type: [Boolean],
+      default: true
+    }
   }
 }
 </script>

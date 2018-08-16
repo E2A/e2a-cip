@@ -29,18 +29,28 @@
         />
 
         <BaseButtonLink
-          to="/electron/mac-installer.dmg"
-          size="large"
+          :to="$t('home.downloadMacUrl')"
+          size="small"
           role="primary"
           :label="$t('home.downloadMac')"
           :class="space.marginBottom"
+          :router="false"
         />
         <BaseButtonLink
-          to="/electron/win-installer.dmg"
-          size="large"
+          :to="$t('home.downloadWindowsUrl')"
+          size="small"
           role="primary"
           :label="$t('home.downloadWindows')"
           :class="space.marginBottom"
+          :router="false"
+        />
+        <BaseButtonLink
+          :to="$t('home.downloadWindowsPortableUrl')"
+          size="small"
+          role="primary"
+          :label="$t('home.downloadWindowsPortable')"
+          :class="space.marginBottom"
+          :router="false"
         />
       </BaseWidthWrapper>
     </BaseSectionWrapper>

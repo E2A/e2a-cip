@@ -69,4 +69,5 @@ app.on('ready', async () => {
     await installVueDevtools()
   }
   mainWindow = createMainWindow()
+  mainWindow.webContents.openDevTools({mode: 'detach'})
 })

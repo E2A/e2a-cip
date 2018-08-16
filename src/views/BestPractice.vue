@@ -23,6 +23,24 @@
         <BaseBodyText :content="bestPractices[id - 1].body" />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
+
+    <!-- Resources -->
+    <BaseSectionWrapper :class="space.paddingTopNarrow">
+        <BaseWidthWrapper v-for="(item,index) of resources" :key="`res-${index}`">
+          <header :class="space.paddingVerticalWide">
+            <BaseHeading>{{ item.resource.title }}</BaseHeading>
+          </header>
+          <BaseBodyText :content="item.resource.teaser" />
+          <BaseButtonLink
+            :to="item.resource.url"
+            size="small"
+            role="primary"
+            :label="$t('downloadResource')"
+            :class="space.marginBottom"
+            :router="false"
+          />
+        </BaseWidthWrapper>
+    </BaseSectionWrapper>
   </article>
 </template>
 
@@ -30,6 +48,7 @@
 import { bestPracticeData } from '@/components/mixins/bestPracticeData.js'
 import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
+import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import BaseBodyText from '@/components/BaseBodyText.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
@@ -40,12 +59,21 @@ export default {
   components: {
     BasePageIntro,
     BaseHeading,
+    BaseButtonLink,
     BaseBodyText,
     BaseSectionWrapper,
     BaseWidthWrapper
   },
   props: {
     id: String
+  },
+  computed: {
+    resources: function () {
+      return this.bestPractices[this.id - 1].resources
+    }
+  },
+  created () {
+    console.log(this.bestPractices[this.id - 1].resources[0].resource.title)
   }
 }
 </script>
