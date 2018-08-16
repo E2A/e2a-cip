@@ -28,9 +28,9 @@
    ☐ Results
  ✔ Best practice page component @done (18-08-15 21:41)
  ☐ Suggestion component
- ☐ Resource item
+ ✔ Resource item @done (18-08-16 13:55)
  ☐ Charts
- ☐ Card grid for best practice/type resources
+ ✔ Card grid for best practice/type resources @done (18-08-16 13:55)
  ☐ Swap markdown parser for one that supports footnotes, maybe https://github.com/miaolz123/vue-markdown
 
 # Styling
