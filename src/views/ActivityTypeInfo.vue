@@ -1,11 +1,9 @@
 <template>
-  <article style="padding-bottom: 5rem;">
-     <router-link
-      :to="{name: 'activity', params: { activityId: backToActivityId }}"
-      :class="base.back"
-    >
-      &lsaquo; {{$t('backToActivities')}}
-    </router-link>
+  <article>
+    <NavBackLink
+      :url="{name: 'activity', params: { activityId: backToActivityId }}"
+      :label="$t('backToActivities')"
+    />
     <BasePageIntro
       :title="$t('activityTypeTitle')"
       :blurb="$t('activityTypeIntro')"
@@ -42,6 +40,7 @@
 <script>
 import { activityTypes } from '@/components/mixins/activityTypes.js'
 import { dataMethods } from '@/components/mixins/dataMethods.js'
+import NavBackLink from '@/components/NavBackLink.vue'
 import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseBodyText from '@/components/BaseBodyText.vue'
@@ -54,6 +53,7 @@ export default {
   name: 'ActivityTypeInfo',
   mixins: [ activityTypes, dataMethods ],
   components: {
+    NavBackLink,
     BasePageIntro,
     BaseHeading,
     BaseBodyText,

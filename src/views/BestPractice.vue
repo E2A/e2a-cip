@@ -1,16 +1,10 @@
 <template>
   <article>
+    <NavBackLink
+      :url="{name: 'evidence-informed-practices'}"
+      :label="$t('backToBestPractices')"
+    />
     <BaseSectionWrapper :class="space.paddingTopNarrow">
-      <!-- back link -->
-      <div :class="[space.paddingBottomNarrow, border.bottom]">
-        <router-link
-          :to="{name: 'evidence-informed-practices'}"
-          :class="base.back"
-        >
-          &lsaquo; {{$t('backToBestPractices')}}
-        </router-link>
-      </div>
-
       <!-- title -->
       <header :class="space.paddingVerticalWide">
         <BaseHeading
@@ -46,6 +40,7 @@
 
 <script>
 import { bestPracticeData } from '@/components/mixins/bestPracticeData.js'
+import NavBackLink from '@/components/NavBackLink.vue'
 import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
@@ -58,6 +53,7 @@ export default {
   name: 'BestPractice',
   mixins: [bestPracticeData],
   components: {
+    NavBackLink,
     BasePageIntro,
     BaseHeading,
     BaseButtonLink,
@@ -113,16 +109,6 @@ export default {
 <style src="styles/borders.scss" lang="scss" module="border"></style>
 
 <style lang="scss" module="base">
-.back {
-  composes: midtone from 'styles/color.scss';
-  text-decoration: none;
-
-  &:hover,
-  &:active {
-    text-decoration: underline;
-  }
-}
-
 .resourceCard {
   composes: default round from 'styles/borders.scss';
   composes: lightBg from 'styles/color.scss';
