@@ -11,7 +11,8 @@
   cursor: pointer;
   display: inline-block;
   font-size: scale-type('zeta');
-  padding: 0.6em 1.6em;
+  line-height: 1;
+  padding: 0.8em 1.6em;
   text-decoration: none;
 }
 
@@ -22,7 +23,7 @@
 
 .small {
   font-size: scale-type('eta');
-  padding: 0.4em 1.2em;
+  padding: 0.6em 1.2em;
 }
 
 .primary {

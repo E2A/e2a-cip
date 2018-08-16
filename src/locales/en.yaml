@@ -225,6 +225,8 @@ results:
   budget: "Budget:"
   youthCentric: "Youth Centric?:"
   allBestPractice: "Full best practice data:"
+  previousStep: Go back to analysis
+  nextStep: Advocate
 
 # File Upload & Download
 fileUpload:

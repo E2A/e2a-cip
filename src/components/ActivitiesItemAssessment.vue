@@ -39,10 +39,10 @@
       </template>
       <template>
         <div :class="base.expandedWrapper">
-          <div :class="base.data">
-            <BaseDataGrid :data="expandedData" />
-          </div>
-
+          <BaseDataGrid
+            :data="expandedData"
+            :class="base.data"
+          />
           <BaseGutterWrapper
             gutterX="narrow"
             gutterY="narrow"
