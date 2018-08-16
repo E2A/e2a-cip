@@ -376,6 +376,25 @@ results:
   previousStep: Go back to analysis
   nextStep: Advocate
 
+advocate:
+  title: Go forth and share lorem ipsum dolor sit!
+  intro: |-
+    CTA blurb ipsum dolor sit amet, consectetur adipiscing elit. Hoc ille tuus non vult omnibusque ex rebus voluptatem quasi mercedem exigit. Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Iam doloris medicamenta illa Epicurea tamquam de narthecio proment: Si gravis, brevis; Ne in odium veniam, si amicum destitero tueri. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Vadem te ad mortem tyranno dabis pro amico, ut Pythagoreus ille Siculo fecit tyranno?
+  stepsTitle: Ways to advocate
+  steps:
+    step1:
+      title: Share with your MO
+      blurb: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui igitur convenit ab alia voluptate dicere naturam proficisci, in alia summum bonum ponere? Sin aliud quid voles, postea. Igitur neque stultorum quisquam beatus neque sapientium non beatus. Ille enim occurrentia nescio quae comminiscebatur; Quid de Platone aut de Democrito loquar? Duo Reges: constructio interrete.
+    step2:
+      title: Lorem ipsum dolor sit amet consectetur
+      blurb: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui igitur convenit ab alia voluptate dicere naturam proficisci, in alia summum bonum ponere? Sin aliud quid voles, postea. Igitur neque stultorum quisquam beatus neque sapientium non beatus. Ille enim occurrentia nescio quae comminiscebatur; Quid de Platone aut de Democrito loquar? Duo Reges: constructio interrete.
+    step3:
+      title: Igitur neque stultorum quisquam beatus
+      blurb: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui igitur convenit ab alia voluptate dicere naturam proficisci, in alia summum bonum ponere? Sin aliud quid voles, postea. Igitur neque stultorum quisquam beatus neque sapientium non beatus. Ille enim occurrentia nescio quae comminiscebatur; Quid de Platone aut de Democrito loquar? Duo Reges: constructio interrete.
+
 # File Upload & Download
 fileUpload:
   selectFormat: Select an export format

@@ -8,17 +8,7 @@
     <BaseSectionWrapper>
       <BaseHeading :level="2" centered>{{$t('home.stepsTitle')}}</BaseHeading>
       <BaseWidthWrapper width="wide" :class="space.paddingTop">
-        <BaseGutterWrapper el="ol" :class="base.stepWrapper">
-          <li v-for="(step, index) in steps" :key="index">
-            <div :class="base.step">
-              <BaseHeading :level="3" :centered="false">{{step.title}}</BaseHeading>
-              <BaseBodyText
-                size="zeta"
-                :content="step.blurb"
-              />
-            </div>
-          </li>
-        </BaseGutterWrapper>
+        <BaseStepList :steps="steps" />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
     <BaseSectionWrapper
@@ -99,6 +89,7 @@ import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseBodyText from '@/components/BaseBodyText.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
+import BaseStepList from '@/components/BaseStepList.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import { dataMethods } from '@/components/mixins/dataMethods'
@@ -113,6 +104,7 @@ export default {
     BaseHeading,
     BaseBodyText,
     BaseGutterWrapper,
+    BaseStepList,
     BaseButtonLink,
     ClearItems
   },
