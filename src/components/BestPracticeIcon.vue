@@ -33,7 +33,7 @@
             :class="[
               base.dot,
               base[option.class],
-              {[base.selected]: selectedAssessment.value === option.value}
+              {[base.selected]: selectedAssessment.value.toLowerCase() === option.value}
             ]"
           >
             {{option.text}}
@@ -99,10 +99,12 @@ export default {
       return flyoutPresent && flyoutPresent.flyout
     },
     selectedAssessment: function () {
-      return this.getSelectedAssessment(this.title)
+      return this.getSelectedAssessment(this.title) || this.bestPracticeOptions.no
     },
     selectedAssessmentClass: function () {
-      const option = this.getSelectedAssessment(this.title) ? this.getSelectedAssessment(this.title).value.toLowerCase() : this.bestPracticeOptions.no.class
+      const option = this.getSelectedAssessment(this.title)
+        ? this.getSelectedAssessment(this.title).value.toLowerCase()
+        : this.bestPracticeOptions.no.class
       return this.bestPracticeOptions[option].class
     }
   },
