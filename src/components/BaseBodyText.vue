@@ -37,12 +37,12 @@ export default {
 $gutter: 0.8em; // eta on scale
 
 .content {
-  > * + * {
-    margin-top: $gutter;
+  p {
+    margin-bottom: 0;
   }
 
-  p {
-    margin: 0;
+  > * + * {
+    margin-top: $gutter;
   }
 
   li + li {
@@ -65,6 +65,9 @@ $gutter: 0.8em; // eta on scale
       font-size: scale-type('zeta');
       color: color('midtone');
     }
+
+    // superscript footnote links
+    // .footnote-ref {}
   }
 }
 </style>

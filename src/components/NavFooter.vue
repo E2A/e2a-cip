@@ -24,7 +24,7 @@
             :key="`navFooter-${group}-${index}`"
           >
             <BaseButtonLink
-              v-if="button.type !== 'button'"
+              v-if="button.type === 'link' || !button.type"
               :to="button.to"
               :label="button.label"
               :role="button.role || 'default'"

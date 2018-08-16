@@ -33,16 +33,10 @@
               :key="`assess-${index}`"
               :class="base.icon"
             >
-              <!-- <BestPracticeIcon
-                :icon="bestPractice.icon"
-                :name="bestPractice.title"
-                :id="bestPractice.id"
-                :activityID="activityInstance.id"
-              /> -->
-              <div :class="[base.dot, base[assessment.value.toLowerCase()]]">
-                <!-- <div>{{$t('results.value')}} {{assessment.value}}</div>
-                <div>{{$t('results.text')}} {{assessment.text}}</div> -->
-              </div>
+              <BestPracticeIcon
+                :id="assessment.best_practice_id"
+                :activityID="assessment.activity_id"
+              />
             </li>
           </BaseGutterWrapper>
           <div style="display: inline-block; vertical-align: middle;">
@@ -68,7 +62,10 @@
             :key="`bp-${index}`"
             :class="base.icon"
           >
-            <div :class="[base.dot, base[getBestPracticePresence(bestPractice.title)]]"></div>
+            <BestPracticeIcon
+              :id="bestPractice.id"
+              :activityID="activityInstance.id"
+            />
           </li>
         </BaseGutterWrapper>
       </div>

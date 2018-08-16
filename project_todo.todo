@@ -11,7 +11,7 @@
  ☐ Setup print page with an instruction area on how to print to PDF in your browser instruction area that gets removed on print
 
 # Pages to do a design pass on
-  ☐ Activity type info page
+  ✔ Activity type info page @done (18-08-16 15:14)
   ✔ Summary @done (18-08-15 09:13)
   ✔ Analysis @done (18-08-15 21:40)
   ✔ Results @done (18-08-16 00:05)
@@ -21,17 +21,19 @@
  ☐ Icons @hard
    This will take a little figuring out - not sure the best way to handle icon sprites in a render context like Vue. Avoiding icons/using placeholders in first prototype.
  ☐ Activity timeline nav @hard
+ ☐ Style best practice option buttons
+ ☐ Style the suggestion component
  ☐ Analysis color legend
- ☐ Analysis best practice option buttons
+ ☐ Export/clear tool tray at top of analysis, results, etc.
  ☐ Activity lists:
    ✔ Assessment @done (18-08-15 21:40)
    ☐ Results
  ✔ Best practice page component @done (18-08-15 21:41)
- ☐ Suggestion component
  ✔ Resource item @done (18-08-16 13:55)
  ☐ Charts
  ✔ Card grid for best practice/type resources @done (18-08-16 13:55)
  ☐ Swap markdown parser for one that supports footnotes, maybe https://github.com/miaolz123/vue-markdown
+ ☐ Swap in textarea for activity text on Activity input form @jay
 
 # Styling
  ☐ Tables
@@ -52,7 +54,7 @@
 # Copy Writing
 
 # Nice to have
-
+ ☐ Break giant en.yaml/localization files into smaller separate files, e.g. `locales/en/best-practices.yaml` @nice-to-have
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
  ✔ Debug electron windows version @done (18-08-15 15:12)
