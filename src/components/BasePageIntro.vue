@@ -1,12 +1,12 @@
 <template>
   <header :class="[space.paddingWide, border.bottom]">
+    <BaseHeading
+      align="center"
+      :class="space.paddingBottom"
+    >
+      {{ title }}
+    </BaseHeading>
     <BaseWidthWrapper>
-      <BaseHeading
-        align="center"
-        :class="space.paddingBottom"
-      >
-        {{ title }}
-      </BaseHeading>
       <BaseBodyText v-if="blurb.length > 0" :content="blurb" />
     </BaseWidthWrapper>
   </header>

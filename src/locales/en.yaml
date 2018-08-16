@@ -250,9 +250,11 @@ nav:
 
 # Activity Table
 activityTable:
-  defaultTitle: 'Activity text'
-  defaultBudget: 'Budget'
-  defaultYouthCentered: 'Youth-centered?'
+  defaultTitle: Activity text
+  defaultID: Activity number
+  defaultBudget: Budget
+  defaultYouthCentered: Youth-centered?
+  defaultEIP: 'Evidence-Informed Practices'
 
 # Misc Keys
 uniquenessError: The value entered in {field} is not unique amoung {entityType}

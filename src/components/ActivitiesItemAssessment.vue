@@ -38,29 +38,29 @@
         </BaseGutterWrapper>
       </template>
       <template>
-        <div>
-          <dl>
-            <dt>Activity ID</dt>
-            <dd>{{id}}</dd>
-            <dt>Budget</dt>
-            <dd>{{budget}}</dd>
-            <dt>Youth Centric?</dt>
-            <dd>{{youth}}</dd>
-          </dl>
-
-          <div>
-            <!-- edit button -->
-            <BaseButtonLink
-              :to="{
-                name: 'activity',
-                params: {
-                  activityId: String(id)
-                }
-              }"
-              :label="$t('edit')"
-              size="small"
-            />
+        <div :class="base.expandedWrapper">
+          <div :class="base.data">
+            <BaseDataGrid :data="expandedData" />
           </div>
+
+          <BaseGutterWrapper
+            gutterX="narrow"
+            gutterY="narrow"
+          >
+            <div :class="base.gutter">
+              <!-- edit button -->
+              <BaseButtonLink
+                :to="{
+                  name: 'activity',
+                  params: {
+                    activityId: String(id)
+                  }
+                }"
+                :label="$t('edit')"
+                size="small"
+              />
+            </div>
+          </BaseGutterWrapper>
         </div>
       </template>
     </BaseDetails>
@@ -73,11 +73,13 @@ import BaseHeading from './BaseHeading'
 import BaseButtonLink from './BaseButtonLink'
 import BaseGutterWrapper from './BaseGutterWrapper'
 import BestPracticeIcon from './BestPracticeIcon'
+import BaseDataGrid from './BaseDataGrid'
 import { bestPracticeData } from './mixins/bestPracticeData'
+import { dataMethods } from './mixins/dataMethods'
 
 export default {
   name: 'ActivityItemAssessment',
-  mixins: [bestPracticeData],
+  mixins: [bestPracticeData, dataMethods],
   props: {
     text: {
       type: String,
@@ -95,7 +97,17 @@ export default {
     BaseDetails,
     BaseGutterWrapper,
     BestPracticeIcon,
-    BaseButtonLink
+    BaseButtonLink,
+    BaseDataGrid
+  },
+  data: function () {
+    return {
+      expandedData: {
+        [this.$t('activityTable.defaultID')]: this.id,
+        [this.$t('activityTable.defaultBudget')]: `${this.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
+        [this.$t('activityTable.defaultYouthCentered')]: this.youth ? this.$t('yesRaw') : this.$t('noRaw')
+      }
+    }
   }
 }
 </script>
@@ -106,6 +118,25 @@ export default {
   composes: paddingVerticalNarrow from 'styles/spacing.scss';
   display: block;
   position: relative;
+}
+
+.expandedWrapper {
+  composes: paddingTopNarrow from 'styles/spacing.scss';
+  display: block;
+
+  @supports (display: flex) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.data {
+  display: inline-block;
+
+  @supports (flex: 1) {
+    flex: 1;
+  }
 }
 
 .icons {
