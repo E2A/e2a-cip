@@ -69,7 +69,7 @@ export default {
       required: true
     },
     // can you edit the status, e.g. yes, maybe, etc.?
-    // -> if so, we'll show the flyout on click
+    // -> if so, we'll show the buttons on the flyout
     editable: {
       type: Boolean,
       default: false
