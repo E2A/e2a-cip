@@ -63,9 +63,6 @@
         </BaseGutterWrapper>
       </header>
 
-      <!-- Print & Export -->
-      <PrintPage />
-
       <!-- Table -->
       <ActivitiesList ref="activityList">
         <div
@@ -142,9 +139,7 @@ export default {
         ],
         right: [
           {
-            click: this.printPage,
-            label: this.$t('results.printPage'),
-            type: 'button'
+            type: 'print'
           },
           {
             to: {name: 'advocate'},

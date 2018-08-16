@@ -1,7 +1,16 @@
 <template>
   <div class="PrintPage">
-    <BaseButton v-if="electron" @click="exportPDF" :label="$t('results.exportPDF')"></BaseButton>
-    <BaseButton @click="printPage" :label="$t('results.printPage')"></BaseButton>
+    <BaseButton
+      v-if="electron"
+      @click="exportPDF"
+      :label="$t('results.exportPDF')"
+      size="small"
+    />
+    <BaseButton
+      @click="printPage"
+      :label="$t('results.printPage')"
+      size="small"
+    />
     <p v-if="pdfPrintError">{{$t('results.pdfPrintError')}}</p>
   </div>
 </template>

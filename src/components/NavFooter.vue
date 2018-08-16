@@ -37,6 +37,7 @@
               @click="button.click"
               size="small"
             />
+            <PrintPage v-if="button.type === 'print'" />
           </li>
         </BaseGutterWrapper>
       </div>
@@ -46,6 +47,7 @@
 
 <script>
 import BaseButton from '@/components/BaseButton.vue'
+import PrintPage from '@/components/PrintPage.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 
@@ -62,7 +64,8 @@ export default {
   components: {
     BaseGutterWrapper,
     BaseButton,
-    BaseButtonLink
+    BaseButtonLink,
+    PrintPage
   },
   methods: {
     getGroupProp: function (group) {
