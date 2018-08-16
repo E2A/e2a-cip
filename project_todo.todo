@@ -30,6 +30,7 @@
  ☐ Resource item
  ☐ Charts
  ☐ Card grid for best practice/type resources
+ ☐ Swap markdown parser for one that supports footnotes, maybe https://github.com/miaolz123/vue-markdown
 
 # Styling
  ☐ Tables

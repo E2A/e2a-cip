@@ -38,13 +38,30 @@
         </BaseGutterWrapper>
       </template>
       <template>
-        <!-- edit button -->
-        <router-link :to="{
-          name: 'activity',
-          params: {
-            activityId: String(id)
-          }
-        }">{{$t('edit')}}</router-link>
+        <div>
+          <dl>
+            <dt>Activity ID</dt>
+            <dd>{{id}}</dd>
+            <dt>Budget</dt>
+            <dd>{{budget}}</dd>
+            <dt>Youth Centric?</dt>
+            <dd>{{youth}}</dd>
+          </dl>
+
+          <div>
+            <!-- edit button -->
+            <BaseButtonLink
+              :to="{
+                name: 'activity',
+                params: {
+                  activityId: String(id)
+                }
+              }"
+              :label="$t('edit')"
+              size="small"
+            />
+          </div>
+        </div>
       </template>
     </BaseDetails>
   </li>
@@ -53,6 +70,7 @@
 <script>
 import BaseDetails from './BaseDetails'
 import BaseHeading from './BaseHeading'
+import BaseButtonLink from './BaseButtonLink'
 import BaseGutterWrapper from './BaseGutterWrapper'
 import BestPracticeIcon from './BestPracticeIcon'
 import { bestPracticeData } from './mixins/bestPracticeData'
@@ -61,20 +79,23 @@ export default {
   name: 'ActivityItemAssessment',
   mixins: [bestPracticeData],
   props: {
-    'text': {
+    text: {
       type: String,
       required: true
     },
-    'id': {
+    id: {
       type: Number,
       required: true
-    }
+    },
+    budget: Number,
+    youth: Boolean
   },
   components: {
     BaseHeading,
     BaseDetails,
     BaseGutterWrapper,
-    BestPracticeIcon
+    BestPracticeIcon,
+    BaseButtonLink
   }
 }
 </script>

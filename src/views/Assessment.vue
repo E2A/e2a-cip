@@ -41,6 +41,8 @@
                 :activityInstance="activity"
                 :text="activity.text"
                 :id="activity.id"
+                :budget="activity.budget"
+                :youth="activity.youthCentric"
               />
             </template>
           </div>
