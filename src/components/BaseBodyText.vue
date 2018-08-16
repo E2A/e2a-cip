@@ -1,16 +1,20 @@
 <template>
   <div
     :class="[base.content, type[typeScaleClass(size)]]"
-    v-html="renderedMarkdown"
-  ></div>
+  >
+    <VueMarkdown >{{content}}</VueMarkdown>
+  </div>
 </template>
 
 <script>
-import marked from 'marked'
 import { styleHelpers } from './mixins/helpers'
+import VueMarkdown from 'vue-markdown'
 
 export default {
   name: 'BaseBodyText',
+  components: {
+    VueMarkdown
+  },
   mixins: [styleHelpers],
   props: {
     content: {
@@ -20,11 +24,6 @@ export default {
     size: {
       type: String,
       default: 'epsilon'
-    }
-  },
-  computed: {
-    renderedMarkdown: function () {
-      return marked(this.content, { sanitize: true })
     }
   }
 }

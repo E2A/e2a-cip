@@ -63,6 +63,9 @@
         </BaseGutterWrapper>
       </header>
 
+      <!-- Print & Export -->
+      <PrintPage />
+
       <!-- Table -->
       <ActivitiesList ref="activityList">
         <div
@@ -103,19 +106,20 @@ import FileUpload from '@/components/FileUpload.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import ChartItems from '@/components/ChartItems.vue'
 import NavFooter from '@/components/NavFooter.vue'
+import PrintPage from '@/components/PrintPage.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { dataMethods } from '@/components/mixins/dataMethods'
-import { electronPDF } from '@/components/mixins/electronPDF'
 
 export default {
   name: 'Results',
-  mixins: [activityTypes, dataMethods, electronPDF],
+  mixins: [activityTypes, dataMethods],
   components: {
     BaseHeading,
     BaseButton,
     BaseSectionWrapper,
     BaseWidthWrapper,
     BaseGutterWrapper,
+    PrintPage,
     ActivitiesList,
     ActivitiesItemResult,
     FileUpload,
@@ -139,7 +143,7 @@ export default {
         right: [
           {
             click: this.printPage,
-            label: this.$t('printPage'),
+            label: this.$t('results.printPage'),
             type: 'button'
           },
           {
@@ -148,18 +152,6 @@ export default {
             role: 'primary'
           }
         ]
-      }
-    }
-  },
-  methods: {
-    printPage: function () {
-      // Check if in electron, and use specific electron PDF creation code
-      if (this.checkElectron()) {
-        // Electron-specific PDF printing
-        this.printElectronPDF()
-      } else {
-        // Default browser printing
-        window.print()
       }
     }
   }

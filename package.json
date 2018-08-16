@@ -31,6 +31,7 @@
     "vee-validate": "^2.1.0-beta.7",
     "vue": "^2.5.16",
     "vue-i18n": "^8.0.0",
+    "vue-markdown": "^2.2.4",
     "vue-router": "^3.0.1",
     "vue-select": "^2.4.0",
     "vuex": "^3.0.1",
