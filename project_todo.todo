@@ -37,7 +37,16 @@
  ☐ Tables
    ✔ Desktop @done (18-08-15 21:41)
    ☐ Mobile
- ☐ Yes/No/Maybe colors
+ ☐ Color palette
+   ☐ Yes/No/Maybe colors
+ ☐ Type treatments
+   ☐ scale
+   ☐ display type
+   ☐ UI type
+   ☐ body type
+ ☐ Add logos
+   ☐ home
+   ☐ header nav
  ☐ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling.
 
 # Copy Writing

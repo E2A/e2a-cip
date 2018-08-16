@@ -2,6 +2,7 @@
   <article>
     <BasePageIntro
       :title="$t('home.title')"
+      :subtitle="$t('home.subtitle')"
       :blurb="$t('home.intro')"
     />
     <BaseSectionWrapper>
@@ -20,38 +21,61 @@
         </BaseGutterWrapper>
       </BaseWidthWrapper>
     </BaseSectionWrapper>
-    <BaseSectionWrapper v-if="!electron" el="div" :class="type.center" border>
-      <BaseHeading :level="2" centered>{{$t('home.downloadTitle')}}</BaseHeading>
-      <BaseWidthWrapper width="wide" :class="space.paddingTop">
+    <BaseSectionWrapper
+      v-if="!electron"
+      el="div"
+      border
+    >
+      <BaseHeading
+        :level="2"
+        centered
+      >
+        {{$t('home.downloadTitle')}}
+      </BaseHeading>
+      <BaseWidthWrapper
+        :class="space.paddingTop"
+      >
         <BaseBodyText
-          size="zeta"
           :content="$t('home.downloadBlurb')"
+          :class="base.centeredSubheads"
+          size="zeta"
         />
-
-        <BaseButtonLink
-          :to="$t('home.downloadMacUrl')"
-          size="small"
-          role="primary"
-          :label="$t('home.downloadMac')"
-          :class="space.marginBottom"
-          :router="false"
-        />
-        <BaseButtonLink
-          :to="$t('home.downloadWindowsUrl')"
-          size="small"
-          role="primary"
-          :label="$t('home.downloadWindows')"
-          :class="space.marginBottom"
-          :router="false"
-        />
-        <BaseButtonLink
-          :to="$t('home.downloadWindowsPortableUrl')"
-          size="small"
-          role="primary"
-          :label="$t('home.downloadWindowsPortable')"
-          :class="space.marginBottom"
-          :router="false"
-        />
+        <BaseGutterWrapper
+          :class="[space.paddingTopNarrow, type.center]"
+          gutterX="xnarrow"
+          gutterY="xnarrow"
+        >
+          <li :class="base.gutterItem">
+            <BaseButtonLink
+              :to="$t('home.downloadMacUrl')"
+              size="small"
+              role="primary"
+              :label="$t('home.downloadMac')"
+              :class="space.marginBottom"
+              :router="false"
+            />
+          </li>
+          <li :class="base.gutterItem">
+            <BaseButtonLink
+              :to="$t('home.downloadWindowsUrl')"
+              size="small"
+              role="primary"
+              :label="$t('home.downloadWindows')"
+              :class="space.marginBottom"
+              :router="false"
+            />
+          </li>
+          <li :class="base.gutterItem">
+            <BaseButtonLink
+              :to="$t('home.downloadWindowsPortableUrl')"
+              size="small"
+              role="primary"
+              :label="$t('home.downloadWindowsPortable')"
+              :class="space.marginBottom"
+              :router="false"
+            />
+          </li>
+        </BaseGutterWrapper>
       </BaseWidthWrapper>
     </BaseSectionWrapper>
     <BaseSectionWrapper el="div" :class="type.center" border>
@@ -151,5 +175,21 @@ export default {
     position: absolute;
     top: 0;
   }
+}
+
+.centeredSubheads {
+  // center all heading elements
+  $list: ();
+  @each $i in [1, 2, 3, 4, 5, 6] {
+    $list: append($list, unquote('h#{$i}'), 'comma');
+  }
+
+  #{$list} {
+    text-align: center;
+  }
+}
+
+.gutterItem {
+  display: inline-block;
 }
 </style>

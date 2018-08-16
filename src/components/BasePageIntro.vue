@@ -1,13 +1,20 @@
 <template>
   <header :class="[space.paddingWide, border.bottom]">
     <BaseHeading
-      align="center"
-      :class="space.paddingBottom"
+      :class="[subtitle ? space.paddingBottomXnarrow : space.paddingBottom]"
     >
       {{ title }}
     </BaseHeading>
-    <BaseWidthWrapper>
-      <BaseBodyText v-if="blurb.length > 0" :content="blurb" />
+    <BaseHeading
+      v-if="subtitle"
+      :class="space.paddingBottom"
+      scale="gamma"
+      sub
+    >
+      {{ subtitle }}
+    </BaseHeading>
+    <BaseWidthWrapper v-if="blurb.length > 0">
+      <BaseBodyText :content="blurb" />
     </BaseWidthWrapper>
   </header>
 </template>
@@ -23,6 +30,9 @@ export default {
     title: {
       type: String,
       required: true
+    },
+    subtitle: {
+      type: String
     },
     blurb: {
       type: String
