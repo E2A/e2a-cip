@@ -91,7 +91,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'

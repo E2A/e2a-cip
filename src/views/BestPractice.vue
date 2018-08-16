@@ -1,6 +1,7 @@
 <template>
   <article>
     <BaseSectionWrapper :class="space.paddingTopNarrow">
+      <!-- back link -->
       <div :class="[space.paddingBottomNarrow, border.bottom]">
         <router-link
           :to="{name: 'evidence-informed-practices'}"
@@ -9,37 +10,58 @@
           &lsaquo; {{$t('backToBestPractices')}}
         </router-link>
       </div>
+
+      <!-- title -->
+      <header :class="space.paddingVerticalWide">
+        <BaseHeading
+          scale="delta"
+          :sub="true"
+          :class="[space.paddingBottomXnarrow, color.midtone]"
+        >
+          {{ $t('bestPracticeSubtitle') }}
+        </BaseHeading>
+        <BaseHeading>{{ bestPractices[id - 1].title }}</BaseHeading>
+      </header>
+
+      <!-- body -->
       <BaseWidthWrapper>
-        <header :class="space.paddingVerticalWide">
-          <BaseHeading
-            scale="delta"
-            :sub="true"
-            :class="[space.paddingBottomXnarrow, color.midtone]"
-          >
-            {{ $t('bestPracticeSubtitle') }}
-          </BaseHeading>
-          <BaseHeading>{{ bestPractices[id - 1].title }}</BaseHeading>
-        </header>
         <BaseBodyText :content="bestPractices[id - 1].body" />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
 
     <!-- Resources -->
-    <BaseSectionWrapper :class="space.paddingTopNarrow">
-        <BaseWidthWrapper v-for="(item,index) of resources" :key="`res-${index}`">
-          <header :class="space.paddingVerticalWide">
-            <BaseHeading>{{ item.resource.title }}</BaseHeading>
-          </header>
-          <BaseBodyText :content="item.resource.teaser" />
-          <BaseButtonLink
-            :to="item.resource.url"
-            size="small"
-            role="primary"
-            :label="$t('downloadResource')"
-            :class="space.marginBottom"
-            :router="false"
-          />
-        </BaseWidthWrapper>
+    <BaseSectionWrapper border>
+      <BaseWidthWrapper width="wide">
+        <ul>
+          <li
+            v-for="(item ,index) of resources"
+            :class="base.resourceCard"
+            :key="`res-${index}`"
+          >
+            <BaseHeading
+              :class="space.paddingBottomXnarrow"
+              :level="3"
+              :centered="false"
+              scale="delta"
+            >
+              {{ item.resource.title }}
+            </BaseHeading>
+            <BaseBodyText
+              :class="space.paddingBottomNarrow"
+              :content="item.resource.teaser"
+              size="zeta"
+            />
+            <BaseButtonLink
+              :to="item.resource.url"
+              size="small"
+              role="primary"
+              :label="$t('downloadResource')"
+              :class="space.marginBottom"
+              :router="false"
+            />
+          </li>
+        </ul>
+      </BaseWidthWrapper>
     </BaseSectionWrapper>
   </article>
 </template>
@@ -91,5 +113,10 @@ export default {
   &:active {
     text-decoration: underline;
   }
+}
+
+.resourceCard {
+  composes: default round from 'styles/borders.scss';
+  composes: lightBg from 'styles/color.scss';
 }
 </style>

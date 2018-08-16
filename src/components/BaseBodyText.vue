@@ -1,9 +1,7 @@
 <template>
-  <div
-    :class="[base.content, type[typeScaleClass(size)]]"
-  >
-    <VueMarkdown >{{content}}</VueMarkdown>
-  </div>
+  <VueMarkdown :class="[base.content, type[typeScaleClass(size)]]">
+    {{content}}
+  </VueMarkdown>
 </template>
 
 <script>
@@ -32,13 +30,39 @@ export default {
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
-  .content {
-    > * + * {
-      margin-top: 1em;
-    }
-  }
+@import '~styleConfig/scale';
+@import '~styleConfig/color';
+@import '~styleConfig/borders';
 
+$gutter: 0.8em; // eta on scale
+
+.content {
+  > * + * {
+    margin-top: $gutter;
+  }
+}
+
+:global {
   p {
     margin: 0;
   }
+
+  li + li {
+    margin-top: $gutter;
+  }
+
+  .footnotes-sep {
+    border: none;
+    height: border-w('thin');
+    background-color: border('light');
+    margin: 1.44em 0; // delta on scale
+  }
+
+  .footnotes {
+    font-size: scale-type('zeta');
+    color: color('midtone');
+  }
+}
 </style>
+
+style

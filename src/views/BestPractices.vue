@@ -26,7 +26,7 @@
             <div :class="base.summary">
               <BaseHeading
                 :level="2"
-                scale="gamma"
+                scale="delta"
                 :class="space.paddingBottomXnarrow"
                 :centered="false"
               >
