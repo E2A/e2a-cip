@@ -1,55 +1,173 @@
 <template>
-  <div class="ChartItems">
+  <div>
+    <BaseGutterWrapper :class="base.grid">
 
-    <!-- % Activity count by type -->
-    <BaseHeading
-      scale="delta"
-      :sub="true"
-    >{{this.$t('chartTitles.activityTypeCount')}} </BaseHeading>
-    <div v-if="this.getItemCount('activities') > 0" id="activityTypeCount"></div>
+      <!-- TODO @jay: turn each chart into a component, see ChartPie.vue -->
+      <!-- % Activity count by type -->
+      <div :class="base.gridItem">
+        <div :class="[border.top, space.paddingTop]">
+          <BaseHeading
+            :class="space.paddingBottomNarrow"
+            :level="3"
+            scale="delta"
+          >
+            {{this.$t('chartTitles.activityTypeCount')}}
+          </BaseHeading>
 
-    <!-- Chart Labels -->
-    <ul v-for="(label,index) of labelData.activityTypeData" :key="`aCount-${index}`" class='chart-labels'>
-      <li><span :class="label.class">{{label.countPercent*100}}% </span>{{label.type}}</li>
-    </ul>
+          <BaseGutterWrapper
+            gutterY="narrow"
+            gutterX="narrow"
+          >
+            <div
+              v-if="this.getItemCount('activities') > 0"
+              id="activityTypeCount"
+              :class="base.chart"
+            ></div>
 
-    <!-- Budget % of total by activity types -->
-    <BaseHeading
-      scale="delta"
-      :sub="true"
-    >{{this.$t('chartTitles.activityTypeBudget')}} </BaseHeading>
-    <div v-if="this.getItemCount('activities') > 0" id="activityTypeBudget"></div>
+            <!-- Chart Labels -->
+            <dl :class="base.legend">
+              <div
+                v-for="(label,index) of labelData.activityTypeData"
+                :class="legend.item"
+                :key="`aCount-${index}`"
+              >
+                <dt :class="[legend.key, label.class]">{{Math.round(label.countPercent*100)}}%</dt>
+                <dd :class="legend.value">{{label.type}}</dd>
+              </div>
+            </dl>
+          </BaseGutterWrapper>
+        </div>
+      </div>
 
-    <!-- Chart Labels -->
-    <ul v-for="(label,index) of labelData.activityTypeData" :key="`aBudget-${index}`" class='chart-labels'>
-      <li><span :class="label.class">{{label.budgetPercent*100}}% </span>{{label.type}}</li>
-    </ul>
+      <!-- Budget % of total by activity types -->
+      <div :class="base.gridItem">
+        <div :class="[border.top, space.paddingTop]">
+          <BaseHeading
+            :class="space.paddingBottomNarrow"
+            :level="3"
+            scale="delta"
+          >
+            {{this.$t('chartTitles.activityTypeBudget')}}
+          </BaseHeading>
 
-    <!-- Budget % youth focused -->
-    <BaseHeading
-      scale="delta"
-      :sub="true"
-    >{{this.$t('chartTitles.youthFocusBudget')}} </BaseHeading>
-    <div v-if="this.getItemCount('activities') > 0" id="youthFocusBudget"></div>
-    <!-- Chart Labels -->
-    <ul class='chart-labels'>
-      <li><span class="youth-centric">{{labelData.youthCentricBudgetData[0].youthCentricPercent*100}}% </span>{{this.$t('chartTitles.youthCentricLabel')}}</li>
-      <li><span class="not-youth-centric">{{labelData.youthCentricBudgetData[0].notYouthCentricPercent*100}}% </span>{{this.$t('chartTitles.notYouthCentricLabel')}}</li>
-    </ul>
+          <BaseGutterWrapper
+            gutterY="narrow"
+            gutterX="narrow"
+          >
+            <!-- Chart -->
+            <div
+              v-if="this.getItemCount('activities') > 0"
+              :class="base.chart"
+              id="activityTypeBudget"
+            ></div>
 
-    <!-- % activity count by youth focused -->
-    <BaseHeading
-      scale="delta"
-      :sub="true"
-    >{{this.$t('chartTitles.youthFocusCount')}} </BaseHeading>
-    <div v-if="this.getItemCount('activities') > 0" id="youthFocusCount"></div>
-    <!-- Chart Labels -->
-    <ul class='chart-labels'>
-      <li><span class="youth-centric">{{labelData.youthCentricActivityData[0].youthCentricPercent*100}}% </span>{{this.$t('chartTitles.youthCentricLabel')}}</li>
-      <li><span class="not-youth-centric">{{labelData.youthCentricActivityData[0].notYouthCentricPercent*100}}% </span>{{this.$t('chartTitles.notYouthCentricLabel')}}</li>
-    </ul>
+            <!-- Chart Labels -->
+            <dl :class="base.legend">
+              <div
+                v-for="(label,index) of labelData.activityTypeData"
+                :class="legend.item"
+                :key="`aBudget-${index}`"
+              >
+                <dt :class="[legend.key, label.class]">
+                  {{Math.round(label.budgetPercent * 100)}}%
+                </dt>
+                <dd :class="legend.value">{{label.type}}</dd>
+              </div>
+            </dl>
+          </BaseGutterWrapper>
+        </div>
+      </div>
 
-    <button v-if="this.getItemCount('activities') > 0" @click="exportChartData()">Export Chart Data</button>
+      <!-- Budget % youth focused -->
+      <div :class="base.gridItem">
+        <div :class="[border.top, space.paddingTop]">
+          <BaseHeading
+            :class="space.paddingBottomNarrow"
+            :level="3"
+            scale="delta"
+          >
+            {{this.$t('chartTitles.youthFocusBudget')}}
+          </BaseHeading>
+
+          <BaseGutterWrapper
+            gutterY="narrow"
+            gutterX="narrow"
+          >
+            <!-- Chart -->
+            <div
+              v-if="this.getItemCount('activities') > 0"
+              :class="base.chart"
+              id="youthFocusBudget"
+            ></div>
+
+            <!-- Chart Labels -->
+            <dl :class="base.legend">
+              <div :class="legend.item">
+                <dt :class="[legend.key]" class="youth-centric">
+                  {{Math.round(labelData.youthCentricBudgetData[0].youthCentricPercent * 100)}}%
+                </dt>
+                <dd :class="legend.value">{{this.$t('chartTitles.youthCentricLabel')}}</dd>
+              </div>
+              <div :class="legend.item">
+                <dt :class="[legend.key]" class="not-youth-centric">
+                  {{Math.round(labelData.youthCentricBudgetData[0].notYouthCentricPercent * 100)}}%
+                </dt>
+                <dd :class="legend.value">{{this.$t('chartTitles.notYouthCentricLabel')}}</dd>
+              </div>
+            </dl>
+          </BaseGutterWrapper>
+        </div>
+      </div>
+
+      <!-- % activity count by youth focused -->
+      <div :class="base.gridItem">
+        <div :class="[border.top, space.paddingTop]">
+          <BaseHeading
+            :class="space.paddingBottomNarrow"
+            :level="3"
+            scale="delta"
+          >
+            {{this.$t('chartTitles.youthFocusCount')}}
+          </BaseHeading>
+
+          <BaseGutterWrapper
+            gutterY="narrow"
+            gutterX="narrow"
+          >
+            <!-- Chart -->
+            <div
+              v-if="this.getItemCount('activities') > 0"
+              :class="base.chart"
+              id="youthFocusCount"
+            ></div>
+
+            <!-- Chart Labels -->
+            <dl :class="base.legend">
+              <div :class="legend.item">
+                <dt :class="[legend.key]" class="youth-centric">
+                  {{Math.round(labelData.youthCentricActivityData[0].youthCentricPercent * 100)}}%
+                </dt>
+                <dd :class="legend.value">{{this.$t('chartTitles.youthCentricLabel')}}</dd>
+              </div>
+              <div :class="legend.item">
+                <dt :class="[legend.key]" class="not-youth-centric">
+                  {{Math.round(labelData.youthCentricActivityData[0].notYouthCentricPercent * 100)}}%
+                </dt>
+                <dd :class="legend.value">{{this.$t('chartTitles.notYouthCentricLabel')}}</dd>
+              </div>
+            </dl>
+          </BaseGutterWrapper>
+        </div>
+      </div>
+    </BaseGutterWrapper>
+    <div :class="[space.marginTop, space.paddingTop, border.top, type.right]">
+      <BaseButton
+        v-if="this.getItemCount('activities') > 0"
+        @click="exportChartData()"
+        :label="$t('results.exportCharts')"
+        size="small"
+      />
+    </div>
   </div>
 </template>
 
@@ -58,13 +176,17 @@ import { dataIO } from './mixins/dataIO'
 import { dataMethods } from './mixins/dataMethods'
 import { activityTypes } from './mixins/activityTypes'
 import Chartist from 'chartist'
-import BaseHeading from '@/components/BaseHeading.vue'
+import BaseHeading from './BaseHeading.vue'
+import BaseButton from './BaseButton.vue'
+import BaseGutterWrapper from './BaseGutterWrapper.vue'
 
 export default {
   name: 'ChartItems',
   mixins: [dataIO, dataMethods, activityTypes],
   components: {
-    BaseHeading
+    BaseHeading,
+    BaseButton,
+    BaseGutterWrapper
   },
   data () {
     return {
@@ -215,6 +337,11 @@ export default {
   }
 }
 </script>
+
+<style src="styles/spacing.scss" lang="scss" module="space"></style>
+<style src="styles/borders.scss" lang="scss" module="border"></style>
+<style src="styles/type.scss" lang="scss" module="type"></style>
+
 <style>
 /* Hide default chart legend */
 /*.chart-legend {
@@ -223,46 +350,116 @@ export default {
 .ct-label {
   display: none;
 }
+</style>
 
-.service-delivery {
-  fill: red;
-  stroke: red;
-  background: red;
-  color: white;
+<style lang="scss" module="base">
+@import '~styleConfig/scale';
+@import '~styleConfig/type';
+@import '~styleConfig/color';
+
+.grid {
+  display: block;
+  font-size: 0;
 }
 
-.demand-generation {
-  fill: blue;
-  stroke: blue;
-  background: blue;
-  color: white;
+.gridItem {
+  @include type-size-default;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+
+  @include media('>small') {
+    width: 50%;
+  }
+
+  @include media('>large') {
+    width: (100%/4);
+  }
 }
 
-.enabling-environment {
-  fill: green;
-  stroke: green;
-  background: green;
-  color: white;
+.chart {
+  display: block;
 }
 
-.coordination {
-  fill: purple;
-  stroke: purple;
-  background: purple;
-  color: white;
+.legend {
+  composes: paddingVerticalBetweenXnarrow from 'styles/spacing.scss';
+  margin-top: 0;
+  margin-bottom: 0;
+}
+</style>
+
+<style lang="scss" module="legend">
+@import '~styleConfig/scale';
+
+.item {
+  display: block;
 }
 
-.youth-centric {
-  fill: purple;
-  stroke: purple;
-  background: purple;
-  color: white;
+.key {
+  $size: 3.5em;
+  composes: light from 'styles/color.scss';
+  composes: scaleEta bold from 'styles/type.scss';
+  display: inline-block;
+  border-radius: 50%;
+  // fix magic number
+  padding: 1.2em 0;
+  width: $size;
+  height: $size;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1;
 }
 
-.not-youth-centric {
-  fill: green;
-  stroke: green;
-  background: green;
-  color: white;
+.value {
+  composes: scaleZeta from 'styles/type.scss';
+  display: inline-block;
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+
+// TODO @jay figure out how to make these part of the module
+// -> maybe https://github.com/blakeembrey/camel-case
+:global {
+  .service-delivery {
+    fill: red;
+    stroke: red;
+    background: red;
+    color: white;
+  }
+
+  .demand-generation {
+    fill: blue;
+    stroke: blue;
+    background: blue;
+    color: white;
+  }
+
+  .enabling-environment {
+    fill: green;
+    stroke: green;
+    background: green;
+    color: white;
+  }
+
+  .coordination {
+    fill: purple;
+    stroke: purple;
+    background: purple;
+    color: white;
+  }
+
+  .youth-centric {
+    fill: purple;
+    stroke: purple;
+    background: purple;
+    color: white;
+  }
+
+  .not-youth-centric {
+    fill: green;
+    stroke: green;
+    background: green;
+    color: white;
+  }
 }
 </style>
