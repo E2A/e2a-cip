@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss" module="base">
 @import '~bourbon/core/bourbon'; // for triangles
-@import '~styleConfig/zindex';
+@import '~styleConfig/zIndex';
 @import '~styleConfig/color';
 
 $size: 12rem;

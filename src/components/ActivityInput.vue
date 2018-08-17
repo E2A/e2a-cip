@@ -105,6 +105,7 @@
                 @click="addActivity"
                 :label="$t('save')"
                 size="small"
+                role="primary"
               />
             </li>
             <li :class="base.buttonWrapper">
@@ -123,15 +124,14 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import BaseHeading from '@/components/BaseHeading.vue'
-import BaseButton from '@/components/BaseButton.vue'
-import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
-import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
-import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
-import BaseFormLabel from '@/components/BaseFormLabel.vue'
-import BaseFormInput from '@/components/BaseFormInput.vue'
-import FileUpload from '@/components/FileUpload.vue'
+import BaseHeading from './BaseHeading.vue'
+import BaseButton from './BaseButton.vue'
+import BaseGutterWrapper from './BaseGutterWrapper.vue'
+import BaseSectionWrapper from './BaseSectionWrapper.vue'
+import BaseWidthWrapper from './BaseWidthWrapper.vue'
+import BaseFormLabel from './BaseFormLabel.vue'
+import BaseFormInput from './BaseFormInput.vue'
+import FileUpload from './FileUpload.vue'
 import { activityTypes } from './mixins/activityTypes'
 import { customValidation } from './mixins/customValidation'
 import { dataMethods } from './mixins/dataMethods'
