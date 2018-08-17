@@ -12,14 +12,17 @@
           :level="6"
           :centered="false"
           sub
-        >{{text}}</BaseHeading>
+        >
+          {{text}}
+        </BaseHeading>
       </template>
       <template slot="summaryRight">
         <!-- list of best practice icons -->
         <BaseGutterWrapper
+          :class="base.icons"
+          el="ul"
           gutterX="xnarrow"
           gutterY="xnarrow"
-          :class="base.icons"
         >
           <li
             v-for="(bestPractice, index) of bestPractices"
@@ -27,8 +30,6 @@
             :class="base.icon"
           >
             <BestPracticeIcon
-              :icon="bestPractice.icon"
-              :name="bestPractice.title"
               :id="bestPractice.id"
               :activityID="id"
               :align="index > 5 ? 'right' : 'center'"
@@ -38,13 +39,30 @@
         </BaseGutterWrapper>
       </template>
       <template>
-        <!-- edit button -->
-        <router-link :to="{
-          name: 'activity',
-          params: {
-            activityId: String(id)
-          }
-        }">{{$t('edit')}}</router-link>
+        <div :class="base.expandedWrapper">
+          <BaseDataGrid
+            :data="expandedData"
+            :class="base.data"
+          />
+          <BaseGutterWrapper
+            gutterX="narrow"
+            gutterY="narrow"
+          >
+            <div :class="base.gutter">
+              <!-- edit button -->
+              <BaseButtonLink
+                :to="{
+                  name: 'activity',
+                  params: {
+                    activityId: String(id)
+                  }
+                }"
+                :label="$t('edit')"
+                size="small"
+              />
+            </div>
+          </BaseGutterWrapper>
+        </div>
       </template>
     </BaseDetails>
   </li>
@@ -53,28 +71,44 @@
 <script>
 import BaseDetails from './BaseDetails'
 import BaseHeading from './BaseHeading'
+import BaseButtonLink from './BaseButtonLink'
 import BaseGutterWrapper from './BaseGutterWrapper'
 import BestPracticeIcon from './BestPracticeIcon'
+import BaseDataGrid from './BaseDataGrid'
 import { bestPracticeData } from './mixins/bestPracticeData'
+import { dataMethods } from './mixins/dataMethods'
 
 export default {
   name: 'ActivityItemAssessment',
-  mixins: [bestPracticeData],
+  mixins: [bestPracticeData, dataMethods],
   props: {
-    'text': {
+    text: {
       type: String,
       required: true
     },
-    'id': {
+    id: {
       type: Number,
       required: true
-    }
+    },
+    budget: Number,
+    youth: Boolean
   },
   components: {
     BaseHeading,
     BaseDetails,
     BaseGutterWrapper,
-    BestPracticeIcon
+    BestPracticeIcon,
+    BaseButtonLink,
+    BaseDataGrid
+  },
+  data: function () {
+    return {
+      expandedData: {
+        [this.$t('activityTable.defaultID')]: this.id,
+        [this.$t('activityTable.defaultBudget')]: `${this.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
+        [this.$t('activityTable.defaultYouthCentered')]: this.youth ? this.$t('yesRaw') : this.$t('noRaw')
+      }
+    }
   }
 }
 </script>
@@ -85,6 +119,25 @@ export default {
   composes: paddingVerticalNarrow from 'styles/spacing.scss';
   display: block;
   position: relative;
+}
+
+.expandedWrapper {
+  composes: paddingTopNarrow from 'styles/spacing.scss';
+  display: block;
+
+  @supports (display: flex) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.data {
+  display: inline-block;
+
+  @supports (flex: 1) {
+    flex: 1;
+  }
 }
 
 .icons {

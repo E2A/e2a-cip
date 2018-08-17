@@ -4,7 +4,7 @@
 -->
 
 <template>
-  <div :class="[$style.wrapper, width !== 'none' && $style[width]]">
+  <div :class="[base.wrapper, width !== 'none' && base[width]]">
     <slot>Add some stuff here!</slot>
   </div>
 </template>
@@ -21,12 +21,14 @@ export default {
 }
 </script>
 
-<style lang="scss" module>
+<style lang="scss" module="base">
 // available widths of main layout
 $layout-widths: (
-  'narrow'  : 22rem,
-  'default' : 37.5rem,
-  'wide'    : 64rem,
+  'narrow': 22rem,
+  'default': 37.5rem,
+  'wide': 64rem,
+  'xwide': 75rem,
+  'xxwide': 100rem
 );
 
 .wrapper {

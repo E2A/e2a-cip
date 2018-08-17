@@ -33,10 +33,10 @@ export default {
       default: function () {
         return [
           {
-            title: 'Activity name'
+            title: this.$t('activityTable.defaultTitle')
           },
           {
-            title: 'Evidence-based practices',
+            title: this.$t('activityTable.defaultEIP'),
             align: 'right'
           }
         ]

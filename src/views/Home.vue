@@ -2,46 +2,70 @@
   <article>
     <BasePageIntro
       :title="$t('home.title')"
+      :subtitle="$t('home.subtitle')"
       :blurb="$t('home.intro')"
     />
     <BaseSectionWrapper>
       <BaseHeading :level="2" centered>{{$t('home.stepsTitle')}}</BaseHeading>
       <BaseWidthWrapper width="wide" :class="space.paddingTop">
-        <BaseGutterWrapper el="ol" :class="base.stepWrapper">
-          <li v-for="(step, index) in steps" :key="index">
-            <div :class="base.step">
-              <BaseHeading :level="3" :centered="false">{{step.title}}</BaseHeading>
-              <BaseBodyText
-                size="zeta"
-                :content="step.blurb"
-              />
-            </div>
-          </li>
-        </BaseGutterWrapper>
+        <BaseStepList :steps="steps" />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
-    <BaseSectionWrapper v-if="!electron" el="div" :class="type.center" border>
-      <BaseHeading :level="2" centered>{{$t('home.downloadTitle')}}</BaseHeading>
-      <BaseWidthWrapper width="wide" :class="space.paddingTop">
+    <BaseSectionWrapper
+      v-if="!electron"
+      el="div"
+      border
+    >
+      <BaseHeading
+        :level="2"
+        centered
+      >
+        {{$t('home.downloadTitle')}}
+      </BaseHeading>
+      <BaseWidthWrapper
+        :class="space.paddingTop"
+      >
         <BaseBodyText
-          size="zeta"
           :content="$t('home.downloadBlurb')"
+          :class="base.centeredSubheads"
+          size="zeta"
         />
-
-        <BaseButtonLink
-          to="/electron/mac-installer.dmg"
-          size="large"
-          role="primary"
-          :label="$t('home.downloadMac')"
-          :class="space.marginBottom"
-        />
-        <BaseButtonLink
-          to="/electron/win-installer.dmg"
-          size="large"
-          role="primary"
-          :label="$t('home.downloadWindows')"
-          :class="space.marginBottom"
-        />
+        <BaseGutterWrapper
+          :class="[space.paddingTopNarrow, type.center]"
+          gutterX="xnarrow"
+          gutterY="xnarrow"
+        >
+          <li :class="base.gutterItem">
+            <BaseButtonLink
+              :to="$t('home.downloadMacUrl')"
+              size="small"
+              role="primary"
+              :label="$t('home.downloadMac')"
+              :class="space.marginBottom"
+              :router="false"
+            />
+          </li>
+          <li :class="base.gutterItem">
+            <BaseButtonLink
+              :to="$t('home.downloadWindowsUrl')"
+              size="small"
+              role="primary"
+              :label="$t('home.downloadWindows')"
+              :class="space.marginBottom"
+              :router="false"
+            />
+          </li>
+          <li :class="base.gutterItem">
+            <BaseButtonLink
+              :to="$t('home.downloadWindowsPortableUrl')"
+              size="small"
+              role="primary"
+              :label="$t('home.downloadWindowsPortable')"
+              :class="space.marginBottom"
+              :router="false"
+            />
+          </li>
+        </BaseGutterWrapper>
       </BaseWidthWrapper>
     </BaseSectionWrapper>
     <BaseSectionWrapper el="div" :class="type.center" border>
@@ -65,6 +89,7 @@ import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseBodyText from '@/components/BaseBodyText.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
+import BaseStepList from '@/components/BaseStepList.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import { dataMethods } from '@/components/mixins/dataMethods'
@@ -79,6 +104,7 @@ export default {
     BaseHeading,
     BaseBodyText,
     BaseGutterWrapper,
+    BaseStepList,
     BaseButtonLink,
     ClearItems
   },
@@ -141,5 +167,21 @@ export default {
     position: absolute;
     top: 0;
   }
+}
+
+.centeredSubheads {
+  // center all heading elements
+  $list: ();
+  @each $i in [1, 2, 3, 4, 5, 6] {
+    $list: append($list, unquote('h#{$i}'), 'comma');
+  }
+
+  #{$list} {
+    text-align: center;
+  }
+}
+
+.gutterItem {
+  display: inline-block;
 }
 </style>

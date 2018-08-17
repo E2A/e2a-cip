@@ -14,9 +14,9 @@
       >
         <BaseGutterWrapper
           v-if="getGroupProp(group)"
+          :class="type[group]"
           gutterX="narrow"
           gutterY="narrow"
-          :class="type[group]"
         >
           <li
             v-for="(button, index) in getGroupProp(group)"
@@ -24,11 +24,20 @@
             :key="`navFooter-${group}-${index}`"
           >
             <BaseButtonLink
+              v-if="button.type === 'link' || !button.type"
               :to="button.to"
               :label="button.label"
-              size="small"
               :role="button.role || 'default'"
+              size="small"
             />
+            <BaseButton
+              v-if="button.type === 'button'"
+              :label="button.label"
+              :role="button.role || 'default'"
+              @click="button.click"
+              size="small"
+            />
+            <PrintPage v-if="button.type === 'print'" />
           </li>
         </BaseGutterWrapper>
       </div>
@@ -37,6 +46,8 @@
 </template>
 
 <script>
+import BaseButton from '@/components/BaseButton.vue'
+import PrintPage from '@/components/PrintPage.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 
@@ -52,7 +63,9 @@ export default {
   },
   components: {
     BaseGutterWrapper,
-    BaseButtonLink
+    BaseButton,
+    BaseButtonLink,
+    PrintPage
   },
   methods: {
     getGroupProp: function (group) {

@@ -1,48 +1,53 @@
 <template>
   <div :class="base.wrapper">
     <a
-      :class="[base.iconLink]"
+      :class="[base.iconLink, base[selectedAssessmentClass]]"
       :href="`#${flyoutID}`"
       @click.prevent="toggleFlyout"
     >
       <img
         :class="base.icon"
         :src="icon"
-        :alt="name"
+        :alt="title"
       />
     </a>
 
     <!-- flyout for best practice choices -->
-    <template v-if="editable">
-      <BaseFlyout
-        v-show="flyoutOpen"
-        :class="base.flyout"
-        :id="flyoutID"
-        :align="align"
-      >
-        <div :class="space.paddingXxnarrow">
-          <p>{{name}}</p>
-          <div :class="base.dots">
-            <button v-for="(option, index) of bestPracticeOptions"
-              :key="index"
-              @click="updateAssessment(name, option.text)"
-              :class="[
-                base.dot,
-                base[option.class],
-                // {[base.selected]: selectedAssessment.value === option.value}
-              ]"
-            >
-              {{option.text}}
-            </button>
-          </div>
+    <BaseFlyout
+      v-show="flyoutOpen"
+      :class="base.flyout"
+      :id="flyoutID"
+      :align="align"
+    >
+      <div :class="space.paddingXxnarrow">
+        <p>{{title}}</p>
+
+        <!-- dots -->
+        <div
+          v-if="editable"
+          :class="base.dots"
+        >
+          <button v-for="(option, index) of bestPracticeOptions"
+            :key="index"
+            @click="updateAssessment(title, option.text, id)"
+            :class="[
+              base.dot,
+              base[option.class],
+              {[base.selected]: selectedAssessment.value.toLowerCase() === option.value}
+            ]"
+          >
+            {{option.text}}
+          </button>
         </div>
-        <div :class="base.resourceLink">
-          <router-link :to="{name: 'evidence-informed-practice', params: {id: id}}">
-            Read more about this EIP &rsaquo;
-          </router-link>
-        </div>
-      </BaseFlyout>
-    </template>
+      </div>
+
+      <!-- read more link -->
+      <div :class="base.resourceLink">
+        <router-link :to="{name: 'evidence-informed-practice', params: {id: id}}">
+          Read more about this EIP &rsaquo;
+        </router-link>
+      </div>
+    </BaseFlyout>
   </div>
 </template>
 
@@ -55,14 +60,6 @@ export default {
   name: 'bestPracticeIcon',
   mixins: [bestPracticeData],
   props: {
-    icon: {
-      type: String,
-      required: true
-    },
-    name: {
-      type: String,
-      required: true
-    },
     id: {
       type: [String, Number],
       required: true
@@ -72,7 +69,7 @@ export default {
       required: true
     },
     // can you edit the status, e.g. yes, maybe, etc.?
-    // -> if so, we'll show the flyout on click
+    // -> if so, we'll show the buttons on the flyout
     editable: {
       type: Boolean,
       default: false
@@ -84,6 +81,12 @@ export default {
     }
   },
   computed: {
+    icon: function () {
+      return this.findBestPracticeByID().icon
+    },
+    title: function () {
+      return this.findBestPracticeByID().title
+    },
     // html id for flyout, for anchor to target
     flyoutID: function () {
       return `${this.activityID}-${this.id}-flyout`
@@ -94,6 +97,15 @@ export default {
         .where('best_practice_id', this.id).first()
 
       return flyoutPresent && flyoutPresent.flyout
+    },
+    selectedAssessment: function () {
+      return this.getSelectedAssessment(this.title) || this.bestPracticeOptions.no
+    },
+    selectedAssessmentClass: function () {
+      const option = this.getSelectedAssessment(this.title)
+        ? this.getSelectedAssessment(this.title).value.toLowerCase()
+        : this.bestPracticeOptions.no.class
+      return this.bestPracticeOptions[option].class
     }
   },
   components: {
@@ -118,11 +130,16 @@ export default {
           text: this.$t('bestPracticeOptions.noText'),
           value: this.$t('bestPracticeOptions.noKey')
         }
-      },
-      selectedAssessment: this.getSelectedAssessment(this.name)
+      }
     }
   },
+  created: function () {
+    console.log(this.bestPractices.find(bp => bp.id === this.id).icon)
+  },
   methods: {
+    findBestPracticeByID: function () {
+      return this.bestPractices.find(bp => bp.id === this.id)
+    },
     getSelectedAssessment: function (bestPracticeText) {
       // Check if assessment is present, if so add 'assessment-selected' class to selection
       const assessmentPresent = this.$store.getters['entities/activities/query']()
@@ -136,31 +153,30 @@ export default {
       }
       return false
     },
-    updateAssessment: function (bestPracticeText, bestPracticeValue) {
+    updateAssessment: function (bestPracticeText, bestPracticeValue, bestPracticeID) {
       // Check if assessment for current activity is store
       const assessmentPresent = this.$store.getters['entities/activities/query']().with('assessments', (query) => {
         query.where('text', bestPracticeText)
-      }).with('recommendations').find(this.id).assessments[0]
-
-      // update selected assessment in local state
-      // this.setSelectedAssessment(bestPracticeValue)
+      }).with('recommendations').find(this.activityID).assessments[0]
 
       if (assessmentPresent) {
         // Update assessment value if it already exists
         this.$store.dispatch('entities/assessments/update', {
           id: assessmentPresent.id,
-          activity_id: this.id,
+          activity_id: this.activityID,
           text: bestPracticeText,
-          value: bestPracticeValue
+          value: bestPracticeValue,
+          best_practice_id: bestPracticeID
         })
         return
       }
       // Add a new assessment
       this.$store.dispatch('entities/assessments/insert', {
         data: {
-          activity_id: this.id,
+          activity_id: this.activityID,
           text: bestPracticeText,
-          value: bestPracticeValue
+          value: bestPracticeValue,
+          best_practice_id: bestPracticeID
         }
       })
     },

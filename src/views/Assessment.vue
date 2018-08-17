@@ -38,9 +38,10 @@
               <ActivitiesItemAssessment
                 v-for="(activity, index) in activities.activityObjects"
                 :key="`activity-${index}`"
-                :activityInstance="activity"
                 :text="activity.text"
                 :id="activity.id"
+                :budget="activity.budget"
+                :youth="activity.youthCentric"
               />
             </template>
           </div>

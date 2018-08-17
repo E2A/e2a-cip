@@ -1,36 +1,46 @@
 ---
 # Home
 home:
-  title: Costed Implementation Plan Country Analysis
+  title: Not without us!
+  subtitle: A tool for AYSRH-responsive planning
   intro: |-
-    Intro blurb ipsum dolor sit amet, consectetur adipiscing elit. Hoc ille tuus non vult omnibusque ex rebus voluptatem quasi mercedem exigit. Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Iam doloris medicamenta illa Epicurea tamquam de narthecio proment: Si gravis, brevis; Ne in odium veniam, si amicum destitero tueri. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Vadem te ad mortem tyranno dabis pro amico, ut Pythagoreus ille Siculo fecit tyranno.
+    This tool is designed for use by governments, organizations, and individuals who seek to make family planning plans more responsive to the sexual and reproductive health needs of young people, ages 15-24. Through this tool, you will have the opportunity to:
+      * Discern the proportion of activities and budget allotted to activities that are “youth centric.”
+      * Discern the proportion of youth-centric activities and budget allotted to four different activity domains (demand generation, service delivery, enabling environment, and multisectoral) with a youth focus.
+      * Discern how your activities and budget compare with data about young people from your country.
+      * Assess the technical quality of activities included in your plan and revise them to better align with evidence-informed practices (EIPs).
+
+      We hope that the results you receive inform dialogue about  the needs of young people and innovative strategies to meet those needs. We encourage you to use the results to raise awareness about the importance of investing in the sexual and reproductive health of youth, laying the foundation for healthier future generations.
+
+      **Let’s get started!**
   stepsTitle: How it works
   steps:
     step1:
       title: Enter your Activities
       blurb: |-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dici enim nihil potest verius. Quae quidem vel cum periculo est quaerenda vobis; Perge porro; Quae quidem vel cum periculo est quaerenda vobis; Ea possunt paria non esse. Duo Reges: constructio interrete.
+        After entering the title of your plan, your country, and title/role, you will be asked to enter ALL of the activities contained in your plan (not just the ones focused on youth!). You will be asked to categorize the activities by four types, enter the budget amount allocated to each activity, and determine whether the activity is focused on youth. A summary page will appear that will allow you to edit any of the information you have provided.
     step2:
       title: Analyze your activities
       blurb: |-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dici enim nihil potest verius. Quae quidem vel cum periculo est quaerenda vobis; Perge porro; Quae quidem vel cum periculo est quaerenda vobis; Ea possunt paria non esse. Duo Reges: constructio interrete.
+        Next, you will have the opportunity to learn about evidence-informed practices (EIPs), promising practices for improving AYSRH. You will use what you have learned about EIPs to what degree the youth-focused activities in your plan are aligned with the EIPs. Once you complete these two steps, you will get your results!
     step3:
-      title: Review and improve
+      title: Get your results
       blurb: |-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dici enim nihil potest verius. Quae quidem vel cum periculo est quaerenda vobis; Perge porro; Quae quidem vel cum periculo est quaerenda vobis; Ea possunt paria non esse. Duo Reges: constructio interrete.
+        The results page will show you the proportion of activities and budget devoted to youth in your plan. Data generated through the tool about young people in your country to help you determine whether your proposed activities and budget are in line with youth needs. You will also be shown a graph which depicts the degree to which your plan’s activities align with EIPs. Finally, using the information on EIPs, you will be given the opportunity to revise and strengthen the activities.
   getStartedButton: Get started
   downloadTitle: Download offline versions
   downloadBlurb: |-
         If you are having issues with your browser, want to access the application offline, or you just want to use the application on your desktop without using a browser, you can download any of the following versions for your needs.
-        *Note*: The application will still work in the browser even if internet disconnects.
+        *Note*: The application will still work in the browser even if internet disconnects. A portable option with no installation necessary (ie a single .exe) version of the app is available for windows but is a higer file size.
         ### Installation Instructions:
-        - For **Macintosh** use the DMG to install the application.
+        - For **Macintosh** unzip the file and use the DMG to install the application.
         - For **Windows** unzip the folder and run the .exe file in the folder.
-
-        The downloadable files are *55MB*
-  downloadMac: Macintosh
-  downloadWindows: Windows
-
+  downloadMac: Macintosh (51MB)
+  downloadMacUrl: https://github.com/biveeco/e2a-electron-builds/raw/master/mac-installer.zip
+  downloadWindows: Windows (45MB)
+  downloadWindowsUrl: https://github.com/biveeco/e2a-electron-builds/raw/master/windows-installer.zip
+  downloadWindowsPortable: Windows Portable (67MB)
+  downloadWindowsPortableUrl: https://github.com/biveeco/e2a-electron-builds/raw/master/windows-installer-portable.zip
 
 # Setup
 setup:
@@ -70,7 +80,8 @@ deleteActivity: Delete
 # Activity Type
 activityTypeLink: Learn more
 activityTypeTitle: Learn more about activity types
-backToActivities: Back to Activity Input
+backToActivities: Back to your activities
+downloadResource: Download Resource
 activityTypeIntro: |-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Age, inquies, ista parva sunt. Praeteritis, inquit, gaudeo. Plane idem, inquit, et maxima quidem, qua fieri nulla maior potest. Quis hoc dicit? D
 activityTypes:
@@ -91,25 +102,96 @@ activityTypes:
     body: |-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
 
+# Summary page
+summary:
+  title: Well done!
+  intro: |-
+    Below is a summary of the information you have provided about the activities in your plan. It includes the activities sorted by domain, the budget amount associated with each activity, and whether the activity was classified as youth centric. Please make sure that all of this information is correct. If it is not correct, please click the edit button to make changes.
+  previousStep: Go back to setup
+  nextStep: About EIPs
+
 # Evidence-Informed Practices
 readMore: "Read More"
-bestPracticeTitle: About Evidence-Informed Practices (EIPs)
-backToBestPractices: Back to Evidence-Informed Practices (EIPs)
+bestPracticeTitle: About Evidence-Informed Practices (EIP)
+bestPracticeResourceSubtitle: Further reading
+backToBestPractices: Back to Evidence-Informed Practices (EIP)
 bestPracticeIntro: |-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Age, inquies, ista parva sunt. Praeteritis, inquit, gaudeo. Plane idem, inquit, et maxima quidem, qua fieri nulla maior potest. Quis hoc dicit? Duo Reges: constructio interrete. Atqui haec patefactio quasi rerum opertarum, cum quid quidque sit aperitur, definitio est.
+  This page offers an overview of seven identified EIPs. You will use what you learn here to analyze the extent to which the activities in your plan align with the EIPs.
+
+  The EIPs were identified through a desk review including the most recent available evidence on young people’s access to, and utilization of, family planning services. Both published and grey literature were included in the review. Although the level of evidence supporting the different practices varies, there is sufficient evidence for all of the EIPs to provide guidance and be of value in specific contexts. It is important to note, however, that each EIP will present unique implementation challenges and opportunities in different contexts. Therefore, a thorough context-specific assessment is recommended to identify the most suitable approaches to achieve the desired improvement in the sexual and reproductive lives of adolescents and youth.
+
 bestPracticeSubtitle: Evidence-Informed Practices
 bestPractices:
   bestPractice1:
-    title: Provision of adolescent and youth-friendly SRH services
+    title: Providing age and developmentally appropriate services
     icon: http://placehold.it/600x600
     teaser: |-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+      Age and developmentally appropriate services are sometimes described as “adolescent- and youth-friendly.” Adolescent- and youth-friendly sexual and reproductive health (AYSRH) services are SRH services that comply with the five World Health Organization-established standards as well as international norms for improved quality of health services for adolescents. These services commonly include safe and affordable contraceptive methods;  prevention and treatment of HIV/AIDS and care for STIs other than HIV; the provision of accurate sexual and reproductive health information; and sensitive counselling and care for sexual health and wellbeing. Services may also include youth-friendly obstetric and antenatal care for pregnant girls and women; post-abortion care services, prevention, detection, and counselling for gender-based violence; and the prevention, detection, and treatment cervical cancer.
     body: |-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Indicant pueri, in quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, inquit, propter se expetendam. In quibus doctissimi illi veteres inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti in bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+      **What is it?**
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
+      Age and developmentally appropriate services are sometimes described as “adolescent- and youth-friendly.” Adolescent- and youth-friendly sexual and reproductive health (AYSRH) services are SRH services that comply with the five World Health Organization-established standards as well as international norms for improved quality of health services for adolescents.[^1] These services commonly include safe and affordable contraceptive methods; prevention and treatment of HIV/AIDS and care for STIs other than HIV; the provision of accurate sexual and reproductive health information; and sensitive counselling and care for sexual health and wellbeing. Services may also include youth-friendly obstetric and antenatal care for pregnant girls and women; post-abortion care services, prevention, detection, and counselling for gender-based violence; and the prevention, detection, and treatment cervical cancer.[^2][^3]
 
-      At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+      **Why is it important?**
+
+      Adolescence is a key stage in the lifecycle and represents a strategic opportunity “to emphasize empowerment and preventive approaches that would enable adolescents to survive, thrive, and transform their societies.”[^4] AYSRH services play a critical role in this process of empowerment by providing an important conduit to the information and services that young people need to make and enact informed and gender-equitable choices about their own reproductive and sexual lives.
+
+      **Some implementation considerations**
+
+      Youth-friendly approaches can be delivered using a range of service delivery models: services can be either stand-alone (such as a separate clinic or dedicated space for youth) or they can be integrated and mainstreamed into the primary care services normally provided by health facilities, through mobile outreach, or as part of community-based services, including home-based services. _Thinking outside the separate space: a decision-making tool for designing youth-friendly services [^5]_ provides guidance in selecting and adapting appropriate youth-friendly service models based on the country context, target population, and desired behavioral or health outcomes. Youth centers (i.e. independent facilities that provide a range of programs and services to adolescents and youth such as recreational, vocational, or cultural activities which may also host a dedicated room where health care providers can offer SRH information and services), although very popular, have not been shown to be effective at increasing adolescent and youth uptake and use of SRH services.[^6]
+
+      The provision of AYSRH services should be firmly grounded in the principles of equity and non-discrimination, stressing that quality information and services must be available to all adolescents and youth. Equitable adolescent- and youth-friendly services ensure that no policies and procedures restrict the provision of health services to marginalized or vulnerable adolescents and youth on any area of difference.[^7]
+
+      ![Table](/uploads/bestpractices/table.png)
+      **Table 2. World Health Organization’s Features of adolescent-friendly services (2012)**
+
+      Marginalized or vulnerable adolescents and youth are those at high risk of lacking adequate care and protection. Segmentation analysis is a critical step to identify these specific sub-groups and profiles of young people and their needs, which can then be factored in developing equitable and inclusive AYSRH services and programs. Having dedicated health service delivery points for marginalized and stigmatized groups may help reach vulnerable adolescents and youth, as part of a complementary segmentation strategy.
+
+      A variety of tools exist to aid in the implementation of AYSRH services. For example, the 2015 WHO Document _Global Standards for Quality Health-Care Services for Adolescents[^8] is a guide intended to assist program and facility managers, providers, national bodies, and other individuals and organizations who provide adolescent health services to improve the quality of health care services, so adolescents can more easily obtain the services they need. The tool provides quality standards, which are accompanied by implementation and monitoring tools.
+
+      **Suggested activities**
+
+      Based on WHO’s global standards for youth-friendly services, health facilities should strive to:[^9]
+
+      1. **Ensure that health facilities have systems in place to ensure that adolescents are knowledgeable** about their own health, and they know where and when to obtain health services.
+      1. **Ensure that the health facility implements systems to ensure community support.** Parents, guardians and other community members and community organizations should recognize the value of providing health services to adolescents and support such provision and the utilization of services by adolescents.
+      1. **Ensure that health facilities provide an appropriate package of services.** The health facility provides a package of information, counselling, diagnostic, treatment and care services that fulfils the needs of all adolescents. Services are provided in the facility and through referral linkages and outreach.
+      1. **Promote health providers’ competencies.** Health-care providers should demonstrate the technical competence required to provide effective health services to adolescents. Both healthcare providers and support staff should respect, protect, and fulfil adolescents’ rights to information, privacy, confidentiality, non-discrimination, non-judgmental attitude and respect.
+      1. **Promote ‘welcoming’ health facilities.** The health facility should have convenient operating hours, a welcoming and clean environment, and maintain privacy and confidentiality. It should have the equipment, medicines, supplies, and technology needed to ensure effective service provision to adolescents.
+      1. **Guarantee equity and non-discrimination**: The health facility should provide quality services to all adolescents irrespective of their ability to pay, age, sex, marital status, education level, ethnic origin, sexual orientation or other characteristics.
+      1. **Collect data to improve quality.** The health facility should collect, analyse and use data on service utilization and quality of care, disaggregated by age and sex, to support quality improvement. Health facility staff should be supported to participate in continuous quality improvement.
+      1. **Enable adolescents’ participation.** Adolescents should be involved in the planning, monitoring and evaluation of health services and in decisions regarding their own care, as well as in certain appropriate aspects of service provision.
+
+      **Programmatic example**
+
+      To address the challenges that adolescent girls and young women face in seeking HIV and sexual and reproductive health services, the Girl Power-Malawi project tested a variety of integrated approaches to facilitate service uptake. The project compared the current standard of care offered by public-sector health centers—which consisted of vertical HIV testing, family planning, and sexually transmitted infection management in adult-oriented spaces, by providers without extra training—with public sector facilities offering three different models of youth-friendly health services. These included 1) a “standard” youth-friendly service (YFS) package, with trained providers, a dedicated space, and peer education, 2) the YFS package plus a behavioral intervention (BI), which consisted of a curriculum-guided small group education session, and 3) the YFS package, plus the behavior intervention, plus conditional cash transfers. The findings of the study revealed that the youth in the YFS models were 23% more likely to receive HIV testing, 57% more likely to receive condoms, and 39% more likely to receive hormonal contraception.[^10]
+
+      [^1]: World Health Organization, Making health services adolescent friendly: Developing national quality standards for adolescent friendly health services. Geneva: World Health Organization, 2012.
+
+      [^2]: https://www.unfpa.org/resources/adolescent-sexual-and-reproductive-health
+
+      [^3]: Starrs AM, Ezeh AC, Barker G, et al. Accelerate progress—sexual and reproductive health and rights for all: report of the Guttmacher–Lancet Commission. Lancet 2018; 391: 2642–92
+
+      [^4]: https://www.unfpa.org/sites/default/files/pub-pdf/UNFPA_EWEC_Report_EN_WEB.pdf
+
+      [^5]: Callie Simon, Regina Benevides, Gwyn Hainsworth, Gwendolyn Morgan, and Katie Chau, Thinking outside the separate space: A decision-making tool for designing youth-friendly services. Washington, DC: Evidence to Action Project/Pathfinder International, March 2015.
+
+      [^6]: WHO/UNAIDS, _Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents_. Geneva: World Health Organization, 2015.
+
+      [^7]: WHO, _Quality Assessment Guidebook. A guide to assessing health services for adolescent clients._ Geneva, World Health Organization, 2009.
+
+      [^8]: WHO/UNAIDS, _Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents_. Geneva: World Health Organization, 2015.
+
+      [^9]: WHO/UNAIDS, Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents. Geneva: World Health Organization, 2015.
+
+      [^10]: Rosenberg NE, Bhushan NL, Vansia D, et al. Comparing Youth Friendly Health Services to the Standard of Care through "Girl Power-Malawi": A Quasi-Experimental Cohort Study.J Acquir Immune Defic Syndr. 2018 Aug 1. doi: 10.1097/QAI.0000000000001830.
+
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
   bestPractice2:
     title: "Expanding the range of contraceptive methods available to adolescents and young people (including LARCs and DMPA-SC)"
     icon: http://placehold.it/600x600
@@ -121,6 +203,12 @@ bestPractices:
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
   bestPractice3:
     title: "Inclusion of vulnerable and underserved youth groups (including married adolescent girls ad
 FTPs)"
@@ -133,6 +221,12 @@ FTPs)"
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
   bestPractice4:
     title: "Youth participation and leadership in AYSRH programs"
     icon: http://placehold.it/600x600
@@ -144,6 +238,12 @@ FTPs)"
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
   bestPractice5:
     title: "Multi-sectoral coordination for AYSRH"
     icon: http://placehold.it/600x600
@@ -155,6 +255,12 @@ FTPs)"
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
   bestPractice6:
     title: "Comprehensive sexuality education"
     icon: http://placehold.it/600x600
@@ -166,6 +272,12 @@ FTPs)"
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
   bestPractice7:
     title: "Support to families and communities for AYSRH"
     icon: http://placehold.it/600x600
@@ -177,6 +289,12 @@ FTPs)"
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+    resources:
+      - resource:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
   bestPractice8:
     title: "Girls' empowerment"
     icon: http://placehold.it/600x600
@@ -188,20 +306,23 @@ FTPs)"
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti in bibendo voluptas? Hoc Hieronymus summum bonum esse dixit. Non autem hoc: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, Latine voluptas?
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
-
-# Summary page
-summary:
-  title: Well done lorem ipsum!
-  intro: |-
-    You’ve finished entering activities; now have a look and check them over lorem ipsum dolor sit amet, consectetur adipiscing elit. Sint modo partes vitae beatae. Nemo nostrum istius generis asotos iucunde putat vivere. Positum est a nostris in iis esse rebus, quae secundum naturam essent, non dolere; Duo Reges: constructio interrete. Se dicere inter honestum et turpe nimium quantum, nescio quid inmensum, inter ceteras res nihil omnino interesse.
-  previousStep: Go back to setup
-  nextStep: About EIPs
+    resources:
+    - resource:
+        title: Resource Title
+        teaser: |-
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+        url: /uploads/resources/bestpractice1.png
+    - resource:
+        title: Resource Title 2
+        teaser: |-
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+        url: /uploads/resources/bestpractice2.png
 
 # Analysis page
 analysis:
   title: Analyze your activities
   intro: |-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maximas vero virtutes iacere omnis necesse est _voluptate dominante_. Mihi quidem Antiochum, quem audis, satis belle videris attendere. **Rationis** enim perfectio est virtus; Unum nescio, quo modo possit, si luxuriosus sit, finitas cupiditates habere. Duo Reges: constructio interrete. Octavio fuit, cum illam severitatem in eo filio adhibuit, quem in adoptionem.
+    Here are the activities from your plan. Please use what you have learned about EIPs to determine whether each activity aligns with one or more of the EIPs. If the activity **fully aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in green. If the activity **partially aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in yellow. If the activity does not align with one or more EIPs, the symbol(s) should be left the default gray. For easy access to the information about the EIPs, please click on the symbol of the practice you want to review. Once you are finished analyzing your activities, get your results by clicking on the ‘results’ button at the bottom of the page.
   previousStep: Go back to activities
   nextStep: Your results
 
@@ -215,9 +336,32 @@ chartTitles:
   notYouthCentricLabel: "Not Youth Centric"
 
 resultsSubhead: "Here's how your activities rate lorem ipsum:"
-addRecommendation: Add Recommendation
-addAnotherRecommendation: Add Another Recommendation
-suggestedImprovements: Suggested Improvements
+addRecommendation: Add recommendation
+addAnotherRecommendation: Add another recommendation
+suggestedImprovements: Suggested improvements
+suggestImprovements: Suggest improvements
+
+# Advocacy Page
+advocacy:
+  title: 'Moving forward…'
+  intro: |-
+    Now that you have the results of your plan, what should you do now?
+
+    Use the results to inform dialogue about youth needs and innovative strategies to meet those needs. Raise awareness about the importance of investing in the sexual and reproductive health of youth so as to lay the foundation for healthier future generations.
+  stepsTitle: Ways to Advocate
+  steps:
+    step1:
+      title: Share the results of this exercise
+      blurb: |-
+        One purposes of this exercise is to give you a sense of the extent to which your plan addresses the needs of youth in your country and the extent to which your plan is using EIPs. Share the results of what you have learned. Use the results page to prepare a presentation or report for the rest of your planning group, the Ministry of Health or your local NGO. Use the graphs that depict the proportions of activities and budget devoted to youth and compare them with your country data on youth population and contraceptive prevalence rates. Use the EIPs to suggest strategies for strengthening  your plan.
+    step2:
+      title: Start a conversation
+      blurb: |-
+        Another purpose of the tool is to help you start conversations with each other: young people, health care providers, education officials, community leaders, and  policymakers. Are the sexual and reproductive health needs of young people in your community or country being adequately addressed? What share of the reproductive healthcare burden is borne by youth? Does your current plan reflect a proportional concern about this burden? If not, see below!
+    step3:
+      title: Advocate
+      blurb: |-
+        A message that emerges clearly from the EIPs is that AYSRH thrives in settings where where unbiased services are provided in a welcoming environment, where there is multi-sectoral and community support, and where youth understand their sexual and reproductive rights and have the skills to hold duty-bearers to account. A variety of resources exist to help youth and their adult allies plan effective advocacy campaigns. Some resources can be found below:
 
 results:
   value: "Value:"
@@ -225,6 +369,30 @@ results:
   budget: "Budget:"
   youthCentric: "Youth Centric?:"
   allBestPractice: "Full best practice data:"
+  pdfPrintError: "There was an error with PDF printing."
+  exportPDF: 'Export PDF'
+  printPage: Print Page
+  previousStep: Go back to analysis
+  nextStep: Advocate
+
+advocate:
+  title: Go forth and share lorem ipsum dolor sit!
+  intro: |-
+    CTA blurb ipsum dolor sit amet, consectetur adipiscing elit. Hoc ille tuus non vult omnibusque ex rebus voluptatem quasi mercedem exigit. Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Iam doloris medicamenta illa Epicurea tamquam de narthecio proment: Si gravis, brevis; Ne in odium veniam, si amicum destitero tueri. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Vadem te ad mortem tyranno dabis pro amico, ut Pythagoreus ille Siculo fecit tyranno?
+  stepsTitle: Ways to advocate
+  steps:
+    step1:
+      title: Share with your MO
+      blurb: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui igitur convenit ab alia voluptate dicere naturam proficisci, in alia summum bonum ponere? Sin aliud quid voles, postea. Igitur neque stultorum quisquam beatus neque sapientium non beatus. Ille enim occurrentia nescio quae comminiscebatur; Quid de Platone aut de Democrito loquar? Duo Reges: constructio interrete.
+    step2:
+      title: Lorem ipsum dolor sit amet consectetur
+      blurb: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui igitur convenit ab alia voluptate dicere naturam proficisci, in alia summum bonum ponere? Sin aliud quid voles, postea. Igitur neque stultorum quisquam beatus neque sapientium non beatus. Ille enim occurrentia nescio quae comminiscebatur; Quid de Platone aut de Democrito loquar? Duo Reges: constructio interrete.
+    step3:
+      title: Igitur neque stultorum quisquam beatus
+      blurb: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui igitur convenit ab alia voluptate dicere naturam proficisci, in alia summum bonum ponere? Sin aliud quid voles, postea. Igitur neque stultorum quisquam beatus neque sapientium non beatus. Ille enim occurrentia nescio quae comminiscebatur; Quid de Platone aut de Democrito loquar? Duo Reges: constructio interrete.
 
 # File Upload & Download
 fileUpload:
@@ -250,16 +418,17 @@ nav:
 
 # Activity Table
 activityTable:
-  defaultTitle: 'Activity text'
-  defaultBudget: 'Budget'
-  defaultYouthCentered: 'Youth-centered?'
+  defaultTitle: Activity text
+  defaultID: Activity number
+  defaultBudget: Budget
+  defaultYouthCentered: Youth-centered?
+  defaultEIP: 'Evidence-Informed Practices'
 
 # Misc Keys
 uniquenessError: The value entered in {field} is not unique amoung {entityType}
 edit: Edit
 yesRaw: "Yes"
 noRaw: "No"
-printPage: Print Page
 goBack: Go back
 bestPracticeOptions:
   yesText: '@:yesRaw'
@@ -280,3 +449,4 @@ clearItems:
   All: All
 delete: delete
 activities: activities
+activity: activity

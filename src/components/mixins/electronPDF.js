@@ -7,13 +7,15 @@ export const electronPDF = {
       const fs = require('fs')
       const os = require('os')
       const remote = require('electron').remote
-      const shell = require('electron').shell
+      // const shell = require('electron').shell
+      var pdfSuccess = false
 
       // Create temp path
       const timestamp = Date.now()
       const pdfPath = path.join(os.tmpdir(), this.$t('fileUpload.pdfFileName', {timestamp: timestamp}))
 
       const currentWindow = remote.getCurrentWindow()
+      const pdfViewWindow = new remote.BrowserWindow({width: 1500, height: 1500, webPreferences: { plugins: true }})
 
       // Use default printing options
       currentWindow.webContents.printToPDF({paperSize: 'A4', marginsType: 1, landscape: false}, (error, data) => {
@@ -21,9 +23,12 @@ export const electronPDF = {
 
         fs.writeFile(pdfPath, data, error => {
           if (error) throw error
-          shell.openExternal('file://' + pdfPath)
+          pdfViewWindow.loadURL('file://' + pdfPath)
+          pdfSuccess = true
         })
       })
+      // Return outcome based on if file was open.
+      return pdfSuccess
     }
   }
 }
