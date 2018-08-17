@@ -31,9 +31,10 @@
  ✔ Best practice page component @done (18-08-15 21:41)
  ✔ Resource item @done (18-08-16 13:55)
  ☐ Charts
+ ☐ Notification popovers
  ✔ Card grid for best practice/type resources @done (18-08-16 13:55)
- ☐ Swap markdown parser for one that supports footnotes, maybe https://github.com/miaolz123/vue-markdown
- ☐ Swap in textarea for activity text on Activity input form @jay
+ ✔ Swap markdown parser for one that supports footnotes, maybe https://github.com/miaolz123/vue-markdown @done (18-08-16 23:09)
+ ✔ Swap in textarea for activity text on Activity input form @jay @done (18-08-16 23:09)
 
 # Styling
  ☐ Tables

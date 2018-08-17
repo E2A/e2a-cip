@@ -4,7 +4,8 @@
     :label="label"
     :helpText="helpText"
   >
-    <input
+    <component
+      :is="el"
       :id="name"
       :name="name"
       :class="base.input"
@@ -24,6 +25,10 @@ import BaseFormLabel from './BaseFormLabel.vue'
 export default {
   name: 'BaseFormInput',
   props: {
+    el: {
+      type: String,
+      default: 'input'
+    },
     label: String,
     helpText: String,
     value: [String, Number],
@@ -95,5 +100,12 @@ export default {
     border-color: color('highlight');
     background-color: color('light');
   }
+}
+
+.textarea {
+  composes: input;
+  height: auto;
+  min-height: 4em;
+  resize: vertical;
 }
 </style>
