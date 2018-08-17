@@ -5,61 +5,84 @@
 
 # General To Does
 
-# Activity Input
-
 # Pages to set up
  ☐ Setup print page with an instruction area on how to print to PDF in your browser instruction area that gets removed on print
 
 # Pages to do a design pass on
-  ✔ Activity type info page @done (18-08-16 15:14)
-  ✔ Summary @done (18-08-15 09:13)
-  ✔ Analysis @done (18-08-15 21:40)
-  ✔ Results @done (18-08-16 00:05)
-  ✔ Advocacy Page @done (18-08-16 14:51)
 
 # Components to build
  ☐ Icons @hard
    This will take a little figuring out - not sure the best way to handle icon sprites in a render context like Vue. Avoiding icons/using placeholders in first prototype.
- ✔ Activity timeline nav @hard @done (18-08-17 13:29)
- ✔ Activity timeline nav @hard @done (18-08-17 03:38)
- ✔ Charts @done (18-08-17 13:31)
- ☐ Style best practice option buttons
- ✔ Style the suggestion component @done (18-08-17 11:48)
  ☐ Analysis color legend
  ☐ Export/clear tool tray at top of analysis, results, etc.
- ☐ Activity lists:
-   ✔ Assessment @done (18-08-15 21:40)
-   ✔ Results @done (18-08-17 13:29)
- ✔ Best practice page component @done (18-08-15 21:41)
- ✔ Resource item @done (18-08-16 13:55)
  ☐ Notification popovers
- ✔ Card grid for best practice/type resources @done (18-08-16 13:55)
- ✔ Swap markdown parser for one that supports footnotes, maybe https://github.com/miaolz123/vue-markdown @done (18-08-16 23:09)
- ✔ Swap in textarea for activity text on Activity input form @jay @done (18-08-16 23:09)
+
+# Content
+ ☐ Advocacy
+   ☐ Home page content is showing up in the steps list - pulling in wrong translations? or wrong default content?
+ ☐ Break giant en.yaml/localization files into smaller separate files, e.g. `locales/en/best-practices.yaml` @nice-to-have
 
 # Styling
- ☐ Tables
-   ✔ Desktop @done (18-08-15 21:41)
-   ☐ Mobile
- ☐ Color palette
-   ☐ Yes/No/Maybe colors
- ☐ Type treatments
-   ☐ scale
-   ☐ display type
-   ☐ UI type
-   ☐ body type
- ☐ Add logos
-   ☐ home
-   ☐ header nav
- ☐ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling.
+ ☐ Global
+   ☐ Print styles
+   ☐ Tables
+     ☐ Mobile
+   ☐ Color palette
+     ☐ Yes/No/Maybe colors
+   ☐ Type treatments
+     ☐ scale
+     ☐ display type
+     ☐ UI type
+     ☐ body type
+   ☐ Add logos
+     ☐ home
+     ☐ header nav
+   ☐ Activities view
+     ☐ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling.
+     ☐ Switch component (from checkbox)
+     ☐ Refine form styles in general
+   ☐ Analysis
+     ☐ Details component
+       ☐ Take over behaviors with JS and make stateful
+       ☐ Fix focus rings
+     ☐ Best practice icons
+       ☐ best practice option buttons
+       ☐ Fix height issues in flyouts - content (long titles) is overflowing
+     ☐ Use wider container for table
+   ☐ Results
+     ☐ Need empty state for assessment icons in the row - default slot content shows up now if there are no assessments
+     ☐ Hide top row of icons and display edit/cancel buttons when row is expanded
+     ☐ Fix overlap b/n suggestion input and delete button - gutter issue?
+     ☐ Check container width on table
+     ☐ Combine next buttons -> "Share and print your results" points to advocacy, so they see the CTAs before printing
 
-# Copy Writing
+ # Browser testing/debugging
+ ☐ Make sure layouts work without flexbox
+   ☐ Timeline nav
+   ☐ activities tables
 
-# Nice to have
- ☐ Break giant en.yaml/localization files into smaller separate files, e.g. `locales/en/best-practices.yaml` @nice-to-have
+
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Activity lists: @done (18-08-17 17:03)
+ ✔ Charts @done (18-08-17 13:31)
+ ✔ Results @done (18-08-17 13:29)
+ ✔ Activity timeline nav @hard @done (18-08-17 13:29)
+ ✔ Style the suggestion component @done (18-08-17 11:48)
+ ✔ Activity timeline nav @hard @done (18-08-17 03:38)
+ ✔ Swap markdown parser for one that supports footnotes, maybe https://github.com/miaolz123/vue-markdown @done (18-08-16 23:09)
+ ✔ Swap in textarea for activity text on Activity input form @jay @done (18-08-16 23:09)
+ ✔ Activity type info page @done (18-08-16 15:14)
+ ✔ Advocacy Page @done (18-08-16 14:51)
+ ✔ Resource item @done (18-08-16 13:55)
+ ✔ Card grid for best practice/type resources @done (18-08-16 13:55)
+ ✔ Results @done (18-08-16 00:05)
+ ✔ Desktop @done (18-08-15 21:41)
+ ✔ Best practice page component @done (18-08-15 21:41)
+ ✔ Assessment @done (18-08-15 21:40)
+ ✔ Analysis @done (18-08-15 21:40)
  ✔ Debug electron windows version @done (18-08-15 15:12)
+ ✔ Summary @done (18-08-15 09:13)
  ✔ Change buttons on home page to not use router @done (18-08-14 09:03)
  ✔ Add PDF export for electron using -> https://electronjs.org/docs/api/web-contents @done (18-08-13 16:56)
  ✔ Based on -> https://www.electron.build/icons @done (18-08-13 14:10)
