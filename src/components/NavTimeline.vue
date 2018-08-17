@@ -1,6 +1,35 @@
 <template>
   <nav :class="[base.wrapper]">
-    <div :class="base.leftPane">
+    <template
+      v-for="item in items"
+    >
+      <BaseFlyout
+        v-show="openFlyout === flyoutID(item.id)"
+        :class="base.flyout"
+        :id="flyoutID(item.id)"
+        :style="{
+          left: activeDotXPosition + 10 + 'px'
+        }"
+        :key="flyoutID(item.id)"
+      >
+        <BaseHeading
+          :class="space.paddingBottomXnarrow"
+          scale="zeta"
+          sub
+        >
+          {{item.label}}
+        </BaseHeading>
+        <BaseButtonLink
+          :label="$t('edit')"
+          :to="item.url"
+          size="small"
+        />
+      </BaseFlyout>
+    </template>
+    <div
+      @scroll="handleScroll"
+      :class="base.leftPane"
+    >
       <div
         :class="base.timelineWrapper"
         :style="{
@@ -14,28 +43,11 @@
             :key="index"
           >
             <a
+              @click.prevent="toggleFlyout(flyoutID(item.id), $event)"
               :class="[base.dot, item.id === current && base.current]"
+              :id="`activity-${item.id}`"
               href="`#${flyoutID}`"
-              @click.prevent="toggleFlyout(flyoutID(item.id))"
             ></a>
-            <BaseFlyout
-              v-show="openFlyout === flyoutID(item.id)"
-              :class="base.flyout"
-              :id="flyoutID(item.id)"
-            >
-              <BaseHeading
-                :class="space.paddingBottomXnarrow"
-                scale="zeta"
-                sub
-              >
-                {{item.label}}
-              </BaseHeading>
-              <BaseButtonLink
-                :label="$t('edit')"
-                :to="item.url"
-                size="small"
-              />
-            </BaseFlyout>
           </li>
         </ul>
       </div>
@@ -108,19 +120,35 @@ export default {
   },
   data: function () {
     return {
-      openFlyout: false
+      openFlyout: false,
+      activeDot: false,
+      activeDotXPosition: false
     }
   },
   methods: {
-    toggleFlyout: function (id) {
+    flyoutID: function (id) {
+      return `activity-flyout-${id}`
+    },
+    updateActiveDotPosition: function () {
+      if (this.activeDot) {
+        this.activeDotXPosition = this.activeDot.getBoundingClientRect().left
+        return
+      }
+      this.activeDotXPosition = false
+    },
+    toggleFlyout: function (id, event) {
       if (this.openFlyout === id) {
         this.openFlyout = false
+        this.activeDot = false
+        this.activeDotXPosition = false
         return
       }
       this.openFlyout = id
+      this.activeDot = document.getElementById(event.target.id)
+      this.updateActiveDotPosition()
     },
-    flyoutID: function (id) {
-      return `activity-flyout-${id}`
+    handleScroll: function () {
+      this.updateActiveDotPosition()
     }
   }
 }
@@ -252,6 +280,6 @@ $dot-size: scale-type('epsilon');
 
 .flyout {
   composes: paddingNarrow from 'styles/spacing.scss';
-  top: 2.1rem;
+  top: 3.4rem;
 }
 </style>

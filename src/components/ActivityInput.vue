@@ -178,7 +178,7 @@ export default {
     fakeNavItems: function () {
       let items = []
 
-      for (let i = 0; i < 500; i++) {
+      for (let i = 0; i < 25; i++) {
         items.push({
           id: i,
           label: 'Lorem ipsum dolor sit amet',
