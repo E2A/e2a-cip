@@ -33,12 +33,12 @@
     </header>
 
     <!-- convert these to notifications -->
-    <p v-if="this.getItemCount('assessments') === 0">
+    <!-- <p v-if="this.getItemCount('assessments') === 0">
       {{$t('nav.addAssessment')}}
     </p>
     <p v-if="this.getItemCount('assessments') > 0">
       {{$t('nav.removeAssessment')}}
-    </p>
+    </p> -->
   </div>
 </template>
 

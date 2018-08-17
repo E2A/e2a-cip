@@ -1,44 +1,58 @@
 <template>
   <nav :class="[base.wrapper]">
     <div :class="base.leftPane">
-      <ul :class="base.timeline">
-        <li
-          v-for="(item, index) in items"
-          :class="base.item"
-          :key="index"
-        >
-          <a
-            :class="[base.dot, item.id === current && base.current]"
-            href="#"
-          ></a>
-          <BaseFlyout
-            style="display: none;"
+      <div
+        :class="base.timelineWrapper"
+        :style="{
+          width: timelineWidth + 'rem'
+        }"
+      >
+        <ul :class="base.timeline">
+          <li
+            v-for="(item, index) in items"
+            :class="base.item"
+            :key="index"
           >
-            <BaseHeading
-              scale="eta"
-              sub
+            <a
+              :class="[base.dot, item.id === current && base.current]"
+              href="`#${flyoutID}`"
+              @click.prevent="toggleFlyout(flyoutID(item.id))"
+            ></a>
+            <BaseFlyout
+              v-show="openFlyout === flyoutID(item.id)"
+              :class="base.flyout"
+              :id="flyoutID(item.id)"
             >
-              {{item.label}}
-            </BaseHeading>
-            <BaseButtonLink
-              label="Edit"
-              :to="item.url"
-            />
-          </BaseFlyout>
-        </li>
-      </ul>
+              <BaseHeading
+                :class="space.paddingBottomXnarrow"
+                scale="zeta"
+                sub
+              >
+                {{item.label}}
+              </BaseHeading>
+              <BaseButtonLink
+                :label="$t('edit')"
+                :to="item.url"
+                size="small"
+              />
+            </BaseFlyout>
+          </li>
+        </ul>
+      </div>
     </div>
     <div :class="base.rightPane">
       <BaseGutterWrapper
         gutterX="xnarrow"
         gutterY="xnarrow"
       >
-        <Baseheading
-          scale="epsilon"
+        <BaseHeading
+          :class="base.inlineBlock"
+          :centered="false"
+          scale="zeta"
           sub
         >
           <strong>{{items.length}}</strong> {{countLabel || $t('activities')}}
-        </Baseheading>
+        </BaseHeading>
         <div :class="base.inlineBlock">
           <FileUpload :exportType="['Export']" />
         </div>
@@ -77,8 +91,13 @@ export default {
       default: 'bottom'
     }
   },
-  created: function () {
-    // console.log(this.items.find(item => item.label) && this.items.find(item => item.url))
+  computed: {
+    timelineWidth: function () {
+      const dotSize = 1.2 // in rems
+      const dotSpacing = 0.7 // in rems
+      const leftMargin = 2 // in rems
+      return (dotSize + dotSpacing) * this.items.length + leftMargin
+    }
   },
   components: {
     BaseFlyout,
@@ -86,6 +105,23 @@ export default {
     BaseButtonLink,
     FileUpload,
     BaseGutterWrapper
+  },
+  data: function () {
+    return {
+      openFlyout: false
+    }
+  },
+  methods: {
+    toggleFlyout: function (id) {
+      if (this.openFlyout === id) {
+        this.openFlyout = false
+        return
+      }
+      this.openFlyout = id
+    },
+    flyoutID: function (id) {
+      return `activity-flyout-${id}`
+    }
   }
 }
 </script>
@@ -99,12 +135,50 @@ export default {
 @import '~styleConfig/type';
 @import '~styleConfig/zIndex';
 @import '~styleConfig/scale';
+@import '~styleConfig/spacing';
+
+$dot-size: scale-type('epsilon');
 
 .wrapper {
-  composes: paddingVerticalNarrow from 'styles/spacing.scss';
-  overflow: scroll-x;
   display: block;
+  position: relative;
   background-color: well('light');
+
+  @supports (display: flex) {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &::before {
+    background: linear-gradient(to right, well('light'), rgba(well('light'), 0));
+    bottom: 0;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: space('xwide');
+    z-index: z('high');
+  }
+}
+
+.leftPane {
+  composes: paddingVerticalNarrow from 'styles/spacing.scss';
+  bottom: 0;
+  left: 0;
+  overflow-x: scroll;
+  position: relative;
+  right: 0;
+  top: 0;
+
+  @supports (flex: 1) {
+    flex: 1;
+  }
+}
+
+.rightPane {
+  composes: paddingHorizontal paddingVerticalNarrow from 'styles/spacing.scss';
+  display: inline-block;
 
   @supports (display: flex) {
     display: flex;
@@ -112,13 +186,16 @@ export default {
   }
 }
 
-.leftPane {
+.timelineWrapper {
+  display: inline-block;
   position: relative;
-  flex: 1;
+  height: $dot-size;
+  min-width: 100%;
+  vertical-align: middle;
 
   &::before {
     background-color: color('light', $grade: -20);
-    content: '';
+    content: ' ';
     height: border-w('thin');
     left: 0;
     margin-top: -(border-w('thin') / 2);
@@ -127,41 +204,41 @@ export default {
     top: 50%;
     z-index: z('low');
   }
-}
 
-.rightPane {
-  composes: paddingHorizontal from 'styles/spacing.scss';
-  display: inline-block;
-
-  @supports (display: flex) {
-    display: flex;
-    align-items: center;
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
   }
 }
 
 .timeline {
-  composes: paddingHorizontalBetweenXnarrow from 'styles/spacing.scss';
+  composes: marginHorizontalBetweenXnarrow from 'styles/spacing.scss';
   composes: right from 'styles/type.scss';
   display: block;
   font-size: 0;
   list-style: none;
-  margin: 0;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  margin-top: -($dot-size / 2);
+  right: 0;
+  padding-left: 0;
 }
 
 .item {
   @include type-size-default;
   display: inline-block;
+  position: relative;
 }
 
 .dot {
-  $size: scale-type('epsilon');
   composes: default thick from 'styles/borders.scss';
   composes: darkBorder lightBg from 'styles/color.scss';
   display: block;
   border-radius: 50%;
-  width: $size;
-  height: $size;
+  width: $dot-size;
+  height: $dot-size;
   z-index: z('middle');
 }
 
@@ -171,5 +248,10 @@ export default {
 
 .inlineBlock {
   display: inline-block;
+}
+
+.flyout {
+  composes: paddingNarrow from 'styles/spacing.scss';
+  top: 2.1rem;
 }
 </style>

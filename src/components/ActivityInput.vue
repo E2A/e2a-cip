@@ -15,8 +15,17 @@
        Activity Edit / Input Heading
       -->
       <header :class="space.paddingBottomWide">
-        <BaseHeading :level="1" :class="space.paddingBottomXnarrow">{{getActivityTitle()}}</BaseHeading>
-        <BaseHeading :level="5" :sub="true">{{`${capitalize($t('for'))}: ${getItemValue('setup', 'title')}`}}</BaseHeading>
+        <BaseHeading
+          :level="1"
+          :class="space.paddingBottomXnarrow">
+          {{getActivityTitle()}}
+        </BaseHeading>
+        <BaseHeading
+          :level="5"
+          sub
+        >
+          {{`${capitalize($t('for'))}: ${getItemValue('setup', 'title')}`}}
+        </BaseHeading>
       </header>
 
       <BaseWidthWrapper>
@@ -160,6 +169,7 @@ export default {
     navItems: function () {
       return this.getAllActivities().map(activity => {
         return {
+          id: activity.activityId,
           label: activity.shortText,
           url: {name: 'activity', params: {activityId: activity.id}}
         }
@@ -168,8 +178,9 @@ export default {
     fakeNavItems: function () {
       let items = []
 
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 500; i++) {
         items.push({
+          id: i,
           label: 'Lorem ipsum dolor sit amet',
           url: '/test'
         })
