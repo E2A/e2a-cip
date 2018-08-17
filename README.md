@@ -7,11 +7,11 @@
 6) To package the app for hosting use run `yarn build` (the final files will be in the `/dist` folder)
 
 # Editing Content
-To edit content you can click [here](https://github.com/biveeco/e2a-cip/blob/master/src/locales/en.yaml)
+To edit content you can click [here](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml)
 
 It uses Markdown - you can test your text [here](http://miaolz123.github.io/vue-markdown/)
 
-To add resources and other files you can upload them to `public/uploads` you can access it [here](https://github.com/biveeco/e2a-cip/tree/master/public/uploads)
+To add resources and other files you can upload them to `public/uploads` you can access it [here](https://github.com/E2A/e2a-cip/tree/master/public/uploads)
 
 # Data Structure / ERD
 We are using [Vuex ORM](https://vuex-orm.github.io/vuex-orm/) for data management.
