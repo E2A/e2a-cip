@@ -371,6 +371,7 @@ results:
   allBestPractice: "Full best practice data:"
   pdfPrintError: "There was an error with PDF printing."
   exportPDF: 'Export PDF'
+  exportCharts: 'Export your chart data'
   printPage: Print Page
   previousStep: Go back to analysis
   nextStep: Advocate
