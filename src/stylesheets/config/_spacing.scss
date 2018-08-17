@@ -19,6 +19,8 @@ $spacing: (
   'xxnarrow': space-scale(-6)
 );
 
+@debug ms-list();
+
 // getter function for $gutters map
 @function space($name: 'medium', $split: false) {
   @if $split == false {

@@ -22,9 +22,6 @@ export default {
       type: String,
       default: 'aside'
     }
-  },
-  computed: {
-
   }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div>
     <BaseSectionWrapper>
+      <BaseHeading :class="space.paddingBottomWide">{{$t('setup.configureCIP')}}</BaseHeading>
       <BaseWidthWrapper>
-        <BaseHeading :class="space.paddingBottomWide">{{$t('setup.configureCIP')}}</BaseHeading>
         <SetupInput :key="inputKey"/>
         <div :class="[type.center, space.paddingTopWide]">
           <BaseBodyText
