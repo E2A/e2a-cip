@@ -36,11 +36,11 @@ home:
         - For **Macintosh** unzip the file and use the DMG to install the application.
         - For **Windows** unzip the folder and run the .exe file in the folder.
   downloadMac: Macintosh (51MB)
-  downloadMacUrl: https://github.com/biveeco/e2a-electron-builds/raw/master/mac-installer.zip
+  downloadMacUrl: https://github.com/E2A/e2a-electron-builds/raw/master/mac-installer.zip
   downloadWindows: Windows (45MB)
-  downloadWindowsUrl: https://github.com/biveeco/e2a-electron-builds/raw/master/windows-installer.zip
+  downloadWindowsUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer.zip
   downloadWindowsPortable: Windows Portable (67MB)
-  downloadWindowsPortableUrl: https://github.com/biveeco/e2a-electron-builds/raw/master/windows-installer-portable.zip
+  downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
 
 # Setup
 setup:
