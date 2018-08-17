@@ -5,23 +5,27 @@
 
 <template>
   <section>
-    <!-- Dot nav of activities -->
-    <!-- This should really be in its own component -->
-    <nav :class="[border.bottom, space.paddingNarrow]">
-      <ul v-for="(activity, index) in activities = getAllActivities()" :key="index">
-        <li><router-link :to="{name: 'activity', params: { activityId: activity.id }}">{{activity.shortText}}</router-link></li>
-      </ul>
-      <p><strong>{{getItemCount('activities')}}</strong> {{$t('activities')}}</p>
-      <FileUpload :exportType="['Export']" />
-    </nav>
-
+    <NavTimeline
+      :class="border.bottom"
+      :items="navItems"
+      :current="activityId"
+    />
     <BaseSectionWrapper>
       <!--
        Activity Edit / Input Heading
       -->
       <header :class="space.paddingBottomWide">
-        <BaseHeading :level="1" :class="space.paddingBottomXnarrow">{{getActivityTitle()}}</BaseHeading>
-        <BaseHeading :level="5" :sub="true">{{`${capitalize($t('for'))}: ${getItemValue('setup', 'title')}`}}</BaseHeading>
+        <BaseHeading
+          :level="1"
+          :class="space.paddingBottomXnarrow">
+          {{getActivityTitle()}}
+        </BaseHeading>
+        <BaseHeading
+          :level="5"
+          sub
+        >
+          {{`${capitalize($t('for'))}: ${getItemValue('setup', 'title')}`}}
+        </BaseHeading>
       </header>
 
       <BaseWidthWrapper>
@@ -40,28 +44,29 @@
         -->
         <form :class="space.paddingVerticalBetween">
           <BaseFormInput
-            :label="`${$t('enterActivity')} ${$t('number')}`"
-            name="activityNumber"
             v-validate="`uniqueness:activityNumber,activities,${this.activityId}`"
-            :data-vv-as="`${$t('activityNumber')}`"
             v-model='activityNumber'
+            :label="`${$t('enterActivity')} ${$t('number')}`"
+            :data-vv-as="`${$t('activityNumber')}`"
             :error="errors.first('activityNumber')"
+            name="activityNumber"
           />
           <BaseFormInput
-            :label="$t('enterActivity')"
-            name="activityText"
             v-validate="`required|uniqueness:text,activities,${this.activityId}`"
             v-model="activityText"
+            :label="$t('enterActivity')"
             :data-vv-as="`${$t('activityText')}`"
             :error="errors.first('activityText')"
+            el="textarea"
+            name="activityText"
           />
           <BaseFormInput
-            :label="`${$t('enterActivity')} ${$t('budget')}`"
-            name="activityBudget"
             v-model="activityBudget"
             v-validate="'required|numeric'"
+            :label="`${$t('enterActivity')} ${$t('budget')}`"
             :data-vv-as="`${$t('activityBudget')}`"
             :error="errors.first('activityBudget')"
+            name="activityBudget"
           />
 
           <BaseFormLabel
@@ -90,7 +95,9 @@
                 {{ type.title }}
               </option>
             </select>
-            <router-link :to="{name: 'activity-type-info', params: { backToActivityId: activityId }}">{{$t('activityTypeLink')}}</router-link>
+            <div :class="space.paddingTopXxnarrow">
+              <router-link :to="{name: 'activity-type-info', params: { backToActivityId: activityId }}">( i ) {{$t('activityTypeLink')}}</router-link>
+            </div>
           </BaseFormLabel>
         </form>
 
@@ -124,6 +131,7 @@
 </template>
 
 <script>
+import NavTimeline from './NavTimeline.vue'
 import BaseHeading from './BaseHeading.vue'
 import BaseButton from './BaseButton.vue'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
@@ -141,6 +149,7 @@ export default {
   name: 'ActivityInput',
   mixins: [activityTypes, customValidation, dataMethods, stringHelpers],
   components: {
+    NavTimeline,
     BaseHeading,
     BaseButton,
     BaseFormLabel,
@@ -151,9 +160,34 @@ export default {
     BaseSectionWrapper
   },
   props: {
-    'activityId': {
+    activityId: {
       type: [String, Number],
       required: true
+    }
+  },
+  computed: {
+    navItems: function () {
+      return this.getAllActivities().map(activity => {
+        return {
+          id: activity.id,
+          label: activity.shortText,
+          url: {name: 'activity', params: {activityId: activity.id}}
+        }
+      })
+    },
+    // FPO for styling
+    fakeNavItems: function () {
+      let items = []
+
+      for (let i = 0; i < 25; i++) {
+        items.push({
+          id: i,
+          label: 'Lorem ipsum dolor sit amet',
+          url: '/test'
+        })
+      }
+
+      return items
     }
   },
   data () {

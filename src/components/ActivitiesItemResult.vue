@@ -39,7 +39,7 @@
               />
             </li>
           </BaseGutterWrapper>
-          <div style="display: inline-block; vertical-align: middle;">
+          <div style="display: inline-block; vertical-align: top;">
             <BaseButton :label="$t('suggestImprovements')" size="small" />
           </div>
         </BaseGutterWrapper>
@@ -85,9 +85,14 @@
           :label="$t('addRecommendation')"
           size="small"
         />
-        <ol v-for="recommendation of activityRecommendations = getActivityRecommendations()" :key="recommendation.id" class='all-recommendations'>
-          <ActivityRecommendationInput :activityInstance="activityInstance" :recommendationId="recommendation.id" :existingRecommendationText="recommendation.text" />
-          <BaseButton @click="deleteRecommendation(recommendation.id)">{{$t('delete')}}</BaseButton>
+        <ol :class="[base.recommendations, space.paddingVerticalNarrow]">
+          <ActivityRecommendationInput
+            v-for="recommendation of activityRecommendations = getActivityRecommendations()"
+            :key="recommendation.id"
+            :activityInstance="activityInstance"
+            :recommendationId="recommendation.id"
+            :existingRecommendationText="recommendation.text"
+          />
         </ol>
         <BaseButton
           @click="addRecommendation"
@@ -164,10 +169,6 @@ export default {
           text: ''
         }
       })
-    },
-    deleteRecommendation: function (recommendationId) {
-      // Remove recommendation
-      this.$store.dispatch('entities/recommendations/delete', recommendationId)
     }
   }
 }
@@ -230,5 +231,10 @@ export default {
 
 .icon {
   display: inline-block;
+}
+
+.recommendations {
+  counter-reset: recommendations;
+  padding-left: 0;
 }
 </style>

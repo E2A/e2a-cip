@@ -21,8 +21,10 @@
  ☐ Icons @hard
    This will take a little figuring out - not sure the best way to handle icon sprites in a render context like Vue. Avoiding icons/using placeholders in first prototype.
  ✔ Activity timeline nav @hard @done (18-08-17 13:29)
+ ✔ Activity timeline nav @hard @done (18-08-17 03:38)
+ ✔ Charts @done (18-08-17 13:31)
  ☐ Style best practice option buttons
- ☐ Style the suggestion component
+ ✔ Style the suggestion component @done (18-08-17 11:48)
  ☐ Analysis color legend
  ☐ Export/clear tool tray at top of analysis, results, etc.
  ☐ Activity lists:
@@ -30,10 +32,10 @@
    ✔ Results @done (18-08-17 13:29)
  ✔ Best practice page component @done (18-08-15 21:41)
  ✔ Resource item @done (18-08-16 13:55)
- ✔ Charts @done (18-08-17 13:29)
+ ☐ Notification popovers
  ✔ Card grid for best practice/type resources @done (18-08-16 13:55)
- ☐ Swap markdown parser for one that supports footnotes, maybe https://github.com/miaolz123/vue-markdown
- ☐ Swap in textarea for activity text on Activity input form @jay
+ ✔ Swap markdown parser for one that supports footnotes, maybe https://github.com/miaolz123/vue-markdown @done (18-08-16 23:09)
+ ✔ Swap in textarea for activity text on Activity input form @jay @done (18-08-16 23:09)
 
 # Styling
  ☐ Tables
