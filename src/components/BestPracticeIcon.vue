@@ -44,7 +44,7 @@
       <!-- read more link -->
       <div :class="base.resourceLink">
         <router-link :to="{name: 'evidence-informed-practice', params: {id: id}}">
-          Read more about this EIP &rsaquo;
+          {{$t('bestPracticeIconData')}} &rsaquo;
         </router-link>
       </div>
     </BaseFlyout>
