@@ -6,7 +6,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import 'normalize.css' // global reset styles - import here b/c sass doesn't like importing vanilla css
 import NavHeader from '@/components/NavHeader.vue'
 import { dataMethods } from '@/components/mixins/dataMethods.js'
 
@@ -24,7 +24,6 @@ export default {
 // Default box model, scaling, and type styles
 // --> note these styles are not scoped/modules, so they apply to the whole app
 
-@import '~normalize.css';
 @import './stylesheets/config/breakpoints';
 @import './stylesheets/config/type';
 

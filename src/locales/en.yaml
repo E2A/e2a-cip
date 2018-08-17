@@ -1,7 +1,8 @@
 ---
 # Home
 home:
-  title: Not without us! A tool for AYSRH-responsive planning
+  title: Not without us!
+  subtitle: A tool for AYSRH-responsive planning
   intro: |-
     This tool is designed for use by governments, organizations, and individuals who seek to make family planning plans more responsive to the sexual and reproductive health needs of young people, ages 15-24. Through this tool, you will have the opportunity to:
       * Discern the proportion of activities and budget allotted to activities that are “youth centric.”
@@ -79,7 +80,7 @@ deleteActivity: Delete
 # Activity Type
 activityTypeLink: Learn more
 activityTypeTitle: Learn more about activity types
-backToActivities: Back to Activity Input
+backToActivities: Back to your activities
 downloadResource: Download Resource
 activityTypeIntro: |-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Age, inquies, ista parva sunt. Praeteritis, inquit, gaudeo. Plane idem, inquit, et maxima quidem, qua fieri nulla maior potest. Quis hoc dicit? D
@@ -106,14 +107,16 @@ summary:
   title: Well done!
   intro: |-
     Below is a summary of the information you have provided about the activities in your plan. It includes the activities sorted by domain, the budget amount associated with each activity, and whether the activity was classified as youth centric. Please make sure that all of this information is correct. If it is not correct, please click the edit button to make changes.
+  previousStep: Go back to setup
+  nextStep: About EIPs
 
 # Evidence-Informed Practices
 readMore: "Read More"
 bestPracticeTitle: About Evidence-Informed Practices (EIP)
+bestPracticeResourceSubtitle: Further reading
 backToBestPractices: Back to Evidence-Informed Practices (EIP)
 bestPracticeIntro: |-
   This page offers an overview of seven identified EIPs. You will use what you learn here to analyze the extent to which the activities in your plan align with the EIPs.
-
 
   The EIPs were identified through a desk review including the most recent available evidence on young people’s access to, and utilization of, family planning services. Both published and grey literature were included in the review. Although the level of evidence supporting the different practices varies, there is sufficient evidence for all of the EIPs to provide guidance and be of value in specific contexts. It is important to note, however, that each EIP will present unique implementation challenges and opportunities in different contexts. Therefore, a thorough context-specific assessment is recommended to identify the most suitable approaches to achieve the desired improvement in the sexual and reproductive lives of adolescents and youth.
 
@@ -304,22 +307,24 @@ FTPs)"
 
       At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
     resources:
-      - resource:
-          title: Resource Title
-          teaser: |-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
-          url: /uploads/resources/bestpractice1.png
-      - resource:
-          title: Resource Title 2
-          teaser: |-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
-          url: /uploads/resources/bestpractice2.png
+    - resource:
+        title: Resource Title
+        teaser: |-
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+        url: /uploads/resources/bestpractice1.png
+    - resource:
+        title: Resource Title 2
+        teaser: |-
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+        url: /uploads/resources/bestpractice2.png
 
 # Analysis page
 analysis:
   title: Analyze your activities
   intro: |-
     Here are the activities from your plan. Please use what you have learned about EIPs to determine whether each activity aligns with one or more of the EIPs. If the activity **fully aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in green. If the activity **partially aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in yellow. If the activity does not align with one or more EIPs, the symbol(s) should be left the default gray. For easy access to the information about the EIPs, please click on the symbol of the practice you want to review. Once you are finished analyzing your activities, get your results by clicking on the ‘results’ button at the bottom of the page.
+  previousStep: Go back to activities
+  nextStep: Your results
 
 # Results page
 chartTitles:
@@ -331,9 +336,10 @@ chartTitles:
   notYouthCentricLabel: "Not Youth Centric"
 
 resultsSubhead: "Here's how your activities rate lorem ipsum:"
-addRecommendation: Add Recommendation
-addAnotherRecommendation: Add Another Recommendation
-suggestedImprovements: Suggested Improvements
+addRecommendation: Add recommendation
+addAnotherRecommendation: Add another recommendation
+suggestedImprovements: Suggested improvements
+suggestImprovements: Suggest improvements
 
 # Advocacy Page
 advocacy:
@@ -366,6 +372,27 @@ results:
   pdfPrintError: "There was an error with PDF printing."
   exportPDF: 'Export PDF'
   printPage: Print Page
+  previousStep: Go back to analysis
+  nextStep: Advocate
+
+advocate:
+  title: Go forth and share lorem ipsum dolor sit!
+  intro: |-
+    CTA blurb ipsum dolor sit amet, consectetur adipiscing elit. Hoc ille tuus non vult omnibusque ex rebus voluptatem quasi mercedem exigit. Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Iam doloris medicamenta illa Epicurea tamquam de narthecio proment: Si gravis, brevis; Ne in odium veniam, si amicum destitero tueri. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M. Vadem te ad mortem tyranno dabis pro amico, ut Pythagoreus ille Siculo fecit tyranno?
+  stepsTitle: Ways to advocate
+  steps:
+    step1:
+      title: Share with your MO
+      blurb: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui igitur convenit ab alia voluptate dicere naturam proficisci, in alia summum bonum ponere? Sin aliud quid voles, postea. Igitur neque stultorum quisquam beatus neque sapientium non beatus. Ille enim occurrentia nescio quae comminiscebatur; Quid de Platone aut de Democrito loquar? Duo Reges: constructio interrete.
+    step2:
+      title: Lorem ipsum dolor sit amet consectetur
+      blurb: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui igitur convenit ab alia voluptate dicere naturam proficisci, in alia summum bonum ponere? Sin aliud quid voles, postea. Igitur neque stultorum quisquam beatus neque sapientium non beatus. Ille enim occurrentia nescio quae comminiscebatur; Quid de Platone aut de Democrito loquar? Duo Reges: constructio interrete.
+    step3:
+      title: Igitur neque stultorum quisquam beatus
+      blurb: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui igitur convenit ab alia voluptate dicere naturam proficisci, in alia summum bonum ponere? Sin aliud quid voles, postea. Igitur neque stultorum quisquam beatus neque sapientium non beatus. Ille enim occurrentia nescio quae comminiscebatur; Quid de Platone aut de Democrito loquar? Duo Reges: constructio interrete.
 
 # File Upload & Download
 fileUpload:
@@ -391,9 +418,11 @@ nav:
 
 # Activity Table
 activityTable:
-  defaultTitle: 'Activity text'
-  defaultBudget: 'Budget'
-  defaultYouthCentered: 'Youth-centered?'
+  defaultTitle: Activity text
+  defaultID: Activity number
+  defaultBudget: Budget
+  defaultYouthCentered: Youth-centered?
+  defaultEIP: 'Evidence-Informed Practices'
 
 # Misc Keys
 uniquenessError: The value entered in {field} is not unique amoung {entityType}
@@ -420,3 +449,5 @@ clearItems:
   All: All
 delete: delete
 activities: activities
+activity: activity
+bestPracticeIconData: Read more about this EIP

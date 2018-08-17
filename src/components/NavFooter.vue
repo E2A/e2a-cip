@@ -4,48 +4,68 @@
 -->
 
 <template>
-  <nav :class="base.wrapper">
-    <div
-      v-for="(group, index) in ['left', 'right']"
-      :key="`navFooter-${index}`"
-      :class="base.buttonGroup"
-    >
-      <BaseGutterWrapper
-        v-if="getGroupProp(group)"
-        gutterX="narrow"
-        gutterY="narrow"
-        :class="type[group]"
+  <component :is="wrapperEl" :class="base.wrapper">
+    <slot>Add content here</slot>
+    <nav :class="base.nav">
+      <div
+        v-for="(group, index) in ['left', 'right']"
+        :key="`navFooter-${index}`"
+        :class="base.buttonGroup"
       >
-        <li
-          v-for="(button, index) in getGroupProp(group)"
-          :class="base.buttonWrapper"
-          :key="`navFooter-${group}-${index}`"
+        <BaseGutterWrapper
+          v-if="getGroupProp(group)"
+          :class="type[group]"
+          gutterX="narrow"
+          gutterY="narrow"
         >
-          <BaseButtonLink
-            :to="button.to"
-            :label="button.label"
-            size="small"
-            :role="button.role || 'default'"
-          />
-        </li>
-      </BaseGutterWrapper>
-    </div>
-  </nav>
+          <li
+            v-for="(button, index) in getGroupProp(group)"
+            :class="base.buttonWrapper"
+            :key="`navFooter-${group}-${index}`"
+          >
+            <BaseButtonLink
+              v-if="button.type === 'link' || !button.type"
+              :to="button.to"
+              :label="button.label"
+              :role="button.role || 'default'"
+              size="small"
+            />
+            <BaseButton
+              v-if="button.type === 'button'"
+              :label="button.label"
+              :role="button.role || 'default'"
+              @click="button.click"
+              size="small"
+            />
+            <PrintPage v-if="button.type === 'print'" />
+          </li>
+        </BaseGutterWrapper>
+      </div>
+    </nav>
+  </component>
 </template>
 
 <script>
+import BaseButton from '@/components/BaseButton.vue'
+import PrintPage from '@/components/PrintPage.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 
 export default {
   name: 'NavFooter',
   props: {
+    wrapperEl: {
+      type: String,
+      default: 'div'
+    },
     leftButtons: Array,
     rightButtons: Array
   },
   components: {
     BaseGutterWrapper,
-    BaseButtonLink
+    BaseButton,
+    BaseButtonLink,
+    PrintPage
   },
   methods: {
     getGroupProp: function (group) {
@@ -61,6 +81,9 @@ export default {
 
 <style lang="scss" module="base">
 .wrapper {
+  padding-bottom: 5rem;
+}
+.nav {
   composes: top from 'styles/borders.scss';
   composes: lightBg from 'styles/color.scss';
   composes: paddingHorizontalWide paddingVerticalNarrow from 'styles/spacing.scss';

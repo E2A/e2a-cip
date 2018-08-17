@@ -12,5 +12,5 @@ export default class Setup extends Model {
       currencyCode: this.attr(null),
       currencyName: this.attr(null)
     }
-  }s
+  }
 }

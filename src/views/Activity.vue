@@ -1,15 +1,14 @@
 <template>
-  <div style="padding-bottom: 5rem;">
+  <NavFooter
+    :leftButtons="this.getNavButtons().left"
+    :rightButtons="this.getNavButtons().right"
+  >
     <ActivityInput
       :activityId="activityId"
       ref="activityInput"
       :key="this.getLastItem()"
     />
-    <NavFooter
-      :leftButtons="this.getNavButtons().left"
-      :rightButtons="this.getNavButtons().right"
-    />
-  </div>
+  </NavFooter>
 </template>
 
 <script>

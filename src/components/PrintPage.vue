@@ -1,7 +1,18 @@
 <template>
   <div class="PrintPage">
-    <BaseButton v-if="electron" @click="exportPDF" :label="$t('results.exportPDF')"></BaseButton>
-    <BaseButton @click="printPage" :label="$t('results.printPage')"></BaseButton>
+    <BaseButton
+      v-if="electron"
+      @click="exportPDF"
+      :label="$t('results.exportPDF')"
+      :size="size"
+      :role="role"
+    />
+    <BaseButton
+      @click="printPage"
+      :label="$t('results.printPage')"
+      :size="size"
+      :role="role"
+    />
     <p v-if="pdfPrintError">{{$t('results.pdfPrintError')}}</p>
   </div>
 </template>
@@ -14,6 +25,16 @@ import BaseButton from '@/components/BaseButton.vue'
 export default {
   name: 'PrintPage',
   mixins: [electronPDF, dataMethods],
+  props: {
+    size: {
+      type: String,
+      default: 'small'
+    },
+    role: {
+      type: String,
+      default: 'default'
+    }
+  },
   components: {
     BaseButton
   },

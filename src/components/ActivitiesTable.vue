@@ -1,15 +1,18 @@
 <template>
-  <table>
+  <table :class="base.table">
     <thead>
-      <tr>
+      <tr :class="space.paddingHorizontalBetweenXnarrow">
         <th
           v-for="(heading, index) in headings"
           :key="index"
-          :class="type[heading.align || 'left']"
+          :class="[base.heading, type[heading.align || 'left']]"
         >
           {{ heading.title }}
         </th>
-        <th v-if="actionColumn"><!-- extra cell for edit button --></th>
+        <th
+          v-if="actionColumn"
+          :class="base.heading"
+        ><!-- extra cell for edit button --></th>
       </tr>
     </thead>
     <slot>Add activity items here</slot>
@@ -44,4 +47,21 @@ export default {
 }
 </script>
 
-<style src="../stylesheets/utilities/type.scss" lang="scss" module="type"></style>
+<style src="styles/type.scss" lang="scss" module="type"></style>
+<style src="styles/spacing.scss" lang="scss" module="space"></style>
+
+<style lang="scss" module="base">
+.table {
+  cellspacing: 0;
+  cellpadding: 0;
+  border-collapse: collapse;
+}
+
+.heading {
+  composes: bottom thick from 'styles/borders.scss';
+  composes: darkBorder from 'styles/color.scss';
+  composes: scaleEta bold from 'styles/type.scss';
+  composes: paddingVerticalXxnarrow from 'styles/spacing.scss';
+  vertical-align: bottom;
+}
+</style>

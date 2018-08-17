@@ -5,141 +5,147 @@
 -->
 
 <template>
-  <li class="ActivityItemAssessment, sad-style">
-    <BaseHeading :level="6" :sub="true">{{text}}</BaseHeading>
-
-    <!-- edit button -->
-    <router-link :to="{
-      name: 'activity',
-      params: {
-        activityId: String(id)
-      }
-    }">{{$t('edit')}}</router-link>
-
-    <!-- list of best practice icons -->
-    <ul>
-      <li v-for="(bestPractice, index) of bestPractices" :key="index">
-        <img :src="bestPractice.icon" />
-
-        <!-- flyout for best practice choices -->
-        <div class='modal-select'>
-          <p> {{bestPractice.title}}</p>
-          <div class='button-group'>
-            <button v-for="(bestPracticeOption,index) of bestPracticeOptions" :key="index" @click="addAssessment(bestPractice.title,bestPracticeOption.text)" class="dot" :class="[bestPracticeOption.value,getSelectedAssessment(bestPractice.title,bestPracticeOption.text)]">
-              {{bestPracticeOption.text}}
-            </button>
-          </div>
+  <li :class="base.wrapper">
+    <BaseDetails>
+      <template slot="summaryLeft">
+        <BaseHeading
+          :level="6"
+          :centered="false"
+          sub
+        >
+          {{text}}
+        </BaseHeading>
+      </template>
+      <template slot="summaryRight">
+        <!-- list of best practice icons -->
+        <BaseGutterWrapper
+          :class="base.icons"
+          el="ul"
+          gutterX="xnarrow"
+          gutterY="xnarrow"
+        >
+          <li
+            v-for="(bestPractice, index) of bestPractices"
+            :key="index"
+            :class="base.icon"
+          >
+            <BestPracticeIcon
+              :id="bestPractice.id"
+              :activityID="id"
+              :align="index > 5 ? 'right' : 'center'"
+              editable
+            />
+          </li>
+        </BaseGutterWrapper>
+      </template>
+      <template>
+        <div :class="base.expandedWrapper">
+          <BaseDataGrid
+            :data="expandedData"
+            :class="base.data"
+          />
+          <BaseGutterWrapper
+            gutterX="narrow"
+            gutterY="narrow"
+          >
+            <div :class="base.gutter">
+              <!-- edit button -->
+              <BaseButtonLink
+                :to="{
+                  name: 'activity',
+                  params: {
+                    activityId: String(id)
+                  }
+                }"
+                :label="$t('edit')"
+                size="small"
+              />
+            </div>
+          </BaseGutterWrapper>
         </div>
-      </li>
-    </ul>
+      </template>
+    </BaseDetails>
   </li>
 </template>
 
 <script>
+import BaseDetails from './BaseDetails'
 import BaseHeading from './BaseHeading'
+import BaseButtonLink from './BaseButtonLink'
+import BaseGutterWrapper from './BaseGutterWrapper'
+import BestPracticeIcon from './BestPracticeIcon'
+import BaseDataGrid from './BaseDataGrid'
 import { bestPracticeData } from './mixins/bestPracticeData'
+import { dataMethods } from './mixins/dataMethods'
 
 export default {
   name: 'ActivityItemAssessment',
-  mixins: [bestPracticeData],
+  mixins: [bestPracticeData, dataMethods],
   props: {
-    'text': {
+    text: {
       type: String,
       required: true
     },
-    'id': {
+    id: {
       type: Number,
       required: true
-    }
-  },
-  data () {
-    return {
-      bestPracticeOptions: [
-        {value: this.$t('bestPracticeOptions.yesKey'), text: this.$t('bestPracticeOptions.yesText')},
-        {value: this.$t('bestPracticeOptions.maybeKey'), text: this.$t('bestPracticeOptions.maybeText')},
-        {value: this.$t('bestPracticeOptions.noKey'), text: this.$t('bestPracticeOptions.noText')}
-      ]
-    }
+    },
+    budget: Number,
+    youth: Boolean
   },
   components: {
-    BaseHeading
+    BaseHeading,
+    BaseDetails,
+    BaseGutterWrapper,
+    BestPracticeIcon,
+    BaseButtonLink,
+    BaseDataGrid
   },
-  methods: {
-    getSelectedAssessment: function (bestPracticeText, bestPracticeValue) {
-      // Check if assessment is present, if so add 'assessment-selected' class to selection
-
-      const assessmentPresent = this.$store.getters['entities/activities/query']()
-        .with('assessments', (query) => {
-          query
-            .where('text', bestPracticeText)
-            .where('value', bestPracticeValue)
-        }).find(this.id).assessments
-
-      if (assessmentPresent && assessmentPresent.length > 0) {
-        return 'assessment-selected'
-      } else {
-        return null
+  data: function () {
+    return {
+      expandedData: {
+        [this.$t('activityTable.defaultID')]: this.id,
+        [this.$t('activityTable.defaultBudget')]: `${this.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
+        [this.$t('activityTable.defaultYouthCentered')]: this.youth ? this.$t('yesRaw') : this.$t('noRaw')
       }
-    },
-    addAssessment: function (bestPracticeText, bestPracticeValue) {
-      // Check if assessment for current activity is store
-      const assessmentPresent = this.$store.getters['entities/activities/query']().with('assessments', (query) => {
-        query.where('text', bestPracticeText)
-      }).with('recomemndations').find(this.id).assessments[0]
-
-      if (assessmentPresent) {
-        // Update assessment value if it already exists
-        this.$store.dispatch('entities/assessments/update', {
-          id: assessmentPresent.id,
-          activity_id: this.id,
-          text: bestPracticeText,
-          value: bestPracticeValue
-        })
-        return
-      }
-      // Add a new assessment
-      this.$store.dispatch('entities/assessments/insert', {
-        data: {
-          activity_id: this.id,
-          text: bestPracticeText,
-          value: bestPracticeValue
-        }
-      })
     }
   }
 }
 </script>
 
-<style scoped>
-
-.sad-style {
-  background: #ccc;
-  border: 1;
-  padding: 15px;
-  margin: 15px;
+<style lang="scss" module="base">
+.wrapper {
+  composes: top from 'styles/borders.scss';
+  composes: paddingVerticalNarrow from 'styles/spacing.scss';
+  display: block;
+  position: relative;
 }
 
-.dot {
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
+.expandedWrapper {
+  composes: paddingTopNarrow from 'styles/spacing.scss';
+  display: block;
+
+  @supports (display: flex) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.data {
   display: inline-block;
+
+  @supports (flex: 1) {
+    flex: 1;
+  }
 }
 
-.yes {
-  background-color: green;
+.icons {
+  list-style: none;
+  text-align: right;
 }
 
-.maybe {
-  background-color: yellow;
-}
-
-.no {
-  background-color: gray;
-}
-.assessment-selected {
-  padding: 20px;
-  border-width: 6px;
-  border-color: red;
+.icon {
+  display: inline-block;
 }
 </style>

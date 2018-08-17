@@ -1,9 +1,15 @@
 <template>
-  <tr :class="[type.scaleEpsilon]">
-    <td :class="type.bold">{{text}}</td>
-    <td :class="type.right">{{budget}} {{getItemValue('setup', 'currencyCode')}}</td>
-    <td :class="type.center">{{youthIcon}}</td>
-    <td><BaseButtonLink :to="{name: 'activity', params: { activityId: id }}" :label="$t('edit')" /></td>
+  <tr :class="[type.scaleZeta, space.paddingHorizontalBetweenXnarrow]">
+    <td :class="base.cell">{{text}}</td>
+    <td :class="[base.cell, type.right]">{{budget}} {{getItemValue('setup', 'currencyCode')}}</td>
+    <td :class="[base.cell, type.center]">{{youthIcon}}</td>
+    <td :class="base.cell">
+      <BaseButtonLink
+        :to="{name: 'activity', params: { activityId: id }}"
+        :label="$t('edit')"
+        size="small"
+      />
+    </td>
   </tr>
 </template>
 
@@ -43,4 +49,18 @@ export default {
 }
 </script>
 
-<style src="../stylesheets/utilities/type.scss" lang="scss" module="type"></style>
+<style src="styles/type.scss" lang="scss" module="type"></style>
+<style src="styles/spacing.scss" lang="scss" module="space"></style>
+
+<style lang="scss" module="base">
+.row {
+  cellpadding: 0;
+  cellspacing: 0;
+  border-collapse: collapse;
+}
+.cell {
+  composes: paddingVerticalXnarrow from 'styles/spacing.scss';
+  composes: top from 'styles/borders.scss';
+  vertical-align: top;
+}
+</style>

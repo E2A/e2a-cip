@@ -5,37 +5,107 @@
 -->
 
 <template>
-  <div class="ActivitiesItemResult">
-      <p>{{activityInstance.text}}</p>
-      <div v-for="(assessment,index) of activeAssessments" :key="`ass-${index}`" class='assessments-present'>
-        <div class='dot' :class="assessment.value.toLowerCase()">
-          <div>{{$t('results.value')}} {{assessment.value}}</div>
-          <div>{{$t('results.text')}} {{assessment.text}}</div>
-        </div>
-      </div>
-      <div class="detailedView">
-        <p>{{$t('results.budget')}} {{activityInstance.budget}} {{getItemValue('setup', 'currencyCode')}}</p>
-        <p>{{$t('results.youthCentric')}} <span v-if="activityInstance.youthCentric">{{$t('yesRaw')}}</span>
-        <span v-else>{{$t('noRaw')}}</span></p>
-        <p>{{$t('results.allBestPractice')}}</p>
-        <div v-for="(bestPractice, index) of bestPractices" :key="`bp-${index}`" class='all-assessments'>
-          <div class='dot' :class="getBestPracticePresence(bestPractice.title)">
+  <li :class="base.wrapper">
+    <BaseDetails>
+      <template slot="summaryLeft">
+        <BaseHeading
+          :centered="false"
+          scale="zeta"
+          sub
+        >
+          {{activityInstance.text}}
+        </BaseHeading>
+      </template>
+      <template slot="summaryRight">
+        <BaseGutterWrapper
+          gutterX="narrow"
+          gutterY="narrow"
+          :class="type.right"
+        >
+          <BaseGutterWrapper
+            :class="base.icons"
+            el="ul"
+            gutterX="xnarrow"
+            gutterY="xnarrow"
+          >
+            <li
+              v-for="(assessment,index) of activeAssessments"
+              :key="`assess-${index}`"
+              :class="base.icon"
+            >
+              <BestPracticeIcon
+                :id="assessment.best_practice_id"
+                :activityID="assessment.activity_id"
+              />
+            </li>
+          </BaseGutterWrapper>
+          <div style="display: inline-block; vertical-align: middle;">
+            <BaseButton :label="$t('suggestImprovements')" size="small" />
           </div>
-        </div>
-        <button @click="addRecommendation">{{$t('addRecommendation')}}</button>
-        <BaseHeading>{{$t('suggestedImprovements')}}</BaseHeading>
-          <ol v-for="recommendation of activityRecommendations = getActivityRecommendations()" :key="recommendation.id" class='all-recommendations'>
-           <ActivityRecommendationInput :activityInstance="activityInstance" :recommendationId="recommendation.id" :existingRecommendationText="recommendation.text" />
-           <button @click="deleteRecommendation(recommendation.id)">{{$t('delete')}}</button>
-          </ol>
-        <button @click="addRecommendation">{{$t('addAnotherRecommendation')}}</button>
+        </BaseGutterWrapper>
+      </template>
+
+      <!-- data -->
+      <div :class="base.expandedWrapper">
+        <BaseDataGrid
+          :data="expandedData"
+          :class="base.data"
+        />
+        <BaseGutterWrapper
+          :class="base.icons"
+          el="ul"
+          gutterX="xnarrow"
+          gutterY="xnarrow"
+        >
+          <li
+            v-for="(bestPractice, index) of bestPractices"
+            :key="`bp-${index}`"
+            :class="base.icon"
+          >
+            <BestPracticeIcon
+              :id="bestPractice.id"
+              :activityID="activityInstance.id"
+            />
+          </li>
+        </BaseGutterWrapper>
       </div>
-  </div>
+
+      <!-- recommendations -->
+      <div :class="space.paddingTopNarrow">
+        <BaseHeading
+          :level="5"
+          :centered="false"
+          :class="space.paddingBottomXnarrow"
+          scale="zeta"
+        >
+          {{$t('suggestedImprovements')}}
+        </BaseHeading>
+        <BaseButton
+          @click="addRecommendation"
+          :label="$t('addRecommendation')"
+          size="small"
+        />
+        <ol v-for="recommendation of activityRecommendations = getActivityRecommendations()" :key="recommendation.id" class='all-recommendations'>
+          <ActivityRecommendationInput :activityInstance="activityInstance" :recommendationId="recommendation.id" :existingRecommendationText="recommendation.text" />
+          <BaseButton @click="deleteRecommendation(recommendation.id)">{{$t('delete')}}</BaseButton>
+        </ol>
+        <BaseButton
+          @click="addRecommendation"
+          :label="$t('addAnotherRecommendation')"
+          size="small"
+        />
+      </div>
+    </BaseDetails>
+  </li>
 </template>
 
 <script>
-// @ is an alias to /src
 import BaseHeading from '@/components/BaseHeading.vue'
+import BaseButton from '@/components/BaseButton.vue'
+import BaseDetails from '@/components/BaseDetails.vue'
+import BestPracticeIcon from '@/components/BestPracticeIcon.vue'
+import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
+import BaseDataGrid from '@/components/BaseDataGrid.vue'
 import { bestPracticeData } from './mixins/bestPracticeData'
 import { dataMethods } from './mixins/dataMethods'
 import ActivityRecommendationInput from '@/components/ActivityRecommendationInput.vue'
@@ -45,10 +115,15 @@ export default {
   mixins: [bestPracticeData, dataMethods],
   components: {
     BaseHeading,
+    BaseButton,
+    BaseDetails,
+    BestPracticeIcon,
+    BaseGutterWrapper,
+    BaseDataGrid,
     ActivityRecommendationInput
   },
   props: {
-    'activityInstance': {
+    activityInstance: {
       type: Object,
       required: true
     }
@@ -56,7 +131,12 @@ export default {
   data () {
     return {
       activeAssessments: this.activityInstance.assessments,
-      recommendationText: ''
+      recommendationText: '',
+      expandedData: {
+        [this.$t('activityTable.defaultID')]: this.activityInstance.id,
+        [this.$t('activityTable.defaultBudget')]: `${this.activityInstance.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
+        [this.$t('activityTable.defaultYouthCentered')]: this.activityInstance.youthCentric ? this.$t('yesRaw') : this.$t('noRaw')
+      }
     }
   },
   methods: {
@@ -93,7 +173,36 @@ export default {
 }
 </script>
 
-<style scoped>
+<style src="styles/spacing.scss" lang="scss" module="space"></style>
+<style src="styles/type.scss" lang="scss" module="type"></style>
+
+<style lang="scss" module="base">
+.wrapper {
+  composes: top from 'styles/borders.scss';
+  composes: paddingVerticalNarrow from 'styles/spacing.scss';
+  display: block;
+  position: relative;
+}
+
+.expandedWrapper {
+  composes: paddingTopNarrow from 'styles/spacing.scss';
+  display: block;
+
+  @supports (display: flex) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.data {
+  display: inline-block;
+
+  @supports (flex: 1) {
+    flex: 1;
+  }
+}
+
 .dot {
   height: 25px;
   width: 25px;
@@ -111,5 +220,15 @@ export default {
 
 .no {
   background-color: gray;
+}
+
+.icons {
+  display: inline-block;
+  list-style: none;
+  text-align: right;
+}
+
+.icon {
+  display: inline-block;
 }
 </style>

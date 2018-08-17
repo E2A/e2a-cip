@@ -1,6 +1,7 @@
 import { Model } from '@vuex-orm/core'
 import Assessment from './Assessment'
 import Recommendation from './Recommendation'
+import BestPracticeIcon from './BestPracticeIcon'
 
 export default class Activity extends Model {
   static entity = 'activities'
@@ -14,7 +15,8 @@ export default class Activity extends Model {
       youthCentric: this.boolean(false),
       type: this.string(''),
       assessments: this.hasMany(Assessment, 'activity_id'),
-      recommendations: this.hasMany(Recommendation, 'activity_id')
+      recommendations: this.hasMany(Recommendation, 'activity_id'),
+      icons: this.hasMany(BestPracticeIcon, 'activity_id')
     }
   }
 
