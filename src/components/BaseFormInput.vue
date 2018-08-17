@@ -3,11 +3,12 @@
     :id="name"
     :label="label"
     :helpText="helpText"
+    :textSize="labelTextSize"
   >
     <input
       :id="name"
       :name="name"
-      :class="base.input"
+      :class="[base.input, type[typeScaleClass(textSize)]]"
       :placeholder="placeholder"
       :value="value"
       :type="type"
@@ -19,10 +20,12 @@
 </template>
 
 <script>
+import { styleHelpers } from './mixins/helpers.js'
 import BaseFormLabel from './BaseFormLabel.vue'
 
 export default {
   name: 'BaseFormInput',
+  mixins: [styleHelpers],
   props: {
     label: String,
     helpText: String,
@@ -38,6 +41,14 @@ export default {
     error: {
       type: String,
       required: false
+    },
+    textSize: {
+      type: String,
+      default: 'epsilon'
+    },
+    labelTextSize: {
+      type: String,
+      default: 'zeta'
     }
   },
   components: {
@@ -80,7 +91,6 @@ export default {
 
 .input {
   composes: transition from 'styles/animation.scss';
-  composes: scaleEpsilon from 'styles/type.scss';
   composes: paddingXnarrow from 'styles/spacing.scss';
   composes: round default from 'styles/borders.scss';
   box-shadow: none !important;

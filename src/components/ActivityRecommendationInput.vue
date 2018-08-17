@@ -5,19 +5,49 @@
 -->
 
 <template>
-  <li class="ActivityRecommendationInput">
-      <input @change="updateRecommendation()" v-model="recommendationText" :placeholder="$t('enterSuggestion')">
+  <li :class="base.wrapper">
+    <div :class="base.numberWrapper">
+      <BaseGutterWrapper
+        :class="base.flex"
+        gutterY="narrow"
+        gutterX="narrow"
+      >
+        <div :class="[base.gutter, base.fill]">
+          <BaseFormInput
+            v-model="recommendationText"
+            @change="updateRecommendation()"
+            :label="$t('enterSuggestion')"
+            textSize="zeta"
+            labelTextSize="eta"
+            el="textarea"
+          />
+        </div>
+        <div :class="base.gutter">
+          <BaseButton
+            @click="deleteRecommendation()"
+            :label="$t('delete')"
+            size="small"
+          />
+        </div>
+      </BaseGutterWrapper>
+    </div>
   </li>
 </template>
 
 <script>
 // @ is an alias to /src
-import BaseHeading from '@/components/BaseHeading.vue'
+import BaseHeading from './BaseHeading.vue'
+import BaseButton from './BaseButton.vue'
+import BaseFormInput from './BaseFormInput.vue'
+import BaseGutterWrapper from './BaseGutterWrapper.vue'
 
 export default {
   name: 'ActivityRecommendationInput',
   components: {
-    BaseHeading
+    BaseHeading,
+    BaseButton,
+    BaseFormInput,
+    BaseGutterWrapper
   },
   props: {
     'activityInstance': {
@@ -47,7 +77,61 @@ export default {
         activity_id: this.activityInstance.id,
         text: this.recommendationText
       })
+    },
+    deleteRecommendation: function () {
+      // Remove recommendation
+      this.$store.dispatch('entities/recommendations/delete', this.recommendationId)
     }
   }
 }
 </script>
+
+<style src="styles/type.scss" lang="scss" module="type"></style>
+
+<style lang="scss" module="base">
+@import '~styleConfig/scale';
+@import '~styleConfig/type';
+@import '~styleConfig/color';
+@import '~styleConfig/spacing';
+
+.wrapper {
+  display: block;
+  position: relative;
+}
+
+.numberWrapper {
+  composes: paddingLeft from 'styles/spacing.scss';
+  counter-increment: recommendations;
+  display: block;
+  position: relative;
+
+  &::before {
+    @include font();
+    color: color('midtone');
+    content: counter(recommendations);
+    display: block;
+    font-size: scale-type('zeta');
+    left: 0;
+    line-height: 1;
+    position: absolute;
+    top: (space('narrow') + 0.2rem); // matches gutterWrapper gutters
+  }
+}
+
+.flex {
+  @supports (display: flex) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.fill {
+  @supports (flex: 1) {
+    flex: 1;
+  }
+
+  .gutter {
+    display: inline-block;
+  }
+}
+</style>
