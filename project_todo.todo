@@ -22,7 +22,7 @@
    This will take a little figuring out - not sure the best way to handle icon sprites in a render context like Vue. Avoiding icons/using placeholders in first prototype.
  ☐ Activity timeline nav @hard
  ☐ Style best practice option buttons
- ☐ Style the suggestion component
+ ✔ Style the suggestion component @done (18-08-17 11:48)
  ☐ Analysis color legend
  ☐ Export/clear tool tray at top of analysis, results, etc.
  ☐ Activity lists:

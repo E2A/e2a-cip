@@ -39,7 +39,7 @@
               />
             </li>
           </BaseGutterWrapper>
-          <div style="display: inline-block; vertical-align: middle;">
+          <div style="display: inline-block; vertical-align: top;">
             <BaseButton :label="$t('suggestImprovements')" size="small" />
           </div>
         </BaseGutterWrapper>
