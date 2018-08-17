@@ -44,7 +44,7 @@
           >
             <a
               @click.prevent="toggleFlyout(flyoutID(item.id), $event)"
-              :class="[base.dot, item.id === current && base.current]"
+              :class="[base.dot, String(item.id) === current ? color.darkBg : color.lightBg]"
               :id="`activity-${item.id}`"
               href="`#${flyoutID}`"
             ></a>
@@ -156,6 +156,7 @@ export default {
 
 <style src="styles/borders.scss" lang="scss" module="border"></style>
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
+<style src="styles/color.scss" lang="scss" module="color"></style>
 
 <style lang="scss" module="base">
 @import '~styleConfig/borders';
@@ -262,16 +263,12 @@ $dot-size: scale-type('epsilon');
 
 .dot {
   composes: default thick from 'styles/borders.scss';
-  composes: darkBorder lightBg from 'styles/color.scss';
+  composes: darkBorder from 'styles/color.scss';
   display: block;
   border-radius: 50%;
   width: $dot-size;
   height: $dot-size;
   z-index: z('middle');
-}
-
-.current {
-  composes: darkBg from 'styles/color.scss';
 }
 
 .inlineBlock {

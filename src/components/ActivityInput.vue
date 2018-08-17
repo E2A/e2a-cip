@@ -7,7 +7,7 @@
   <section>
     <NavTimeline
       :class="border.bottom"
-      :items="fakeNavItems"
+      :items="navItems"
       :current="activityId"
     />
     <BaseSectionWrapper>
@@ -169,12 +169,13 @@ export default {
     navItems: function () {
       return this.getAllActivities().map(activity => {
         return {
-          id: activity.activityId,
+          id: activity.id,
           label: activity.shortText,
           url: {name: 'activity', params: {activityId: activity.id}}
         }
       })
     },
+    // FPO for styling
     fakeNavItems: function () {
       let items = []
 
