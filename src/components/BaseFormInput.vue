@@ -15,7 +15,7 @@
       :type="type"
       @input="updateValue"
       @change="updateValue"
-    />
+    >{{contentValue}}</component>
     <p v-if="error" class="form__error">{{ error }}</p>
   </BaseFormLabel>
 </template>
@@ -62,6 +62,11 @@ export default {
   methods: {
     updateValue: function (e) {
       this.$emit('input', e.target.value)
+    }
+  },
+  computed: {
+    contentValue: function () {
+      if (this.el === 'textarea') { return this.value }
     }
   },
   $_veeValidate: {
