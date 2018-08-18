@@ -1,12 +1,17 @@
 # Discuss:
- ☐ Methods in mixin dont seem to be able to easily pick up data elements. Does that matter re: approach.
- ☐ Live updating of things requires connection to method vs. data - is this ok? It seems like that has been changed in a few places.
- ☐ Btw vue-validate seems to change aria-invalid to true on elements
 
 # General To Does
+ ☐ Fix suggestion to allowing adding one on clicking the "add suggestions button"
+ ☐ If activities are not youth centric make grayed out in the assessment page and remove icons. @jay
+   ☐ Activities should still be present in the reports view (and just dont display any best practices icons)
+   ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
+ ☐ Add description text to activity input page
+   ☐ Specifically for budget (set default to 0) @scott
+   ☐ Add place holder for subtext for each input activity
+   ☐ Style subtext in activity page @jay
 
 # Pages to set up
- ☐ Setup print page with an instruction area on how to print to PDF in your browser instruction area that gets removed on print
+ ☐ Setup print page (dont need instructions IMHO)
 
 # Pages to do a design pass on
 
@@ -65,6 +70,9 @@
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
  ✔ Activity lists: @done (18-08-17 17:03)
+ ✔ Methods in mixin dont seem to be able to easily pick up data elements. Does that matter re: approach. @done (18-08-17 16:04)
+ ✔ Live updating of things requires connection to method vs. data - is this ok? It seems like that has been changed in a few places. @done (18-08-17 16:04)
+ ✔ Btw vue-validate seems to change aria-invalid to true on elements @done (18-08-17 16:03)
  ✔ Charts @done (18-08-17 13:31)
  ✔ Results @done (18-08-17 13:29)
  ✔ Activity timeline nav @hard @done (18-08-17 13:29)
