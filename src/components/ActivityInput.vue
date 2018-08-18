@@ -24,7 +24,7 @@
           :level="5"
           sub
         >
-          {{`${capitalize($t('for'))}: ${getItemValue('setup', 'title')}`}}
+          {{`${capitalize($t('for'))}: ${setupTitle}`}}
         </BaseHeading>
       </header>
 
@@ -202,6 +202,7 @@ export default {
       existingActivity: {},
       activityBudget: 0,
       activityYouthCentric: false,
+      setupTitle: this.getItemValue('setup', 'title'),
       activityType: '',
       activityText: ''
     }

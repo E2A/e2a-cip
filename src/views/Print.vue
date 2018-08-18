@@ -37,7 +37,7 @@
         >
           {{$t('resultsSubhead')}}
         </BaseHeading>
-        <ChartItems />
+        <ChartItems viewType="print" />
       </section>
     </BaseSectionWrapper>
 
@@ -53,14 +53,6 @@
         >
           <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
         </BaseHeading>
-        <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
-          <div :class="base.toolTrayItem">
-            <FileUpload :exportType="['Export']" />
-          </div>
-          <div :class="base.toolTrayItem">
-            <ClearItems :clearType="['Recommendations']" />
-          </div>
-        </BaseGutterWrapper>
       </header>
 
       <!-- Table -->
@@ -78,7 +70,7 @@
             >
               {{activities.activityTypeName}}
             </BaseHeading>
-            <ActivitiesItemResult
+            <ActivitiesItemResultPrint
               v-for="(activity, index) in activities.activityObjects"
               :key="`activity-${index}`"
               :activityInstance="activity"
@@ -97,7 +89,7 @@ import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
-import ActivitiesItemResult from '@/components/ActivitiesItemResult.vue'
+import ActivitiesItemResultPrint from '@/components/ActivitiesItemResultPrint.vue'
 import FileUpload from '@/components/FileUpload.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import ChartItems from '@/components/ChartItems.vue'
@@ -107,7 +99,7 @@ import { activityTypes } from '@/components/mixins/activityTypes'
 import { dataMethods } from '@/components/mixins/dataMethods'
 
 export default {
-  name: 'Results',
+  name: 'Print',
   mixins: [activityTypes, dataMethods],
   components: {
     BaseHeading,
@@ -117,7 +109,7 @@ export default {
     BaseGutterWrapper,
     PrintPage,
     ActivitiesList,
-    ActivitiesItemResult,
+    ActivitiesItemResultPrint,
     FileUpload,
     ClearItems,
     ChartItems,
@@ -132,15 +124,13 @@ export default {
       navButtons: {
         left: [
           {
-            to: {name: 'assessment'},
-            label: this.$t('results.previousStep')
+            to: {name: 'advocate'},
+            label: this.$t('print.previousStep')
           }
         ],
         right: [
           {
-            to: {name: 'advocate'},
-            label: this.$t('results.nextStep'),
-            role: 'primary'
+            type: 'print'
           }
         ]
       }

@@ -14,8 +14,10 @@
       :class="type.center"
       border
     >
-      <PrintPage
+      <BaseButtonLink
+        :to="{name: 'print'}"
         :class="space.marginBottom"
+        :label="$t('advocate.print')"
         role="primary"
         size="large"
       />
@@ -34,6 +36,7 @@ import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import PrintPage from '@/components/PrintPage.vue'
 import FileUpload from '@/components/FileUpload.vue'
+import BaseButtonLink from '@/components/BaseButtonLink.vue'
 
 export default {
   name: 'Advocate',
@@ -43,6 +46,7 @@ export default {
     BaseStepList,
     BaseHeading,
     BaseSectionWrapper,
+    BaseButtonLink,
     BaseWidthWrapper,
     PrintPage,
     FileUpload

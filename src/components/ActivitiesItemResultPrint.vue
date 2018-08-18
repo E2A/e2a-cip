@@ -1,12 +1,11 @@
 <!--
-  Result Input component
-  -> use to add an recommendation to an activity
-  -> part of Activity List
+  Result Input component (styled for the print page)
+  -> part of Activity List on Pring Page
 -->
 
 <template>
   <li :class="base.wrapper">
-    <BaseDetails>
+    <BaseDetailsPrint>
       <template slot="summaryLeft">
         <BaseHeading
           :centered="false"
@@ -15,34 +14,6 @@
         >
           {{activityInstance.text}}
         </BaseHeading>
-      </template>
-      <template slot="summaryRight">
-        <BaseGutterWrapper
-          gutterX="narrow"
-          gutterY="narrow"
-          :class="type.right"
-        >
-          <BaseGutterWrapper
-            :class="base.icons"
-            el="ul"
-            gutterX="xnarrow"
-            gutterY="xnarrow"
-          >
-            <li
-              v-for="(assessment,index) of activeAssessments"
-              :key="`assess-${index}`"
-              :class="base.icon"
-            >
-              <BestPracticeIcon
-                :id="assessment.best_practice_id"
-                :activityID="assessment.activity_id"
-              />
-            </li>
-          </BaseGutterWrapper>
-          <div style="display: inline-block; vertical-align: top;">
-            <BaseButton :label="$t('suggestImprovements')" size="small" />
-          </div>
-        </BaseGutterWrapper>
       </template>
 
       <!-- data -->
@@ -81,37 +52,25 @@
           {{$t('suggestedImprovements')}}
         </BaseHeading>
         <ol :class="[base.recommendations, space.paddingVerticalNarrow]">
-          <!-- By default start showing a recommendation -->
-          <ActivityRecommendationInput
-            v-if="recommendationsNotPresent"
-            :activityInstance="activityInstance"
-            recommendationType='insert'
-          />
-          <!-- Then show all once its been added -->
-          <ActivityRecommendationInput
-            v-else
+          <li
             v-for="recommendation of activityRecommendations"
             :key="recommendation.id"
-            :activityInstance="activityInstance"
-            :recommendationId="recommendation.id"
-            recommendationType='update'
-            :existingRecommendationText="recommendation.text"
+          >
+          <BaseBodyText
+            :content="recommendation.text"
           />
+        </li>
         </ol>
-        <BaseButton
-          @click="addRecommendation"
-          :label="$t('addAnotherRecommendation')"
-          size="small"
-        />
       </div>
-    </BaseDetails>
+    </BaseDetailsPrint>
   </li>
 </template>
 
 <script>
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseButton from '@/components/BaseButton.vue'
-import BaseDetails from '@/components/BaseDetails.vue'
+import BaseDetailsPrint from '@/components/BaseDetailsPrint.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
 import BestPracticeIcon from '@/components/BestPracticeIcon.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import BaseDataGrid from '@/components/BaseDataGrid.vue'
@@ -120,15 +79,16 @@ import { dataMethods } from './mixins/dataMethods'
 import ActivityRecommendationInput from '@/components/ActivityRecommendationInput.vue'
 
 export default {
-  name: 'ActivitiesItemResult',
+  name: 'ActivitiesItemResultPrint',
   mixins: [bestPracticeData, dataMethods],
   components: {
     BaseHeading,
     BaseButton,
-    BaseDetails,
+    BaseDetailsPrint,
     BestPracticeIcon,
     BaseGutterWrapper,
     BaseDataGrid,
+    BaseBodyText,
     ActivityRecommendationInput
   },
   props: {
