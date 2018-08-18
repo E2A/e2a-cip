@@ -76,6 +76,13 @@ inputNextActivity: Input Another Activity
 activitiesDone: "I'm done!"
 save: Save Activity
 deleteActivity: Delete
+supportText:
+  activityNumber: Please enter an activity number
+  activityText: Please enter the text of the activity
+  activityBudget: Please enter a budget for the activity, if present.
+  activityYouthCentric: Is this activity youth-centric as defined by ____
+  selectActivityType: Select an activity modality
+
 
 # Activity Type
 activityTypeLink: Learn more about activity types
