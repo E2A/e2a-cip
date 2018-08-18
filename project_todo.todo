@@ -5,10 +5,6 @@
  ☐ If activities are not youth centric make grayed out in the assessment page and remove icons. @jay
    ☐ Activities should still be present in the reports view (and just dont display any best practices icons)
    ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
- ☐ Add description text to activity input page
-   ☐ Specifically for budget (set default to 0) @scott
-   ☐ Add place holder for subtext for each input activity
-   ☐ Style subtext in activity page @jay
 
 # Pages to set up
  ☐ Setup print page (dont need instructions IMHO)
@@ -69,6 +65,10 @@
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Add description text to activity input page @done (18-08-17 20:12)
+ ✔ Style subtext in activity page @jay @done (18-08-17 20:05)
+ ✔ Add place holder for subtext for each input activity @done (18-08-17 20:05)
+ ✔ Specifically for budget (set default to 0) @scott @done (18-08-17 19:49)
  ✔ Activity lists: @done (18-08-17 17:03)
  ✔ Methods in mixin dont seem to be able to easily pick up data elements. Does that matter re: approach. @done (18-08-17 16:04)
  ✔ Live updating of things requires connection to method vs. data - is this ok? It seems like that has been changed in a few places. @done (18-08-17 16:04)
