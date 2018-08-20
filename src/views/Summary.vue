@@ -17,12 +17,6 @@
         >{{cipTitle}}</BaseHeading>
         <!-- table here -->
         <ActivitiesTable>
-          <!-- dummy for styling -->
-          <ActivitiesItemSummary
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si longus, levis dictata sunt. Videamus igitur sententias eorum, tum ad verba redeamus."
-            :budget="1000354687"
-            :youth="true"
-          />
           <!-- real content -->
           <template
             v-for="(activities, index) in groupedActivities"

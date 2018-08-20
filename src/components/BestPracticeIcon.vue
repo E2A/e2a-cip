@@ -133,9 +133,6 @@ export default {
       }
     }
   },
-  created: function () {
-    console.log(this.bestPractices.find(bp => bp.id === this.id).icon)
-  },
   methods: {
     findBestPracticeByID: function () {
       return this.bestPractices.find(bp => bp.id === this.id)

@@ -162,7 +162,7 @@
     </BaseGutterWrapper>
     <div :class="[space.marginTop, space.paddingTop, border.top, type.right]">
       <BaseButton
-        v-if="this.getItemCount('activities') > 0"
+        v-if="showExport"
         @click="exportChartData()"
         :label="$t('results.exportCharts')"
         size="small"
@@ -191,6 +191,18 @@ export default {
   data () {
     return {
       labelData: this.getChartData()
+    }
+  },
+  props: {
+    viewType: {
+      type: [String],
+      required: false,
+      default: 'full'
+    }
+  },
+  computed: {
+    showExport: function () {
+      return this.viewType !== 'print' && this.getItemCount('activities') > 0
     }
   },
   methods: {

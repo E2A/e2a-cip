@@ -24,7 +24,7 @@
           :level="5"
           sub
         >
-          {{`${capitalize($t('for'))}: ${getItemValue('setup', 'title')}`}}
+          {{`${capitalize($t('for'))}: ${setupTitle}`}}
         </BaseHeading>
       </header>
 
@@ -50,6 +50,7 @@
             :data-vv-as="`${$t('activityNumber')}`"
             :error="errors.first('activityNumber')"
             name="activityNumber"
+            :helpText="$t('supportText.activityNumber')"
           />
           <BaseFormInput
             v-validate="`required|uniqueness:text,activities,${this.activityId}`"
@@ -59,19 +60,22 @@
             :error="errors.first('activityText')"
             el="textarea"
             name="activityText"
+            :helpText="$t('supportText.activityText')"
           />
           <BaseFormInput
             v-model="activityBudget"
-            v-validate="'required|numeric'"
+            v-validate="'numeric'"
             :label="`${$t('enterActivity')} ${$t('budget')}`"
             :data-vv-as="`${$t('activityBudget')}`"
             :error="errors.first('activityBudget')"
             name="activityBudget"
+            :helpText="$t('supportText.activityBudget')"
           />
 
           <BaseFormLabel
             id="checkbox"
             :label="$t('activityYouthCentric')"
+            :helpText="$t('supportText.activityYouthCentric')"
           >
             <input
               name='activityYouthCentric'
@@ -84,6 +88,7 @@
           <BaseFormLabel
             :label="$t('selectActivityType')"
             id="activityType"
+            :helpText="$t('supportText.selectActivityType')"
           >
             <select
               v-validate="'required'"
@@ -195,8 +200,9 @@ export default {
       currentActivityID: this.activityId,
       activityNumber: this.activityId,
       existingActivity: {},
-      activityBudget: null,
+      activityBudget: 0,
       activityYouthCentric: false,
+      setupTitle: this.getItemValue('setup', 'title'),
       activityType: '',
       activityText: ''
     }
@@ -227,7 +233,7 @@ export default {
       } else {
         this.currentActivityID = this.activityId
         this.existingActivity = {}
-        this.activityBudget = null
+        this.activityBudget = 0
         this.activityYouthCentric = false
         this.activityType = ''
         this.activityText = ''

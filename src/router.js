@@ -10,6 +10,7 @@ import BestPractice from './views/BestPractice.vue'
 import Assessment from './views/Assessment.vue'
 import Results from './views/Results.vue'
 import Advocate from './views/Advocate.vue'
+import Print from './views/Print.vue'
 
 Vue.use(Router)
 
@@ -67,6 +68,11 @@ export default new Router({
       path: '/advocate',
       name: 'advocate',
       component: Advocate
+    },
+    {
+      path: '/print',
+      name: 'print',
+      component: Print
     }
 
   ],

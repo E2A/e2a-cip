@@ -56,11 +56,19 @@ export default {
     },
     'recommendationId': {
       type: Number,
-      required: true
+      required: false
+    },
+    'recommendationType': {
+      type: String,
+      required: true,
+      validator: function (value) {
+        // The value must match one of these strings
+        return ['insert', 'update'].indexOf(value) !== -1
+      }
     },
     'existingRecommendationText': {
       type: String,
-      required: true
+      required: false
     }
   },
   data () {
@@ -71,12 +79,22 @@ export default {
   },
   methods: {
     updateRecommendation: function () {
-      // Update recommendation
-      this.$store.dispatch('entities/recommendations/update', {
-        id: this.recommendationId,
-        activity_id: this.activityInstance.id,
-        text: this.recommendationText
-      })
+      if (this.recommendationType === 'update') {
+        // Update recommendation
+        this.$store.dispatch('entities/recommendations/update', {
+          id: this.recommendationId,
+          activity_id: this.activityInstance.id,
+          text: this.recommendationText
+        })
+      } else if (this.recommendationType === 'insert') {
+        // Add a new recommendation
+        this.$store.dispatch('entities/recommendations/insert', {
+          data: {
+            activity_id: this.activityInstance.id,
+            text: this.recommendationText
+          }
+        })
+      }
     },
     deleteRecommendation: function () {
       // Remove recommendation

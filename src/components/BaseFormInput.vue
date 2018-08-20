@@ -13,9 +13,10 @@
       :placeholder="placeholder"
       :value="value"
       :type="type"
-      @input="updateValue"
-      @change="updateValue"
-    />
+      @input="emitInput"
+      @change="emitChange"
+      @focus="emitFocus"
+    >{{contentValue}}</component>
     <p v-if="error" class="form__error">{{ error }}</p>
   </BaseFormLabel>
 </template>
@@ -60,8 +61,19 @@ export default {
     BaseFormLabel
   },
   methods: {
-    updateValue: function (e) {
+    emitInput: function (e) {
       this.$emit('input', e.target.value)
+    },
+    emitChange: function (e) {
+      this.$emit('change', e.target.value)
+    },
+    emitFocus: function (e) {
+      this.$emit('focus', e.target.value)
+    }
+  },
+  computed: {
+    contentValue: function () {
+      if (this.el === 'textarea') { return this.value }
     }
   },
   $_veeValidate: {
