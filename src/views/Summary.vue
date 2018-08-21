@@ -90,7 +90,7 @@ export default {
         right: [
           {
             to: {name: 'evidence-informed-practices'},
-            label: this.$t('summary.previousStep'),
+            label: this.$t('summary.nextStep'),
             role: 'primary'
           }
         ]
