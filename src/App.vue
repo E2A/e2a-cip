@@ -27,8 +27,6 @@ export default {
 @import './stylesheets/config/breakpoints';
 @import './stylesheets/config/type';
 
-$font-path: '/public/fonts';
-
 $base-type-sizes: (
   'default': 90%,
   'xsmall': 100%,
@@ -38,18 +36,34 @@ $base-type-sizes: (
 );
 
 @mixin font-face($name, $path, $weight: 'normal', $style: 'normal') {
+  $font-path: '/assets/fonts';
+
   @font-face {
     font-family: $name;
     src: url('#{$font-path}/#{$path}.eot');
     src: url('#{$font-path}/#{$path}.eot?#iefix') format('embedded-opentype'),
          url('#{$font-path}/#{$path}.woff2') format('woff2'),
          url('#{$font-path}/#{$path}.woff') format('woff');
-    font-weight: $weight;
-    font-style: $style;
+    font-weight: unquote($weight);
+    font-style: unquote($style);
     font-stretch: normal;
     font-display: swap;
   }
 }
+
+// Lato
+@include font-face('lato-light', 'lato/lato-light', 300);
+@include font-face('lato-light-italic', 'lato/lato-light-italic', 300, 'italic');
+@include font-face('lato', 'lato/lato-regular');
+@include font-face('lato-italic', 'lato/lato-regular', $style: 'italic');
+@include font-face('lato-bold', 'lato/lato-bold', 700);
+@include font-face('lato-bold-italic', 'lato/lato-bold-italic', 700, 'italic');
+
+// Lora
+@include font-face('lora', 'lora/lora-regular');
+@include font-face('lora-italic', 'lora/lora-regular', $style: 'italic');
+@include font-face('lora-bold', 'lora/lora-bold', 700);
+@include font-face('lora-bold-italic', 'lora/lora-bold-italic', 700, 'italic');
 
 html {
   box-sizing: border-box;
