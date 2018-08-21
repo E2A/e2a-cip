@@ -78,13 +78,16 @@
             >
               {{activities.activityTypeName}}
             </BaseHeading>
-            <ul>
+
+            <!-- Activity Count Initial Stab -->
+            <ul v-if="false">
               <li v-for="(bestPracticeCount, index) in bpCounts = getActivityTypeCounts(activities.activityTypeName)"
                 :key="`activity-${index}`"
                >
                {{bestPracticeCount.title}}: {{bestPracticeCount.count}}
              </li>
             </ul>
+
             <ActivitiesItemResult
               v-for="(activity, index) in activities.activityObjects"
               :key="`activity-${index}`"

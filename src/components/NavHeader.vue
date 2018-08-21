@@ -7,7 +7,8 @@
       >
         <img src="http://placehold.it/250x40" alt="logos" />
       </router-link>
-      <LanguageSwitcher />
+      <!-- Initial translation wiring -->
+      <LanguageSwitcher v-if="false" />
       <nav :class="base.menu">
         <BaseGutterWrapper
           :class="base.menuList"
