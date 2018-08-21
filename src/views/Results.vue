@@ -78,6 +78,16 @@
             >
               {{activities.activityTypeName}}
             </BaseHeading>
+
+            <!-- Activity Count Initial Stab -->
+            <ul v-if="false">
+              <li v-for="(bestPracticeCount, index) in bpCounts = getActivityTypeCounts(activities.activityTypeName)"
+                :key="`activity-${index}`"
+               >
+               {{bestPracticeCount.title}}: {{bestPracticeCount.count}}
+             </li>
+            </ul>
+
             <ActivitiesItemResult
               v-for="(activity, index) in activities.activityObjects"
               :key="`activity-${index}`"
@@ -104,11 +114,12 @@ import ChartItems from '@/components/ChartItems.vue'
 import NavFooter from '@/components/NavFooter.vue'
 import PrintPage from '@/components/PrintPage.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
+import { bestPracticeData } from '@/components/mixins/bestPracticeData'
 import { dataMethods } from '@/components/mixins/dataMethods'
 
 export default {
   name: 'Results',
-  mixins: [activityTypes, dataMethods],
+  mixins: [activityTypes, dataMethods, bestPracticeData],
   components: {
     BaseHeading,
     BaseButton,
