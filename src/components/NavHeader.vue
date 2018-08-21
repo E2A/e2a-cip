@@ -7,6 +7,7 @@
       >
         <img src="http://placehold.it/250x40" alt="logos" />
       </router-link>
+      <LanguageSwitcher />
       <nav :class="base.menu">
         <BaseGutterWrapper
           :class="base.menuList"
@@ -45,12 +46,14 @@
 <script>
 import { dataMethods } from './mixins/dataMethods'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 
 export default {
   name: 'NavHeader',
   mixins: [dataMethods],
   components: {
-    BaseGutterWrapper
+    BaseGutterWrapper,
+    LanguageSwitcher
   },
   data: function () {
     return {
