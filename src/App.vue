@@ -36,13 +36,11 @@ $base-type-sizes: (
 );
 
 @mixin font-face($name, $path, $weight: 'normal', $style: 'normal') {
-  $font-path: '/assets/fonts';
+  $font-path: './assets/fonts';
 
   @font-face {
     font-family: $name;
-    src: url('#{$font-path}/#{$path}.eot');
-    src: url('#{$font-path}/#{$path}.eot?#iefix') format('embedded-opentype'),
-         url('#{$font-path}/#{$path}.woff2') format('woff2'),
+    src: url('#{$font-path}/#{$path}.woff2') format('woff2'),
          url('#{$font-path}/#{$path}.woff') format('woff');
     font-weight: unquote($weight);
     font-style: unquote($style);
@@ -52,17 +50,17 @@ $base-type-sizes: (
 }
 
 // Lato
-@include font-face('lato-light', 'lato/lato-light', 300);
+@include font-face('lato-light-normal', 'lato/lato-light', 300);
 @include font-face('lato-light-italic', 'lato/lato-light-italic', 300, 'italic');
-@include font-face('lato', 'lato/lato-regular');
-@include font-face('lato-italic', 'lato/lato-regular', $style: 'italic');
-@include font-face('lato-bold', 'lato/lato-bold', 700);
+@include font-face('lato-regular-normal', 'lato/lato');
+@include font-face('lato-regular-italic', 'lato/lato-italic', $style: 'italic');
+@include font-face('lato-bold-normal', 'lato/lato-bold', 700);
 @include font-face('lato-bold-italic', 'lato/lato-bold-italic', 700, 'italic');
 
 // Lora
-@include font-face('lora', 'lora/lora-regular');
-@include font-face('lora-italic', 'lora/lora-regular', $style: 'italic');
-@include font-face('lora-bold', 'lora/lora-bold', 700);
+@include font-face('lora-regular-normal', 'lora/lora');
+@include font-face('lora-regular-italic', 'lora/lora-italic', $style: 'italic');
+@include font-face('lora-bold-normal', 'lora/lora-bold', 700);
 @include font-face('lora-bold-italic', 'lora/lora-bold-italic', 700, 'italic');
 
 html {
