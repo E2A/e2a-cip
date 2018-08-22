@@ -71,7 +71,7 @@ $colors: (
 
 // borders are darker shades of the bg color
 @function border($color) {
-  @return color($color, $grade: -20);
+  @return color($color, $grade: -40);
 }
 
 // a shadow is darker, translucent shade of the bg color

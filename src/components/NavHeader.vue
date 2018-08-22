@@ -4,6 +4,7 @@
       <router-link
         :to="{name: 'home'}"
         :class="base.logo"
+        exact
       >
         <img src="http://placehold.it/250x40" alt="logos" />
       </router-link>
@@ -11,24 +12,27 @@
       <LanguageSwitcher v-if="false" />
       <nav :class="base.menu">
         <BaseGutterWrapper
-          :class="base.menuList"
+          :class="menu.list"
+          el="ul"
           gutterY="xnarrow"
-          gutterX="xnarrow"
+          gutterX="medium"
         >
           <li
-            id="nav"
             v-for="(link, index) in this.getLinks()"
             :key="`link-${index}`"
-            :class="base.menuItem"
           >
             <router-link
               v-if="link.active"
               :to="link.url"
+              :class="menu.item"
               exact
             >
               {{link.text}}
             </router-link>
-            <span v-if="!link.active">{{link.text}}</span>
+            <span
+              v-if="!link.active"
+              :class="menu.disabled"
+            >{{link.text}}</span>
           </li>
         </BaseGutterWrapper>
       </nav>
@@ -146,46 +150,120 @@ export default {
 
 <style lang="scss" module="base">
 @import '~styleConfig/spacing';
+@import '~styleConfig/color';
+@import '~styleConfig/borders';
 
 .wrapper {
-  composes: paddingHorizontal paddingVerticalXnarrow from 'styles/spacing.scss';
-  composes: bottom from 'styles/borders.scss';
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  composes: paddingHorizontal from 'styles/spacing.scss';
+  composes: primaryBg white from 'styles/color.scss';
+  @include border('bottom', $w: 'medium', $color: 'primary');
+
+  @supports (display: flex) {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
 }
 
 .logo {
-  composes: paddingRightXnarrow from 'styles/spacing.scss';
-  display: block;
+  composes: paddingRightNarrow paddingVerticalXnarrow from 'styles/spacing.scss';
+  display: inline-block;
 }
 
 .menu {
-  flex: 1;
+  display: inline-block;
   text-align: right;
-}
 
-.menuList {
-  display: inline-block;
-  list-style: none;
-}
-
-.menuItem {
-  display: inline-block;
-
-  & + &::before {
-    content: '\203A';
-    display: inline-block;
-    margin-right: (space('xnarrow', true) + 0.1rem);
+  @supports (display: flex) {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 }
 </style>
 
-<!-- use global style for vue router active class -->
-<style lang="scss">
+<!-- main menu styles -->
+<style lang="scss" module="menu">
+@import '~styleConfig/spacing';
 @import '~styleConfig/color';
+@import '~styleConfig/borders';
 
-.router-link-active {
-  color: color('highlight');
+.list {
+  display: inline-block;
+  list-style: none;
+
+  @supports (display: flex) {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-item: stretch;
+  }
+
+  > li {
+    display: inline-block;
+    position: relative;
+
+    @supports (display: flex) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  // the '>' chevrons between each menu item
+  > li + li:before {
+    color: color('primary', $grade: 40);
+    content: '\203A';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    text-align: left;
+    line-height: 1;
+    left: -0.1rem; // nudge left a little to optically center icon
+    top: 50%;
+    margin-top: -0.5rem;
+    display: inline-block;
+  }
+}
+
+.item {
+  color: color('white');
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+
+  @supports (display: flex) {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.disabled {
+  composes: item;
+  color: color('primary', $grade: 60);
+}
+
+// use global style for vue router active class
+:global {
+  .router-link-active {
+    color: color('accent'); // for non-flexbox browsers
+
+    // if flexbox is supported, add a faux-border to the bottom
+    // b/c we can reliably stretch menu items to be full height
+    @supports (display: flex) {
+      color: color('white');
+
+      &:after {
+        content: '';
+        background-color: color('accent');
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -(border-w('medium')); // height of bottom border on nav wrapper
+        height: border-w('thick');
+      }
+    }
+  }
 }
 </style>
