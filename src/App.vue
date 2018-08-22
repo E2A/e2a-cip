@@ -26,9 +26,10 @@ export default {
 
 @import './stylesheets/config/breakpoints';
 @import './stylesheets/config/type';
+@import './stylesheets/config/color';
 
 $base-type-sizes: (
-  'default': 90%,
+  'default': 95%,
   'xsmall': 100%,
   'small': 110%,
   'medium': 120%,
@@ -84,6 +85,8 @@ html {
 
 body {
   @include font;
+  background-color: color('white'); // set explicitly to override OS dark modes
+  color: color('dark');
   line-height: leading();
   font-feature-settings: 'liga', 'kern';
 }

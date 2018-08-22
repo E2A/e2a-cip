@@ -4,10 +4,10 @@
 
 .default {
   composes: bold from 'styles/type.scss';
-  @include border($w: 'medium', $color: 'dark');
+  @include border($w: 'medium', $color: 'primary');
   background-color: transparent;
   border-radius: 0.3em;
-  color: color('dark');
+  color: color('primary');
   cursor: pointer;
   display: inline-block;
   font-size: scale-type('zeta');
@@ -27,6 +27,6 @@
 }
 
 .primary {
-  background-color: color('dark');
-  color: color('light');
+  background-color: color('primary');
+  color: color('white');
 }

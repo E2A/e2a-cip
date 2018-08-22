@@ -14,6 +14,12 @@
  ☐ Analysis color legend
  ☐ Export/clear tool tray at top of analysis, results, etc.
  ☐ Notification popovers
+ ☐ Buttons
+   ☐ with icon
+     ☐ left
+     ☐ right
+   ☐ dropdown
+ ☐ Custom select box (i.e. dropdown button) @nice-to-have
 
 # Content
  ☐ Break giant en.yaml/localization files into smaller separate files, e.g. `locales/en/best-practices.yaml` @nice-to-have
@@ -26,10 +32,12 @@
    ☐ Color palette
      ☐ Yes/No/Maybe colors
    ☐ Type treatments
-     ☐ scale
-     ☐ display type
-     ☐ UI type
-     ☐ body type
+     ✔ scale @done (18-08-22 14:07)
+     ✔ webfonts @done (18-08-22 14:07)
+     ☐ fine-tune:
+       ☐ display type
+       ☐ UI type
+       ☐ body type
    ☐ Add logos
      ☐ home
      ☐ header nav
