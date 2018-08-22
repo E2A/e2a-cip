@@ -6,25 +6,57 @@
 
 // --- weight, style, and typeface ---------------------------------------------
 
+// modify the weight and style of the default font
 .bold {
-  @include font('body', 'bold');
+  @include font($weight: 'bold');
 }
 
 .italic {
-  @include font('body', $style: 'italic');
+  @include font($style: 'italic');
+
+  &.bold {
+    @include font($weight: 'bold', $style: italic);
+  }
 }
 
-@each $font in ('body', 'display', 'accent') {
-  .#{$font} {
-    @include font($font);
+// display font
+.display {
+  @include font('display');
 
-    @if $font != 'body' {
-      &.bold {
-        @include font($font, 'bold');
-      }
-      &.italic {
-        @include font($font, $style: 'italic');
-      }
+  &.light {
+    @include font('display', $weight: 'light');
+  }
+
+  &.bold {
+    @include font('display', $weight: 'bold');
+  }
+
+  &.italic {
+    @include font('display', $style: 'italic');
+
+    &.light {
+      @include font('display', $weight: 'light', $style: 'italic');
+    }
+
+    &.bold {
+      @include font('display', $weight: 'bold', $style: 'italic');
+    }
+  }
+}
+
+// body font
+.body {
+  @include font('body');
+
+  &.bold {
+    @include font('display', $weight: 'bold');
+  }
+
+  &.italic {
+    @include font('display', $style: 'italic');
+
+    &.bold {
+      @include font('display', $weight: 'bold', $style: 'italic');
     }
   }
 }
@@ -59,6 +91,7 @@
 
 .scaleAlpha {
   @include type-fluid(font-size, 'gamma', 'alpha');
+  letter-spacing: -0.02em;
 }
 
 .scaleBeta {

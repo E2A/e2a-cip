@@ -78,7 +78,7 @@ export default {
 <style lang="scss" module="base">
 .heading {
   composes: dark from 'styles/color.scss';
-  composes: display leadingTight from 'styles/type.scss';
+  composes: display light leadingTight from 'styles/type.scss';
   display: block;
   margin: 0;
   position: relative;
