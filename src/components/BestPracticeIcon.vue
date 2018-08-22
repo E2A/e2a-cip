@@ -29,7 +29,7 @@
         >
           <button v-for="(option, index) of bestPracticeOptions"
             :key="index"
-            @click="updateAssessment(title, option.text, id)"
+            @click="updateAssessment(title, option.value, id)"
             :class="[
               base.dot,
               base[option.class],

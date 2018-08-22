@@ -15,5 +15,24 @@ export const bestPracticeData = {
         }
       })
     }
+  },
+  methods: {
+    getActivityTypeCounts: function (activityType) {
+      return this.bestPractices.map((bestPractice) => {
+        return {
+          title: bestPractice.title,
+          count: this.getActivityTypeBPCount(activityType, bestPractice.id)
+        }
+      })
+    },
+    getActivityTypeBPCount: function (activityType, bestPracticeId) {
+      return this.$store.getters['entities/assessments/query']()
+        .where('value', this.$t('bestPracticeOptions.yesKey'))
+        .where('best_practice_id', bestPracticeId)
+        .whereHas('activity', (query) => {
+          query.where('type', activityType)
+        })
+        .count()
+    }
   }
 }

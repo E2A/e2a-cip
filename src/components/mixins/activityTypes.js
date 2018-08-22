@@ -17,7 +17,10 @@ export const activityTypes = {
         groupedActivities.push({
           activityTypeName: activityType.title,
           activityObjects: this.$store.getters['entities/activities/query']().with('assessments', (query) => {
-            query.where('value', ['Yes', 'Maybe'])
+            query.where('value', [
+              this.$t('bestPracticeOptions.yesKey'),
+              this.$t('bestPracticeOptions.maybeKey')
+            ])
           }).where('type', activityType.title).get()
         })
       }
