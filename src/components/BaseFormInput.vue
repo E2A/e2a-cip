@@ -107,7 +107,7 @@ export default {
 @import '~styleConfig/color';
 
 .input {
-  composes: transition from 'styles/animation.scss';
+  composes: default from 'styles/animation.scss';
   composes: paddingXnarrow from 'styles/spacing.scss';
   composes: round default from 'styles/borders.scss';
   box-shadow: none !important;

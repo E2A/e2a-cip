@@ -1,6 +1,6 @@
 // Global animation utilities
 @import '../config/animation';
 
-.transition {
+.default {
   @include transition();
 }

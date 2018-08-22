@@ -3,30 +3,59 @@
 @import '~styleConfig/borders';
 
 .default {
+  $c: 'primary';
+  composes: default from 'styles/animation.scss';
   composes: bold from 'styles/type.scss';
-  @include border($w: 'medium', $color: 'primary');
+  @include border($w: 'medium', $color: $c);
   background-color: transparent;
   border-radius: 0.3em;
   color: color('primary');
   cursor: pointer;
   display: inline-block;
-  font-size: scale-type('zeta');
+  font-size: scale-type('epsilon');
   line-height: 1;
   padding: 0.8em 1.6em;
   text-decoration: none;
+
+  &:hover,
+  &:focus {
+    border-color: color($c, $grade: 20);
+    color: color($c, $grade: 20);
+  }
+
+  &:active {
+    border-color: color($c, $grade: -10);
+    color: color($c, $grade: -10);
+  }
 }
 
 .large {
-  font-size: scale-type('epsilon');
+  font-size: scale-type('delta');
   padding: 1em 2.4em;
 }
 
 .small {
-  font-size: scale-type('eta');
+  font-size: scale-type('zeta');
   padding: 0.6em 1.2em;
 }
 
 .primary {
-  background-color: color('primary');
-  color: color('white');
+  $bgcolor: 'primary';
+  $fgcolor: 'white';
+  background-color: color($bgcolor);
+  border-color: color($bgcolor, $grade: -10);
+  color: color($fgcolor);
+
+  &:hover,
+  &:focus {
+    background-color: color($bgcolor, $grade: 10);
+    border-color: color($bgcolor, $grade: 0);
+    color: color($fgcolor);
+  }
+
+  &:active {
+    background-color: color($bgcolor, $grade: -10);
+    border-color: color($bgcolor, $grade: -10);
+    color: color($fgcolor);
+  }
 }
