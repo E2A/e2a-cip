@@ -168,6 +168,10 @@ export default {
 .logo {
   composes: paddingRightNarrow paddingVerticalXnarrow from 'styles/spacing.scss';
   display: inline-block;
+
+  &:after {
+    content: none !important; // never show active styles
+  }
 }
 
 .menu {
@@ -246,7 +250,7 @@ export default {
 
 // use global style for vue router active class
 :global {
-  .router-link-active {
+  .router-link-exact-active {
     color: color('accent'); // for non-flexbox browsers
 
     // if flexbox is supported, add a faux-border to the bottom
