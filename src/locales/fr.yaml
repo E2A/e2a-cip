@@ -395,15 +395,15 @@ fr:
   uniquenessError: "La valeur entrée dans {field} n'est pas unique parmi {entityType}"
   edit: Éditer
   yesRaw: "Oui"
-  noRaw: "Aucun"
+  noRaw: "Non"
   goBack: Retourner
   bestPracticeOptions:
-    yesText: '@: ouiRaw'
+    yesText: '@: yesRaw'
     noText: '@: noRaw'
     maybeText: Peut être
-    yesKey: 'Oui'
-    noKey: 'non'
-    maybeKey: 'peut être'
+    yesKey: 'yes'
+    noKey: 'no'
+    maybeKey: 'maybe'
   enterSuggestion: Entrez une suggestion
   item: "pas d'articles | article | articles"
   successRemoved: Enlevé avec succès
