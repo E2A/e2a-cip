@@ -7,6 +7,15 @@ module.exports = {
       }
     }
   },
+  chainWebpack: config => {
+    config.module
+      .rule('svgSprites')
+      .test(/\.(svg)(\?.*)?$/)
+      .resourceQuery(/inline/)
+      .use('svg-inline-loader')
+      .loader('svg-inline-loader')
+      .end()
+  },
   css: {
     modules: true,
     loaderOptions: {
