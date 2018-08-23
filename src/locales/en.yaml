@@ -419,3 +419,17 @@ en:
   activities: activities
   activity: activity
   bestPracticeIconData: Read more about this EIP
+  # Do Not Translate - Use for adding new country indicators
+  countryIndicators:
+    indicator1:
+      name: 'PERCENT OF MARRIED WOMEN 15-49 USING CONTRACEPTION, ALL METHODS (2017)'
+      source: 'https://www.prb.org/international/indicator/contraception-all/table'
+      fileName: 'married_women_15-49_contraception.csv'
+      iso2codeHeader: 'FIPS'
+      indicatorValueHeader: 'Data'
+    indicator2:
+      name: 'PERCENT OF MARRIED WOMEN 15-49 USING CONTRACEPTION, MODERN METHODS (2017)'
+      source: 'https://www.prb.org/international/indicator/contraception-modern/table'
+      fileName: 'married_women_15-49_contraception_modern.csv'
+      iso2codeHeader: 'FIPS'
+      indicatorValueHeader: 'Data'

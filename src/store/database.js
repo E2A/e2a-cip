@@ -9,6 +9,8 @@ import Recommendation from '@/models/Recommendation'
 import recommendations from './modules/recommendations'
 import BestPracticeIcon from '@/models/BestPracticeIcon'
 import bestpracticeicons from './modules/bestpracticeicons'
+import CountryIndicator from '@/models/CountryIndicator'
+import countryindicators from './modules/countryindicators'
 
 const database = new Database()
 
@@ -17,5 +19,6 @@ database.register(Setup, setup)
 database.register(Assessment, assessments)
 database.register(Recommendation, recommendations)
 database.register(BestPracticeIcon, bestpracticeicons)
+database.register(CountryIndicator, countryindicators)
 
 export default database
