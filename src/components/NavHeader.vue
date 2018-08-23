@@ -128,15 +128,20 @@ export default {
       const assessmentCount = this.getItemCount('assessments')
 
       if (assessmentCount === 0) {
-        this.notificationMessage = this.$t('nav.addAssessment')
+
       }
       if (assessmentCount > 0) {
-        this.notificationMessage = this.$t('nav.removeAssessment')
+
       }
+      // Trigger notification
       this.assessmentNotification = true
+
+      // Turn off notification after 2k milliseconds
+      setTimeout(() => { this.assessmentNotification = false }, 2000)
     },
     updateActiveLinks: function () {
       if (this.getItemCount('assessments') > 0) {
+        this.notificationMessage = this.$t('nav.removeAssessment')
         this.links.activities.active = false
         this.links.summary.active = false
         this.links.results.active = true
@@ -144,6 +149,7 @@ export default {
       }
 
       if (this.getItemCount('activities') === 0 && (this.getItemCount('setup') === 0 || !this.setupPresent())) {
+        this.notificationMessage = this.$t('nav.addSetup')
         this.links.activities.active = false
         this.links.summary.active = false
         this.links.results.active = false
@@ -153,6 +159,7 @@ export default {
       }
 
       if (this.getItemCount('activities') === 0 && this.setupPresent()) {
+        this.notificationMessage = this.$t('nav.addActivites')
         this.links.activities.active = true
         this.links.summary.active = false
         this.links.results.active = false
@@ -162,6 +169,7 @@ export default {
       }
 
       if (this.getItemCount('activities') > 0 && this.getItemCount('assessments') === 0) {
+        this.notificationMessage = this.$t('nav.addAssessment')
         this.links.activities.active = true
         this.links.summary.active = true
         this.links.assessment.active = true
