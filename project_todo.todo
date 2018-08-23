@@ -55,11 +55,6 @@
      ☐ Fix overlap b/n suggestion input and delete button - gutter issue?
      ☐ Check container width on table
 
- # Browser testing/debugging
- ☐ Make sure layouts work without flexbox
-   ☐ Timeline nav
-   ☐ activities tables
-
 # Additional scope items:
  ☐ Adding FR translation [started]
    ✔ Setup initial wiring @done (18-08-22 22:09)
@@ -78,6 +73,13 @@
    ✔ Parse CSV Data @done (18-08-22 23:37)
    ✔ Display data @done (18-08-23 00:35)
    ☐ Style Country indicator data
+
+ # Browser testing/debugging/deployment
+ ☐ Make sure layouts work without flexbox
+   ☐ Timeline nav
+   ☐ activities tables
+ ☐ Prerender landing page via `spa-prerender-plugin` so JS can download in the BG @nice-to-have
+ ☐ Add loading bar/animation in case JS takes awhile to download
 
  # Nice to have
  ☐ Dot seems to not change on nav change (likely b/c prop or computed property?)
