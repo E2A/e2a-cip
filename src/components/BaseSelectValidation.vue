@@ -1,22 +1,13 @@
 <template>
-  <BaseFormLabel
-    :id="name"
-    :label="label"
-    :helpText="helpText"
-    :textSize="labelTextSize"
-  >
-    <component
-      :is="el"
-      :id="name"
-      :name="name"
-      :class="[base.input, type[typeScaleClass(textSize)]]"
-      :placeholder="placeholder"
-      :value="value"
-      :type="type"
+  <span>
+    <vSelect
       @input="emitInput"
-      @change="emitChange"
-      @focus="emitFocus"
-    >{{contentValue}}</component>
+      :options="options"
+      :searchable="searchable"
+      :value="value"
+      :class="classItems"
+      :placeholder="placeholder"
+    />
     <BaseCalloutBox
       :key="error"
       v-if="error"
@@ -24,64 +15,40 @@
       :class="space.marginTopNarrow"
       role="warning"
     />
-  </BaseFormLabel>
+  </span>
 </template>
 
 <script>
 import { styleHelpers } from './mixins/helpers.js'
 import BaseFormLabel from './BaseFormLabel.vue'
 import BaseCalloutBox from './BaseCalloutBox.vue'
+import vSelect from 'vue-select'
 
 export default {
-  name: 'BaseFormInput',
+  name: 'BaseSelectValidation',
   mixins: [styleHelpers],
   props: {
-    el: {
-      type: String,
-      default: 'input'
-    },
-    label: String,
-    helpText: String,
     value: [String, Number],
     name: String,
     placeholder: String,
     validate: String,
     dataAs: String,
-    type: {
-      type: String,
-      default: 'text'
-    },
     error: {
       type: String,
       required: false
     },
-    textSize: {
-      type: String,
-      default: 'epsilon'
-    },
-    labelTextSize: {
-      type: String,
-      default: 'zeta'
-    }
+    searchable: Boolean,
+    options: [Array, Object],
+    classItems: String
   },
   components: {
     BaseFormLabel,
-    BaseCalloutBox
+    BaseCalloutBox,
+    vSelect
   },
   methods: {
     emitInput: function (e) {
-      this.$emit('input', e.target.value)
-    },
-    emitChange: function (e) {
-      this.$emit('change', e.target.value)
-    },
-    emitFocus: function (e) {
-      this.$emit('focus', e.target.value)
-    }
-  },
-  computed: {
-    contentValue: function () {
-      if (this.el === 'textarea') { return this.value }
+      this.$emit('input', e)
     }
   },
   $_veeValidate: {
@@ -94,7 +61,6 @@ export default {
   }
 }
 </script>
-
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 
 <style lang="scss" module="base">
