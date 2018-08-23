@@ -48,11 +48,11 @@
     </header>
 
     <BaseCalloutBox
-      v-if="assessmentNotification"
-      :message="notificationMessage"
-      role="info"
+      v-if="globalNotification('visible')"
+      :message="globalNotification('message')"
+      :role="globalNotification('role')"
+      :timeout="globalNotification('timeout')"
       dismissable
-      @dismiss="assessmentNotification=false"
     />
   </div>
 </template>
@@ -75,7 +75,6 @@ export default {
   },
   data: function () {
     return {
-      assessmentNotification: false,
       notificationMessage: '',
       links: {
         setup: {
@@ -120,16 +119,16 @@ export default {
     }
   },
   methods: {
+    globalNotification: function (value) {
+      const notification = this.$store.getters['entities/globalnotifications/query']().first()
+      return notification ? notification[value] : false
+    },
     getLinks: function () {
       this.updateActiveLinks()
       return this.links
     },
     notificationTrigger: function () {
-      // Trigger notification
-      this.assessmentNotification = true
-
-      // Turn off notification after 2k milliseconds
-      setTimeout(() => { this.assessmentNotification = false }, 2000)
+      this.notify(this.notificationMessage, 'info', 3000)
     },
     updateActiveLinks: function () {
       if (this.getItemCount('assessments') > 0) {

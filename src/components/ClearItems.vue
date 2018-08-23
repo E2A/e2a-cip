@@ -6,7 +6,6 @@
       @click="clearItems(clearType[0].toLowerCase())"
       size="small"
     />
-    <p v-if="deleteSuccess">{{$t('successRemoved')}} {{itemsCount}} {{removedItemsText}}</p>
   </div>
 </template>
 
@@ -66,9 +65,8 @@ export default {
       }
       // Emit event on success
       if (this.getItemCount(deleteType) === 0) {
-        this.itemsCount = currentItemCount
-        this.deleteSuccess = true
         this.setRemovedItemsText(deleteType)
+        this.notify(`${this.$t('successRemoved')} ${currentItemCount} ${this.removedItemsText}`, 'warning')
         this.$emit('delete-success')
       }
     }
