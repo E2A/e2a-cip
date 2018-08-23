@@ -19,7 +19,6 @@
      ☐ left
      ☐ right
    ☐ dropdown
- ☐ Custom select box (i.e. dropdown button) @nice-to-have
 
 # Content
  ☐ Break giant en.yaml/localization files into smaller separate files, e.g. `locales/en/best-practices.yaml` @nice-to-have
@@ -72,9 +71,12 @@
  # Nice to have
  ☐ Dot seems to not change on nav change (likely b/c prop or computed property?)
  ☐ Refactor form field object value approach - it seems not as tight as it could be. @scott
+ ☐ Adjust value storage to work with keys that are not based on translation... @scott
+   ☐ Causes errors when you have data and you then change language...
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Custom select box (i.e. dropdown button) @nice-to-have @done (18-08-23 14:33)
  ✔ Replace placeholders in yaml to use rails conventions @done (18-08-23 10:22)
  ✔ UPDATE USER ROLES TO USE i18N @done (18-08-23 10:17)
  ✔ Figure out some way to parse data on another action other than create? @done (18-08-23 10:08)
