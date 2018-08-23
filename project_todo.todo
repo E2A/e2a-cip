@@ -1,19 +1,17 @@
 # Discuss:
+ ☐ Progress bar vs. pie chart for % of activities with at least 1 EIP - thoughts @jay?
 
 # General To Does
  ☐ If activities are not youth centric make grayed out in the assessment page and remove icons. @jay
    ☐ Activities should still be present in the reports view (and just dont display any best practices icons)
    ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
- ☐ Delete all popover states on page change. @scott
 
 # Pages to set up
 
 # Components to build
- ✔ Icons @hard @done (18-08-22 23:23)
-   This will take a little figuring out - not sure the best way to handle icon sprites in a render context like Vue. Avoiding icons/using placeholders in first prototype.
  ☐ Analysis color legend
  ☐ Export/clear tool tray at top of analysis, results, etc.
- ☐ Notification popovers
+ ☐ Notification popovers [https://github.com/arthurvasconcelos/vue-izitoast ?] @scott?
  ☐ Buttons
    ☐ with icon
      ☐ left
@@ -29,19 +27,13 @@
    ☐ Print styles
    ☐ Tables
      ☐ Mobile
-   ✔ Color palette @done (18-08-22 23:31)
-     ✔ Yes/No/Maybe colors @done (18-08-22 23:31)
    ☐ Type treatments
-     ✔ scale @done (18-08-22 14:07)
-     ✔ webfonts @done (18-08-22 14:07)
      ☐ fine-tune:
        ☐ display type
        ☐ UI type
        ☐ body type
-   ✔ Add logos @done (18-08-22 23:23)
-     ✔ home @done (18-08-22 23:31)
-     ✔ header nav @done (18-08-22 23:23)
    ☐ Activities view
+     ☐ Validation error colors / styles (on activity input page)
      ☐ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling.
      ☐ Switch component (from checkbox)
      ☐ Refine form styles in general
@@ -54,7 +46,7 @@
        ☐ Fix height issues in flyouts - content (long titles) is overflowing
      ☐ Use wider container for table
    ☐ Results
-     ☐ Need empty state for assessment icons in the row - default slot content shows up now if there are no assessments
+     ✔ Need empty state for assessment icons in the row - default slot content shows up now if there are no assessments @done (18-08-22 22:08)
      ☐ Hide top row of icons and display edit/cancel buttons when row is expanded
      ☐ Fix overlap b/n suggestion input and delete button - gutter issue?
      ☐ Check container width on table
@@ -65,15 +57,38 @@
    ☐ activities tables
 
 # Additional scope items:
- ☐ Adding FR translation [started @ fr-translation]
- ☐ Add summary counts for each activity type to results page [started @ summary-statistics]
+ ☐ Adding FR translation [started]
+   ✔ Setup initial wiring @done (18-08-22 22:09)
+   ✔ Connect to LingoHub @done (18-08-22 22:09)
+   ☐ Design language selector @jay
+   ☐ QA / check exports & native support @scott
+   ☐ Sniff browser / OS language @nice-to-have @scott
+ ☐ Add summary counts for each activity type to results page [started]
+   ✔ Get summary counts @done (18-08-22 22:07)
+   ✔ Get percent of activities with a best practice @done (18-08-22 22:07)
+   ☐ Figure out designs for displaying the data
+     ☐ Percent of activities with a best practice (progress bar? I think this might be better than pie chart. )
+     ☐ Aggregate counds per activity type (circles w. sum?)
  ☐ Add in additional country data to site
+   ☐ Adjust country select to use ISO codes
+   ☐ Parse CSV Data
+   ☐ Display data
 
  # Nice to have
  ☐ Dot seems to not change on nav change (likely b/c prop or computed property?)
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ home @done (18-08-22 23:31)
+ ✔ Yes/No/Maybe colors @done (18-08-22 23:31)
+ ✔ Color palette @done (18-08-22 23:31)
+ ✔ header nav @done (18-08-22 23:23)
+ ✔ Icons @hard @done (18-08-22 23:23)
+  This will take a little figuring out - not sure the best way to handle icon sprites in a render context like Vue. Avoiding icons/using placeholders in first prototype.
+ ✔ Add logos @done (18-08-22 23:23)
+ ✔ Delete all popover states on page change. @scott @done (18-08-22 21:50)
+ ✔ webfonts @done (18-08-22 14:07)
+ ✔ scale @done (18-08-22 14:07)
  ✔ Go through and make sure that BestPractice value uses best practice key... @done (18-08-20 21:44)
  ✔ Advocacy @done (18-08-18 08:59)
  ✔ Home page content is showing up in the steps list - pulling in wrong translations? or wrong default content? @done (18-08-18 08:58)
