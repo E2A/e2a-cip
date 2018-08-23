@@ -6,7 +6,7 @@
         :class="base.logo"
         exact
       >
-        <img src="http://placehold.it/250x40" alt="logos" />
+        <img src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg" alt="E2A and Pathfinder" />
       </router-link>
       <!-- Initial translation wiring -->
       <LanguageSwitcher v-if="false" />
@@ -18,7 +18,7 @@
           gutterX="medium"
         >
           <li
-            v-for="(link, index) in this.getLinks()"
+            v-for="(link, key, index) in this.getLinks()"
             :key="`link-${index}`"
           >
             <router-link
@@ -32,7 +32,15 @@
             <span
               v-if="!link.active"
               :class="menu.disabled"
-            >{{link.text}}</span>
+            >
+              {{link.text}}
+            </span>
+            <BaseIcon
+              v-if="index !== 0"
+              :class="menu.arrow"
+              name="arrow-right"
+              size="0.6em"
+            />
           </li>
         </BaseGutterWrapper>
       </nav>
@@ -51,6 +59,7 @@
 <script>
 import { dataMethods } from './mixins/dataMethods'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
+import BaseIcon from './BaseIcon.vue'
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 
 export default {
@@ -58,6 +67,7 @@ export default {
   mixins: [dataMethods],
   components: {
     BaseGutterWrapper,
+    BaseIcon,
     LanguageSwitcher
   },
   data: function () {
@@ -168,6 +178,7 @@ export default {
 .logo {
   composes: paddingRightNarrow paddingVerticalXnarrow from 'styles/spacing.scss';
   display: inline-block;
+  max-width: 11rem;
 
   &:after {
     content: none !important; // never show active styles
@@ -212,21 +223,6 @@ export default {
       flex-direction: column;
     }
   }
-
-  // the '>' chevrons between each menu item
-  > li + li:before {
-    color: color('primary', $grade: 40);
-    content: '\203A';
-    position: absolute;
-    width: 1rem;
-    height: 1rem;
-    text-align: left;
-    line-height: 1;
-    left: -0.1rem; // nudge left a little to optically center icon
-    top: 50%;
-    margin-top: -0.5rem;
-    display: inline-block;
-  }
 }
 
 .item {
@@ -246,6 +242,15 @@ export default {
 .disabled {
   composes: item;
   color: color('primary', $grade: 60);
+}
+
+.arrow {
+  color: color('primary', $grade: 40);
+  display: block;
+  left: -0.25em; // 0.6em/2, subtract a little to optically align
+  margin-top: -0.25em; // 0.6em/2, subtract a little to optically align
+  position: absolute;
+  top: 50%;
 }
 
 // use global style for vue router active class
