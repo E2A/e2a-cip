@@ -99,10 +99,11 @@ import BaseStepList from '@/components/BaseStepList.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import { dataMethods } from '@/components/mixins/dataMethods'
+import { initData } from '@/components/mixins/initData.js'
 
 export default {
   name: 'Home',
-  mixins: [dataMethods],
+  mixins: [dataMethods, initData],
   components: {
     BasePageIntro,
     BaseSectionWrapper,

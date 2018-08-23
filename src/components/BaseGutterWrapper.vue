@@ -14,7 +14,7 @@
       flush && base[`flushVertical${gutterY}`]
     ]"
   >
-    <slot>Add child elements here</slot>
+    <slot><!-- Add child elements here --></slot>
   </component>
 </template>
 

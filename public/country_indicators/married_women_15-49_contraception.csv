@@ -1,0 +1,235 @@
+FIPS,Name,Type,TimeFrame,Data
+WORLD,WORLD,World,2018,0.62
+AFRICA,AFRICA,Sub-Region,2018,0.36
+NORTHERN AFRICA,NORTHERN AFRICA,Sub-Region,2018,0.52
+DZ,Algeria,Country,2018,0.57
+EG,Egypt,Country,2018,0.59
+LY,Libya,Country,2018,0.42
+MA,Morocco,Country,2018,0.67
+SD,Sudan,Country,2018,0.12
+TN,Tunisia,Country,2018,0.63
+EH,Western Sahara,Country,2018,n/a
+WESTERN AFRICA,WESTERN AFRICA,Sub-Region,2018,0.24
+BJ,Benin,Country,2018,0.18
+BF,Burkina Faso,Country,2018,0.32
+CV,Cape Verde,Country,2018,0.61
+CI,Cote d'Ivoire,Country,2018,0.24
+GM,Gambia,Country,2018,0.09
+GH,Ghana,Country,2018,0.33
+GN,Guinea,Country,2018,0.09
+GW,Guinea-Bissau,Country,2018,0.16
+LR,Liberia,Country,2018,0.31
+ML,Mali,Country,2018,0.16
+MR,Mauritania,Country,2018,0.18
+NE,Niger,Country,2018,0.19
+NG,Nigeria,Country,2018,0.24
+SN,Senegal,Country,2018,0.28
+SL,Sierra Leone,Country,2018,0.17
+TG,Togo,Country,2018,0.2
+EASTERN AFRICA,EASTERN AFRICA,Sub-Region,2018,0.41
+BI,Burundi,Country,2018,0.29
+KM,Comoros,Country,2018,0.19
+DJ,Djibouti,Country,2018,0.19
+ER,Eritrea,Country,2018,0.08
+ET,Ethiopia,Country,2018,0.37
+KE,Kenya,Country,2018,0.62
+MG,Madagascar,Country,2018,0.4
+MW,Malawi,Country,2018,0.59
+MU,Mauritius,Country,2018,0.64
+YT,Mayotte,Country,2018,n/a
+MZ,Mozambique,Country,2018,0.27
+RE,Reunion,Country,2018,n/a
+RW,Rwanda,Country,2018,0.53
+SC,Seychelles,Country,2018,n/a
+SO,Somalia,Country,2018,0.15
+SS,South Sudan,Country,2018,0.04
+TZ,Tanzania,Country,2018,0.38
+UG,Uganda,Country,2018,0.42
+ZM,Zambia,Country,2018,0.49
+ZW,Zimbabwe,Country,2018,0.67
+MIDDLE AFRICA,MIDDLE AFRICA,Sub-Region,2018,0.2
+AO,Angola,Country,2018,0.14
+CM,Cameroon,Country,2018,0.34
+CF,Central African Republic,Country,2018,0.15
+TD,Chad,Country,2018,0.06
+CG,Congo,Country,2018,0.3
+CD,"Congo, Dem. Rep.",Country,2018,0.2
+GQ,Equatorial Guinea,Country,2018,0.13
+GA,Gabon,Country,2018,0.31
+ST,Sao Tome and Principe,Country,2018,0.41
+SOUTHERN AFRICA,SOUTHERN AFRICA,Sub-Region,2018,0.55
+BW,Botswana,Country,2018,0.53
+LS,eSwatini,Country,2018,0.66
+NA,Lesotho,Country,2018,0.6
+ZA,Namibia,Country,2018,0.56
+SZ,South Africa,Country,2018,0.55
+NORTHERN AMERICA,NORTHERN AMERICA,Sub-Region,2018,0.74
+CA,Canada,Country,2018,0.85
+US,United States,Country,2018,0.73
+LATIN AMERICA AND THE CARIBBEAN,LATIN AMERICA AND THE CARIBBEAN,Sub-Region,2018,0.74
+CENTRAL AMERICA,CENTRAL AMERICA,Sub-Region,2018,0.68
+BZ,Belize,Country,2018,0.51
+CR,Costa Rica,Country,2018,0.76
+SV,El Salvador,Country,2018,0.72
+GT,Guatemala,Country,2018,0.61
+HN,Honduras,Country,2018,0.73
+MX,Mexico,Country,2018,0.67
+NI,Nicaragua,Country,2018,0.8
+PA,Panama,Country,2018,0.63
+CARIBBEAN,CARIBBEAN,Sub-Region,2018,0.61
+AG,Antigua and Barbuda,Country,2018,n/a
+BS,Bahamas,Country,2018,n/a
+BB,Barbados,Country,2018,0.59
+CU,Cuba,Country,2018,0.74
+CW,Curacao,Country,2018,n/a
+DM,Dominica,Country,2018,n/a
+DO,Dominican Republic,Country,2018,0.7
+GD,Grenada,Country,2018,n/a
+GP,Guadeloupe,Country,2018,n/a
+HT,Haiti,Country,2018,0.34
+JM,Jamaica,Country,2018,0.73
+MQ,Martinique,Country,2018,n/a
+PR,Puerto Rico,Country,2018,0.84
+KN,St. Kitts-Nevis,Country,2018,n/a
+LC,Saint Lucia,Country,2018,0.56
+VC,St. Vincent and the Grenadines,Country,2018,n/a
+TT,Trinidad and Tobago,Country,2018,0.4
+SOUTH AMERICA,SOUTH AMERICA,Sub-Region,2018,0.79
+AR,Argentina,Country,2018,0.81
+BO,Bolivia,Country,2018,0.67
+BR,Brazil,Country,2018,0.8
+CL,Chile,Country,2018,0.76
+CO,Colombia,Country,2018,0.81
+EC,Ecuador,Country,2018,0.8
+GF,French Guiana,Country,2018,n/a
+GY,Guyana,Country,2018,0.34
+PY,Paraguay,Country,2018,0.68
+PE,Peru,Country,2018,0.76
+SR,Suriname,Country,2018,0.48
+UY,Uruguay,Country,2018,0.8
+VE,Venezuela,Country,2018,0.75
+ASIA,ASIA,Sub-Region,2018,0.65
+WESTERN ASIA,WESTERN ASIA,Sub-Region,2018,0.54
+AM,Armenia,Country,2018,0.57
+AZ,Azerbaijan,Country,2018,0.51
+BH,Bahrain,Country,2018,n/a
+CY,Cyprus,Country,2018,n/a
+GE,Georgia,Country,2018,0.53
+IQ,Iraq,Country,2018,0.53
+IL,Israel,Country,2018,n/a
+JO,Jordan,Country,2018,0.61
+KW,Kuwait,Country,2018,n/a
+LB,Lebanon,Country,2018,0.55
+OM,Oman,Country,2018,0.3
+PS,Palestinian Territory,Country,2018,0.57
+QA,Qatar,Country,2018,0.38
+SA,Saudi Arabia,Country,2018,0.25
+SY,Syria,Country,2018,0.54
+TR,Turkey,Country,2018,0.74
+AE,United Arab Emirates,Country,2018,n/a
+YE,Yemen,Country,2018,0.34
+CENTRAL ASIA,CENTRAL ASIA,Sub-Region,2018,0.55
+KZ,Kazakhstan,Country,2018,0.56
+KG,Kyrgyzstan,Country,2018,0.42
+TJ,Tajikistan,Country,2018,0.29
+TM,Turkmenistan,Country,2018,0.5
+UZ,Uzbekistan,Country,2018,0.65
+SOUTH ASIA,SOUTH ASIA,Sub-Region,2018,0.53
+AF,Afghanistan,Country,2018,0.23
+BD,Bangladesh,Country,2018,0.62
+BT,Bhutan,Country,2018,0.66
+IN,India,Country,2018,0.54
+IR,Iran,Country,2018,0.77
+MV,Maldives,Country,2018,0.35
+NP,Nepal,Country,2018,0.53
+PK,Pakistan,Country,2018,0.35
+LK,Sri Lanka,Country,2018,0.62
+SOUTHEAST ASIA,SOUTHEAST ASIA,Sub-Region,2018,0.62
+BN,Brunei,Country,2018,n/a
+KH,Cambodia,Country,2018,0.56
+ID,Indonesia,Country,2018,0.61
+LA,Laos,Country,2018,0.5
+MY,Malaysia,Country,2018,0.52
+MM,Myanmar,Country,2018,0.52
+PH,Philippines,Country,2018,0.54
+SG,Singapore,Country,2018,n/a
+TH,Thailand,Country,2018,0.78
+TL,Timor-Leste,Country,2018,0.26
+VN,Vietnam,Country,2018,0.76
+EAST ASIA,EAST ASIA,Sub-Region,2018,0.82
+CN,China,Country,2018,0.85
+HK,"China, Hong Kong SAR",Country,2018,0.75
+MO,"China, Macao SAR",Country,2018,n/a
+JP,Japan,Country,2018,0.4
+KP,"Korea, North",Country,2018,0.7
+KR,"Korea, South",Country,2018,0.8
+MN,Mongolia,Country,2018,0.55
+TW,Taiwan,Country,2018,n/a
+EUROPE,EUROPE,Sub-Region,2018,0.7
+NORTHERN EUROPE,NORTHERN EUROPE,Sub-Region,2018,0.82
+Channel Islands,Channel Islands,Sub-Region,2018,n/a
+DK,Denmark,Country,2018,n/a
+EE,Estonia,Country,2018,0.63
+FI,Finland,Country,2018,0.86
+IS,Iceland,Country,2018,n/a
+IE,Ireland,Country,2018,0.65
+LV,Latvia,Country,2018,n/a
+LT,Lithuania,Country,2018,0.63
+NO,Norway,Country,2018,0.88
+SE,Sweden,Country,2018,n/a
+GB,United Kingdom,Country,2018,0.84
+WESTERN EUROPE,WESTERN EUROPE,Sub-Region,2018,0.72
+AT,Austria,Country,2018,0.66
+BE,Belgium,Country,2018,0.67
+FR,France,Country,2018,0.78
+DE,Germany,Country,2018,0.69
+LI,Liechtenstein,Country,2018,n/a
+LU,Luxembourg,Country,2018,n/a
+MC,Monaco,Country,2018,n/a
+NL,Netherlands,Country,2018,0.73
+CH,Switzerland,Country,2018,0.73
+EASTERN EUROPE,EASTERN EUROPE,Sub-Region,2018,0.66
+BY,Belarus,Country,2018,0.63
+BG,Bulgaria,Country,2018,0.69
+CZ,Czechia,Country,2018,0.86
+HU,Hungary,Country,2018,0.62
+MD,Moldova,Country,2018,0.6
+PL,Poland,Country,2018,0.51
+RO,Romania,Country,2018,0.7
+RU,Russia,Country,2018,0.68
+SK,Slovakia,Country,2018,n/a
+UA,Ukraine,Country,2018,0.65
+SOUTHERN EUROPE,SOUTHERN EUROPE,Sub-Region,2018,0.67
+AL,Albania,Country,2018,0.69
+AD,Andorra,Country,2018,n/a
+BA,Bosnia-Herzegovina,Country,2018,0.46
+HR,Croatia,Country,2018,n/a
+GR,Greece,Country,2018,0.76
+IT,Italy,Country,2018,0.65
+KV,Kosovo,Country,2018,n/a
+MK,Macedonia,Country,2018,0.4
+MT,Malta,Country,2018,n/a
+ME,Montenegro,Country,2018,0.23
+PT,Portugal,Country,2018,0.74
+SM,San Marino,Country,2018,n/a
+RS,Serbia,Country,2018,0.58
+SI,Slovenia,Country,2018,n/a
+ES,Spain,Country,2018,0.71
+OCEANIA,OCEANIA,Sub-Region,2018,0.57
+AU,Australia,Country,2018,0.67
+FM,Federated States of Micronesia,Country,2018,n/a
+FJ,Fiji,Country,2018,n/a
+PF,French Polynesia,Country,2018,n/a
+GU,Guam,Country,2018,0.67
+KI,Kiribati,Country,2018,0.22
+MH,Marshall Islands,Country,2018,0.45
+NR,Nauru,Country,2018,0.36
+NC,New Caledonia,Country,2018,n/a
+NZ,New Zealand,Country,2018,n/a
+PW,Palau,Country,2018,0.33
+PG,Papua New Guinea,Country,2018,0.32
+WS,Samoa,Country,2018,0.27
+SB,Solomon Islands,Country,2018,0.29
+TO,Tonga,Country,2018,0.34
+TV,Tuvalu,Country,2018,0.31
+VU,Vanuatu,Country,2018,0.49

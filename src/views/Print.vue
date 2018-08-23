@@ -120,7 +120,7 @@ export default {
       groupedActivities: this.getGroupedActivites(),
       setupTitle: this.getItemValue('setup', 'title'),
       setupRole: this.getItemValue('setup', 'role'),
-      setupCountry: this.getItemValue('setup', 'country'),
+      setupCountry: this.getItemValue('setup', 'countryName'),
       navButtons: {
         left: [
           {

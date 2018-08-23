@@ -53,6 +53,17 @@
         >
           <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
         </BaseHeading>
+
+        <!-- Count of Activities with EIP Initial Stab -->
+        <BaseHeading
+          :centered="false"
+          :level="2"
+          scale="delta"
+          v-if="false"
+        >
+          <strong>{{percentActivitiesWithBP}}%</strong> {{$t('results.percentActivitesWithBP')}}
+        </BaseHeading>
+
         <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
           <div :class="base.toolTrayItem">
             <FileUpload :exportType="['Export']" />
@@ -62,6 +73,26 @@
           </div>
         </BaseGutterWrapper>
       </header>
+
+      <!-- Indicator Initial Stab -->
+      <div v-if="false">
+        <BaseHeading
+          :centered="false"
+          :level="2"
+          scale="delta"
+          v-if="!countryIndicator1.error"
+        >
+          <strong>{{countryIndicator1.value}}%</strong> {{countryIndicator1.name}}
+        </BaseHeading>
+        <BaseHeading
+          :centered="false"
+          :level="2"
+          scale="delta"
+          v-if="!countryIndicator2.error"
+        >
+          <strong>{{countryIndicator2.value}}%</strong> {{countryIndicator2.name}}
+        </BaseHeading>
+      </div>
 
       <!-- Table -->
       <ActivitiesList ref="activityList">
@@ -139,7 +170,7 @@ export default {
       groupedActivities: this.getGroupedActivites(),
       setupTitle: this.getItemValue('setup', 'title'),
       setupRole: this.getItemValue('setup', 'role'),
-      setupCountry: this.getItemValue('setup', 'country'),
+      setupCountry: this.getItemValue('setup', 'countryName'),
       navButtons: {
         left: [
           {
@@ -154,8 +185,23 @@ export default {
             role: 'primary'
           }
         ]
-      }
+      },
+      countryIndicator1: this.getCountryIndicator(1),
+      countryIndicator2: this.getCountryIndicator(2)
     }
+  },
+  computed: {
+    percentActivitiesWithBP: function () {
+      const activitiesWithBP = this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
+        query.where('value', [this.$t('bestPracticeOptions.yesKey')])
+      }).count()
+
+      return (activitiesWithBP / this.getItemCount('activities')).toFixed(2) * 100
+    }
+  },
+  created () {
+    // Clear any open icons
+    this.$store.dispatch('entities/bestpracticeicons/deleteAll')
   }
 }
 </script>
