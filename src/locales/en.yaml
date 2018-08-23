@@ -404,6 +404,7 @@ en:
   # Misc Keys
   uniquenessError: The value entered in %{field} is not unique amoung %{entityType}
   edit: Edit
+  dismissNotification: Dismiss this message
   yesRaw: "Yes"
   noRaw: "No"
   goBack: Go back

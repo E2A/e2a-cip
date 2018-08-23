@@ -17,13 +17,19 @@
       @change="emitChange"
       @focus="emitFocus"
     >{{contentValue}}</component>
-    <p v-if="error" class="form__error">{{ error }}</p>
+    <BaseCalloutBox
+      v-if="error"
+      :message="error"
+      :class="space.marginTopNarrow"
+      role="info"
+    />
   </BaseFormLabel>
 </template>
 
 <script>
 import { styleHelpers } from './mixins/helpers.js'
 import BaseFormLabel from './BaseFormLabel.vue'
+import BaseCalloutBox from './BaseCalloutBox.vue'
 
 export default {
   name: 'BaseFormInput',
@@ -58,7 +64,8 @@ export default {
     }
   },
   components: {
-    BaseFormLabel
+    BaseFormLabel,
+    BaseCalloutBox
   },
   methods: {
     emitInput: function (e) {
@@ -69,6 +76,14 @@ export default {
     },
     emitFocus: function (e) {
       this.$emit('focus', e.target.value)
+    },
+    toggleNotification: function (e) {
+      this.isNotification = false
+    }
+  },
+  data: function () {
+    return {
+      isNotification: true
     }
   },
   computed: {
@@ -89,20 +104,6 @@ export default {
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 
-<style scoped>
-/* Styles o' Shame */
-  .form__error {
-    background: #bf2441;
-    color: #fff;
-    padding: 10px;
-    margin-top: 0;
-    font-weight: 600;
-    font-size: 18px;
-    width: 80%;
-    border: 2px solid #bf2441;
-  }
-</style>
-
 <style lang="scss" module="base">
 @import '~styleConfig/color';
 
@@ -110,17 +111,17 @@ export default {
   composes: default from 'styles/animation.scss';
   composes: paddingXnarrow from 'styles/spacing.scss';
   composes: round default from 'styles/borders.scss';
+  composes: lightBg from 'styles/color.scss';
   box-shadow: none !important;
   display: block;
   width: 100%;
-  background-color: well('light');
   outline: 0;
   outline: thin dotted \9;
 
   &:focus,
   &:active {
     border-color: color('highlight');
-    background-color: color('light');
+    background-color: color('white');
   }
 }
 
@@ -129,5 +130,12 @@ export default {
   height: auto;
   min-height: 4em;
   resize: vertical;
+}
+
+.error {
+  composes: marginTopXnarrow noMarginBottom paddingXnarrow from 'styles/spacing.scss';
+  composes: default round from 'styles/borders.scss';
+  composes: scaleZeta from 'styles/type.scss';
+  composes: warningBorder warning from 'styles/color.scss';
 }
 </style>

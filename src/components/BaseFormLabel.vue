@@ -5,7 +5,7 @@
       :class="[
         base.label,
         type[typeScaleClass(textSize)],
-        !helpText && space.paddingBottomXxnarrow
+        !helpText && space.paddingBottomXnarrow
       ]"
     >
       {{label}}
