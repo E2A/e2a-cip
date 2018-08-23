@@ -54,10 +54,12 @@
           <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
         </BaseHeading>
 
+        <!-- Count of Activities with EIP Initial Stab -->
         <BaseHeading
           :centered="false"
           :level="2"
           scale="delta"
+          v-if="false"
         >
           <strong>{{percentActivitiesWithBP}}%</strong> {{$t('results.percentActivitesWithBP')}}
         </BaseHeading>
@@ -71,6 +73,26 @@
           </div>
         </BaseGutterWrapper>
       </header>
+
+      <!-- Indicator Initial Stab -->
+      <div v-if="false">
+        <BaseHeading
+          :centered="false"
+          :level="2"
+          scale="delta"
+          v-if="!countryIndicator1.error"
+        >
+          <strong>{{countryIndicator1.value}}%</strong> {{countryIndicator1.name}}
+        </BaseHeading>
+        <BaseHeading
+          :centered="false"
+          :level="2"
+          scale="delta"
+          v-if="!countryIndicator2.error"
+        >
+          <strong>{{countryIndicator2.value}}%</strong> {{countryIndicator2.name}}
+        </BaseHeading>
+      </div>
 
       <!-- Table -->
       <ActivitiesList ref="activityList">
@@ -163,7 +185,9 @@ export default {
             role: 'primary'
           }
         ]
-      }
+      },
+      countryIndicator1: this.getCountryIndicator(1),
+      countryIndicator2: this.getCountryIndicator(2)
     }
   },
   computed: {

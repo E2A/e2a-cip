@@ -419,7 +419,9 @@ en:
   activities: activities
   activity: activity
   bestPracticeIconData: Read more about this EIP
-  # Do Not Translate - Use for adding new country indicators
+  # Country Indicator Data
+  indicatorDataNotPresent: 'Your country does not have data for {indicatorName}'
+  indicatorNotPresent: 'The indicator you have selected is not present'
   countryIndicators:
     indicator1:
       name: 'PERCENT OF MARRIED WOMEN 15-49 USING CONTRACEPTION, ALL METHODS (2017)'

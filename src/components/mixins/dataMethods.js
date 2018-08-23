@@ -43,7 +43,7 @@ export const dataMethods = {
 
       // if setup entitly exists, ensure all fields are present
       if (setup) {
-        return (setup.title && setup.country && setup.role && setup.currencyCode && setup.currencyName)
+        return (setup.title && setup.countryCode && setup.role && setup.currencyCode)
       } else {
         return false
       }
@@ -52,6 +52,27 @@ export const dataMethods = {
       // Check if electron is being used
       var userAgent = navigator.userAgent.toLowerCase()
       return userAgent.indexOf(' electron/') > -1
+    },
+    getCountryIndicator: function (indicatorId) {
+      // Check for indicator presence, if so find name
+      const indicator = this.$store.getters['entities/countryindicators/query']().where('indicatorId', indicatorId).first()
+      var indicatorName = ''
+      if (indicator) {
+        indicatorName = indicator.indicatorName
+      } else {
+        return this.$t('indicatorNotPresent')
+      }
+      // return country indicator
+      const countryIndicator = this.$store.getters['entities/countryindicators/query']()
+        .where('indicatorId', indicatorId)
+        .where('countryCode', this.getItemValue('setup', 'countryCode'))
+        .first()
+
+      if (countryIndicator) {
+        return {name: indicatorName, value: countryIndicator.indicatorValue}
+      } else {
+        return {error: this.$t('indicatorDataNotPresent', {indicatorName: indicatorName})}
+      }
     }
   }
 }

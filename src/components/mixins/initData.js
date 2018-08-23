@@ -4,7 +4,9 @@ import i18n from '@/i18n.js'
 export const initData = {
   created () {
     // Initialize data on create
-    this.setupCountryIndicators()
+    if (this.$store.getters['entities/countryindicators/query']().count() === 0) {
+      this.setupCountryIndicators()
+    }
   },
   computed: {
     countryIndicators: function () {
@@ -45,8 +47,8 @@ export const initData = {
           indicatorValue: dataItem[indicator.indicatorValueHeader]
         }
       })
-      // Save data
-      this.$store.dispatch('entities/countryindicators/create', { data: setupData })
+      // Create for initial load
+      this.$store.dispatch('entities/countryindicators/insert', { data: setupData })
     }
   }
 }

@@ -11,11 +11,10 @@ import 'normalize.css' // global reset styles - import here b/c sass doesn't lik
 import NavHeader from '@/components/NavHeader.vue'
 import BaseIconSpriteMap from '@/components/BaseIconSpriteMap.vue'
 import { dataMethods } from '@/components/mixins/dataMethods.js'
-import { initData } from '@/components/mixins/initData.js'
 
 export default {
   name: 'AppRoot',
-  mixins: [ dataMethods, initData ],
+  mixins: [ dataMethods ],
   components: {
     NavHeader,
     BaseIconSpriteMap
