@@ -32,6 +32,7 @@
             <span
               v-if="!link.active"
               :class="menu.disabled"
+              @click="notificationTrigger"
             >
               {{link.text}}
             </span>
@@ -46,13 +47,13 @@
       </nav>
     </header>
 
-    <!-- convert these to notifications -->
-    <!-- <p v-if="this.getItemCount('assessments') === 0">
-      {{$t('nav.addAssessment')}}
-    </p>
-    <p v-if="this.getItemCount('assessments') > 0">
-      {{$t('nav.removeAssessment')}}
-    </p> -->
+    <BaseCalloutBox
+      v-if="assessmentNotification"
+      :message="notificationMessage"
+      role="info"
+      dismissable
+      @dismiss="assessmentNotification=false"
+    />
   </div>
 </template>
 
@@ -61,6 +62,7 @@ import { dataMethods } from './mixins/dataMethods'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
 import BaseIcon from './BaseIcon.vue'
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+import BaseCalloutBox from '@/components/BaseCalloutBox.vue'
 
 export default {
   name: 'NavHeader',
@@ -68,10 +70,13 @@ export default {
   components: {
     BaseGutterWrapper,
     BaseIcon,
-    LanguageSwitcher
+    LanguageSwitcher,
+    BaseCalloutBox
   },
   data: function () {
     return {
+      assessmentNotification: false,
+      notificationMessage: '',
       links: {
         setup: {
           url: '/setup',
@@ -118,6 +123,17 @@ export default {
     getLinks: function () {
       this.updateActiveLinks()
       return this.links
+    },
+    notificationTrigger: function () {
+      const assessmentCount = this.getItemCount('assessments')
+
+      if (assessmentCount === 0) {
+        this.notificationMessage = this.$t('nav.addAssessment')
+      }
+      if (assessmentCount > 0) {
+        this.notificationMessage = this.$t('nav.removeAssessment')
+      }
+      this.assessmentNotification = true
     },
     updateActiveLinks: function () {
       if (this.getItemCount('assessments') > 0) {
