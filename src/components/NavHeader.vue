@@ -9,7 +9,7 @@
         <img src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg" alt="E2A and Pathfinder" />
       </router-link>
       <!-- Initial translation wiring -->
-      <LanguageSwitcher v-if="false" />
+      <LanguageSwitcher />
       <nav :class="base.menu">
         <BaseGutterWrapper
           :class="menu.list"

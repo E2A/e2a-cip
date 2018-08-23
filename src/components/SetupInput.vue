@@ -26,7 +26,7 @@
       id="cip-role"
       :label="$t('setup.selectRole')"
     >
-      <vSelect id="cip-role" @input="addSetup" v-model="setupRole" :options="setupRoles" />
+      <vSelect id="cip-role" @input="addSetup" v-model="setupRole" :options="setupRoles" :searchable="false" />
     </BaseFormLabel>
   </form>
 </template>

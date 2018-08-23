@@ -90,16 +90,17 @@
             id="activityType"
             :helpText="$t('supportText.selectActivityType')"
           >
-            <select
+            <BaseSelectValidation
+              v-model="activityType"
+              :value="activityType"
               v-validate="'required'"
               :data-vv-as="`${$t('activityType')}`"
-              name='activityType'
-              v-model="activityType"
-            >
-              <option v-for="(type, index) in activityTypeDataset" v-bind:value="type.title" :key="index">
-                {{ type.title }}
-              </option>
-            </select>
+              name="activityType"
+              :options="activityTypeOptions"
+              :searchable="false"
+              classItems="no-clear"
+              :error="errors.first('activityType')"
+            />
             <div :class="space.paddingTopXxnarrow">
               <router-link :to="{name: 'activity-type-info', params: { backToActivityId: activityId }}">( i ) {{$t('activityTypeLink')}}</router-link>
             </div>
@@ -144,6 +145,7 @@ import BaseSectionWrapper from './BaseSectionWrapper.vue'
 import BaseWidthWrapper from './BaseWidthWrapper.vue'
 import BaseFormLabel from './BaseFormLabel.vue'
 import BaseFormInput from './BaseFormInput.vue'
+import BaseSelectValidation from './BaseSelectValidation.vue'
 import FileUpload from './FileUpload.vue'
 import { activityTypes } from './mixins/activityTypes'
 import { customValidation } from './mixins/customValidation'
@@ -162,7 +164,8 @@ export default {
     FileUpload,
     BaseGutterWrapper,
     BaseWidthWrapper,
-    BaseSectionWrapper
+    BaseSectionWrapper,
+    BaseSelectValidation
   },
   props: {
     activityId: {
@@ -204,7 +207,8 @@ export default {
       activityYouthCentric: false,
       setupTitle: this.getItemValue('setup', 'title'),
       activityType: '',
-      activityText: ''
+      activityText: '',
+      activityTypeOptions: this.getActvityData().map(item => item.title)
     }
   },
   methods: {
