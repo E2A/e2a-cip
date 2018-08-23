@@ -18,10 +18,11 @@
       @focus="emitFocus"
     >{{contentValue}}</component>
     <BaseCalloutBox
+      :key="error"
       v-if="error"
       :message="error"
       :class="space.marginTopNarrow"
-      role="info"
+      role="warning"
     />
   </BaseFormLabel>
 </template>
@@ -76,14 +77,6 @@ export default {
     },
     emitFocus: function (e) {
       this.$emit('focus', e.target.value)
-    },
-    toggleNotification: function (e) {
-      this.isNotification = false
-    }
-  },
-  data: function () {
-    return {
-      isNotification: true
     }
   },
   computed: {

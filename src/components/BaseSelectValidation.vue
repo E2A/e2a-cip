@@ -8,13 +8,20 @@
       :class="classItems"
       :placeholder="placeholder"
     />
-    <p v-if="error" class="form__error">{{ error }}</p>
+    <BaseCalloutBox
+      :key="error"
+      v-if="error"
+      :message="error"
+      :class="space.marginTopNarrow"
+      role="warning"
+    />
   </span>
 </template>
 
 <script>
 import { styleHelpers } from './mixins/helpers.js'
 import BaseFormLabel from './BaseFormLabel.vue'
+import BaseCalloutBox from './BaseCalloutBox.vue'
 import vSelect from 'vue-select'
 
 export default {
@@ -36,6 +43,7 @@ export default {
   },
   components: {
     BaseFormLabel,
+    BaseCalloutBox,
     vSelect
   },
   methods: {
@@ -53,3 +61,40 @@ export default {
   }
 }
 </script>
+<style src="styles/spacing.scss" lang="scss" module="space"></style>
+
+<style lang="scss" module="base">
+@import '~styleConfig/color';
+
+.input {
+  composes: default from 'styles/animation.scss';
+  composes: paddingXnarrow from 'styles/spacing.scss';
+  composes: round default from 'styles/borders.scss';
+  composes: lightBg from 'styles/color.scss';
+  box-shadow: none !important;
+  display: block;
+  width: 100%;
+  outline: 0;
+  outline: thin dotted \9;
+
+  &:focus,
+  &:active {
+    border-color: color('highlight');
+    background-color: color('white');
+  }
+}
+
+.textarea {
+  composes: input;
+  height: auto;
+  min-height: 4em;
+  resize: vertical;
+}
+
+.error {
+  composes: marginTopXnarrow noMarginBottom paddingXnarrow from 'styles/spacing.scss';
+  composes: default round from 'styles/borders.scss';
+  composes: scaleZeta from 'styles/type.scss';
+  composes: warningBorder warning from 'styles/color.scss';
+}
+</style>

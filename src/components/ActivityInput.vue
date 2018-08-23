@@ -30,16 +30,6 @@
 
       <BaseWidthWrapper>
         <!--
-         Errors
-        -->
-        <div v-if="errors" class="errors">
-          <span>{{ errors.first('activityNumber') }}</span>
-          <span>{{ errors.first('activityText') }}</span>
-          <span>{{ errors.first('activityBudget') }}</span>
-          <span>{{ errors.first('activityYouthCentric') }}</span>
-          <span>{{ errors.first('activityType') }}</span>
-        </div>
-        <!--
          Input fields
         -->
         <form :class="space.paddingVerticalBetween">
