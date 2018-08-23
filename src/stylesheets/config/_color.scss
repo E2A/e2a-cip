@@ -7,8 +7,16 @@
 
 // Neutrals
 $white: #fff;
-$black: #333;
-$gray: #666;
+$light-gray: #f5f8fb;
+$gray: #c0cbd8;
+$black: #374250;
+
+// highlights
+$purple: #702082;
+$light-blue: #a7c6ed;
+$blue: #307fe2;
+$green: #008264;
+$yellow: #eaaa00;
 
 // Color roles
 // -----------------------------------------------------------------------------
@@ -17,9 +25,14 @@ $gray: #666;
 $colors: (
   'dark': $black,
   'midtone': $gray,
-  'light': $white,
-  'highlight': $gray,
-  'accent': $gray
+  'light': $light-gray,
+  'white': $white,
+  'primary': $purple,
+  'highlight': $blue,
+  'accent': $light-blue,
+  'yes': $green,
+  'no': $gray,
+  'maybe': $yellow
 );
 
 @function color($color, $grade: 0, $opacity: 1) {
@@ -58,7 +71,7 @@ $colors: (
 
 // borders are darker shades of the bg color
 @function border($color) {
-  @return color($color, $grade: -20);
+  @return color($color, $grade: -40);
 }
 
 // a shadow is darker, translucent shade of the bg color

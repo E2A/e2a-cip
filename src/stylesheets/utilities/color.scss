@@ -17,3 +17,8 @@
     border-color: $color !important;
   }
 }
+
+// a default 'well' over a white bg
+.well {
+  background-color: color('light');
+}

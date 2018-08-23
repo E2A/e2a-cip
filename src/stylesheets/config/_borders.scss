@@ -30,13 +30,13 @@ $border-widths: (
 
 @function border-color($color) {
   @if (type-of($color) != 'color') {
-    @return border($color);
+    @return color($color);
   }
   @return $color;
 }
 
 // make a standard border/hairline that works with the parent color theme
-@mixin border($sides: all, $w: $border-w--default, $color: 'light', $style: $border-style, $important: false) {
+@mixin border($sides: all, $w: $border-w--default, $color: color('light', $grade: -20), $style: $border-style, $important: false) {
   @if ($sides == all) {
     border: #{border-w($w)} #{$style} #{border-color($color)}#{if($important == true, ' !important', '')};
   } @else {

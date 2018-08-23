@@ -33,12 +33,31 @@ export default {
 @import '~styleConfig/scale';
 @import '~styleConfig/color';
 @import '~styleConfig/borders';
+@import '~styleConfig/type';
 
 $gutter: 0.8em; // eta on scale
 
 .content {
+  composes: body from 'styles/type.scss';
+
   p {
     margin-bottom: 0;
+  }
+
+  em {
+    @include font('body', $style: 'italic');
+
+    strong {
+      @include font('body', $weight: 'bold');
+    }
+  }
+
+  strong {
+    @include font('body', $weight: 'bold');
+
+    em {
+      @include font('body', $style: 'italic');
+    }
   }
 
   > * + * {

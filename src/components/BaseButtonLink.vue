@@ -36,4 +36,4 @@ export default {
 }
 </script>
 
-<style src="styles/button.scss" lang="scss" module="button">
+<style src="@/stylesheets/shared/button.scss" lang="scss" module="button"></style>

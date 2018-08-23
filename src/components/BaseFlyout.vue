@@ -38,7 +38,7 @@ $size-pointer-h: 0.6rem;
 .wrapper {
   composes: lightBg from 'styles/color.scss';
   composes: default round from 'styles/borders.scss';
-  box-shadow: 0 1px 0.3rem shadow('light');
+  box-shadow: 0 1px 0.3rem shadow('white');
   display: block;
   max-height: $size;
   position: absolute;
@@ -54,12 +54,12 @@ $size-pointer-h: 0.6rem;
   }
 
   &::before {
-    @include triangle('up', $size-pointer-w, $size-pointer-h, border('light'));
+    @include triangle('up', $size-pointer-w, $size-pointer-h, border('white'));
     top: -($size-pointer-h);
   }
 
   &::after {
-    @include triangle('up', $size-pointer-w, $size-pointer-h, color('light'));
+    @include triangle('up', $size-pointer-w, $size-pointer-h, color('white'));
     top: -($size-pointer-h - 0.1rem);
   }
 }

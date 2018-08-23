@@ -62,13 +62,14 @@ $leading: (
 // -----------------------------------------------------------------------------
 // -> PUBLIC, use these to style type globally & in modules
 
-@mixin font($role: 'body', $weight: 'regular', $style: 'normal') {
-  @if $role == 'body' {
-    font-family: $font-stack-helvetica;
+@mixin font($role: 'display', $weight: 'regular', $style: 'normal') {
+  @if $role == 'display' {
+    font-family: 'lato-#{$weight}-#{$style}', $font-stack-helvetica;
     font-weight: unquote($weight);
     font-style: unquote($style);
-  } @elseif $role == 'display' {
-    font-family: $font-stack-helvetica;
+  } @elseif $role == 'body' {
+    font-family: 'lora-#{$weight}-#{$style}', $font-stack-georgia;
     font-weight: unquote($weight);
+    font-style: unquote($style);
   }
 }

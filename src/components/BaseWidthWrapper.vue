@@ -25,7 +25,7 @@ export default {
 // available widths of main layout
 $layout-widths: (
   'narrow': 22rem,
-  'default': 37.5rem,
+  'default': 42.5rem,
   'wide': 64rem,
   'xwide': 75rem,
   'xxwide': 100rem

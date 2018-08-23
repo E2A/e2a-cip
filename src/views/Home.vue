@@ -1,18 +1,44 @@
 <template>
   <article>
+
+    <BaseWidthWrapper :class="[space.paddingVerticalWide, border.bottom]">
+      <img
+        :class="base.logo"
+        src="@/assets/images/logos/usaid-lockup.svg"
+        alt="USAID and E2A"
+      />
+    </BaseWidthWrapper>
+
+    <!-- Intro -->
     <BasePageIntro
       :title="$t('home.title')"
       :subtitle="$t('home.subtitle')"
       :blurb="$t('home.intro')"
     />
+
+    <!-- How it works -->
     <BaseSectionWrapper>
       <BaseHeading :level="2" centered>{{$t('home.stepsTitle')}}</BaseHeading>
       <BaseWidthWrapper width="wide" :class="space.paddingTop">
         <BaseStepList :steps="steps" />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
+
+    <!-- Get started! -->
+    <BaseSectionWrapper el="div" :class="type.center" border>
+      <BaseButtonLink
+        :to="{name: 'setup'}"
+        size="large"
+        role="primary"
+        :label="$t('home.getStartedButton')"
+      />
+      <ClearItems :clearType="['All']" />
+    </BaseSectionWrapper>
+
+    <!-- Offline versions -->
     <BaseSectionWrapper
       v-if="!electron"
+      :class="color.well"
       el="div"
       border
     >
@@ -28,55 +54,35 @@
         <BaseBodyText
           :content="$t('home.downloadBlurb')"
           :class="base.centeredSubheads"
-          size="zeta"
         />
         <BaseGutterWrapper
-          :class="[space.paddingTopNarrow, type.center]"
+          :class="[space.paddingTop, type.center]"
           gutterX="xnarrow"
           gutterY="xnarrow"
         >
           <li :class="base.gutterItem">
             <BaseButtonLink
               :to="$t('home.downloadMacUrl')"
-              size="small"
-              role="primary"
               :label="$t('home.downloadMac')"
-              :class="space.marginBottom"
               :router="false"
             />
           </li>
           <li :class="base.gutterItem">
             <BaseButtonLink
               :to="$t('home.downloadWindowsUrl')"
-              size="small"
-              role="primary"
               :label="$t('home.downloadWindows')"
-              :class="space.marginBottom"
               :router="false"
             />
           </li>
           <li :class="base.gutterItem">
             <BaseButtonLink
               :to="$t('home.downloadWindowsPortableUrl')"
-              size="small"
-              role="primary"
               :label="$t('home.downloadWindowsPortable')"
-              :class="space.marginBottom"
               :router="false"
             />
           </li>
         </BaseGutterWrapper>
       </BaseWidthWrapper>
-    </BaseSectionWrapper>
-    <BaseSectionWrapper el="div" :class="type.center" border>
-      <BaseButtonLink
-        :to="{name: 'setup'}"
-        size="large"
-        role="primary"
-        :label="$t('home.getStartedButton')"
-        :class="space.marginBottom"
-      />
-      <ClearItems :clearType="['All']" />
     </BaseSectionWrapper>
   </article>
 </template>
@@ -125,48 +131,17 @@ export default {
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/borders.scss" lang="scss" module="border"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
+<style src="styles/color.scss" lang="scss" module="color"></style>
 
 <style lang="scss" module="base">
 @import '~styleConfig/breakpoints';
 @import '~styleConfig/scale';
 @import '~styleConfig/type';
 
-.stepWrapper {
-  composes: centered from 'styles/type.scss';
-  counter-reset: steps;
-  font-size: 0;
-
-  > li {
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
-
-    @include media('>small') {
-      width: 50%;
-    }
-
-    @include media('>medium') {
-      width: (100%/3);
-    }
-  }
-}
-
-.step {
-  composes: left from 'styles/type.scss';
-  composes: paddingLeftWide from 'styles/spacing.scss';
-  counter-increment: steps;
-  position: relative;
-
-  &::before {
-    @include font($weight: 'bold');
-    content: counter(steps);
-    display: block;
-    font-size: scale-type('beta');
-    left: 0;
-    line-height: 1;
-    position: absolute;
-    top: 0;
-  }
+.logo {
+  display: block;
+  max-width: 35rem;
+  margin: 0 auto;
 }
 
 .centeredSubheads {

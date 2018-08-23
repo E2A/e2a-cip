@@ -7,6 +7,25 @@ module.exports = {
       }
     }
   },
+  chainWebpack: config => {
+    const svgRule = config.module.rule('svg')
+    svgRule.uses.clear()
+    svgRule
+      .oneOf('inline')
+      .resourceQuery(/inline/)
+      .use('svg-inline-loader')
+      .loader('svg-inline-loader')
+      .end()
+      .end()
+      .oneOf('external')
+      .use('file-loader')
+      .loader('file-loader')
+      .tap(options => {
+        return {
+          name: 'img/[name].[hash:8].[ext]'
+        }
+      })
+  },
   css: {
     modules: true,
     loaderOptions: {

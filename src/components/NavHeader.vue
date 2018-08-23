@@ -4,31 +4,43 @@
       <router-link
         :to="{name: 'home'}"
         :class="base.logo"
+        exact
       >
-        <img src="http://placehold.it/250x40" alt="logos" />
+        <img src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg" alt="E2A and Pathfinder" />
       </router-link>
       <!-- Initial translation wiring -->
       <LanguageSwitcher v-if="false" />
       <nav :class="base.menu">
         <BaseGutterWrapper
-          :class="base.menuList"
+          :class="menu.list"
+          el="ul"
           gutterY="xnarrow"
-          gutterX="xnarrow"
+          gutterX="medium"
         >
           <li
-            id="nav"
-            v-for="(link, index) in this.getLinks()"
+            v-for="(link, key, index) in this.getLinks()"
             :key="`link-${index}`"
-            :class="base.menuItem"
           >
             <router-link
               v-if="link.active"
               :to="link.url"
+              :class="menu.item"
               exact
             >
               {{link.text}}
             </router-link>
-            <span v-if="!link.active">{{link.text}}</span>
+            <span
+              v-if="!link.active"
+              :class="menu.disabled"
+            >
+              {{link.text}}
+            </span>
+            <BaseIcon
+              v-if="index !== 0"
+              :class="menu.arrow"
+              name="arrow-right"
+              size="0.6em"
+            />
           </li>
         </BaseGutterWrapper>
       </nav>
@@ -47,6 +59,7 @@
 <script>
 import { dataMethods } from './mixins/dataMethods'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
+import BaseIcon from './BaseIcon.vue'
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 
 export default {
@@ -54,6 +67,7 @@ export default {
   mixins: [dataMethods],
   components: {
     BaseGutterWrapper,
+    BaseIcon,
     LanguageSwitcher
   },
   data: function () {
@@ -146,46 +160,119 @@ export default {
 
 <style lang="scss" module="base">
 @import '~styleConfig/spacing';
+@import '~styleConfig/color';
+@import '~styleConfig/borders';
 
 .wrapper {
-  composes: paddingHorizontal paddingVerticalXnarrow from 'styles/spacing.scss';
-  composes: bottom from 'styles/borders.scss';
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  composes: paddingHorizontal from 'styles/spacing.scss';
+  composes: primaryBg white from 'styles/color.scss';
+  @include border('bottom', $w: 'medium', $color: 'primary');
+
+  @supports (display: flex) {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
 }
 
 .logo {
-  composes: paddingRightXnarrow from 'styles/spacing.scss';
-  display: block;
+  composes: paddingRightNarrow paddingVerticalXnarrow from 'styles/spacing.scss';
+  display: inline-block;
+  max-width: 11rem;
+
+  &:after {
+    content: none !important; // never show active styles
+  }
 }
 
 .menu {
-  flex: 1;
+  display: inline-block;
   text-align: right;
-}
 
-.menuList {
-  display: inline-block;
-  list-style: none;
-}
-
-.menuItem {
-  display: inline-block;
-
-  & + &::before {
-    content: '\203A';
-    display: inline-block;
-    margin-right: (space('xnarrow', true) + 0.1rem);
+  @supports (display: flex) {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 }
 </style>
 
-<!-- use global style for vue router active class -->
-<style lang="scss">
+<!-- main menu styles -->
+<style lang="scss" module="menu">
+@import '~styleConfig/spacing';
 @import '~styleConfig/color';
+@import '~styleConfig/borders';
 
-.router-link-active {
-  color: color('highlight');
+.list {
+  display: inline-block;
+  list-style: none;
+
+  @supports (display: flex) {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-item: stretch;
+  }
+
+  > li {
+    display: inline-block;
+    position: relative;
+
+    @supports (display: flex) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.item {
+  color: color('white');
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+
+  @supports (display: flex) {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.disabled {
+  composes: item;
+  color: color('primary', $grade: 60);
+}
+
+.arrow {
+  color: color('primary', $grade: 40);
+  display: block;
+  left: -0.25em; // 0.6em/2, subtract a little to optically align
+  margin-top: -0.25em; // 0.6em/2, subtract a little to optically align
+  position: absolute;
+  top: 50%;
+}
+
+// use global style for vue router active class
+:global {
+  .router-link-exact-active {
+    color: color('accent'); // for non-flexbox browsers
+
+    // if flexbox is supported, add a faux-border to the bottom
+    // b/c we can reliably stretch menu items to be full height
+    @supports (display: flex) {
+      color: color('white');
+
+      &:after {
+        content: '';
+        background-color: color('accent');
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -(border-w('medium')); // height of bottom border on nav wrapper
+        height: border-w('thick');
+      }
+    }
+  }
 }
 </style>
