@@ -1,6 +1,13 @@
 <template>
-  <svg :class="base.icon" :role="role">
-    <use :xlink:href="name"></use>
+  <svg
+    :class="base.icon"
+    :style="{
+      width: size,
+      height: size
+    }"
+    :role="role"
+  >
+    <use :xlink:href="`#${name}`"></use>
     <desc v-if="alt">{{alt}}</desc>
   </svg>
 </template>
@@ -13,12 +20,16 @@ export default {
       type: String,
       required: true
     },
-    alt: {
-      type: String
+    size: {
+      type: String,
+      default: '1em'
     },
     role: {
       type: String,
       default: 'presentation'
+    },
+    alt: {
+      type: String
     }
   }
 }
@@ -26,8 +37,14 @@ export default {
 
 <style lang="scss" module="base">
 @import '~bourbon/core/bourbon';
+
 .icon {
-  @include size(1em);
   display: inline-block;
+  fill: currentColor;
+  margin-top: -0.15em;
+  pointer-events: none;
+  position: relative;
+  text-decoration: none;
+  vertical-align: middle;
 }
 </style>
