@@ -4,7 +4,7 @@
     :leftButtons="navButtons.left"
     :rightButtons="navButtons.right"
   >
-    <FileUpload :exportType="['Export']" />
+    <FileExport />
     <ClearItems :clearType="['Assessments']" />
     <BasePageIntro
       :title="$t('analysis.title')"
@@ -58,7 +58,7 @@ import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
 import ActivitiesItemAssessment from '@/components/ActivitiesItemAssessment.vue'
-import FileUpload from '@/components/FileUpload.vue'
+import FileExport from '@/components/FileExport.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { dataMethods } from '@/components/mixins/dataMethods'
@@ -73,7 +73,7 @@ export default {
     BaseHeading,
     ActivitiesList,
     ActivitiesItemAssessment,
-    FileUpload,
+    FileExport,
     ClearItems
   },
   data () {

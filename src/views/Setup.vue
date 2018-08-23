@@ -29,7 +29,7 @@
       >
         {{$t('setup.restoreActivities')}}
       </BaseHeading>
-      <FileUpload :exportType="['Import']" @import-success="updateInput"/>
+      <FileUpload @import-success="updateInput"/>
     </BaseSectionWrapper>
   </div>
 </template>

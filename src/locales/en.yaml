@@ -384,6 +384,7 @@ en:
     jsonFileName: e2a-export-%{timestamp}.json
     csvFileName: e2a-%{exportName}-export-%{timestamp}.csv
     pdfFileName: e2a-report-%{timestamp}.pdf
+    exportSuccessful: "%{filetype} Export Successful"
   # Navigation
   nav:
     activities: 'Activities'

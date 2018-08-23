@@ -66,7 +66,7 @@
 
         <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
           <div :class="base.toolTrayItem">
-            <FileUpload :exportType="['Export']" />
+            <FileExport />
           </div>
           <div :class="base.toolTrayItem">
             <ClearItems :clearType="['Recommendations']" />
@@ -139,7 +139,7 @@ import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
 import ActivitiesItemResult from '@/components/ActivitiesItemResult.vue'
-import FileUpload from '@/components/FileUpload.vue'
+import FileExport from '@/components/FileExport.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import ChartItems from '@/components/ChartItems.vue'
 import NavFooter from '@/components/NavFooter.vue'
@@ -160,7 +160,7 @@ export default {
     PrintPage,
     ActivitiesList,
     ActivitiesItemResult,
-    FileUpload,
+    FileExport,
     ClearItems,
     ChartItems,
     NavFooter

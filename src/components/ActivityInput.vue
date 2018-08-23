@@ -136,7 +136,6 @@ import BaseWidthWrapper from './BaseWidthWrapper.vue'
 import BaseFormLabel from './BaseFormLabel.vue'
 import BaseFormInput from './BaseFormInput.vue'
 import BaseSelectValidation from './BaseSelectValidation.vue'
-import FileUpload from './FileUpload.vue'
 import { activityTypes } from './mixins/activityTypes'
 import { customValidation } from './mixins/customValidation'
 import { dataMethods } from './mixins/dataMethods'
@@ -151,7 +150,6 @@ export default {
     BaseButton,
     BaseFormLabel,
     BaseFormInput,
-    FileUpload,
     BaseGutterWrapper,
     BaseWidthWrapper,
     BaseSectionWrapper,
