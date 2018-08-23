@@ -1,6 +1,14 @@
 <template>
   <article>
 
+    <BaseWidthWrapper :class="[space.paddingVerticalWide, border.bottom]">
+      <img
+        :class="base.logo"
+        src="@/assets/images/logos/usaid-lockup.svg"
+        alt="USAID and E2A"
+      />
+    </BaseWidthWrapper>
+
     <!-- Intro -->
     <BasePageIntro
       :title="$t('home.title')"
@@ -130,42 +138,10 @@ export default {
 @import '~styleConfig/scale';
 @import '~styleConfig/type';
 
-.stepWrapper {
-  composes: centered from 'styles/type.scss';
-  counter-reset: steps;
-  font-size: 0;
-
-  > li {
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
-
-    @include media('>small') {
-      width: 50%;
-    }
-
-    @include media('>medium') {
-      width: (100%/3);
-    }
-  }
-}
-
-.step {
-  composes: left from 'styles/type.scss';
-  composes: paddingLeftWide from 'styles/spacing.scss';
-  counter-increment: steps;
-  position: relative;
-
-  &::before {
-    @include font($weight: 'bold');
-    content: counter(steps);
-    display: block;
-    font-size: scale-type('beta');
-    left: 0;
-    line-height: 1;
-    position: absolute;
-    top: 0;
-  }
+.logo {
+  display: block;
+  max-width: 35rem;
+  margin: 0 auto;
 }
 
 .centeredSubheads {
