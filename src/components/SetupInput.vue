@@ -37,6 +37,7 @@ import currencyList from '@/authorities/currency-data'
 import BaseFormInput from './BaseFormInput.vue'
 import BaseFormLabel from './BaseFormLabel.vue'
 import vSelect from 'vue-select'
+import i18n from '@/i18n.js'
 
 export default {
   name: 'SetupInput',
@@ -50,14 +51,16 @@ export default {
       setupTitle: '',
       setupCountries: countryList,
       setupCurrencies: currencyList,
-      setupRoles: [
-      // @TODO UPDATE USER ROLES TO USE i18N
-        this.$t('userRoles.role1'),
-        this.$t('userRoles.role2')
-      ],
       setupCountry: null,
       setupRole: null,
       setupCurrency: null
+    }
+  },
+  computed: {
+    setupRoles: function () {
+      return Object.values(i18n.messages[i18n.locale].userRoles).map((userRole, index) => {
+        return this.$t(`userRoles.role${index + 1}`)
+      })
     }
   },
   methods: {
