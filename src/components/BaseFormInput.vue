@@ -18,6 +18,7 @@
       @focus="emitFocus"
     >{{contentValue}}</component>
     <BaseCalloutBox
+      v-if="error"
       :class="space.marginTopNarrow"
       role="warning"
     >
