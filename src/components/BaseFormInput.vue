@@ -19,11 +19,10 @@
     >{{contentValue}}</component>
     <BaseCalloutBox
       v-if="error"
+      :message="error"
       :class="space.marginTopNarrow"
-      role="warning"
-    >
-      {{ error }}
-    </BaseCalloutBox>
+      role="info"
+    />
   </BaseFormLabel>
 </template>
 
@@ -77,6 +76,14 @@ export default {
     },
     emitFocus: function (e) {
       this.$emit('focus', e.target.value)
+    },
+    toggleNotification: function (e) {
+      this.isNotification = false
+    }
+  },
+  data: function () {
+    return {
+      isNotification: true
     }
   },
   computed: {
@@ -104,17 +111,17 @@ export default {
   composes: default from 'styles/animation.scss';
   composes: paddingXnarrow from 'styles/spacing.scss';
   composes: round default from 'styles/borders.scss';
+  composes: lightBg from 'styles/color.scss';
   box-shadow: none !important;
   display: block;
   width: 100%;
-  background-color: well('light');
   outline: 0;
   outline: thin dotted \9;
 
   &:focus,
   &:active {
     border-color: color('highlight');
-    background-color: color('light');
+    background-color: color('white');
   }
 }
 

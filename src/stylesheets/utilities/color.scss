@@ -16,9 +16,18 @@
   .#{$name}Border {
     border-color: $color !important;
   }
+
+  // .#{$name}Shadow {
+  //   box-shadow: 0 1px 0.3rem shadow($name);
+  // }
 }
 
 // a default 'well' over a white bg
 .well {
   background-color: color('light');
+}
+
+// default drop shadow
+.shadow {
+  box-shadow: 0 1px 0.3rem shadow('white');
 }

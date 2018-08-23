@@ -82,7 +82,7 @@
    ☐ Timeline nav
    ☐ activities tables
  ☐ Prerender landing page via `spa-prerender-plugin` so JS can download in the BG @nice-to-have
- ☐ Add loading bar/animation in case JS takes awhile to download
+ ☐ Add loading bar/animation in case JS takes awhile to download @nice-to-have
 
  # Nice to have
  ☐ Dot seems to not change on nav change (likely b/c prop or computed property?)

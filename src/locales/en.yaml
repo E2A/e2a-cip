@@ -398,6 +398,7 @@ en:
   yesRaw: "Yes"
   noRaw: "No"
   goBack: Go back
+  dismissNotification: Dismiss this message
   bestPracticeOptions:
     yesText: '@:yesRaw'
     noText: '@:noRaw'
