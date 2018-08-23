@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <BaseIconSpriteMap />
     <NavHeader :key="this.getItemCount('all')" />
     <router-view :key="$route.fullPath"></router-view>
   </div>
@@ -8,13 +9,15 @@
 <script>
 import 'normalize.css' // global reset styles - import here b/c sass doesn't like importing vanilla css
 import NavHeader from '@/components/NavHeader.vue'
+import BaseIconSpriteMap from '@/components/BaseIconSpriteMap.vue'
 import { dataMethods } from '@/components/mixins/dataMethods.js'
 
 export default {
   name: 'AppRoot',
   mixins: [ dataMethods ],
   components: {
-    NavHeader
+    NavHeader,
+    BaseIconSpriteMap
   }
 }
 
