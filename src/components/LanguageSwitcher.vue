@@ -16,6 +16,31 @@ export default {
         {string: 'English', key: 'en'}
       ]
     }
+  },
+  methods: {
+    detectLanguage: function () {
+      // IE 11 / 10
+      var detectedLanguages = []
+      if (navigator.browserLanguage) {
+        detectedLanguages.push(navigator.browserLanguage)
+      }
+      if (navigator.userLanguage) {
+        detectedLanguages.push(navigator.userLanguage)
+      }
+      // FF & Chrome
+      if (navigator.language) {
+        detectedLanguages.push(navigator.language)
+      }
+      // FF & Chrome
+      if (navigator.languages) {
+        detectedLanguages.concat(navigator.languages)
+      }
+      console.log(detectedLanguages)
+      console.log(detectedLanguages.includes('en'))
+    }
+  },
+  created () {
+    this.detectLanguage()
   }
 }
 </script>

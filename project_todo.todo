@@ -1,7 +1,4 @@
 # Discuss:
- ☐ Progress bar vs. pie chart for % of activities with at least 1 EIP - thoughts @jay?
- ☐ Hide lack of data if no data is present? Or show error text?
- ☐ How to deal with CSVs that have strange headers?
 
 # General To Does
  ☐ If activities are not youth centric make grayed out in the assessment page and remove icons. @jay
@@ -19,7 +16,7 @@
      ☐ left
      ☐ right
    ☐ dropdown
- ☐ Custom select box (i.e. dropdown button) @nice-to-have
+ ☐ Migrate select boxes to use vue-select
 
 # Content
  ☐ Break giant en.yaml/localization files into smaller separate files, e.g. `locales/en/best-practices.yaml` @nice-to-have
@@ -75,6 +72,9 @@
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ How to deal with CSVs that have strange headers? @done (18-08-23 12:08)
+ ✔ Progress bar vs. pie chart for % of activities with at least 1 EIP - thoughts @jay? @done (18-08-23 11:31)
+ ✔ Hide lack of data if no data is present? Or show error text? @done (18-08-23 11:31)
  ✔ Replace placeholders in yaml to use rails conventions @done (18-08-23 10:22)
  ✔ UPDATE USER ROLES TO USE i18N @done (18-08-23 10:17)
  ✔ Figure out some way to parse data on another action other than create? @done (18-08-23 10:08)
