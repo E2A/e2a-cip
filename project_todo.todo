@@ -5,6 +5,7 @@
  ☐ If activities are not youth centric make grayed out in the assessment page and remove icons. @jay
    ☐ Activities should still be present in the reports view (and just dont display any best practices icons)
    ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
+☐ UPDATE USER ROLES TO USE i18N
 
 # Pages to set up
 
@@ -70,7 +71,7 @@
      ☐ Percent of activities with a best practice (progress bar? I think this might be better than pie chart. )
      ☐ Aggregate counds per activity type (circles w. sum?)
  ☐ Add in additional country data to site
-   ☐ Adjust country select to use ISO codes
+   ✔ Adjust country select to use ISO codes @done (18-08-22 22:35)
    ☐ Parse CSV Data
    ☐ Display data
 

@@ -51,6 +51,7 @@ export default {
       setupCountries: countryList,
       setupCurrencies: currencyList,
       setupRoles: [
+      // @TODO UPDATE USER ROLES TO USE i18N
         this.$t('userRoles.role1'),
         this.$t('userRoles.role2')
       ],
@@ -64,14 +65,19 @@ export default {
       // Update data based on what is stored
       const setupData = this.getData()
       var setupCurrencyVal = null
+      var setupCountryVal = null
 
       if (setupData && setupData.currencyCode) {
         setupCurrencyVal = {value: setupData.currencyCode, label: setupData.currencyName}
       }
 
+      if (setupData && setupData.countryCode) {
+        setupCountryVal = {value: setupData.countryCode, label: setupData.countryName}
+      }
+
       if (setupData) {
         this.setupTitle = setupData.title
-        this.setupCountry = setupData.country
+        this.setupCountry = setupCountryVal
         this.setupRole = setupData.role
         this.setupCurrency = setupCurrencyVal
       }
@@ -81,19 +87,28 @@ export default {
     },
     addSetup: function () {
       const currencyData = this.setupCurrency
+      const countryData = this.setupCountry
       var currencyCodeData = null
       var currencyNameData = null
+      var countryCodeData = null
+      var countryNameData = null
 
       if (currencyData) {
         currencyCodeData = currencyData.value
         currencyNameData = currencyData.label
       }
 
+      if (countryData) {
+        countryCodeData = countryData.value
+        countryNameData = countryData.label
+      }
+
       // Create setup data (create sets replaces the entity each time it is updated)
       this.$store.dispatch('entities/setup/create', {
         data: {
           title: this.setupTitle,
-          country: this.setupCountry,
+          countryName: countryNameData,
+          countryCode: countryCodeData,
           role: this.setupRole,
           currencyCode: currencyCodeData,
           currencyName: currencyNameData
