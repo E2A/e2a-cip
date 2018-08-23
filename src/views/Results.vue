@@ -53,6 +53,15 @@
         >
           <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
         </BaseHeading>
+
+        <BaseHeading
+          :centered="false"
+          :level="2"
+          scale="delta"
+        >
+          <strong>{{percentActivitiesWithBP}}%</strong> {{$t('results.percentActivitesWithBP')}}
+        </BaseHeading>
+
         <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
           <div :class="base.toolTrayItem">
             <FileUpload :exportType="['Export']" />
@@ -156,6 +165,19 @@ export default {
         ]
       }
     }
+  },
+  computed: {
+    percentActivitiesWithBP: function () {
+      const activitiesWithBP = this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
+        query.where('value', [this.$t('bestPracticeOptions.yesKey')])
+      }).count()
+
+      return (activitiesWithBP / this.getItemCount('activities')).toFixed(2) * 100
+    }
+  },
+  created () {
+    // Clear any open icons
+    this.$store.dispatch('entities/bestpracticeicons/deleteAll')
   }
 }
 </script>

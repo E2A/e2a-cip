@@ -319,6 +319,7 @@ en:
       Here are the activities from your plan. Please use what you have learned about EIPs to determine whether each activity aligns with one or more of the EIPs. If the activity **fully aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in green. If the activity **partially aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in yellow. If the activity does not align with one or more EIPs, the symbol(s) should be left the default gray. For easy access to the information about the EIPs, please click on the symbol of the practice you want to review. Once you are finished analyzing your activities, get your results by clicking on the ‘results’ button at the bottom of the page.
     previousStep: Go back to activities
     nextStep: Your results
+  # Results Page
   results:
     value: "Value:"
     text: "Text:"
@@ -331,6 +332,7 @@ en:
     printPage: Print Page
     previousStep: Go back to analysis
     nextStep: Print Results & Advocate
+    percentActivitesWithBP: "activites with an EIP"
   chartTitles:
     activityTypeCount: "% Activity count by type"
     activityTypeBudget: "Budget % of total by activity types"

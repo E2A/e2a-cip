@@ -96,6 +96,10 @@ export default {
         ]
       }
     }
+  },
+  created () {
+    // Clear any open icons
+    this.$store.dispatch('entities/bestpracticeicons/deleteAll')
   }
 }
 </script>
