@@ -9,7 +9,7 @@
 # Pages to set up
 
 # Components to build
- ☐ Icons @hard
+ ✔ Icons @hard @done (18-08-22 23:23)
    This will take a little figuring out - not sure the best way to handle icon sprites in a render context like Vue. Avoiding icons/using placeholders in first prototype.
  ☐ Analysis color legend
  ☐ Export/clear tool tray at top of analysis, results, etc.
@@ -29,8 +29,8 @@
    ☐ Print styles
    ☐ Tables
      ☐ Mobile
-   ☐ Color palette
-     ☐ Yes/No/Maybe colors
+   ✔ Color palette @done (18-08-22 23:31)
+     ✔ Yes/No/Maybe colors @done (18-08-22 23:31)
    ☐ Type treatments
      ✔ scale @done (18-08-22 14:07)
      ✔ webfonts @done (18-08-22 14:07)
@@ -38,9 +38,9 @@
        ☐ display type
        ☐ UI type
        ☐ body type
-   ☐ Add logos
-     ☐ home
-     ☐ header nav
+   ✔ Add logos @done (18-08-22 23:23)
+     ✔ home @done (18-08-22 23:31)
+     ✔ header nav @done (18-08-22 23:23)
    ☐ Activities view
      ☐ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling.
      ☐ Switch component (from checkbox)
