@@ -1,4 +1,5 @@
 en:
+  # Home Page
   home:
     title: Not without us!
     subtitle: A tool for AYSRH-responsive planning
@@ -40,6 +41,7 @@ en:
     downloadWindowsUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer.zip
     downloadWindowsPortable: Windows Portable (67MB)
     downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
+  # Setup Page
   setup:
     CIPTitle: Enter your CIP title
     configureCIP: "First, let's configure your CIP"
@@ -77,7 +79,7 @@ en:
     activityBudget: Please enter a budget for the activity, if present.
     activityYouthCentric: Is this activity youth-centric as defined by ____
     selectActivityType: Select an activity modality
-  # Activity Type
+  # Activity Type Content
   activityTypeLink: Learn more about activity types
   activityTypeTitle: Learn more about activity types
   backToActivities: Back to your activities
@@ -313,6 +315,7 @@ en:
           teaser: |-
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
           url: /uploads/resources/bestpractice2.png
+  # Analysis Page
   analysis:
     title: Analyze your activities
     intro: |-
@@ -320,6 +323,11 @@ en:
     previousStep: Go back to activities
     nextStep: Your results
   # Results Page
+  resultsSubhead: "Here's how your activities rate lorem ipsum:"
+  addRecommendation: Add recommendation
+  addAnotherRecommendation: Add another recommendation
+  suggestedImprovements: Suggested improvements
+  suggestImprovements: Suggest improvements
   results:
     value: "Value:"
     text: "Text:"
@@ -333,6 +341,7 @@ en:
     previousStep: Go back to analysis
     nextStep: Print Results & Advocate
     percentActivitesWithBP: "activites with an EIP"
+  # Chart Title Data
   chartTitles:
     activityTypeCount: "% Activity count by type"
     activityTypeBudget: "Budget % of total by activity types"
@@ -340,13 +349,10 @@ en:
     youthFocusCount: "% activity count by youth focused"
     youthCentricLabel: "Youth Centric"
     notYouthCentricLabel: "Not Youth Centric"
-  resultsSubhead: "Here's how your activities rate lorem ipsum:"
-  addRecommendation: Add recommendation
-  addAnotherRecommendation: Add another recommendation
-  suggestedImprovements: Suggested improvements
-  suggestImprovements: Suggest improvements
+  # Print Page
   print:
     previousStep: Go back to advocate
+  # Advocate Page
   advocate:
     print: Print your results to share
     title: 'Moving forward…'
@@ -368,15 +374,17 @@ en:
         title: Advocate
         blurb: |-
           A message that emerges clearly from the EIPs is that AYSRH thrives in settings where where unbiased services are provided in a welcoming environment, where there is multi-sectoral and community support, and where youth understand their sexual and reproductive rights and have the skills to hold duty-bearers to account. A variety of resources exist to help youth and their adult allies plan effective advocacy campaigns. Some resources can be found below:
+  # File Upload Strings
   fileUpload:
     selectFormat: Select an export format
     json: JSON - preferred for import
     csv: CSV - preferred for subsequent analysis
     successImport: Successfully imported
     textReaderImport: Import Data
-    jsonFileName: e2a-export-{timestamp}.json
-    csvFileName: e2a-{exportName}-export-{timestamp}.csv
-    pdfFileName: e2a-report-{timestamp}.pdf
+    jsonFileName: e2a-export-%{timestamp}.json
+    csvFileName: e2a-%{exportName}-export-%{timestamp}.csv
+    pdfFileName: e2a-report-%{timestamp}.pdf
+  # Navigation
   nav:
     activities: 'Activities'
     summary: 'Summary'
@@ -386,6 +394,7 @@ en:
     advocate: 'Advocate'
     addAssessment: You must enter assessments before you can view results.
     removeAssessment: You must remove all assessments before you can edit activites.
+  # Activity table
   activityTable:
     defaultTitle: Activity text
     defaultID: Activity number
@@ -393,18 +402,19 @@ en:
     defaultYouthCentered: Youth-centered?
     defaultEIP: 'Evidence-Informed Practices'
   # Misc Keys
-  uniquenessError: The value entered in {field} is not unique amoung {entityType}
+  uniquenessError: The value entered in %{field} is not unique amoung %{entityType}
   edit: Edit
   yesRaw: "Yes"
   noRaw: "No"
   goBack: Go back
+  # Activity Best Practice Options (yesKey, noKey, and maybeKey should not be translated )
   bestPracticeOptions:
     yesText: '@:yesRaw'
     noText: '@:noRaw'
     maybeText: Maybe
-    yesKey: 'yes'
-    noKey: 'no'
-    maybeKey: 'maybe'
+    yesKey: 'yes' # Do not translate
+    noKey: 'no' # Do not translate
+    maybeKey: 'maybe' # Do not translate
   enterSuggestion: Enter a suggestion
   item: no items | item | items
   successRemoved: Successfully removed
@@ -420,18 +430,18 @@ en:
   activity: activity
   bestPracticeIconData: Read more about this EIP
   # Country Indicator Data
-  indicatorDataNotPresent: 'Your country does not have data for {indicatorName}'
+  indicatorDataNotPresent: 'Your country does not have data for %{indicatorName}'
   indicatorNotPresent: 'The indicator you have selected is not present'
   countryIndicators:
     indicator1:
       name: 'PERCENT OF MARRIED WOMEN 15-49 USING CONTRACEPTION, ALL METHODS (2017)'
       source: 'https://www.prb.org/international/indicator/contraception-all/table'
       fileName: 'married_women_15-49_contraception.csv'
-      iso2codeHeader: 'FIPS'
-      indicatorValueHeader: 'Data'
+      iso2codeHeader: 'FIPS' # Do not translate
+      indicatorValueHeader: 'Data' # Do not translate
     indicator2:
       name: 'PERCENT OF MARRIED WOMEN 15-49 USING CONTRACEPTION, MODERN METHODS (2017)'
       source: 'https://www.prb.org/international/indicator/contraception-modern/table'
       fileName: 'married_women_15-49_contraception_modern.csv'
-      iso2codeHeader: 'FIPS'
-      indicatorValueHeader: 'Data'
+      iso2codeHeader: 'FIPS' # Do not translate
+      indicatorValueHeader: 'Data' # Do not translate
