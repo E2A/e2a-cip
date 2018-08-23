@@ -125,14 +125,6 @@ export default {
       return this.links
     },
     notificationTrigger: function () {
-      const assessmentCount = this.getItemCount('assessments')
-
-      if (assessmentCount === 0) {
-
-      }
-      if (assessmentCount > 0) {
-
-      }
       // Trigger notification
       this.assessmentNotification = true
 
