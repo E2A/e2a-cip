@@ -10,7 +10,10 @@
       <template slot="summaryLeft">
         <BaseHeading
           :centered="false"
+          :class="type.leadingDefault"
           scale="zeta"
+          weight="regular"
+          color="dark"
           sub
         >
           {{activityInstance.text}}
@@ -77,6 +80,8 @@
           :centered="false"
           :class="space.paddingBottomXnarrow"
           scale="zeta"
+          weight="bold"
+          color="dark"
         >
           {{$t('suggestedImprovements')}}
         </BaseHeading>

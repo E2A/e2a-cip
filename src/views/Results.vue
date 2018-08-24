@@ -6,7 +6,12 @@
   >
     <BaseSectionWrapper el="div">
       <header :class="[type.center, space.paddingTop]">
-        <BaseHeading :class="space.paddingBottomNarrow">{{setupTitle}}</BaseHeading>
+        <BaseHeading
+          :class="space.paddingBottomNarrow"
+          scale="beta"
+        >
+          {{setupTitle}}
+        </BaseHeading>
         <BaseGutterWrapper
           gutterX="medium"
           gutterY="xnarrow"
@@ -14,6 +19,8 @@
           <BaseHeading
             scale="zeta"
             :class="base.byline"
+            weight="regular"
+            color="midtone"
             sub
           >
             {{setupRole}}
@@ -21,6 +28,8 @@
           <BaseHeading
             scale="zeta"
             :class="base.byline"
+            weight="regular"
+            color="midtone"
             sub
           >
             {{setupCountry}}
@@ -33,6 +42,7 @@
         <BaseHeading
           :class="space.paddingVerticalWide"
           scale="gamma"
+          color="midtone"
           sub
         >
           {{$t('resultsSubhead')}}
@@ -44,89 +54,94 @@
     <!-- Activities list -->
     <BaseSectionWrapper border>
 
-      <!-- Count & export tools -->
-      <header :class="base.toolTray">
-        <BaseHeading
-          :centered="false"
-          :level="2"
-          scale="delta"
-        >
-          <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
-        </BaseHeading>
+      <BaseWidthWrapper width="xxwide">
+        <!-- Count & export tools -->
+        <header :class="base.toolTray">
+          <BaseHeading
+            :centered="false"
+            :level="2"
+            scale="epsilon"
+            color="midtone"
+          >
+            <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
+          </BaseHeading>
 
-        <!-- Count of Activities with EIP Initial Stab -->
-        <BaseHeading
-          :centered="false"
-          :level="2"
-          scale="delta"
-          v-if="false"
-        >
-          <strong>{{percentActivitiesWithBP}}%</strong> {{$t('results.percentActivitesWithBP')}}
-        </BaseHeading>
+          <!-- Count of Activities with EIP Initial Stab -->
+          <BaseHeading
+            :centered="false"
+            :level="2"
+            scale="delta"
+            v-if="false"
+          >
+            <strong>{{percentActivitiesWithBP}}%</strong> {{$t('results.percentActivitesWithBP')}}
+          </BaseHeading>
 
-        <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
-          <div :class="base.toolTrayItem">
-            <FileExport />
-          </div>
-          <div :class="base.toolTrayItem">
-            <ClearItems :clearType="['Recommendations']" />
-          </div>
-        </BaseGutterWrapper>
-      </header>
+          <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
+            <div :class="base.toolTrayItem">
+              <FileExport />
+            </div>
+            <div :class="base.toolTrayItem">
+              <ClearItems :clearType="['Recommendations']" />
+            </div>
+          </BaseGutterWrapper>
+        </header>
 
-      <!-- Indicator Initial Stab -->
-      <div v-if="false">
-        <BaseHeading
-          :centered="false"
-          :level="2"
-          scale="delta"
-          v-if="!countryIndicator1.error"
-        >
-          <strong>{{countryIndicator1.value}}%</strong> {{countryIndicator1.name}}
-        </BaseHeading>
-        <BaseHeading
-          :centered="false"
-          :level="2"
-          scale="delta"
-          v-if="!countryIndicator2.error"
-        >
-          <strong>{{countryIndicator2.value}}%</strong> {{countryIndicator2.name}}
-        </BaseHeading>
-      </div>
-
-      <!-- Table -->
-      <ActivitiesList ref="activityList">
-        <div
-          v-for="(activities, index) in groupedActivities"
-          :key="`gA-${index}`"
-        >
-          <template v-if="activities.activityObjects.length > 0">
-            <BaseHeading
-              :level="3"
-              scale="eta"
-              :centered="false"
-              :class="[space.paddingXxnarrow, color.light, type.uppercase, color.midtoneBg, border.top]"
-            >
-              {{activities.activityTypeName}}
-            </BaseHeading>
-
-            <!-- Activity Count Initial Stab -->
-            <ul v-if="false">
-              <li v-for="(bestPracticeCount, index) in bpCounts = getActivityTypeCounts(activities.activityTypeName)"
-                :key="`activity-${index}`"
-               >
-               {{bestPracticeCount.title}}: {{bestPracticeCount.count}}
-             </li>
-            </ul>
-
-            <ActivitiesItemResult
-              v-for="(activity, index) in activities.activityObjects"
-              :key="`activity-${index}`"
-              :activityInstance="activity"
-            />
-          </template>
+        <!-- Indicator Initial Stab -->
+        <div v-if="false">
+          <BaseHeading
+            :centered="false"
+            :level="2"
+            scale="delta"
+            v-if="!countryIndicator1.error"
+          >
+            <strong>{{countryIndicator1.value}}%</strong> {{countryIndicator1.name}}
+          </BaseHeading>
+          <BaseHeading
+            :centered="false"
+            :level="2"
+            scale="delta"
+            v-if="!countryIndicator2.error"
+          >
+            <strong>{{countryIndicator2.value}}%</strong> {{countryIndicator2.name}}
+          </BaseHeading>
         </div>
-      </ActivitiesList>
+
+        <!-- Table -->
+        <ActivitiesList ref="activityList">
+          <div
+            v-for="(activities, index) in groupedActivities"
+            :key="`gA-${index}`"
+          >
+            <template v-if="activities.activityObjects.length > 0">
+              <BaseHeading
+                :level="3"
+                scale="zeta"
+                :centered="false"
+                :class="[space.paddingXxnarrow, type.uppercase, color.lightBg, border.top]"
+                color="midtone"
+                weight="bold"
+              >
+                {{activities.activityTypeName}}
+              </BaseHeading>
+
+              <!-- Activity Count Initial Stab -->
+              <ul v-if="false">
+                <li v-for="(bestPracticeCount, index) in bpCounts = getActivityTypeCounts(activities.activityTypeName)"
+                  :key="`activity-${index}`"
+                 >
+                 {{bestPracticeCount.title}}: {{bestPracticeCount.count}}
+               </li>
+              </ul>
+
+              <ActivitiesItemResult
+                v-for="(activity, index) in activities.activityObjects"
+                :key="`activity-${index}`"
+                :activityInstance="activity"
+              />
+            </template>
+          </div>
+        </ActivitiesList>
+      </BaseWidthWrapper>
     </BaseSectionWrapper>
   </NavFooter>
 </template>

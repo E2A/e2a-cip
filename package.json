@@ -12,7 +12,8 @@
     "test:unit": "vue-cli-service test:unit",
     "build:electron": "vue-cli-service build:electron",
     "serve:electron": "vue-cli-service serve:electron",
-    "preicons": "svgo -f './src/assets/images/icons/' --disable removeViewBox --enable removeDimensions",
+    "svgo": "svgo -f './src/assets/images/icons/' --disable removeViewBox --enable removeDimensions",
+    "preicons": "yarn run svgo",
     "icons": "svgstore -o './src/assets/images/spritemap.svg' --inline './src/assets/images/icons/**/*.svg'"
   },
   "dependencies": {

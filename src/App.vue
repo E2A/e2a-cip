@@ -30,11 +30,12 @@ export default {
 @import './stylesheets/config/breakpoints';
 @import './stylesheets/config/type';
 @import './stylesheets/config/color';
+@import './stylesheets/config/borders';
 
 $base-type-sizes: (
-  'default': 95%,
-  'xsmall': 100%,
-  'small': 110%,
+  'default': 100%,
+  'xsmall': 105%,
+  'small': 115%,
   'medium': 120%,
   'large': 125%
 );
@@ -54,6 +55,8 @@ $base-type-sizes: (
 }
 
 // Lato
+@include font-face('lato-thin-normal', 'lato/lato-thin', 300);
+@include font-face('lato-thin-italic', 'lato/lato-thin-italic', 300, 'italic');
 @include font-face('lato-light-normal', 'lato/lato-light', 300);
 @include font-face('lato-light-italic', 'lato/lato-light-italic', 300, 'italic');
 @include font-face('lato-regular-normal', 'lato/lato');
@@ -92,6 +95,7 @@ body {
   color: color('dark');
   line-height: leading();
   font-feature-settings: 'liga', 'kern';
+  text-rendering: geometricPrecision;
 }
 
 audio,
@@ -100,5 +104,22 @@ img,
 video {
     vertical-align: middle;
     max-width: 100%;
+}
+
+p,
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a {
+  color: color('highlight');
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    border-bottom: border-w('thin') dashed;
+  }
 }
 </style>

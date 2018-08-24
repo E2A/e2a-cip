@@ -60,7 +60,7 @@ export default {
 .heading {
   composes: bottom thick from 'styles/borders.scss';
   composes: darkBorder from 'styles/color.scss';
-  composes: scaleEta bold from 'styles/type.scss';
+  composes: scaleZeta bold from 'styles/type.scss';
   composes: paddingVerticalXxnarrow from 'styles/spacing.scss';
   vertical-align: bottom;
 }

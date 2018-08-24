@@ -122,7 +122,7 @@ en:
   bestPractices:
     bestPractice1:
       title: Providing age and developmentally appropriate services
-      icon: http://placehold.it/600x600
+      icon: eip-choice
       teaser: |-
         Age and developmentally appropriate services are sometimes described as “adolescent- and youth-friendly.” Adolescent- and youth-friendly sexual and reproductive health (AYSRH) services are SRH services that comply with the five World Health Organization-established standards as well as international norms for improved quality of health services for adolescents. These services commonly include safe and affordable contraceptive methods;  prevention and treatment of HIV/AIDS and care for STIs other than HIV; the provision of accurate sexual and reproductive health information; and sensitive counselling and care for sexual health and wellbeing. Services may also include youth-friendly obstetric and antenatal care for pregnant girls and women; post-abortion care services, prevention, detection, and counselling for gender-based violence; and the prevention, detection, and treatment cervical cancer.
       body: |-
@@ -192,7 +192,7 @@ en:
     bestPractice2:
       title: "Expanding the range of contraceptive methods available to adolescents\
         \ and young people (including LARCs and DMPA-SC)"
-      icon: http://placehold.it/600x600
+      icon: eip-contraceptives
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -210,7 +210,7 @@ en:
     bestPractice3:
       title: "Inclusion of vulnerable and underserved youth groups (including married\
         \ adolescent girls ad FTPs)"
-      icon: http://placehold.it/600x600
+      icon: eip-couple
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -227,7 +227,7 @@ en:
           url: /uploads/resources/bestpractice1.png
     bestPractice4:
       title: "Youth participation and leadership in AYSRH programs"
-      icon: http://placehold.it/600x600
+      icon: eip-youth
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -244,7 +244,7 @@ en:
           url: /uploads/resources/bestpractice1.png
     bestPractice5:
       title: "Multi-sectoral coordination for AYSRH"
-      icon: http://placehold.it/600x600
+      icon: eip-coordination
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -261,7 +261,7 @@ en:
           url: /uploads/resources/bestpractice1.png
     bestPractice6:
       title: "Comprehensive sexuality education"
-      icon: http://placehold.it/600x600
+      icon: eip-book
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -278,7 +278,7 @@ en:
           url: /uploads/resources/bestpractice1.png
     bestPractice7:
       title: "Support to families and communities for AYSRH"
-      icon: http://placehold.it/600x600
+      icon: eip-community
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -295,7 +295,7 @@ en:
           url: /uploads/resources/bestpractice1.png
     bestPractice8:
       title: "Girls' empowerment"
-      icon: http://placehold.it/600x600
+      icon: eip-equality
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -320,6 +320,18 @@ en:
     title: Analyze your activities
     intro: |-
       Here are the activities from your plan. Please use what you have learned about EIPs to determine whether each activity aligns with one or more of the EIPs. If the activity **fully aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in green. If the activity **partially aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in yellow. If the activity does not align with one or more EIPs, the symbol(s) should be left the default gray. For easy access to the information about the EIPs, please click on the symbol of the practice you want to review. Once you are finished analyzing your activities, get your results by clicking on the ‘results’ button at the bottom of the page.
+    instructions:
+      heading: Click on the icons indicating the EIPs which your activity meets
+      options:
+        yes:
+          title: '@:yesRaw'
+          description: Fully aligns with the requirements of the best practice.
+        no:
+          title: '@:noRaw'
+          description: Does not align with the requirements of the best practice.
+        maybe:
+          title: Maybe
+          description: Partially aligns with the requirements of the best practice.
     previousStep: Go back to activities
     nextStep: Your results
   # Results Page
