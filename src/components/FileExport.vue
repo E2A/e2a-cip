@@ -15,6 +15,11 @@ import { dataMethods } from './mixins/dataMethods'
 export default {
   name: 'FileExport',
   mixins: [dataIO, dataMethods],
+  data () {
+    return {
+      exportOption: ''
+    }
+  },
   methods: {
     exportData: function (option) {
       console.log(this.runExportData(option))

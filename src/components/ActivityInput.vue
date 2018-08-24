@@ -62,7 +62,14 @@
             :helpText="$t('supportText.activityBudget')"
           />
 
-          <BaseFormLabel
+          <BaseFormSwitch
+            v-model="activityYouthCentric"
+            :label="$t('activityYouthCentric')"
+            :helpText="$t('supportText.activityYouthCentric')"
+            name="activityYouthCentric"
+            type="checkbox"
+          />
+          <!-- <BaseFormLabel
             id="checkbox"
             :label="$t('activityYouthCentric')"
             :helpText="$t('supportText.activityYouthCentric')"
@@ -73,7 +80,7 @@
               id="checkbox"
               v-model="activityYouthCentric"
             >
-          </BaseFormLabel>
+          </BaseFormLabel> -->
 
           <BaseFormSelect
             v-model="activityType"
@@ -131,6 +138,7 @@ import BaseSectionWrapper from './BaseSectionWrapper.vue'
 import BaseWidthWrapper from './BaseWidthWrapper.vue'
 import BaseFormLabel from './BaseFormLabel.vue'
 import BaseFormInput from './BaseFormInput.vue'
+import BaseFormSwitch from './BaseFormSwitch.vue'
 import BaseFormSelect from './BaseFormSelect.vue'
 import { activityTypes } from './mixins/activityTypes'
 import { customValidation } from './mixins/customValidation'
@@ -146,6 +154,7 @@ export default {
     BaseButton,
     BaseFormLabel,
     BaseFormInput,
+    BaseFormSwitch,
     BaseGutterWrapper,
     BaseWidthWrapper,
     BaseSectionWrapper,

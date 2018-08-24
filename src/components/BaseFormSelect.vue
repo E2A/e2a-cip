@@ -13,13 +13,6 @@
       :class="[classItems, noClear && base.noClear]"
       :placeholder="placeholder"
     />
-    <BaseCalloutBox
-      :key="error"
-      v-if="error"
-      :message="error"
-      :class="space.marginTopNarrow"
-      role="warning"
-    />
   </BaseFormLabel>
 </template>
 
@@ -37,7 +30,10 @@ export default {
     labelTextSize: String,
     helpText: String,
     value: [String, Number, Object],
-    name: String,
+    name: {
+      type: String,
+      required: true
+    },
     placeholder: String,
     validate: String,
     dataAs: String,
