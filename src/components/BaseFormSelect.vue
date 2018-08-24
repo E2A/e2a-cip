@@ -13,6 +13,13 @@
       :class="[classItems, noClear && base.noClear]"
       :placeholder="placeholder"
     />
+    <BaseCalloutBox
+      :key="error"
+      v-if="error"
+      :message="error"
+      :class="space.marginTopNarrow"
+      role="warning"
+    />
   </BaseFormLabel>
 </template>
 

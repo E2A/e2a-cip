@@ -72,6 +72,8 @@ en:
   inputNextActivity: Input Another Activity
   activitiesDone: "I'm done!"
   save: Save Activity
+  saveSuccess: Saved Activity
+  deleteSuccess: Deleted Activity
   deleteActivity: Delete
   supportText:
     activityNumber: Please enter an activity number
@@ -353,6 +355,7 @@ en:
     previousStep: Go back to analysis
     nextStep: Print Results & Advocate
     percentActivitesWithBP: "activites with an EIP"
+    exportChartSuccess: 'You successfully exported your chart data'
   # Chart Title Data
   chartTitles:
     activityTypeCount: "% Activity count by type"
@@ -437,7 +440,7 @@ en:
   successRemovedAll: items, this is all the currently stored data.
   clearItems:
     clear: Clear
-    Assessments: Assessments
+    Assessments: Analyses
     Activities: Activities
     Recommendations: Recommendations
     All: All
