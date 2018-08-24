@@ -6,7 +6,12 @@
   >
     <BaseSectionWrapper el="div">
       <header :class="[type.center, space.paddingTop]">
-        <BaseHeading :class="space.paddingBottomNarrow">{{setupTitle}}</BaseHeading>
+        <BaseHeading
+          :class="space.paddingBottomNarrow"
+          scale="beta"
+        >
+          {{setupTitle}}
+        </BaseHeading>
         <BaseGutterWrapper
           gutterX="medium"
           gutterY="xnarrow"
@@ -14,6 +19,8 @@
           <BaseHeading
             scale="zeta"
             :class="base.byline"
+            weight="regular"
+            color="midtone"
             sub
           >
             {{setupRole}}
@@ -21,6 +28,8 @@
           <BaseHeading
             scale="zeta"
             :class="base.byline"
+            weight="regular"
+            color="midtone"
             sub
           >
             {{setupCountry}}
@@ -33,6 +42,7 @@
         <BaseHeading
           :class="space.paddingVerticalWide"
           scale="gamma"
+          color="midtone"
           sub
         >
           {{$t('resultsSubhead')}}
@@ -49,7 +59,8 @@
         <BaseHeading
           :centered="false"
           :level="2"
-          scale="delta"
+          scale="epsilon"
+          color="midtone"
         >
           <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
         </BaseHeading>
@@ -103,9 +114,11 @@
           <template v-if="activities.activityObjects.length > 0">
             <BaseHeading
               :level="3"
-              scale="eta"
+              scale="zeta"
               :centered="false"
-              :class="[space.paddingXxnarrow, color.light, type.uppercase, color.midtoneBg, border.top]"
+              :class="[space.paddingXxnarrow, type.uppercase, color.lightBg, border.top]"
+              color="midtone"
+              weight="bold"
             >
               {{activities.activityTypeName}}
             </BaseHeading>

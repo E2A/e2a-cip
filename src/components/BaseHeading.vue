@@ -92,15 +92,24 @@ export default {
 <style src="styles/color.scss" lang="scss" module="colorPalette"></style>
 
 <style lang="scss" module="base">
+@import '~styleConfig/type';
+
 .heading {
   composes: display leadingTight from 'styles/type.scss';
-  display: block;
   margin: 0;
   position: relative;
 
   > a {
     color: inherit;
     text-decoration: none;
+  }
+
+  > strong {
+    @include font($weight: 'bold');
+  }
+
+  > em {
+    @include font($style: 'italic');
   }
 }
 </style>
