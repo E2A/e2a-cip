@@ -9,10 +9,11 @@
       :is="el"
       :id="name"
       :name="name"
-      :class="[base.input, type[typeScaleClass(textSize)]]"
+      :class="[base[el], type[typeScaleClass(textSize)]]"
       :placeholder="placeholder"
       :value="value"
       :type="type"
+      :rows="el === 'textarea' && height"
       @input="emitInput"
       @change="emitChange"
       @focus="emitFocus"
@@ -40,9 +41,15 @@ export default {
   props: {
     el: {
       type: String,
-      default: 'input'
+      default: 'input',
+      validator: function (value) {
+        return ['input', 'textarea'].indexOf(value) !== -1
+      }
     },
-    label: String,
+    label: {
+      type: String,
+      required: true
+    },
     helpText: String,
     value: [String, Number],
     name: String,
@@ -64,6 +71,11 @@ export default {
     labelTextSize: {
       type: String,
       default: 'zeta'
+    },
+    // number of rows the textarea shows
+    height: {
+      type: Number,
+      default: 4
     }
   },
   components: {
@@ -107,6 +119,7 @@ export default {
   composes: paddingXnarrow from 'styles/spacing.scss';
   composes: round default from 'styles/borders.scss';
   composes: lightBg from 'styles/color.scss';
+  composes: leadingDefault from 'styles/type.scss';
   box-shadow: none !important;
   display: block;
   width: 100%;
@@ -125,12 +138,5 @@ export default {
   height: auto;
   min-height: 4em;
   resize: vertical;
-}
-
-.error {
-  composes: marginTopXnarrow noMarginBottom paddingXnarrow from 'styles/spacing.scss';
-  composes: default round from 'styles/borders.scss';
-  composes: scaleZeta from 'styles/type.scss';
-  composes: warningBorder warning from 'styles/color.scss';
 }
 </style>
