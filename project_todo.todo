@@ -62,7 +62,6 @@
    ☐ Figure out designs for displaying the new activity aggregate data
      ☐ Percent of activities with a best practice (percentage bar)
      ☐ Percent of activities with a best practice by modality (percentage bar)
-     ☐ Get activity count with EIP for each domain setup @scott
  ☐ Add in additional country data to site
    ☐ Style Country indicator data
    Notes from last meeting: https://docs.google.com/document/d/1UYb-xSD1rlKYQpf3zz9WU8coQf-Tv526NQ5zt5Th960/edit#
@@ -84,6 +83,7 @@
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Get activity count with EIP for each domain setup @scott @done (18-08-24 13:15)
  ✔ Refactor form field object value approach - it seems not as tight as it could be. @scott @done (18-08-24 10:50)
  ✔ Break giant en.yaml/localization files into smaller separate files, e.g. `locales/en/best-practices.yaml` @nice-to-have @done (18-08-24 10:49)
  ✔ Progress bar vs. pie chart for % of activities with at least 1 EIP - thoughts @jay? @done (18-08-24 10:47)
