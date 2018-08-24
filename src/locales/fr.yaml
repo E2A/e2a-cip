@@ -422,9 +422,9 @@ fr:
     yesText: '@: ouiRaw'
     noText: '@: noRaw'
     maybeText: Peut être
-    yesKey: 'Oui'
-    noKey: 'non'
-    maybeKey: 'peut être'
+    yesKey: 'yes'
+    noKey: 'no'
+    maybeKey: 'maybe'
   enterSuggestion: Entrez une suggestion
   item: "pas d'articles | article | articles"
   successRemoved: Enlevé avec succès
