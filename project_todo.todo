@@ -33,11 +33,11 @@
        ☐ display type
        ☐ UI type
        ☐ body type
-   ☐ Activities view
+   ✔ Activities view @done (18-08-24 01:19)
    ☐ Notifications
      ☐ Placement
      ☐ Animation @nice-to-have
-   ☐ Form styles
+   ✔ Form styles @done (18-08-24 01:19)
      ✔ Input @done (18-08-23 21:55)
      ✔ Label @done (18-08-23 21:42)
      ✔ Switch component @done (18-08-24 01:10)

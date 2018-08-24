@@ -7,7 +7,13 @@
 <template>
   <component
     :is="this.el || this.tag"
-    :class="[base.heading, scaleClass, centered === true && type.centered]"
+    :class="[
+      base.heading,
+      colorPalette[color],
+      scaleClass,
+      type[weight],
+      centered === true && type.centered
+    ]"
   >
     <slot>Add a heading!</slot>
   </component>
@@ -27,8 +33,17 @@ export default {
     },
     // optional: use a different scale class from the actual heading level
     // -> e.g. <h1 class="scaleGamma">
-    scale: {
-      type: String
+    scale: String,
+    weight: {
+      type: String,
+      default: 'light',
+      validator: function (value) {
+        return ['light', 'regular', 'bold'].indexOf(value) !== -1
+      }
+    },
+    color: {
+      type: String,
+      default: 'primary'
     },
     centered: {
       type: Boolean,
@@ -74,13 +89,18 @@ export default {
 </script>
 
 <style src="styles/type.scss" lang="scss" module="type"></style>
+<style src="styles/color.scss" lang="scss" module="colorPalette"></style>
 
 <style lang="scss" module="base">
 .heading {
-  composes: primary from 'styles/color.scss';
-  composes: display light leadingTight from 'styles/type.scss';
+  composes: display leadingTight from 'styles/type.scss';
   display: block;
   margin: 0;
   position: relative;
+
+  > a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 </style>

@@ -12,8 +12,9 @@
       <BaseWidthWrapper width="wide">
         <BaseHeading
           :level="2"
-          scale="gamma"
-          :class="space.paddingBottomNarrow"
+          scale="delta"
+          weight="bold"
+          :class="[space.paddingBottom, type.leadingDefault]"
         >{{cipTitle}}</BaseHeading>
         <!-- table here -->
         <ActivitiesTable>
@@ -25,14 +26,16 @@
               <!-- category subheading -->
               <tr :key="`gA-${index}`">
                 <td
-                  :class="[color.midtoneBg, border.top]"
+                  :class="[color.lightBg, border.top]"
                   colspan="4"
                 >
                   <BaseHeading
                     :level="3"
-                    scale="eta"
+                    scale="zeta"
+                    weight="bold"
+                    color="midtone"
                     :centered="false"
-                    :class="[space.paddingXxnarrow, color.light, type.uppercase]"
+                    :class="[space.paddingXxnarrow, type.uppercase]"
                   >
                     {{activities.activityTypeName}}
                   </BaseHeading>

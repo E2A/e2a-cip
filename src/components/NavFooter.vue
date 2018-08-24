@@ -28,14 +28,12 @@
               :to="button.to"
               :label="button.label"
               :role="button.role || 'default'"
-              size="small"
             />
             <BaseButton
               v-if="button.type === 'button'"
               :label="button.label"
               :role="button.role || 'default'"
               @click="button.click"
-              size="small"
             />
             <PrintPage v-if="button.type === 'print'" />
           </li>

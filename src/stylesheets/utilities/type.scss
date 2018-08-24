@@ -11,6 +11,10 @@
   @include font($weight: 'bold');
 }
 
+.regular {
+  @include font();
+}
+
 .italic {
   @include font($style: 'italic');
 

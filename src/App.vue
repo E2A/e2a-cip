@@ -32,9 +32,9 @@ export default {
 @import './stylesheets/config/color';
 
 $base-type-sizes: (
-  'default': 95%,
-  'xsmall': 100%,
-  'small': 110%,
+  'default': 100%,
+  'xsmall': 105%,
+  'small': 115%,
   'medium': 120%,
   'large': 125%
 );
@@ -54,6 +54,8 @@ $base-type-sizes: (
 }
 
 // Lato
+@include font-face('lato-thin-normal', 'lato/lato-thin', 300);
+@include font-face('lato-thin-italic', 'lato/lato-thin-italic', 300, 'italic');
 @include font-face('lato-light-normal', 'lato/lato-light', 300);
 @include font-face('lato-light-italic', 'lato/lato-light-italic', 300, 'italic');
 @include font-face('lato-regular-normal', 'lato/lato');
@@ -92,6 +94,7 @@ body {
   color: color('dark');
   line-height: leading();
   font-feature-settings: 'liga', 'kern';
+  text-rendering: geometricPrecision;
 }
 
 audio,
