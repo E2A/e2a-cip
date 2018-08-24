@@ -4,31 +4,44 @@
 -->
 <template>
   <form :class="space.paddingVerticalBetween">
+
+    <!-- Title -->
     <BaseFormInput
       :label="$t('setup.CIPTitle')"
       id="cip-title"
       @input="addSetup"
       v-model="setupTitle"
+      el="textarea"
     />
+
+    <!-- Country -->
     <BaseFormSelect
       v-model="setupCountry"
       @input="addSetup"
       :label="$t('setup.selectCountry')"
       :options="setupCountries"
       id="cip-country"
+      searchable
     />
-    <BaseFormLabel
-      id="cip-currency"
+
+    <!-- Currency -->
+    <BaseFormSelect
+      v-model="setupCurrency"
+      @input="addSetup"
       :label="$t('setup.selectCurrency')"
-    >
-      <vSelect id="cip-currency" @input="addSetup" v-model="setupCurrency" :options="setupCurrencies" />
-    </BaseFormLabel>
-    <BaseFormLabel
-      id="cip-role"
+      :options="setupCurrencies"
+      id="cip-currency"
+      searchable
+    />
+
+    <!-- Role -->
+    <BaseFormSelect
+      v-model="selectRole"
+      @input="addSetup"
       :label="$t('setup.selectRole')"
-    >
-      <vSelect id="cip-role" @input="addSetup" v-model="setupRole" :options="setupRoles" :searchable="false" />
-    </BaseFormLabel>
+      :options="setupRoles"
+      id="cip-role"
+    />
   </form>
 </template>
 
@@ -129,19 +142,3 @@ export default {
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
-<style lang="scss" module="base">
-.label {
-  display: block;
-}
-
-.input {
-  display: block;
-}
-
-.select {
-  composes: default from 'styles/animation.scss';
-  composes: paddingXnarrow from 'styles/spacing.scss';
-  composes: round default from 'styles/borders.scss';
-  composes: lightBg from 'styles/color.scss';
-}
-</style>

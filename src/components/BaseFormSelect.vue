@@ -10,7 +10,7 @@
       :options="options"
       :searchable="searchable"
       :value="value"
-      :class="classItems"
+      :class="[classItems, noClear && base.noClear]"
       :placeholder="placeholder"
     />
     <BaseCalloutBox
@@ -53,7 +53,11 @@ export default {
       type: [Array, Object],
       required: true
     },
-    classItems: String
+    classItems: String,
+    noClear: {
+      type: Boolean,
+      default: false
+    }
   },
   components: {
     BaseFormLabel,
@@ -80,6 +84,7 @@ export default {
 
 <!-- global: override the classes used on vue-select with our own styles -->
 <style lang="scss">
+@import '~bourbon/core/bourbon';
 @import '~styleConfig/type';
 @import '~styleConfig/spacing';
 @import '~styleConfig/color';
@@ -91,10 +96,22 @@ export default {
 
   .open-indicator {
     $size: 0.7em; // matched roughly to original size but in ems
-    width: $size;
-    height: $size;
+    @include size($size);
     bottom: 50%;
+    right: 0.7em;
     margin-bottom: -($size / 2);
+    background-image: url('../assets/images/icons/_external/arrow-down-midtone.svg');
+    background-position: center;
+    background-size: contain;
+
+    &::before {
+      content: none; // kill css triangle in pseudo-element
+    }
+  }
+
+  &.open .open-indicator {
+    transform: rotate(180deg);
+    bottom: 50%; // override different bottom value in .open state
   }
 
   .dropdown-toggle {
@@ -104,11 +121,18 @@ export default {
 
     // clear button
     .clear {
-      $size: 1em;
-      width: $size;
-      height: $size;
+      $size: 0.6em;
+      @include size($size);
       bottom: 50%;
+      right: 1.6em;
       margin-bottom: -($size / 2);
+      background-image: url('../assets/images/icons/_external/close-midtone.svg');
+      background-position: center;
+      background-size: contain;
+
+      > * {
+        @include hide-visually(); // hide child span with &times; text but keep it accessible to screen readers
+      }
     }
   }
 
@@ -116,6 +140,17 @@ export default {
     .highlight > a {
       background: color('accent');
       color: color('white');
+    }
+  }
+}
+</style>
+
+<style lang="scss" module="base">
+// turn off the 'clear' button if the noClear prop is true
+.noClear {
+  :global {
+    .clear {
+      display: none !important;
     }
   }
 }
