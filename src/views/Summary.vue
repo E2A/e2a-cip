@@ -9,7 +9,7 @@
       :blurb="$t('summary.intro')"
     />
     <section :class="space.paddingWide">
-      <BaseWidthWrapper width="wide">
+      <BaseWidthWrapper width="xxwide">
         <BaseHeading
           :level="2"
           scale="delta"

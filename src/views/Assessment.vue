@@ -50,7 +50,7 @@
 
     <!-- Activities -->
     <BaseSectionWrapper border>
-      <BaseWidthWrapper width="wide">
+      <BaseWidthWrapper width="xxwide">
         <BaseHeading
           :level="2"
           :class="space.paddingBottom"
