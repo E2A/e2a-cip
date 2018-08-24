@@ -15,7 +15,9 @@
           scale="delta"
           weight="bold"
           :class="[space.paddingBottom, type.leadingDefault]"
-        >{{cipTitle}}</BaseHeading>
+        >
+          {{cipTitle}}
+        </BaseHeading>
         <!-- table here -->
         <ActivitiesTable>
           <!-- real content -->
