@@ -13,7 +13,7 @@
 # Components to build
  ☐ Analysis color legend
  ☐ Export/clear tool tray at top of analysis, results, etc.
- ☐ Notification popovers [https://github.com/arthurvasconcelos/vue-izitoast ?] @scott?
+ ✔ Notification popovers [https://github.com/arthurvasconcelos/vue-izitoast ?] @scott? @done (18-08-23 21:43)
  ☐ Buttons
    ☐ with icon
      ☐ left
@@ -34,11 +34,14 @@
        ☐ UI type
        ☐ body type
    ☐ Activities view
+   ☐ Notifications
+     ☐ Placement
+     ☐ Animation @nice-to-have
    ☐ Form styles
      ☐ Input
-     ☐ Label
+     ✔ Label @done (18-08-23 21:42)
      ☐ Switch component
-     ☐ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling.
+     ✔ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling. @done (18-08-23 21:42)
    ☐ Analysis
      ☐ Details component
        ☐ Take over behaviors with JS and make stateful
