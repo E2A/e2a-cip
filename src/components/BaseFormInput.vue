@@ -9,21 +9,31 @@
       :is="el"
       :id="name"
       :name="name"
-      :class="[base.input, type[typeScaleClass(textSize)]]"
+      :class="[base[el], type[typeScaleClass(textSize)]]"
       :placeholder="placeholder"
       :value="value"
       :type="type"
+      :rows="el === 'textarea' && height"
       @input="emitInput"
       @change="emitChange"
       @focus="emitFocus"
-    >{{contentValue}}</component>
-    <p v-if="error" class="form__error">{{ error }}</p>
+    >
+      {{contentValue}}
+    </component>
+    <BaseCalloutBox
+      :key="error"
+      v-if="error"
+      :message="error"
+      :class="space.marginTopNarrow"
+      role="warning"
+    />
   </BaseFormLabel>
 </template>
 
 <script>
 import { styleHelpers } from './mixins/helpers.js'
 import BaseFormLabel from './BaseFormLabel.vue'
+import BaseCalloutBox from './BaseCalloutBox.vue'
 
 export default {
   name: 'BaseFormInput',
@@ -31,9 +41,15 @@ export default {
   props: {
     el: {
       type: String,
-      default: 'input'
+      default: 'input',
+      validator: function (value) {
+        return ['input', 'textarea'].indexOf(value) !== -1
+      }
     },
-    label: String,
+    label: {
+      type: String,
+      required: true
+    },
     helpText: String,
     value: [String, Number],
     name: String,
@@ -52,13 +68,16 @@ export default {
       type: String,
       default: 'epsilon'
     },
-    labelTextSize: {
-      type: String,
-      default: 'zeta'
+    labelTextSize: String,
+    // number of rows the textarea shows
+    height: {
+      type: Number,
+      default: 4
     }
   },
   components: {
-    BaseFormLabel
+    BaseFormLabel,
+    BaseCalloutBox
   },
   methods: {
     emitInput: function (e) {
@@ -89,20 +108,6 @@ export default {
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 
-<style scoped>
-/* Styles o' Shame */
-  .form__error {
-    background: #bf2441;
-    color: #fff;
-    padding: 10px;
-    margin-top: 0;
-    font-weight: 600;
-    font-size: 18px;
-    width: 80%;
-    border: 2px solid #bf2441;
-  }
-</style>
-
 <style lang="scss" module="base">
 @import '~styleConfig/color';
 
@@ -110,17 +115,18 @@ export default {
   composes: default from 'styles/animation.scss';
   composes: paddingXnarrow from 'styles/spacing.scss';
   composes: round default from 'styles/borders.scss';
+  composes: lightBg from 'styles/color.scss';
+  composes: scaleEpsilon leadingDefault from 'styles/type.scss';
   box-shadow: none !important;
   display: block;
   width: 100%;
-  background-color: well('light');
   outline: 0;
   outline: thin dotted \9;
 
   &:focus,
   &:active {
     border-color: color('highlight');
-    background-color: color('light');
+    background-color: color('white');
   }
 }
 

@@ -2,7 +2,9 @@
   <aside
     :class="[base.wrapper, base[align]]"
   >
-    <slot>Add flyout content here</slot>
+    <div :class="base.content">
+      <slot>Add flyout content here</slot>
+    </div>
   </aside>
 </template>
 
@@ -30,17 +32,16 @@ export default {
 @import '~bourbon/core/bourbon'; // for triangles
 @import '~styleConfig/zIndex';
 @import '~styleConfig/color';
+@import '~styleConfig/borders';
 
 $size: 12rem;
 $size-pointer-w: 1.2rem;
 $size-pointer-h: 0.6rem;
 
 .wrapper {
-  composes: lightBg from 'styles/color.scss';
+  composes: whiteBg shadow from 'styles/color.scss';
   composes: default round from 'styles/borders.scss';
-  box-shadow: 0 1px 0.3rem shadow('white');
   display: block;
-  max-height: $size;
   position: absolute;
   text-align: center;
   width: $size;
@@ -54,7 +55,7 @@ $size-pointer-h: 0.6rem;
   }
 
   &::before {
-    @include triangle('up', $size-pointer-w, $size-pointer-h, border('white'));
+    @include triangle('up', $size-pointer-w, $size-pointer-h, $border-color);
     top: -($size-pointer-h);
   }
 
@@ -82,5 +83,10 @@ $size-pointer-h: 0.6rem;
   &::after {
     right: 1rem;
   }
+}
+
+.content {
+  max-height: 16rem;
+  overflow-y: scroll;
 }
 </style>

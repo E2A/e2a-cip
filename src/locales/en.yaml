@@ -1,5 +1,4 @@
 en:
-  # Home Page
   home:
     title: Not without us!
     subtitle: A tool for AYSRH-responsive planning
@@ -41,10 +40,9 @@ en:
     downloadWindowsUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer.zip
     downloadWindowsPortable: Windows Portable (67MB)
     downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
-  # Setup Page
   setup:
-    CIPTitle: Enter your CIP title
-    configureCIP: "First, let's configure your CIP"
+    CIPTitle: Enter your plan title
+    configureCIP: "First, let's configure your plan"
     selectCountry: Select a country
     selectCurrency: Select a currency
     selectRole: Select a role
@@ -72,6 +70,8 @@ en:
   inputNextActivity: Input Another Activity
   activitiesDone: "I'm done!"
   save: Save Activity
+  saveSuccess: Saved Activity
+  deleteSuccess: Deleted Activity
   deleteActivity: Delete
   supportText:
     activityNumber: Please enter an activity number
@@ -122,7 +122,7 @@ en:
   bestPractices:
     bestPractice1:
       title: Providing age and developmentally appropriate services
-      icon: http://placehold.it/600x600
+      icon: eip-choice
       teaser: |-
         Age and developmentally appropriate services are sometimes described as “adolescent- and youth-friendly.” Adolescent- and youth-friendly sexual and reproductive health (AYSRH) services are SRH services that comply with the five World Health Organization-established standards as well as international norms for improved quality of health services for adolescents. These services commonly include safe and affordable contraceptive methods;  prevention and treatment of HIV/AIDS and care for STIs other than HIV; the provision of accurate sexual and reproductive health information; and sensitive counselling and care for sexual health and wellbeing. Services may also include youth-friendly obstetric and antenatal care for pregnant girls and women; post-abortion care services, prevention, detection, and counselling for gender-based violence; and the prevention, detection, and treatment cervical cancer.
       body: |-
@@ -192,7 +192,7 @@ en:
     bestPractice2:
       title: "Expanding the range of contraceptive methods available to adolescents\
         \ and young people (including LARCs and DMPA-SC)"
-      icon: http://placehold.it/600x600
+      icon: eip-contraceptives
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -210,7 +210,7 @@ en:
     bestPractice3:
       title: "Inclusion of vulnerable and underserved youth groups (including married\
         \ adolescent girls ad FTPs)"
-      icon: http://placehold.it/600x600
+      icon: eip-couple
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -227,7 +227,7 @@ en:
           url: /uploads/resources/bestpractice1.png
     bestPractice4:
       title: "Youth participation and leadership in AYSRH programs"
-      icon: http://placehold.it/600x600
+      icon: eip-youth
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -244,7 +244,7 @@ en:
           url: /uploads/resources/bestpractice1.png
     bestPractice5:
       title: "Multi-sectoral coordination for AYSRH"
-      icon: http://placehold.it/600x600
+      icon: eip-coordination
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -261,7 +261,7 @@ en:
           url: /uploads/resources/bestpractice1.png
     bestPractice6:
       title: "Comprehensive sexuality education"
-      icon: http://placehold.it/600x600
+      icon: eip-book
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -278,7 +278,7 @@ en:
           url: /uploads/resources/bestpractice1.png
     bestPractice7:
       title: "Support to families and communities for AYSRH"
-      icon: http://placehold.it/600x600
+      icon: eip-community
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -295,7 +295,7 @@ en:
           url: /uploads/resources/bestpractice1.png
     bestPractice8:
       title: "Girls' empowerment"
-      icon: http://placehold.it/600x600
+      icon: eip-equality
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -315,11 +315,22 @@ en:
           teaser: |-
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
           url: /uploads/resources/bestpractice2.png
-  # Analysis Page
   analysis:
     title: Analyze your activities
     intro: |-
       Here are the activities from your plan. Please use what you have learned about EIPs to determine whether each activity aligns with one or more of the EIPs. If the activity **fully aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in green. If the activity **partially aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in yellow. If the activity does not align with one or more EIPs, the symbol(s) should be left the default gray. For easy access to the information about the EIPs, please click on the symbol of the practice you want to review. Once you are finished analyzing your activities, get your results by clicking on the ‘results’ button at the bottom of the page.
+    instructions:
+      heading: Click on the icons indicating the EIPs which your activity meets
+      options:
+        yes:
+          title: '@:yesRaw'
+          description: Fully aligns with the requirements of the best practice.
+        no:
+          title: '@:noRaw'
+          description: Does not align with the requirements of the best practice.
+        maybe:
+          title: Maybe
+          description: Partially aligns with the requirements of the best practice.
     previousStep: Go back to activities
     nextStep: Your results
   # Results Page
@@ -341,7 +352,7 @@ en:
     previousStep: Go back to analysis
     nextStep: Print Results & Advocate
     percentActivitesWithBP: "activites with an EIP"
-  # Chart Title Data
+    exportChartSuccess: 'You successfully exported your chart data'
   chartTitles:
     activityTypeCount: "% Activity count by type"
     activityTypeBudget: "Budget % of total by activity types"
@@ -349,10 +360,8 @@ en:
     youthFocusCount: "% activity count by youth focused"
     youthCentricLabel: "Youth Centric"
     notYouthCentricLabel: "Not Youth Centric"
-  # Print Page
   print:
     previousStep: Go back to advocate
-  # Advocate Page
   advocate:
     print: Print your results to share
     title: 'Moving forward…'
@@ -374,7 +383,6 @@ en:
         title: Advocate
         blurb: |-
           A message that emerges clearly from the EIPs is that AYSRH thrives in settings where where unbiased services are provided in a welcoming environment, where there is multi-sectoral and community support, and where youth understand their sexual and reproductive rights and have the skills to hold duty-bearers to account. A variety of resources exist to help youth and their adult allies plan effective advocacy campaigns. Some resources can be found below:
-  # File Upload Strings
   fileUpload:
     selectFormat: Select an export format
     json: JSON - preferred for import
@@ -384,7 +392,7 @@ en:
     jsonFileName: e2a-export-%{timestamp}.json
     csvFileName: e2a-%{exportName}-export-%{timestamp}.csv
     pdfFileName: e2a-report-%{timestamp}.pdf
-  # Navigation
+    exportSuccessful: "%{filetype} Export Successful"
   nav:
     activities: 'Activities'
     summary: 'Summary'
@@ -392,9 +400,10 @@ en:
     assessment: 'Analysis'
     results: 'Results'
     advocate: 'Advocate'
-    addAssessment: You must enter assessments before you can view results.
-    removeAssessment: You must remove all assessments before you can edit activites.
-  # Activity table
+    addAssessment: You must enter your analysis before you can move further.
+    removeAssessment: You must remove all your analysis before you can edit activites.
+    addSetup: You must add setup data before moving further
+    addActivites: You must add activities before moving further
   activityTable:
     defaultTitle: Activity text
     defaultID: Activity number
@@ -404,24 +413,29 @@ en:
   # Misc Keys
   uniquenessError: The value entered in %{field} is not unique amoung %{entityType}
   edit: Edit
+  dismissNotification: Dismiss this message
   yesRaw: "Yes"
   noRaw: "No"
   goBack: Go back
-  # Activity Best Practice Options (yesKey, noKey, and maybeKey should not be translated )
   bestPracticeOptions:
+    # Do Not Translate
     yesText: '@:yesRaw'
+    # Do Not Translate
     noText: '@:noRaw'
     maybeText: Maybe
-    yesKey: 'yes' # Do not translate
-    noKey: 'no' # Do not translate
-    maybeKey: 'maybe' # Do not translate
+    # Do Not Translate
+    yesKey: 'yes'
+    # Do Not Translate
+    noKey: 'no'
+    # Do Not Translate
+    maybeKey: 'maybe'
   enterSuggestion: Enter a suggestion
   item: no items | item | items
   successRemoved: Successfully removed
   successRemovedAll: items, this is all the currently stored data.
   clearItems:
     clear: Clear
-    Assessments: Assessments
+    Assessments: Analyses
     Activities: Activities
     Recommendations: Recommendations
     All: All
@@ -436,12 +450,18 @@ en:
     indicator1:
       name: 'PERCENT OF MARRIED WOMEN 15-49 USING CONTRACEPTION, ALL METHODS (2017)'
       source: 'https://www.prb.org/international/indicator/contraception-all/table'
+      # Do Not Translate
       fileName: 'married_women_15-49_contraception.csv'
-      iso2codeHeader: 'FIPS' # Do not translate
-      indicatorValueHeader: 'Data' # Do not translate
+      # Do Not Translate
+      iso2codeHeader: 'FIPS'
+      # Do Not Translate
+      indicatorValueHeader: 'Data'
     indicator2:
       name: 'PERCENT OF MARRIED WOMEN 15-49 USING CONTRACEPTION, MODERN METHODS (2017)'
       source: 'https://www.prb.org/international/indicator/contraception-modern/table'
+      # Do Not Translate
       fileName: 'married_women_15-49_contraception_modern.csv'
-      iso2codeHeader: 'FIPS' # Do not translate
-      indicatorValueHeader: 'Data' # Do not translate
+      # Do Not Translate
+      iso2codeHeader: 'FIPS'
+      # Do Not Translate
+      indicatorValueHeader: 'Data'

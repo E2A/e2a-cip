@@ -1,0 +1,471 @@
+fr:
+  home:
+    title: Pas sans nous!
+    subtitle: "Un outil pour la planification adaptée à l'AYSRH"
+    intro: |-
+      Cet outil est conçu pour être utilisé par les gouvernements, les organisations et les individus qui cherchent à rendre les plans de planification familiale plus adaptés aux besoins des jeunes âgés de 15 à 24 ans en matière de santé sexuelle et reproductive. Grâce à cet outil, vous aurez la possibilité de:
+        * Discerner la proportion des activités et du budget alloués aux activités «centrées sur les jeunes».
+        * Discerner la proportion d’activités centrées sur les jeunes et le budget alloué à quatre domaines d’activité différents (création de la demande, prestation de services, environnement propice et multisectoriel) avec une orientation jeunesse.
+        * Discerner comment vos activités et votre budget se comparent aux données concernant les jeunes de votre pays.
+        * Évaluez la qualité technique des activités incluses dans votre plan et révisez-les pour mieux vous conformer aux pratiques fondées sur des données probantes.
+
+        Nous espérons que les résultats que vous recevrez éclaireront le dialogue sur les besoins des jeunes et les stratégies novatrices pour répondre à ces besoins. Nous vous encourageons à utiliser les résultats pour sensibiliser à l'importance d'investir dans la santé sexuelle et reproductive des jeunes, posant les bases pour des générations futures en meilleure santé.
+
+        **Commençons!**
+    stepsTitle: Comment cela fonctionne
+    steps:
+      step1:
+        title: Entrez vos activités
+        blurb: |-
+          Après avoir entré le titre de votre plan, votre pays et votre titre / rôle, il vous sera demandé de saisir TOUTES les activités contenues dans votre plan (pas seulement celles qui sont axées sur les jeunes!). On vous demandera de classer les activités en quatre catégories, de saisir le montant du budget alloué à chaque activité et de déterminer si l’activité est axée sur les jeunes. Une page récapitulative apparaîtra pour vous permettre de modifier les informations que vous avez fournies.
+      step2:
+        title: Analysez vos activités
+        blurb: |-
+          Ensuite, vous aurez l'occasion de vous familiariser avec les pratiques fondées sur des données probantes (EIP), pratiques prometteuses pour améliorer l'AYSRH. Vous utiliserez ce que vous avez appris sur les PIE dans quelle mesure les activités axées sur les jeunes de votre plan sont alignées sur les PIE. Une fois ces deux étapes terminées, vous obtiendrez vos résultats!
+      step3:
+        title: Obtenir vos résultats
+        blurb: |-
+          La page des résultats vous montrera la proportion des activités et du budget consacrés aux jeunes dans votre plan. Les données générées par l'outil sur les jeunes de votre pays pour vous aider à déterminer si les activités et le budget proposés correspondent aux besoins des jeunes. Vous verrez également un graphique illustrant la mesure dans laquelle les activités de votre plan s'alignent sur les PIE. Enfin, en utilisant les informations sur les PIE, vous aurez la possibilité de réviser et de renforcer les activités.
+    getStartedButton: Commencer
+    downloadTitle: Télécharger des versions hors ligne
+    downloadBlurb: |-
+      Si vous rencontrez des problèmes avec votre navigateur, si vous souhaitez accéder à l'application hors connexion ou si vous souhaitez simplement utiliser l'application sur votre bureau sans utiliser de navigateur, vous pouvez télécharger l'une des versions suivantes pour vos besoins.
+      * Note *: L'application fonctionnera toujours dans le navigateur même si Internet se déconnecte. Une option portable sans installation (c.-à-d. Une seule version .exe) de l'application est disponible pour Windows mais est une taille de fichier plus grande.
+      ### Instructions d'installation:
+      - Pour ** Macintosh **, décompressez le fichier et utilisez le DMG pour installer l'application.
+      - Pour ** Windows **, décompressez le dossier et exécutez le fichier .exe dans le dossier.
+    downloadMac: Macintosh (51MB)
+    downloadMacUrl: https://github.com/E2A/e2a-electron-builds/raw/master/mac-installer.zip
+    downloadWindows: Windows (45 Mo)
+    downloadWindowsUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer.zip
+    downloadWindowsPortable: Windows Portable (67 Mo)
+    downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
+  setup:
+    CIPTitle: Entrez votre titre CIP
+    configureCIP: "Tout d'abord, configurons votre CIP"
+    selectCountry: Choisissez un pays
+    selectCurrency: Sélectionnez une devise
+    selectRole: Sélectionnez un rôle
+    selectActivityType: "Sélectionnez le type d'activité"
+    setupRequired: "Veuillez entrer tous les champs de configuration avant d'ajouter\
+      \ des activités."
+    restoreActivities: Restaurer vos activités
+    addActivities: Ajoutez vos activités
+    editActivities: Modifier vos activités
+  userRoles:
+    role1: ONG
+    role2: Défenseur de la jeunesse
+  # Activity Input
+  addActivity: Ajouter une nouvelle activité
+  editActivity: Modifier votre activité
+  enterActivity: Entrer une activité
+  for: pour
+  number: nombre
+  budget: budget
+  selectActivityType: "Sélectionnez le type d'activité"
+  activityNumber: "Numéro d'activité"
+  activityText: "Texte d'activité"
+  activityBudget: "Budget d'activité"
+  activityType: "Type d'activité"
+  activityYouthCentric: Cette activité est-elle centrée sur les jeunes?
+  inputNextActivity: Entrer une autre activité
+  activitiesDone: "J'ai fini!"
+  save: "Enregistrer l'activité"
+  saveSuccess: Activité enregistrée
+  deleteSuccess: Activité supprimée
+  deleteActivity: Effacer
+  supportText:
+    activityNumber: "S'il vous plaît entrer un numéro d'activité"
+    activityText: "S'il vous plaît entrer le texte de l'activité"
+    activityBudget: "S'il vous plaît entrer un budget pour l'activité, si présent."
+    activityYouthCentric: Cette activité est-elle centrée sur les jeunes telle que définie par ____
+    selectActivityType: "Sélectionnez une modalité d'activité"
+  # Activity Type Content
+  activityTypeLink: "En savoir plus sur les types d'activité"
+  activityTypeTitle: "En savoir plus sur les types d'activité"
+  backToActivities: Retour à vos activités
+  downloadResource: Télécharger la ressource
+  activityTypeIntro: |-
+    Lorem ipsum dolor assis amet, consectetur adipiscing elit. Age, questions, ista parva sunt. Prétérite, enquête, gaudeo. Avion idem, enquete, et maxima quidem, qua fieri nulla maior potest. Quis hoc dicit? ré
+  activityTypes:
+    type1:
+      title: Génération de la demande
+      body: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+    type2:
+      title: Service de livraison
+      body: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+    type3:
+      title: Environnement habilitant
+      body: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+    type4:
+      title: Coordination
+      body: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+  summary:
+    title: Bien joué!
+    intro: |-
+      Vous trouverez ci-dessous un résumé des informations que vous avez fournies sur les activités de votre plan. Il comprend les activités triées par domaine, le montant du budget associé à chaque activité et si l'activité a été classée comme axée sur les jeunes. Assurez-vous que toutes ces informations sont correctes. Si ce n'est pas correct, veuillez cliquer sur le bouton Modifier pour apporter des modifications.
+    previousStep: Retour à la configuration
+    nextStep: A propos des EIP
+  # Evidence-Informed Practices
+  readMore: "Lire la suite"
+  bestPracticeTitle: À propos des pratiques fondées sur des données probantes
+  bestPracticeResourceSubtitle: Lectures complémentaires
+  backToBestPractices: Retour aux pratiques fondées sur des données probantes
+  bestPracticeIntro: |-
+    Cette page offre un aperçu de sept EIP identifiés. Vous utiliserez ce que vous apprendrez ici pour analyser la mesure dans laquelle les activités de votre plan s'alignent sur les PIE.
+
+    Les EIP ont été identifiés par le biais d'un examen sur dossier comprenant les preuves les plus récentes disponibles sur l'accès des jeunes aux services de planification familiale et leur utilisation. La littérature publiée et la littérature grise ont été incluses dans la revue. Bien que le niveau de preuve à l'appui des différentes pratiques varie, il existe suffisamment de preuves pour que tous les PIE fournissent des orientations et soient utiles dans des contextes spécifiques. Il est important de noter, cependant, que chaque EIP présentera des défis et des opportunités de mise en œuvre uniques dans différents contextes. Par conséquent, une évaluation approfondie, adaptée au contexte, est recommandée pour identifier les approches les plus appropriées pour parvenir à l'amélioration souhaitée de la vie sexuelle et reproductive des adolescents et des jeunes.
+  bestPracticeSubtitle: Pratiques fondées sur des preuves
+  bestPractices:
+    bestPractice1:
+      title: "Fournir des services adaptés à l'âge et au développement"
+      icon: eip-choice
+      teaser: |-
+        Les services adaptés à l'âge et au développement sont parfois décrits comme «adaptés aux adolescents et aux jeunes». Les services de santé sexuelle et reproductive adaptés aux adolescents et aux jeunes sont des services de SSR conformes aux cinq normes établies par l'Organisation mondiale de la santé et aux normes internationales. normes pour améliorer la qualité des services de santé pour les adolescents. Ces services incluent généralement des méthodes contraceptives sûres et abordables; prévention et traitement du VIH / SIDA et prise en charge des IST autres que le VIH; la fourniture d'informations précises sur la santé sexuelle et reproductive; et conseils et soins sensibles pour la santé sexuelle et le bien-être. Les services peuvent également inclure des soins obstétricaux et prénatals adaptés aux jeunes pour les filles et les femmes enceintes; services de soins post-avortement, prévention, détection et conseil en matière de violence sexiste; et la prévention, la détection et le traitement du cancer du col utérin.
+      body: |-
+        **Qu'Est-ce que c'est?**
+
+        Les services adaptés à l'âge et au développement sont parfois décrits comme «adaptés aux adolescents et aux jeunes». Les services de santé sexuelle et reproductive adaptés aux adolescents et aux jeunes sont des services de SSR conformes aux cinq normes établies par l'Organisation mondiale de la santé et aux normes internationales. normes pour l'amélioration de la qualité des services de santé pour les adolescents. [^ 1] Ces services incluent généralement des méthodes contraceptives sûres et abordables; prévention et traitement du VIH / SIDA et prise en charge des IST autres que le VIH; la fourniture d'informations précises sur la santé sexuelle et reproductive; et conseils et soins sensibles pour la santé sexuelle et le bien-être. Les services peuvent également inclure des soins obstétricaux et prénatals adaptés aux jeunes pour les filles et les femmes enceintes; services de soins post-avortement, prévention, détection et conseil en matière de violence sexiste; et la prévention, la détection et le traitement du cancer du col de l'utérus. [^ 2] [^ 3]
+
+        **Pourquoi c'est important?**
+
+        L'adolescence est une étape clé du cycle de vie et représente une opportunité stratégique "pour mettre l'accent sur l'autonomisation et les approches préventives qui permettraient aux adolescents de survivre, de s'épanouir et de transformer leur société." en fournissant un moyen important d'accéder aux informations et aux services dont les jeunes ont besoin pour faire et adopter des choix informés et équitables en matière de genre sur leur propre vie sexuelle et reproductive.
+
+        ** Quelques considérations de mise en œuvre **
+
+        Des approches adaptées aux jeunes peuvent être mises en œuvre en utilisant une gamme de modèles de prestation de services: les services peuvent être autonomes (comme une clinique séparée ou un espace dédié aux jeunes) ou intégrés et intégrés aux services de soins primaires normalement fournis par la santé installations, par le biais de la mobilité, ou dans le cadre de services communautaires, y compris les services à domicile. _Penser en dehors de l'espace séparé: un outil d'aide à la décision pour concevoir des services adaptés aux jeunes [^ 5] _ fournit des conseils pour sélectionner et adapter des modèles de services adaptés aux jeunes en fonction du contexte du pays, de la population cible et des résultats Les centres de jeunes (établissements indépendants offrant une gamme de programmes et de services aux adolescents et aux jeunes tels que les activités récréatives, professionnelles ou culturelles et pouvant également accueillir une salle dédiée où les prestataires de soins de santé peuvent offrir des informations et des services de SSR) n'ont pas démontré leur efficacité pour accroître la participation et l'utilisation des services de SSR chez les adolescents et les jeunes. [^ 6]
+
+        La fourniture de services de SRARS devrait être fermement fondée sur les principes d'équité et de non-discrimination, soulignant que des informations et des services de qualité doivent être accessibles à tous les adolescents et à tous les jeunes. Des services équitables, adaptés aux adolescents et aux jeunes, garantissent qu'aucune politique ou procédure ne limite la fourniture de services de santé aux adolescents et aux jeunes marginalisés ou vulnérables dans tous les domaines de la différence [^ 7].
+
+        ! [Table] (/ uploads / bestpractices / table.png)
+        ** Tableau 2. Caractéristiques des services adaptés aux adolescents de l'Organisation mondiale de la santé (2012) **
+
+        Les adolescents et les jeunes marginalisés ou vulnérables sont ceux qui risquent le plus de manquer de soins et de protection adéquats. L'analyse de segmentation est une étape cruciale pour identifier ces sous-groupes et profils spécifiques de jeunes et leurs besoins, qui peuvent ensuite être pris en compte dans le développement de services et de programmes AYSRH équitables et inclusifs. Avoir des points de prestation de services de santé dédiés pour les groupes marginalisés et stigmatisés peut aider à atteindre les adolescents et les jeunes vulnérables, dans le cadre d'une stratégie de segmentation complémentaire.
+
+        Divers outils existent pour faciliter la mise en œuvre des services AYSRH. Par exemple, le document OMS 2015 - Normes mondiales pour des services de soins de santé de qualité pour les adolescents [^ 8] est un guide destiné à aider les responsables de programmes et établissements, prestataires, organismes nationaux et autres qualité des services de santé, de sorte que les adolescents puissent obtenir plus facilement les services dont ils ont besoin. L'outil fournit des normes de qualité accompagnées d'outils de mise en œuvre et de suivi.
+
+        ** Activités suggérées **
+
+        Sur la base des normes mondiales de l'OMS pour des services adaptés aux jeunes, les établissements de santé devraient s'efforcer de: [^ 9]
+
+        1. ** Veiller à ce que les établissements de santé disposent de systèmes garantissant que les adolescents connaissent ** leur propre santé et savent où et quand obtenir des services de santé.
+        1. ** Veiller à ce que l’établissement de santé mette en place des systèmes pour assurer l’appui de la communauté. ** Les parents, tuteurs et autres membres de la communauté et organisations communautaires doivent reconnaître l’utilité de fournir des services de santé aux adolescents.
+        1. ** S'assurer que les établissements de santé offrent un ensemble de services approprié. ** L'établissement de santé fournit un ensemble de services d'information, de conseil, de diagnostic, de traitement et de soins répondant aux besoins de tous les adolescents. Les services sont fournis dans l'établissement et par le biais de liens d'orientation et de sensibilisation.
+        1. ** Promouvoir les compétences des prestataires de soins de santé ** Les prestataires de soins de santé doivent démontrer les compétences techniques requises pour fournir des services de santé efficaces aux adolescents. Les prestataires de soins de santé et le personnel de soutien doivent respecter, protéger et satisfaire les droits des adolescents à l'information, à la vie privée, à la confidentialité, à la non-discrimination, à l'attitude et au respect sans jugement.
+        1. ** Promouvoir des établissements de santé «accueillants». ** L'établissement de santé devrait disposer d'heures de fonctionnement commodes, d'un environnement accueillant et propre, et maintenir la confidentialité et l'intimité. Il devrait disposer de l’équipement, des médicaments, des fournitures et de la technologie nécessaires pour assurer une prestation de services efficace aux adolescents.
+        1. ** Garantir l'équité et la non-discrimination **: l'établissement de santé devrait fournir des services de qualité à tous les adolescents, indépendamment de leur capacité de paiement, âge, sexe, situation matrimoniale, niveau d'éducation, origine ethnique, orientation sexuelle ou autres caractéristiques.
+        1. ** Recueillir des données pour améliorer la qualité. ** Le centre de santé devrait collecter, analyser et utiliser des données sur l'utilisation des services et la qualité des soins, ventilées par âge et par sexe, pour améliorer la qualité. Le personnel des établissements de santé devrait être soutenu pour participer à l'amélioration continue de la qualité.
+        1. ** Permettre la participation des adolescents ** Les adolescents devraient être impliqués dans la planification, le suivi et l'évaluation des services de santé et dans les décisions concernant leurs propres soins, ainsi que dans certains aspects appropriés de la prestation de services.
+
+        ** Exemple de programmation **
+
+        Pour faire face aux défis auxquels les adolescentes et les jeunes femmes sont confrontées dans la recherche de services de santé sexuelle et reproductive, le projet Girl Power-Malawi a testé diverses approches intégrées pour faciliter l’adoption des services. Le projet a comparé la norme actuelle de soins offerts par les centres de santé du secteur public, qui consiste en un dépistage vertical du VIH, la planification familiale et la gestion des infections sexuellement transmissibles dans les modèles de services de santé adaptés aux jeunes. Celles-ci comprenaient 1) un ensemble de services «standard» adaptés aux jeunes (YFS), avec des prestataires formés, un espace dédié et l’éducation par les pairs, 2) le package YFS et une intervention comportementale (BI) session de formation de groupe, et 3) le package YFS, ainsi que l'intervention comportementale, plus les transferts monétaires conditionnels. Les résultats de l'étude ont révélé que les jeunes des modèles YFS étaient 23% plus susceptibles de recevoir un test VIH, 57% plus susceptibles de recevoir un préservatif et 39% plus susceptibles de recevoir une contraception hormonale [^ 10].
+
+        [^ 1]: Organisation mondiale de la santé, Rendre les services de santé adaptés aux besoins des adolescents: Développer des normes de qualité nationales pour des services de santé adaptés aux adolescents. Genève: Organisation mondiale de la santé, 2012.
+
+        [^ 2]: https://www.unfpa.org/resources/adolescent-sexual-and-reproductive-health
+
+        [^ 3]: Starrs AM, Ezeh AC, Barker G, et al. Accélérer le progrès - Santé sexuelle et reproductive et droits pour tous: rapport de la Commission Guttmacher-Lancet. Lancet 2018; 391: 2642-92
+
+        [^ 4]: https://www.unfpa.org/sites/default/files/pub-pdf/UNFPA_EWEC_Report_FR_WEB.pdf
+
+        [^ 5]: Callie Simon, Regina Benevides, Gwyn Hainsworth, Gwendolyn Morgan et Katie Chau, Penser en dehors de l'espace séparé: un outil d'aide à la décision pour concevoir des services adaptés aux jeunes. Washington, DC: Projet Evidence to Action / Pathfinder International, mars 2015.
+
+        [^ 6]: OMS / ONUSIDA, Normes mondiales pour des services de santé de qualité pour les adolescents: guide pour la mise en œuvre d'une approche normative visant à améliorer la qualité des services de santé pour les adolescents. Genève: Organisation mondiale de la santé, 2015.
+
+        [^ 7]: OMS, Guide d'évaluation de la qualité. Un guide pour évaluer les services de santé pour les clients adolescents._ Genève, Organisation mondiale de la santé, 2009.
+
+        [^ 8]: OMS / ONUSIDA, _ Normes mondiales pour des services de santé de qualité pour les adolescents: guide pour la mise en œuvre d'une approche normative visant à améliorer la qualité des services de santé pour les adolescents_. Genève: Organisation mondiale de la santé, 2015.
+
+        [^ 9]: OMS / ONUSIDA, Normes mondiales pour des services de santé de qualité pour les adolescents: guide pour la mise en œuvre d'une approche normative visant à améliorer la qualité des services de santé pour les adolescents. Genève: Organisation mondiale de la santé, 2015.
+
+        [^ 10]: Rosenberg NE, Bhushan NL, Vansia D, et al. Comparer les services de santé adaptés aux jeunes aux normes de soins par le biais de «Girl Power-Malawi»: une étude de cohorte quasi-expérimentale.J Acquir Immune Defic Syndr. 2018 août 1. doi: 10.1097 / QAI.0000000000001830.
+      resources:
+        resource1:
+          title: Titre de la ressource
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
+    bestPractice2:
+      title: "Élargir la gamme des méthodes de contraception disponibles pour les\
+        \ adolescents et les jeunes (y compris les LARC et le DMPA-SC)"
+      icon: eip-contraceptifs
+      teaser: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+      body: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Indicatif pueri, dans quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, enquête, offre se expetendam. Dans qui doctissimi illi vétérans inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti en bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti en bibendo voluptas? Hoc de Hieronymus sommum bonum esse dixit. Non automatique: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, voluptas latines?
+
+        À moi quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribun plèbis furet ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris participant. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea quae dixi, ad corpusne fait référence? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+      resources:
+        resource1:
+          title: Titre de la ressource
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
+    bestPractice3:
+      title: "Inclusion des groupes de jeunes vulnérables et mal desservis (y compris\
+        \ les adolescentes mariées et les FTP)"
+      icon: eip-couple
+      teaser: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+      body: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Indicatif pueri, dans quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, enquête, offre se expetendam. Dans qui doctissimi illi vétérans inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti en bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti en bibendo voluptas? Hoc de Hieronymus sommum bonum esse dixit. Non automatique: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, voluptas latines?
+
+        À moi quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribun plèbis furet ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris participant. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea quae dixi, ad corpusne fait référence? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+      resources:
+        resource1:
+          title: Titre de la ressource
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
+    bestPractice4:
+      title: "Participation des jeunes et leadership dans les programmes AYSRH"
+      icon: eip-jeunesse
+      teaser: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+      body: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Indicatif pueri, dans quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, enquête, offre se expetendam. Dans qui doctissimi illi vétérans inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti en bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti en bibendo voluptas? Hoc de Hieronymus sommum bonum esse dixit. Non automatique: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, voluptas latines?
+
+        À moi quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribun plèbis furet ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris participant. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea quae dixi, ad corpusne fait référence? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+      resources:
+        resource1:
+          title: Titre de la ressource
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
+    bestPractice5:
+      title: "Coordination multisectorielle pour AYSRH"
+      icon: coordination eip
+      teaser: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+      body: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Indicatif pueri, dans quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, enquête, offre se expetendam. Dans qui doctissimi illi vétérans inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti en bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti en bibendo voluptas? Hoc de Hieronymus sommum bonum esse dixit. Non automatique: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, voluptas latines?
+
+        À moi quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribun plèbis furet ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris participant. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea quae dixi, ad corpusne fait référence? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+      resources:
+        resource1:
+          title: Titre de la ressource
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
+    bestPractice6:
+      title: "Éducation sexuelle complète"
+      icon: livre électronique
+      teaser: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+      body: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Indicatif pueri, dans quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, enquête, offre se expetendam. Dans qui doctissimi illi vétérans inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti en bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti en bibendo voluptas? Hoc de Hieronymus sommum bonum esse dixit. Non automatique: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, voluptas latines?
+
+        À moi quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribun plèbis furet ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris participant. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea quae dixi, ad corpusne fait référence? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+      resources:
+        resource1:
+          title: Titre de la ressource
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
+    bestPractice7:
+      title: "Soutien aux familles et aux communautés pour AYSRH"
+      icon: communauté eip
+      teaser: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+      body: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Indicatif pueri, dans quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, enquête, offre se expetendam. Dans qui doctissimi illi vétérans inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti en bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti en bibendo voluptas? Hoc de Hieronymus sommum bonum esse dixit. Non automatique: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, voluptas latines?
+
+        À moi quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribun plèbis furet ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris participant. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea quae dixi, ad corpusne fait référence? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+      resources:
+        resource1:
+          title: Titre de la ressource
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
+    bestPractice8:
+      title: "Autonomisation des filles"
+      icon: eip-égalité
+      teaser: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
+      body: |-
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Indicatif pueri, dans quibus ut in speculis natura cernitur. Sin laboramus, quis est, qui alienae modum statuat industriae? Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Negat esse eam, enquête, offre se expetendam. Dans qui doctissimi illi vétérans inesse quiddam caeleste et divinum putaverunt. Estne, quaeso, inquam, sitienti en bibendo voluptas? Eam tum adesse, cum dolor omnis absit; Duo Reges: constructio interrete. Huius ego nunc auctoritatem sequens idem faciam.
+
+        Lorem ipsum dolor assis amet, consectetur adipiscing elit. Estne, quaeso, inquam, sitienti en bibendo voluptas? Hoc de Hieronymus sommum bonum esse dixit. Non automatique: igitur ne illud quidem. Sin laboramus, quis est, qui alienae modum statuat industriae? Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Egone non intellego, quid sit don Graece, voluptas latines?
+
+        À moi quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribun plèbis furet ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris participant. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea quae dixi, ad corpusne fait référence? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
+      resources:
+        resource1:
+          title: Titre de la ressource
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice1.png
+        resource2:
+          title: Titre de ressource 2
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          url: /uploads/resources/bestpractice2.png
+  analysis:
+    title: Analysez vos activités
+    intro: |-
+      Voici les activités de votre plan. Veuillez utiliser ce que vous avez appris sur les PIE pour déterminer si chaque activité correspond à un ou plusieurs des PIE. Si l'activité ** s'aligne parfaitement ** sur un ou plusieurs EIP, mettez en surbrillance le ou les symboles correspondants pour cette pratique en vert. Si l'activité ** s'aligne partiellement ** avec un ou plusieurs EIP, veuillez mettre en surbrillance le ou les symboles correspondants pour cette pratique en jaune. Si l'activité ne correspond pas à un ou plusieurs EIP, le ou les symboles doivent être laissés en gris par défaut. Pour accéder facilement aux informations sur les EIP, veuillez cliquer sur le symbole de la pratique que vous souhaitez examiner. Une fois que vous avez fini d'analyser vos activités, obtenez vos résultats en cliquant sur le bouton "Résultats" au bas de la page.
+    instructions:
+      heading: Cliquez sur les icônes indiquant les EIP que votre activité rencontre
+      options:
+        yes:
+          title: '@:yesRaw'
+          description: "S'aligne parfaitement avec les exigences des meilleures pratiques."
+        no:
+          title: '@:noRaw'
+          description: Ne correspond pas aux exigences des meilleures pratiques.
+        maybe:
+          title: Peut être
+          description: "S'aligne partiellement avec les exigences des meilleures pratiques."
+    previousStep: Retour aux activités
+    nextStep: Vos résultats
+  # Results Page
+  resultsSubhead: "Voici comment vos activités évaluent lorem ipsum:"
+  addRecommendation: Ajouter une recommandation
+  addAnotherRecommendation: Ajouter une autre recommandation
+  suggestedImprovements: Améliorations suggérées
+  suggestImprovements: Proposer des améliorations
+  results:
+    value: "Valeur:"
+    text: "Texte:"
+    budget: "Budget:"
+    youthCentric: "Youth Centric ?:"
+    allBestPractice: "Données complètes sur les meilleures pratiques:"
+    pdfPrintError: "Il y avait une erreur avec l'impression PDF."
+    exportPDF: 'Exporter PDF'
+    exportCharts: 'Exportez vos données de graphique'
+    printPage: Imprimer la page
+    previousStep: "Revenir à l'analyse"
+    nextStep: "Résultats d'impression et avocat"
+    percentActivitesWithBP: "activités avec un EIP"
+    exportChartSuccess: 'Vous avez exporté avec succès vos données de graphique'
+  chartTitles:
+    activityTypeCount: "% Compte d'activité par type"
+    activityTypeBudget: "Budget% du total par types d'activité"
+    youthFocusBudget: "Budget% jeunes axés sur"
+    youthFocusCount: "% d'activité par jeune"
+    youthCentricLabel: "Centre de jeunesse"
+    notYouthCentricLabel: "Pas de jeunesse centrée"
+  print:
+    previousStep: Revenez pour défendre
+  advocate:
+    print: Imprimez vos résultats pour les partager
+    title: 'Avancer…'
+    intro: |-
+      Maintenant que vous avez les résultats de votre plan, que devriez-vous faire maintenant?
+
+      Utilisez les résultats pour éclairer le dialogue sur les besoins des jeunes et les stratégies novatrices pour répondre à ces besoins. Sensibiliser à l'importance d'investir dans la santé sexuelle et reproductive des jeunes afin de jeter les bases de générations futures en meilleure santé.
+    stepsTitle: Façons de défendre
+    steps:
+      step1:
+        title: Partager les résultats de cet exercice
+        blurb: |-
+          L'un des objectifs de cet exercice est de vous donner une idée de la mesure dans laquelle votre plan répond aux besoins des jeunes de votre pays et de la mesure dans laquelle votre plan utilise les PIE. Partagez les résultats de ce que vous avez appris. Utilisez la page des résultats pour préparer une présentation ou un rapport pour le reste de votre groupe de planification, le ministère de la Santé ou votre ONG locale. Utilisez les graphiques qui décrivent les proportions d'activités et le budget consacrés aux jeunes et comparez-les avec les données de votre pays sur la population de jeunes et les taux de prévalence de la contraception. Utilisez les PIE pour suggérer des stratégies pour renforcer votre plan.
+      step2:
+        title: Commencer une conversation
+        blurb: |-
+          Un autre objectif de cet outil est de vous aider à entamer des conversations entre vous: les jeunes, les prestataires de soins de santé, les responsables de l’éducation, les dirigeants communautaires et les décideurs. Les besoins de santé sexuelle et reproductive des jeunes de votre communauté ou pays sont-ils correctement pris en compte? Quelle part du fardeau des soins de santé génésique est supportée par les jeunes? Votre plan actuel reflète-t-il une préoccupation proportionnelle concernant ce fardeau? Sinon, voir ci-dessous!
+      step3:
+        title: Avocat
+        blurb: |-
+          Un message qui ressort clairement des PIE est que AYSRH prospère dans des environnements où des services impartiaux sont fournis dans un environnement accueillant, où il existe un soutien multisectoriel et communautaire et où les jeunes comprennent leurs droits sexuels et reproductifs et ont les compétences pour les obligataires à rendre compte. Diverses ressources existent pour aider les jeunes et leurs alliés adultes à planifier des campagnes de plaidoyer efficaces. Certaines ressources peuvent être trouvées ci-dessous:
+  fileUpload:
+    selectFormat: "Sélectionnez un format d'exportation"
+    json: "JSON - préféré pour l'importation"
+    csv: "CSV - préféré pour l'analyse ultérieure"
+    successImport: Importé avec succès
+    textReaderImport: Importer des données
+    jsonFileName: e2a-export-%{timestamp}.json
+    csvFileName: e2a-%{exportName}-export-%{timestamp}.csv
+    pdfFileName: e2a-report-%{timestamp}.pdf
+    exportSuccessful: "%{filetype} Exportation réussie"
+  nav:
+    activities: 'Activités'
+    summary: 'Résumé'
+    bestPractices: 'Pratiques fondées sur des preuves'
+    assessment: 'Une analyse'
+    results: 'Résultats'
+    advocate: 'Avocat'
+    addAssessment: Vous devez entrer votre analyse avant de pouvoir aller plus loin.
+    removeAssessment: Vous devez supprimer toutes vos analyses avant de pouvoir modifier les activités.
+    addSetup: Vous devez ajouter des données de configuration avant de continuer
+    addActivites: "Vous devez ajouter des activités avant d'aller plus loin"
+  activityTable:
+    defaultTitle: "Texte d'activité"
+    defaultID: "Numéro d'activité"
+    defaultBudget: Budget
+    defaultYouthCentered: Centré sur la jeunesse?
+    defaultEIP: 'Pratiques fondées sur des preuves'
+  # Misc Keys
+  uniquenessError: "La valeur entrée dans %{field} n'est pas unique chez %{entityType}"
+  edit: Éditer
+  dismissNotification: Rejeter ce message
+  yesRaw: "Oui"
+  noRaw: "No"
+  goBack: Retourner
+  bestPracticeOptions:
+    # Do Not Translate
+    yesText: '@:yesRaw'
+    # Do Not Translate
+    noText: '@:noRaw'
+    maybeText: Peut être
+    # Do Not Translate
+    yesKey: 'yes'
+    # Do Not Translate
+    noKey: 'no'
+    # Do Not Translate
+    maybeKey: 'maybe'
+  enterSuggestion: Entrez une suggestion
+  item: "pas d'articles | article | articles"
+  successRemoved: Enlevé avec succès
+  successRemovedAll: "éléments, il s'agit de toutes les données actuellement stocké\
+    es."
+  clearItems:
+    clear: Clair
+    Assessments: Analyses
+    Activities: Activités
+    Recommendations: Recommandations
+    All: Tous
+  delete: effacer
+  activities: Activités
+  activity: activité
+  bestPracticeIconData: En savoir plus sur ce EIP
+  # Country Indicator Data
+  indicatorDataNotPresent: 'Votre pays ne dispose pas de données pour %{indicatorName}'
+  indicatorNotPresent: 'L''indicateur que vous avez sélectionné n''est pas présent'
+  countryIndicators:
+    indicator1:
+      name: 'POUR CENT DE FEMMES MARIEES 15-49 EN UTILISANT LA CONTRACEPTION, TOUTES
+        LES METHODES (2017)'
+      source: 'https://www.prb.org/international/indicator/contraception-all/table'
+      # Do Not Translate
+      fileName: 'marié_women_15-49_contraception.csv'
+      # Do Not Translate
+      iso2codeHeader: 'FIPS'
+      # Do Not Translate
+      indicatorValueHeader: 'Données'
+    indicator2:
+      name: 'Pourcentage de femmes mariées de 15 à 49 ans utilisant la contraception,
+        méthodes modernes (2017)'
+      source: 'https://www.prb.org/international/indicator/contraception-modern/table'
+      # Do Not Translate
+      fileName: 'marié_women_15-49_contraception_modern.csv'
+      # Do Not Translate
+      iso2codeHeader: 'FIPS'
+      # Do Not Translate
+      indicatorValueHeader: 'Données'

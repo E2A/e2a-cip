@@ -8,7 +8,7 @@
 // Neutrals
 $white: #fff;
 $light-gray: #f5f8fb;
-$gray: #c0cbd8;
+$gray: #8da3c0;
 $black: #374250;
 
 // highlights
@@ -17,6 +17,7 @@ $light-blue: #a7c6ed;
 $blue: #307fe2;
 $green: #008264;
 $yellow: #eaaa00;
+$red: #c2113a;
 
 // Color roles
 // -----------------------------------------------------------------------------
@@ -30,6 +31,8 @@ $colors: (
   'primary': $purple,
   'highlight': $blue,
   'accent': $light-blue,
+  'warning': $red,
+  'success': $purple,
   'yes': $green,
   'no': $gray,
   'maybe': $yellow

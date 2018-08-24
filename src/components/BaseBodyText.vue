@@ -1,5 +1,5 @@
 <template>
-  <VueMarkdown :class="[base.content, type[typeScaleClass(size)]]">
+  <VueMarkdown :class="[base.content, type[font], type[typeScaleClass(size)]]">
     {{content}}
   </VueMarkdown>
 </template>
@@ -22,6 +22,13 @@ export default {
     size: {
       type: String,
       default: 'epsilon'
+    },
+    font: {
+      type: String,
+      default: 'body',
+      validator: function (value) {
+        return ['body', 'display'].indexOf(value) !== -1
+      }
     }
   }
 }
@@ -34,14 +41,14 @@ export default {
 @import '~styleConfig/color';
 @import '~styleConfig/borders';
 @import '~styleConfig/type';
+@import '~styleConfig/spacing';
 
-$gutter: 0.8em; // eta on scale
+$gutter: space('xnarrow'); // eta on scale
 
 .content {
-  composes: body from 'styles/type.scss';
-
   p {
     margin-bottom: 0;
+    margin-top: 0;
   }
 
   em {
@@ -60,7 +67,8 @@ $gutter: 0.8em; // eta on scale
     }
   }
 
-  > * + * {
+  > * + *,
+  p + p {
     margin-top: $gutter;
   }
 

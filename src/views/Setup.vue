@@ -4,15 +4,20 @@
       <BaseHeading :class="space.paddingBottomWide">{{$t('setup.configureCIP')}}</BaseHeading>
       <BaseWidthWrapper>
         <SetupInput :key="inputKey"/>
-        <div :class="[type.center, space.paddingTopWide]">
-          <BaseBodyText
-            v-if="!this.setupPresent()"
-            size="small"
-            :content="$t('setup.setupRequired')"
-            :class="color.midtone"
+        <div
+          v-if="!this.setupPresent()"
+          :class="space.paddingTop"
+        >
+          <BaseCalloutBox
+            :message="$t('setup.setupRequired')"
+            role="info"
           />
+        </div>
+        <div
+          v-if="readyToAdd"
+          :class="[type.center, space.paddingTopWide]"
+        >
           <BaseButtonLink
-            v-if="readyToAdd"
             :to="{name: 'activity', params: {activityId: 1}}"
             size="large"
             role="primary"
@@ -21,6 +26,8 @@
         </div>
       </BaseWidthWrapper>
     </BaseSectionWrapper>
+
+    <!-- Restore -->
     <BaseSectionWrapper border :class="type.center">
       <BaseHeading
         :level="2"
@@ -29,7 +36,7 @@
       >
         {{$t('setup.restoreActivities')}}
       </BaseHeading>
-      <FileUpload :exportType="['Import']" @import-success="updateInput"/>
+      <FileUpload @import-success="updateInput"/>
     </BaseSectionWrapper>
   </div>
 </template>
@@ -38,7 +45,7 @@
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
-import BaseBodyText from '@/components/BaseBodyText.vue'
+import BaseCalloutBox from '@/components/BaseCalloutBox.vue'
 import SetupInput from '@/components/SetupInput.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import { dataMethods } from '@/components/mixins/dataMethods'
@@ -51,7 +58,7 @@ export default {
     BaseSectionWrapper,
     BaseWidthWrapper,
     BaseHeading,
-    BaseBodyText,
+    BaseCalloutBox,
     SetupInput,
     BaseButtonLink,
     FileUpload

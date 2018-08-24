@@ -4,77 +4,114 @@
  ☐ If activities are not youth centric make grayed out in the assessment page and remove icons. @jay
    ☐ Activities should still be present in the reports view (and just dont display any best practices icons)
    ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
+   ☐ Drop a class on a activity if its not focus, wire up logic @scott
+ ☐ Fix form adding in text to make sure to strip any spaces [adjust from rows to height] @jay
+
+ ☐ Add placeholder for checklist EIP @scott [role=primary]
+☐ Refactor chart @PAIR CODE
+  ☐ Pass in
+    ☐ Chart names
+    ☐ Component title
+  ☐ Based on chart names
+    ☐ Export only that data
+    ☐ Display only those charts
+  ☐ Split up chart rendering to respond to
+    ☐ Label data (number / text)
+    ☐ Chart series data
+    ☐ Chart type
+  ☐ Create Legend component that is IN the chart component
 
 # Pages to set up
 
 # Components to build
- ☐ Analysis color legend
  ☐ Export/clear tool tray at top of analysis, results, etc.
- ☐ Notification popovers [https://github.com/arthurvasconcelos/vue-izitoast ?] @scott?
  ☐ Buttons
    ☐ with icon
      ☐ left
      ☐ right
    ☐ dropdown
- ☐ Migrate select boxes to use vue-select
 
 # Content
- ☐ Break giant en.yaml/localization files into smaller separate files, e.g. `locales/en/best-practices.yaml` @nice-to-have
 
 # Styling
  ☐ Global
    ☐ Print styles
    ☐ Tables
-     ☐ Mobile
-   ☐ Type treatments
-     ☐ fine-tune:
-       ☐ display type
-       ☐ UI type
-       ☐ body type
-   ☐ Activities view
-     ☐ Validation error colors / styles (on activity input page)
-     ☐ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling.
-     ☐ Switch component (from checkbox)
-     ☐ Refine form styles in general
+     ☐ Mobile @nice-to-have
+   ☐ Notifications
+     ☐ Placement
+     ☐ Animation @nice-to-have
    ☐ Analysis
      ☐ Details component
        ☐ Take over behaviors with JS and make stateful
        ☐ Fix focus rings
-     ☐ Best practice icons
-       ☐ best practice option buttons
-       ☐ Fix height issues in flyouts - content (long titles) is overflowing
-     ☐ Use wider container for table
    ☐ Results
      ☐ Hide top row of icons and display edit/cancel buttons when row is expanded
      ☐ Fix overlap b/n suggestion input and delete button - gutter issue?
-     ☐ Check container width on table
-
- # Browser testing/debugging
- ☐ Make sure layouts work without flexbox
-   ☐ Timeline nav
-   ☐ activities tables
 
 # Additional scope items:
  ☐ Adding FR translation [started]
    ☐ Design language selector @jay
    ☐ QA / check exports & native support @scott
    ☐ Sniff browser / OS language @nice-to-have @scott
+   ☐ Order FR translations
  ☐ Add summary counts for each activity type to results page [started]
    ☐ Figure out designs for displaying the new activity aggregate data
-     ☐ Percent of activities with a best practice (progress bar? I think this might be better than pie chart. )
-     ☐ Aggregate counds per activity type (circles w. sum?)
+     ☐ Percent of activities with a best practice (percentage bar)
+     ☐ Percent of activities with a best practice by modality (percentage bar)
  ☐ Add in additional country data to site
    ☐ Style Country indicator data
+   Notes from last meeting: https://docs.google.com/document/d/1UYb-xSD1rlKYQpf3zz9WU8coQf-Tv526NQ5zt5Th960/edit#
+ ☐ Adjust results page grouping @jay
+ ☐ Add pathfinder logo to home @jay
+ ☐ Add other logos TBD to home @jay
+
+ # Browser testing/debugging/deployment
+ ☐ Make sure layouts work without flexbox
+   ☐ Timeline nav
+   ☐ activities tables
+ ☐ Prerender landing page via `spa-prerender-plugin` so JS can download in the BG @nice-to-have
+ ☐ Add loading bar/animation in case JS takes awhile to download @nice-to-have
 
  # Nice to have
- ☐ Dot seems to not change on nav change (likely b/c prop or computed property?)
- ☐ Refactor form field object value approach - it seems not as tight as it could be. @scott
+ ☐ Dot seems to not change on nav change (likely b/c prop or computed property?) @scott?
+ ☐ Adjust value storage to work with keys that are not based on translation... @scott
+   ☐ Causes errors when you have data and you then change language...
+  ☐ Refactor Activity Input @scott
+   ☐ To only have input new item
+   ☐ To save continually (also maybe migrate to get / set versions of vuex to by dryer and not deal with "update value" issues) - on save show notification.
+ ☐ Remove nav for home / setup pages. @jay
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
- ✔ How to deal with CSVs that have strange headers? @done (18-08-23 12:08)
- ✔ Progress bar vs. pie chart for % of activities with at least 1 EIP - thoughts @jay? @done (18-08-23 11:31)
- ✔ Hide lack of data if no data is present? Or show error text? @done (18-08-23 11:31)
+ ✔ Get activity count with EIP for each domain setup @scott @done (18-08-24 13:15)
+ ✔ Refactor form field object value approach - it seems not as tight as it could be. @scott @done (18-08-24 10:50)
+ ✔ Break giant en.yaml/localization files into smaller separate files, e.g. `locales/en/best-practices.yaml` @nice-to-have @done (18-08-24 10:49)
+ ✔ Progress bar vs. pie chart for % of activities with at least 1 EIP - thoughts @jay? @done (18-08-24 10:47)
+ ✔ How to deal with CSVs that have strange headers? @done (18-08-24 10:47)
+ ✔ Hide lack of data if no data is present? Or show error text? @done (18-08-24 10:47)
+ ✔ Type treatments @done (18-08-24 05:50)
+ ✔ Use wider container for table @done (18-08-24 05:49)
+ ✔ Check container width on table @done (18-08-24 05:49)
+ ✔ best practice option buttons @done (18-08-24 05:45)
+ ✔ Fix height issues in flyouts - content (long titles) is overflowing @done (18-08-24 05:45)
+ ✔ Best practice icons @done (18-08-24 05:45)
+ ✔ fine-tune: @done (18-08-24 05:44)
+ ✔ display type @done (18-08-24 05:44)
+ ✔ body type @done (18-08-24 05:44)
+ ✔ UI type @done (18-08-24 05:44)
+ ✔ Analysis color legend @done (18-08-24 05:44)
+ ✔ Form styles @done (18-08-24 01:19)
+ ✔ Activities view @done (18-08-24 01:19)
+ ✔ Switch component @done (18-08-24 01:10)
+ ✔ Input @done (18-08-23 21:55)
+ ✔ Notification popovers [https://github.com/arthurvasconcelos/vue-izitoast ?] @scott? @done (18-08-23 21:43)
+ ✔ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling. @done (18-08-23 21:42)
+ ✔ Label @done (18-08-23 21:42)
+ ✔ Custom select box (i.e. dropdown button) @nice-to-have @maybe-bad-idea @done (18-08-23 14:36)
+ ✔ Custom select box (i.e. dropdown button) @nice-to-have @done (18-08-23 14:33)
+ ✔ Errors @done (18-08-23 12:40)
+ ✔ Validation error colors / styles (on activity input page) @done (18-08-23 12:39)
  ✔ Replace placeholders in yaml to use rails conventions @done (18-08-23 10:22)
  ✔ UPDATE USER ROLES TO USE i18N @done (18-08-23 10:17)
  ✔ Figure out some way to parse data on another action other than create? @done (18-08-23 10:08)

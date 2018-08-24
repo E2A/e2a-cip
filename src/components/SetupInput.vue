@@ -4,30 +4,44 @@
 -->
 <template>
   <form :class="space.paddingVerticalBetween">
+
+    <!-- Title -->
     <BaseFormInput
       :label="$t('setup.CIPTitle')"
-      id="cip-title"
+      name="cip-title"
       @input="addSetup"
       v-model="setupTitle"
+      el="textarea"
     />
-    <BaseFormLabel
-      id="cip-country"
+
+    <!-- Country -->
+    <BaseFormSelect
+      v-model="setupCountry"
+      @input="addSetup"
       :label="$t('setup.selectCountry')"
-    >
-      <vSelect id="cip-country" @input="addSetup" v-model="setupCountry" :options="setupCountries"/>
-    </BaseFormLabel>
-    <BaseFormLabel
-      id="cip-currency"
+      :options="setupCountries"
+      name="cip-country"
+      searchable
+    />
+
+    <!-- Currency -->
+    <BaseFormSelect
+      v-model="setupCurrency"
+      @input="addSetup"
       :label="$t('setup.selectCurrency')"
-    >
-      <vSelect id="cip-currency" @input="addSetup" v-model="setupCurrency" :options="setupCurrencies" />
-    </BaseFormLabel>
-    <BaseFormLabel
-      id="cip-role"
+      :options="setupCurrencies"
+      name="cip-currency"
+      searchable
+    />
+
+    <!-- Role -->
+    <BaseFormSelect
+      v-model="setupRole"
+      @input="addSetup"
       :label="$t('setup.selectRole')"
-    >
-      <vSelect id="cip-role" @input="addSetup" v-model="setupRole" :options="setupRoles" />
-    </BaseFormLabel>
+      :options="setupRoles"
+      name="cip-role"
+    />
   </form>
 </template>
 
@@ -36,6 +50,7 @@ import countryList from '@/authorities/country-data'
 import currencyList from '@/authorities/currency-data'
 import BaseFormInput from './BaseFormInput.vue'
 import BaseFormLabel from './BaseFormLabel.vue'
+import BaseFormSelect from './BaseFormSelect.vue'
 import vSelect from 'vue-select'
 import i18n from '@/i18n.js'
 
@@ -44,7 +59,8 @@ export default {
   components: {
     vSelect,
     BaseFormInput,
-    BaseFormLabel
+    BaseFormLabel,
+    BaseFormSelect
   },
   data () {
     return {
@@ -126,12 +142,3 @@ export default {
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
-<style lang="scss" module="base">
-.label {
-  display: block;
-}
-
-.input {
-  display: block;
-}
-</style>

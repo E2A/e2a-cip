@@ -90,7 +90,6 @@ import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
 import ActivitiesItemResultPrint from '@/components/ActivitiesItemResultPrint.vue'
-import FileUpload from '@/components/FileUpload.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import ChartItems from '@/components/ChartItems.vue'
 import NavFooter from '@/components/NavFooter.vue'
@@ -110,7 +109,6 @@ export default {
     PrintPage,
     ActivitiesList,
     ActivitiesItemResultPrint,
-    FileUpload,
     ClearItems,
     ChartItems,
     NavFooter

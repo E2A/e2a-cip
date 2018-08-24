@@ -3,6 +3,7 @@
     <BaseGutterWrapper :class="base.grid">
 
       <!-- TODO @jay: turn each chart into a component, see ChartPie.vue -->
+
       <!-- % Activity count by type -->
       <div :class="base.gridItem">
         <div :class="[border.top, space.paddingTop]">
@@ -10,6 +11,8 @@
             :class="space.paddingBottomNarrow"
             :level="3"
             scale="delta"
+            weight="bold"
+            color="dark"
           >
             {{this.$t('chartTitles.activityTypeCount')}}
           </BaseHeading>
@@ -18,6 +21,8 @@
             gutterY="narrow"
             gutterX="narrow"
           >
+
+            <!-- Chart -->
             <div
               v-if="this.getItemCount('activities') > 0"
               id="activityTypeCount"
@@ -46,6 +51,8 @@
             :class="space.paddingBottomNarrow"
             :level="3"
             scale="delta"
+            weight="bold"
+            color="dark"
           >
             {{this.$t('chartTitles.activityTypeBudget')}}
           </BaseHeading>
@@ -85,6 +92,8 @@
             :class="space.paddingBottomNarrow"
             :level="3"
             scale="delta"
+            weight="bold"
+            color="dark"
           >
             {{this.$t('chartTitles.youthFocusBudget')}}
           </BaseHeading>
@@ -126,6 +135,8 @@
             :class="space.paddingBottomNarrow"
             :level="3"
             scale="delta"
+            weight="bold"
+            color="dark"
           >
             {{this.$t('chartTitles.youthFocusCount')}}
           </BaseHeading>
@@ -276,6 +287,8 @@ export default {
       this.csvExportItem(chartDataObject.youthCentricActivityData, 'youth-centric-activity-data')
       this.csvExportItem(chartDataObject.youthCentricBudgetData, 'youth-centric-budget-data')
       this.csvExportItem(chartDataObject.activityTypeData, 'activity-type-data')
+
+      this.notify(this.$t('results.exportChartSuccess'), 'success')
     },
     createCharts: function () {
       // Get Data
@@ -402,6 +415,7 @@ export default {
 
 <style lang="scss" module="legend">
 @import '~styleConfig/scale';
+@import '~styleConfig/color';
 
 .item {
   display: block;
@@ -432,45 +446,45 @@ export default {
 // TODO @jay figure out how to make these part of the module
 // -> maybe https://github.com/blakeembrey/camel-case
 :global {
-  .service-delivery {
-    fill: red;
-    stroke: red;
-    background: red;
+  .demand-generation {
+    fill: color('accent');
+    stroke: color('accent');
+    background: color('accent');
     color: white;
   }
 
-  .demand-generation {
-    fill: blue;
-    stroke: blue;
-    background: blue;
+  .service-delivery {
+    fill: color('midtone');
+    stroke: color('midtone');
+    background: color('midtone');
     color: white;
   }
 
   .enabling-environment {
-    fill: green;
-    stroke: green;
-    background: green;
+    fill: color('highlight');
+    stroke: color('highlight');
+    background: color('highlight');
     color: white;
   }
 
   .coordination {
-    fill: purple;
-    stroke: purple;
-    background: purple;
+    fill: color('primary');
+    stroke: color('primary');
+    background: color('primary');
     color: white;
   }
 
   .youth-centric {
-    fill: purple;
-    stroke: purple;
-    background: purple;
+    fill: color('primary');
+    stroke: color('primary');
+    background: color('primary');
     color: white;
   }
 
   .not-youth-centric {
-    fill: green;
-    stroke: green;
-    background: green;
+    fill: color('midtone');
+    stroke: color('midtone');
+    background: color('midtone');
     color: white;
   }
 }

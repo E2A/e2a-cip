@@ -5,7 +5,7 @@
       :class="[
         base.label,
         type[typeScaleClass(textSize)],
-        !helpText && space.paddingBottomXxnarrow
+        !helpText && space.paddingBottomNarrow
       ]"
     >
       {{label}}
@@ -13,8 +13,9 @@
     <BaseBodyText
       v-if="helpText"
       :content="helpText"
-      size="helpTextSize"
-      :class="[color.midtone, space.paddingBottomXxnarrow]"
+      :size="helpTextSize"
+      :class="base.help"
+      font="display"
     />
     <slot>Add a form component here</slot>
   </div>
@@ -33,11 +34,11 @@ export default {
     helpText: String,
     textSize: {
       type: String,
-      default: 'zeta'
+      default: 'epsilon'
     },
     helpTextSize: {
       type: String,
-      default: 'eta'
+      default: 'zeta'
     }
   },
   components: {
@@ -46,13 +47,18 @@ export default {
 }
 </script>
 
-<style src="styles/color.scss" lang="scss" module="color"></style>
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
 .label {
-  composes: bold from 'styles/type.scss';
+  composes: bold leadingTight from 'styles/type.scss';
   display: block;
+}
+
+.help {
+  composes: midtone from 'styles/color.scss';
+  composes: paddingBottomNarrow from 'styles/spacing.scss';
+  padding-top: 0.2rem;
 }
 </style>

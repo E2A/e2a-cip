@@ -19,11 +19,13 @@
 
   &:hover,
   &:focus {
+    @include border($w: 'medium'); // override base anchor styles
     border-color: color($c, $grade: 20);
     color: color($c, $grade: 20);
   }
 
   &:active {
+    @include border($w: 'medium'); // override base anchor styles
     border-color: color($c, $grade: -10);
     color: color($c, $grade: -10);
   }

@@ -36,6 +36,10 @@ export default {
     align-items: center;
   }
 
+  &:focus {
+    outline: none;
+  }
+
   // replace with actual icon
   &::before {
     $size: 1rem;

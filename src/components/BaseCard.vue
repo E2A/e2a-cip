@@ -27,7 +27,7 @@ export default {
 <style lang="scss" module="base">
 .card {
   composes: default round from 'styles/borders.scss';
-  composes: lightBg from 'styles/color.scss';
+  composes: whiteBg from 'styles/color.scss';
 
   @supports (display: flex) {
     display: flex;
