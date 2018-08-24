@@ -3,7 +3,7 @@
     <td :class="base.cell">{{text}}</td>
     <td :class="[base.cell, type.right]">{{budget}} {{getItemValue('setup', 'currencyCode')}}</td>
     <td :class="[base.cell, type.center]">{{youthIcon}}</td>
-    <td :class="base.cell">
+    <td :class="[base.cell, type.right]">
       <BaseButtonLink
         :to="{name: 'activity', params: { activityId: id }}"
         :label="$t('edit')"

@@ -55,6 +55,7 @@ export default {
   cellspacing: 0;
   cellpadding: 0;
   border-collapse: collapse;
+  width: 100%;
 }
 
 .heading {

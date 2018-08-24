@@ -8,7 +8,7 @@
     <!-- Title -->
     <BaseFormInput
       :label="$t('setup.CIPTitle')"
-      id="cip-title"
+      name="cip-title"
       @input="addSetup"
       v-model="setupTitle"
       el="textarea"
@@ -20,7 +20,7 @@
       @input="addSetup"
       :label="$t('setup.selectCountry')"
       :options="setupCountries"
-      id="cip-country"
+      name="cip-country"
       searchable
     />
 
@@ -30,7 +30,7 @@
       @input="addSetup"
       :label="$t('setup.selectCurrency')"
       :options="setupCurrencies"
-      id="cip-currency"
+      name="cip-currency"
       searchable
     />
 
@@ -40,7 +40,7 @@
       @input="addSetup"
       :label="$t('setup.selectRole')"
       :options="setupRoles"
-      id="cip-role"
+      name="cip-role"
     />
   </form>
 </template>
