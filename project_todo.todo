@@ -11,9 +11,7 @@
 # Pages to set up
 
 # Components to build
- ☐ Analysis color legend
  ☐ Export/clear tool tray at top of analysis, results, etc.
- ✔ Notification popovers [https://github.com/arthurvasconcelos/vue-izitoast ?] @scott? @done (18-08-23 21:43)
  ☐ Buttons
    ☐ with icon
      ☐ left
@@ -27,33 +25,17 @@
  ☐ Global
    ☐ Print styles
    ☐ Tables
-     ☐ Mobile
-   ☐ Type treatments
-     ☐ fine-tune:
-       ☐ display type
-       ☐ UI type
-       ☐ body type
-   ✔ Activities view @done (18-08-24 01:19)
+     ☐ Mobile @nice-to-have
    ☐ Notifications
      ☐ Placement
      ☐ Animation @nice-to-have
-   ✔ Form styles @done (18-08-24 01:19)
-     ✔ Input @done (18-08-23 21:55)
-     ✔ Label @done (18-08-23 21:42)
-     ✔ Switch component @done (18-08-24 01:10)
-     ✔ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling. @done (18-08-23 21:42)
    ☐ Analysis
      ☐ Details component
        ☐ Take over behaviors with JS and make stateful
        ☐ Fix focus rings
-     ☐ Best practice icons
-       ☐ best practice option buttons
-       ☐ Fix height issues in flyouts - content (long titles) is overflowing
-     ☐ Use wider container for table
    ☐ Results
      ☐ Hide top row of icons and display edit/cancel buttons when row is expanded
      ☐ Fix overlap b/n suggestion input and delete button - gutter issue?
-     ☐ Check container width on table
 
 # Additional scope items:
  ☐ Adding FR translation [started]
@@ -82,6 +64,24 @@
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Type treatments @done (18-08-24 05:50)
+ ✔ Use wider container for table @done (18-08-24 05:49)
+ ✔ Check container width on table @done (18-08-24 05:49)
+ ✔ best practice option buttons @done (18-08-24 05:45)
+ ✔ Fix height issues in flyouts - content (long titles) is overflowing @done (18-08-24 05:45)
+ ✔ Best practice icons @done (18-08-24 05:45)
+ ✔ fine-tune: @done (18-08-24 05:44)
+ ✔ display type @done (18-08-24 05:44)
+ ✔ body type @done (18-08-24 05:44)
+ ✔ UI type @done (18-08-24 05:44)
+ ✔ Analysis color legend @done (18-08-24 05:44)
+ ✔ Form styles @done (18-08-24 01:19)
+ ✔ Activities view @done (18-08-24 01:19)
+ ✔ Switch component @done (18-08-24 01:10)
+ ✔ Input @done (18-08-23 21:55)
+ ✔ Notification popovers [https://github.com/arthurvasconcelos/vue-izitoast ?] @scott? @done (18-08-23 21:43)
+ ✔ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling. @done (18-08-23 21:42)
+ ✔ Label @done (18-08-23 21:42)
  ✔ Custom select box (i.e. dropdown button) @nice-to-have @maybe-bad-idea @done (18-08-23 14:36)
  ✔ Custom select box (i.e. dropdown button) @nice-to-have @done (18-08-23 14:33)
  ✔ Errors @done (18-08-23 12:40)
