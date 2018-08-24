@@ -13,6 +13,7 @@
   <a
     :href="to"
     :class="[button.default, sizeClass, roleClass]"
+    :target="target"
     v-else
   >
     {{label}}
@@ -32,6 +33,10 @@ export default {
       type: Boolean,
       default: true
     }
+  },
+  target: {
+    type: String,
+    default: '_self'
   }
 }
 </script>

@@ -11,6 +11,7 @@ export const bestPracticeData = {
           teaser: this.$t(`bestPractices.bestPractice${index + 1}.teaser`),
           body: this.$t(`bestPractices.bestPractice${index + 1}.body`),
           resources: this.$t(`bestPractices.bestPractice${index + 1}.resources`),
+          checkListName: this.$t(`bestPractices.bestPractice${index + 1}.checkListName`),
           id: (index + 1)
         }
       })
