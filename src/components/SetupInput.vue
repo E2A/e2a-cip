@@ -10,12 +10,13 @@
       @input="addSetup"
       v-model="setupTitle"
     />
-    <BaseFormLabel
-      id="cip-country"
+    <BaseFormSelect
+      v-model="setupCountry"
+      @input="addSetup"
       :label="$t('setup.selectCountry')"
-    >
-      <vSelect id="cip-country" @input="addSetup" v-model="setupCountry" :options="setupCountries"/>
-    </BaseFormLabel>
+      :options="setupCountries"
+      id="cip-country"
+    />
     <BaseFormLabel
       id="cip-currency"
       :label="$t('setup.selectCurrency')"
@@ -36,6 +37,7 @@ import countryList from '@/authorities/country-data'
 import currencyList from '@/authorities/currency-data'
 import BaseFormInput from './BaseFormInput.vue'
 import BaseFormLabel from './BaseFormLabel.vue'
+import BaseFormSelect from './BaseFormSelect.vue'
 import vSelect from 'vue-select'
 import i18n from '@/i18n.js'
 
@@ -44,7 +46,8 @@ export default {
   components: {
     vSelect,
     BaseFormInput,
-    BaseFormLabel
+    BaseFormLabel,
+    BaseFormSelect
   },
   data () {
     return {
@@ -133,5 +136,12 @@ export default {
 
 .input {
   display: block;
+}
+
+.select {
+  composes: default from 'styles/animation.scss';
+  composes: paddingXnarrow from 'styles/spacing.scss';
+  composes: round default from 'styles/borders.scss';
+  composes: lightBg from 'styles/color.scss';
 }
 </style>

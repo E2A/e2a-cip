@@ -80,7 +80,7 @@
             id="activityType"
             :helpText="$t('supportText.selectActivityType')"
           >
-            <BaseSelectValidation
+            <BaseFormSelect
               v-model="activityType"
               :value="activityType"
               v-validate="'required'"
@@ -135,7 +135,7 @@ import BaseSectionWrapper from './BaseSectionWrapper.vue'
 import BaseWidthWrapper from './BaseWidthWrapper.vue'
 import BaseFormLabel from './BaseFormLabel.vue'
 import BaseFormInput from './BaseFormInput.vue'
-import BaseSelectValidation from './BaseSelectValidation.vue'
+import BaseFormSelect from './BaseFormSelect.vue'
 import FileUpload from './FileUpload.vue'
 import { activityTypes } from './mixins/activityTypes'
 import { customValidation } from './mixins/customValidation'
@@ -155,7 +155,7 @@ export default {
     BaseGutterWrapper,
     BaseWidthWrapper,
     BaseSectionWrapper,
-    BaseSelectValidation
+    BaseFormSelect
   },
   props: {
     activityId: {

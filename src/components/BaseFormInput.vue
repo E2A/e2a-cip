@@ -16,7 +16,9 @@
       @input="emitInput"
       @change="emitChange"
       @focus="emitFocus"
-    >{{contentValue}}</component>
+    >
+      {{contentValue}}
+    </component>
     <BaseCalloutBox
       :key="error"
       v-if="error"
