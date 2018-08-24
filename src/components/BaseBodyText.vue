@@ -41,8 +41,9 @@ export default {
 @import '~styleConfig/color';
 @import '~styleConfig/borders';
 @import '~styleConfig/type';
+@import '~styleConfig/spacing';
 
-$gutter: 0.8em; // eta on scale
+$gutter: space('xnarrow'); // eta on scale
 
 .content {
   p {
@@ -66,7 +67,8 @@ $gutter: 0.8em; // eta on scale
     }
   }
 
-  > * + * {
+  > * + *,
+  p + p {
     margin-top: $gutter;
   }
 

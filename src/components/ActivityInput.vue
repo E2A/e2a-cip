@@ -62,39 +62,30 @@
             :helpText="$t('supportText.activityBudget')"
           />
 
-          <BaseFormLabel
-            id="checkbox"
+          <BaseFormSwitch
+            v-model="activityYouthCentric"
             :label="$t('activityYouthCentric')"
             :helpText="$t('supportText.activityYouthCentric')"
-          >
-            <input
-              name='activityYouthCentric'
-              type='checkbox'
-              id="checkbox"
-              v-model="activityYouthCentric"
-            >
-          </BaseFormLabel>
+            name="activityYouthCentric"
+            type="checkbox"
+          />
 
-          <BaseFormLabel
+          <BaseFormSelect
+            v-model="activityType"
+            v-validate="'required'"
             :label="$t('selectActivityType')"
-            id="activityType"
             :helpText="$t('supportText.selectActivityType')"
-          >
-            <BaseSelectValidation
-              v-model="activityType"
-              :value="activityType"
-              v-validate="'required'"
-              :data-vv-as="`${$t('activityType')}`"
-              name="activityType"
-              :options="activityTypeOptions"
-              :searchable="false"
-              classItems="no-clear"
-              :error="errors.first('activityType')"
-            />
-            <div :class="space.paddingTopXxnarrow">
-              <router-link :to="{name: 'activity-type-info', params: { backToActivityId: activityId }}">( i ) {{$t('activityTypeLink')}}</router-link>
-            </div>
-          </BaseFormLabel>
+            :value="activityType"
+            :data-vv-as="`${$t('activityType')}`"
+            :options="activityTypeOptions"
+            :searchable="false"
+            :error="errors.first('activityType')"
+            name="activityType"
+            noClear
+          />
+          <div :class="space.paddingTopXxnarrow">
+            <router-link :to="{name: 'activity-type-info', params: { backToActivityId: activityId }}">( i ) {{$t('activityTypeLink')}}</router-link>
+          </div>
         </form>
 
         <!-- Save/delete buttons -->
@@ -135,7 +126,8 @@ import BaseSectionWrapper from './BaseSectionWrapper.vue'
 import BaseWidthWrapper from './BaseWidthWrapper.vue'
 import BaseFormLabel from './BaseFormLabel.vue'
 import BaseFormInput from './BaseFormInput.vue'
-import BaseSelectValidation from './BaseSelectValidation.vue'
+import BaseFormSwitch from './BaseFormSwitch.vue'
+import BaseFormSelect from './BaseFormSelect.vue'
 import { activityTypes } from './mixins/activityTypes'
 import { customValidation } from './mixins/customValidation'
 import { dataMethods } from './mixins/dataMethods'
@@ -150,10 +142,11 @@ export default {
     BaseButton,
     BaseFormLabel,
     BaseFormInput,
+    BaseFormSwitch,
     BaseGutterWrapper,
     BaseWidthWrapper,
     BaseSectionWrapper,
-    BaseSelectValidation
+    BaseFormSelect
   },
   props: {
     activityId: {

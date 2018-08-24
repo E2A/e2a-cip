@@ -9,7 +9,7 @@
         <img src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg" alt="E2A and Pathfinder" />
       </router-link>
       <!-- Initial translation wiring -->
-      <LanguageSwitcher />
+      <!-- <LanguageSwitcher /> -->
       <nav :class="base.menu">
         <BaseGutterWrapper
           :class="menu.list"
@@ -251,6 +251,11 @@ export default {
     flex: 1;
     flex-direction: column;
     justify-content: center;
+  }
+
+  &:hover,
+  &:active {
+    border: none; // override base anchor styles
   }
 }
 

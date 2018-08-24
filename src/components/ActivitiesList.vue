@@ -6,7 +6,8 @@
         :key="index"
         :centered="false"
         :class="base.heading"
-        scale="eta"
+        scale="zeta"
+        color="dark"
         sub
       >
         {{ heading.title }}

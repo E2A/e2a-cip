@@ -11,6 +11,8 @@
             :level="3"
             :centered="false"
             scale="delta"
+            weight="bold"
+            color="dark"
           >
             {{step.title}}
           </BaseHeading>
@@ -84,7 +86,7 @@ export default {
     content: counter(steps);
     display: block;
     font-size: scale-type('beta');
-    left: -0.06em;
+    left: 0.3em;
     line-height: 1;
     position: absolute;
     top: -0.05em;

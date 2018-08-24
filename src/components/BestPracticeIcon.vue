@@ -1,14 +1,16 @@
 <template>
   <div :class="base.wrapper">
     <a
-      :class="[base.iconLink, base[selectedAssessmentClass]]"
+      :class="[base.iconLink]"
       :href="`#${flyoutID}`"
       @click.prevent="toggleFlyout"
     >
-      <img
-        :class="base.icon"
-        :src="icon"
+      <BaseIcon
+        :name="icon"
+        :class="color[selectedAssessmentClass]"
         :alt="title"
+        role="img"
+        size="2.25rem"
       />
     </a>
 
@@ -19,21 +21,28 @@
       :id="flyoutID"
       :align="align"
     >
-      <div :class="space.paddingXxnarrow">
-        <p>{{title}}</p>
+      <div :class="space.paddingXnarrow">
+        <BaseHeading
+          :level="4"
+          scale="zeta"
+          color="dark"
+          weight="regular"
+        >
+          {{title}}
+        </BaseHeading>
 
         <!-- dots -->
         <div
           v-if="editable"
-          :class="base.dots"
+          :class="[space.paddingTopNarrow, space.marginHorizontalBetweenXnarrow]"
         >
           <button v-for="(option, index) of bestPracticeOptions"
             :key="index"
             @click="updateAssessment(title, option.value, id)"
             :class="[
-              base.dot,
-              base[option.class],
-              {[base.selected]: selectedAssessment.value.toLowerCase() === option.value}
+              dot.option,
+              dot[option.class],
+              {[dot.selected]: selectedAssessment.value.toLowerCase() === option.value}
             ]"
           >
             {{option.text}}
@@ -43,6 +52,7 @@
 
       <!-- read more link -->
       <div :class="base.resourceLink">
+
         <router-link :to="{name: 'evidence-informed-practice', params: {id: id}}">
           {{$t('bestPracticeIconData')}} &rsaquo;
         </router-link>
@@ -53,8 +63,9 @@
 
 <script>
 import { bestPracticeData } from './mixins/bestPracticeData'
-import BaseHeading from './BaseHeading'
-import BaseFlyout from './BaseFlyout'
+import BaseHeading from './BaseHeading.vue'
+import BaseIcon from './BaseIcon.vue'
+import BaseFlyout from './BaseFlyout.vue'
 
 export default {
   name: 'bestPracticeIcon',
@@ -110,7 +121,8 @@ export default {
   },
   components: {
     BaseHeading,
-    BaseFlyout
+    BaseFlyout,
+    BaseIcon
   },
   data: function () {
     return {
@@ -203,6 +215,7 @@ export default {
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
+<style src="styles/color.scss" lang="scss" module="color"></style>
 
 <style lang="scss" module="base">
 $icon-size: 2.25rem;
@@ -213,50 +226,109 @@ $icon-size: 2.25rem;
 }
 
 .iconLink {
-  border-radius: 50%;
   display: inline-block;
-  overflow: hidden;
-  padding: 0.25rem;
   width: $icon-size;
   height: $icon-size;
-}
 
-.dots {
-  display: block;
-}
-
-.dot {
-  height: 1rem;
-  width: 1rem;
-  border-radius: 50%;
-  display: inline-block;
+  &:hover,
+  &:active {
+    border: none;
+  }
 }
 
 .flyout {
-  composes: scaleEta from 'styles/type.scss';
+  composes: scaleZeta from 'styles/type.scss';
   top: ($icon-size + 1rem);
 }
 
-.yes {
-  background-color: green;
-}
+// .yes {
+//   background-color: green;
+// }
 
-.maybe {
-  background-color: yellow;
-}
+// .maybe {
+//   background-color: yellow;
+// }
 
-.no {
-  background-color: gray;
-}
-
-.selected {
-  padding: 20px;
-  border-width: 6px;
-  border-color: red;
-}
+// .no {
+//   background-color: gray;
+// }
 
 .resourceLink {
   composes: paddingXxnarrow from 'styles/spacing.scss';
   composes: top from 'styles/borders.scss';
+}
+</style>
+
+<style lang="scss" module="dot">
+@import '~styleConfig/color';
+@import '~styleConfig/borders';
+
+.option {
+  $size: 1.8rem;
+  composes: default from 'styles/animation.scss';
+  composes: midtone from 'styles/color.scss';
+  display: inline-block;
+  position: relative;
+  background: transparent;
+  border: none;
+  outline: none;
+  overflow: visible;
+  text-align: center;
+  cursor: pointer;
+  padding: 0;
+  max-width: ($size + 0.5rem);
+
+  &::before,
+  &::after {
+    content: ' ';
+    display: inline-block;
+    height: $size;
+    width: $size;
+    border-radius: 50%;
+  }
+
+  &::before {
+    position: relative;
+    margin-bottom: 0.4rem;
+    background-color: color('no');
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -($size/2);
+  }
+
+  &:hover,
+  &:active {
+    &::before {
+      @include border($w: 'thick');
+      border-color: color('white');
+    }
+
+    &::after {
+      @include border($w: 'medium');
+      border-color: border('light');
+    }
+  }
+}
+
+.selected {
+  &::before {
+    @include border($w: 'thick');
+    border-color: color('white');
+  }
+
+  &::after {
+    @include border($w: 'medium');
+    border-color: border('dark');
+  }
+}
+
+@each $color in ['yes', 'maybe', 'no'] {
+  .#{$color}::before {
+    background-color: color($color);
+  }
 }
 </style>

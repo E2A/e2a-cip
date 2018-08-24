@@ -18,7 +18,7 @@
             @change="updateRecommendation()"
             :label="$t('enterSuggestion')"
             textSize="zeta"
-            labelTextSize="eta"
+            labelTextSize="zeta"
             el="textarea"
           />
         </div>
@@ -128,7 +128,7 @@ export default {
     color: color('midtone');
     content: counter(recommendations);
     display: block;
-    font-size: scale-type('zeta');
+    font-size: scale-type('epsilon');
     left: 0;
     line-height: 1;
     position: absolute;

@@ -11,6 +11,9 @@
         <BaseHeading
           :level="6"
           :centered="false"
+          :class="type.leadingDefault"
+          weight="regular"
+          color="dark"
           sub
         >
           {{text}}
@@ -112,6 +115,8 @@ export default {
   }
 }
 </script>
+
+<style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
 .wrapper {

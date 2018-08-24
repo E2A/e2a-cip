@@ -8,9 +8,11 @@
       <!-- title -->
       <header :class="space.paddingVerticalWide">
         <BaseHeading
-          scale="delta"
+          scale="epsilon"
           :sub="true"
-          :class="[space.paddingBottomXnarrow, color.midtone]"
+          weight="bold"
+          color="midtone"
+          :class="[space.paddingBottomNarrow, type.uppercase]"
         >
           {{ $t('bestPracticeSubtitle') }}
         </BaseHeading>
@@ -24,7 +26,11 @@
     </BaseSectionWrapper>
 
     <!-- Resources -->
-    <BaseSectionWrapper v-if="resources.length > 0" border>
+    <BaseSectionWrapper
+      v-if="resources.length > 0"
+      :class="color.lightBg"
+      border
+    >
       <BaseHeading
         :class="space.paddingBottom"
         :level="2"
@@ -79,6 +85,7 @@ export default {
 }
 </script>
 
+<style src="styles/type.scss" lang="scss" module="type"></style>
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/color.scss" lang="scss" module="color"></style>
 <style src="styles/borders.scss" lang="scss" module="border"></style>
