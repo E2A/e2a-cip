@@ -1,5 +1,4 @@
 en:
-  # Home page
   home:
     title: Not without us!
     subtitle: A tool for AYSRH-responsive planning
@@ -41,7 +40,6 @@ en:
     downloadWindowsUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer.zip
     downloadWindowsPortable: Windows Portable (67MB)
     downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
-  # Setup Input
   setup:
     CIPTitle: Enter your CIP title
     configureCIP: "First, let's configure your CIP"
@@ -317,7 +315,6 @@ en:
           teaser: |-
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
           url: /uploads/resources/bestpractice2.png
-  # Analysis Page
   analysis:
     title: Analyze your activities
     intro: |-
@@ -356,7 +353,6 @@ en:
     nextStep: Print Results & Advocate
     percentActivitesWithBP: "activites with an EIP"
     exportChartSuccess: 'You successfully exported your chart data'
-  # Chart Titles
   chartTitles:
     activityTypeCount: "% Activity count by type"
     activityTypeBudget: "Budget % of total by activity types"
@@ -387,7 +383,6 @@ en:
         title: Advocate
         blurb: |-
           A message that emerges clearly from the EIPs is that AYSRH thrives in settings where where unbiased services are provided in a welcoming environment, where there is multi-sectoral and community support, and where youth understand their sexual and reproductive rights and have the skills to hold duty-bearers to account. A variety of resources exist to help youth and their adult allies plan effective advocacy campaigns. Some resources can be found below:
-  # Fileupload text
   fileUpload:
     selectFormat: Select an export format
     json: JSON - preferred for import
@@ -398,7 +393,6 @@ en:
     csvFileName: e2a-%{exportName}-export-%{timestamp}.csv
     pdfFileName: e2a-report-%{timestamp}.pdf
     exportSuccessful: "%{filetype} Export Successful"
-  # Navigation text
   nav:
     activities: 'Activities'
     summary: 'Summary'
