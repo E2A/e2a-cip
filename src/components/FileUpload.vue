@@ -1,12 +1,6 @@
 <template>
   <div class="FileUpload">
-    <select v-if="(exportType.includes('Export') && this.getItemCount('all') > 0)" @change="runExportData(exportOption)" v-model="exportOption">
-      <option value='' disabled selected>{{$t('fileUpload.selectFormat')}}</option>
-      <option value='json'>{{$t('fileUpload.json')}}</option>
-      <option value='csv'>{{$t('fileUpload.csv')}}</option>
-    </select>
-    <text-reader v-if="exportType.includes('Import')" @file-read-successful="runImportData($event)"></text-reader>
-    <p v-if="importSuccess > 0">{{$t('fileUpload.successImport')}} {{importText}}</p>
+    <text-reader @file-read-successful="runImportData($event)"></text-reader>
   </div>
 </template>
 
@@ -23,17 +17,7 @@ export default {
   },
   data () {
     return {
-      importSuccess: false,
-      exportOption: '',
       importText: ''
-    }
-  },
-  props: {
-    exportType: {
-      type: Array,
-      default: function () {
-        return ['Export', 'Import']
-      }
     }
   },
   methods: {
@@ -42,15 +26,15 @@ export default {
       const importType = this.parseFileData(fileData)
       const count = this.getItemCount(importType)
 
-      if (count > 0) {
-        this.importSuccess = true
-        this.$emit('import-success')
-      }
-
       if (importType === 'all' && count > 0) {
         this.importText = `${count} ${this.$tc('item', count)}`
       } else {
         this.importText = `${count} ${importType} ${this.$tc('item', count)}`
+      }
+
+      if (count > 0) {
+        this.notify(`${this.$t('fileUpload.successImport')} ${this.importText}`, 'success')
+        this.$emit('import-success')
       }
     }
   }

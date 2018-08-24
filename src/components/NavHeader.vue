@@ -32,6 +32,7 @@
             <span
               v-if="!link.active"
               :class="menu.disabled"
+              @click="notificationTrigger"
             >
               {{link.text}}
             </span>
@@ -46,13 +47,13 @@
       </nav>
     </header>
 
-    <!-- convert these to notifications -->
-    <!-- <p v-if="this.getItemCount('assessments') === 0">
-      {{$t('nav.addAssessment')}}
-    </p>
-    <p v-if="this.getItemCount('assessments') > 0">
-      {{$t('nav.removeAssessment')}}
-    </p> -->
+    <BaseCalloutBox
+      v-if="globalNotification('visible')"
+      :message="globalNotification('message')"
+      :role="globalNotification('role')"
+      :timeout="globalNotification('timeout')"
+      dismissable
+    />
   </div>
 </template>
 
@@ -61,6 +62,7 @@ import { dataMethods } from './mixins/dataMethods'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
 import BaseIcon from './BaseIcon.vue'
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+import BaseCalloutBox from '@/components/BaseCalloutBox.vue'
 
 export default {
   name: 'NavHeader',
@@ -68,10 +70,12 @@ export default {
   components: {
     BaseGutterWrapper,
     BaseIcon,
-    LanguageSwitcher
+    LanguageSwitcher,
+    BaseCalloutBox
   },
   data: function () {
     return {
+      notificationMessage: '',
       links: {
         setup: {
           url: '/setup',
@@ -115,12 +119,20 @@ export default {
     }
   },
   methods: {
+    globalNotification: function (value) {
+      const notification = this.$store.getters['entities/globalnotifications/query']().first()
+      return notification ? notification[value] : false
+    },
     getLinks: function () {
       this.updateActiveLinks()
       return this.links
     },
+    notificationTrigger: function () {
+      this.notify(this.notificationMessage, 'info', 3000)
+    },
     updateActiveLinks: function () {
       if (this.getItemCount('assessments') > 0) {
+        this.notificationMessage = this.$t('nav.removeAssessment')
         this.links.activities.active = false
         this.links.summary.active = false
         this.links.results.active = true
@@ -128,6 +140,7 @@ export default {
       }
 
       if (this.getItemCount('activities') === 0 && (this.getItemCount('setup') === 0 || !this.setupPresent())) {
+        this.notificationMessage = this.$t('nav.addSetup')
         this.links.activities.active = false
         this.links.summary.active = false
         this.links.results.active = false
@@ -137,6 +150,7 @@ export default {
       }
 
       if (this.getItemCount('activities') === 0 && this.setupPresent()) {
+        this.notificationMessage = this.$t('nav.addActivites')
         this.links.activities.active = true
         this.links.summary.active = false
         this.links.results.active = false
@@ -146,6 +160,7 @@ export default {
       }
 
       if (this.getItemCount('activities') > 0 && this.getItemCount('assessments') === 0) {
+        this.notificationMessage = this.$t('nav.addAssessment')
         this.links.activities.active = true
         this.links.summary.active = true
         this.links.assessment.active = true

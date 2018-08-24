@@ -11,6 +11,8 @@ import BestPracticeIcon from '@/models/BestPracticeIcon'
 import bestpracticeicons from './modules/bestpracticeicons'
 import CountryIndicator from '@/models/CountryIndicator'
 import countryindicators from './modules/countryindicators'
+import GlobalNotification from '@/models/GlobalNotification'
+import globalnotifications from './modules/globalnotifications'
 
 const database = new Database()
 
@@ -20,5 +22,6 @@ database.register(Assessment, assessments)
 database.register(Recommendation, recommendations)
 database.register(BestPracticeIcon, bestpracticeicons)
 database.register(CountryIndicator, countryindicators)
+database.register(GlobalNotification, globalnotifications)
 
 export default database

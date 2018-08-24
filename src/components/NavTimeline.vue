@@ -66,7 +66,7 @@
           <strong>{{items.length}}</strong> {{countLabel || $t('activities')}}
         </BaseHeading>
         <div :class="base.inlineBlock">
-          <FileUpload :exportType="['Export']" />
+          <FileExport />
         </div>
       </BaseGutterWrapper>
     </div>
@@ -77,7 +77,7 @@
 import BaseFlyout from './BaseFlyout.vue'
 import BaseHeading from './BaseHeading.vue'
 import BaseButtonLink from './BaseButtonLink.vue'
-import FileUpload from './FileUpload.vue'
+import FileExport from './FileExport.vue'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
 
 export default {
@@ -115,7 +115,7 @@ export default {
     BaseFlyout,
     BaseHeading,
     BaseButtonLink,
-    FileUpload,
+    FileExport,
     BaseGutterWrapper
   },
   data: function () {

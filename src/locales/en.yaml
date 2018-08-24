@@ -384,6 +384,7 @@ en:
     jsonFileName: e2a-export-%{timestamp}.json
     csvFileName: e2a-%{exportName}-export-%{timestamp}.csv
     pdfFileName: e2a-report-%{timestamp}.pdf
+    exportSuccessful: "%{filetype} Export Successful"
   # Navigation
   nav:
     activities: 'Activities'
@@ -392,8 +393,10 @@ en:
     assessment: 'Analysis'
     results: 'Results'
     advocate: 'Advocate'
-    addAssessment: You must enter assessments before you can view results.
-    removeAssessment: You must remove all assessments before you can edit activites.
+    addAssessment: You must enter your analysis before you can move further.
+    removeAssessment: You must remove all your analysis before you can edit activites.
+    addSetup: You must add setup data before moving further
+    addActivites: You must add activities before moving further
   # Activity table
   activityTable:
     defaultTitle: Activity text
