@@ -416,20 +416,20 @@ fr:
   edit: Éditer
   dismissNotification: Rejeter ce message
   yesRaw: "Oui"
-  noRaw: "Aucun"
+  noRaw: "No"
   goBack: Retourner
   bestPracticeOptions:
     # Do Not Translate
-    yesText: '@: ouiRaw'
+    yesText: '@:yesRaw'
     # Do Not Translate
-    noText: '@: noRaw'
+    noText: '@:noRaw'
     maybeText: Peut être
     # Do Not Translate
-    yesKey: 'Oui'
+    yesKey: 'yes'
     # Do Not Translate
-    noKey: 'non'
+    noKey: 'no'
     # Do Not Translate
-    maybeKey: 'peut être'
+    maybeKey: 'maybe'
   enterSuggestion: Entrez une suggestion
   item: "pas d'articles | article | articles"
   successRemoved: Enlevé avec succès
