@@ -54,6 +54,7 @@
       :role="globalNotification('role')"
       :timeout="globalNotification('timeout')"
       dismissable
+      shadow
     />
   </div>
 </template>

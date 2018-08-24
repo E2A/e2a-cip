@@ -323,11 +323,11 @@ fr:
     instructions:
       heading: Cliquez sur les icônes indiquant les EIP que votre activité rencontre
       options:
-        'yes':
-          title: '@: ouiRaw'
+        yes:
+          title: '@:yesRaw'
           description: "S'aligne parfaitement avec les exigences des meilleures pratiques."
-        'no':
-          title: '@: noRaw'
+        no:
+          title: '@:noRaw'
           description: Ne correspond pas aux exigences des meilleures pratiques.
         maybe:
           title: Peut être

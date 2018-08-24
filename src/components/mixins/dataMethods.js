@@ -74,7 +74,7 @@ export const dataMethods = {
         return {error: this.$t('indicatorDataNotPresent', {indicatorName: indicatorName})}
       }
     },
-    notify: function (message, role = 'info', timeout = 3000, visible = true) {
+    notify: function (message, role = 'info', timeout = 4000, visible = true) {
       // Clear notifications before adding a new one
       this.$store.dispatch('entities/globalnotifications/deleteAll')
 

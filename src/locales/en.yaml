@@ -41,8 +41,8 @@ en:
     downloadWindowsPortable: Windows Portable (67MB)
     downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
   setup:
-    CIPTitle: Enter your CIP title
-    configureCIP: "First, let's configure your CIP"
+    CIPTitle: Enter your plan title
+    configureCIP: "First, let's configure your plan"
     selectCountry: Select a country
     selectCurrency: Select a currency
     selectRole: Select a role
@@ -322,10 +322,10 @@ en:
     instructions:
       heading: Click on the icons indicating the EIPs which your activity meets
       options:
-        'yes':
+        yes:
           title: '@:yesRaw'
           description: Fully aligns with the requirements of the best practice.
-        'no':
+        no:
           title: '@:noRaw'
           description: Does not align with the requirements of the best practice.
         maybe:

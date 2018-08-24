@@ -121,12 +121,12 @@ export default {
     }
   }
 
-  &:checked::before {
+  &[value="true"]::before {
     background-color: color('success');
     color: color('white');
   }
 
-  &:checked::after {
+  &[value="true"]::after {
     background-color: transparent;
     color: color('midtone');
   }
