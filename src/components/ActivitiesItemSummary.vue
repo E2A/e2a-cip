@@ -1,6 +1,6 @@
 <template>
   <tr :class="[type.scaleZeta, space.paddingHorizontalBetweenXnarrow]">
-    <td :class="base.cell">{{text}}</td>
+    <td :class="[base.cell, base.text]">{{text}}</td>
     <td :class="[base.cell, type.right]">{{budget}} {{getItemValue('setup', 'currencyCode')}}</td>
     <td :class="[base.cell, type.center]">{{youthIcon}}</td>
     <td :class="[base.cell, type.right]">
@@ -58,9 +58,14 @@ export default {
   cellspacing: 0;
   border-collapse: collapse;
 }
+
 .cell {
   composes: paddingVerticalXnarrow from 'styles/spacing.scss';
   composes: top from 'styles/borders.scss';
   vertical-align: top;
+}
+
+.text {
+  width: 65%;
 }
 </style>
