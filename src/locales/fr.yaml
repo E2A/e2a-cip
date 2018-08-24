@@ -419,7 +419,7 @@ fr:
   noRaw: "Aucun"
   goBack: Retourner
   bestPracticeOptions:
-    yesText: '@: ouiRaw'
+    yesText: '@: yesRaw'
     noText: '@: noRaw'
     maybeText: Peut être
     yesKey: 'yes'
