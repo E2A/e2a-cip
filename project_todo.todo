@@ -6,10 +6,7 @@
    ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
    ☐ Drop a class on a activity if its not focus, wire up logic @scott
  ☐ Fix form adding in text to make sure to strip any spaces [adjust from rows to height] @jay
- ☐ Refactor Activity Input @scott
-   ☐ To only have input new item
-   ☐ To save continually (also maybe migrate to get / set versions of vuex to by dryer and not deal with "update value" issues) - on save show notification.
- ☐ Remove nav for home / setup pages. @jay
+
  ☐ Add placeholder for checklist EIP @scott [role=primary]
 ☐ Refactor chart @PAIR CODE
   ☐ Pass in
@@ -80,6 +77,10 @@
  ☐ Dot seems to not change on nav change (likely b/c prop or computed property?) @scott?
  ☐ Adjust value storage to work with keys that are not based on translation... @scott
    ☐ Causes errors when you have data and you then change language...
+  ☐ Refactor Activity Input @scott
+   ☐ To only have input new item
+   ☐ To save continually (also maybe migrate to get / set versions of vuex to by dryer and not deal with "update value" issues) - on save show notification.
+ ☐ Remove nav for home / setup pages. @jay
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:

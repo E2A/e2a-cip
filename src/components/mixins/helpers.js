@@ -10,6 +10,9 @@ export const stringHelpers = {
       return str.toLowerCase().split(' ').map((word) => {
         return (word.charAt(0).toUpperCase() + word.slice(1))
       }).join(' ')
+    },
+    stripWhitespace: function (str) {
+      return str.replace(/(^\s+|\s+$)/g, '')
     }
   }
 }

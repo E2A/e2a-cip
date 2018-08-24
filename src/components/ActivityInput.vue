@@ -163,20 +163,6 @@ export default {
           url: {name: 'activity', params: {activityId: activity.id}}
         }
       })
-    },
-    // FPO for styling
-    fakeNavItems: function () {
-      let items = []
-
-      for (let i = 0; i < 25; i++) {
-        items.push({
-          id: i,
-          label: 'Lorem ipsum dolor sit amet',
-          url: '/test'
-        })
-      }
-
-      return items
     }
   },
   data () {
@@ -232,7 +218,32 @@ export default {
       } else if (activityInstance) {
         return activityInstance
       } else {
-        return false
+        return null
+      }
+    },
+    setActivity: function (field, inputValue) {
+      // DEPRECATED
+      // Potentially useful to use for get / set on vModel
+      const activity = this.getActivity()
+      const value = this.stripWhitespace(inputValue)
+
+      if (field && value && activity) {
+        this.$store.dispatch('entities/activities/update', {
+          where: activity.id,
+          data (item) {
+            item[`${field}`] = value
+          }
+        }).then((e) => { this.notify(this.$t('saveSuccess'), 'success') })
+      }
+
+      if (field && value && !activity) {
+        const createJSON = `{"${field}": "${value}"}`
+        console.log(createJSON)
+        const createObj = JSON.parse(createJSON)
+
+        this.$store.dispatch('entities/activities/insert', {
+          data: createObj
+        }).then((e) => { this.notify(this.$t('saveSuccess'), 'success') })
       }
     },
     addActivity: function () {
