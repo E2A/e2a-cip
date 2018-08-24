@@ -74,5 +74,7 @@ app.on('ready', async () => {
     await installVueDevtools()
   }
   mainWindow = createMainWindow(app.getLocale())
-  mainWindow.webContents.openDevTools()
+
+  // Uncomment this to show console.
+  // mainWindow.webContents.openDevTools()
 })
