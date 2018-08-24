@@ -32,11 +32,11 @@ export default {
     router: {
       type: Boolean,
       default: true
+    },
+    target: {
+      type: String,
+      default: '_self'
     }
-  },
-  target: {
-    type: String,
-    default: '_self'
   }
 }
 </script>
