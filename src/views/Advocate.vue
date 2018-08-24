@@ -21,7 +21,7 @@
         role="primary"
         size="large"
       />
-      <FileUpload :exportType="['Export']" />
+      <FileExport />
     </BaseSectionWrapper>
   </article>
 </template>
@@ -35,7 +35,7 @@ import BaseHeading from '@/components/BaseHeading.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import PrintPage from '@/components/PrintPage.vue'
-import FileUpload from '@/components/FileUpload.vue'
+import FileExport from '@/components/FileExport.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 
 export default {
@@ -49,7 +49,7 @@ export default {
     BaseButtonLink,
     BaseWidthWrapper,
     PrintPage,
-    FileUpload
+    FileExport
   },
   data: function () {
     return {

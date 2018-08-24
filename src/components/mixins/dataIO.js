@@ -28,6 +28,7 @@ export const dataIO = {
           this.csvExportItem(entityData, entity, timestamp)
         }
       }
+      return true
     },
     parseFileData: function (fileData) {
       // Check file extension (windows cant seem find to find MIME data)

@@ -19,7 +19,7 @@
     />
     <button
       v-if="dismissable"
-      @click="$emit('dismiss')"
+      @click="dismissNotification"
       :class="base.dismiss"
       :title="$t('dismissNotification')"
     >
@@ -57,7 +57,8 @@ export default {
     shadow: {
       type: Boolean,
       default: false
-    }
+    },
+    timeout: Number
   },
   data: function () {
     return {
@@ -80,6 +81,17 @@ export default {
   components: {
     BaseIcon,
     BaseBodyText
+  },
+  methods: {
+    dismissNotification: function () {
+      this.$store.dispatch('entities/globalnotifications/deleteAll')
+      this.$emit('dismiss')
+    }
+  },
+  mounted () {
+    if (this.timeout) {
+      setTimeout(() => { this.dismissNotification() }, this.timeout)
+    }
   }
 }
 </script>

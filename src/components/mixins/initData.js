@@ -26,13 +26,12 @@ export const initData = {
   methods: {
     setupCountryIndicators: function () {
       // For each indicator, parse file and send data to be stored
-      const $this = this
       this.countryIndicators.forEach((indicator) => {
         Papa.parse(`country_indicators/${indicator.fileName}`, {
           download: true,
           header: true,
-          complete: function (results) {
-            $this.storeCountryIndicators(indicator, results.data)
+          complete: (results) => {
+            this.storeCountryIndicators(indicator, results.data)
           }
         })
       })
@@ -49,6 +48,7 @@ export const initData = {
       })
       // Create for initial load
       this.$store.dispatch('entities/countryindicators/insert', { data: setupData })
+      console.log(this.$store.getters['entities/countryindicators/query']().first())
     }
   }
 }
