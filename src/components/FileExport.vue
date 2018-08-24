@@ -15,11 +15,16 @@ import { dataMethods } from './mixins/dataMethods'
 export default {
   name: 'FileExport',
   mixins: [dataIO, dataMethods],
+  data: function () {
+    return {
+      exportOption: ''
+    }
+  },
   methods: {
     exportData: function (option) {
       console.log(this.runExportData(option))
       if (this.runExportData(option)) {
-        this.notify(this.$t('fileUpload.exportSuccessful', {filetype: this.titleCase(option)}), 'success')
+        this.notify(this.$t('fileUpload.exportSuccessful', {filetype: option.toUpperCase()}), 'success')
       }
     }
   }

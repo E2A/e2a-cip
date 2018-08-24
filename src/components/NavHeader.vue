@@ -48,6 +48,7 @@
     </header>
 
     <BaseCalloutBox
+      :key="this.getItemCount('globalnotifications')"
       v-if="globalNotification('visible')"
       :message="globalNotification('message')"
       :role="globalNotification('role')"

@@ -74,7 +74,10 @@ export const dataMethods = {
         return {error: this.$t('indicatorDataNotPresent', {indicatorName: indicatorName})}
       }
     },
-    notify: function (message, role = 'info', timeout = false, visible = true) {
+    notify: function (message, role = 'info', timeout = 3000, visible = true) {
+      // Clear notifications before adding a new one
+      this.$store.dispatch('entities/globalnotifications/deleteAll')
+
       this.$store.dispatch('entities/globalnotifications/create', {
         data: {
           visible: visible,
@@ -89,6 +92,5 @@ export const dataMethods = {
         return (word.charAt(0).toUpperCase() + word.slice(1))
       }).join(' ')
     }
-
   }
 }

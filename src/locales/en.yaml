@@ -341,6 +341,7 @@ en:
     previousStep: Go back to analysis
     nextStep: Print Results & Advocate
     percentActivitesWithBP: "activites with an EIP"
+    exportChartSuccess: 'You successfully exported your chart data'
   # Chart Title Data
   chartTitles:
     activityTypeCount: "% Activity count by type"

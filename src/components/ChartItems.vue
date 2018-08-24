@@ -276,6 +276,8 @@ export default {
       this.csvExportItem(chartDataObject.youthCentricActivityData, 'youth-centric-activity-data')
       this.csvExportItem(chartDataObject.youthCentricBudgetData, 'youth-centric-budget-data')
       this.csvExportItem(chartDataObject.activityTypeData, 'activity-type-data')
+
+      this.notify(this.$t('results.exportChartSuccess'), 'success')
     },
     createCharts: function () {
       // Get Data
