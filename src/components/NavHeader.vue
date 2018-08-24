@@ -252,6 +252,11 @@ export default {
     flex-direction: column;
     justify-content: center;
   }
+
+  &:hover,
+  &:active {
+    border: none; // override base anchor styles
+  }
 }
 
 .disabled {

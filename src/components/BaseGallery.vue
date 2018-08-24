@@ -21,13 +21,14 @@
             :level="3"
             :centered="false"
             scale="delta"
+            weight="bold"
           >
             {{ item.title }}
           </BaseHeading>
           <BaseBodyText
             :class="space.paddingBottomNarrow"
             :content="item.teaser"
-            size="eta"
+            size="zeta"
           />
           <template slot="footer">
             <BaseButtonLink

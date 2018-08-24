@@ -14,8 +14,9 @@
       <BaseWidthWrapper width="wide">
         <BaseHeading
           :level="2"
-          scale="gamma"
-          :class="space.paddingBottomNarrow"
+          :class="space.paddingBottom"
+          scale="delta"
+          weight="bold"
         >
           {{cipTitle}}
         </BaseHeading>
@@ -29,9 +30,11 @@
             <template v-if="activities.activityObjects.length > 0">
               <BaseHeading
                 :level="3"
-                scale="eta"
                 :centered="false"
-                :class="[space.paddingXxnarrow, color.light, type.uppercase, color.midtoneBg, border.top]"
+                :class="[space.paddingXxnarrow, type.uppercase, color.lightBg, border.top]"
+                scale="zeta"
+                weight="bold"
+                color="midtone"
               >
                 {{activities.activityTypeName}}
               </BaseHeading>

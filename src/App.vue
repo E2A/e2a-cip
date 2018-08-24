@@ -30,6 +30,7 @@ export default {
 @import './stylesheets/config/breakpoints';
 @import './stylesheets/config/type';
 @import './stylesheets/config/color';
+@import './stylesheets/config/borders';
 
 $base-type-sizes: (
   'default': 100%,
@@ -103,5 +104,22 @@ img,
 video {
     vertical-align: middle;
     max-width: 100%;
+}
+
+p,
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a {
+  color: color('highlight');
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    border-bottom: border-w('thin') dashed;
+  }
 }
 </style>
