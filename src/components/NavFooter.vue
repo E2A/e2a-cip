@@ -81,11 +81,13 @@ export default {
 
 <style lang="scss" module="base">
 .wrapper {
+  // make sure all content can scroll past the sticky nav
   padding-bottom: 5rem;
 }
+
 .nav {
   composes: top from 'styles/borders.scss';
-  composes: lightBg from 'styles/color.scss';
+  composes: whiteBg shadow from 'styles/color.scss';
   composes: paddingHorizontalWide paddingVerticalNarrow from 'styles/spacing.scss';
   display: block;
   position: fixed;
