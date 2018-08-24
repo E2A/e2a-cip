@@ -68,10 +68,7 @@ export default {
       type: String,
       default: 'epsilon'
     },
-    labelTextSize: {
-      type: String,
-      default: 'zeta'
-    },
+    labelTextSize: String,
     // number of rows the textarea shows
     height: {
       type: Number,
@@ -119,7 +116,7 @@ export default {
   composes: paddingXnarrow from 'styles/spacing.scss';
   composes: round default from 'styles/borders.scss';
   composes: lightBg from 'styles/color.scss';
-  composes: leadingDefault from 'styles/type.scss';
+  composes: scaleEpsilon leadingDefault from 'styles/type.scss';
   box-shadow: none !important;
   display: block;
   width: 100%;

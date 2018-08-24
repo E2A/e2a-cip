@@ -36,7 +36,7 @@
 
     <!-- Role -->
     <BaseFormSelect
-      v-model="selectRole"
+      v-model="setupRole"
       @input="addSetup"
       :label="$t('setup.selectRole')"
       :options="setupRoles"

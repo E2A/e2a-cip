@@ -75,26 +75,22 @@
             >
           </BaseFormLabel>
 
-          <BaseFormLabel
+          <BaseFormSelect
+            v-model="activityType"
+            v-validate="'required'"
             :label="$t('selectActivityType')"
-            id="activityType"
             :helpText="$t('supportText.selectActivityType')"
-          >
-            <BaseFormSelect
-              v-model="activityType"
-              :value="activityType"
-              v-validate="'required'"
-              :data-vv-as="`${$t('activityType')}`"
-              name="activityType"
-              :options="activityTypeOptions"
-              :searchable="false"
-              classItems="no-clear"
-              :error="errors.first('activityType')"
-            />
-            <div :class="space.paddingTopXxnarrow">
-              <router-link :to="{name: 'activity-type-info', params: { backToActivityId: activityId }}">( i ) {{$t('activityTypeLink')}}</router-link>
-            </div>
-          </BaseFormLabel>
+            :value="activityType"
+            :data-vv-as="`${$t('activityType')}`"
+            :options="activityTypeOptions"
+            :searchable="false"
+            :error="errors.first('activityType')"
+            name="activityType"
+            noClear
+          />
+          <div :class="space.paddingTopXxnarrow">
+            <router-link :to="{name: 'activity-type-info', params: { backToActivityId: activityId }}">( i ) {{$t('activityTypeLink')}}</router-link>
+          </div>
         </form>
 
         <!-- Save/delete buttons -->

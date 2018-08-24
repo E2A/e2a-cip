@@ -13,8 +13,9 @@
     <BaseBodyText
       v-if="helpText"
       :content="helpText"
-      size="helpTextSize"
-      :class="[color.midtone, space.paddingBottomXxnarrow]"
+      :size="helpTextSize"
+      :class="[color.midtone, space.paddingBottomNarrow]"
+      font="display"
     />
     <slot>Add a form component here</slot>
   </div>
@@ -33,11 +34,11 @@ export default {
     helpText: String,
     textSize: {
       type: String,
-      default: 'zeta'
+      default: 'epsilon'
     },
     helpTextSize: {
       type: String,
-      default: 'eta'
+      default: 'zeta'
     }
   },
   components: {
