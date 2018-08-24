@@ -38,7 +38,7 @@
      ☐ Placement
      ☐ Animation @nice-to-have
    ☐ Form styles
-     ☐ Input
+     ✔ Input @done (18-08-23 21:55)
      ✔ Label @done (18-08-23 21:42)
      ☐ Switch component
      ✔ Update select styles (not the activity input select box uses different styles b/c the vue-select component doesnt support validation so I had to use the default.) - I used vue-select for the other ones, you can check their repo for styling. @done (18-08-23 21:42)
