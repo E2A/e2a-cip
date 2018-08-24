@@ -1,10 +1,9 @@
----
 fr:
   home:
     title: Pas sans nous!
     subtitle: "Un outil pour la planification adaptée à l'AYSRH"
     intro: |-
-      "Cet outil est conçu pour être utilisé par les gouvernements, les organisations et les individus qui cherchent à rendre les plans de planification familiale plus adaptés aux besoins des jeunes âgés de 15 à 24 ans en matière de santé sexuelle et reproductive. Grâce à cet outil, vous aurez la possibilité de:
+      Cet outil est conçu pour être utilisé par les gouvernements, les organisations et les individus qui cherchent à rendre les plans de planification familiale plus adaptés aux besoins des jeunes âgés de 15 à 24 ans en matière de santé sexuelle et reproductive. Grâce à cet outil, vous aurez la possibilité de:
         * Discerner la proportion des activités et du budget alloués aux activités «centrées sur les jeunes».
         * Discerner la proportion d’activités centrées sur les jeunes et le budget alloué à quatre domaines d’activité différents (création de la demande, prestation de services, environnement propice et multisectoriel) avec une orientation jeunesse.
         * Discerner comment vos activités et votre budget se comparent aux données concernant les jeunes de votre pays.
@@ -12,7 +11,7 @@ fr:
 
         Nous espérons que les résultats que vous recevrez éclaireront le dialogue sur les besoins des jeunes et les stratégies novatrices pour répondre à ces besoins. Nous vous encourageons à utiliser les résultats pour sensibiliser à l'importance d'investir dans la santé sexuelle et reproductive des jeunes, posant les bases pour des générations futures en meilleure santé.
 
-        **Commençons!**"
+        **Commençons!**
     stepsTitle: Comment cela fonctionne
     steps:
       step1:
@@ -72,6 +71,8 @@ fr:
   inputNextActivity: Entrer une autre activité
   activitiesDone: "J'ai fini!"
   save: "Enregistrer l'activité"
+  saveSuccess: Activité enregistrée
+  deleteSuccess: Activité supprimée
   deleteActivity: Effacer
   supportText:
     activityNumber: "S'il vous plaît entrer un numéro d'activité"
@@ -79,7 +80,7 @@ fr:
     activityBudget: "S'il vous plaît entrer un budget pour l'activité, si présent."
     activityYouthCentric: Cette activité est-elle centrée sur les jeunes telle que définie par ____
     selectActivityType: "Sélectionnez une modalité d'activité"
-  # Activity Type
+  # Activity Type Content
   activityTypeLink: "En savoir plus sur les types d'activité"
   activityTypeTitle: "En savoir plus sur les types d'activité"
   backToActivities: Retour à vos activités
@@ -122,7 +123,7 @@ fr:
   bestPractices:
     bestPractice1:
       title: "Fournir des services adaptés à l'âge et au développement"
-      icon: http://placehold.it/600x600
+      icon: eip-choice
       teaser: |-
         Les services adaptés à l'âge et au développement sont parfois décrits comme «adaptés aux adolescents et aux jeunes». Les services de santé sexuelle et reproductive adaptés aux adolescents et aux jeunes sont des services de SSR conformes aux cinq normes établies par l'Organisation mondiale de la santé et aux normes internationales. normes pour améliorer la qualité des services de santé pour les adolescents. Ces services incluent généralement des méthodes contraceptives sûres et abordables; prévention et traitement du VIH / SIDA et prise en charge des IST autres que le VIH; la fourniture d'informations précises sur la santé sexuelle et reproductive; et conseils et soins sensibles pour la santé sexuelle et le bien-être. Les services peuvent également inclure des soins obstétricaux et prénatals adaptés aux jeunes pour les filles et les femmes enceintes; services de soins post-avortement, prévention, détection et conseil en matière de violence sexiste; et la prévention, la détection et le traitement du cancer du col utérin.
       body: |-
@@ -192,7 +193,7 @@ fr:
     bestPractice2:
       title: "Élargir la gamme des méthodes de contraception disponibles pour les\
         \ adolescents et les jeunes (y compris les LARC et le DMPA-SC)"
-      icon: http://placehold.it/600x600
+      icon: eip-contraceptifs
       teaser: |-
         Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -210,7 +211,7 @@ fr:
     bestPractice3:
       title: "Inclusion des groupes de jeunes vulnérables et mal desservis (y compris\
         \ les adolescentes mariées et les FTP)"
-      icon: http://placehold.it/600x600
+      icon: eip-couple
       teaser: |-
         Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -227,7 +228,7 @@ fr:
           url: /uploads/resources/bestpractice1.png
     bestPractice4:
       title: "Participation des jeunes et leadership dans les programmes AYSRH"
-      icon: http://placehold.it/600x600
+      icon: eip-jeunesse
       teaser: |-
         Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -244,7 +245,7 @@ fr:
           url: /uploads/resources/bestpractice1.png
     bestPractice5:
       title: "Coordination multisectorielle pour AYSRH"
-      icon: http://placehold.it/600x600
+      icon: coordination eip
       teaser: |-
         Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -261,7 +262,7 @@ fr:
           url: /uploads/resources/bestpractice1.png
     bestPractice6:
       title: "Éducation sexuelle complète"
-      icon: http://placehold.it/600x600
+      icon: livre électronique
       teaser: |-
         Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -278,7 +279,7 @@ fr:
           url: /uploads/resources/bestpractice1.png
     bestPractice7:
       title: "Soutien aux familles et aux communautés pour AYSRH"
-      icon: http://placehold.it/600x600
+      icon: communauté eip
       teaser: |-
         Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -295,7 +296,7 @@ fr:
           url: /uploads/resources/bestpractice1.png
     bestPractice8:
       title: "Autonomisation des filles"
-      icon: http://placehold.it/600x600
+      icon: eip-égalité
       teaser: |-
         Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, informez-vous. Lorem ipsum dolor assis amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -319,8 +320,26 @@ fr:
     title: Analysez vos activités
     intro: |-
       Voici les activités de votre plan. Veuillez utiliser ce que vous avez appris sur les PIE pour déterminer si chaque activité correspond à un ou plusieurs des PIE. Si l'activité ** s'aligne parfaitement ** sur un ou plusieurs EIP, mettez en surbrillance le ou les symboles correspondants pour cette pratique en vert. Si l'activité ** s'aligne partiellement ** avec un ou plusieurs EIP, veuillez mettre en surbrillance le ou les symboles correspondants pour cette pratique en jaune. Si l'activité ne correspond pas à un ou plusieurs EIP, le ou les symboles doivent être laissés en gris par défaut. Pour accéder facilement aux informations sur les EIP, veuillez cliquer sur le symbole de la pratique que vous souhaitez examiner. Une fois que vous avez fini d'analyser vos activités, obtenez vos résultats en cliquant sur le bouton "Résultats" au bas de la page.
+    instructions:
+      heading: Cliquez sur les icônes indiquant les EIP que votre activité rencontre
+      options:
+        'yes':
+          title: '@: ouiRaw'
+          description: "S'aligne parfaitement avec les exigences des meilleures pratiques."
+        'no':
+          title: '@: noRaw'
+          description: Ne correspond pas aux exigences des meilleures pratiques.
+        maybe:
+          title: Peut être
+          description: "S'aligne partiellement avec les exigences des meilleures pratiques."
     previousStep: Retour aux activités
     nextStep: Vos résultats
+  # Results Page
+  resultsSubhead: "Voici comment vos activités évaluent lorem ipsum:"
+  addRecommendation: Ajouter une recommandation
+  addAnotherRecommendation: Ajouter une autre recommandation
+  suggestedImprovements: Améliorations suggérées
+  suggestImprovements: Proposer des améliorations
   results:
     value: "Valeur:"
     text: "Texte:"
@@ -333,6 +352,8 @@ fr:
     printPage: Imprimer la page
     previousStep: "Revenir à l'analyse"
     nextStep: "Résultats d'impression et avocat"
+    percentActivitesWithBP: "activités avec un EIP"
+    exportChartSuccess: 'Vous avez exporté avec succès vos données de graphique'
   chartTitles:
     activityTypeCount: "% Compte d'activité par type"
     activityTypeBudget: "Budget% du total par types d'activité"
@@ -340,11 +361,6 @@ fr:
     youthFocusCount: "% d'activité par jeune"
     youthCentricLabel: "Centre de jeunesse"
     notYouthCentricLabel: "Pas de jeunesse centrée"
-  resultsSubhead: "Voici comment vos activités évaluent lorem ipsum:"
-  addRecommendation: Ajouter une recommandation
-  addAnotherRecommendation: Ajouter une autre recommandation
-  suggestedImprovements: Améliorations suggérées
-  suggestImprovements: Proposer des améliorations
   print:
     previousStep: Revenez pour défendre
   advocate:
@@ -374,9 +390,10 @@ fr:
     csv: "CSV - préféré pour l'analyse ultérieure"
     successImport: Importé avec succès
     textReaderImport: Importer des données
-    jsonFileName: e2a-export- {timestamp} .json
-    csvFileName: e2a- {exportName} -export- {timestamp} .csv
-    pdfFileName: e2a-report- {timestamp} .pdf
+    jsonFileName: e2a-export-%{timestamp}.json
+    csvFileName: e2a-%{exportName}-export-%{timestamp}.csv
+    pdfFileName: e2a-report-%{timestamp}.pdf
+    exportSuccessful: "%{filetype} Exportation réussie"
   nav:
     activities: 'Activités'
     summary: 'Résumé'
@@ -384,8 +401,10 @@ fr:
     assessment: 'Une analyse'
     results: 'Résultats'
     advocate: 'Avocat'
-    addAssessment: Vous devez entrer des évaluations avant de pouvoir afficher les résultats.
-    removeAssessment: Vous devez supprimer toutes les évaluations avant de pouvoir modifier les activités.
+    addAssessment: Vous devez entrer votre analyse avant de pouvoir aller plus loin.
+    removeAssessment: Vous devez supprimer toutes vos analyses avant de pouvoir modifier les activités.
+    addSetup: Vous devez ajouter des données de configuration avant de continuer
+    addActivites: "Vous devez ajouter des activités avant d'aller plus loin"
   activityTable:
     defaultTitle: "Texte d'activité"
     defaultID: "Numéro d'activité"
@@ -393,13 +412,14 @@ fr:
     defaultYouthCentered: Centré sur la jeunesse?
     defaultEIP: 'Pratiques fondées sur des preuves'
   # Misc Keys
-  uniquenessError: "La valeur entrée dans {field} n'est pas unique parmi {entityType}"
+  uniquenessError: "La valeur entrée dans %{field} n'est pas unique chez %{entityType}"
   edit: Éditer
+  dismissNotification: Rejeter ce message
   yesRaw: "Oui"
-  noRaw: "Non"
+  noRaw: "Aucun"
   goBack: Retourner
   bestPracticeOptions:
-    yesText: '@: yesRaw'
+    yesText: '@: ouiRaw'
     noText: '@: noRaw'
     maybeText: Peut être
     yesKey: 'yes'
@@ -412,7 +432,7 @@ fr:
     es."
   clearItems:
     clear: Clair
-    Assessments: Évaluations
+    Assessments: Analyses
     Activities: Activités
     Recommendations: Recommandations
     All: Tous
@@ -420,3 +440,21 @@ fr:
   activities: Activités
   activity: activité
   bestPracticeIconData: En savoir plus sur ce EIP
+  # Country Indicator Data
+  indicatorDataNotPresent: 'Votre pays ne dispose pas de données pour %{indicatorName}'
+  indicatorNotPresent: 'L''indicateur que vous avez sélectionné n''est pas présent'
+  countryIndicators:
+    indicator1:
+      name: 'POUR CENT DE FEMMES MARIEES 15-49 EN UTILISANT LA CONTRACEPTION, TOUTES
+        LES METHODES (2017)'
+      source: 'https://www.prb.org/international/indicator/contraception-all/table'
+      fileName: 'marié_women_15-49_contraception.csv'
+      iso2codeHeader: 'FIPS'
+      indicatorValueHeader: 'Données'
+    indicator2:
+      name: 'Pourcentage de femmes mariées de 15 à 49 ans utilisant la contraception,
+        méthodes modernes (2017)'
+      source: 'https://www.prb.org/international/indicator/contraception-modern/table'
+      fileName: 'marié_women_15-49_contraception_modern.csv'
+      iso2codeHeader: 'FIPS'
+      indicatorValueHeader: 'Données'
