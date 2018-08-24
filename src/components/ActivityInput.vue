@@ -262,12 +262,14 @@ export default {
               }
             })
           }
+          this.notify(this.$t('saveSuccess'), 'success')
           this.updateData()
         }
       })
     },
     deleteActivity: function () {
       this.$store.dispatch('entities/activities/delete', Number(this.activityId))
+      this.notify(this.$t('deleteSuccess'), 'success')
     }
   },
   created () {
