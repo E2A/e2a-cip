@@ -450,22 +450,20 @@ fr:
   indicatorNotPresent: 'L''indicateur que vous avez sélectionné n''est pas présent'
   countryIndicators:
     indicator1:
-      name: 'POUR CENT DE FEMMES MARIEES 15-49 EN UTILISANT LA CONTRACEPTION, TOUTES
-        LES METHODES (2017)'
+      name: 'PERCENT OF MARRIED WOMEN 15-49 USING CONTRACEPTION, ALL METHODS (2017)'
       source: 'https://www.prb.org/international/indicator/contraception-all/table'
       # Do Not Translate
-      fileName: 'marié_women_15-49_contraception.csv'
+      fileName: 'married_women_15-49_contraception.csv'
       # Do Not Translate
       iso2codeHeader: 'FIPS'
       # Do Not Translate
-      indicatorValueHeader: 'Données'
+      indicatorValueHeader: 'Data'
     indicator2:
-      name: 'Pourcentage de femmes mariées de 15 à 49 ans utilisant la contraception,
-        méthodes modernes (2017)'
+      name: 'PERCENT OF MARRIED WOMEN 15-49 USING CONTRACEPTION, MODERN METHODS (2017)'
       source: 'https://www.prb.org/international/indicator/contraception-modern/table'
       # Do Not Translate
-      fileName: 'marié_women_15-49_contraception_modern.csv'
+      fileName: 'married_women_15-49_contraception_modern.csv'
       # Do Not Translate
       iso2codeHeader: 'FIPS'
       # Do Not Translate
-      indicatorValueHeader: 'Données'
+      indicatorValueHeader: 'Data'

@@ -5,6 +5,7 @@
 # To Develop Locally
 1) Run `yarn serve` in the root dir to run a server on localhost
 2) Go to `localhost:8080` to view the app
+3) To run / debug electron app on MacOS run: `./dist_electron/mac/E2A-Analysis.app/Contents/MacOS/E2A-Analysis` and any `console.log()` and other electron errors will display in terminal.
 
 # Package for distribution on your own server
 1) Install the application
@@ -22,6 +23,11 @@ After having gone through the get started steps:
 6) Copy the files you just zipped from steps 2-4, and replace the cloned files in the repository found in step 5
 7) If you prefer web-based uploading, go to the [git repository](https://github.com/E2A/e2a-electron-builds) and upload the files there.
 8) If there were major changes in the file sizes, update the MBs listed in the current site content [here](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml)
+
+# A note on lanuage
+We are using LingoHub for translation.
+You can also force an initial language to load by passing `?lang=en` or `fr` (for english and french respectively)
+It will also look at the browser / OS language and default to that.
 
 # Editing Content
 To edit content you can click [here](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml)
