@@ -69,18 +69,6 @@
             name="activityYouthCentric"
             type="checkbox"
           />
-          <!-- <BaseFormLabel
-            id="checkbox"
-            :label="$t('activityYouthCentric')"
-            :helpText="$t('supportText.activityYouthCentric')"
-          >
-            <input
-              name='activityYouthCentric'
-              type='checkbox'
-              id="checkbox"
-              v-model="activityYouthCentric"
-            >
-          </BaseFormLabel> -->
 
           <BaseFormSelect
             v-model="activityType"
