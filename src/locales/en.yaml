@@ -320,6 +320,18 @@ en:
     title: Analyze your activities
     intro: |-
       Here are the activities from your plan. Please use what you have learned about EIPs to determine whether each activity aligns with one or more of the EIPs. If the activity **fully aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in green. If the activity **partially aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in yellow. If the activity does not align with one or more EIPs, the symbol(s) should be left the default gray. For easy access to the information about the EIPs, please click on the symbol of the practice you want to review. Once you are finished analyzing your activities, get your results by clicking on the ‘results’ button at the bottom of the page.
+    instructions:
+      heading: Click on the icons indicating the EIPs which your activity meets
+      options:
+        yes:
+          title: '@:yesRaw'
+          description: Fully aligns with the requirements of the best practice.
+        no:
+          title: '@:noRaw'
+          description: Does not align with the requirements of the best practice.
+        maybe:
+          title: Maybe
+          description: Partially aligns with the requirements of the best practice.
     previousStep: Go back to activities
     nextStep: Your results
   # Results Page

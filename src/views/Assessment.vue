@@ -10,7 +10,46 @@
       :title="$t('analysis.title')"
       :blurb="$t('analysis.intro')"
     />
-    <section :class="space.paddingWide">
+
+    <!-- Color key/guide -->
+    <BaseSectionWrapper :class="color.lightBg">
+      <BaseHeading
+        :level="2"
+        scale="delta"
+        weight="bold"
+      >
+        {{$t('analysis.instructions.heading')}}
+      </BaseHeading>
+      <BaseWidthWrapper :class="space.paddingTop">
+        <BaseGutterWrapper :class="instructions.wrapper">
+          <div
+            v-for="(option, index) in ['yes', 'maybe', 'no']"
+            :class="instructions.item"
+            :key="`color-${index}`"
+          >
+            <div :class="[instructions.swatch, color[`${option}Bg`]]"></div>
+            <BaseHeading
+              :level="3"
+              :class="space.paddingBottomXxnarrow"
+              scale="epsilon"
+              weight="bold"
+              color="dark"
+            >
+              {{$t(`analysis.instructions.options.${option}.title`)}}
+            </BaseHeading>
+            <BaseBodyText
+              :content="$t(`analysis.instructions.options.${option}.description`)"
+              :class="color.midtone"
+              size="zeta"
+              font="display"
+            />
+          </div>
+        </BaseGutterWrapper>
+      </BaseWidthWrapper>
+    </BaseSectionWrapper>
+
+    <!-- Activities -->
+    <BaseSectionWrapper border>
       <BaseWidthWrapper width="wide">
         <BaseHeading
           :level="2"
@@ -50,15 +89,18 @@
           </div>
         </ActivitiesList>
       </BaseWidthWrapper>
-    </section>
+    </BaseSectionWrapper>
   </NavFooter>
 </template>
 
 <script>
 import NavFooter from '@/components/NavFooter.vue'
+import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
+import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
 import ActivitiesItemAssessment from '@/components/ActivitiesItemAssessment.vue'
 import FileExport from '@/components/FileExport.vue'
@@ -71,9 +113,12 @@ export default {
   mixins: [activityTypes, dataMethods],
   components: {
     NavFooter,
+    BaseSectionWrapper,
     BaseWidthWrapper,
+    BaseGutterWrapper,
     BasePageIntro,
     BaseHeading,
+    BaseBodyText,
     ActivitiesList,
     ActivitiesItemAssessment,
     FileExport,
@@ -111,3 +156,27 @@ export default {
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/color.scss" lang="scss" module="color"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
+
+<style lang="scss" module="instructions">
+@import '~bourbon/core/bourbon';
+
+.wrapper {
+  composes: paddingTop from 'styles/spacing.scss';
+  font-size: 0;
+  text-align: center;
+}
+
+.item {
+  display: inline-block;
+  width: (100% / 3);
+}
+
+.swatch {
+  composes: marginBottomNarrow from 'styles/spacing.scss';
+  composes: default from 'styles/borders.scss';
+  composes: whiteBorder shadow from 'styles/color.scss';
+  @include size(4rem);
+  display: inline-block;
+  border-radius: 50%;
+}
+</style>
