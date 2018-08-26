@@ -22,7 +22,6 @@ export default {
   },
   methods: {
     exportData: function (option) {
-      console.log(this.runExportData(option))
       if (this.runExportData(option)) {
         this.notify(this.$t('fileUpload.exportSuccessful', {filetype: option.toUpperCase()}), 'success')
       }

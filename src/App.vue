@@ -18,6 +18,12 @@ export default {
   components: {
     NavHeader,
     BaseIconSpriteMap
+  },
+  created () {
+    // Force redirect to home if electron.
+    if (this.checkElectron()) {
+      this.$router.replace('/')
+    }
   }
 }
 

@@ -238,7 +238,6 @@ export default {
 
       if (field && value && !activity) {
         const createJSON = `{"${field}": "${value}"}`
-        console.log(createJSON)
         const createObj = JSON.parse(createJSON)
 
         this.$store.dispatch('entities/activities/insert', {

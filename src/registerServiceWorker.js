@@ -2,7 +2,11 @@
 
 import { register } from 'register-service-worker'
 
-if (process.env.NODE_ENV === 'production') {
+// Turn off service worker if in electron
+const userAgent = navigator.userAgent.toLowerCase()
+const electronPresent = userAgent.indexOf(' electron/') > -1
+
+if (process.env.NODE_ENV === 'production' && !electronPresent) {
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready () {
       console.log(
