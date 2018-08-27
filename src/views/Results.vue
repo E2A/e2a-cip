@@ -73,7 +73,7 @@
             scale="delta"
             v-if="false"
           >
-            <strong>{{percentActivitiesWithBP}}%</strong> {{$t('results.percentActivitesWithBP')}}
+            <strong>{{percentBPActivites}%</strong> {{$t('results.percentActivitesWithBP')}}
           </BaseHeading>
 
           <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
@@ -122,16 +122,9 @@
                 weight="bold"
               >
                 {{activities.activityTypeName}}
+                <!-- Activity Count with EIP Initial Stab, remove text I dont think we need it or put it in translation -->
+                | <strong>{{percentBPActivitesByType(activities.activityTypeName)}}%</strong> {{$t('activityWithEIPbyType')}}
               </BaseHeading>
-
-              <!-- Activity Count Initial Stab -->
-              <ul v-if="false">
-                <li v-for="(bestPracticeCount, index) in bpCounts = getActivityTypeCounts(activities.activityTypeName)"
-                  :key="`activity-${index}`"
-                 >
-                 {{bestPracticeCount.title}}: {{bestPracticeCount.count}}
-               </li>
-              </ul>
 
               <ActivitiesItemResult
                 v-for="(activity, index) in activities.activityObjects"
@@ -206,12 +199,23 @@ export default {
     }
   },
   computed: {
-    percentActivitiesWithBP: function () {
+    percentBPActivites: function () {
       const activitiesWithBP = this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
         query.where('value', [this.$t('bestPracticeOptions.yesKey')])
       }).count()
 
       return (activitiesWithBP / this.getItemCount('activities')).toFixed(2) * 100
+    }
+  },
+  methods: {
+    percentBPActivitesByType: function (activityType) {
+      const activitiesWithBP = this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
+        query.where('value', [this.$t('bestPracticeOptions.yesKey')])
+      }).where('type', activityType).count()
+
+      const activitiesInType = this.$store.getters['entities/activities/query']().where('type', activityType).count()
+
+      return (activitiesWithBP / activitiesInType).toFixed(2) * 100
     }
   },
   created () {

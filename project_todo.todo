@@ -6,10 +6,7 @@
    ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
    ☐ Drop a class on a activity if its not focus, wire up logic @scott
  ☐ Fix form adding in text to make sure to strip any spaces [adjust from rows to height] @jay
- ☐ Refactor Activity Input @scott
-   ☐ To only have input new item
-   ☐ To save continually (also maybe migrate to get / set versions of vuex to by dryer and not deal with "update value" issues) - on save show notification.
- ☐ Remove nav for home / setup pages. @jay
+
  ☐ Add placeholder for checklist EIP @scott [role=primary]
 ☐ Refactor chart @PAIR CODE
   ☐ Pass in
@@ -62,7 +59,6 @@
    ☐ Figure out designs for displaying the new activity aggregate data
      ☐ Percent of activities with a best practice (percentage bar)
      ☐ Percent of activities with a best practice by modality (percentage bar)
-     ☐ Get activity count with EIP for each domain setup @scott
  ☐ Add in additional country data to site
    ☐ Style Country indicator data
    Notes from last meeting: https://docs.google.com/document/d/1UYb-xSD1rlKYQpf3zz9WU8coQf-Tv526NQ5zt5Th960/edit#
@@ -81,9 +77,14 @@
  ☐ Dot seems to not change on nav change (likely b/c prop or computed property?) @scott?
  ☐ Adjust value storage to work with keys that are not based on translation... @scott
    ☐ Causes errors when you have data and you then change language...
+  ☐ Refactor Activity Input @scott
+   ☐ To only have input new item
+   ☐ To save continually (also maybe migrate to get / set versions of vuex to by dryer and not deal with "update value" issues) - on save show notification.
+ ☐ Remove nav for home / setup pages. @jay
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Get activity count with EIP for each domain setup @scott @done (18-08-24 13:15)
  ✔ Refactor form field object value approach - it seems not as tight as it could be. @scott @done (18-08-24 10:50)
  ✔ Break giant en.yaml/localization files into smaller separate files, e.g. `locales/en/best-practices.yaml` @nice-to-have @done (18-08-24 10:49)
  ✔ Progress bar vs. pie chart for % of activities with at least 1 EIP - thoughts @jay? @done (18-08-24 10:47)
