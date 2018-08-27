@@ -1,6 +1,6 @@
 <template>
-  <details>
-    <summary :class="base.summary">
+  <details :open="isOpen">
+    <summary :class="base.summary" @click.prevent="toggleOpen">
       <div :class="base.summaryContent">
         <div :class="base.item">
           <slot name="summaryLeft">Add summary here</slot>
@@ -10,7 +10,7 @@
         </div>
       </div>
     </summary>
-    <div>
+    <div v-show="isOpen" :class="base.expandedContent">
       <slot>Add expanded details here</slot>
     </div>
   </details>
@@ -21,13 +21,20 @@ export default {
   name: 'BaseDetails',
   data () {
     return {
-      open: false
+      isOpen: false
+    }
+  },
+  methods: {
+    toggleOpen: function (event) {
+      this.isOpen = !this.isOpen
     }
   }
 }
 </script>
 
 <style lang="scss" module="base">
+@import '~bourbon/core/bourbon';
+
 .summary {
   display: block;
 
@@ -74,5 +81,9 @@ export default {
   @supports (flex: 1) {
     flex: 1;
   }
+}
+
+.expandedContent {
+
 }
 </style>
