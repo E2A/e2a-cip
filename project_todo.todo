@@ -6,19 +6,6 @@
    ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
  ☐ Fix form adding in text to make sure to strip any spaces [adjust from rows to height] @jay
 
-☐ Refactor chart @PAIR CODE
-  ☐ Pass in
-    ☐ Chart names
-    ☐ Component title
-  ☐ Based on chart names
-    ☐ Export only that data
-    ☐ Display only those charts
-  ☐ Split up chart rendering to respond to
-    ☐ Label data (number / text)
-    ☐ Chart series data
-    ☐ Chart type
-  ☐ Create Legend component that is IN the chart component
-
 # Pages to set up
 
 # Components to build
@@ -82,6 +69,18 @@
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Refactor chart @PAIR CODE @done (18-08-27 16:34)
+ ✔ Export only that data @done (18-08-27 16:34)
+ ✔ Based on chart names @done (18-08-27 16:34)
+ ✔ Split up chart rendering to respond to @done (18-08-27 16:27)
+ ✔ Label data (number / text) @done (18-08-27 16:27)
+ ✔ Display only those charts @done (18-08-27 16:27)
+ ✔ Create Legend component that is IN the chart component @done (18-08-27 16:27)
+ ✔ Chart type @done (18-08-27 16:27)
+ ✔ Chart series data @done (18-08-27 16:27)
+ ✔ Pass in @done (18-08-27 15:07)
+ ✔ Component title @done (18-08-27 15:07)
+ ✔ Chart names @done (18-08-27 15:03)
  ✔ QA / check exports & native support @scott @done (18-08-24 15:37)
  ✔ Sniff browser / OS language @nice-to-have @scott @done (18-08-24 15:36)
  ✔ Drop a class on a activity if its not focus, wire up logic @scott @done (18-08-24 15:06)
