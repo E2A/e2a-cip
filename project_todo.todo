@@ -55,7 +55,7 @@
    ☐ activities tables
  ☐ Prerender landing page via `spa-prerender-plugin` so JS can download in the BG @nice-to-have
  ☐ Add loading bar/animation in case JS takes awhile to download @nice-to-have
- ☐ Debug electron SVG sprints:
+ ☐ Debug electron SVG issues:
    ☐ Use debugging protocol outlined in README.
 
  # Nice to have
