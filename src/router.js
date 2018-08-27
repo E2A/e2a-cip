@@ -19,18 +19,12 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
-      props: {
-        hideNav: true
-      }
+      component: Home
     },
     {
       path: '/setup/',
       name: 'setup',
-      component: Setup,
-      props: {
-        hideNav: true
-      }
+      component: Setup
     },
     {
       path: '/activity/:activityId',
@@ -82,5 +76,8 @@ export default new Router({
     }
 
   ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  },
   mode: 'history'
 })
