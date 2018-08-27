@@ -35,10 +35,13 @@ en:
       - For **Macintosh** unzip the file and use the DMG to install the application.
       - For **Windows** unzip the folder and run the .exe file in the folder.
     downloadMac: Macintosh (51MB)
+    # Do Not Translate
     downloadMacUrl: https://github.com/E2A/e2a-electron-builds/raw/master/mac-installer.zip
     downloadWindows: Windows (45MB)
+    # Do Not Translate
     downloadWindowsUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer.zip
     downloadWindowsPortable: Windows Portable (67MB)
+    # Do Not Translate
     downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
   setup:
     CIPTitle: Enter your plan title
@@ -123,6 +126,7 @@ en:
   bestPractices:
     bestPractice1:
       title: Providing age and developmentally appropriate services
+      # Do Not Translate
       icon: eip-choice
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
@@ -192,10 +196,12 @@ en:
           title: Resource Title
           teaser: |-
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
           url: /uploads/resources/bestpractice1.png
     bestPractice2:
       title: "Expanding the range of contraceptive methods available to adolescents\
         \ and young people (including LARCs and DMPA-SC)"
+      # Do Not Translate
       icon: eip-contraceptives
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
@@ -213,10 +219,12 @@ en:
           title: Resource Title
           teaser: |-
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
           url: /uploads/resources/bestpractice1.png
     bestPractice3:
       title: "Inclusion of vulnerable and underserved youth groups (including married\
         \ adolescent girls ad FTPs)"
+      # Do Not Translate
       icon: eip-couple
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
@@ -233,9 +241,11 @@ en:
           title: Resource Title
           teaser: |-
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
           url: /uploads/resources/bestpractice1.png
     bestPractice4:
       title: "Youth participation and leadership in AYSRH programs"
+      # Do Not Translate
       icon: eip-youth
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
@@ -252,9 +262,11 @@ en:
           title: Resource Title
           teaser: |-
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
           url: /uploads/resources/bestpractice1.png
     bestPractice5:
       title: "Multi-sectoral coordination for AYSRH"
+      # Do Not Translate
       icon: eip-coordination
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
@@ -271,9 +283,11 @@ en:
           title: Resource Title
           teaser: |-
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
           url: /uploads/resources/bestpractice1.png
     bestPractice6:
       title: "Comprehensive sexuality education"
+      # Do Not Translate
       icon: eip-book
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
@@ -290,9 +304,11 @@ en:
           title: Resource Title
           teaser: |-
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
           url: /uploads/resources/bestpractice1.png
     bestPractice7:
       title: "Support to families and communities for AYSRH"
+      # Do Not Translate
       icon: eip-community
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
@@ -309,9 +325,11 @@ en:
           title: Resource Title
           teaser: |-
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
           url: /uploads/resources/bestpractice1.png
     bestPractice8:
       title: "Girls' empowerment"
+      # Do Not Translate
       icon: eip-equality
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
@@ -328,11 +346,13 @@ en:
           title: Resource Title
           teaser: |-
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
           url: /uploads/resources/bestpractice1.png
         resource2:
           title: Resource Title 2
           teaser: |-
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
           url: /uploads/resources/bestpractice2.png
   analysis:
     title: Analyze your activities
@@ -342,9 +362,11 @@ en:
       heading: Click on the icons indicating the EIPs which your activity meets
       options:
         yes:
+          # Do Not Translate
           title: '@:yesRaw'
           description: Fully aligns with the requirements of the best practice.
         no:
+          # Do Not Translate
           title: '@:noRaw'
           description: Does not align with the requirements of the best practice.
         maybe:
@@ -468,6 +490,7 @@ en:
   countryIndicators:
     indicator1:
       name: 'PERCENT OF MARRIED WOMEN 15-49 USING CONTRACEPTION, ALL METHODS (2017)'
+      # Do Not Translate
       source: 'https://www.prb.org/international/indicator/contraception-all/table'
       # Do Not Translate
       fileName: 'married_women_15-49_contraception.csv'
@@ -477,6 +500,7 @@ en:
       indicatorValueHeader: 'Data'
     indicator2:
       name: 'PERCENT OF MARRIED WOMEN 15-49 USING CONTRACEPTION, MODERN METHODS (2017)'
+      # Do Not Translate
       source: 'https://www.prb.org/international/indicator/contraception-modern/table'
       # Do Not Translate
       fileName: 'married_women_15-49_contraception_modern.csv'
