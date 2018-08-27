@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <BaseIconSpriteMap />
-    <NavHeader :key="this.getItemCount('all')" />
+    <NavHeader
+      v-if="hideNav"
+      :key="this.getItemCount('all')" />
     <router-view :key="$route.fullPath"></router-view>
   </div>
 </template>
@@ -15,9 +17,23 @@ import { dataMethods } from '@/components/mixins/dataMethods.js'
 export default {
   name: 'AppRoot',
   mixins: [ dataMethods ],
+  props: {
+    // Hide the main nav?
+    // -> passed in from router
+    hideNav: {
+      type: Boolean,
+      default: false
+    }
+  },
   components: {
     NavHeader,
     BaseIconSpriteMap
+  },
+  computed: {
+    showNav: function () {
+      console.log(this.$route.name === 'home')
+      return this.$route.name !== 'home' || this.$route.name !== 'setup'
+    }
   },
   created () {
     // Force redirect to home if electron.

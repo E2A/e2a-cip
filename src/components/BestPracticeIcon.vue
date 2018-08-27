@@ -241,18 +241,6 @@ $icon-size: 2.25rem;
   top: ($icon-size + 1rem);
 }
 
-// .yes {
-//   background-color: green;
-// }
-
-// .maybe {
-//   background-color: yellow;
-// }
-
-// .no {
-//   background-color: gray;
-// }
-
 .resourceLink {
   composes: paddingXxnarrow from 'styles/spacing.scss';
   composes: top from 'styles/borders.scss';
@@ -316,8 +304,7 @@ $icon-size: 2.25rem;
 
 .selected {
   &::before {
-    @include border($w: 'thick');
-    border-color: color('white');
+    border-color: color('white') !important;
   }
 
   &::after {
@@ -327,8 +314,11 @@ $icon-size: 2.25rem;
 }
 
 @each $color in ['yes', 'maybe', 'no'] {
-  .#{$color}::before {
-    background-color: color($color);
+  .#{$color}{
+    &::before {
+      @include border($w: 'thick', $color: $color);
+      background-color: color($color);
+    }
   }
 }
 </style>

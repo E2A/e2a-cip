@@ -19,12 +19,18 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      props: {
+        hideNav: true
+      }
     },
     {
       path: '/setup/',
       name: 'setup',
-      component: Setup
+      component: Setup,
+      props: {
+        hideNav: true
+      }
     },
     {
       path: '/activity/:activityId',
