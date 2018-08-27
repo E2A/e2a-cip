@@ -5,7 +5,7 @@
 -->
 
 <template>
-  <li :class="base.wrapper">
+  <li :class="`${base.wrapper} ${disabled}`">
     <BaseDetails>
       <template slot="summaryLeft">
         <BaseHeading
@@ -111,6 +111,11 @@ export default {
         [this.$t('activityTable.defaultBudget')]: `${this.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
         [this.$t('activityTable.defaultYouthCentered')]: this.youth ? this.$t('yesRaw') : this.$t('noRaw')
       }
+    }
+  },
+  computed: {
+    disabled: function () {
+      return this.youth ? null : 'disabled'
     }
   }
 }

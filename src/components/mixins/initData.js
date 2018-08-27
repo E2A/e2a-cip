@@ -48,7 +48,6 @@ export const initData = {
       })
       // Create for initial load
       this.$store.dispatch('entities/countryindicators/insert', { data: setupData })
-      console.log(this.$store.getters['entities/countryindicators/query']().first())
     }
   }
 }

@@ -6,8 +6,12 @@
 
 <script>
 import vSelect from 'vue-select'
+import locale2 from 'locale2'
+import { dataMethods } from '@/components/mixins/dataMethods'
+
 export default {
   name: 'LanguageSwitcher',
+  mixins: [dataMethods],
   components: {
     vSelect
   },
@@ -29,6 +33,28 @@ export default {
         this.$i18n.locale = setLocale
       }
     }
+  },
+  methods: {
+    detectLanguage: function () {
+      var locale = ''
+      // Browser sniff
+      if (locale2) {
+        locale = locale2
+      }
+
+      // Use URL Query for Native App and to allow forced language
+      if (this.$route.query.lang) {
+        locale = this.$route.query.lang
+      }
+
+      if (locale) {
+        locale = locale.split('-')[0]
+        this.$i18n.locale = locale
+      }
+    }
+  },
+  created () {
+    this.detectLanguage()
   }
 }
 </script>

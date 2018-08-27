@@ -57,6 +57,16 @@
                 size="small"
                 :class="space.marginTopNarrow"
               />
+              <BaseButtonLink
+                v-if="item.checkListName"
+                :to="`/uploads/checklists/${item.checkListName}`"
+                :label="$t('checkListButtonText')"
+                size="small"
+                role="primary"
+                :class="space.marginLeftNarrow"
+                :router="false"
+                target="_blank"
+              />
             </div>
           </BaseGutterWrapper>
         </BaseVerticalList>

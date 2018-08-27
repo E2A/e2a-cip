@@ -14,7 +14,8 @@ let mainWindow
 
 // Standard scheme must be registered before the app is ready
 protocol.registerStandardSchemes(['app'], { secure: true })
-function createMainWindow () {
+
+function createMainWindow (language) {
   const window = new BrowserWindow({width: 1500, height: 1500})
 
   if (isDevelopment) {
@@ -24,11 +25,15 @@ function createMainWindow () {
   } else {
     createProtocol('app')
     //   Load the index.html when not in development
+    // Pass language of OS as query string
     window.loadURL(
       formatUrl({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file',
-        slashes: true
+        slashes: true,
+        query: {
+          lang: language
+        }
       })
     )
   }
@@ -68,5 +73,8 @@ app.on('ready', async () => {
     // Install Vue Devtools
     await installVueDevtools()
   }
-  mainWindow = createMainWindow()
+  mainWindow = createMainWindow(app.getLocale())
+
+  // Uncomment this to show console.
+  // mainWindow.webContents.openDevTools()
 })

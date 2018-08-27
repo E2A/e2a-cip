@@ -1,10 +1,33 @@
-# Get Started
+# Get Started / Installation
 1) Install [yarn](https://yarnpkg.com/lang/en/)
 2) In the root of this directory run `yarn install` to install dependencies
-3) Run `yarn serve` in the root dir to run a server on localhost
-4) Go to `localhost:8080` to view the app
-5) To package the app for desktop use run `yarn build:electron --windows` or `yarn build:electron --macos` (the final files will be in the `/dist_electron` folder)
-6) To package the app for hosting use run `yarn build` (the final files will be in the `/dist` folder)
+
+# To Develop Locally
+1) Run `yarn serve` in the root dir to run a server on localhost
+2) Go to `localhost:8080` to view the app
+3) To run / debug electron app on MacOS run: `./dist_electron/mac/E2A-Analysis.app/Contents/MacOS/E2A-Analysis` and any `console.log()` and other electron errors will display in terminal.
+
+# Package for distribution on your own server
+1) Install the application
+2) Package the app for hosting use run `yarn build` (the final files will be in the `/dist` folder)
+- [Vue CLI documentation for deployment](https://cli.vuejs.org/guide/deployment.html#general-guidelines)
+- [Article on deployment with NGINX as webserver on Digital Ocean](https://medium.com/@Web_Bailey/deploy-a-vuejs-app-with-digitalocean-fd6e7af07e40)
+
+# Creating and distributing the desktop builds
+After having gone through the get started steps:
+1) Package the app for desktop use run `yarn build:electron --windows` or `yarn build:electron --macos` (the final files will be in the `/dist_electron` folder)
+2) Zip the `.dmg` file for mac and name the file `mac-installer.zip`
+3) Zip the `.exe` file for windows and name the file `windows-installer-portable.zip`
+4) Zip the folder named `win-ia32-unpacked` and name the file `windows-installer.zip`
+5) Clone the LFS respository `git lfs clone git@github.com:E2A/e2a-electron-builds.git`
+6) Copy the files you just zipped from steps 2-4, and replace the cloned files in the repository found in step 5
+7) If you prefer web-based uploading, go to the [git repository](https://github.com/E2A/e2a-electron-builds) and upload the files there.
+8) If there were major changes in the file sizes, update the MBs listed in the current site content [here](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml)
+
+# A note on lanuage
+We are using LingoHub for translation.
+You can also force an initial language to load by passing `?lang=en` or `fr` (for english and french respectively)
+It will also look at the browser / OS language and default to that.
 
 # Editing Content
 To edit content you can click [here](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml)

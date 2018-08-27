@@ -7,7 +7,6 @@ export const electronPDF = {
       const fs = require('fs')
       const os = require('os')
       const remote = require('electron').remote
-      // const shell = require('electron').shell
       var pdfSuccess = false
 
       // Create temp path

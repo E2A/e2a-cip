@@ -9,7 +9,7 @@
         <img src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg" alt="E2A and Pathfinder" />
       </router-link>
       <!-- Initial translation wiring -->
-      <!-- <LanguageSwitcher /> -->
+      <LanguageSwitcher />
       <nav :class="base.menu">
         <BaseGutterWrapper
           :class="menu.list"
@@ -77,8 +77,12 @@ export default {
   },
   data: function () {
     return {
-      notificationMessage: '',
-      links: {
+      notificationMessage: ''
+    }
+  },
+  computed: {
+    links: function () {
+      return {
         setup: {
           url: '/setup',
           text: 'Setup',

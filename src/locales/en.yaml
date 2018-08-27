@@ -111,6 +111,7 @@ en:
     nextStep: About EIPs
   # Evidence-Informed Practices
   readMore: "Read More"
+  checkListButtonText: "View checklist"
   bestPracticeTitle: About Evidence-Informed Practices (EIP)
   bestPracticeResourceSubtitle: Further reading
   backToBestPractices: Back to Evidence-Informed Practices (EIP)
@@ -123,6 +124,8 @@ en:
     bestPractice1:
       title: Providing age and developmentally appropriate services
       icon: eip-choice
+      # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
+      checkListName: ''
       teaser: |-
         Age and developmentally appropriate services are sometimes described as “adolescent- and youth-friendly.” Adolescent- and youth-friendly sexual and reproductive health (AYSRH) services are SRH services that comply with the five World Health Organization-established standards as well as international norms for improved quality of health services for adolescents. These services commonly include safe and affordable contraceptive methods;  prevention and treatment of HIV/AIDS and care for STIs other than HIV; the provision of accurate sexual and reproductive health information; and sensitive counselling and care for sexual health and wellbeing. Services may also include youth-friendly obstetric and antenatal care for pregnant girls and women; post-abortion care services, prevention, detection, and counselling for gender-based violence; and the prevention, detection, and treatment cervical cancer.
       body: |-
@@ -184,6 +187,7 @@ en:
 
         [^10]: Rosenberg NE, Bhushan NL, Vansia D, et al. Comparing Youth Friendly Health Services to the Standard of Care through "Girl Power-Malawi": A Quasi-Experimental Cohort Study.J Acquir Immune Defic Syndr. 2018 Aug 1. doi: 10.1097/QAI.0000000000001830.
       resources:
+        # Add resources below copying the same format and changing the number appended to resource (ie resource1, resource2 etc)
         resource1:
           title: Resource Title
           teaser: |-
@@ -193,6 +197,8 @@ en:
       title: "Expanding the range of contraceptive methods available to adolescents\
         \ and young people (including LARCs and DMPA-SC)"
       icon: eip-contraceptives
+      # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
+      checkListName: ''
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -202,6 +208,7 @@ en:
 
         At ego quem huic anteponam non audeo dicere; Nam si amitti vita beata potest, beata esse non potest. Ne amores quidem sanctos a sapiente alienos esse arbitrantur. Duo Reges: constructio interrete. Sic vester sapiens magno aliquo emolumento commotus cicuta, si opus erit, dimicabit. Bonum patria: miserum exilium. Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Mihi quidem Antiochum, quem audis, satis belle videris attendere. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Apud imperitos tum illa dicta sunt, aliquid etiam coronae datum;
       resources:
+        # Add resources below copying the same format and changing the number appended to resource (ie resource1, resource2 etc)
         resource1:
           title: Resource Title
           teaser: |-
@@ -211,6 +218,8 @@ en:
       title: "Inclusion of vulnerable and underserved youth groups (including married\
         \ adolescent girls ad FTPs)"
       icon: eip-couple
+      # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
+      checkListName: ''
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -228,6 +237,8 @@ en:
     bestPractice4:
       title: "Youth participation and leadership in AYSRH programs"
       icon: eip-youth
+      # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
+      checkListName: ''
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -245,6 +256,8 @@ en:
     bestPractice5:
       title: "Multi-sectoral coordination for AYSRH"
       icon: eip-coordination
+      # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
+      checkListName: ''
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -262,6 +275,8 @@ en:
     bestPractice6:
       title: "Comprehensive sexuality education"
       icon: eip-book
+      # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
+      checkListName: ''
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -279,6 +294,8 @@ en:
     bestPractice7:
       title: "Support to families and communities for AYSRH"
       icon: eip-community
+      # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
+      checkListName: ''
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
@@ -296,6 +313,8 @@ en:
     bestPractice8:
       title: "Girls' empowerment"
       icon: eip-equality
+      # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
+      checkListName: ''
       teaser: |-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo ita: non posse honeste vivi, nisi honeste vivatur? Nos vero, inquit ille. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Universa enim illorum ratione cum tota vestra confligendum puto.
       body: |-
