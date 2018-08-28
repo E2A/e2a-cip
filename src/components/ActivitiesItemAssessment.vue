@@ -5,7 +5,7 @@
 -->
 
 <template>
-  <li :class="`${base.wrapper} ${disabled}`">
+  <div :class="`${base.wrapper} ${disabled}`">
     <BaseDetails
       @open="expandText"
       @close="truncateText"
@@ -71,7 +71,7 @@
         </div>
       </template>
     </BaseDetails>
-  </li>
+  </div>
 </template>
 
 <script>
@@ -141,6 +141,8 @@ export default {
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
+@import '~styleConfig/breakpoints';
+
 .wrapper {
   composes: top from 'styles/borders.scss';
   composes: paddingVerticalNarrow from 'styles/spacing.scss';
@@ -169,7 +171,10 @@ export default {
 
 .icons {
   list-style: none;
-  text-align: right;
+
+  @include media('>medium') {
+    text-align: right;
+  }
 }
 
 .icon {

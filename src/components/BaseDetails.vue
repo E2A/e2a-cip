@@ -69,9 +69,11 @@ export default {
 <style lang="scss" module="base">
 @import '~bourbon/core/bourbon';
 @import '~styleConfig/type';
+@import '~styleConfig/breakpoints';
 
 $icon-size: 1rem;
 $icon-margin: 0.8rem;
+$breakpoint: 'medium';
 
 .wrapper {
   padding-left: ($icon-size) + $icon-margin;
@@ -81,10 +83,15 @@ $icon-margin: 0.8rem;
   composes: default from 'styles/animation.scss';
   display: block;
   position: relative;
+  padding: 0;
+  font-size: 0; // kill whitespace bugs in webkit
+  list-style-image: none;
 
-  @supports (display: flex) {
-    display: flex;
-    align-items: center;
+  @include media('>#{$breakpoint}') {
+    @supports (display: flex) {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &:focus {
@@ -111,18 +118,24 @@ $icon-margin: 0.8rem;
       transform: rotate(0);
     }
   }
+
+  &::-webkit-details-marker {
+    background: transparent;
+    color: transparent;
+  }
 }
 
 .summaryContent {
   display: block;
   position: relative;
-  font-size: 0;
 
-  @supports (display: flex) {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    align-items: center;
+  @include media('>#{$breakpoint}') {
+    @supports (display: flex) {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }
 
@@ -130,14 +143,18 @@ $icon-margin: 0.8rem;
   @include type-size-default();
   display: inline-block;
   vertical-align: middle;
-
-  @supports (flex: 1) {
-    flex: 1;
-  }
 }
 
 .split {
-  max-width: 50%;
+  width: 100%;
+
+  @include media('>#{$breakpoint}') {
+    width: 50%;
+
+    @supports (flex: 1) {
+      flex: 1;
+    }
+  }
 }
 
 .click {

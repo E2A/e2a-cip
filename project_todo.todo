@@ -65,7 +65,7 @@
  # Browser testing/debugging/deployment
  ☐ Make sure layouts work without flexbox
    ☐ Timeline nav
-   ☐ activities tables
+   ✔ activities tables @done (18-08-28 16:37)
  ☐ Prerender landing page via `spa-prerender-plugin` so JS can download in the BG @nice-to-have
  ☐ Add loading bar/animation in case JS takes awhile to download @nice-to-have
  ☐ Debug electron SVG sprints:
