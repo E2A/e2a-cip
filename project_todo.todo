@@ -40,9 +40,9 @@
      ☐ Placement
      ☐ Animation @nice-to-have
    ☐ Analysis
-     ☐ Details component
+     ✔ Details component @done (18-08-28 17:07)
        ✔ Take over behaviors with JS and make stateful @done (18-08-28 11:49)
-       ☐ Fix focus rings
+       ✔ Fix focus rings @done (18-08-28 17:07)
    ☐ Results
      ☐ Hide top row of icons and display edit/cancel buttons when row is expanded
      ☐ Fix overlap b/n suggestion input and delete button - gutter issue?
