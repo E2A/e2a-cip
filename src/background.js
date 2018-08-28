@@ -76,5 +76,5 @@ app.on('ready', async () => {
   mainWindow = createMainWindow(app.getLocale())
 
   // Uncomment this to show console.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 })
