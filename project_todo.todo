@@ -57,6 +57,7 @@
  ☐ Add loading bar/animation in case JS takes awhile to download @nice-to-have
  ☐ Debug electron SVG issues:
    ☐ Use debugging protocol outlined in README.
+ ☐ Debug french input...
 
  # Nice to have
  ☐ Dot seems to not change on nav change (likely b/c prop or computed property?) @scott?

@@ -12,7 +12,13 @@ export default class CountryIndicator extends Model {
       description: this.string(''),
       value: this.attr(null),
       sourceUrl: this.string(''),
-      citation: this.string('')
+      citation: this.string(''),
+      comparatorOperator: this.string(''),
+      comparatorIndicator: this.string(''),
+      comparatorTextTrue: this.string(''),
+      comparatorTextFalse: this.string(''),
+      comparatorTextTrueType: this.string(''),
+      comparatorTextFalseType: this.string('')
     }
   }
 }

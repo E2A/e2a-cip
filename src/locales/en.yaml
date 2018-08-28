@@ -501,3 +501,13 @@ en:
       iso2codeHeader: 'ISO2'
       # Do Not Translate - input the string of the heading that has the indicator value
       indicatorValueHeader: 'percentYouth'
+      # Do Not Translate - this should be a operator (>, <, ===, !=, <=, >=)
+      comparatorOperator: '>'
+      # Do Not Translate - this should be the name of the indicator to compare against
+      comparatorIndicator: 'youthFocusBudget'
+      comparatorTextTrue: 'Congrats your budget is larger'
+      comparatorTextFalse: 'Your budget is smaller'
+      # Do not translate - this should be one of warning, success, info
+      comparatorTextTrueType: 'success'
+      # Do not translate - this should be one of warning, success, info
+      comparatorTextFalseType: 'warning'
