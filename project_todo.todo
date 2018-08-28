@@ -27,9 +27,9 @@
      ☐ Placement
      ☐ Animation @nice-to-have
    ☐ Analysis
-     ☐ Details component
-       ☐ Take over behaviors with JS and make stateful
-       ☐ Fix focus rings
+     ✔ Details component @done (18-08-28 17:07)
+       ✔ Take over behaviors with JS and make stateful @done (18-08-28 11:49)
+       ✔ Fix focus rings @done (18-08-28 17:07)
    ☐ Results
      ☐ Hide top row of icons and display edit/cancel buttons when row is expanded
      ☐ Fix overlap b/n suggestion input and delete button - gutter issue?
@@ -52,7 +52,7 @@
  # Browser testing/debugging/deployment
  ☐ Make sure layouts work without flexbox
    ☐ Timeline nav
-   ☐ activities tables
+   ✔ activities tables @done (18-08-28 16:37)
  ☐ Prerender landing page via `spa-prerender-plugin` so JS can download in the BG @nice-to-have
  ☐ Add loading bar/animation in case JS takes awhile to download @nice-to-have
  ☐ Debug electron SVG issues:

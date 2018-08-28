@@ -1,39 +1,97 @@
 <template>
-  <details>
-    <summary :class="base.summary">
-      <div :class="base.summaryContent">
-        <div :class="base.item">
+  <details
+    :class="base.wrapper"
+    :open="isOpen"
+  >
+    <!--
+      collapsed content
+      -> disable element's native behavior and take over with JS
+    -->
+    <summary :class="base.summary" @click.prevent>
+      <BaseGutterWrapper
+        :class="base.summaryContent"
+        gutterY="narrow"
+        gutterX="narrow"
+      >
+        <div
+          @click.prevent="toggleOpen"
+          @keyup.enter="toggleOpen"
+          :tabindex="0"
+          :class="[base.item, base.click, twoColSummary]"
+        >
           <slot name="summaryLeft">Add summary here</slot>
         </div>
-        <div :class="base.item">
-          <slot name="summaryRight">Add summary here</slot>
+        <div
+          v-if="$slots.summaryRight"
+          :class="[base.item, twoColSummary]"
+        >
+          <slot name="summaryRight"></slot>
         </div>
-      </div>
+      </BaseGutterWrapper>
     </summary>
-    <div>
+
+    <!-- expanded content -->
+    <div v-show="isOpen">
       <slot>Add expanded details here</slot>
     </div>
   </details>
 </template>
 
 <script>
+import BaseGutterWrapper from './BaseGutterWrapper.vue'
+
 export default {
   name: 'BaseDetails',
+  components: {
+    BaseGutterWrapper
+  },
   data () {
     return {
-      open: false
+      isOpen: false
+    }
+  },
+  computed: {
+    twoColSummary: function () {
+      // https://stackoverflow.com/questions/47432702/determining-if-slot-content-is-null-or-empty
+      return this.$slots.summaryRight && this.base.split
+    }
+  },
+  methods: {
+    toggleOpen: function (event) {
+      this.isOpen = !this.isOpen
+      if (this.isOpen) this.$emit('open')
+      if (!this.isOpen) this.$emit('close')
     }
   }
 }
 </script>
 
 <style lang="scss" module="base">
-.summary {
-  display: block;
+@import '~bourbon/core/bourbon';
+@import '~styleConfig/type';
+@import '~styleConfig/breakpoints';
 
-  @supports (display: flex) {
-    display: flex;
-    align-items: center;
+$icon-size: 1rem;
+$icon-margin: 0.8rem;
+$breakpoint: 'medium';
+
+.wrapper {
+  padding-left: ($icon-size) + $icon-margin;
+}
+
+.summary {
+  composes: default from 'styles/animation.scss';
+  display: block;
+  position: relative;
+  padding: 0;
+  font-size: 0; // kill whitespace bugs in webkit
+  list-style-image: none;
+
+  @include media('>#{$breakpoint}') {
+    @supports (display: flex) {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &:focus {
@@ -42,17 +100,28 @@ export default {
 
   // replace with actual icon
   &::before {
-    $size: 1rem;
-    content: '[+]';
+    content: '';
+    background-image: url('../assets/images/icons/_external/arrow-down-midtone.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
     display: block;
-    position: relative;
-    font-size: $size;
-    line-height: 1;
-    width: ($size + 0.5rem);
+    position: absolute;
+    left: -($icon-size + $icon-margin);
+    top: 50%;
+    margin-top: -($icon-size / 2);
+    height: $icon-size;
+    width: $icon-size;
+    transform: rotate(270deg);
 
     [open] & {
-      content: '[-]';
+      transform: rotate(0);
     }
+  }
+
+  &::-webkit-details-marker {
+    background: transparent;
+    color: transparent;
   }
 }
 
@@ -60,19 +129,36 @@ export default {
   display: block;
   position: relative;
 
-  @supports (display: flex) {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    align-items: center;
+  @include media('>#{$breakpoint}') {
+    @supports (display: flex) {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }
 
 .item {
+  @include type-size-default();
   display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
 
-  @supports (flex: 1) {
-    flex: 1;
+.split {
+  width: 100%;
+
+  @include media('>#{$breakpoint}') {
+    width: 50%;
+
+    @supports (flex: 1) {
+      flex: 1;
+    }
   }
+}
+
+.click {
+  cursor: pointer;
 }
 </style>

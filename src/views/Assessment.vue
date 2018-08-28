@@ -62,11 +62,11 @@
 
         <!-- table of activities -->
         <ActivitiesList>
-          <div
-            v-for="(activities, index) in groupedActivities"
-            :key="`gA-${index}`"
-          >
-            <template v-if="activities.activityObjects.length > 0">
+          <template v-for="(activities, index) in groupedActivities">
+            <li
+              v-if="activities.activityObjects.length > 0"
+              :key="`gA-${index}`"
+            >
               <BaseHeading
                 :level="3"
                 :centered="false"
@@ -80,13 +80,14 @@
               <ActivitiesItemAssessment
                 v-for="(activity, index) in activities.activityObjects"
                 :key="`activity-${index}`"
+                :shortText="activity.shortText"
                 :text="activity.text"
                 :id="activity.id"
                 :budget="activity.budget"
                 :youth="activity.youthCentric"
               />
-            </template>
-          </div>
+            </li>
+          </template>
         </ActivitiesList>
       </BaseWidthWrapper>
     </BaseSectionWrapper>

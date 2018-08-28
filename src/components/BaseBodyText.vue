@@ -67,7 +67,7 @@ $gutter: space('xnarrow'); // eta on scale
     }
   }
 
-  > * + *,
+  * + *,
   p + p {
     margin-top: $gutter;
   }

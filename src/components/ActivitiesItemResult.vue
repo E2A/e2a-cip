@@ -6,7 +6,10 @@
 
 <template>
   <li :class="base.wrapper">
-    <BaseDetails>
+    <BaseDetails
+      @open="expandText"
+      @close="truncateText"
+    >
       <template slot="summaryLeft">
         <BaseHeading
           :centered="false"
@@ -16,7 +19,7 @@
           color="dark"
           sub
         >
-          {{activityInstance.text}}
+          {{displayText}}
         </BaseHeading>
       </template>
       <template slot="summaryRight">
@@ -150,7 +153,8 @@ export default {
         [this.$t('activityTable.defaultID')]: this.activityInstance.id,
         [this.$t('activityTable.defaultBudget')]: `${this.activityInstance.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
         [this.$t('activityTable.defaultYouthCentered')]: this.activityInstance.youthCentric ? this.$t('yesRaw') : this.$t('noRaw')
-      }
+      },
+      displayText: this.activityInstance.shortText || this.activityInstance.text
     }
   },
   computed: {
@@ -187,6 +191,12 @@ export default {
           text: ''
         }
       })
+    },
+    expandText: function () {
+      this.displayText = this.activityInstance.text
+    },
+    truncateText: function () {
+      this.displayText = this.activityInstance.shortText
     }
   }
 }

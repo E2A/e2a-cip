@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <BaseIconSpriteMap />
-    <NavHeader :key="this.getItemCount('all')" />
+    <NavHeader
+      v-if="showNav"
+      :key="this.getItemCount('all')"
+    />
     <router-view :key="$route.fullPath"></router-view>
   </div>
 </template>
@@ -19,8 +22,14 @@ export default {
     NavHeader,
     BaseIconSpriteMap
   },
+  computed: {
+    // should be a better way to do this but router props don't work here
+    showNav: function () {
+      return this.$route.name !== 'home'
+    }
+  },
   created () {
-    // Force redirect to home if electron.
+    // Force redirect to home if electron
     if (this.checkElectron()) {
       this.$router.replace('/')
     }
@@ -92,7 +101,7 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 body {
