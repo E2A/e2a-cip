@@ -253,39 +253,35 @@ $icon-size: 2.25rem;
 
 .option {
   $size: 1.8rem;
+  $margin: 0.4rem;
   composes: default from 'styles/animation.scss';
   composes: midtone from 'styles/color.scss';
-  display: inline-block;
-  position: relative;
   background: transparent;
   border: none;
+  cursor: pointer;
+  display: inline-block;
+  min-width: $size;
   outline: none;
   overflow: visible;
+  padding: ($size + $margin) 0 0 0;
+  position: relative;
   text-align: center;
-  cursor: pointer;
-  padding: 0;
-  max-width: ($size + 0.5rem);
 
   &::before,
   &::after {
+    border-radius: 50%;
     content: ' ';
     display: inline-block;
     height: $size;
+    left: 50%;
+    margin-left: -($size / 2);
+    position: absolute;
+    top: 0;
     width: $size;
-    border-radius: 50%;
   }
 
   &::before {
-    position: relative;
-    margin-bottom: 0.4rem;
     background-color: color('no');
-  }
-
-  &::after {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    margin-left: -($size/2);
   }
 
   &:hover,
@@ -309,7 +305,7 @@ $icon-size: 2.25rem;
 
   &::after {
     @include border($w: 'medium');
-    border-color: border('dark');
+    border-color: border('dark') !important;
   }
 }
 
