@@ -69,7 +69,7 @@ export const dataMethods = {
         .first()
 
       if (countryIndicator) {
-        return {name: indicatorName, value: countryIndicator.indicatorValue}
+        return countryIndicator
       } else {
         return {error: this.$t('indicatorDataNotPresent', {indicatorName: indicatorName})}
       }

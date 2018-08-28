@@ -24,6 +24,34 @@ After having gone through the get started steps:
 7) If you prefer web-based uploading, go to the [git repository](https://github.com/E2A/e2a-electron-builds) and upload the files there.
 8) If there were major changes in the file sizes, update the MBs listed in the current site content [here](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml)
 
+# A note on adding country indicators
+Country indicators need to be added to the [en.yaml file](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml) in the below format.
+
+```
+countryIndicators:
+  indicator1:
+    name: 'Percent of Youth in Country'
+    description: 'calculated as population 15-24 / 15-49 as of 2015'
+    # Do Not Translate
+    sourceUrl: 'https://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2017_POP_F15_1_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx'
+    # Do Not Translate
+    sourceCitation: 'United Nations, Department of Economic and Social Affairs, Population Division (2017). World Population Prospects: The 2017 Revision, DVD Edition.'
+    # Do Not Translate
+    fileName: 'percentYouth.csv'
+    # Do Not Translate
+    iso2codeHeader: 'ISO2'
+    # Do Not Translate
+    indicatorValueHeader: 'percentYouth.csv'
+```
+
+### Other Considerations for country indicators
+You will also need to upload the file as a CSV with UTF-8 character encoding into `public > uploads > country_indicators` - the file name is then added below. Note you **cannot** use excel xlsx or xls files, you will need to open them in excel and convert them to a CSV. Google drive allows you do this well and typically does a better job of ensuring UTF-8 encoding, so where possible, we suggest using google drive over MS Office.
+
+For updating the UN Country population data you can use [this google sheet](https://docs.google.com/spreadsheets/d/1yN2Hig0MdTjzm5HyyYcJ6Nopc3X42qD8pNE0iXxAjVc/edit).
+
+If you need to convert from other ISO formats to ISO2, you can use this [JSON file](https://github.com/E2A/e2a-cip/blob/master/src/authorities/country-conversion-table.json).
+
+
 # A note on lanuage
 We are using LingoHub for translation.
 You can also force an initial language to load by passing `?lang=en` or `fr` (for english and french respectively)
