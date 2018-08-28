@@ -1,176 +1,22 @@
 <template>
   <div>
-    <BaseGutterWrapper :class="base.grid">
-
-      <!-- TODO @jay: turn each chart into a component, see ChartPie.vue -->
-
-      <!-- % Activity count by type -->
-      <div :class="base.gridItem">
-        <div :class="[border.top, space.paddingTop]">
-          <BaseHeading
-            :class="space.paddingBottomNarrow"
-            :level="3"
-            scale="delta"
-            weight="bold"
-            color="dark"
-          >
-            {{this.$t('chartTitles.activityTypeCount')}}
-          </BaseHeading>
-
-          <BaseGutterWrapper
-            gutterY="narrow"
-            gutterX="narrow"
-          >
-
-            <!-- Chart -->
-            <div
-              v-if="this.getItemCount('activities') > 0"
-              id="activityTypeCount"
-              :class="base.chart"
-            ></div>
-
-            <!-- Chart Labels -->
-            <dl :class="base.legend">
-              <div
-                v-for="(label,index) of labelData.activityTypeData"
-                :class="legend.item"
-                :key="`aCount-${index}`"
-              >
-                <dt :class="[legend.key, label.class]">{{Math.round(label.countPercent*100)}}%</dt>
-                <dd :class="legend.value">{{label.type}}</dd>
-              </div>
-            </dl>
-          </BaseGutterWrapper>
-        </div>
-      </div>
-
-      <!-- Budget % of total by activity types -->
-      <div :class="base.gridItem">
-        <div :class="[border.top, space.paddingTop]">
-          <BaseHeading
-            :class="space.paddingBottomNarrow"
-            :level="3"
-            scale="delta"
-            weight="bold"
-            color="dark"
-          >
-            {{this.$t('chartTitles.activityTypeBudget')}}
-          </BaseHeading>
-
-          <BaseGutterWrapper
-            gutterY="narrow"
-            gutterX="narrow"
-          >
-            <!-- Chart -->
-            <div
-              v-if="this.getItemCount('activities') > 0"
-              :class="base.chart"
-              id="activityTypeBudget"
-            ></div>
-
-            <!-- Chart Labels -->
-            <dl :class="base.legend">
-              <div
-                v-for="(label,index) of labelData.activityTypeData"
-                :class="legend.item"
-                :key="`aBudget-${index}`"
-              >
-                <dt :class="[legend.key, label.class]">
-                  {{Math.round(label.budgetPercent * 100)}}%
-                </dt>
-                <dd :class="legend.value">{{label.type}}</dd>
-              </div>
-            </dl>
-          </BaseGutterWrapper>
-        </div>
-      </div>
-
-      <!-- Budget % youth focused -->
-      <div :class="base.gridItem">
-        <div :class="[border.top, space.paddingTop]">
-          <BaseHeading
-            :class="space.paddingBottomNarrow"
-            :level="3"
-            scale="delta"
-            weight="bold"
-            color="dark"
-          >
-            {{this.$t('chartTitles.youthFocusBudget')}}
-          </BaseHeading>
-
-          <BaseGutterWrapper
-            gutterY="narrow"
-            gutterX="narrow"
-          >
-            <!-- Chart -->
-            <div
-              v-if="this.getItemCount('activities') > 0"
-              :class="base.chart"
-              id="youthFocusBudget"
-            ></div>
-
-            <!-- Chart Labels -->
-            <dl :class="base.legend">
-              <div :class="legend.item">
-                <dt :class="[legend.key]" class="youth-centric">
-                  {{Math.round(labelData.youthCentricBudgetData[0].youthCentricPercent * 100)}}%
-                </dt>
-                <dd :class="legend.value">{{this.$t('chartTitles.youthCentricLabel')}}</dd>
-              </div>
-              <div :class="legend.item">
-                <dt :class="[legend.key]" class="not-youth-centric">
-                  {{Math.round(labelData.youthCentricBudgetData[0].notYouthCentricPercent * 100)}}%
-                </dt>
-                <dd :class="legend.value">{{this.$t('chartTitles.notYouthCentricLabel')}}</dd>
-              </div>
-            </dl>
-          </BaseGutterWrapper>
-        </div>
-      </div>
-
-      <!-- % activity count by youth focused -->
-      <div :class="base.gridItem">
-        <div :class="[border.top, space.paddingTop]">
-          <BaseHeading
-            :class="space.paddingBottomNarrow"
-            :level="3"
-            scale="delta"
-            weight="bold"
-            color="dark"
-          >
-            {{this.$t('chartTitles.youthFocusCount')}}
-          </BaseHeading>
-
-          <BaseGutterWrapper
-            gutterY="narrow"
-            gutterX="narrow"
-          >
-            <!-- Chart -->
-            <div
-              v-if="this.getItemCount('activities') > 0"
-              :class="base.chart"
-              id="youthFocusCount"
-            ></div>
-
-            <!-- Chart Labels -->
-            <dl :class="base.legend">
-              <div :class="legend.item">
-                <dt :class="[legend.key]" class="youth-centric">
-                  {{Math.round(labelData.youthCentricActivityData[0].youthCentricPercent * 100)}}%
-                </dt>
-                <dd :class="legend.value">{{this.$t('chartTitles.youthCentricLabel')}}</dd>
-              </div>
-              <div :class="legend.item">
-                <dt :class="[legend.key]" class="not-youth-centric">
-                  {{Math.round(labelData.youthCentricActivityData[0].notYouthCentricPercent * 100)}}%
-                </dt>
-                <dd :class="legend.value">{{this.$t('chartTitles.notYouthCentricLabel')}}</dd>
-              </div>
-            </dl>
-          </BaseGutterWrapper>
-        </div>
-      </div>
-    </BaseGutterWrapper>
+    <BaseHeading
+      :class="space.paddingBottomNarrow"
+      :level="3"
+      scale="delta"
+      weight="bold"
+      color="dark"
+      v-if="chartItemTitle"
+    >
+      {{chartItemTitle}}
+    </BaseHeading>
+    <Chart
+      v-for="(chartName,i) of chartNames"
+      :key="`chart-${i}`"
+      :chartName="chartName"
+      :seriesData="chartData.seriesData[chartName]"
+      :labelData="chartData.labelData[chartName]"
+    />
     <div :class="[space.marginTop, space.paddingTop, border.top, type.right]">
       <BaseButton
         v-if="showExport"
@@ -186,22 +32,21 @@
 import { dataIO } from './mixins/dataIO'
 import { dataMethods } from './mixins/dataMethods'
 import { activityTypes } from './mixins/activityTypes'
-import Chartist from 'chartist'
-import BaseHeading from './BaseHeading.vue'
+import Chart from './Chart.vue'
 import BaseButton from './BaseButton.vue'
-import BaseGutterWrapper from './BaseGutterWrapper.vue'
+import BaseHeading from './BaseHeading.vue'
 
 export default {
   name: 'ChartItems',
   mixins: [dataIO, dataMethods, activityTypes],
   components: {
-    BaseHeading,
+    Chart,
     BaseButton,
-    BaseGutterWrapper
+    BaseHeading
   },
   data () {
     return {
-      labelData: this.getChartData()
+      chartData: this.renderChartData()
     }
   },
   props: {
@@ -209,6 +54,34 @@ export default {
       type: [String],
       required: false,
       default: 'full'
+    },
+    chartNames: {
+      type: Array,
+      required: false,
+      default: () => {
+        return [
+          'youthFocusBudget',
+          'youthFocusCount',
+          'activityTypeBudget',
+          'activityTypeCount'
+        ]
+      },
+      validator: (value) => {
+        // The value must match one of these strings
+        const valueArray = value.map((v) =>
+          [
+            'youthFocusBudget',
+            'youthFocusCount',
+            'activityTypeBudget',
+            'activityTypeCount'
+          ].indexOf(v) !== -1
+        )
+        return valueArray.indexOf(true) !== -1
+      }
+    },
+    chartItemTitle: {
+      type: String,
+      required: false
     }
   },
   computed: {
@@ -284,19 +157,29 @@ export default {
       const chartDataObject = this.getChartData()
 
       // Export csv data for each data type
-      this.csvExportItem(chartDataObject.youthCentricActivityData, 'youth-centric-activity-data')
-      this.csvExportItem(chartDataObject.youthCentricBudgetData, 'youth-centric-budget-data')
-      this.csvExportItem(chartDataObject.activityTypeData, 'activity-type-data')
+      if (this.chartNames.includes('activityTypeBudget') || this.chartNames.includes('activityTypeCount')) {
+        this.csvExportItem(chartDataObject.youthCentricActivityData, 'youth-centric-activity-data')
+      }
+
+      if (this.chartNames.includes('youthFocusBudget')) {
+        this.csvExportItem(chartDataObject.youthCentricBudgetData, 'youth-centric-budget-data')
+      }
+
+      if (this.chartNames.includes('youthFocusCount')) {
+        this.csvExportItem(chartDataObject.activityTypeData, 'activity-type-data')
+      }
 
       this.notify(this.$t('results.exportChartSuccess'), 'success')
     },
-    createCharts: function () {
+    renderChartData: function () {
       // Get Data
       const chartData = this.getChartData()
+
+      // Build Series Data
       var activtyTypeCountSeries = []
       var activtyTypeBudgetSeries = []
 
-      // Parse series data
+      // Parse series data to be chartist friendly
       chartData.activityTypeData.forEach(function (item) {
         activtyTypeCountSeries.push(
           {
@@ -314,51 +197,86 @@ export default {
         )
       })
 
-      // % Activity count by type
-      // eslint-disable-next-line
-      const activityTypeCount = new Chartist.Pie('#activityTypeCount', {series: activtyTypeCountSeries})
+      const youthFocusedBudgetSeries = [
+        {
+          value: chartData.youthCentricBudgetData[0].youthCentricBudget,
+          name: this.$t('chartTitles.youthCentricLabel'),
+          className: 'youth-centric'
+        },
+        {
+          value: chartData.youthCentricBudgetData[0].notYouthCentricBudget,
+          name: this.$t('chartTitles.notYouthCentricLabel'),
+          className: 'not-youth-centric'
+        }
+      ]
 
-      // Budget % of total by activity types
-      // eslint-disable-next-line
-      const activityTypeBudget = new Chartist.Pie('#activityTypeBudget', {series: activtyTypeBudgetSeries})
+      const youthFocusedCountSeries = [
+        {
+          value: chartData.youthCentricActivityData[0].youthCentricCount,
+          name: this.$t('chartTitles.youthCentricLabel'),
+          className: 'youth-centric'
+        },
+        {
+          value: chartData.youthCentricActivityData[0].notYouthCentricCount,
+          name: this.$t('chartTitles.notYouthCentricLabel'),
+          className: 'not-youth-centric'
+        }
+      ]
 
-      // Budget % youth focused
-      // eslint-disable-next-line
-      const youthFocusBudget = new Chartist.Pie('#youthFocusBudget', {
-        series: [
-          {
-            value: chartData.youthCentricBudgetData[0].youthCentricBudget,
-            name: this.$t('chartTitles.youthCentricLabel'),
-            className: 'youth-centric'
-          },
-          {
-            value: chartData.youthCentricBudgetData[0].notYouthCentricBudget,
-            name: this.$t('chartTitles.notYouthCentricLabel'),
-            className: 'not-youth-centric'
-          }
-        ]
+      // Build Labels
+
+      const youthFocusedCountLabel = [
+        {
+          value: Math.round(chartData.youthCentricActivityData[0].notYouthCentricPercent * 100),
+          labelText: this.$t('chartTitles.notYouthCentricLabel')
+        },
+        {
+          value: Math.round(chartData.youthCentricActivityData[0].youthYouthCentricPercent * 100),
+          labelText: this.$t('chartTitles.youthCentricLabel')
+        }
+      ]
+
+      const youthFocusedBudgetLabel = [
+        {
+          value: Math.round(chartData.youthCentricBudgetData[0].notYouthCentricPercent * 100),
+          labelText: this.$t('chartTitles.notYouthCentricLabel')
+        },
+        {
+          value: Math.round(chartData.youthCentricBudgetData[0].youthYouthCentricPercent * 100),
+          labelText: this.$t('chartTitles.youthCentricLabel')
+        }
+      ]
+
+      const activtyTypeBudgetLabel = chartData.activityTypeData.map((item) => {
+        return {
+          value: Math.round(item.budgetPercent * 100),
+          labelText: item.type
+        }
       })
 
-      // % activity count by youth focused
-      // eslint-disable-next-line
-      const youthFocusCount = new Chartist.Pie('#youthFocusCount', {
-        series: [
-          {
-            value: chartData.youthCentricActivityData[0].youthCentricCount,
-            name: this.$t('chartTitles.youthCentricLabel'),
-            className: 'youth-centric'
-          },
-          {
-            value: chartData.youthCentricActivityData[0].notYouthCentricCount,
-            name: this.$t('chartTitles.notYouthCentricLabel'),
-            className: 'not-youth-centric'
-          }
-        ]
+      const activtyTypeCountLabel = chartData.activityTypeData.map((item) => {
+        return {
+          value: Math.round(item.countPercent * 100),
+          labelText: item.type
+        }
       })
+
+      // Build object
+      return {
+        'seriesData': {
+          'youthFocusBudget': youthFocusedBudgetSeries,
+          'youthFocusCount': youthFocusedCountSeries,
+          'activityTypeBudget': activtyTypeBudgetSeries,
+          'activityTypeCount': activtyTypeCountSeries
+        },
+        'labelData': {
+          'youthFocusBudget': youthFocusedBudgetLabel,
+          'youthFocusCount': youthFocusedCountLabel,
+          'activityTypeBudget': activtyTypeBudgetLabel,
+          'activityTypeCount': activtyTypeCountLabel
+        }
+      }
     }
-  },
-  mounted () {
-    this.createCharts()
   }
 }
 </script>

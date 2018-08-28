@@ -380,6 +380,7 @@ en:
   addAnotherRecommendation: Add another recommendation
   suggestedImprovements: Suggested improvements
   suggestImprovements: Suggest improvements
+
   results:
     value: "Value:"
     text: "Text:"
@@ -393,8 +394,10 @@ en:
     previousStep: Go back to analysis
     nextStep: Print Results & Advocate
     percentActivitesWithBP: "activites with an EIP"
+    activityWithEIPbyType: Activity With EIP by Type
     exportChartSuccess: 'You successfully exported your chart data'
   chartTitles:
+    defaultGroupHeading: 'Default Group heading'
     activityTypeCount: "% Activity count by type"
     activityTypeBudget: "Budget % of total by activity types"
     youthFocusBudget: "Budget % youth focused"

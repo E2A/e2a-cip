@@ -47,7 +47,7 @@
         >
           {{$t('resultsSubhead')}}
         </BaseHeading>
-        <ChartItems />
+        <ChartItems  />
       </section>
     </BaseSectionWrapper>
 
@@ -73,7 +73,7 @@
             scale="delta"
             v-if="false"
           >
-            <strong>{{percentBPActivites}%</strong> {{$t('results.percentActivitesWithBP')}}
+            <strong>{{percentBPActivites}}%</strong> {{$t('results.percentActivitesWithBP')}}
           </BaseHeading>
 
           <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
@@ -123,7 +123,7 @@
               >
                 {{activities.activityTypeName}}
                 <!-- Activity Count with EIP Initial Stab, remove text I dont think we need it or put it in translation -->
-                | <strong>{{percentBPActivitesByType(activities.activityTypeName)}}%</strong> {{$t('activityWithEIPbyType')}}
+                | <strong>{{percentBPActivitesByType(activities.activityTypeName)}}%</strong> {{$t('results.activityWithEIPbyType')}}
               </BaseHeading>
 
               <ActivitiesItemResult
