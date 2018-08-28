@@ -60,7 +60,7 @@ export default {
     toggleOpen: function (event) {
       this.isOpen = !this.isOpen
       if (this.isOpen) this.$emit('open')
-      if (!this.isOpen) this.$emit('closed')
+      if (!this.isOpen) this.$emit('close')
     }
   }
 }

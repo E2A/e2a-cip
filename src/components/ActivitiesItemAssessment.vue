@@ -6,7 +6,10 @@
 
 <template>
   <li :class="`${base.wrapper} ${disabled}`">
-    <BaseDetails>
+    <BaseDetails
+      @open="expandText"
+      @close="truncateText"
+    >
       <template slot="summaryLeft">
         <BaseHeading
           :level="6"
@@ -16,7 +19,7 @@
           color="dark"
           sub
         >
-          {{text}}
+          {{displayText}}
         </BaseHeading>
       </template>
       <template slot="summaryRight">
@@ -85,6 +88,9 @@ export default {
   name: 'ActivityItemAssessment',
   mixins: [bestPracticeData, dataMethods],
   props: {
+    shortText: {
+      type: String
+    },
     text: {
       type: String,
       required: true
@@ -110,12 +116,23 @@ export default {
         [this.$t('activityTable.defaultID')]: this.id,
         [this.$t('activityTable.defaultBudget')]: `${this.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
         [this.$t('activityTable.defaultYouthCentered')]: this.youth ? this.$t('yesRaw') : this.$t('noRaw')
-      }
+      },
+      displayText: this.shortText || this.text
     }
   },
   computed: {
     disabled: function () {
       return this.youth ? null : 'disabled'
+    }
+  },
+  methods: {
+    expandText: function () {
+      this.displayText = this.text
+    },
+    truncateText: function () {
+      if (this.shortText) {
+        this.displayText = this.shortText
+      }
     }
   }
 }
