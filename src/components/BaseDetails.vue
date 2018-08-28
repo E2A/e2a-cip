@@ -143,6 +143,7 @@ $breakpoint: 'medium';
   @include type-size-default();
   display: inline-block;
   vertical-align: middle;
+  width: 100%;
 }
 
 .split {
