@@ -24,6 +24,24 @@ After having gone through the get started steps:
 7) If you prefer web-based uploading, go to the [git repository](https://github.com/E2A/e2a-electron-builds) and upload the files there.
 8) If there were major changes in the file sizes, update the MBs listed in the current site content [here](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml)
 
+# A note on adding country indicators
+Country indicators need to be added to the [en.yaml file](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml) in the below format. You will also need to upload the file as a CSV with UTF-8 character encoding into `public > uploads > country_indicators` - the file name is then added below. Note you **cannot** use excel xlsx or xls files, you will need to open them in excel and convert them to a CSV. Google drive allows you do this well and typically does a better job of ensuring UTF-8 encoding, so where possible, we suggest using google drive over MS Office.
+```
+countryIndicators:
+    indicator1:
+      name: 'PERCENT OF MARRIED WOMEN 15-49 USING CONTRACEPTION, ALL METHODS (2017)'
+      description: 'this is the number'
+      # Do Not Translate
+      source: 'https://www.prb.org/international/indicator/contraception-all/table'
+      sourceName: 'UNFPA ETC'
+      # Do Not Translate
+      fileName: 'married_women_15-49_contraception.csv'
+      # Do Not Translate
+      iso2codeHeader: 'FIPS'
+      # Do Not Translate
+      indicatorValueHeader: 'Data'
+```
+
 # A note on lanuage
 We are using LingoHub for translation.
 You can also force an initial language to load by passing `?lang=en` or `fr` (for english and french respectively)
