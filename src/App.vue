@@ -25,7 +25,7 @@ export default {
   computed: {
     // should be a better way to do this but router props don't work here
     showNav: function () {
-      return this.$route.name !== 'home' && this.$route.name !== 'setup'
+      return this.$route.name !== 'home'
     }
   },
   created () {
