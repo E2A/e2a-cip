@@ -13,7 +13,12 @@
         gutterY="narrow"
         gutterX="narrow"
       >
-        <div :class="[base.item, base.click, twoColSummary]" @click.prevent="toggleOpen">
+        <div
+          @click.prevent="toggleOpen"
+          @keyup.enter="toggleOpen"
+          :tabindex="0"
+          :class="[base.item, base.click, twoColSummary]"
+        >
           <slot name="summaryLeft">Add summary here</slot>
         </div>
         <div
@@ -54,6 +59,8 @@ export default {
   methods: {
     toggleOpen: function (event) {
       this.isOpen = !this.isOpen
+      if (this.isOpen) this.$emit('open')
+      if (!this.isOpen) this.$emit('closed')
     }
   }
 }

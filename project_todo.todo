@@ -41,7 +41,7 @@
      ☐ Animation @nice-to-have
    ☐ Analysis
      ☐ Details component
-       ☐ Take over behaviors with JS and make stateful
+       ✔ Take over behaviors with JS and make stateful @done (18-08-28 11:49)
        ☐ Fix focus rings
    ☐ Results
      ☐ Hide top row of icons and display edit/cancel buttons when row is expanded
