@@ -89,7 +89,7 @@
         <!-- Indicator Initial Stab -->
         <CountryIndicator
           v-for="(c,i) in countryIndicators"
-          :countryIndicator="this.getCountryIndicator(i)"
+          :countryIndicator="getCountryIndicator(c.id)"
           :key="`ci-${i}`"
          />
 
@@ -143,10 +143,11 @@ import CountryIndicator from '@/components/CountryIndicator.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { bestPracticeData } from '@/components/mixins/bestPracticeData'
 import { dataMethods } from '@/components/mixins/dataMethods'
+import { initData } from '@/components/mixins/initData'
 
 export default {
   name: 'Results',
-  mixins: [activityTypes, dataMethods, bestPracticeData],
+  mixins: [activityTypes, dataMethods, bestPracticeData, initData],
   components: {
     BaseHeading,
     BaseButton,
@@ -182,8 +183,7 @@ export default {
             role: 'primary'
           }
         ]
-      },
-      countryIndicators: this.$store.getters['entities/countryindicators/all']()
+      }
     }
   },
   computed: {

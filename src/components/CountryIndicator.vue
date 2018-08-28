@@ -18,11 +18,9 @@
     </BaseHeading>
     <a :href="countryIndicator.sourceUrl"><small>{{countryIndicator.citation}}</small></a>
     <BaseCalloutBox
-      :key="error"
-      v-if="error"
-      :message="error"
-      :class="space.marginTopNarrow"
-      role="warning"
+      v-if="countryNotification"
+      :message="countryNotification.text"
+      :role="countryNotification.type"
     />
   </div>
 </template>
@@ -32,13 +30,14 @@ import BaseHeading from './BaseHeading.vue'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
 import BaseCalloutBox from './BaseCalloutBox.vue'
 import { dataMethods } from './mixins/dataMethods'
+import { activityTypes } from './mixins/activityTypes'
 
 export default {
   name: 'CountryIndicator',
-  mixins: [dataMethods],
+  mixins: [dataMethods, activityTypes],
   props: {
     countryIndicator: {
-      type: String,
+      type: Object,
       required: true
     }
   },
@@ -47,8 +46,44 @@ export default {
     BaseGutterWrapper,
     BaseCalloutBox
   },
-  created () {
-    console.log(this.countryIndicator)
+  computed: {
+    countryNotification: function () {
+      if (!this.countryIndicator.comparatorIndicator) {
+        return false
+      }
+
+      // Set comparator value
+      var comparatorIndicatorValue = 0
+
+      // set to special string value
+      if (this.countryIndicator.comparatorIndicator === 'youthFocusBudget') {
+        comparatorIndicatorValue = this.getChartData(this.getActvityData()).youthCentricBudgetData[0].youthCentricPercent * 100
+      }
+
+      // Use other country indicator, if valid
+      if (!this.getCountryIndicator(this.countryIndicator.comparatorIndicator).error) {
+        comparatorIndicatorValue = this.getCountryIndicator(this.countryIndicator.comparatorIndicator).value
+      }
+
+      // Run comparison & set notification text & type
+      var notificationObj = {}
+
+      // Using eval to be able to parse comparator operator.
+      // eslint-disable-next-line
+      if (eval(`${parseFloat(this.countryIndicator.value)} ${this.countryIndicator.comparatorOperator} ${parseFloat(comparatorIndicatorValue)}`)) {
+        notificationObj = {
+          text: this.countryIndicator.comparatorTextTrue,
+          type: this.countryIndicator.comparatorTextTrueType
+        }
+      } else {
+        notificationObj = {
+          text: this.countryIndicator.comparatorTextFalse,
+          type: this.countryIndicator.comparatorTextFalseType
+        }
+      }
+
+      return notificationObj
+    }
   }
 }
 </script>
