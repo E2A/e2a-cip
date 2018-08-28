@@ -14,7 +14,9 @@ export const initData = {
       return Object.values(i18n.messages[i18n.locale].countryIndicators).map((countryIndicator, index) => {
         return {
           name: this.$t(`countryIndicators.indicator${index + 1}.name`),
-          source: this.$t(`countryIndicators.indicator${index + 1}.source`),
+          description: this.$t(`countryIndicators.indicator${index + 1}.description`),
+          citation: this.$t(`countryIndicators.indicator${index + 1}.sourceCitation`),
+          sourceUrl: this.$t(`countryIndicators.indicator${index + 1}.sourceUrl`),
           fileName: this.$t(`countryIndicators.indicator${index + 1}.fileName`),
           iso2codeHeader: this.$t(`countryIndicators.indicator${index + 1}.iso2codeHeader`),
           indicatorValueHeader: this.$t(`countryIndicators.indicator${index + 1}.indicatorValueHeader`),
@@ -27,7 +29,7 @@ export const initData = {
     setupCountryIndicators: function () {
       // For each indicator, parse file and send data to be stored
       this.countryIndicators.forEach((indicator) => {
-        Papa.parse(`country_indicators/${indicator.fileName}`, {
+        Papa.parse(`uploads/country_indicators/${indicator.fileName}`, {
           download: true,
           header: true,
           complete: (results) => {
@@ -41,9 +43,12 @@ export const initData = {
       const setupData = indicatorData.map((dataItem) => {
         return {
           countryCode: dataItem[indicator.iso2codeHeader],
-          indicatorName: indicator.name,
+          name: indicator.name,
+          description: indicator.description,
           indicatorId: indicator.id,
-          indicatorValue: dataItem[indicator.indicatorValueHeader]
+          value: dataItem[indicator.indicatorValueHeader],
+          sourceUrl: indicator.sourceUrl,
+          citation: indicator.citation
         }
       })
       // Create for initial load

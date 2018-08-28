@@ -87,23 +87,25 @@
         </header>
 
         <!-- Indicator Initial Stab -->
-        <div v-if="false">
+        <div
+          v-if="!countryIndicator1.error"
+        >
           <BaseHeading
             :centered="false"
             :level="2"
-            scale="delta"
-            v-if="!countryIndicator1.error"
+            scale="beta"
+
           >
-            <strong>{{countryIndicator1.value}}%</strong> {{countryIndicator1.name}}
+            <strong>{{countryIndicator1.value}}</strong> {{countryIndicator1.name}}
           </BaseHeading>
           <BaseHeading
             :centered="false"
-            :level="2"
+            :level="3"
             scale="delta"
-            v-if="!countryIndicator2.error"
           >
-            <strong>{{countryIndicator2.value}}%</strong> {{countryIndicator2.name}}
+            {{countryIndicator1.description}}
           </BaseHeading>
+          <a :href="countryIndicator1.sourceUrl"><small>{{countryIndicator1.citation}}</small></a>
         </div>
 
         <!-- Table -->
@@ -194,8 +196,7 @@ export default {
           }
         ]
       },
-      countryIndicator1: this.getCountryIndicator(1),
-      countryIndicator2: this.getCountryIndicator(2)
+      countryIndicator1: this.getCountryIndicator(1)
     }
   },
   computed: {

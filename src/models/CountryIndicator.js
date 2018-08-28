@@ -7,9 +7,12 @@ export default class CountryIndicator extends Model {
     return {
       id: this.increment(),
       indicatorId: this.number(0),
-      countryCode: this.attr(null),
-      indicatorName: this.string(''),
-      indicatorValue: this.attr(null)
+      countryCode: this.string(''),
+      name: this.string(''),
+      description: this.string(''),
+      value: this.attr(null),
+      sourceUrl: this.string(''),
+      citation: this.string('')
     }
   }
 }
