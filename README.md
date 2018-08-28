@@ -26,6 +26,9 @@ After having gone through the get started steps:
 
 # A note on adding country indicators
 Country indicators need to be added to the [en.yaml file](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml) in the below format. You will also need to upload the file as a CSV with UTF-8 character encoding into `public > uploads > country_indicators` - the file name is then added below. Note you **cannot** use excel xlsx or xls files, you will need to open them in excel and convert them to a CSV. Google drive allows you do this well and typically does a better job of ensuring UTF-8 encoding, so where possible, we suggest using google drive over MS Office.
+
+For updating the UN Country population data you can use [this google sheet](https://docs.google.com/spreadsheets/d/1yN2Hig0MdTjzm5HyyYcJ6Nopc3X42qD8pNE0iXxAjVc/edit)
+
 ```
 countryIndicators:
   indicator1:
