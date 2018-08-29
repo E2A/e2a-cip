@@ -4,9 +4,16 @@
     :leftButtons="navButtons.left"
     :rightButtons="navButtons.right"
   >
-    <div>
-      <FileExport />
-      <ExportChartData />
+    <!-- Export tool tray -->
+    <div :class="[border.bottom, space.paddingVerticalNarrow, space.paddingVertical, color.lightBg]">
+      <BaseGutterWrapper
+        :class="type.right"
+        gutterY="xnarrow"
+        gutterX="xnarrow"
+      >
+        <span :class="base.exportItem"><FileExport /></span>
+        <span :class="base.exportItem"><ExportChartData /></span>
+      </BaseGutterWrapper>
     </div>
     <BaseSectionWrapper el="div">
       <header :class="[type.center, space.paddingTop]">
@@ -272,6 +279,10 @@ export default {
 }
 
 .toolTrayItem {
+  display: inline-block;
+}
+
+.exportItem {
   display: inline-block;
 }
 </style>

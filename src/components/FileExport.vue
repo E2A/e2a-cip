@@ -1,11 +1,9 @@
 <template>
-  <div class="FileExport">
-    <select v-if="this.getItemCount('all') > 0" @change="exportData(exportOption)" v-model="exportOption">
-      <option value='' disabled selected>{{$t('fileUpload.selectFormat')}}</option>
-      <option value='json'>{{$t('fileUpload.json')}}</option>
-      <option value='csv'>{{$t('fileUpload.csv')}}</option>
-    </select>
-  </div>
+  <select v-if="this.getItemCount('all') > 0" @change="exportData(exportOption)" v-model="exportOption">
+    <option value='' disabled selected>{{$t('fileUpload.selectFormat')}}</option>
+    <option value='json'>{{$t('fileUpload.json')}}</option>
+    <option value='csv'>{{$t('fileUpload.csv')}}</option>
+  </select>
 </template>
 
 <script>
