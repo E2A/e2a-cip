@@ -1,13 +1,13 @@
 <template>
   <!-- Chart Labels -->
-  <dl>
+  <dl :class="base.wrapper">
     <div
       v-for="(label, index) of labelData"
-      :class="legend.item"
+      :class="base.item"
       :key="`${chartName}-${index}`"
     >
-      <dt :class="[legend.key, label.className]">{{label.value}}%</dt>
-      <dd :class="legend.value">{{label.labelText}}</dd>
+      <dt :class="[base.key, label.className]">{{label.value}}%</dt>
+      <dd :class="base.value">{{label.labelText}}</dd>
     </div>
   </dl>
 </template>
@@ -29,10 +29,15 @@ export default {
 }
 </script>
 
-<style lang="scss" module="legend">
+<style lang="scss" module="base">
 @import '~styleConfig/color';
 
 $chart-light-gray: color('light', $grade: -10);
+
+.wrapper {
+  composes: paddingVerticalBetweenXnarrow from 'styles/spacing.scss';
+  display: block;
+}
 
 .item {
   display: block;
@@ -44,13 +49,11 @@ $chart-light-gray: color('light', $grade: -10);
   composes: scaleEta bold from 'styles/type.scss';
   display: inline-block;
   border-radius: 50%;
-  // fix magic number
-  padding: 1.2em 0;
   width: $size;
   height: $size;
   text-align: center;
   vertical-align: middle;
-  line-height: 1;
+  line-height: $size;
 }
 
 .value {

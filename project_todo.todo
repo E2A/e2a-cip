@@ -8,17 +8,20 @@
 
 # Pages to set up
 
-# Components to build
+# Components/layout
  ☐ Export/clear tool tray at top of analysis, results, etc.
  ☐ Buttons
    ☐ with icon
      ☐ left
      ☐ right
    ☐ dropdown
+ ☐ Activity editor
+   ☐ Move save button to bottom nav and alternate w/'add another' depending on save state @nice-to-have
+   ☐ Move delete button to top right? @nice-to-have
 
 # Content
 
-# Styling
+# Styling @jay
  ☐ Global
    ☐ Print styles
    ☐ Tables
@@ -26,33 +29,38 @@
    ☐ Notifications
      ☐ Placement
      ☐ Animation @nice-to-have
-   ☐ Analysis
-     ✔ Details component @done (18-08-28 17:07)
-       ✔ Take over behaviors with JS and make stateful @done (18-08-28 11:49)
-       ✔ Fix focus rings @done (18-08-28 17:07)
-   ☐ Results
-     ☐ Hide top row of icons and display edit/cancel buttons when row is expanded
-     ☐ Fix overlap b/n suggestion input and delete button - gutter issue?
+   ☐ Main header
+     ☐ Hide nav on small screens, replace with dropdown btn
+     ☐ Style language selector (dropdown btn?)
+ ☐ Home
+   ☐ Add logo grid to top
+     Display order: USAID-E2A, Pathfinder, OP
+   ☐ Move clear all btn to setup page @nice-to-have
+ ☐ Setup
+   ☐ Style the import data button
+ ☐ Results
+   ☐ Lay out new chart data
+     ☐ Rows of pie charts
+     ☐ Chart/legend layout inside grid
+     ☐ Country indicators
+       Notes from last meeting: https://docs.google.com/document/d/1UYb-xSD1rlKYQpf3zz9WU8coQf-Tv526NQ5zt5Th960/edit#
+     ☐ Activity type stats/progress bars
+   ☐ Hide top row of icons and display edit/cancel buttons when row is expanded
+   ☐ Fix overlap b/n suggestion input and delete button - gutter issue?
 
 # Additional scope items:
  ☐ Adding FR translation [started]
-   ☐ Design language selector @jay
    ☐ Order FR translations
  ☐ Add summary counts for each activity type to results page [started]
    ☐ Figure out designs for displaying the new activity aggregate data
      ☐ Percent of activities with a best practice (percentage bar)
      ☐ Percent of activities with a best practice by modality (percentage bar)
  ☐ Add in additional country data to site
-   ☐ Style Country indicator data
-   Notes from last meeting: https://docs.google.com/document/d/1UYb-xSD1rlKYQpf3zz9WU8coQf-Tv526NQ5zt5Th960/edit#
- ☐ Adjust results page grouping @jay
- ☐ Add pathfinder logo to home @jay
- ☐ Add other logos TBD to home @jay
+
 
  # Browser testing/debugging/deployment
- ☐ Make sure layouts work without flexbox
+ ☐ Make sure layouts work without flexbox @jay
    ☐ Timeline nav
-   ✔ activities tables @done (18-08-28 16:37)
  ☐ Prerender landing page via `spa-prerender-plugin` so JS can download in the BG @nice-to-have
  ☐ Add loading bar/animation in case JS takes awhile to download @nice-to-have
  ☐ Debug electron SVG issues:
@@ -66,10 +74,15 @@
   ☐ Refactor Activity Input @scott
    ☐ To only have input new item
    ☐ To save continually (also maybe migrate to get / set versions of vuex to by dryer and not deal with "update value" issues) - on save show notification.
- ☐ Remove nav for home / setup pages. @jay
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Remove nav for home / setup pages. @jay @done (18-08-29 14:32)
+ ✔ Analysis @done (18-08-29 14:28)
+ ✔ Fix focus rings @done (18-08-28 17:07)
+ ✔ Details component @done (18-08-28 17:07)
+ ✔ activities tables @done (18-08-28 16:37)
+ ✔ Take over behaviors with JS and make stateful @done (18-08-28 11:49)
  ✔ Refactor chart @PAIR CODE @done (18-08-27 16:34)
  ✔ Export only that data @done (18-08-27 16:34)
  ✔ Based on chart names @done (18-08-27 16:34)

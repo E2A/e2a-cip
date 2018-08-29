@@ -1,14 +1,14 @@
 <template>
   <div>
     <BaseHeading
+      v-if="chartSeriesTitle"
       :class="space.paddingBottomNarrow"
       :level="3"
       scale="delta"
       weight="bold"
       color="dark"
-      v-if="chartItemTitle"
     >
-      {{chartItemTitle}}
+      {{chartSeriesTitle}}
     </BaseHeading>
 
     <!-- List of charts -->
@@ -94,9 +94,8 @@ export default {
         return valueArray.indexOf(true) !== -1
       }
     },
-    chartItemTitle: {
-      type: String,
-      required: false
+    chartSeriesTitle: {
+      type: String
     }
   },
   computed: {
@@ -262,11 +261,11 @@ export default {
   vertical-align: top;
   width: 100%;
 
-  @include media('>small') {
+  @include media('>medium') {
     width: 50%;
   }
 
-  @include media('>large') {
+  @include media('>xlarge') {
     width: 25%;
   }
 }

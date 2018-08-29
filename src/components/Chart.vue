@@ -2,8 +2,9 @@
   <!-- Chart -->
   <div v-if="activitiesPresent">
     <BaseHeading
-      :class="space.paddingBottomNarrow"
+      :class="space.paddingBottom"
       :level="3"
+      :centered="false"
       scale="delta"
       weight="bold"
       color="dark"
@@ -12,6 +13,7 @@
     </BaseHeading>
 
     <BaseGutterWrapper
+      :class="base.chartWrapper"
       gutterY="narrow"
       gutterX="narrow"
     >
@@ -68,7 +70,8 @@ export default {
   mounted () {
     // eslint-disable-next-line
     new Chartist['Pie'](`#${this.chartName}`, {
-      series: this.seriesData
+      series: this.seriesData,
+      chartPadding: 100
     })
   }
 }
@@ -79,13 +82,35 @@ export default {
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
-.chart {
+
+.chartWrapper {
   display: block;
+
+  @supports (display: flex) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.chart {
+  $size: 14rem;
+
+  display: block;
+  min-height: $size;
+
+  @supports (flex: 1 0 #{$size}) {
+    flex: 1 0 #{$size};
+  }
 }
 
 .legend {
-  composes: paddingVerticalBetweenXnarrow from 'styles/spacing.scss';
+  $width: 10rem;
+
   margin-top: 0;
   margin-bottom: 0;
+
+  // @supports (flex: 1 0 $width) {
+  //   flex: 1 0 $width;
+  // }
 }
 </style>
