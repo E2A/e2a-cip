@@ -180,36 +180,42 @@ export default {
       const youthFocusedCountLabel = [
         {
           value: Math.round(chartData.youthCentricActivityData[0].notYouthCentricPercent * 100),
-          labelText: this.$t('chartTitles.notYouthCentricLabel')
+          labelText: this.$t('chartTitles.notYouthCentricLabel'),
+          className: 'not-youth-centric'
         },
         {
           value: Math.round(chartData.youthCentricActivityData[0].youthYouthCentricPercent * 100),
-          labelText: this.$t('chartTitles.youthCentricLabel')
+          labelText: this.$t('chartTitles.youthCentricLabel'),
+          className: 'youth-centric'
         }
       ]
 
       const youthFocusedBudgetLabel = [
         {
           value: Math.round(chartData.youthCentricBudgetData[0].notYouthCentricPercent * 100),
-          labelText: this.$t('chartTitles.notYouthCentricLabel')
+          labelText: this.$t('chartTitles.notYouthCentricLabel'),
+          className: 'not-youth-centric'
         },
         {
           value: Math.round(chartData.youthCentricBudgetData[0].youthYouthCentricPercent * 100),
-          labelText: this.$t('chartTitles.youthCentricLabel')
+          labelText: this.$t('chartTitles.youthCentricLabel'),
+          className: 'youth-centric'
         }
       ]
 
       const activtyTypeBudgetLabel = chartData.activityTypeData.map((item) => {
         return {
           value: Math.round(item.budgetPercent * 100),
-          labelText: item.type
+          labelText: item.type,
+          className: item.class
         }
       })
 
       const activtyTypeCountLabel = chartData.activityTypeData.map((item) => {
         return {
           value: Math.round(item.countPercent * 100),
-          labelText: item.type
+          labelText: item.type,
+          className: item.class
         }
       })
 
@@ -237,16 +243,6 @@ export default {
 <style src="styles/borders.scss" lang="scss" module="border"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
-<style>
-/* Hide default chart legend */
-/*.chart-legend {
-  display: none;
-}*/
-.ct-label {
-  display: none;
-}
-</style>
-
 <style lang="scss" module="base">
 @import '~styleConfig/scale';
 @import '~styleConfig/type';
@@ -270,6 +266,13 @@ export default {
 
   @include media('>large') {
     width: 25%;
+  }
+}
+
+// hide default chartist labels
+:global {
+  .ct-label {
+    display: none;
   }
 }
 </style>
