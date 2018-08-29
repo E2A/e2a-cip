@@ -10,13 +10,26 @@
     >
       {{chartItemTitle}}
     </BaseHeading>
-    <Chart
-      v-for="(chartName,i) of chartNames"
-      :key="`chart-${i}`"
-      :chartName="chartName"
-      :seriesData="chartData.seriesData[chartName]"
-      :labelData="chartData.labelData[chartName]"
-    />
+
+    <!-- List of charts -->
+    <BaseGutterWrapper
+      :class="base.grid"
+      el="ul"
+    >
+      <li
+        v-for="(chartName, index) of chartNames"
+        :key="`chart-${index}`"
+        :class="base.gridItem"
+      >
+        <div :class="[border.top, border.secondary, space.paddingTop]">
+          <Chart
+            :chartName="chartName"
+            :seriesData="chartData.seriesData[chartName]"
+            :labelData="chartData.labelData[chartName]"
+          />
+        </div>
+      </li>
+    </BaseGutterWrapper>
     <div :class="[space.marginTop, space.paddingTop, border.top, type.right]">
       <BaseButton
         v-if="showExport"
@@ -35,6 +48,7 @@ import { activityTypes } from './mixins/activityTypes'
 import Chart from './Chart.vue'
 import BaseButton from './BaseButton.vue'
 import BaseHeading from './BaseHeading.vue'
+import BaseGutterWrapper from './BaseGutterWrapper.vue'
 
 export default {
   name: 'ChartItems',
@@ -42,7 +56,8 @@ export default {
   components: {
     Chart,
     BaseButton,
-    BaseHeading
+    BaseHeading,
+    BaseGutterWrapper
   },
   data () {
     return {
@@ -240,6 +255,7 @@ export default {
 .grid {
   display: block;
   font-size: 0;
+  list-style: none;
 }
 
 .gridItem {
@@ -253,94 +269,7 @@ export default {
   }
 
   @include media('>large') {
-    width: (100%/4);
-  }
-}
-
-.chart {
-  display: block;
-}
-
-.legend {
-  composes: paddingVerticalBetweenXnarrow from 'styles/spacing.scss';
-  margin-top: 0;
-  margin-bottom: 0;
-}
-</style>
-
-<style lang="scss" module="legend">
-@import '~styleConfig/scale';
-@import '~styleConfig/color';
-
-.item {
-  display: block;
-}
-
-.key {
-  $size: 3.5em;
-  composes: light from 'styles/color.scss';
-  composes: scaleEta bold from 'styles/type.scss';
-  display: inline-block;
-  border-radius: 50%;
-  // fix magic number
-  padding: 1.2em 0;
-  width: $size;
-  height: $size;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 1;
-}
-
-.value {
-  composes: scaleZeta from 'styles/type.scss';
-  display: inline-block;
-  margin-left: 0.5em;
-  vertical-align: middle;
-}
-
-// TODO @jay figure out how to make these part of the module
-// -> maybe https://github.com/blakeembrey/camel-case
-:global {
-  .demand-generation {
-    fill: color('accent');
-    stroke: color('accent');
-    background: color('accent');
-    color: white;
-  }
-
-  .service-delivery {
-    fill: color('midtone');
-    stroke: color('midtone');
-    background: color('midtone');
-    color: white;
-  }
-
-  .enabling-environment {
-    fill: color('highlight');
-    stroke: color('highlight');
-    background: color('highlight');
-    color: white;
-  }
-
-  .coordination {
-    fill: color('primary');
-    stroke: color('primary');
-    background: color('primary');
-    color: white;
-  }
-
-  .youth-centric {
-    fill: color('primary');
-    stroke: color('primary');
-    background: color('primary');
-    color: white;
-  }
-
-  .not-youth-centric {
-    fill: color('midtone');
-    stroke: color('midtone');
-    background: color('midtone');
-    color: white;
+    width: 25%;
   }
 }
 </style>

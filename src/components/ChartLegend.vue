@@ -1,8 +1,8 @@
 <template>
   <!-- Chart Labels -->
-  <dl :class="base.legend">
+  <dl>
     <div
-      v-for="(label,index) of labelData"
+      v-for="(label, index) of labelData"
       :class="legend.item"
       :key="`${chartName}-${index}`"
     >
@@ -29,56 +29,6 @@ export default {
 }
 </script>
 
-<style src="styles/spacing.scss" lang="scss" module="space"></style>
-<style src="styles/borders.scss" lang="scss" module="border"></style>
-<style src="styles/type.scss" lang="scss" module="type"></style>
-
-<style>
-/* Hide default chart legend */
-/*.chart-legend {
-  display: none;
-}*/
-.ct-label {
-  display: none;
-}
-</style>
-
-<style lang="scss" module="base">
-@import '~styleConfig/scale';
-@import '~styleConfig/type';
-@import '~styleConfig/color';
-
-.grid {
-  display: block;
-  font-size: 0;
-}
-
-.gridItem {
-  @include type-size-default;
-  display: inline-block;
-  vertical-align: top;
-  width: 100%;
-
-  @include media('>small') {
-    width: 50%;
-  }
-
-  @include media('>large') {
-    width: (100%/4);
-  }
-}
-
-.chart {
-  display: block;
-}
-
-.legend {
-  composes: paddingVerticalBetweenXnarrow from 'styles/spacing.scss';
-  margin-top: 0;
-  margin-bottom: 0;
-}
-</style>
-
 <style lang="scss" module="legend">
 @import '~styleConfig/scale';
 @import '~styleConfig/color';
@@ -89,7 +39,7 @@ export default {
 
 .key {
   $size: 3.5em;
-  composes: light from 'styles/color.scss';
+  composes: white from 'styles/color.scss';
   composes: scaleEta bold from 'styles/type.scss';
   display: inline-block;
   border-radius: 50%;
