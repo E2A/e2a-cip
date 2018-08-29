@@ -11,15 +11,6 @@
       {{title}}
     </BaseHeading>
 
-    <!-- <div :class="[space.paddingBottom, type.right]">
-      <BaseButton
-        v-if="showExport"
-        @click="exportChartData()"
-        :label="$t('results.exportCharts')"
-        size="small"
-      />
-    </div> -->
-
     <!-- List of charts -->
     <BaseGutterWrapper
       :class="base.grid"
@@ -99,30 +90,7 @@ export default {
       type: String
     }
   },
-  computed: {
-    showExport: function () {
-      return this.viewType !== 'print' && this.getItemCount('activities') > 0
-    }
-  },
   methods: {
-    exportChartData: function () {
-      const chartDataObject = this.getChartData(this.getActvityData())
-
-      // Export csv data for each data type
-      if (this.chartNames.includes('activityTypeBudget') || this.chartNames.includes('activityTypeCount')) {
-        this.csvExportItem(chartDataObject.youthCentricActivityData, 'youth-centric-activity-data')
-      }
-
-      if (this.chartNames.includes('youthFocusBudget')) {
-        this.csvExportItem(chartDataObject.youthCentricBudgetData, 'youth-centric-budget-data')
-      }
-
-      if (this.chartNames.includes('youthFocusCount')) {
-        this.csvExportItem(chartDataObject.activityTypeData, 'activity-type-data')
-      }
-
-      this.notify(this.$t('results.exportChartSuccess'), 'success')
-    },
     renderChartData: function () {
       // Get Data
       const chartData = this.getChartData(this.getActvityData())

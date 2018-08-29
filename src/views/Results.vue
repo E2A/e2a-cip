@@ -6,6 +6,7 @@
   >
     <div>
       <FileExport />
+      <ExportChartData />
     </div>
     <BaseSectionWrapper el="div">
       <header :class="[type.center, space.paddingTop]">
@@ -109,8 +110,6 @@
 
           <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
             <div :class="base.toolTrayItem">
-            </div>
-            <div :class="base.toolTrayItem">
               <ClearItems :clearType="['Recommendations']" />
             </div>
           </BaseGutterWrapper>
@@ -162,6 +161,7 @@ import ClearItems from '@/components/ClearItems.vue'
 import ChartItems from '@/components/ChartItems.vue'
 import NavFooter from '@/components/NavFooter.vue'
 import PrintPage from '@/components/PrintPage.vue'
+import ExportChartData from '@/components/ExportChartData.vue'
 import CountryIndicator from '@/components/CountryIndicator.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { bestPracticeData } from '@/components/mixins/bestPracticeData'
@@ -184,7 +184,8 @@ export default {
     ClearItems,
     ChartItems,
     NavFooter,
-    CountryIndicator
+    CountryIndicator,
+    ExportChartData
   },
   data () {
     return {
