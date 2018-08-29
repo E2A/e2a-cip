@@ -69,6 +69,7 @@ export default {
       var notificationObj = {}
 
       // Using eval to be able to parse comparator operator.
+      // ">" = >
       // eslint-disable-next-line
       if (eval(`${parseFloat(this.countryIndicator.value)} ${this.countryIndicator.comparatorOperator} ${parseFloat(comparatorIndicatorValue)}`)) {
         notificationObj = {

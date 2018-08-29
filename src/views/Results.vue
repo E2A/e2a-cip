@@ -4,6 +4,9 @@
     :leftButtons="navButtons.left"
     :rightButtons="navButtons.right"
   >
+    <div>
+      <FileExport />
+    </div>
     <BaseSectionWrapper el="div">
       <header :class="[type.center, space.paddingTop]">
         <BaseHeading
@@ -38,17 +41,46 @@
       </header>
 
       <!-- charts -->
-      <section>
+      <BaseWidthWrapper
+        :class="space.paddingTopWide"
+        el="section"
+        width="wide"
+      >
         <BaseHeading
-          :class="space.paddingVerticalWide"
+          :class="space.paddingBottomWide"
           scale="gamma"
           color="midtone"
           sub
         >
-          {{$t('resultsSubhead')}}
+          Country analysis
         </BaseHeading>
-        <ChartItems  />
-      </section>
+        <ChartItems
+          :chartNames="['youthFocusBudget', 'youthFocusCount']"
+        />
+        <!-- Indicator Initial Stab -->
+        <CountryIndicator
+          v-for="(c,i) in countryIndicators"
+          :countryIndicator="getCountryIndicator(c.id)"
+          :key="`ci-${i}`"
+         />
+      </BaseWidthWrapper>
+      <BaseWidthWrapper
+        :class="space.paddingTopWide"
+        el="section"
+        width="wide"
+      >
+        <BaseHeading
+          :class="space.paddingBottomWide"
+          scale="gamma"
+          color="midtone"
+          sub
+        >
+          Activity analysis
+        </BaseHeading>
+        <ChartItems
+          :chartNames="['activityTypeBudget', 'activityTypeCount']"
+        />
+      </BaseWidthWrapper>
     </BaseSectionWrapper>
 
     <!-- Activities list -->
@@ -71,27 +103,18 @@
             :centered="false"
             :level="2"
             scale="delta"
-            v-if="false"
           >
             <strong>{{percentBPActivites}}%</strong> {{$t('results.percentActivitesWithBP')}}
           </BaseHeading>
 
           <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
             <div :class="base.toolTrayItem">
-              <FileExport />
             </div>
             <div :class="base.toolTrayItem">
               <ClearItems :clearType="['Recommendations']" />
             </div>
           </BaseGutterWrapper>
         </header>
-
-        <!-- Indicator Initial Stab -->
-        <CountryIndicator
-          v-for="(c,i) in countryIndicators"
-          :countryIndicator="getCountryIndicator(c.id)"
-          :key="`ci-${i}`"
-         />
 
         <!-- Table -->
         <ActivitiesList ref="activityList">

@@ -70,8 +70,7 @@ export default {
   mounted () {
     // eslint-disable-next-line
     new Chartist['Pie'](`#${this.chartName}`, {
-      series: this.seriesData,
-      chartPadding: 100
+      series: this.seriesData
     })
   }
 }
@@ -104,13 +103,7 @@ export default {
 }
 
 .legend {
-  $width: 10rem;
-
   margin-top: 0;
   margin-bottom: 0;
-
-  // @supports (flex: 1 0 $width) {
-  //   flex: 1 0 $width;
-  // }
 }
 </style>

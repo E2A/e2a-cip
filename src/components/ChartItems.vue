@@ -1,15 +1,24 @@
 <template>
   <div>
     <BaseHeading
-      v-if="chartSeriesTitle"
+      v-if="title"
       :class="space.paddingBottomNarrow"
       :level="3"
       scale="delta"
       weight="bold"
       color="dark"
     >
-      {{chartSeriesTitle}}
+      {{title}}
     </BaseHeading>
+
+    <!-- <div :class="[space.paddingBottom, type.right]">
+      <BaseButton
+        v-if="showExport"
+        @click="exportChartData()"
+        :label="$t('results.exportCharts')"
+        size="small"
+      />
+    </div> -->
 
     <!-- List of charts -->
     <BaseGutterWrapper
@@ -30,14 +39,6 @@
         </div>
       </li>
     </BaseGutterWrapper>
-    <div :class="[space.marginTop, space.paddingTop, border.top, type.right]">
-      <BaseButton
-        v-if="showExport"
-        @click="exportChartData()"
-        :label="$t('results.exportCharts')"
-        size="small"
-      />
-    </div>
   </div>
 </template>
 
@@ -94,7 +95,7 @@ export default {
         return valueArray.indexOf(true) !== -1
       }
     },
-    chartSeriesTitle: {
+    title: {
       type: String
     }
   },
@@ -265,9 +266,9 @@ export default {
     width: 50%;
   }
 
-  @include media('>xlarge') {
-    width: 25%;
-  }
+  // @include media('>xlarge') {
+  //   width: 25%;
+  // }
 }
 
 // hide default chartist labels
