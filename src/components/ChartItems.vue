@@ -149,6 +149,8 @@ export default {
         )
       })
 
+      // className values need to match global classes in Chart.vue
+      // so color codes are assigned correctly
       const youthFocusedBudgetSeries = [
         {
           value: chartData.youthCentricBudgetData[0].youthCentricBudget,
@@ -184,7 +186,7 @@ export default {
           className: 'not-youth-centric'
         },
         {
-          value: Math.round(chartData.youthCentricActivityData[0].youthYouthCentricPercent * 100),
+          value: Math.round(chartData.youthCentricActivityData[0].youthCentricPercent * 100),
           labelText: this.$t('chartTitles.youthCentricLabel'),
           className: 'youth-centric'
         }
@@ -197,7 +199,7 @@ export default {
           className: 'not-youth-centric'
         },
         {
-          value: Math.round(chartData.youthCentricBudgetData[0].youthYouthCentricPercent * 100),
+          value: Math.round(chartData.youthCentricBudgetData[0].youthCentricPercent * 100),
           labelText: this.$t('chartTitles.youthCentricLabel'),
           className: 'youth-centric'
         }

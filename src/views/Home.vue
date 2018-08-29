@@ -29,11 +29,13 @@
       <BaseButtonLink
         :to="{name: 'setup'}"
         :label="$t('home.getStartedButton')"
-        :class="space.marginBottom"
         size="large"
         role="primary"
       />
-      <ClearItems :clearType="['All']" />
+      <ClearItems
+        :clearType="['All']"
+        :class="space.marginBottom"
+      />
     </BaseSectionWrapper>
 
     <!-- Offline versions -->
