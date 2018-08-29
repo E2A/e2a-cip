@@ -32,10 +32,12 @@
         size="large"
         role="primary"
       />
-      <ClearItems
-        :clearType="['All']"
-        :class="space.marginBottom"
-      />
+      <div>
+        <ClearItems
+          :clearType="['All']"
+          :class="space.marginTop"
+        />
+      </div>
     </BaseSectionWrapper>
 
     <!-- Offline versions -->
