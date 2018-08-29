@@ -87,26 +87,11 @@
         </header>
 
         <!-- Indicator Initial Stab -->
-        <div
-          v-if="!countryIndicator1.error"
-        >
-          <BaseHeading
-            :centered="false"
-            :level="2"
-            scale="beta"
-
-          >
-            <strong>{{countryIndicator1.value}}</strong> {{countryIndicator1.name}}
-          </BaseHeading>
-          <BaseHeading
-            :centered="false"
-            :level="3"
-            scale="delta"
-          >
-            {{countryIndicator1.description}}
-          </BaseHeading>
-          <a :href="countryIndicator1.sourceUrl"><small>{{countryIndicator1.citation}}</small></a>
-        </div>
+        <CountryIndicator
+          v-for="(c,i) in countryIndicators"
+          :countryIndicator="getCountryIndicator(c.id)"
+          :key="`ci-${i}`"
+         />
 
         <!-- Table -->
         <ActivitiesList ref="activityList">
@@ -154,13 +139,15 @@ import ClearItems from '@/components/ClearItems.vue'
 import ChartItems from '@/components/ChartItems.vue'
 import NavFooter from '@/components/NavFooter.vue'
 import PrintPage from '@/components/PrintPage.vue'
+import CountryIndicator from '@/components/CountryIndicator.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { bestPracticeData } from '@/components/mixins/bestPracticeData'
 import { dataMethods } from '@/components/mixins/dataMethods'
+import { initData } from '@/components/mixins/initData'
 
 export default {
   name: 'Results',
-  mixins: [activityTypes, dataMethods, bestPracticeData],
+  mixins: [activityTypes, dataMethods, bestPracticeData, initData],
   components: {
     BaseHeading,
     BaseButton,
@@ -173,7 +160,8 @@ export default {
     FileExport,
     ClearItems,
     ChartItems,
-    NavFooter
+    NavFooter,
+    CountryIndicator
   },
   data () {
     return {
@@ -195,8 +183,7 @@ export default {
             role: 'primary'
           }
         ]
-      },
-      countryIndicator1: this.getCountryIndicator(1)
+      }
     }
   },
   computed: {
