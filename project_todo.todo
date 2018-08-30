@@ -1,28 +1,17 @@
-# Discuss:
-
-# General To Does
- ☐ If activities are not youth centric make grayed out in the assessment page and remove icons. @jay
-   ☐ Activities should still be present in the reports view (and just dont display any best practices icons) [IE STATUS QUO]
-   ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
- ☐ Fix form adding in text to make sure to strip any spaces [adjust from rows to height] @jay
-
-# Pages to set up
-
 # Components/layout
  ☐ Export/clear tool tray at top of analysis, results, etc.
- ☐ Buttons
+ ✔ Buttons @done (18-08-30 18:52)
    ✔ with icon @done (18-08-30 14:57)
      ✔ left @done (18-08-30 14:57)
      ✔ right @done (18-08-30 14:57)
-   ☐ dropdown
+   ✔ dropdown @done (18-08-30 18:52)
  ☐ Activity editor
    ☐ Move save button to bottom nav and alternate w/'add another' depending on save state @nice-to-have
    ☐ Move delete button to top right? @nice-to-have
 
-# Content
-
 # Styling @jay
  ☐ Global
+   ☐ Fix form adding in text to make sure to strip any spaces [adjust from rows to height] @jay
    ☐ Print styles
    ☐ Tables
      ☐ Mobile @nice-to-have
@@ -30,7 +19,7 @@
      ☐ Placement
      ☐ Animation @nice-to-have
    ☐ Main header
-     ☐ Hide nav on small screens, replace with dropdown btn
+     ✔ Hide nav on small screens, replace with dropdown btn @done (18-08-30 18:52)
      ☐ Style language selector (dropdown btn?)
  ☐ Home
    ☐ Add logo grid to top
@@ -39,12 +28,15 @@
  ✔ Setup @done (18-08-30 15:06)
    ✔ Style the import data button @done (18-08-30 15:06)
  ☐ Results
-   ☐ Lay out new chart data
-     ☐ Rows of pie charts
+   ☐ If activities are not youth centric make grayed out in the assessment page and remove icons. @jay
+     ☐ Activities should still be present in the reports view (and just dont display any best practices icons) [IE STATUS QUO]
+     ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
+   ✔ Lay out new chart data @done (18-08-30 18:53)
+     ✔ Rows of pie charts @done (18-08-30 18:53)
      ✔ Chart/legend layout inside grid @done (18-08-29 15:28)
-     ☐ Country indicators
+     ✔ Country indicators @done (18-08-30 18:53)
        Notes from last meeting: https://docs.google.com/document/d/1UYb-xSD1rlKYQpf3zz9WU8coQf-Tv526NQ5zt5Th960/edit#
-     ☐ Activity type stats/progress bars
+     ✔ Activity type stats/progress bars @done (18-08-30 18:53)
    ☐ Hide top row of icons and display edit/cancel buttons when row is expanded
    ☐ Fix overlap b/n suggestion input and delete button - gutter issue?
 
