@@ -1,22 +1,35 @@
 <template>
   <div>
     <BaseHeading
+      v-if="title"
       :class="space.paddingBottomNarrow"
       :level="3"
       scale="delta"
       weight="bold"
       color="dark"
-      v-if="chartItemTitle"
     >
-      {{chartItemTitle}}
+      {{title}}
     </BaseHeading>
-    <Chart
-      v-for="(chartName,i) of chartNames"
-      :key="`chart-${i}`"
-      :chartName="chartName"
-      :seriesData="chartData.seriesData[chartName]"
-      :labelData="chartData.labelData[chartName]"
-    />
+
+    <!-- List of charts -->
+    <BaseGutterWrapper
+      :class="base.grid"
+      el="ul"
+    >
+      <li
+        v-for="(chartName, index) of chartNames"
+        :key="`chart-${index}`"
+        :class="base.gridItem"
+      >
+        <div :class="[border.top, border.secondary, space.paddingTop]">
+          <Chart
+            :chartName="chartName"
+            :seriesData="chartData.seriesData[chartName]"
+            :labelData="chartData.labelData[chartName]"
+          />
+        </div>
+      </li>
+    </BaseGutterWrapper>
   </div>
 </template>
 
@@ -27,6 +40,7 @@ import { activityTypes } from './mixins/activityTypes'
 import Chart from './Chart.vue'
 import BaseButton from './BaseButton.vue'
 import BaseHeading from './BaseHeading.vue'
+import BaseGutterWrapper from './BaseGutterWrapper.vue'
 
 export default {
   name: 'ChartItems',
@@ -34,7 +48,8 @@ export default {
   components: {
     Chart,
     BaseButton,
-    BaseHeading
+    BaseHeading,
+    BaseGutterWrapper
   },
   data () {
     return {
@@ -71,9 +86,8 @@ export default {
         return valueArray.indexOf(true) !== -1
       }
     },
-    chartItemTitle: {
-      type: String,
-      required: false
+    title: {
+      type: String
     }
   },
   methods: {
@@ -103,6 +117,8 @@ export default {
         )
       })
 
+      // className values need to match global classes in Chart.vue
+      // so color codes are assigned correctly
       const youthFocusedBudgetSeries = [
         {
           value: chartData.youthCentricBudgetData[0].youthCentricBudget,
@@ -134,36 +150,42 @@ export default {
       const youthFocusedCountLabel = [
         {
           value: Math.round(chartData.youthCentricActivityData[0].notYouthCentricPercent * 100),
-          labelText: this.$t('chartTitles.notYouthCentricLabel')
+          labelText: this.$t('chartTitles.notYouthCentricLabel'),
+          className: 'not-youth-centric'
         },
         {
-          value: Math.round(chartData.youthCentricActivityData[0].youthYouthCentricPercent * 100),
-          labelText: this.$t('chartTitles.youthCentricLabel')
+          value: Math.round(chartData.youthCentricActivityData[0].youthCentricPercent * 100),
+          labelText: this.$t('chartTitles.youthCentricLabel'),
+          className: 'youth-centric'
         }
       ]
 
       const youthFocusedBudgetLabel = [
         {
           value: Math.round(chartData.youthCentricBudgetData[0].notYouthCentricPercent * 100),
-          labelText: this.$t('chartTitles.notYouthCentricLabel')
+          labelText: this.$t('chartTitles.notYouthCentricLabel'),
+          className: 'not-youth-centric'
         },
         {
-          value: Math.round(chartData.youthCentricBudgetData[0].youthYouthCentricPercent * 100),
-          labelText: this.$t('chartTitles.youthCentricLabel')
+          value: Math.round(chartData.youthCentricBudgetData[0].youthCentricPercent * 100),
+          labelText: this.$t('chartTitles.youthCentricLabel'),
+          className: 'youth-centric'
         }
       ]
 
       const activtyTypeBudgetLabel = chartData.activityTypeData.map((item) => {
         return {
           value: Math.round(item.budgetPercent * 100),
-          labelText: item.type
+          labelText: item.type,
+          className: item.class
         }
       })
 
       const activtyTypeCountLabel = chartData.activityTypeData.map((item) => {
         return {
           value: Math.round(item.countPercent * 100),
-          labelText: item.type
+          labelText: item.type,
+          className: item.class
         }
       })
 
@@ -191,16 +213,6 @@ export default {
 <style src="styles/borders.scss" lang="scss" module="border"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
-<style>
-/* Hide default chart legend */
-/*.chart-legend {
-  display: none;
-}*/
-.ct-label {
-  display: none;
-}
-</style>
-
 <style lang="scss" module="base">
 @import '~styleConfig/scale';
 @import '~styleConfig/type';
@@ -209,6 +221,7 @@ export default {
 .grid {
   display: block;
   font-size: 0;
+  list-style: none;
 }
 
 .gridItem {
@@ -217,99 +230,19 @@ export default {
   vertical-align: top;
   width: 100%;
 
-  @include media('>small') {
+  @include media('>medium') {
     width: 50%;
   }
 
-  @include media('>large') {
-    width: (100%/4);
-  }
+  // @include media('>xlarge') {
+  //   width: 25%;
+  // }
 }
 
-.chart {
-  display: block;
-}
-
-.legend {
-  composes: paddingVerticalBetweenXnarrow from 'styles/spacing.scss';
-  margin-top: 0;
-  margin-bottom: 0;
-}
-</style>
-
-<style lang="scss" module="legend">
-@import '~styleConfig/scale';
-@import '~styleConfig/color';
-
-.item {
-  display: block;
-}
-
-.key {
-  $size: 3.5em;
-  composes: light from 'styles/color.scss';
-  composes: scaleEta bold from 'styles/type.scss';
-  display: inline-block;
-  border-radius: 50%;
-  // fix magic number
-  padding: 1.2em 0;
-  width: $size;
-  height: $size;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 1;
-}
-
-.value {
-  composes: scaleZeta from 'styles/type.scss';
-  display: inline-block;
-  margin-left: 0.5em;
-  vertical-align: middle;
-}
-
-// TODO @jay figure out how to make these part of the module
-// -> maybe https://github.com/blakeembrey/camel-case
+// hide default chartist labels
 :global {
-  .demand-generation {
-    fill: color('accent');
-    stroke: color('accent');
-    background: color('accent');
-    color: white;
-  }
-
-  .service-delivery {
-    fill: color('midtone');
-    stroke: color('midtone');
-    background: color('midtone');
-    color: white;
-  }
-
-  .enabling-environment {
-    fill: color('highlight');
-    stroke: color('highlight');
-    background: color('highlight');
-    color: white;
-  }
-
-  .coordination {
-    fill: color('primary');
-    stroke: color('primary');
-    background: color('primary');
-    color: white;
-  }
-
-  .youth-centric {
-    fill: color('primary');
-    stroke: color('primary');
-    background: color('primary');
-    color: white;
-  }
-
-  .not-youth-centric {
-    fill: color('midtone');
-    stroke: color('midtone');
-    background: color('midtone');
-    color: white;
+  .ct-label {
+    display: none;
   }
 }
 </style>

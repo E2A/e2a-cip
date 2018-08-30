@@ -4,7 +4,17 @@
     :leftButtons="navButtons.left"
     :rightButtons="navButtons.right"
   >
-    <ExportChartData />
+    <!-- Export tool tray -->
+    <div :class="[border.bottom, space.paddingVerticalNarrow, space.paddingHorizontal, color.lightBg]">
+      <BaseGutterWrapper
+        :class="type.right"
+        gutterY="xnarrow"
+        gutterX="xnarrow"
+      >
+        <span :class="base.inlineBlock"><FileExport /></span>
+        <span :class="base.inlineBlock"><ExportChartData /></span>
+      </BaseGutterWrapper>
+    </div>
     <BaseSectionWrapper el="div">
       <header :class="[type.center, space.paddingTop]">
         <BaseHeading
@@ -38,89 +48,121 @@
         </BaseGutterWrapper>
       </header>
 
-      <!-- charts -->
-      <section>
+      <!-- country analysis -->
+      <BaseWidthWrapper
+        :class="space.paddingTopWide"
+        el="section"
+        width="wide"
+      >
         <BaseHeading
-          :class="space.paddingVerticalWide"
+          :class="space.paddingBottomWide"
+          :level="2"
+          scale="gamma"
+          color="midtone"
+        >
+          {{$t('results.analysis.country')}}
+        </BaseHeading>
+        <ChartItems
+          :chartNames="['youthFocusBudget', 'youthFocusCount']"
+        />
+
+        <!-- country indicators -->
+        <section :class="space.paddingTop">
+          <BaseGallery :items="countryIndicators">
+            <div
+              :class="[border.top, border.secondary, space.paddingTop]"
+              slot-scope="{item}"
+            >
+              <CountryIndicator
+                :style="{
+                  maxWidth: '25rem'
+                }"
+                :countryIndicator="getCountryIndicator(item.id)"
+              />
+            </div>
+          </BaseGallery>
+        </section>
+      </BaseWidthWrapper>
+
+      <!-- activity analysis -->
+      <BaseWidthWrapper
+        :class="space.paddingTopWide"
+        el="section"
+        width="wide"
+      >
+        <BaseHeading
+          :class="space.paddingBottomWide"
           scale="gamma"
           color="midtone"
           sub
         >
-          {{$t('resultsSubhead')}}
+          {{$t('results.analysis.activity')}}
         </BaseHeading>
-        <ChartItems  />
-      </section>
+        <ChartItems
+          :chartNames="['activityTypeBudget', 'activityTypeCount']"
+        />
+      </BaseWidthWrapper>
     </BaseSectionWrapper>
 
     <!-- Activities list -->
-    <BaseSectionWrapper border>
-
+    <BaseSectionWrapper
+      :class="space.paddingTop"
+      border
+    >
       <BaseWidthWrapper width="xxwide">
-        <!-- Count & export tools -->
-        <header :class="base.toolTray">
-          <BaseHeading
-            :centered="false"
-            :level="2"
-            scale="epsilon"
-            color="midtone"
-          >
-            <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
-          </BaseHeading>
 
-          <!-- Count of Activities with EIP Initial Stab -->
+        <!-- Count & export tools -->
+        <BaseGutterWrapper
+          :class="base.tableHeader"
+          el="header"
+          gutterX="narrow"
+          gutterY="narrow"
+        >
           <BaseHeading
+            :class="base.inlineBlock"
             :centered="false"
             :level="2"
             scale="delta"
-            v-if="false"
+            color="dark"
           >
-            <strong>{{percentBPActivites}}%</strong> {{$t('results.percentActivitesWithBP')}}
+            <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
           </BaseHeading>
-
-          <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
-            <div :class="base.toolTrayItem">
-              <FileExport />
-            </div>
-            <div :class="base.toolTrayItem">
-              <ClearItems :clearType="['Recommendations']" />
-            </div>
-          </BaseGutterWrapper>
-        </header>
-
-        <!-- Indicator Initial Stab -->
-        <CountryIndicator
-          v-for="(c,i) in countryIndicators"
-          :countryIndicator="getCountryIndicator(c.id)"
-          :key="`ci-${i}`"
-         />
+          <div :class="[base.inlineBlock, space.marginHorizontalBetweenNarrow]">
+            <BaseProgressBar
+              :label="$t('results.percentActivitesWithBP')"
+              :percentage="percentBPActivites"
+              id="percent-BP-activities"
+            />
+            <ClearItems :clearType="['Recommendations']" />
+          </div>
+        </BaseGutterWrapper>
 
         <!-- Table -->
         <ActivitiesList ref="activityList">
-          <div
-            v-for="(activities, index) in groupedActivities"
-            :key="`gA-${index}`"
-          >
-            <template v-if="activities.activityObjects.length > 0">
-              <BaseHeading
-                :level="3"
-                scale="zeta"
-                :centered="false"
-                :class="[space.paddingXxnarrow, type.uppercase, color.lightBg, border.top]"
-                color="midtone"
-                weight="bold"
-              >
+          <template v-for="(activities, index) in groupedActivities">
+            <li
+              v-if="activities.activityObjects.length > 0"
+              :key="`gA-${index}`"
+            >
+              <!-- activity type heading with stats -->
+              <ActivitiesTypeHeading>
                 {{activities.activityTypeName}}
-                <!-- Activity Count with EIP Initial Stab, remove text I dont think we need it or put it in translation -->
-                | <strong>{{percentBPActivitesByType(activities.activityTypeName)}}%</strong> {{$t('results.activityWithEIPbyType')}}
-              </BaseHeading>
+                <template slot="stats">
+                  <BaseProgressBar
+                    :label="$t('results.activityWithEIPbyType')"
+                    :percentage="percentBPActivitesByType(activities.activityTypeName)" />
+                </template>
+              </ActivitiesTypeHeading>
 
-              <ActivitiesItemResult
-                v-for="(activity, index) in activities.activityObjects"
-                :key="`activity-${index}`"
-                :activityInstance="activity"
-              />
-            </template>
-          </div>
+              <ul :class="base.activityTypeList">
+                <ActivitiesItemResult
+                  v-for="(activity, index) in activities.activityObjects"
+                  :key="`activity-${index}`"
+                  :activityInstance="activity"
+                />
+              </ul>
+            </li>
+          </template>
         </ActivitiesList>
       </BaseWidthWrapper>
     </BaseSectionWrapper>
@@ -134,6 +176,8 @@ import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
+import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
+import BaseProgressBar from '@/components/BaseProgressBar.vue'
 import ActivitiesItemResult from '@/components/ActivitiesItemResult.vue'
 import FileExport from '@/components/FileExport.vue'
 import ClearItems from '@/components/ClearItems.vue'
@@ -142,6 +186,7 @@ import NavFooter from '@/components/NavFooter.vue'
 import PrintPage from '@/components/PrintPage.vue'
 import ExportChartData from '@/components/ExportChartData.vue'
 import CountryIndicator from '@/components/CountryIndicator.vue'
+import BaseGallery from '@/components/BaseGallery.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { bestPracticeData } from '@/components/mixins/bestPracticeData'
 import { dataMethods } from '@/components/mixins/dataMethods'
@@ -158,13 +203,16 @@ export default {
     BaseGutterWrapper,
     PrintPage,
     ActivitiesList,
+    ActivitiesTypeHeading,
+    BaseProgressBar,
     ActivitiesItemResult,
     FileExport,
     ClearItems,
     ChartItems,
     NavFooter,
     CountryIndicator,
-    ExportChartData
+    ExportChartData,
+    BaseGallery
   },
   data () {
     return {
@@ -239,18 +287,25 @@ export default {
   }
 }
 
-.toolTray {
-  composes: paddingBottomWide from 'styles/spacing.scss';
+.tableHeader {
+  composes: paddingBottom from 'styles/spacing.scss';
   display: block;
 
   @supports (display: flex) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
 }
 
-.toolTrayItem {
+.inlineBlock {
   display: inline-block;
+}
+
+.activityTypeList {
+  display: block;
+  list-style: none;
+  padding-left: 0;
 }
 </style>

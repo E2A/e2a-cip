@@ -379,6 +379,9 @@ en:
   suggestedImprovements: Suggested improvements
   suggestImprovements: Suggest improvements
   results:
+    analysis:
+      country: "Country analysis"
+      activity: "Activity analysis"
     value: "Value:"
     text: "Text:"
     budget: "Budget:"

@@ -1,12 +1,10 @@
 <template>
-  <div class="ClearItems">
-    <BaseButton
-      v-if="getItemCount(clearType[0].toLowerCase()) > 0"
-      :label="`${$t('clearItems.clear')} ${$t(`clearItems.${clearType[0]}`)}`"
-      @click="clearItems(clearType[0].toLowerCase())"
-      size="small"
-    />
-  </div>
+  <BaseButton
+    v-if="getItemCount(clearType[0].toLowerCase()) > 0"
+    :label="`${$t('clearItems.clear')} ${$t(`clearItems.${clearType[0]}`)}`"
+    @click="clearItems(clearType[0].toLowerCase())"
+    size="small"
+  />
 </template>
 
 <script>

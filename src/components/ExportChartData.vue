@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <BaseButton
-      v-if="showExport"
-      @click="exportChartData()"
-      :label="$t('results.exportCharts')"
-      size="small"
-    />
-  </div>
+  <BaseButton
+    v-if="showExport"
+    @click="exportChartData()"
+    :label="$t('results.exportCharts')"
+    size="small"
+  />
 </template>
 
 <script>
