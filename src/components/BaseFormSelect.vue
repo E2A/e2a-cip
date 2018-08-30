@@ -108,7 +108,7 @@ export default {
     background-size: contain;
 
     &::before {
-      content: none; // kill css triangle in pseudo-element
+      content: none !important; // kill css triangle in pseudo-element
     }
   }
 

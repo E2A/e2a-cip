@@ -5,7 +5,7 @@
     :rightButtons="navButtons.right"
   >
     <!-- Export tool tray -->
-    <div :class="[border.bottom, space.paddingVerticalNarrow, space.paddingVertical, color.lightBg]">
+    <div :class="[border.bottom, space.paddingVerticalNarrow, space.paddingHorizontal, color.lightBg]">
       <BaseGutterWrapper
         :class="type.right"
         gutterY="xnarrow"
@@ -48,7 +48,7 @@
         </BaseGutterWrapper>
       </header>
 
-      <!-- charts -->
+      <!-- country analysis -->
       <BaseWidthWrapper
         :class="space.paddingTopWide"
         el="section"
@@ -56,22 +56,35 @@
       >
         <BaseHeading
           :class="space.paddingBottomWide"
+          :level="2"
           scale="gamma"
           color="midtone"
-          sub
         >
-          Country analysis
+          {{$t('results.analysis.country')}}
         </BaseHeading>
         <ChartItems
           :chartNames="['youthFocusBudget', 'youthFocusCount']"
         />
-        <!-- Indicator Initial Stab -->
-        <CountryIndicator
-          v-for="(c,i) in countryIndicators"
-          :countryIndicator="getCountryIndicator(c.id)"
-          :key="`ci-${i}`"
-         />
+
+        <!-- country indicators -->
+        <section :class="space.paddingTop">
+          <BaseGallery :items="countryIndicators">
+            <div
+              :class="[border.top, border.secondary, space.paddingTop]"
+              slot-scope="{item}"
+            >
+              <CountryIndicator
+                :style="{
+                  maxWidth: '25rem'
+                }"
+                :countryIndicator="getCountryIndicator(item.id)"
+              />
+            </div>
+          </BaseGallery>
+        </section>
       </BaseWidthWrapper>
+
+      <!-- activity analysis -->
       <BaseWidthWrapper
         :class="space.paddingTopWide"
         el="section"
@@ -83,7 +96,7 @@
           color="midtone"
           sub
         >
-          Activity analysis
+          {{$t('results.analysis.activity')}}
         </BaseHeading>
         <ChartItems
           :chartNames="['activityTypeBudget', 'activityTypeCount']"
@@ -129,18 +142,16 @@
             :key="`gA-${index}`"
           >
             <template v-if="activities.activityObjects.length > 0">
-              <BaseHeading
-                :level="3"
-                scale="zeta"
-                :centered="false"
-                :class="[space.paddingXxnarrow, type.uppercase, color.lightBg, border.top]"
-                color="midtone"
-                weight="bold"
-              >
+
+              <!-- activity type heading with stats -->
+              <ActivitiesTypeHeading>
                 {{activities.activityTypeName}}
-                <!-- Activity Count with EIP Initial Stab, remove text I dont think we need it or put it in translation -->
-                | <strong>{{percentBPActivitesByType(activities.activityTypeName)}}%</strong> {{$t('results.activityWithEIPbyType')}}
-              </BaseHeading>
+                <template slot="stats">
+                  <BaseProgressBar
+                    :label="$t('results.activityWithEIPbyType')"
+                    :percentage="percentBPActivitesByType(activities.activityTypeName)" />
+                </template>
+              </ActivitiesTypeHeading>
 
               <ActivitiesItemResult
                 v-for="(activity, index) in activities.activityObjects"
@@ -162,6 +173,8 @@ import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
+import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
+import BaseProgressBar from '@/components/BaseProgressBar.vue'
 import ActivitiesItemResult from '@/components/ActivitiesItemResult.vue'
 import FileExport from '@/components/FileExport.vue'
 import ClearItems from '@/components/ClearItems.vue'
@@ -170,6 +183,7 @@ import NavFooter from '@/components/NavFooter.vue'
 import PrintPage from '@/components/PrintPage.vue'
 import ExportChartData from '@/components/ExportChartData.vue'
 import CountryIndicator from '@/components/CountryIndicator.vue'
+import BaseGallery from '@/components/BaseGallery.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { bestPracticeData } from '@/components/mixins/bestPracticeData'
 import { dataMethods } from '@/components/mixins/dataMethods'
@@ -186,13 +200,16 @@ export default {
     BaseGutterWrapper,
     PrintPage,
     ActivitiesList,
+    ActivitiesTypeHeading,
+    BaseProgressBar,
     ActivitiesItemResult,
     FileExport,
     ClearItems,
     ChartItems,
     NavFooter,
     CountryIndicator,
-    ExportChartData
+    ExportChartData,
+    BaseGallery
   },
   data () {
     return {

@@ -198,6 +198,7 @@ export default {
 
 .logo {
   composes: paddingRightNarrow paddingVerticalXnarrow from 'styles/spacing.scss';
+  border: none !important; // override default anchor underlines
   display: inline-block;
   max-width: 11rem;
 

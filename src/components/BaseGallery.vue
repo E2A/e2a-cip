@@ -134,6 +134,7 @@ export default {
 
   @supports (display: flex) {
     display: flex;
+    flex-direction: column;
   }
 
   // CSS grid version

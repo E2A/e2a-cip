@@ -1,27 +1,47 @@
 <template>
-  <div
-    v-if="!countryIndicator.error"
-  >
+  <div v-if="!countryIndicator.error">
     <BaseHeading
       :centered="false"
-      :level="2"
-      scale="beta"
+      scale="delta"
+      weight="bold"
+      color="dark"
+      sub
     >
-      <strong>{{countryIndicator.value}}</strong> {{countryIndicator.name}}
+      {{countryIndicator.name}}
     </BaseHeading>
     <BaseHeading
       :centered="false"
-      :level="3"
-      scale="delta"
+      scale="alpha"
+      color="dark"
+      sub
+    >
+      {{countryIndicator.value}}
+    </BaseHeading>
+    <BaseHeading
+      :centered="false"
+      scale="epsilon"
+      color="midtone"
+      sub
     >
       {{countryIndicator.description}}
     </BaseHeading>
-    <a :href="countryIndicator.sourceUrl"><small>{{countryIndicator.citation}}</small></a>
-    <BaseCalloutBox
+    <a
+      :class="base.citation"
+      :href="countryIndicator.sourceUrl"
+    >
+      <small>{{countryIndicator.citation}}</small>
+    </a>
+
+    <!-- notification, if applicable -->
+    <div
       v-if="countryNotification"
-      :message="countryNotification.text"
-      :role="countryNotification.type"
-    />
+      :class="space.paddingTopXnarrow"
+    >
+      <BaseCalloutBox
+        :message="countryNotification.text"
+        :role="countryNotification.type"
+      />
+    </div>
   </div>
 </template>
 
@@ -88,3 +108,14 @@ export default {
   }
 }
 </script>
+
+<style src="styles/spacing.scss" lang="scss" module="space"></style>
+<style src="styles/type.scss" lang="scss" module="type"></style>
+
+<style lang="scss" module="base">
+.citation {
+  composes: leadingTight from 'styles/type.scss';
+  composes: paddingTopXnarrow from 'styles/spacing.scss';
+  display: block;
+}
+</style>
