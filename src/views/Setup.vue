@@ -33,7 +33,7 @@
       <BaseHeading
         :level="2"
         scale="gamma"
-        :class="space.paddingBottomWide"
+        :class="space.paddingBottom"
       >
         {{$t('setup.restoreActivities')}}
       </BaseHeading>
