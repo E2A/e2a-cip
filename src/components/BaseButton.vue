@@ -1,18 +1,34 @@
 <template>
   <button
     @click="$emit('click')"
-    :class="[button.default, sizeClass, roleClass]"
+    :class="defaultClassList"
   >
-    {{ label }}
+    <BaseIcon
+      v-if="iconLeft !== 'none'"
+      :class="button.iconLeft"
+      :name="iconLeft"
+      :size="iconSize"
+    />
+    {{label}}
+    <BaseIcon
+      v-if="iconRight !== 'none'"
+      :class="button.iconRight"
+      :name="iconRight"
+      :size="iconSize"
+    />
   </button>
 </template>
 
 <script>
 import { buttonStyles } from './mixins/buttonStyles'
+import BaseIcon from './BaseIcon.vue'
 
 export default {
   name: 'BaseButton',
-  mixins: [buttonStyles]
+  mixins: [buttonStyles],
+  components: {
+    BaseIcon
+  }
 }
 </script>
 

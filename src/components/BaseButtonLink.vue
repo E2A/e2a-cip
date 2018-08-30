@@ -5,7 +5,7 @@
 <template>
   <router-link
     :to="to"
-    :class="[button.default, sizeClass, roleClass, iconClass]"
+    :class="defaultClassList"
     v-if="router"
   >
     <BaseIcon

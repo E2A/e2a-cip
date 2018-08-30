@@ -438,6 +438,7 @@ en:
     pdfFileName: e2a-report-%{timestamp}.pdf
     exportSuccessful: "%{filetype} Export Successful"
   nav:
+    setup: 'Setup'
     activities: 'Activities'
     summary: 'Summary'
     bestPractices: 'Evidence-Informed Practices'

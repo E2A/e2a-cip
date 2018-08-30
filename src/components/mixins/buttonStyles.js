@@ -16,6 +16,10 @@ export const buttonStyles = {
     iconRight: {
       type: String,
       default: 'none'
+    },
+    reverseColors: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -33,6 +37,12 @@ export const buttonStyles = {
       if (this.iconRight !== 'none') {
         return this.button.hasIconRight
       }
+    },
+    reverseClass: function () {
+      return this.reverseColors && this.button.reverse
+    },
+    defaultClassList: function () {
+      return [this.button.default, this.sizeClass, this.roleClass, this.iconClass, this.reverseClass]
     }
   },
   data () {

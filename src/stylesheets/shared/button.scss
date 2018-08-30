@@ -40,6 +40,19 @@
     border-color: color($c, $grade: -10);
     color: color($c, $grade: -10);
   }
+
+  // reversed colors for dark backgrounds
+  &.reverse {
+    color: color('white');
+    border-color: color('white');
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: color('white');
+      color: color('white');
+    }
+  }
 }
 
 .large {
@@ -72,6 +85,21 @@
     background-color: color($bgcolor, $grade: -10);
     border-color: color($bgcolor, $grade: -10);
     color: color($fgcolor);
+  }
+
+  // reversed colors for dark backgrounds
+  &.reverse {
+    color: color($bgcolor);
+    border-color: color($fgcolor);
+    background-color: color($fgcolor);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: color($bgcolor);
+      border-color: color($fgcolor);
+      background-color: color($fgcolor);
+    }
   }
 }
 
