@@ -11,8 +11,8 @@
         gutterY="xnarrow"
         gutterX="xnarrow"
       >
-        <span :class="base.exportItem"><FileExport /></span>
-        <span :class="base.exportItem"><ExportChartData /></span>
+        <span :class="base.inlineBlock"><FileExport /></span>
+        <span :class="base.inlineBlock"><ExportChartData /></span>
       </BaseGutterWrapper>
     </div>
     <BaseSectionWrapper el="div">
@@ -105,35 +105,37 @@
     </BaseSectionWrapper>
 
     <!-- Activities list -->
-    <BaseSectionWrapper border>
-
+    <BaseSectionWrapper
+      :class="space.paddingTop"
+      border
+    >
       <BaseWidthWrapper width="xxwide">
-        <!-- Count & export tools -->
-        <header :class="base.toolTray">
-          <BaseHeading
-            :centered="false"
-            :level="2"
-            scale="epsilon"
-            color="midtone"
-          >
-            <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
-          </BaseHeading>
 
-          <!-- Count of Activities with EIP Initial Stab -->
+        <!-- Count & export tools -->
+        <BaseGutterWrapper
+          :class="base.toolTray"
+          el="header"
+          gutterX="narrow"
+          gutterY="narrow"
+        >
           <BaseHeading
+            :class="base.inlineBlock"
             :centered="false"
             :level="2"
             scale="delta"
+            color="dark"
           >
-            <strong>{{percentBPActivites}}%</strong> {{$t('results.percentActivitesWithBP')}}
+            <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
           </BaseHeading>
-
-          <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
-            <div :class="base.toolTrayItem">
-              <ClearItems :clearType="['Recommendations']" />
-            </div>
-          </BaseGutterWrapper>
-        </header>
+          <div :class="[base.inlineBlock, space.marginHorizontalBetweenNarrow]">
+            <BaseProgressBar
+              :label="$t('results.percentActivitesWithBP')"
+              :percentage="percentBPActivites"
+              id="percent-BP-activities"
+            />
+            <ClearItems :clearType="['Recommendations']" />
+          </div>
+        </BaseGutterWrapper>
 
         <!-- Table -->
         <ActivitiesList ref="activityList">
@@ -286,21 +288,18 @@ export default {
 }
 
 .toolTray {
-  composes: paddingBottomWide from 'styles/spacing.scss';
+  composes: paddingBottom from 'styles/spacing.scss';
   display: block;
 
   @supports (display: flex) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
 }
 
-.toolTrayItem {
-  display: inline-block;
-}
-
-.exportItem {
+.inlineBlock {
   display: inline-block;
 }
 

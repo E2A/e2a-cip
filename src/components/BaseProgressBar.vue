@@ -1,9 +1,9 @@
 <template>
-  <div :class="space.marginHorizontalBetweenXnarrow">
+  <div :class="[base.wrapper, type[typeScaleClass(labelSize)]]">
     <label
       v-if="label"
       :for="id"
-      :class="base.label"
+      :class="[base.label, color[labelColor]]"
     >
       {{label}}
     </label>
@@ -23,8 +23,10 @@
 </template>
 
 <script>
+import { styleHelpers } from './mixins/helpers.js'
 export default {
   name: 'BaseProgressBar',
+  mixins: [styleHelpers],
   props: {
     id: String,
     percentage: {
@@ -34,7 +36,15 @@ export default {
         return value >= 0 && value <= 100
       }
     },
-    label: String
+    label: String,
+    labelColor: {
+      type: String,
+      default: 'dark'
+    },
+    labelSize: {
+      type: String,
+      default: 'zeta'
+    }
   },
   computed: {
     isComplete: function () {
@@ -46,16 +56,22 @@ export default {
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/color.scss" lang="scss" module="color"></style>
+<style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
 @import '~styleConfig/borders';
 @import '~styleConfig/color';
 
-$height: 0.4em;
+$height: 0.5em;
 $radius: 1000px;
 $color-bar: color('light');
 $color-value: color('accent');
 $color-value-complete: color('yes');
+
+.wrapper {
+  composes: marginHorizontalBetweenXxnarrow from 'styles/spacing.scss';
+  display: inline-block;
+}
 
 .bar {
   @include border();
@@ -67,9 +83,7 @@ $color-value-complete: color('yes');
   height: $height;
   margin: 0;
   position: relative;
-  vertical-align: middle;
-  // width: 100%;
-  width: 8rem;
+  width: 6.4em;
 
   // manually polyfill this b/c autocomplete apparently doesn't cover it
   &::-webkit-progress-bar {
@@ -112,8 +126,8 @@ $color-value-complete: color('yes');
 }
 
 .label {
-  composes: scaleZeta from 'styles/type.scss';
   display: inline-block;
+  font-size: 1em;
 }
 
 .percentage {
