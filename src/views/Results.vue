@@ -137,12 +137,11 @@
 
         <!-- Table -->
         <ActivitiesList ref="activityList">
-          <div
-            v-for="(activities, index) in groupedActivities"
-            :key="`gA-${index}`"
-          >
-            <template v-if="activities.activityObjects.length > 0">
-
+          <template v-for="(activities, index) in groupedActivities">
+            <li
+              v-if="activities.activityObjects.length > 0"
+              :key="`gA-${index}`"
+            >
               <!-- activity type heading with stats -->
               <ActivitiesTypeHeading>
                 {{activities.activityTypeName}}
@@ -153,13 +152,15 @@
                 </template>
               </ActivitiesTypeHeading>
 
-              <ActivitiesItemResult
-                v-for="(activity, index) in activities.activityObjects"
-                :key="`activity-${index}`"
-                :activityInstance="activity"
-              />
-            </template>
-          </div>
+              <ul :class="base.activityTypeList">
+                <ActivitiesItemResult
+                  v-for="(activity, index) in activities.activityObjects"
+                  :key="`activity-${index}`"
+                  :activityInstance="activity"
+                />
+              </ul>
+            </li>
+          </template>
         </ActivitiesList>
       </BaseWidthWrapper>
     </BaseSectionWrapper>
@@ -301,5 +302,11 @@ export default {
 
 .exportItem {
   display: inline-block;
+}
+
+.activityTypeList {
+  display: block;
+  list-style: none;
+  padding-left: 0;
 }
 </style>
