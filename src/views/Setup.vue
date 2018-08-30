@@ -19,9 +19,10 @@
         >
           <BaseButtonLink
             :to="{name: 'activity', params: {activityId: 1}}"
+            :label="activityText"
             size="large"
             role="primary"
-            :label="activityText"
+            iconRight="arrow-right"
           />
         </div>
       </BaseWidthWrapper>

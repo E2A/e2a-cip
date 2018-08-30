@@ -23,19 +23,24 @@
             :class="base.buttonWrapper"
             :key="`navFooter-${group}-${index}`"
           >
+
+            <BaseButton
+              v-if="button.type === 'button'"
+              @click="button.click"
+              :label="button.label"
+              :role="button.role || 'default'"
+              :iconLeft="button.iconLeft || getDefaultIcon(group, 'left')"
+              :iconRight="button.iconRight || getDefaultIcon(group, 'right')"
+            />
+            <PrintPage v-if="button.type === 'print'" />
             <BaseButtonLink
-              v-if="button.type === 'link' || !button.type"
+              v-else
               :to="button.to"
               :label="button.label"
               :role="button.role || 'default'"
+              :iconLeft="button.iconLeft || getDefaultIcon(group, 'left')"
+              :iconRight="button.iconRight || getDefaultIcon(group, 'right')"
             />
-            <BaseButton
-              v-if="button.type === 'button'"
-              :label="button.label"
-              :role="button.role || 'default'"
-              @click="button.click"
-            />
-            <PrintPage v-if="button.type === 'print'" />
           </li>
         </BaseGutterWrapper>
       </div>
@@ -68,6 +73,12 @@ export default {
   methods: {
     getGroupProp: function (group) {
       return group === 'left' ? this.leftButtons : this.rightButtons
+    },
+    getDefaultIcon: function (group, side) {
+      if (side === 'left') {
+        return group === 'left' ? 'arrow-left' : 'none'
+      }
+      return group === 'right' ? 'arrow-right' : 'none'
     }
   }
 }

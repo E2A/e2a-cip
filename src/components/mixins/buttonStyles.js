@@ -1,5 +1,6 @@
 export const buttonStyles = {
   props: {
+    label: String,
     size: {
       type: String,
       default: 'default'
@@ -7,6 +8,14 @@ export const buttonStyles = {
     role: {
       type: String,
       default: 'default'
+    },
+    iconLeft: {
+      type: String,
+      default: 'none'
+    },
+    iconRight: {
+      type: String,
+      default: 'none'
     }
   },
   computed: {
@@ -16,6 +25,19 @@ export const buttonStyles = {
     },
     roleClass: function () {
       return this.role !== 'default' && this.button[this.role]
+    },
+    iconClass: function () {
+      if (this.iconLeft !== 'none') {
+        return this.button.hasIconLeft
+      }
+      if (this.iconRight !== 'none') {
+        return this.button.hasIconRight
+      }
+    }
+  },
+  data () {
+    return {
+      iconSize: '0.6em'
     }
   }
 }

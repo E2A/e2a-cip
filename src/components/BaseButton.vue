@@ -12,10 +12,7 @@ import { buttonStyles } from './mixins/buttonStyles'
 
 export default {
   name: 'BaseButton',
-  mixins: [buttonStyles],
-  props: {
-    label: String
-  }
+  mixins: [buttonStyles]
 }
 </script>
 
