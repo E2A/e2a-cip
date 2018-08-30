@@ -113,7 +113,7 @@
 
         <!-- Count & export tools -->
         <BaseGutterWrapper
-          :class="base.toolTray"
+          :class="base.tableHeader"
           el="header"
           gutterX="narrow"
           gutterY="narrow"
@@ -287,7 +287,7 @@ export default {
   }
 }
 
-.toolTray {
+.tableHeader {
   composes: paddingBottom from 'styles/spacing.scss';
   display: block;
 
