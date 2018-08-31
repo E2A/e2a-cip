@@ -220,10 +220,6 @@ export default {
     truncateText: function () {
       this.displayText = this.activityInstance.shortText
     },
-    hideEl: function (event) {
-      console.log('hide!')
-      event.target.style.display = 'none'
-    },
     handleOpen: function () {
       this.expandText()
       this.isOpen = true
