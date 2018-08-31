@@ -536,5 +536,6 @@ en:
       fileName: 'contraceptionUse.csv'
       # Do Not Translate - input the string of the heading that has the ISO2 code
       iso2codeHeader: 'countryCode'
+      indicatorValueUnit: '%'
       # Do Not Translate - input the string of the heading that has the indicator value
       indicatorValueHeader: '15-19'

@@ -25,7 +25,7 @@
       sub
     >
       <!-- round to one decimal place, and put a unit after it -->
-      {{Math.round(countryIndicator.value * 10) / 10}}{{countryIndicator.unit}}
+      {{Math.round(countryIndicator.value * 10) / 10}} <small>{{countryIndicator.unit}}</small>
     </BaseHeading>
     <a
       :class="base.citation"
