@@ -4,6 +4,7 @@
     :label="`${$t('clearItems.clear')} ${$t(`clearItems.${clearType[0]}`)}`"
     @click="clearItems(clearType[0].toLowerCase())"
     size="small"
+    iconLeft="close"
   />
 </template>
 

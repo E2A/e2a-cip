@@ -142,7 +142,7 @@ export default {
         activities: {
           name: 'activity',
           params: {
-            activityID: 1
+            activityId: '1'
           },
           text: this.$t('nav.activities'),
           active: true

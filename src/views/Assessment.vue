@@ -4,8 +4,7 @@
     :leftButtons="navButtons.left"
     :rightButtons="navButtons.right"
   >
-    <FileExport />
-    <ClearItems :clearType="['Assessments']" />
+    <ActivitiesExportTray :clear="['Assessments']" />
     <BasePageIntro
       :title="$t('analysis.title')"
       :blurb="$t('analysis.intro')"
@@ -98,7 +97,7 @@ import BaseBodyText from '@/components/BaseBodyText.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
 import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
 import ActivitiesItemAssessment from '@/components/ActivitiesItemAssessment.vue'
-import FileExport from '@/components/FileExport.vue'
+import ActivitiesExportTray from '@/components/ActivitiesExportTray.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { dataMethods } from '@/components/mixins/dataMethods'
@@ -117,7 +116,7 @@ export default {
     ActivitiesList,
     ActivitiesTypeHeading,
     ActivitiesItemAssessment,
-    FileExport,
+    ActivitiesExportTray,
     ClearItems
   },
   data () {

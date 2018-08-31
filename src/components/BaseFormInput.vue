@@ -63,10 +63,7 @@ export default {
         return ['input', 'textarea'].indexOf(value) !== -1
       }
     },
-    label: {
-      type: String,
-      required: true
-    },
+    label: String,
     helpText: String,
     value: [String, Number],
     name: String,

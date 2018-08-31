@@ -1,5 +1,4 @@
 # Components/layout
- ☐ Export/clear tool tray at top of analysis, results, etc.
  ☐ Activity editor
    ☐ Move save button to bottom nav and alternate w/'add another' depending on save state @nice-to-have
    ☐ Move delete button to top right? @nice-to-have
@@ -10,8 +9,8 @@
    ☐ Tables
      ☐ Mobile @nice-to-have
    ☐ Notifications
-     ☐ Placement
      ☐ Animation @nice-to-have
+   ☐ Convert file export to a dropdown button
  ☐ Home
    ☐ Add logo grid to top
      Display order: USAID-E2A, Pathfinder, OP
@@ -46,6 +45,8 @@
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Export/clear tool tray at top of analysis, results, etc. @done (18-08-31 00:24)
+ ✔ Placement @done (18-08-31 00:23)
  ✔ If activities are not youth centric make grayed out in the assessment page and remove icons. @jay @done (18-08-30 23:34)
  ✔ Activities should still be present in the reports view (and just dont display any best practices icons) [IE STATUS QUO] @done (18-08-30 23:34)
  ✔ Hide top row of icons and display edit/cancel buttons when row is expanded @done (18-08-30 23:05)
