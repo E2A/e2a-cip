@@ -1,25 +1,25 @@
-<template>
+  <template>
   <BaseFormLabel
     :id="name"
     :label="label"
     :helpText="helpText"
     :textSize="labelTextSize"
   >
+    <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
+    <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
     <component
       :is="el"
       :id="name"
       :name="name"
       :class="[base[el], type[typeScaleClass(textSize)]]"
+      :rows="el === 'textarea' && height"
       :placeholder="placeholder"
       :value="value"
       :type="type"
-      :rows="el === 'textarea' && height"
       @input="emitInput"
       @change="emitChange"
       @focus="emitFocus"
-    >
-      {{contentValue}}
-    </component>
+    >{{contentValue}}</component>
     <BaseCalloutBox
       :key="error"
       v-if="error"
@@ -132,8 +132,8 @@ export default {
 
 .textarea {
   composes: input;
+  // composes: noPaddingVertical from 'styles/spacing.scss';
   height: auto;
-  min-height: 4em;
   resize: vertical;
 }
 </style>

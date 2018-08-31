@@ -4,7 +4,7 @@
       v-model="language"
       :options="langs"
       :searchable="false"
-      id="language-select"
+      name="language-select"
       noClear
     />
   </div>

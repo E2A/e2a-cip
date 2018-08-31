@@ -38,6 +38,8 @@
  ☐ Debug electron SVG issues:
    ☐ Use debugging protocol outlined in README.
  ☐ Debug french input...
+ ☐ Fix v-select styles overriding custom ones in deploy (vendor styles get inlined)
+ ☐ Close nav dropdown when you click to a new page
 
  # Nice to have
  ☐ Dot seems to not change on nav change (likely b/c prop or computed property?) @scott?
