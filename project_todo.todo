@@ -1,10 +1,5 @@
 # Components/layout
  ☐ Export/clear tool tray at top of analysis, results, etc.
- ✔ Buttons @done (18-08-30 18:52)
-   ✔ with icon @done (18-08-30 14:57)
-     ✔ left @done (18-08-30 14:57)
-     ✔ right @done (18-08-30 14:57)
-   ✔ dropdown @done (18-08-30 18:52)
  ☐ Activity editor
    ☐ Move save button to bottom nav and alternate w/'add another' depending on save state @nice-to-have
    ☐ Move delete button to top right? @nice-to-have
@@ -18,36 +13,21 @@
    ☐ Notifications
      ☐ Placement
      ☐ Animation @nice-to-have
-   ☐ Main header
-     ✔ Hide nav on small screens, replace with dropdown btn @done (18-08-30 18:52)
-     ☐ Style language selector (dropdown btn?)
  ☐ Home
    ☐ Add logo grid to top
      Display order: USAID-E2A, Pathfinder, OP
    ☐ Move clear all btn to setup page @nice-to-have
- ✔ Setup @done (18-08-30 15:06)
-   ✔ Style the import data button @done (18-08-30 15:06)
  ☐ Results
    ☐ If activities are not youth centric make grayed out in the assessment page and remove icons. @jay
      ☐ Activities should still be present in the reports view (and just dont display any best practices icons) [IE STATUS QUO]
      ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
-   ✔ Lay out new chart data @done (18-08-30 18:53)
-     ✔ Rows of pie charts @done (18-08-30 18:53)
-     ✔ Chart/legend layout inside grid @done (18-08-29 15:28)
-     ✔ Country indicators @done (18-08-30 18:53)
-       Notes from last meeting: https://docs.google.com/document/d/1UYb-xSD1rlKYQpf3zz9WU8coQf-Tv526NQ5zt5Th960/edit#
-     ✔ Activity type stats/progress bars @done (18-08-30 18:53)
    ☐ Hide top row of icons and display edit/cancel buttons when row is expanded
    ☐ Fix overlap b/n suggestion input and delete button - gutter issue?
 
 # Additional scope items:
  ☐ Adding FR translation [started]
    ☐ Order FR translations
- ☐ Add summary counts for each activity type to results page [started]
-   ☐ Figure out designs for displaying the new activity aggregate data
-     ☐ Percent of activities with a best practice (percentage bar)
-     ☐ Percent of activities with a best practice by modality (percentage bar)
- ☐ Add in additional country data to site
+ ☐ Add new birth control indicator data
 
 
  # Browser testing/debugging/deployment
@@ -69,6 +49,27 @@
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Style language selector (dropdown btn?) @done (18-08-30 20:19)
+ ✔ Percent of activities with a best practice by modality (percentage bar) @done (18-08-30 20:19)
+ ✔ Percent of activities with a best practice (percentage bar) @done (18-08-30 20:19)
+ ✔ Main header @done (18-08-30 20:19)
+ ✔ Figure out designs for displaying the new activity aggregate data @done (18-08-30 20:19)
+ ✔ Add summary counts for each activity type to results page [started] @done (18-08-30 20:19)
+ ✔ Add in additional country data to site @done (18-08-30 20:19)
+ ✔ Rows of pie charts @done (18-08-30 18:53)
+ ✔ Lay out new chart data @done (18-08-30 18:53)
+ ✔ Country indicators @done (18-08-30 18:53)
+  Notes from last meeting: https://docs.google.com/document/d/1UYb-xSD1rlKYQpf3zz9WU8coQf-Tv526NQ5zt5Th960/edit#
+ ✔ Activity type stats/progress bars @done (18-08-30 18:53)
+ ✔ dropdown @done (18-08-30 18:52)
+ ✔ Hide nav on small screens, replace with dropdown btn @done (18-08-30 18:52)
+ ✔ Buttons @done (18-08-30 18:52)
+ ✔ Style the import data button @done (18-08-30 15:06)
+ ✔ Setup @done (18-08-30 15:06)
+ ✔ with icon @done (18-08-30 14:57)
+ ✔ right @done (18-08-30 14:57)
+ ✔ left @done (18-08-30 14:57)
+ ✔ Chart/legend layout inside grid @done (18-08-29 15:28)
  ✔ Remove nav for home / setup pages. @jay @done (18-08-29 14:32)
  ✔ Analysis @done (18-08-29 14:28)
  ✔ Fix focus rings @done (18-08-28 17:07)
