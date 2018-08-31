@@ -511,7 +511,7 @@ en:
       # For all comparison operators -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Comparison_operators
       # Note this is evaluated as follows:
       #   country_indicator {operator} comparator_indicator
-      # ex: percent of you in country > youth focused budget %
+      # ex: percent of youth in country > youth focused budget %
       # === A NOTE ON COMPARATOR MATH ===
       # Note the indicator is run through parseFloat - so it will be compared as a number in its current format, ie 41.2% will be compared at 41.2 not .412
       # So be sure that your comparator is similarly structutured ie 41 vs. .41

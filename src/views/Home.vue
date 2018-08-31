@@ -1,7 +1,7 @@
 <template>
   <article>
 
-    <BaseWidthWrapper :class="[space.paddingVerticalWide, border.bottom]">
+    <BaseWidthWrapper :class="[space.paddingVerticalWide, space.paddingHorizontal, border.bottom]">
       <BaseGutterWrapper :class="base.logoGrid">
         <div :class="base.logo">
           <img
