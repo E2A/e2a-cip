@@ -2,6 +2,10 @@
  ☐ Activity editor
    ☐ Move save button to bottom nav and alternate w/'add another' depending on save state @nice-to-have
    ☐ Move delete button to top right? @nice-to-have
+   ☐ Make 'learn more about categories' link more prominent @feedback
+     ☐ add icon
+     ☐ add box around it?
+     ☐ see if we can move up next to form label?
 
 # Styling @jay
  ☐ Global
@@ -15,11 +19,15 @@
    ☐ Move clear all btn to setup page @nice-to-have
  ☐ Results
      ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
+     ☐ Remove the word "choice" from the first best practice icon @feedback
+     client may want to replace with another icon, e.g. a medical one
 
 # Additional scope items:
  ☐ Adding FR translation [started]
    ☐ Order FR translations
- ☐ Add new birth control indicator data
+ ☐ Round indicator percentages to one decimal place @feedback
+ ☐ Add new birth control indicator data @feedback
+   ☐ See if we can show both percentages in one indicator item - e.g. multiple `indicatorValueHeader` values @feedback
 
 
  # Browser testing/debugging/deployment
