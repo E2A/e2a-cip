@@ -92,15 +92,19 @@
       </nav>
     </header>
 
-    <BaseCalloutBox
-      :key="this.getItemCount('globalnotifications')"
+    <div
       v-if="globalNotification('visible')"
-      :message="globalNotification('message')"
-      :role="globalNotification('role')"
-      :timeout="globalNotification('timeout')"
-      dismissable
-      shadow
-    />
+      :class="base.notificationWrapper"
+    >
+      <BaseCalloutBox
+        :key="this.getItemCount('globalnotifications')"
+        :message="globalNotification('message')"
+        :role="globalNotification('role')"
+        :timeout="globalNotification('timeout')"
+        dismissable
+        shadow
+      />
+    </div>
   </div>
 </template>
 
@@ -231,10 +235,6 @@ export default {
   }
 }
 </script>
-
-<!-- simple way to add .reverse modifier class to menu button -->
-<!-- doing this instead of implementing theming for just one element -->
-<style src="@/stylesheets/shared/button.scss" lang="scss" module="button"></style>
 
 <style lang="scss" module="base">
 @import '~styleConfig/spacing';
@@ -418,5 +418,11 @@ $nav-breakpoint: 81em; // ~1400px
   margin-top: -0.25em; // 0.6em/2, subtract a little to optically align
   position: absolute;
   top: 50%;
+}
+
+.notificationWrapper {
+  composes: lightBg from 'styles/color.scss';
+  composes: bottom from 'styles/borders.scss';
+  composes: paddingVerticalXnarrow paddingHorizontalNarrow from 'styles/spacing.scss';
 }
 </style>

@@ -108,8 +108,8 @@ $size-icons: scale-type('epsilon');
 $gutter: space('xnarrow');
 
 .box {
-  composes: marginTopXnarrow noMarginBottom from 'styles/spacing.scss';
   composes: default round from 'styles/borders.scss';
+  composes: whiteBg from 'styles/color.scss';
   position: relative;
 }
 

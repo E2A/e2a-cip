@@ -6,7 +6,6 @@
 
 # Styling @jay
  ☐ Global
-   ✔ Fix form adding in text to make sure to strip any spaces [adjust from rows to height] @jay @done (18-08-30 21:40)
    ☐ Print styles
    ☐ Tables
      ☐ Mobile @nice-to-have
@@ -18,11 +17,7 @@
      Display order: USAID-E2A, Pathfinder, OP
    ☐ Move clear all btn to setup page @nice-to-have
  ☐ Results
-   ✔ If activities are not youth centric make grayed out in the assessment page and remove icons. @jay @done (18-08-30 23:34)
-     ✔ Activities should still be present in the reports view (and just dont display any best practices icons) [IE STATUS QUO] @done (18-08-30 23:34)
      ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
-   ✔ Hide top row of icons and display edit/cancel buttons when row is expanded @done (18-08-30 23:05)
-   ✔ Fix overlap b/n suggestion input and delete button - gutter issue? @done (18-08-30 23:05)
 
 # Additional scope items:
  ☐ Adding FR translation [started]
@@ -51,6 +46,11 @@
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ If activities are not youth centric make grayed out in the assessment page and remove icons. @jay @done (18-08-30 23:34)
+ ✔ Activities should still be present in the reports view (and just dont display any best practices icons) [IE STATUS QUO] @done (18-08-30 23:34)
+ ✔ Hide top row of icons and display edit/cancel buttons when row is expanded @done (18-08-30 23:05)
+ ✔ Fix overlap b/n suggestion input and delete button - gutter issue? @done (18-08-30 23:05)
+ ✔ Fix form adding in text to make sure to strip any spaces [adjust from rows to height] @jay @done (18-08-30 21:40)
  ✔ Style language selector (dropdown btn?) @done (18-08-30 20:19)
  ✔ Percent of activities with a best practice by modality (percentage bar) @done (18-08-30 20:19)
  ✔ Percent of activities with a best practice (percentage bar) @done (18-08-30 20:19)
