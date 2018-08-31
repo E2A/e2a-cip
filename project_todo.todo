@@ -12,8 +12,6 @@
      ☐ Animation @nice-to-have
    ☐ Convert file export to a dropdown button
  ☐ Home
-   ☐ Add logo grid to top
-     Display order: USAID-E2A, Pathfinder, OP
    ☐ Move clear all btn to setup page @nice-to-have
  ☐ Results
      ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
@@ -45,6 +43,8 @@
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Add logo grid to top @done (18-08-31 00:49)
+  Display order: USAID-E2A, Pathfinder, OP
  ✔ Export/clear tool tray at top of analysis, results, etc. @done (18-08-31 00:24)
  ✔ Placement @done (18-08-31 00:23)
  ✔ If activities are not youth centric make grayed out in the assessment page and remove icons. @jay @done (18-08-30 23:34)
