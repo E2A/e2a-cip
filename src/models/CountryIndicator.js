@@ -11,6 +11,7 @@ export default class CountryIndicator extends Model {
       name: this.string(''),
       description: this.string(''),
       value: this.attr(null),
+      unit: this.string('%'),
       sourceUrl: this.string(''),
       citation: this.string(''),
       comparatorOperator: this.string(''),

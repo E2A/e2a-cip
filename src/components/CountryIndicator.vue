@@ -10,20 +10,22 @@
       {{countryIndicator.name}}
     </BaseHeading>
     <BaseHeading
-      :centered="false"
-      scale="alpha"
-      color="dark"
-      sub
-    >
-      {{countryIndicator.value}}
-    </BaseHeading>
-    <BaseHeading
+      :class="space.paddingTopXnarrow"
       :centered="false"
       scale="epsilon"
       color="midtone"
       sub
     >
       {{countryIndicator.description}}
+    </BaseHeading>
+    <BaseHeading
+      :centered="false"
+      scale="alpha"
+      color="dark"
+      sub
+    >
+      <!-- round to one decimal place, and put a unit after it -->
+      {{Math.round(countryIndicator.value * 10) / 10}}{{countryIndicator.unit}}
     </BaseHeading>
     <a
       :class="base.citation"

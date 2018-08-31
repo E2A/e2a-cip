@@ -494,8 +494,8 @@ en:
   indicatorNotPresent: 'The indicator you have selected is not present'
   countryIndicators:
     indicator1:
-      name: 'Percent of Youth in Country'
-      description: 'calculated as population 15-24 / 15-49 as of 2015'
+      name: 'Percentage of youth in your country'
+      description: 'Population aged 15-24 / 15-49 as of 2015'
       # Do Not Translate
       sourceUrl: 'https://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2017_POP_F15_1_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx'
       # Do Not Translate
@@ -506,6 +506,7 @@ en:
       iso2codeHeader: 'ISO2'
       # Do Not Translate - input the string of the heading that has the indicator value
       indicatorValueHeader: 'percentYouth'
+      indicatorValueUnit: '%'
       # === NOTE MOST NEW INDICATORS WILL NOT HAVE THIS COMPARATOR AREA ====
       # Do Not Translate - this should be a comparison operator (>, <, ===, !=, <=, >=)
       # For all comparison operators -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Comparison_operators
@@ -524,3 +525,16 @@ en:
       comparatorTextTrueType: 'success'
       # Do not translate - this should be one of warning, success, info
       comparatorTextFalseType: 'warning'
+    indicator2:
+      name: 'Percentage of women using modern methods of contraception in your country'
+      description: 'Population aged 15-19'
+      # Do Not Translate
+      sourceUrl: 'https://statcompiler.com/en/'
+      # Do Not Translate
+      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently using any modern method of contraception.'
+      # Do Not Translate
+      fileName: 'contraceptionUse.csv'
+      # Do Not Translate - input the string of the heading that has the ISO2 code
+      iso2codeHeader: 'countryCode'
+      # Do Not Translate - input the string of the heading that has the indicator value
+      indicatorValueHeader: '15-19'

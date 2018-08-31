@@ -21,6 +21,7 @@ export const initData = {
             fileName: this.$t(`countryIndicators.indicator${index + 1}.fileName`),
             iso2codeHeader: this.$t(`countryIndicators.indicator${index + 1}.iso2codeHeader`),
             indicatorValueHeader: this.$t(`countryIndicators.indicator${index + 1}.indicatorValueHeader`),
+            indicatorValueUnit: this.$t(`countryIndicators.indicator${index + 1}.indicatorValueUnit`),
             comparatorOperator: this.$t(`countryIndicators.indicator${index + 1}.comparatorOperator`),
             comparatorIndicator: this.$t(`countryIndicators.indicator${index + 1}.comparatorIndicator`),
             comparatorTextTrue: this.$t(`countryIndicators.indicator${index + 1}.comparatorTextTrue`),
@@ -29,17 +30,17 @@ export const initData = {
             comparatorTextFalseType: this.$t(`countryIndicators.indicator${index + 1}.comparatorTextFalseType`),
             id: (index + 1)
           }
-        } else {
-          return {
-            name: this.$t(`countryIndicators.indicator${index + 1}.name`),
-            description: this.$t(`countryIndicators.indicator${index + 1}.description`),
-            citation: this.$t(`countryIndicators.indicator${index + 1}.sourceCitation`),
-            sourceUrl: this.$t(`countryIndicators.indicator${index + 1}.sourceUrl`),
-            fileName: this.$t(`countryIndicators.indicator${index + 1}.fileName`),
-            iso2codeHeader: this.$t(`countryIndicators.indicator${index + 1}.iso2codeHeader`),
-            indicatorValueHeader: this.$t(`countryIndicators.indicator${index + 1}.indicatorValueHeader`),
-            id: (index + 1)
-          }
+        }
+        return {
+          name: this.$t(`countryIndicators.indicator${index + 1}.name`),
+          description: this.$t(`countryIndicators.indicator${index + 1}.description`),
+          citation: this.$t(`countryIndicators.indicator${index + 1}.sourceCitation`),
+          sourceUrl: this.$t(`countryIndicators.indicator${index + 1}.sourceUrl`),
+          fileName: this.$t(`countryIndicators.indicator${index + 1}.fileName`),
+          iso2codeHeader: this.$t(`countryIndicators.indicator${index + 1}.iso2codeHeader`),
+          indicatorValueHeader: this.$t(`countryIndicators.indicator${index + 1}.indicatorValueHeader`),
+          indicatorValueUnit: this.$t(`countryIndicators.indicator${index + 1}.indicatorValueUnit`),
+          id: (index + 1)
         }
       })
     }
@@ -67,6 +68,7 @@ export const initData = {
             description: indicator.description,
             indicatorId: indicator.id,
             value: dataItem[indicator.indicatorValueHeader],
+            unit: dataItem[indicator.indicatorValueUnit],
             sourceUrl: indicator.sourceUrl,
             citation: indicator.citation,
             comparatorOperator: indicator.comparatorOperator,
@@ -83,6 +85,7 @@ export const initData = {
             description: indicator.description,
             indicatorId: indicator.id,
             value: dataItem[indicator.indicatorValueHeader],
+            unit: dataItem[indicator.indicatorValueUnit],
             sourceUrl: indicator.sourceUrl,
             citation: indicator.citation
           }

@@ -62,12 +62,12 @@ export const dataMethods = {
       } else {
         return { error: this.$t('indicatorNotPresent') }
       }
+
       // return country indicator
       const countryIndicator = this.$store.getters['entities/countryindicators/query']()
         .where('indicatorId', indicatorId)
         .where('countryCode', this.getItemValue('setup', 'countryCode'))
         .first()
-
       if (countryIndicator) {
         return countryIndicator
       } else {
