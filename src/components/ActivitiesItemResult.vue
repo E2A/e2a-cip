@@ -7,9 +7,11 @@
 <template>
   <li :class="base.wrapper">
     <BaseDetails
-      @open="expandText"
-      @close="truncateText"
+      @open="handleOpen"
+      @close="handleClose"
+      :open="isOpen"
     >
+      <!-- summary -->
       <template slot="summaryLeft">
         <BaseHeading
           :centered="false"
@@ -28,25 +30,42 @@
           gutterY="narrow"
           :class="type.right"
         >
-          <BaseGutterWrapper
-            :class="base.icons"
-            el="ul"
-            gutterX="xnarrow"
-            gutterY="xnarrow"
+          <div
+            v-show="!isOpen"
+            :class="base.gutter"
           >
-            <li
-              v-for="(assessment,index) of activeAssessments"
-              :key="`assess-${index}`"
-              :class="base.icon"
+            <BaseGutterWrapper
+              :class="base.icons"
+              el="ul"
+              gutterX="xnarrow"
+              gutterY="xnarrow"
             >
-              <BestPracticeIcon
-                :id="assessment.best_practice_id"
-                :activityID="assessment.activity_id"
-              />
-            </li>
-          </BaseGutterWrapper>
-          <div style="display: inline-block; vertical-align: top;">
-            <BaseButton :label="$t('suggestImprovements')" size="small" />
+              <li
+                v-for="(assessment,index) of activeAssessments"
+                :key="`assess-${index}`"
+                :class="base.icon"
+              >
+                <BestPracticeIcon
+                  :id="assessment.best_practice_id"
+                  :activityID="assessment.activity_id"
+                />
+              </li>
+            </BaseGutterWrapper>
+          </div>
+          <div :class="base.gutter">
+            <BaseButton
+              v-show="!isOpen"
+              @click="handleOpen"
+              :label="$t('suggestImprovements')"
+              size="small"
+            />
+            <BaseButton
+              v-show="isOpen"
+              @click="handleClose"
+              :label="$t('done')"
+              size="small"
+              role="primary"
+            />
           </div>
         </BaseGutterWrapper>
       </template>
@@ -108,8 +127,10 @@
         </ol>
         <BaseButton
           @click="addRecommendation"
+          :class="space.marginLeft"
           :label="$t('addAnotherRecommendation')"
           size="small"
+          role="primary"
         />
       </div>
     </BaseDetails>
@@ -147,6 +168,7 @@ export default {
   },
   data () {
     return {
+      isOpen: false,
       activeAssessments: this.activityInstance.assessments,
       recommendationText: '',
       expandedData: {
@@ -197,6 +219,18 @@ export default {
     },
     truncateText: function () {
       this.displayText = this.activityInstance.shortText
+    },
+    hideEl: function (event) {
+      console.log('hide!')
+      event.target.style.display = 'none'
+    },
+    handleOpen: function () {
+      this.expandText()
+      this.isOpen = true
+    },
+    handleClose: function () {
+      this.truncateText()
+      this.isOpen = false
     }
   }
 }
@@ -222,6 +256,11 @@ export default {
     justify-content: space-between;
     align-items: flex-start;
   }
+}
+
+.gutter {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .data {

@@ -6,7 +6,7 @@
 
 # Styling @jay
  ☐ Global
-   ☐ Fix form adding in text to make sure to strip any spaces [adjust from rows to height] @jay
+   ✔ Fix form adding in text to make sure to strip any spaces [adjust from rows to height] @jay @done (18-08-30 21:40)
    ☐ Print styles
    ☐ Tables
      ☐ Mobile @nice-to-have

@@ -42,12 +42,18 @@ import BaseGutterWrapper from './BaseGutterWrapper.vue'
 
 export default {
   name: 'BaseDetails',
+  props: {
+    open: {
+      type: Boolean,
+      default: false
+    }
+  },
   components: {
     BaseGutterWrapper
   },
   data () {
     return {
-      isOpen: false
+      isOpen: this.open
     }
   },
   computed: {
@@ -61,6 +67,13 @@ export default {
       this.isOpen = !this.isOpen
       if (this.isOpen) this.$emit('open')
       if (!this.isOpen) this.$emit('close')
+    }
+  },
+  watch: {
+    // watch the open prop and keep isOpen updated
+    // -> so when its parent tells it to open, it's reflected in internal state
+    open () {
+      this.isOpen = this.open
     }
   }
 }

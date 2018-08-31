@@ -1,5 +1,6 @@
   <template>
   <BaseFormLabel
+    v-if="label"
     :id="name"
     :label="label"
     :helpText="helpText"
@@ -8,6 +9,9 @@
     <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
     <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
     <component
+      @input="emitInput"
+      @change="emitChange"
+      @focus="emitFocus"
       :is="el"
       :id="name"
       :name="name"
@@ -16,10 +20,8 @@
       :placeholder="placeholder"
       :value="value"
       :type="type"
-      @input="emitInput"
-      @change="emitChange"
-      @focus="emitFocus"
     >{{contentValue}}</component>
+
     <BaseCalloutBox
       :key="error"
       v-if="error"
@@ -28,6 +30,21 @@
       role="warning"
     />
   </BaseFormLabel>
+  <!-- if there's no label prop, just show the input -->
+  <component
+    v-else
+    @input="emitInput"
+    @change="emitChange"
+    @focus="emitFocus"
+    :is="el"
+    :id="name"
+    :name="name"
+    :class="[base[el], type[typeScaleClass(textSize)]]"
+    :rows="el === 'textarea' && height"
+    :placeholder="placeholder"
+    :value="value"
+    :type="type"
+  >{{contentValue}}</component>
 </template>
 
 <script>
@@ -107,6 +124,7 @@ export default {
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
+<style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
 @import '~styleConfig/color';
@@ -116,7 +134,7 @@ export default {
   composes: paddingXnarrow from 'styles/spacing.scss';
   composes: round default from 'styles/borders.scss';
   composes: lightBg from 'styles/color.scss';
-  composes: scaleEpsilon leadingDefault from 'styles/type.scss';
+  composes: leadingDefault from 'styles/type.scss';
   box-shadow: none !important;
   display: block;
   width: 100%;

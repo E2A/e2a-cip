@@ -378,6 +378,7 @@ en:
   addAnotherRecommendation: Add another recommendation
   suggestedImprovements: Suggested improvements
   suggestImprovements: Suggest improvements
+  done: Done
   results:
     analysis:
       country: "Country analysis"

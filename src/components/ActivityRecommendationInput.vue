@@ -16,7 +16,6 @@
           <BaseFormInput
             v-model="recommendationText"
             @change="updateRecommendation()"
-            :label="$t('enterSuggestion')"
             textSize="zeta"
             labelTextSize="zeta"
             el="textarea"
@@ -139,7 +138,7 @@ export default {
 .flex {
   @supports (display: flex) {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
 }
 
@@ -147,9 +146,10 @@ export default {
   @supports (flex: 1) {
     flex: 1;
   }
+}
 
-  .gutter {
-    display: inline-block;
-  }
+.gutter {
+  display: inline-block;
+  vertical-align: top;
 }
 </style>

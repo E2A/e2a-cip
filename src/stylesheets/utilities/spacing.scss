@@ -59,33 +59,33 @@
     @if $name != 'medium' {
       // e.g. .paddingWide
       .#{$prop}#{capitalize($name)} {
-        #{$prop}: space($name);
+        #{$prop}: space($name) !important;
       }
 
       // e.g. .paddingHorizontalWide
       .#{$prop}Horizontal#{capitalize($name)} {
-        #{$prop}-left: space($name);
-        #{$prop}-right: space($name);
+        #{$prop}-left: space($name) !important;
+        #{$prop}-right: space($name) !important;
       }
 
       // e.g. .paddingVerticalWide
       .#{$prop}Vertical#{capitalize($name)} {
-        #{$prop}-bottom: space($name);
-        #{$prop}-top: space($name);
+        #{$prop}-bottom: space($name) !important;
+        #{$prop}-top: space($name) !important;
       }
 
       // add space between all children
       // e.g. .paddingHorizontalBetweenWide
       .#{$prop}HorizontalBetween#{capitalize($name)} {
         > * + * {
-          #{$prop}-left: space($name);
+          #{$prop}-left: space($name) !important;
         }
       }
 
       // e.g. .paddingVerticalBetweenWide
       .#{$prop}VerticalBetween#{capitalize($name)} {
         > * + * {
-          #{$prop}-top: space($name);
+          #{$prop}-top: space($name) !important;
         }
       }
     }
@@ -95,7 +95,7 @@
   @each $side in $sides {
     // e.g. .paddingTop
     .#{$prop}#{capitalize($side)} {
-      #{$prop}-#{$side}: space();
+      #{$prop}-#{$side}: space() !important;
     }
 
     // e.g. .noPaddingTop
@@ -108,7 +108,7 @@
       @if $name != 'medium' {
         // e.g. .paddingTopWide
         .#{$prop}#{capitalize($side)}#{capitalize($name)} {
-          #{$prop}-#{$side}: space($name);
+          #{$prop}-#{$side}: space($name) !important;
         }
       }
     }
