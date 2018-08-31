@@ -44,7 +44,7 @@ export default new Router({
       component: Summary
     },
     {
-      path: '/assessment',
+      path: '/analysis',
       name: 'assessment',
       component: Assessment
     },

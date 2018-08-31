@@ -51,6 +51,7 @@ export default {
   methods: {
     toggleFlyout () {
       this.isOpen = !this.isOpen
+      this.isOpen ? this.$emit('open') : this.$emit('close')
     }
   }
 }

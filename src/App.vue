@@ -33,6 +33,9 @@ export default {
     if (this.checkElectron()) {
       this.$router.replace('/')
     }
+  },
+  beforeRouteUpdate (to, from, next) {
+    console.log('hello')
   }
 }
 

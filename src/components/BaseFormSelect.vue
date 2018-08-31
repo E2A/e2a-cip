@@ -1,5 +1,6 @@
 <template>
   <BaseFormLabel
+    v-if="label"
     :id="name"
     :label="label"
     :helpText="helpText"
@@ -21,6 +22,15 @@
       role="warning"
     />
   </BaseFormLabel>
+  <vSelect
+    v-else
+    @input="emitInput"
+    :options="options"
+    :searchable="searchable"
+    :value="value"
+    :class="[classItems, noClear && base.noClear]"
+    :placeholder="placeholder"
+  />
 </template>
 
 <script>
@@ -97,6 +107,10 @@ export default {
   @include font();
   color: color('dark');
 
+  a {
+    border: none !important;
+  }
+
   .open-indicator {
     $size: 0.7em; // matched roughly to original size but in ems
     @include size($size);
@@ -110,6 +124,10 @@ export default {
     &::before {
       content: none !important; // kill css triangle in pseudo-element
     }
+  }
+
+  &.single .selected-tag {
+    position: absolute;
   }
 
   &.open .open-indicator {

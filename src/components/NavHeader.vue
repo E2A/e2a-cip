@@ -1,17 +1,20 @@
 <template>
   <div>
     <header :class="base.wrapper">
-      <router-link
-        :to="{name: 'home'}"
-        :class="base.logo"
-        exact
+      <BaseGutterWrapper
+        gutterY="xnarrow"
+        gutterX="xnarrow"
       >
-        <img src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg" alt="E2A and Pathfinder" />
-      </router-link>
-      <!-- Initial translation wiring -->
-      <!-- <div>
+        <router-link
+          :to="{name: 'home'}"
+          :class="base.logo"
+          exact
+        >
+          <img src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg" alt="E2A and Pathfinder" />
+        </router-link>
+        <!-- Initial translation wiring -->
         <LanguageSwitcher />
-      </div> -->
+      </BaseGutterWrapper>
 
       <!-- nav for small screens -->
       <nav :class="base.smallNav">
@@ -239,7 +242,7 @@ export default {
 @import '~styleConfig/borders';
 @import '~styleConfig/breakpoints';
 
-$nav-breakpoint: 87.5em; // ~1400px
+$nav-breakpoint: 81em; // ~1400px
 
 .wrapper {
   composes: paddingHorizontal from 'styles/spacing.scss';
@@ -254,7 +257,7 @@ $nav-breakpoint: 87.5em; // ~1400px
 }
 
 .logo {
-  composes: paddingRightNarrow paddingVerticalXnarrow from 'styles/spacing.scss';
+  composes: paddingRightNarrow paddingVerticalNarrow from 'styles/spacing.scss';
   border: none !important; // override default anchor underlines
   display: inline-block;
   max-width: 11rem;
@@ -325,6 +328,7 @@ $nav-breakpoint: 87.5em; // ~1400px
 .largeNav {
   display: none;
   text-align: right;
+  vertical-align: middle;
 
   @include media('>#{$nav-breakpoint}') {
     display: inline-block;
@@ -383,6 +387,7 @@ $nav-breakpoint: 87.5em; // ~1400px
 }
 
 .largeNavItem {
+  composes: scaleZeta from 'styles/type.scss';
   color: color('white');
   display: inline-block;
   position: relative;
