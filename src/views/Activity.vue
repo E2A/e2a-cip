@@ -51,7 +51,9 @@ export default {
         navButtons.right.push(
           {
             to: {name: 'activity', params: {activityId: this.getNextActivity()}},
-            label: this.$t('inputNextActivity')
+            label: this.$t('inputNextActivity'),
+            iconLeft: 'add',
+            iconRight: 'none'
           },
           {
             to: {name: 'summary'},

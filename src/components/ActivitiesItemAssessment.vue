@@ -5,10 +5,10 @@
 -->
 
 <template>
-  <div :class="`${base.wrapper} ${disabled}`">
+  <div :class="[base.wrapper, {youth: base.disabled}]">
     <BaseDetails
-      @open="expandText"
-      @close="truncateText"
+      @open="handleOpen"
+      @close="handleClose"
     >
       <template slot="summaryLeft">
         <BaseHeading
@@ -16,7 +16,7 @@
           :centered="false"
           :class="type.leadingDefault"
           weight="regular"
-          color="dark"
+          :color="youth ? 'dark' : 'midtone'"
           sub
         >
           {{displayText}}
@@ -25,7 +25,9 @@
       <template slot="summaryRight">
         <!-- list of best practice icons -->
         <BaseGutterWrapper
-          :class="base.icons"
+          v-if="youth"
+          v-show="!isOpen"
+          :class="base.right"
           el="ul"
           gutterX="xnarrow"
           gutterY="xnarrow"
@@ -33,7 +35,7 @@
           <li
             v-for="(bestPractice, index) of bestPractices"
             :key="index"
-            :class="base.icon"
+            :class="base.gutter"
           >
             <BestPracticeIcon
               :id="bestPractice.id"
@@ -43,32 +45,60 @@
             />
           </li>
         </BaseGutterWrapper>
+        <div
+          v-show="isOpen"
+          :class="base.right"
+        >
+          <!-- edit button -->
+          <BaseButtonLink
+            :to="{
+              name: 'activity',
+              params: {
+                activityId: String(id)
+              }
+            }"
+            :label="$t('edit')"
+            size="small"
+          />
+        </div>
       </template>
       <template>
-        <div :class="base.expandedWrapper">
-          <BaseDataGrid
-            :data="expandedData"
-            :class="base.data"
-          />
-          <BaseGutterWrapper
-            gutterX="narrow"
-            gutterY="narrow"
-          >
-            <div :class="base.gutter">
-              <!-- edit button -->
-              <BaseButtonLink
-                :to="{
-                  name: 'activity',
-                  params: {
-                    activityId: String(id)
-                  }
-                }"
-                :label="$t('edit')"
-                size="small"
-              />
-            </div>
-          </BaseGutterWrapper>
-        </div>
+        <BaseGutterWrapper
+          :class="base.expandedWrapper"
+          gutterY="narrow"
+          gutterX="narrow"
+        >
+          <div :class="base.gutter">
+            <BaseDataGrid
+              :data="expandedData"
+              :class="base.data"
+            />
+          </div>
+          <!-- list of best practice icons -->
+          <div :class="base.gutter">
+            <BaseGutterWrapper
+              v-if="youth"
+              v-show="isOpen"
+              :class="base.icons"
+              el="ul"
+              gutterX="xnarrow"
+              gutterY="xnarrow"
+            >
+              <li
+                v-for="(bestPractice, index) of bestPractices"
+                :key="index"
+                :class="base.gutter"
+              >
+                <BestPracticeIcon
+                  :id="bestPractice.id"
+                  :activityID="id"
+                  :align="index > 5 ? 'right' : 'center'"
+                  editable
+                />
+              </li>
+            </BaseGutterWrapper>
+          </div>
+        </BaseGutterWrapper>
       </template>
     </BaseDetails>
   </div>
@@ -117,12 +147,8 @@ export default {
         [this.$t('activityTable.defaultBudget')]: `${this.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
         [this.$t('activityTable.defaultYouthCentered')]: this.youth ? this.$t('yesRaw') : this.$t('noRaw')
       },
-      displayText: this.shortText || this.text
-    }
-  },
-  computed: {
-    disabled: function () {
-      return this.youth ? null : 'disabled'
+      displayText: this.shortText || this.text,
+      isOpen: false
     }
   },
   methods: {
@@ -133,6 +159,14 @@ export default {
       if (this.shortText) {
         this.displayText = this.shortText
       }
+    },
+    handleOpen: function () {
+      this.expandText()
+      this.isOpen = true
+    },
+    handleClose: function () {
+      this.truncateText()
+      this.isOpen = false
     }
   }
 }
@@ -142,6 +176,8 @@ export default {
 
 <style lang="scss" module="base">
 @import '~styleConfig/breakpoints';
+
+$breakpoint: medium;
 
 .wrapper {
   composes: top from 'styles/borders.scss';
@@ -154,10 +190,12 @@ export default {
   composes: paddingTopNarrow from 'styles/spacing.scss';
   display: block;
 
-  @supports (display: flex) {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  @include media('>#{$breakpoint}') {
+    @supports (display: flex) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
   }
 }
 
@@ -169,15 +207,16 @@ export default {
   }
 }
 
-.icons {
+.right {
   list-style: none;
 
-  @include media('>medium') {
+  @include media('>#{$breakpoint}') {
     text-align: right;
   }
 }
 
-.icon {
+.gutter {
   display: inline-block;
+  vertical-align: middle;
 }
 </style>

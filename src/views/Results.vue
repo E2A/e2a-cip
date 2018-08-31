@@ -5,16 +5,9 @@
     :rightButtons="navButtons.right"
   >
     <!-- Export tool tray -->
-    <div :class="[border.bottom, space.paddingVerticalNarrow, space.paddingHorizontal, color.lightBg]">
-      <BaseGutterWrapper
-        :class="type.right"
-        gutterY="xnarrow"
-        gutterX="xnarrow"
-      >
-        <span :class="base.inlineBlock"><FileExport /></span>
-        <span :class="base.inlineBlock"><ExportChartData /></span>
-      </BaseGutterWrapper>
-    </div>
+    <ActivitiesExportTray charts />
+
+    <!-- header -->
     <BaseSectionWrapper el="div">
       <header :class="[type.center, space.paddingTop]">
         <BaseHeading
@@ -170,6 +163,7 @@
 </template>
 
 <script>
+import ActivitiesExportTray from '@/components/ActivitiesExportTray.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
@@ -179,12 +173,10 @@ import ActivitiesList from '@/components/ActivitiesList.vue'
 import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
 import BaseProgressBar from '@/components/BaseProgressBar.vue'
 import ActivitiesItemResult from '@/components/ActivitiesItemResult.vue'
-import FileExport from '@/components/FileExport.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import ChartItems from '@/components/ChartItems.vue'
 import NavFooter from '@/components/NavFooter.vue'
 import PrintPage from '@/components/PrintPage.vue'
-import ExportChartData from '@/components/ExportChartData.vue'
 import CountryIndicator from '@/components/CountryIndicator.vue'
 import BaseGallery from '@/components/BaseGallery.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
@@ -196,6 +188,7 @@ export default {
   name: 'Results',
   mixins: [activityTypes, dataMethods, bestPracticeData, initData],
   components: {
+    ActivitiesExportTray,
     BaseHeading,
     BaseButton,
     BaseSectionWrapper,
@@ -206,12 +199,10 @@ export default {
     ActivitiesTypeHeading,
     BaseProgressBar,
     ActivitiesItemResult,
-    FileExport,
     ClearItems,
     ChartItems,
     NavFooter,
     CountryIndicator,
-    ExportChartData,
     BaseGallery
   },
   data () {
@@ -297,10 +288,6 @@ export default {
     align-items: center;
     flex-wrap: wrap;
   }
-}
-
-.inlineBlock {
-  display: inline-block;
 }
 
 .activityTypeList {

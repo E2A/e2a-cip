@@ -69,7 +69,7 @@ $color-value: color('accent');
 $color-value-complete: color('yes');
 
 .wrapper {
-  composes: marginHorizontalBetweenXxnarrow from 'styles/spacing.scss';
+  composes: marginHorizontalBetweenXnarrow from 'styles/spacing.scss';
   display: inline-block;
 }
 

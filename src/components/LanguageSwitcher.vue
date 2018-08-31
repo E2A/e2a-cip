@@ -1,11 +1,17 @@
 <template>
-  <div class="locale-changer">
-    <vSelect id="language-select" class="no-clear" v-model="language" :options="langs" :searchable="false"/>
+  <div :class="base.wrapper">
+    <BaseFormSelect
+      v-model="language"
+      :options="langs"
+      :searchable="false"
+      name="language-select"
+      noClear
+    />
   </div>
 </template>
 
 <script>
-import vSelect from 'vue-select'
+import BaseFormSelect from './BaseFormSelect.vue'
 import locale2 from 'locale2'
 import { dataMethods } from '@/components/mixins/dataMethods'
 
@@ -13,7 +19,7 @@ export default {
   name: 'LanguageSwitcher',
   mixins: [dataMethods],
   components: {
-    vSelect
+    BaseFormSelect
   },
   data () {
     return {
@@ -58,15 +64,18 @@ export default {
   }
 }
 </script>
-<style lang="scss">
- #language-select {
-  background: white;
- }
-  /* Remove clear selection indicator */
- .no-clear {
-  button.clear {
-    display: none;
-  }
- }
 
+<style lang="scss" module="base">
+.wrapper {
+  composes: scaleZeta from 'styles/type.scss';
+  display: inline-block;
+  max-width: 9rem;
+  vertical-align: middle;
+
+  :global {
+    .v-select .dropdown-toggle {
+      padding: 0 !important;
+    }
+  }
+}
 </style>

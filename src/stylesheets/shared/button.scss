@@ -2,11 +2,22 @@
 @import '~styleConfig/scale';
 @import '~styleConfig/borders';
 
+@mixin icon-spacing($size) {
+  &.hasIconLeft {
+    padding-left: $size;
+  }
+
+  &.hasIconRight {
+    padding-right: $size;
+  }
+}
+
 .default {
   $c: 'primary';
   composes: default from 'styles/animation.scss';
   composes: bold from 'styles/type.scss';
   @include border($w: 'medium', $color: $c);
+  @include icon-spacing(1.1em);
   background-color: transparent;
   border-radius: 0.3em;
   color: color('primary');
@@ -29,14 +40,29 @@
     border-color: color($c, $grade: -10);
     color: color($c, $grade: -10);
   }
+
+  // reversed colors for dark backgrounds
+  &.reverse {
+    color: color('white');
+    border-color: color('white');
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: color('white');
+      color: color('white');
+    }
+  }
 }
 
 .large {
+  @include icon-spacing(1.6em);
   font-size: scale-type('delta');
   padding: 1em 2.4em;
 }
 
 .small {
+  @include icon-spacing(0.9em);
   font-size: scale-type('zeta');
   padding: 0.6em 1.2em;
 }
@@ -60,4 +86,27 @@
     border-color: color($bgcolor, $grade: -10);
     color: color($fgcolor);
   }
+
+  // reversed colors for dark backgrounds
+  &.reverse {
+    color: color($bgcolor);
+    border-color: color($fgcolor);
+    background-color: color($fgcolor);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: color($bgcolor);
+      border-color: color($fgcolor);
+      background-color: color($fgcolor);
+    }
+  }
+}
+
+.iconLeft {
+  margin-right: 0.35em;
+}
+
+.iconRight {
+  margin-left: 0.35em;
 }

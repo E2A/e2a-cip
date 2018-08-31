@@ -1,6 +1,6 @@
 <template>
-  <div class="FileUpload">
-    <text-reader @file-read-successful="runImportData($event)"></text-reader>
+  <div class="">
+    <TextReader @file-read-successful="runImportData($event)"></TextReader>
   </div>
 </template>
 

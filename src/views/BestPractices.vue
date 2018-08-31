@@ -54,8 +54,9 @@
                   params: {id: item.id}
                 }"
                 :label="$t('readMore')"
-                size="small"
                 :class="space.marginTopNarrow"
+                size="small"
+                iconRight="arrow-right"
               />
               <BaseButtonLink
                 v-if="item.checkListName"

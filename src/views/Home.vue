@@ -2,11 +2,26 @@
   <article>
 
     <BaseWidthWrapper :class="[space.paddingVerticalWide, border.bottom]">
-      <img
-        :class="base.logo"
-        src="@/assets/images/logos/usaid-lockup.svg"
-        alt="USAID and E2A"
-      />
+      <BaseGutterWrapper :class="base.logoGrid">
+        <div :class="base.logo">
+          <img
+            src="@/assets/images/logos/usaid-lockup.svg"
+            alt="USAID and E2A"
+          />
+        </div>
+        <div :class="base.logoSmall">
+          <img
+            src="@/assets/images/logos/pathfinder.png"
+            alt="Pathfinder"
+          />
+        </div>
+        <div :class="base.logoSmall">
+          <img
+            src="@/assets/images/logos/ouaga.png"
+            alt="OP"
+          />
+        </div>
+      </BaseGutterWrapper>
     </BaseWidthWrapper>
 
     <!-- Intro -->
@@ -144,10 +159,19 @@ export default {
 @import '~styleConfig/scale';
 @import '~styleConfig/type';
 
+.logoGrid {
+  text-align: center;
+}
+
 .logo {
-  display: block;
-  max-width: 35rem;
-  margin: 0 auto;
+  display: inline-block;
+  max-width: 36rem;
+  vertical-align: middle;
+}
+
+.logoSmall {
+  composes: logo;
+  max-width: 16em;
 }
 
 .centeredSubheads {

@@ -4,8 +4,7 @@
     :leftButtons="navButtons.left"
     :rightButtons="navButtons.right"
   >
-    <FileExport />
-    <ClearItems :clearType="['Assessments']" />
+    <ActivitiesExportTray :clear="['Assessments']" />
     <BasePageIntro
       :title="$t('analysis.title')"
       :blurb="$t('analysis.intro')"
@@ -67,16 +66,9 @@
               v-if="activities.activityObjects.length > 0"
               :key="`gA-${index}`"
             >
-              <BaseHeading
-                :level="3"
-                :centered="false"
-                :class="[space.paddingXxnarrow, type.uppercase, color.lightBg, border.top]"
-                scale="zeta"
-                weight="bold"
-                color="midtone"
-              >
+              <ActivitiesTypeHeading>
                 {{activities.activityTypeName}}
-              </BaseHeading>
+              </ActivitiesTypeHeading>
               <ActivitiesItemAssessment
                 v-for="(activity, index) in activities.activityObjects"
                 :key="`activity-${index}`"
@@ -103,8 +95,9 @@ import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseBodyText from '@/components/BaseBodyText.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
+import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
 import ActivitiesItemAssessment from '@/components/ActivitiesItemAssessment.vue'
-import FileExport from '@/components/FileExport.vue'
+import ActivitiesExportTray from '@/components/ActivitiesExportTray.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { dataMethods } from '@/components/mixins/dataMethods'
@@ -121,8 +114,9 @@ export default {
     BaseHeading,
     BaseBodyText,
     ActivitiesList,
+    ActivitiesTypeHeading,
     ActivitiesItemAssessment,
-    FileExport,
+    ActivitiesExportTray,
     ClearItems
   },
   data () {
