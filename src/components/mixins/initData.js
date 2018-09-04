@@ -15,7 +15,7 @@ export const initData = {
         // base props for all indicators
         let indicator = {
           name: this.$t(`countryIndicators.indicator${index + 1}.name`),
-          description: this.$t(`countryIndicators.indicator${index + 1}.description`),
+          description: countryIndicator.description ? this.$t(`countryIndicators.indicator${index + 1}.description`) : '',
           citation: this.$t(`countryIndicators.indicator${index + 1}.sourceCitation`),
           sourceUrl: this.$t(`countryIndicators.indicator${index + 1}.sourceUrl`),
           fileName: this.$t(`countryIndicators.indicator${index + 1}.fileName`),

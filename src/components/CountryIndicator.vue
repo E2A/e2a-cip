@@ -10,10 +10,12 @@
       {{countryIndicator.name}}
     </BaseHeading>
     <BaseHeading
+      v-if="countryIndicator.description !== ''"
       :class="space.paddingTopXnarrow"
       :centered="false"
       scale="epsilon"
-      color="midtone"
+      weight="bold"
+      color="highlight"
       sub
     >
       {{countryIndicator.description}}
@@ -27,13 +29,14 @@
       <!-- round to one decimal place, and put a unit after it -->
       {{Math.round(countryIndicator.value * 10) / 10}} <small>{{countryIndicator.unit}}</small>
     </BaseHeading>
-    <a
-      :class="base.citation"
-      :href="countryIndicator.sourceUrl"
-    >
-      <small>{{countryIndicator.citation}}</small>
-    </a>
-
+    <div :class="base.citation">
+      <a
+        :class="base.citation"
+        :href="countryIndicator.sourceUrl"
+      >
+        <small>{{countryIndicator.citation}}</small>
+      </a>
+    </div>
     <!-- notification, if applicable -->
     <div
       v-if="countryNotification"
@@ -115,9 +118,13 @@ export default {
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
-.citation {
-  composes: leadingTight from 'styles/type.scss';
+.footer {
   composes: paddingTopXnarrow from 'styles/spacing.scss';
   display: block;
+}
+
+.citation {
+  composes: leadingTight from 'styles/type.scss';
+  composes: midtone from 'styles/color.scss';
 }
 </style>

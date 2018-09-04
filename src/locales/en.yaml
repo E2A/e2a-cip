@@ -526,8 +526,7 @@ en:
       # Do not translate - this should be one of warning, success, info
       comparatorTextFalseType: 'warning'
     indicator2:
-      name: 'Percentage of women using modern methods of contraception in your country'
-      description: 'Population aged 15-19'
+      name: 'Percentage of women aged 15-19 using modern methods of contraception in your country'
       # Do Not Translate
       sourceUrl: 'https://statcompiler.com/en/'
       # Do Not Translate
@@ -540,8 +539,7 @@ en:
       # Do Not Translate - input the string of the heading that has the indicator value
       indicatorValueHeader: '15-19'
     indicator3:
-      name: 'Percentage of women using modern methods of contraception in your country'
-      description: 'Population aged 20-24'
+      name: 'Percentage of women aged 20-24 using modern methods of contraception in your country'
       # Do Not Translate
       sourceUrl: 'https://statcompiler.com/en/'
       # Do Not Translate
