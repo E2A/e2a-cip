@@ -539,3 +539,17 @@ en:
       indicatorValueUnit: '%'
       # Do Not Translate - input the string of the heading that has the indicator value
       indicatorValueHeader: '15-19'
+    indicator3:
+      name: 'Percentage of women using modern methods of contraception in your country'
+      description: 'Population aged 20-24'
+      # Do Not Translate
+      sourceUrl: 'https://statcompiler.com/en/'
+      # Do Not Translate
+      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently using any modern method of contraception.'
+      # Do Not Translate
+      fileName: 'contraceptionUse.csv'
+      # Do Not Translate - input the string of the heading that has the ISO2 code
+      iso2codeHeader: 'countryCode'
+      indicatorValueUnit: '%'
+      # Do Not Translate - input the string of the heading that has the indicator value
+      indicatorValueHeader: '20-24'
