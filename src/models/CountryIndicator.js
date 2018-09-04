@@ -19,7 +19,8 @@ export default class CountryIndicator extends Model {
       comparatorTextTrue: this.string(''),
       comparatorTextFalse: this.string(''),
       comparatorTextTrueType: this.string(''),
-      comparatorTextFalseType: this.string('')
+      comparatorTextFalseType: this.string(''),
+      questions: this.attr(null)
     }
   }
 }

@@ -507,6 +507,9 @@ en:
       # Do Not Translate - input the string of the heading that has the indicator value
       indicatorValueHeader: 'percentYouth'
       indicatorValueUnit: '%'
+      questions:
+        1: How does your budget compare to the needs of your youth population?
+        2: In what ways could your budget be better allocated to meet the diverse needs of your youth population?
       # === NOTE MOST NEW INDICATORS WILL NOT HAVE THIS COMPARATOR AREA ====
       # Do Not Translate - this should be a comparison operator (>, <, ===, !=, <=, >=)
       # For all comparison operators -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Comparison_operators
@@ -516,15 +519,15 @@ en:
       # === A NOTE ON COMPARATOR MATH ===
       # Note the indicator is run through parseFloat - so it will be compared as a number in its current format, ie 41.2% will be compared at 41.2 not .412
       # So be sure that your comparator is similarly structutured ie 41 vs. .41
-      comparatorOperator: '>'
-      # Do Not Translate - this should be the ID of the indicator to compare against or a special string.
-      comparatorIndicator: 'youthFocusBudget'
-      comparatorTextTrue: 'Congrats your budget is larger'
-      comparatorTextFalse: 'Your budget is smaller'
-      # Do not translate - this should be one of warning, success, info
-      comparatorTextTrueType: 'success'
-      # Do not translate - this should be one of warning, success, info
-      comparatorTextFalseType: 'warning'
+      # comparatorOperator: '>'
+      # # Do Not Translate - this should be the ID of the indicator to compare against or a special string.
+      # comparatorIndicator: 'youthFocusBudget'
+      # comparatorTextTrue: 'Congrats your budget is larger'
+      # comparatorTextFalse: 'Your budget is smaller'
+      # # Do not translate - this should be one of warning, success, info
+      # comparatorTextTrueType: 'success'
+      # # Do not translate - this should be one of warning, success, info
+      # comparatorTextFalseType: 'warning'
     indicator2:
       name: 'Percentage of women aged 15-19 using modern methods of contraception in your country'
       # Do Not Translate
@@ -538,6 +541,9 @@ en:
       indicatorValueUnit: '%'
       # Do Not Translate - input the string of the heading that has the indicator value
       indicatorValueHeader: '15-19'
+      questions:
+        1: How does your plan address reproductive healthcare and availability of contraceptive information and services?
+        2: How does your plan, through contraceptive information and services, address unintended and early pregnancies among adolescents (15-19 years)
     indicator3:
       name: 'Percentage of women aged 20-24 using modern methods of contraception in your country'
       # Do Not Translate
@@ -551,3 +557,6 @@ en:
       indicatorValueUnit: '%'
       # Do Not Translate - input the string of the heading that has the indicator value
       indicatorValueHeader: '20-24'
+      questions:
+        1: How does your plan encourage healthy timing and spacing of pregnancies among youth?
+        2: How does your plan, through contraceptive information and services, address unintended pregnancies among youth (20-24 years)

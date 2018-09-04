@@ -66,11 +66,7 @@
               :class="[border.top, border.secondary, space.paddingTop]"
               slot-scope="{item}"
             >
-              <CountryIndicator
-                :style="{
-                  maxWidth: '25rem'
-                }"
-                :countryIndicator="getCountryIndicator(item.id)"
+              <CountryIndicator :countryIndicator="getCountryIndicator(item.id)"
               />
             </div>
           </BaseGallery>

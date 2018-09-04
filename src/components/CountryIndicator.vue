@@ -47,11 +47,20 @@
         :role="countryNotification.type"
       />
     </div>
+    <ol v-if="countryIndicator.questions">
+      <li
+        v-for="(question, index) in countryIndicator.questions"
+        :key="`question-${index}`"
+      >
+        <BaseBodyText :content="question" />
+      </li>
+    </ol>
   </div>
 </template>
 
 <script>
 import BaseHeading from './BaseHeading.vue'
+import BaseBodyText from './BaseBodyText.vue'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
 import BaseCalloutBox from './BaseCalloutBox.vue'
 import { dataMethods } from './mixins/dataMethods'
@@ -68,6 +77,7 @@ export default {
   },
   components: {
     BaseHeading,
+    BaseBodyText,
     BaseGutterWrapper,
     BaseCalloutBox
   },
