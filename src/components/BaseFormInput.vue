@@ -27,7 +27,7 @@
         :key="error"
         v-if="error"
         :message="error"
-        :class="space.marginTopNarrow"
+        class="callout"
         role="warning"
       />
     </BaseFormLabel>
@@ -97,8 +97,8 @@ export default {
     },
     inputClasses: function () {
       return [
-        this.base[this.el],
-        this.type[this.typeScaleClass(this.textSize)]
+        `${this.el}`,
+        `scale-${this.textSize}`
       ]
     }
   },
@@ -128,23 +128,26 @@ export default {
 }
 </script>
 
-<style src="styles/spacing.scss" lang="scss" module="space"></style>
-<style src="styles/type.scss" lang="scss" module="type"></style>
-
-<style lang="scss" module="base">
+<style lang="scss" scoped>
 @import '~styleConfig/color';
+@import '~styleConfig/animation';
+@import '~styleConfig/spacing';
+@import '~styleConfig/borders';
+@import '~styleConfig/type';
 
-.input {
-  // composes: default from 'styles/animation.scss';
-  // composes: paddingXnarrow from 'styles/spacing.scss';
-  // composes: round default from 'styles/borders.scss';
-  // composes: lightBg from 'styles/color.scss';
-  // composes: leadingDefault from 'styles/type.scss';
+.input,
+.textarea {
+  @include transition;
+  @include border;
+  background-color: color('light');
+  border-radius: $border-radius;
   box-shadow: none !important;
   display: block;
-  width: 100%;
+  line-spacing: leading();
   outline: 0;
   outline: thin dotted \9;
+  padding: space('xnarrow');
+  width: 100%;
 
   &:focus,
   &:active {
@@ -154,8 +157,23 @@ export default {
 }
 
 .textarea {
-  composes: input;
   height: auto;
   resize: vertical;
+}
+
+.scale-epsilon {
+  font-size: scale-type('epsilon');
+}
+
+.scale-zeta {
+  font-size: scale-type('zeta');
+}
+
+.scale-eta {
+  font-size: scale-type('eta');
+}
+
+.callout {
+  margin-top: space('narrow');
 }
 </style>
