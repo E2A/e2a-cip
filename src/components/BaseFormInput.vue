@@ -1,50 +1,52 @@
-  <template>
-  <BaseFormLabel
-    v-if="label"
-    :id="name"
-    :label="label"
-    :helpText="helpText"
-    :textSize="labelTextSize"
-  >
-    <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
-    <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
+<template>
+  <div>
+    <BaseFormLabel
+      v-if="label"
+      :id="name"
+      :label="label"
+      :helpText="helpText"
+      :textSize="labelTextSize"
+    >
+      <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
+      <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
+      <component
+        @input="emitInput"
+        @change="emitChange"
+        @focus="emitFocus"
+        :is="el"
+        :id="name"
+        :name="name"
+        :class="inputClasses"
+        :rows="el === 'textarea' && height"
+        :placeholder="placeholder"
+        :value="value"
+        :type="type"
+      >{{contentValue}}</component>
+
+      <BaseCalloutBox
+        :key="error"
+        v-if="error"
+        :message="error"
+        class="callout"
+        role="warning"
+      />
+    </BaseFormLabel>
+    <!-- if there's no label prop, just show the input -->
     <component
+      v-else
       @input="emitInput"
       @change="emitChange"
       @focus="emitFocus"
       :is="el"
       :id="name"
       :name="name"
-      :class="[base[el], type[typeScaleClass(textSize)]]"
+      :class="inputClasses"
       :rows="el === 'textarea' && height"
       :placeholder="placeholder"
       :value="value"
       :type="type"
     >{{contentValue}}</component>
-
-    <BaseCalloutBox
-      :key="error"
-      v-if="error"
-      :message="error"
-      :class="space.marginTopNarrow"
-      role="warning"
-    />
-  </BaseFormLabel>
-  <!-- if there's no label prop, just show the input -->
-  <component
-    v-else
-    @input="emitInput"
-    @change="emitChange"
-    @focus="emitFocus"
-    :is="el"
-    :id="name"
-    :name="name"
-    :class="[base[el], type[typeScaleClass(textSize)]]"
-    :rows="el === 'textarea' && height"
-    :placeholder="placeholder"
-    :value="value"
-    :type="type"
-  >{{contentValue}}</component>
+  </div>
 </template>
 
 <script>
@@ -89,6 +91,17 @@ export default {
       default: 4
     }
   },
+  computed: {
+    contentValue: function () {
+      if (this.el === 'textarea') { return this.value }
+    },
+    inputClasses: function () {
+      return [
+        `${this.el}`,
+        `scale-${this.textSize}`
+      ]
+    }
+  },
   components: {
     BaseFormLabel,
     BaseCalloutBox
@@ -104,11 +117,6 @@ export default {
       this.$emit('focus', e.target.value)
     }
   },
-  computed: {
-    contentValue: function () {
-      if (this.el === 'textarea') { return this.value }
-    }
-  },
   $_veeValidate: {
     name () {
       return this.name
@@ -120,23 +128,26 @@ export default {
 }
 </script>
 
-<style src="styles/spacing.scss" lang="scss" module="space"></style>
-<style src="styles/type.scss" lang="scss" module="type"></style>
-
-<style lang="scss" module="base">
+<style lang="scss" scoped>
 @import '~styleConfig/color';
+@import '~styleConfig/animation';
+@import '~styleConfig/spacing';
+@import '~styleConfig/borders';
+@import '~styleConfig/type';
 
-.input {
-  composes: default from 'styles/animation.scss';
-  composes: paddingXnarrow from 'styles/spacing.scss';
-  composes: round default from 'styles/borders.scss';
-  composes: lightBg from 'styles/color.scss';
-  composes: leadingDefault from 'styles/type.scss';
+.input,
+.textarea {
+  @include transition;
+  @include border;
+  background-color: color('light');
+  border-radius: $border-radius;
   box-shadow: none !important;
   display: block;
-  width: 100%;
+  line-spacing: leading();
   outline: 0;
   outline: thin dotted \9;
+  padding: space('xnarrow');
+  width: 100%;
 
   &:focus,
   &:active {
@@ -146,9 +157,23 @@ export default {
 }
 
 .textarea {
-  composes: input;
-  // composes: noPaddingVertical from 'styles/spacing.scss';
   height: auto;
   resize: vertical;
+}
+
+.scale-epsilon {
+  font-size: scale-type('epsilon');
+}
+
+.scale-zeta {
+  font-size: scale-type('zeta');
+}
+
+.scale-eta {
+  font-size: scale-type('eta');
+}
+
+.callout {
+  margin-top: space('narrow');
 }
 </style>
