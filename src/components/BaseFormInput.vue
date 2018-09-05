@@ -8,18 +8,19 @@
   >
     <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
     <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
-    <textarea
+    <component
       @input="emitInput"
       @change="emitChange"
       @focus="emitFocus"
+      :is="el"
       :id="name"
       :name="name"
-      :class="[base[inputType], type[typeScaleClass(textSize)]]"
-      :rows="inputType === 'textarea' && height"
+      :class="[base.input, type[typeScaleClass(textSize)]]"
+      :rows="el === 'textarea' && height"
       :placeholder="placeholder"
       :value="value"
       :type="type"
-    ></textarea>
+    >{{contentValue}}</component>
 
     <BaseCalloutBox
       :key="error"
@@ -35,15 +36,15 @@
     @input="emitInput"
     @change="emitChange"
     @focus="emitFocus"
-    :is="inputType"
+    :is="el"
     :id="name"
     :name="name"
-    :class="[base[inputType], type[typeScaleClass(textSize)]]"
-    :rows="inputType === 'textarea' && height"
+    :class="[base[el], type[typeScaleClass(textSize)]]"
+    :rows="el === 'textarea' && height"
     :placeholder="placeholder"
     :value="value"
     :type="type"
-  ></component>
+  >{{contentValue}}</component>
 </template>
 
 <script>
@@ -55,7 +56,7 @@ export default {
   name: 'BaseFormInput',
   mixins: [styleHelpers],
   props: {
-    inputType: {
+    el: {
       type: String,
       default: 'input',
       validator: function (value) {

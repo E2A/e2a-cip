@@ -11,7 +11,7 @@
       name="cip-title"
       @input="addSetup"
       v-model="setupTitle"
-      inputType="textarea"
+      el="textarea"
     />
 
     <!-- Country -->
