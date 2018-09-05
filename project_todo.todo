@@ -19,7 +19,7 @@
  ☐ Debug electron SVG issues:
    ☐ Use debugging protocol outlined in README.
  ☐ Debug french input...
- ☐ Fix v-select styles overriding custom ones in deploy (vendor styles get inlined)
+ ✔ Fix v-select styles overriding custom ones in deploy (vendor styles get inlined) @done (18-09-05 17:40)
  ☐ Close nav dropdown when you click to a new page
 
  # Nice to have
