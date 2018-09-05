@@ -91,6 +91,17 @@ export default {
       default: 4
     }
   },
+  computed: {
+    contentValue: function () {
+      if (this.el === 'textarea') { return this.value }
+    },
+    inputClasses: function () {
+      return [
+        this.base[this.el],
+        this.type[this.typeScaleClass(this.textSize)]
+      ]
+    }
+  },
   components: {
     BaseFormLabel,
     BaseCalloutBox
@@ -104,17 +115,6 @@ export default {
     },
     emitFocus: function (e) {
       this.$emit('focus', e.target.value)
-    }
-  },
-  computed: {
-    contentValue: function () {
-      if (this.el === 'textarea') { return this.value }
-    },
-    inputClasses: function () {
-      return [
-        this.base[this.el],
-        this.type[this.typeScaleClass(this.textSize)]
-      ]
     }
   },
   $_veeValidate: {
@@ -135,11 +135,11 @@ export default {
 @import '~styleConfig/color';
 
 .input {
-  composes: default from 'styles/animation.scss';
-  composes: paddingXnarrow from 'styles/spacing.scss';
-  composes: round default from 'styles/borders.scss';
-  composes: lightBg from 'styles/color.scss';
-  composes: leadingDefault from 'styles/type.scss';
+  // composes: default from 'styles/animation.scss';
+  // composes: paddingXnarrow from 'styles/spacing.scss';
+  // composes: round default from 'styles/borders.scss';
+  // composes: lightBg from 'styles/color.scss';
+  // composes: leadingDefault from 'styles/type.scss';
   box-shadow: none !important;
   display: block;
   width: 100%;
@@ -155,7 +155,6 @@ export default {
 
 .textarea {
   composes: input;
-  // composes: noPaddingVertical from 'styles/spacing.scss';
   height: auto;
   resize: vertical;
 }

@@ -8,7 +8,7 @@
 
 // modify the weight and style of the default font
 .bold {
-  @include font($weight: 'bold');
+  @include font($weight: bold);
 }
 
 .regular {
@@ -16,10 +16,10 @@
 }
 
 .italic {
-  @include font($style: 'italic');
+  @include font($style: italic);
 
   &.bold {
-    @include font($weight: 'bold', $style: italic);
+    @include font($weight: bold, $style: italic);
   }
 }
 
@@ -28,22 +28,22 @@
   @include font('display');
 
   &.light {
-    @include font('display', $weight: 'light');
+    @include font('display', $weight: italic);
   }
 
   &.bold {
-    @include font('display', $weight: 'bold');
+    @include font('display', $weight: bold);
   }
 
   &.italic {
-    @include font('display', $style: 'italic');
+    @include font('display', $style: italic);
 
     &.light {
-      @include font('display', $weight: 'light', $style: 'italic');
+      @include font('display', $weight: italic, $style: italic);
     }
 
     &.bold {
-      @include font('display', $weight: 'bold', $style: 'italic');
+      @include font('display', $weight: bold, $style: italic);
     }
   }
 }
@@ -53,14 +53,14 @@
   @include font('body');
 
   &.bold {
-    @include font('display', $weight: 'bold');
+    @include font('display', $weight: bold);
   }
 
   &.italic {
-    @include font('display', $style: 'italic');
+    @include font('display', $style: italic);
 
     &.bold {
-      @include font('display', $weight: 'bold', $style: 'italic');
+      @include font('display', $weight: bold, $style: italic);
     }
   }
 }
