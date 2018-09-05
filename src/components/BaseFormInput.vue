@@ -15,7 +15,7 @@
       :is="el"
       :id="name"
       :name="name"
-      :class="[base[el], type[typeScaleClass(textSize)]]"
+      :class="[el === 'input' && base.input, el === 'textarea' && base.textarea, type[typeScaleClass(textSize)]]"
       :rows="el === 'textarea' && height"
       :placeholder="placeholder"
       :value="value"
@@ -39,7 +39,7 @@
     :is="el"
     :id="name"
     :name="name"
-    :class="[base[el], type[typeScaleClass(textSize)]]"
+    :class="[el === 'input' && base.input, el === 'textarea' && base.textarea, type[typeScaleClass(textSize)]]"
     :rows="el === 'textarea' && height"
     :placeholder="placeholder"
     :value="value"
@@ -92,9 +92,6 @@ export default {
   components: {
     BaseFormLabel,
     BaseCalloutBox
-  },
-  created () {
-    console.log(`form input: ${this.el}`)
   },
   methods: {
     emitInput: function (e) {
