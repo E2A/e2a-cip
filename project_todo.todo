@@ -1,40 +1,21 @@
 # Components/layout
- ☐ Activity editor
-   ☐ Move save button to bottom nav and alternate w/'add another' depending on save state @nice-to-have
-   ☐ Move delete button to top right? @nice-to-have
-   ☐ Make 'learn more about categories' link more prominent @feedback
-     ☐ add icon
-     ☐ add box around it?
-     ☐ see if we can move up next to form label?
 
 # Styling @jay
  ☐ Global
    ☐ Print styles
-   ☐ Tables
-     ☐ Mobile @nice-to-have
-   ☐ Notifications
-     ☐ Animation @nice-to-have
    ☐ Convert file export to a dropdown button
- ☐ Home
-   ☐ Move clear all btn to setup page @nice-to-have
  ☐ Results
-     ☐ Maybe add some text or something to indicate that the non-youth centric activities should be focused on to improve them.
      ☐ Remove the word "choice" from the first best practice icon @feedback
      client may want to replace with another icon, e.g. a medical one
 
 # Additional scope items:
  ☐ Adding FR translation [started]
    ☐ Order FR translations
- ☐ Round indicator percentages to one decimal place @feedback
- ☐ Add new birth control indicator data @feedback
-   ☐ See if we can show both percentages in one indicator item - e.g. multiple `indicatorValueHeader` values @feedback
 
 
  # Browser testing/debugging/deployment
  ☐ Make sure layouts work without flexbox @jay
    ☐ Timeline nav
- ☐ Prerender landing page via `spa-prerender-plugin` so JS can download in the BG @nice-to-have
- ☐ Add loading bar/animation in case JS takes awhile to download @nice-to-have
  ☐ Debug electron SVG issues:
    ☐ Use debugging protocol outlined in README.
  ☐ Debug french input...
@@ -42,6 +23,21 @@
  ☐ Close nav dropdown when you click to a new page
 
  # Nice to have
+ ☐ Activity editor
+   ☐ Move save button to bottom nav and alternate w/'add another' depending on save state @nice-to-have
+   ☐ Move delete button to top right? @nice-to-have
+   ☐ Make 'learn more about categories' link more prominent @feedback
+     ☐ add icon
+     ☐ add box around it?
+     ☐ see if we can move up next to form label?
+ ☐ Prerender landing page via `spa-prerender-plugin` so JS can download in the BG @nice-to-have
+ ☐ Add loading bar/animation in case JS takes awhile to download @nice-to-have
+ ☐ Tables
+   ☐ Mobile @nice-to-have
+ ☐ Notifications
+   ☐ Animation @nice-to-have
+ ☐ Home
+   ☐ Move clear all btn to setup page @nice-to-have
  ☐ Dot seems to not change on nav change (likely b/c prop or computed property?) @scott?
  ☐ Adjust value storage to work with keys that are not based on translation... @scott
    ☐ Causes errors when you have data and you then change language...
@@ -51,6 +47,9 @@
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ See if we can show both percentages in one indicator item - e.g. multiple `indicatorValueHeader` values @feedback @done (18-09-05 11:12)
+ ✔ Round indicator percentages to one decimal place @feedback @done (18-09-05 11:12)
+ ✔ Add new birth control indicator data @feedback @done (18-09-05 11:12)
  ✔ Add logo grid to top @done (18-08-31 00:49)
   Display order: USAID-E2A, Pathfinder, OP
  ✔ Export/clear tool tray at top of analysis, results, etc. @done (18-08-31 00:24)
