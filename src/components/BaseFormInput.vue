@@ -6,21 +6,31 @@
     :helpText="helpText"
     :textSize="labelTextSize"
   >
-    <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
-    <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
-    <component
+    <input
+      v-if="el === 'input'"
       @input="emitInput"
       @change="emitChange"
       @focus="emitFocus"
-      :is="el"
       :id="name"
       :name="name"
-      :class="[$style.input, type[typeScaleClass(textSize)]]"
+      :class="[base.input, type[typeScaleClass(textSize)]]"
+      :placeholder="placeholder"
+      :value="value"
+      :type="type"
+    />
+    <textarea
+      v-if="el === 'textarea'"
+      @input="emitInput"
+      @change="emitChange"
+      @focus="emitFocus"
+      :id="name"
+      :name="name"
+      :class="[base.textarea, type[typeScaleClass(textSize)]]"
       :rows="el === 'textarea' && height"
       :placeholder="placeholder"
       :value="value"
       :type="type"
-    >{{contentValue}}</component>
+    ></textarea>
 
     <BaseCalloutBox
       :key="error"
@@ -31,20 +41,33 @@
     />
   </BaseFormLabel>
   <!-- if there's no label prop, just show the input -->
-  <component
-    v-else
-    @input="emitInput"
-    @change="emitChange"
-    @focus="emitFocus"
-    :is="el"
-    :id="name"
-    :name="name"
-    :class="[$style[el], type[typeScaleClass(textSize)]]"
-    :rows="el === 'textarea' && height"
-    :placeholder="placeholder"
-    :value="value"
-    :type="type"
-  >{{contentValue}}</component>
+  <div v-else>
+    <input
+      v-if="el === 'input'"
+      @input="emitInput"
+      @change="emitChange"
+      @focus="emitFocus"
+      :id="name"
+      :name="name"
+      :class="[base.input, type[typeScaleClass(textSize)]]"
+      :placeholder="placeholder"
+      :value="value"
+      :type="type"
+    />
+    <textarea
+      v-if="el === 'textarea'"
+      @input="emitInput"
+      @change="emitChange"
+      @focus="emitFocus"
+      :id="name"
+      :name="name"
+      :class="[base.textarea, type[typeScaleClass(textSize)]]"
+      :rows="el === 'textarea' && height"
+      :placeholder="placeholder"
+      :value="value"
+      :type="type"
+    ></textarea>
+  </div>
 </template>
 
 <script>
@@ -123,7 +146,7 @@ export default {
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
-<style lang="scss" module>
+<style lang="scss" module="base">
 @import '~styleConfig/color';
 
 .input {
