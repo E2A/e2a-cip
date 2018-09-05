@@ -93,6 +93,10 @@
 
 // --- scale -------------------------------------------------------------------
 
+.scaleDefault {
+  @include type-size-default;
+}
+
 .scaleAlpha {
   @include type-fluid(font-size, 'gamma', 'alpha');
   letter-spacing: -0.02em;

@@ -1,61 +1,71 @@
 <template>
-  <div v-if="!countryIndicator.error">
-    <BaseHeading
-      :centered="false"
-      scale="delta"
-      weight="bold"
-      color="dark"
-      sub
-    >
-      {{countryIndicator.name}}
-    </BaseHeading>
-    <BaseHeading
-      v-if="countryIndicator.description !== ''"
-      :class="space.paddingTopXnarrow"
-      :centered="false"
-      scale="epsilon"
-      weight="bold"
-      color="highlight"
-      sub
-    >
-      {{countryIndicator.description}}
-    </BaseHeading>
-    <BaseHeading
-      :centered="false"
-      scale="alpha"
-      color="dark"
-      sub
-    >
-      <!-- round to one decimal place, and put a unit after it -->
-      {{Math.round(countryIndicator.value * 10) / 10}} <small>{{countryIndicator.unit}}</small>
-    </BaseHeading>
-    <div :class="base.citation">
-      <a
-        :class="base.citation"
-        :href="countryIndicator.sourceUrl"
+  <BaseGutterWrapper
+    v-if="!countryIndicator.error"
+    :class="base.wrapper"
+    el="section"
+  >
+    <div :class="base.stats">
+      <BaseHeading
+        :centered="false"
+        :level="3"
+        scale="delta"
+        color="dark"
+        weight="bold"
       >
-        <small>{{countryIndicator.citation}}</small>
-      </a>
+        {{countryIndicator.name}}
+      </BaseHeading>
+      <BaseHeading
+        v-if="countryIndicator.description !== ''"
+        :class="space.paddingTopXxnarrow"
+        :centered="false"
+        scale="epsilon"
+        weight="bold"
+        color="highlight"
+        sub
+      >
+        {{countryIndicator.description}}
+      </BaseHeading>
+      <BaseHeading
+        :centered="false"
+        scale="alpha"
+        color="dark"
+        sub
+      >
+        <!-- round to one decimal place, and put a unit after it -->
+        {{Math.round(countryIndicator.value * 10) / 10}} <small>{{countryIndicator.unit}}</small>
+      </BaseHeading>
+      <div :class="base.citation">
+        <a
+          :class="base.citation"
+          :href="countryIndicator.sourceUrl"
+        >
+          <small>{{countryIndicator.citation}}</small>
+        </a>
+      </div>
     </div>
-    <!-- notification, if applicable -->
     <div
-      v-if="countryNotification"
-      :class="space.paddingTopXnarrow"
+      v-if="countryIndicator.questions"
+      :class="base.questions"
     >
-      <BaseCalloutBox
-        :message="countryNotification.text"
-        :role="countryNotification.type"
-      />
-    </div>
-    <ol v-if="countryIndicator.questions">
-      <li
-        v-for="(question, index) in countryIndicator.questions"
-        :key="`question-${index}`"
+      <BaseHeading
+        :level="4"
+        :centered="false"
+        :class="space.paddingBottomXnarrow"
+        scale="epsilon"
+        color="midtone"
       >
-        <BaseBodyText :content="question" />
-      </li>
-    </ol>
-  </div>
+        {{$t('results.indicatorQuestions')}}
+      </BaseHeading>
+      <ul :class="base.questionList">
+        <li
+          v-for="(question, index) in countryIndicator.questions"
+          :key="`question-${index}`"
+        >
+          <BaseBodyText :content="question" />
+        </li>
+      </ul>
+    </div>
+  </BaseGutterWrapper>
 </template>
 
 <script>
@@ -128,9 +138,34 @@ export default {
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
-.footer {
-  composes: paddingTopXnarrow from 'styles/spacing.scss';
+@import '~bourbon/core/bourbon';
+@import '~styleConfig/breakpoints';
+
+.wrapper {
   display: block;
+  font-size: 0;
+}
+
+.breakpoint {
+  composes: scaleDefault from 'styles/type.scss';
+  display: inline-block;
+  width: calc((42em - 100%) * 1000);
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.stats {
+  composes: breakpoint;
+  min-width: 33%;
+}
+
+.questions {
+  composes: breakpoint;
+  min-width: 66%;
+}
+
+.questionList {
+  padding-left: 1em;
 }
 
 .citation {

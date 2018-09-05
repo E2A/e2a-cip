@@ -388,6 +388,7 @@ en:
     budget: "Budget:"
     youthCentric: "Youth Centric?:"
     allBestPractice: "Full best practice data:"
+    indicatorQuestions: "Questions to consider"
     pdfPrintError: "There was an error with PDF printing."
     exportPDF: 'Export PDF'
     exportCharts: 'Export your chart data'
