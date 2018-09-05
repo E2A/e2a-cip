@@ -8,19 +8,20 @@
   >
     <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
     <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
-    <component
+    <!-- <component
       @input="emitInput"
       @change="emitChange"
       @focus="emitFocus"
       :is="el"
       :id="name"
       :name="name"
-      :class="[base.input, type[typeScaleClass(textSize)]]"
+      :class="[base[el], type[typeScaleClass(textSize)]]"
       :rows="el === 'textarea' && height"
       :placeholder="placeholder"
       :value="value"
       :type="type"
-    >{{contentValue}}</component>
+    >{{contentValue}}</component> -->
+    hello
 
     <BaseCalloutBox
       :key="error"
@@ -30,21 +31,6 @@
       role="warning"
     />
   </BaseFormLabel>
-  <!-- if there's no label prop, just show the input -->
-  <component
-    v-else
-    @input="emitInput"
-    @change="emitChange"
-    @focus="emitFocus"
-    :is="el"
-    :id="name"
-    :name="name"
-    :class="[base.input, type[typeScaleClass(textSize)]]"
-    :rows="el === 'textarea' && height"
-    :placeholder="placeholder"
-    :value="value"
-    :type="type"
-  >{{contentValue}}</component>
 </template>
 
 <script>
