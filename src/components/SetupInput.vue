@@ -6,10 +6,6 @@
   <form :class="space.paddingVerticalBetween">
 
     <!-- Title -->
-    <div>
-      title: {{$t('setup.CIPTitle')}}
-      hello
-    </div>
     <BaseFormInput
       :label="$t('setup.CIPTitle')"
       name="cip-title"
