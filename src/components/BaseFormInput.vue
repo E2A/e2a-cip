@@ -39,7 +39,7 @@
     :is="el"
     :id="name"
     :name="name"
-    :class="[base[el], type[typeScaleClass(textSize)]]"
+    :class="[base.input, type[typeScaleClass(textSize)]]"
     :rows="el === 'textarea' && height"
     :placeholder="placeholder"
     :value="value"
