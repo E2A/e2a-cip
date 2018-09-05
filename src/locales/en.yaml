@@ -122,16 +122,16 @@ en:
    
    **Background**
    
-    The Evidence to Action Project (E2A) is the US Agency for International Development's (USAID) global flagship for strengthening family planning and reproductive health service delivery. The project aims to address the reproductive healthcare needs of girls, women, and underserved communities around the world by increasing support, building evidence, and leading the scale-up of best practices that improve family planning services. An eight-year Cooperative Agreement awarded in September 2011, E2A is led by Pathfinder International in partnership with ExpandNet, Intrahealth International, Management Sciences for Health, and PATH. In May 2017, E2A organized a regional adolescent and youth reproductive health (AYRH) technical workshop in partnership with the Ouagadougou Partnership Coordination Unit and Pathfinder International, with support from Merck/MSD, Bill & Melinda Gates Foundation, and USAID, where country teams analyzed how to strengthen the development and operationalization of national costed implementation plans (CIPs) for family planning to meet AYRH needs. To guide the workshop, E2A developed an innovative methodology for analyzing how adolescents and young people and their needs are accounted for in CIPs.  The methodology seeks to allow governments, civil society, youth and technical partners to: (1) review evidence-informed practices aimed at improving adolescent and young people’s access to, and use of, quality contraceptive services; and (2) identify opportunities for integrating/implementing evidence-informed approaches. The methodology uses an analytical matrix to determine how each CIP accounts for the needs of adolescents and youth. Building on this success, E2A developed a user-friendly tool to guide stakeholders in applying this useful methodology. The tool can be used to assess not only CIPs and other national health and development plans, but also any plan—whether costed or not—that seeks to improve AYRH, be it at the project level (NGOs), at the district, provincial, or national level. The tool uses both quantitative and qualitative methods to assess the extent to which adolescents and youth are represented in national CIPs and other plans, and identify opportunities to strengthen the development, implementation, or monitoring of these plans. The intended users of the tool include: 
+   The Evidence to Action Project (E2A) is the US Agency for International Development's (USAID) global flagship for strengthening family planning and reproductive health service delivery. The project aims to address the reproductive healthcare needs of girls, women, and underserved communities around the world by increasing support, building evidence, and leading the scale-up of best practices that improve family planning services. An eight-year Cooperative Agreement awarded in September 2011, E2A is led by Pathfinder International in partnership with ExpandNet, Intrahealth International, Management Sciences for Health, and PATH. In May 2017, E2A organized a regional adolescent and youth reproductive health (AYRH) technical workshop in partnership with the Ouagadougou Partnership Coordination Unit and Pathfinder International, with support from Merck/MSD, Bill & Melinda Gates Foundation, and USAID, where country teams analyzed how to strengthen the development and operationalization of national costed implementation plans (CIPs) for family planning to meet AYRH needs. To guide the workshop, E2A developed an innovative methodology for analyzing how adolescents and young people and their needs are accounted for in CIPs.  The methodology seeks to allow governments, civil society, youth and technical partners to: (1) review evidence-informed practices aimed at improving adolescent and young people’s access to, and use of, quality contraceptive services; and (2) identify opportunities for integrating/implementing evidence-informed approaches. The methodology uses an analytical matrix to determine how each CIP accounts for the needs of adolescents and youth. Building on this success, E2A developed a user-friendly tool to guide stakeholders in applying this useful methodology. The tool can be used to assess not only CIPs and other national health and development plans, but also any plan—whether costed or not—that seeks to improve AYRH, be it at the project level (NGOs), at the district, provincial, or national level. The tool uses both quantitative and qualitative methods to assess the extent to which adolescents and youth are represented in national CIPs and other plans, and identify opportunities to strengthen the development, implementation, or monitoring of these plans. The intended users of the tool include: 
     - District, provincial and national governments, especially in LMICs (namely representatives from the Ministry of Health, Ministry of Youth, Ministry of Education, etc.)
     - Civil society organizations working on RH/FP and AYRH programs or advocacy
     - Youth associations and networks involved in RH/FP and AYRH programs or advovacy
     - International technical and financial partners, including: UN agencies, international NGOs, donor agencies
     - Regional and global partnerships/networks that work on RH/FP and AYRH
     
-    **About the Evidence Informed Practices Document*
+    **About the Evidence Informed Practices Document**
    
-    This document is designed as a reference text to support E2A’s ‘’Not Without Us! A Tool for AYRH-Responsive Planning (TARP)’’. This document offers a general overview of seven identified evidence-informed practices that users can consider as a guide in analyzing the extent to which evidence-informed practices for adolescents and youth are integrated into costed (or not-costed) implementation and other plans. The practices were identified through a desk review which included the most recent available evidence on young people’s access to, and utilization of, family planning services. Both published and grey literature were included in the review. 
+    This document is designed as a reference text to support E2A’s ‘Not Without Us! A Tool for AYRH-Responsive Planning (TARP)’. This document offers a general overview of seven identified evidence-informed practices that users can consider as a guide in analyzing the extent to which evidence-informed practices for adolescents and youth are integrated into costed (or not-costed) implementation and other plans. The practices were identified through a desk review which included the most recent available evidence on young people’s access to, and utilization of, family planning services. Both published and grey literature were included in the review. 
     
     This document provides a succinct introduction to each of the seven identified evidence-informed practices to improve AYRH. These include:
     - Providing age and developmentally appropriate health services
@@ -142,19 +142,19 @@ en:
     - Fostering family and community support for AYRH
     - Promoting gender equality 
 
-It is important to note that although the level of evidence supporting the different practices varies, there is sufficient evidence in all cases to provide guidance and be of value in specific contexts. Finally, readers should also appreciate that each of the practices presents unique implementation challenges and opportunities. Therefore, a thorough context-specific assessment is recommended to identify the most suitable approaches to achieve the desired improvement in the health of adolescents and youth. 
+    It is important to note that although the level of evidence supporting the different practices varies, there is sufficient evidence in all cases to provide guidance and be of value in specific contexts. Finally, readers should also appreciate that each of the practices presents unique implementation challenges and opportunities. Therefore, a thorough context-specific assessment is recommended to identify the most suitable approaches to achieve the desired improvement in the health of adolescents and youth. 
 
-The presentation of each practice is divided into the following sections:
+    The presentation of each practice is divided into the following sections:
     - What is it?, which provides a working definition of the particular practice 
     - Why is it important? relates the practice specifically to AYRH and its potential to promote positive change
     - Implementation considerations highlights specific areas that should be taken into consideration in the planning or implementation process
     - Suggested activities are included to aid planning or implementation 
     - A programmatic example, is intended to help concretize the information presented about the practice as well as to spur some context-specific programmatic or policy ideas
     - Resource documents include recommended readings, background resources, programmatic examples, and additional useful documents and tools that users can consult to get deeper understanding of the practice and its implementation
-  bestPracticeSubtitle: Evidence-Informed Practices
+  bestPracticeSubtitle: "Evidence-Informed Practices"
   bestPractices:
     bestPractice1:
-      title: Providing age and developmentally appropriate health services
+      title: 'Providing age and developmentally appropriate health services'
       # Do Not Translate
       icon: eip-choice
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
@@ -184,8 +184,8 @@ The presentation of each practice is divided into the following sections:
         A variety of tools exist to aid in the implementation of AYRH services. For example, the 2015 WHO Document _Global Standards for Quality Health-Care Services for Adolescents[^8] is a guide intended to assist program and facility managers, providers, national bodies, and other individuals and organizations who provide adolescent health services, to improve the quality of health care services, so adolescents' needs can be better met. The quality standards in the tool are accompanied by implementation and monitoring guidance.
 
         Finally, it is important to note that not all health facilities or health systems have enough capacity to ensure consistent, high-quality AYRH services. Depending on the life stage of the individual, a young person may require additional provider time, support, information, and counseling than can be offered by fragile health systems, which may lack sufficient human resources for health, or adequate space to ensure privacy. But all providers, regardless of context, can be sensitized to provide a welcoming and safe environment.
-       
-       **Suggested activities**
+
+        **Suggested activities**
 
         Based on WHO’s global standards for youth-friendly services, health facilities should strive to:[^9]
 
@@ -220,7 +220,7 @@ The presentation of each practice is divided into the following sections:
 
         [^9]: WHO/UNAIDS, Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents. Geneva: World Health Organization, 2015.
 
-        [^10]: Rosenberg NE, Bhushan NL, Vansia D, et al. Comparing Youth Friendly Health Services to the Standard of Care through "Girl Power-Malawi": A Quasi-Experimental Cohort Study.J Acquir Immune Defic Syndr. 2018 Aug 1. doi: 10.1097/QAI.0000000000001830.
+        [^10]: Rosenberg NE, Bhushan NL, Vansia D, et al. Comparing Youth Friendly Health Services to the Standard of Care through Girl Power-Malawi: A Quasi-Experimental Cohort Study.J Acquir Immune Defic Syndr. 2018 Aug 1. doi: 10.1097/QAI.0000000000001830.
       resources:
         resource1:
           title: Resource Title
@@ -435,7 +435,7 @@ The presentation of each practice is divided into the following sections:
         
         5. **Ensure that adequate monitoring and evaluation systems are in place.** Effective monitoring and evaluation systems are important in the success of FLE. This includes mechanisms for evaluating the effectiveness of teachers and assessing the impact of the program on students. 
         
-        **Programmatic Example
+        **Programmatic Example**
         
         A useful UNESCO resource includes a series of case studies documenting various phases of planning for, and implementing, FLE. One case study highlights the experience of a Pakistani NGO, Aahung, which developed culturally appropriate strategies to respond to the community’s RH/FP needs. The NGO successfully integrated its life skills-based education program into both public and private schools in Sindh province. An important component of this work was engaging with parents and community leaders to ensure local support for the project. Question and answer sessions were organized with parents, giving them the opportunity to express any concerns. Because of their Aahung’s efforts, parents recognized the benefits of having Aahung’s evidence-based curriculum which was delivered by trained professionals. Aahung found that “involving parents in this way increases support for the program and results in fewer barriers for the project’s implementation.” 
                 
