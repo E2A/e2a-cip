@@ -15,6 +15,7 @@
       :is="el"
       :id="name"
       :name="name"
+      class="test"
       :rows="el === 'textarea' && height"
       :placeholder="placeholder"
       :value="value"
@@ -121,6 +122,12 @@ export default {
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
+
+<style scoped>
+.test {
+  background-color: red;
+}
+</style>
 
 <style lang="scss" module="base">
 @import '~styleConfig/color';
