@@ -10,7 +10,7 @@
       <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
       <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
       <div
-        :class="[base[el], type[typeScaleClass(textSize)]]"
+        :class="[base.input, type.epsilon]"
       ></div>
       <!-- <component
         @input="emitInput"
