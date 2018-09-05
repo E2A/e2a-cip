@@ -28,7 +28,7 @@
   @include font('display');
 
   &.light {
-    @include font('display', $weight: italic);
+    @include font('display', $weight: light);
   }
 
   &.bold {
@@ -39,7 +39,7 @@
     @include font('display', $style: italic);
 
     &.light {
-      @include font('display', $weight: italic, $style: italic);
+      @include font('display', $weight: light, $style: italic);
     }
 
     &.bold {
