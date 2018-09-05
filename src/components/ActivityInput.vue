@@ -48,7 +48,7 @@
             :label="$t('enterActivity')"
             :data-vv-as="`${$t('activityText')}`"
             :error="errors.first('activityText')"
-            el="textarea"
+            inputType="textarea"
             name="activityText"
             :helpText="$t('supportText.activityText')"
           />

@@ -11,11 +11,12 @@
     <component
       @input="emitInput"
       @change="emitChange"
-      :is="el"
+      @focus="emitFocus"
+      :is="inputType"
       :id="name"
       :name="name"
-      :class="[base[el], type[typeScaleClass(textSize)]]"
-      :rows="el === 'textarea' && height"
+      :class="[base[inputType], type[typeScaleClass(textSize)]]"
+      :rows="inputType === 'textarea' && height"
       :placeholder="placeholder"
       :value="value"
       :type="type"
@@ -34,11 +35,12 @@
     v-else
     @input="emitInput"
     @change="emitChange"
-    :is="el"
+    @focus="emitFocus"
+    :is="inputType"
     :id="name"
     :name="name"
-    :class="[base[el], type[typeScaleClass(textSize)]]"
-    :rows="el === 'textarea' && height"
+    :class="[base[inputType], type[typeScaleClass(textSize)]]"
+    :rows="inputType === 'textarea' && height"
     :placeholder="placeholder"
     :value="value"
     :type="type"
@@ -54,7 +56,7 @@ export default {
   name: 'BaseFormInput',
   mixins: [styleHelpers],
   props: {
-    el: {
+    inputType: {
       type: String,
       default: 'input',
       validator: function (value) {

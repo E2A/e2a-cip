@@ -18,7 +18,7 @@
             @change="updateRecommendation()"
             textSize="zeta"
             labelTextSize="zeta"
-            el="textarea"
+            inputType="textarea"
           />
         </div>
         <div :class="base.gutter">
