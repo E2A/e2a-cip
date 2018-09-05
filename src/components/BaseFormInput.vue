@@ -1,42 +1,8 @@
 <template>
   <div>
-    <BaseFormLabel
-      v-if="label"
-      :id="name"
-      :label="label"
-      :helpText="helpText"
-      :textSize="labelTextSize"
-    >
-      <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
-      <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
-      <div
-        :class="[base.input, type.epsilon]"
-      ></div>
-      <!-- <component
-        @input="emitInput"
-        @change="emitChange"
-        @focus="emitFocus"
-        :is="el"
-        :id="name"
-        :name="name"
-        :class="[base[el], type[typeScaleClass(textSize)]]"
-        :rows="el === 'textarea' && height"
-        :placeholder="placeholder"
-        :value="value"
-        :type="type"
-      >{{contentValue}}</component> -->
 
-      <BaseCalloutBox
-        :key="error"
-        v-if="error"
-        :message="error"
-        :class="space.marginTopNarrow"
-        role="warning"
-      />
-    </BaseFormLabel>
     <!-- if there's no label prop, just show the input -->
-    <!-- <component
-      v-else
+    <component
       @input="emitInput"
       @change="emitChange"
       @focus="emitFocus"
@@ -48,7 +14,7 @@
       :placeholder="placeholder"
       :value="value"
       :type="type"
-    >{{contentValue}}</component> -->
+    >{{contentValue}}</component>
   </div>
 </template>
 
