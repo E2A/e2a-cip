@@ -15,7 +15,7 @@
       :is="el"
       :id="name"
       :name="name"
-      class="test"
+      :class="[type[typeScaleClass(textSize)]]"
       :rows="el === 'textarea' && height"
       :placeholder="placeholder"
       :value="value"
