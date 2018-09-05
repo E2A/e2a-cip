@@ -15,7 +15,7 @@
       :is="el"
       :id="name"
       :name="name"
-      :class="[type[typeScaleClass(textSize)]]"
+      :class="[$style.input, type[typeScaleClass(textSize)]]"
       :rows="el === 'textarea' && height"
       :placeholder="placeholder"
       :value="value"
@@ -39,7 +39,7 @@
     :is="el"
     :id="name"
     :name="name"
-    :class="[base[el], type[typeScaleClass(textSize)]]"
+    :class="[$style[el], type[typeScaleClass(textSize)]]"
     :rows="el === 'textarea' && height"
     :placeholder="placeholder"
     :value="value"
@@ -123,13 +123,7 @@ export default {
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
-<style scoped>
-.test {
-  background-color: red;
-}
-</style>
-
-<style lang="scss" module="base">
+<style lang="scss" module>
 @import '~styleConfig/color';
 
 .input {
