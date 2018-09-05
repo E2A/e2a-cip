@@ -25,7 +25,7 @@
       @focus="emitFocus"
       :id="name"
       :name="name"
-      :class="[base.textarea, type[typeScaleClass(textSize)]]"
+      :class="[base.input, base.textarea, type[typeScaleClass(textSize)]]"
       :rows="el === 'textarea' && height"
       :placeholder="placeholder"
       :value="value"
@@ -61,7 +61,7 @@
       @focus="emitFocus"
       :id="name"
       :name="name"
-      :class="[base.textarea, type[typeScaleClass(textSize)]]"
+      :class="[base.input, base.textarea, type[typeScaleClass(textSize)]]"
       :rows="el === 'textarea' && height"
       :placeholder="placeholder"
       :value="value"
@@ -169,8 +169,6 @@ export default {
 }
 
 .textarea {
-  composes: input;
-  // composes: noPaddingVertical from 'styles/spacing.scss';
   height: auto;
   resize: vertical;
 }
