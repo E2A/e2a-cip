@@ -96,6 +96,7 @@ export default {
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 
 <!-- global: override the classes used on vue-select with our own styles -->
+<!-- using !important everywhere to make sure we override vendor styles -->
 <style lang="scss">
 @import '~bourbon/core/bourbon';
 @import '~styleConfig/type';
@@ -105,7 +106,7 @@ export default {
 
 .v-select {
   @include font();
-  color: color('dark');
+  color: color('dark') !important;
 
   a {
     border: none !important;
@@ -113,13 +114,15 @@ export default {
 
   .open-indicator {
     $size: 0.7em; // matched roughly to original size but in ems
-    @include size($size);
-    bottom: 50%;
-    right: 0.7em;
-    margin-bottom: -($size / 2);
-    background-image: url('../assets/images/icons/_external/arrow-down-midtone.svg');
-    background-position: center;
-    background-size: contain;
+    background-image: url('../assets/images/icons/_external/arrow-down-midtone.svg') !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    bottom: 50% !important;
+    height: $size !important;
+    margin-bottom: -($size / 2) !important;
+    right: 0.7em !important;
+    width: $size !important;
 
     &::before {
       content: none !important; // kill css triangle in pseudo-element
@@ -127,29 +130,31 @@ export default {
   }
 
   &.single .selected-tag {
-    position: absolute;
+    position: absolute !important;
   }
 
   &.open .open-indicator {
-    transform: rotate(180deg);
-    bottom: 50%; // override different bottom value in .open state
+    transform: rotate(180deg) !important;
+    bottom: 50% !important; // override different bottom value in .open state
   }
 
   .dropdown-toggle {
     @include border();
-    padding: space('xxnarrow');
-    background-color: color('light');
+    padding: space('xxnarrow') !important;
+    background-color: color('light') !important;
 
     // clear button
     .clear {
       $size: 0.6em;
-      @include size($size);
-      bottom: 50%;
-      right: 1.6em;
-      margin-bottom: -($size / 2);
-      background-image: url('../assets/images/icons/_external/close-midtone.svg');
-      background-position: center;
-      background-size: contain;
+      background-image: url('../assets/images/icons/_external/close-midtone.svg') !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      background-size: contain !important;
+      bottom: 50% !important;
+      height: $size !important;
+      margin-bottom: -($size / 2) !important;
+      right: 1.6em !important;
+      width: $size !important;
 
       > * {
         @include hide-visually(); // hide child span with &times; text but keep it accessible to screen readers
