@@ -8,11 +8,10 @@
   >
     <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
     <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
-    <component
+    <textarea
       @input="emitInput"
       @change="emitChange"
       @focus="emitFocus"
-      :is="inputType"
       :id="name"
       :name="name"
       :class="[base[inputType], type[typeScaleClass(textSize)]]"
@@ -20,7 +19,7 @@
       :placeholder="placeholder"
       :value="value"
       :type="type"
-    >{{contentValue}}</component>
+    ></textarea>
 
     <BaseCalloutBox
       :key="error"
@@ -44,7 +43,7 @@
     :placeholder="placeholder"
     :value="value"
     :type="type"
-  >{{contentValue}}</component>
+  ></component>
 </template>
 
 <script>
