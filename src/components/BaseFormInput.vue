@@ -8,6 +8,7 @@
   >
     <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
     <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
+    hello
     <component
       @input="emitInput"
       @change="emitChange"
