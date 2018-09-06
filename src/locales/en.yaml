@@ -5,9 +5,10 @@ en:
     intro: |-
       This tool is designed for use by governments, organizations, and individuals who seek to make family planning plans more responsive to the reproductive health needs of young people, ages 15-24. Through this tool, you will have the opportunity to:
         * Discern the proportion of activities and budget allotted to activities that are “youth centric.”
-        * Discern the proportion of youth-centric activities and budget allotted to four different activity domains (demand generation, service delivery, enabling environment, and multisectoral) with a youth focus.
+        * Discern the proportion of youth-centric activities and budget allotted to four different activity domains (demand generation, service delivery, enabling environment, and coordination) with a youth focus.
         * Discern how your activities and budget compare with data about young people from your country.
         * Assess the technical quality of activities included in your plan and revise them to better align with evidence-informed practices (EIPs).
+        
 
         We hope that the results you receive inform dialogue about  the needs of young people and innovative strategies to meet those needs. We encourage you to use the results to raise awareness about the importance of investing in the reproductive health of youth, laying the foundation for healthier future generations.
 
@@ -21,11 +22,11 @@ en:
       step2:
         title: Analyze your activities
         blurb: |-
-          Next, you will have the opportunity to learn about evidence-informed practices (EIPs), promising practices for improving AYRH. You will use what you have learned about EIPs to what degree the youth-focused activities in your plan are aligned with the EIPs. Once you complete these two steps, you will get your results!
+          Next, you will have the opportunity to learn about evidence-informed practices (EIPs), promising practices for improving AYRH. You will use what you have learned about EIPs to determine to what degree the youth-focused activities in your plan are aligned with the EIPs. Once you complete these two steps, you will get your results!
       step3:
         title: Get your results
         blurb: |-
-          The results page will show you the proportion of activities and budget devoted to youth in your plan. Data generated through the tool about young people in your country to help you determine whether your proposed activities and budget are in line with youth needs. You will also be shown a graph which depicts the degree to which your plan’s activities align with EIPs. Finally, using the information on EIPs, you will be given the opportunity to revise and strengthen the activities.
+          The results page will show you the proportion of activities and budget devoted to youth in your plan. Data generated through the tool about young people in your country will help you determine whether your proposed activities and budget are in line with youth needs. You will also be shown a graph which depicts the degree to which your plan’s activities align with EIPs. Finally, using the information on EIPs, you will be given the opportunity to revise and strengthen the activities.
     getStartedButton: Get started
     downloadTitle: Download offline versions
     downloadBlurb: |-
@@ -46,9 +47,9 @@ en:
   setup:
     CIPTitle: Enter your plan title
     configureCIP: "First, let's configure your plan"
-    selectCountry: Select a country
+    selectCountry: Select your country
     selectCurrency: Select the currency used in your plan
-    selectRole: Select a role
+    selectRole: Select your affiliation
     selectActivityType: Select activity type
     setupRequired: Please enter all setup fields before adding activities.
     restoreActivities: Restore your activities
@@ -88,9 +89,9 @@ en:
   supportText:
     activityNumber: Please enter an activity number
     activityText: Please enter the text of the activity
-    activityBudget: Please enter a budget for the activity, if present.
-    activityYouthCentric: Youth-centric 
-    selectActivityType: Select an activity modality
+    activityBudget: Please enter a budget for the activity, if applicable
+    activityYouthCentric: Youth-centric should encompass activities targeting adolescents and young people aged 15-24 years. 
+    selectActivityType: Select an activity domain
   # Activity Type Content
   activityTypeLink: Learn more about activity types
   activityTypeTitle: Learn more about activity types
@@ -102,6 +103,7 @@ en:
     - the supply of services that are available, including their quality, accessibility, acceptability, and affordability
     - the level and type of demand for services that exists in communities
     - the factors in the environment that enable or constrain supply and demand
+    
     
     The E2A version includes an additional domain, coordination, which it sees as key in maximizing synergy and ensuring synchronization between the various components that contribute to improved family planning and reproductive health outcomes. Each of these four domains are explained more fully below. 
   activityTypes:
@@ -702,14 +704,14 @@ en:
         'yes':
           # Do Not Translate
           title: '@:yesRaw'
-          description: Fully aligns with the requirements of the best practice.
+          description: Fully aligns with the evidence-informed practice.
         'no':
           # Do Not Translate
           title: '@:noRaw'
-          description: Does not align with the requirements of the best practice.
+          description: Does not align with the evidence-informed practice.
         maybe:
           title: Maybe
-          description: Partially aligns with the requirements of the best practice.
+          description: Partially aligns with the evidence-informed practice.
     previousStep: Go back to activities
     nextStep: Your results
   # Results Page
@@ -754,7 +756,7 @@ en:
     intro: |-
       Now that you have the results of your plan, what should you do now?
 
-      Use the results to inform dialogue about youth needs and innovative strategies to meet those needs. Raise awareness about the importance of investing in the sexual and reproductive health of youth so as to lay the foundation for healthier future generations.
+      Use the results to inform dialogue about youth needs and innovative strategies to meet those needs. Raise awareness about the importance of investing in the reproductive health of youth so as to lay the foundation for healthier future generations.
     stepsTitle: Ways to Advocate
     steps:
       step1:
@@ -764,11 +766,11 @@ en:
       step2:
         title: Start a conversation
         blurb: |-
-          Another purpose of the tool is to help you start conversations with each other: young people, health care providers, education officials, community leaders, and  policymakers. Are the sexual and reproductive health needs of young people in your community or country being adequately addressed? What share of the reproductive healthcare burden is borne by youth? Does your current plan reflect a proportional concern about this burden? If not, see below!
+          Another purpose of the tool is to help you start conversations with each other: young people, health care providers, education officials, community leaders, and  policymakers. Are the reproductive health needs of young people in your community or country being adequately addressed? What share of the reproductive healthcare burden is borne by youth? Does your current plan reflect a proportional concern about this burden? If not, see below!
       step3:
         title: Advocate
         blurb: |-
-          A message that emerges clearly from the EIPs is that AYSRH thrives in settings where where unbiased services are provided in a welcoming environment, where there is multi-sectoral and community support, and where youth understand their sexual and reproductive rights and have the skills to hold duty-bearers to account. A variety of resources exist to help youth and their adult allies plan effective advocacy campaigns. Some resources can be found below:
+          A message that emerges clearly from the EIPs is that AYRH thrives in settings where where unbiased services are provided in a welcoming environment, where there is multi-sectoral and community support, and where youth understand their reproductive health needs and have the skills to hold duty-bearers to account. A variety of resources exist to help youth and their adult allies plan effective advocacy campaigns.
   fileUpload:
     selectFormat: Select an export format
     json: JSON - preferred for import
