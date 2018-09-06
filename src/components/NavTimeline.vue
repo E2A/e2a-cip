@@ -66,7 +66,7 @@
           <strong>{{items.length}}</strong> {{countLabel || $t('activities')}}
         </BaseHeading>
         <div :class="base.inlineBlock">
-          <FileExport />
+          <FileExport size="small" />
         </div>
       </BaseGutterWrapper>
     </div>

@@ -11,7 +11,8 @@
     <BaseFlyout
       v-show="isOpen"
       :class="base.flyout"
-      align="right"
+      :align="align"
+      :size="flyoutSize"
     >
       <slot>Add flyout content</slot>
     </BaseFlyout>
@@ -31,8 +32,14 @@ export default {
       default: 'default'
     },
     size: {
+      type: String
+    },
+    align: {
       type: String,
-      default: 'default'
+      default: 'right'
+    },
+    flyoutSize: {
+      type: Number
     },
     reverseColors: {
       type: Boolean,
@@ -49,7 +56,7 @@ export default {
   },
   data () {
     return {
-      isOpen: false
+      isOpen: this.open || false
     }
   },
   methods: {

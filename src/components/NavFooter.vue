@@ -97,7 +97,7 @@ export default {
 .nav {
   composes: top from 'styles/borders.scss';
   composes: whiteBg shadow from 'styles/color.scss';
-  composes: paddingHorizontalWide paddingVerticalNarrow from 'styles/spacing.scss';
+  composes: paddingHorizontal paddingVerticalNarrow from 'styles/spacing.scss';
   display: block;
   position: fixed;
   left: 0;

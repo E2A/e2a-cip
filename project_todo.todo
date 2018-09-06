@@ -1,18 +1,18 @@
 # Components/layout
 
 # Styling @jay
- ☐ Global
+ # Global
    ☐ Print styles
-   ☐ Convert file export to a dropdown button
+   ✔ Convert file export to a dropdown button @done (18-09-06 18:35)
  ✔ Make 'learn more about categories' link more prominent @feedback @done (18-09-06 16:32)
      ✔ add icon @done (18-09-06 16:32)
      ✔ add box around it? @done (18-09-06 16:32)
      ✔ see if we can move up next to form label? @done (18-09-06 16:32)
- ☐ Results
+ # Results
      ✔ Remove the word "choice" from the first best practice icon @feedback @done (18-09-06 14:53)
      client may want to replace with another icon, e.g. a medical one
      ✔ Restore grid columns on country indicators and display the questions below @feedback @done (18-09-06 11:56)
- ☐ Advocate
+ # Advocate
    ☐ move export button below the print button/clean up
 
 # Additional scope items:

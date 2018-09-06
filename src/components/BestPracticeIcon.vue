@@ -238,6 +238,7 @@ $icon-size: 2.25rem;
 
 .flyout {
   composes: scaleZeta from 'styles/type.scss';
+  text-align: center;
   top: ($icon-size + 1rem);
 }
 

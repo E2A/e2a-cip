@@ -3,11 +3,17 @@ export const buttonStyles = {
     label: String,
     size: {
       type: String,
-      default: 'default'
+      default: 'default',
+      validator: function (value) {
+        return ['small', 'default', 'large'].indexOf(value) !== -1
+      }
     },
     role: {
       type: String,
-      default: 'default'
+      default: 'default',
+      validator: function (value) {
+        return ['default', 'primary'].indexOf(value) !== -1
+      }
     },
     iconLeft: {
       type: String,
@@ -47,7 +53,7 @@ export const buttonStyles = {
   },
   data () {
     return {
-      iconSize: '0.6em'
+      iconSize: '0.8em'
     }
   }
 }

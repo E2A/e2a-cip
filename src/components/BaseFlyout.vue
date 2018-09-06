@@ -1,6 +1,9 @@
 <template>
   <aside
     :class="[base.wrapper, base[align]]"
+    :style="{
+      width: size + 'rem'
+    }"
   >
     <div :class="base.content">
       <slot>Add flyout content here</slot>
@@ -14,7 +17,10 @@ export default {
   props: {
     align: {
       type: String,
-      default: 'center'
+      default: 'center',
+      validator: function (value) {
+        return ['left', 'center', 'align'].indexOf(value) !== 0
+      }
     },
     size: {
       type: Number,
@@ -34,7 +40,6 @@ export default {
 @import '~styleConfig/color';
 @import '~styleConfig/borders';
 
-$size: 12rem;
 $size-pointer-w: 1.2rem;
 $size-pointer-h: 0.6rem;
 
@@ -43,8 +48,6 @@ $size-pointer-h: 0.6rem;
   composes: default round from 'styles/borders.scss';
   display: block;
   position: absolute;
-  text-align: center;
-  width: $size;
   z-index: z('high');
 
   &::before,
@@ -67,7 +70,8 @@ $size-pointer-h: 0.6rem;
 
 .center {
   left: 50%;
-  margin-left: -($size / 2);
+  transform: translateX(-50%);
+  // margin-left: -($size / 2);
 
   &::before,
   &::after {

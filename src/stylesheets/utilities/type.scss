@@ -7,18 +7,25 @@
 // --- weight, style, and typeface ---------------------------------------------
 
 // modify the weight and style of the default font
-.bold {
+.bold,
+strong {
   @include font($weight: bold);
+
+  em {
+    @include font($style: italic);
+  }
 }
 
 .regular {
   @include font();
 }
 
-.italic {
+.italic,
+em {
   @include font($style: italic);
 
-  &.bold {
+  &.bold,
+  strong {
     @include font($weight: bold, $style: italic);
   }
 }
@@ -31,18 +38,25 @@
     @include font('display', $weight: light);
   }
 
-  &.bold {
+  &.bold,
+  strong {
     @include font('display', $weight: bold);
+
+    em {
+      @include font('display', $style: italic);
+    }
   }
 
-  &.italic {
+  &.italic,
+  em {
     @include font('display', $style: italic);
 
     &.light {
       @include font('display', $weight: light, $style: italic);
     }
 
-    &.bold {
+    &.bold,
+    strong {
       @include font('display', $weight: bold, $style: italic);
     }
   }
