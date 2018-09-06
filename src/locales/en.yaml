@@ -172,7 +172,7 @@ en:
   bestPracticeTitle: About Evidence-Informed Practices (EIP)
   bestPracticeResourceSubtitle: Further reading
   backToBestPractices: Back to Evidence-Informed Practices (EIP)
-  bestPracticeIntro:
+  bestPracticeIntro: "" #deleted?
   bestPracticeSubtitle: "Evidence-Informed Practices"
   bestPractices:
     bestPractice1:
@@ -307,7 +307,6 @@ en:
 
          \
          **Enable adolescents and young people to access information and counseling on the whole range of methods:**
-
          - To ensure informed choice, provide comprehensive information and counselling that:
            - focuses on the unique concerns and needs of adolescents and young people
            - considers their fertility intentions
