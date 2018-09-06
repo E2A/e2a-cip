@@ -715,7 +715,7 @@ en:
     previousStep: Go back to activities
     nextStep: Your results
   # Results Page
-  resultsSubhead: "Here's how your activities rate lorem ipsum:"
+  resultsSubhead: "Here's how your activities rate:"
   addRecommendation: Add recommendation
   addAnotherRecommendation: Add another recommendation
   suggestedImprovements: Suggested improvements
