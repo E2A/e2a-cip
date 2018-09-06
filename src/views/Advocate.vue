@@ -55,11 +55,14 @@ export default {
     return {
       steps: Object.values(i18n.messages[i18n.locale].advocate.steps).map((step, index) => {
         return {
-          title: this.$t(`home.steps.step${index + 1}.title`),
-          blurb: this.$t(`home.steps.step${index + 1}.blurb`)
+          title: this.$t(`advocate.steps.step${index + 1}.title`),
+          blurb: this.$t(`advocate.steps.step${index + 1}.blurb`)
         }
       })
     }
+  },
+  created () {
+    console.log(this.steps)
   }
 }
 </script>
