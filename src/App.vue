@@ -65,8 +65,8 @@ $base-type-sizes: (
     font-family: $name;
     src: url('#{$font-path}/#{$path}.woff2') format('woff2'),
          url('#{$font-path}/#{$path}.woff') format('woff');
-    font-weight: #{if (typeof($weight) != 'string', $weight, unquote($weight))};
-    font-style: #{if (typeof($style) != 'string', $style, unquote($style))};
+    font-weight: #{if(type-of($weight) != string, $weight, unquote($weight))};
+    font-style: #{if(type-of($style) != string, $style, unquote($style))};
     font-stretch: normal;
     font-display: swap;
   }
