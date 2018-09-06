@@ -21,7 +21,7 @@
         <BaseButtonFlyout
           @open="openNavFlyout"
           @close="closeNavFlyout"
-          :label="getCurrentRoute()"
+          :label="getCurrentRoute() || 'Menu'"
           :open="flyoutOpen"
           size="small"
           reverseColors
@@ -159,6 +159,7 @@ export default {
         },
         bestPractices: {
           name: 'evidence-informed-practices',
+          childName: 'evidence-informed-practice',
           text: this.$t('nav.bestPractices'),
           active: true
         },
@@ -182,10 +183,11 @@ export default {
   },
   methods: {
     getCurrentRoute: function () {
+      console.log(this.$route.name)
       // get the (translated) name of the current route
       return Object.values(this.links).find(link => {
-        return link.name === this.$route.name
-      }).text
+        return link.name === this.$route.name || link.childName === this.$route.name
+      }).text || false
     },
     globalNotification: function (value) {
       const notification = this.$store.getters['entities/globalnotifications/query']().first()
