@@ -4,7 +4,16 @@
 -->
 
 <template>
-  <aside :class="[base.box, base[role], shadow && color.shadow]">
+  <aside
+    @click="clickable && $emit('click')"
+    :class="[
+      base.box,
+      base[role],
+      {[base.pointer]: clickable},
+      {[color.shadow]: shadow},
+      {[color.shadowHover]: clickable}
+    ]"
+  >
     <div :class="base.status">
       <BaseIcon
         :name="icons[role].icon"
@@ -14,13 +23,13 @@
     </div>
     <BaseBodyText
       :content="message"
-      :class="[base.message, dismissable && base.iconRight]"
+      :class="[base.message, {[base.iconRight]: dismissable || clickable}]"
       font="display"
     />
     <button
       v-if="dismissable"
       @click="dismissNotification"
-      :class="base.dismiss"
+      :class="base.action"
       :title="$t('dismissNotification')"
     >
       <BaseIcon
@@ -29,6 +38,16 @@
         alt="X"
       />
     </button>
+    <div
+      v-if="clickable"
+      :class="base.action"
+    >
+      <BaseIcon
+        :class="base.icon"
+        name="arrow-right"
+        alt=">"
+      />
+    </div>
   </aside>
 </template>
 
@@ -51,6 +70,10 @@ export default {
       }
     },
     dismissable: {
+      type: Boolean,
+      default: false
+    },
+    clickable: {
       type: Boolean,
       default: false
     },
@@ -113,6 +136,10 @@ $gutter: space('xnarrow');
   position: relative;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .status {
   width: ($size-icons + ($gutter * 2));
   line-height: 1;
@@ -123,7 +150,7 @@ $gutter: space('xnarrow');
   padding: ($gutter + 0.15rem) $gutter; // add a little extra vertical padding to compensate for line height of message
 }
 
-.dismiss {
+.action {
   composes: status;
   composes: midtone from 'styles/color.scss';
   left: auto;

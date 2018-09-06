@@ -70,21 +70,30 @@
             type="checkbox"
           />
 
-          <BaseFormSelect
-            v-model="activityType"
-            v-validate="'required'"
-            :label="$t('selectActivityType')"
-            :helpText="$t('supportText.selectActivityType')"
-            :value="activityType"
-            :data-vv-as="`${$t('activityType')}`"
-            :options="activityTypeOptions"
-            :searchable="false"
-            :error="errors.first('activityType')"
-            name="activityType"
-            noClear
-          />
-          <div :class="space.paddingTopXxnarrow">
-            <router-link :to="{name: 'activity-type-info', params: { backToActivityId: activityId }}">( i ) {{$t('activityTypeLink')}}</router-link>
+          <div :class="base.activityTypeWrapper">
+            <div :class="base.infoBox">
+              <BaseCalloutBox
+                @click="$router.push({
+                  name: 'activity-type-info',
+                  params: { backToActivityId: activityId }
+                })"
+                :message="$t('activityTypeLink')"
+                clickable
+              />
+            </div>
+            <BaseFormSelect
+              v-model="activityType"
+              v-validate="'required'"
+              :label="$t('selectActivityType')"
+              :helpText="$t('supportText.selectActivityType')"
+              :value="activityType"
+              :data-vv-as="`${$t('activityType')}`"
+              :options="activityTypeOptions"
+              :searchable="false"
+              :error="errors.first('activityType')"
+              name="activityType"
+              noClear
+            />
           </div>
         </form>
 
@@ -121,6 +130,7 @@
 import NavTimeline from './NavTimeline.vue'
 import BaseHeading from './BaseHeading.vue'
 import BaseButton from './BaseButton.vue'
+import BaseCalloutBox from './BaseCalloutBox.vue'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
 import BaseSectionWrapper from './BaseSectionWrapper.vue'
 import BaseWidthWrapper from './BaseWidthWrapper.vue'
@@ -140,6 +150,7 @@ export default {
     NavTimeline,
     BaseHeading,
     BaseButton,
+    BaseCalloutBox,
     BaseFormLabel,
     BaseFormInput,
     BaseFormSwitch,
@@ -292,7 +303,26 @@ export default {
 <style src="styles/borders.scss" lang="scss" module="border"></style>
 
 <style lang="scss" module="base">
+@import '~bourbon/core/bourbon';
+@import '~styleConfig/breakpoints';
+@import '~styleConfig/spacing';
+
 .buttonWrapper {
   display: inline-block;
+}
+
+.activityTypeWrapper {
+  @include clearfix;
+}
+
+.infoBox {
+  display: block;
+  padding-bottom: space('narrow');
+
+  @include media('>small') {
+    float: right;
+    max-width: 25rem;
+    padding-bottom: 0;
+  }
 }
 </style>

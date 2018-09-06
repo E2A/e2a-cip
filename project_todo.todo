@@ -4,12 +4,12 @@
  ☐ Global
    ☐ Print styles
    ☐ Convert file export to a dropdown button
- ☐ Make 'learn more about categories' link more prominent @feedback
-     ☐ add icon
-     ☐ add box around it?
-     ☐ see if we can move up next to form label?
+ ✔ Make 'learn more about categories' link more prominent @feedback @done (18-09-06 16:32)
+     ✔ add icon @done (18-09-06 16:32)
+     ✔ add box around it? @done (18-09-06 16:32)
+     ✔ see if we can move up next to form label? @done (18-09-06 16:32)
  ☐ Results
-     ☐ Remove the word "choice" from the first best practice icon @feedback
+     ✔ Remove the word "choice" from the first best practice icon @feedback @done (18-09-06 14:53)
      client may want to replace with another icon, e.g. a medical one
      ✔ Restore grid columns on country indicators and display the questions below @feedback @done (18-09-06 11:56)
  ☐ Advocate
