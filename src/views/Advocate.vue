@@ -5,8 +5,16 @@
       :blurb="$t('advocate.intro')"
     />
     <BaseSectionWrapper>
-      <BaseHeading :level="2" centered>{{$t('advocate.stepsTitle')}}</BaseHeading>
-      <BaseWidthWrapper width="wide" :class="space.paddingTop">
+      <BaseHeading
+        :level="2"
+        centered
+      >
+        {{$t('advocate.stepsTitle')}}
+      </BaseHeading>
+      <BaseWidthWrapper
+        :class="space.paddingTop"
+        width="wide"
+      >
         <BaseStepList :steps="steps" />
       </BaseWidthWrapper>
     </BaseSectionWrapper>

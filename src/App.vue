@@ -58,15 +58,15 @@ $base-type-sizes: (
   'large': 125%
 );
 
-@mixin font-face($name, $path, $weight: 'normal', $style: 'normal') {
+@mixin font-face($name, $path, $weight: normal, $style: normal) {
   $font-path: './assets/fonts';
 
   @font-face {
     font-family: $name;
     src: url('#{$font-path}/#{$path}.woff2') format('woff2'),
          url('#{$font-path}/#{$path}.woff') format('woff');
-    font-weight: unquote($weight);
-    font-style: unquote($style);
+    font-weight: #{if (typeof($weight) != 'string', $weight, unquote($weight))};
+    font-style: $style;
     font-stretch: normal;
     font-display: swap;
   }

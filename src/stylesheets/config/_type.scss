@@ -65,11 +65,20 @@ $leading: (
 @mixin font($role: 'display', $weight: regular, $style: normal) {
   @if $role == 'display' {
     font-family: 'lato-#{$weight}-#{$style}', $font-stack-helvetica;
-    font-weight: $weight;
+    @if $weight == 'light' {
+      font-weight: 300;
+    }
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+    font-weight: normal;
     font-style: $style;
   } @elseif $role == 'body' {
     font-family: 'lora-#{$weight}-#{$style}', $font-stack-georgia;
-    font-weight: $weight;
+    @if $weight == 'bold' {
+      font-weight: 700;
+    }
+    font-weight: normal;
     font-style: $style;
   }
 }
