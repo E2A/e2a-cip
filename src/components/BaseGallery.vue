@@ -175,8 +175,8 @@ export default {
 
 .large {
   @include gallery-variation(
-    $min-width: 360px,
-    $breakpoint: 800px,
+    $min-width: 380px,
+    $breakpoint: 1000px,
     $min-percentage: 33%
   );
 }
