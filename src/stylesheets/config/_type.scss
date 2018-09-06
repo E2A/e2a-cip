@@ -72,13 +72,13 @@ $leading: (
       font-weight: 700;
     }
     font-weight: normal;
-    font-style: $style;
+    font-style: #{if(typeof($style) != 'string', $style, unquote($style))};
   } @elseif $role == 'body' {
     font-family: 'lora-#{$weight}-#{$style}', $font-stack-georgia;
     @if $weight == 'bold' {
       font-weight: 700;
     }
     font-weight: normal;
-    font-style: $style;
+    font-style: #{if(typeof($style) != 'string', $style, unquote($style))};
   }
 }
