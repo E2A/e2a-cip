@@ -38,7 +38,7 @@ export default {
       var navButtons = {
         left: [
           {
-            to: {name: 'home'},
+            to: {name: 'setup'},
             label: this.$t('goBack')
           }
         ],

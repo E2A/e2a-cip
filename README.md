@@ -42,6 +42,10 @@ countryIndicators:
     iso2codeHeader: 'ISO2'
     # Do Not Translate
     indicatorValueHeader: 'percentYouth.csv'
+    indicatorValueUnit: '%'
+    questions:
+      1: Lorem ipsum dolor sit?
+      2: Adipiscig elit consectetur?
 ```
 
 ### Other Considerations for country indicators
