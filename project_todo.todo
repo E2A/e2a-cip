@@ -3,17 +3,6 @@
 # Styling @jay
  # Global
    ☐ Print styles
-   ✔ Convert file export to a dropdown button @done (18-09-06 18:35)
- ✔ Make 'learn more about categories' link more prominent @feedback @done (18-09-06 16:32)
-     ✔ add icon @done (18-09-06 16:32)
-     ✔ add box around it? @done (18-09-06 16:32)
-     ✔ see if we can move up next to form label? @done (18-09-06 16:32)
- # Results
-     ✔ Remove the word "choice" from the first best practice icon @feedback @done (18-09-06 14:53)
-     client may want to replace with another icon, e.g. a medical one
-     ✔ Restore grid columns on country indicators and display the questions below @feedback @done (18-09-06 11:56)
- # Advocate
-   ☐ move export button below the print button/clean up
 
 # Additional scope items:
  ☐ Adding FR translation [started]
@@ -25,8 +14,6 @@
  ☐ Debug electron SVG issues:
    ☐ Use debugging protocol outlined in README.
  ☐ Debug french input...
- ✔ Fix v-select styles overriding custom ones in deploy (vendor styles get inlined) @done (18-09-05 17:40)
- ✔ Close nav dropdown when you click to a new page @done (18-09-06 13:46)
 
  # Nice to have
  ☐ Activity editor
@@ -49,6 +36,19 @@
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ move export button below the print button/clean up @done (18-09-06 19:06)
+ ✔ Convert file export to a dropdown button @done (18-09-06 18:35)
+ ✔ see if we can move up next to form label? @done (18-09-06 16:32)
+  # Results
+ ✔ add icon @done (18-09-06 16:32)
+ ✔ add box around it? @done (18-09-06 16:32)
+ ✔ Make 'learn more about categories' link more prominent @feedback @done (18-09-06 16:32)
+ ✔ Remove the word "choice" from the first best practice icon @feedback @done (18-09-06 14:53)
+  client may want to replace with another icon, e.g. a medical one
+ ✔ Close nav dropdown when you click to a new page @done (18-09-06 13:46)
+ ✔ Restore grid columns on country indicators and display the questions below @feedback @done (18-09-06 11:56)
+  # Advocate
+ ✔ Fix v-select styles overriding custom ones in deploy (vendor styles get inlined) @done (18-09-05 17:40)
  ✔ See if we can show both percentages in one indicator item - e.g. multiple `indicatorValueHeader` values @feedback @done (18-09-05 11:12)
  ✔ Round indicator percentages to one decimal place @feedback @done (18-09-05 11:12)
  ✔ Add new birth control indicator data @feedback @done (18-09-05 11:12)
