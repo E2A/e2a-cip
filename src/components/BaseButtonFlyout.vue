@@ -37,6 +37,10 @@ export default {
     reverseColors: {
       type: Boolean,
       default: false
+    },
+    open: {
+      type: Boolean,
+      default: false
     }
   },
   components: {
@@ -52,6 +56,13 @@ export default {
     toggleFlyout () {
       this.isOpen = !this.isOpen
       this.isOpen ? this.$emit('open') : this.$emit('close')
+    }
+  },
+  watch: {
+    // watch the open prop and keep isOpen updated
+    // -> so when its parent tells it to open, it's reflected in internal state
+    open () {
+      this.isOpen = this.open
     }
   }
 }

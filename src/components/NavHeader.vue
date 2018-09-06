@@ -19,7 +19,10 @@
       <!-- nav for small screens -->
       <nav :class="base.smallNav">
         <BaseButtonFlyout
+          @open="openNavFlyout"
+          @close="closeNavFlyout"
           :label="getCurrentRoute()"
+          :open="flyoutOpen"
           size="small"
           reverseColors
         >
@@ -30,6 +33,7 @@
             >
               <router-link
                 v-if="link.active"
+                @click.native="closeNavFlyout"
                 :to="{
                   name: link.name,
                   params: link.params
@@ -128,7 +132,8 @@ export default {
   },
   data: function () {
     return {
-      notificationMessage: ''
+      notificationMessage: '',
+      flyoutOpen: false
     }
   },
   computed: {
@@ -189,6 +194,12 @@ export default {
     getLinks: function () {
       this.updateActiveLinks()
       return this.links
+    },
+    closeNavFlyout: function (event) {
+      this.flyoutOpen = false
+    },
+    openNavFlyout: function (event) {
+      this.flyoutOpen = true
     },
     notificationTrigger: function () {
       this.notify(this.notificationMessage, 'info', 3000)
