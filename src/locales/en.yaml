@@ -173,7 +173,7 @@ en:
   bestPracticeTitle: About Evidence-Informed Practices (EIP)
   bestPracticeResourceSubtitle: Further reading
   backToBestPractices: Back to Evidence-Informed Practices (EIP)
-  bestPracticeIntro: "" #deleted?
+  bestPracticeIntro: ""
   bestPracticeSubtitle: "Evidence-Informed Practices"
   bestPractices:
     bestPractice1:
@@ -502,60 +502,94 @@ en:
       checkListName: ''
       teaser: |-
         Family life education is a curriculum-based process of teaching and learning about the cognitive, emotional, physical and social aspects of adolescence, growth and development, and relationships that will equip children and young people with knowledge, skills, attitudes and values that will enable them realize their health, well-being and dignity; develop respectful relationships; consider how their choices affect their own well-being and that of others; and understand and ensure the protection of their rights throughout their lives.
-      body: |-
-        **What is it?**
-        Family life education (FLE) is a curriculum-based process of teaching and learning about the cognitive, emotional, physical and social aspects of adolescence, growth and development, and relationships that will equip children and young people with knowledge, skills, attitudes and values that will enable them realize their health, well-being and dignity; develop respectful relationships; consider how their choices affect their own well-being and that of others; and understand and ensure the protection of their rights throughout their lives. Below are key characteristics of an effective FLE program:
-        - Scientifically accurate
-        - Incremental (each lesson building on the last)
-        - Age- and developmentally-appropriate
-        - Curriculum-based
-        - Comprehensive to ensure young people can make informed choices about their health
-        - Based on a human rights approach
-        - Culturally relevant and context appropriate
-        - Gender-transformative (promoting gender equality)
-        - Skills focused
-
-        \
-        **Why is it important?**
-
-        FLE is an effective and evidence-informed approach that empowers adolescents and young people, improves and protects their health, well-being and dignity, supports them to develop critical thinking and decision-making skills, promotes citizenship, and fosters equal, healthy and positive relationships. There is convincing evidence of the positive effect of FLE on RH/FP, particularly in reducing the incidence of sexually transmitted infections, HIV, and unintended pregnancy.
-
-        \
-        **Implementation considerations**
-
-        UNESCO’s global review of evidence, lessons and best practices reports that many countries who embrace the need for FLE are engaged in national efforts to institute school-based programs through the integration of FLE into national curricula, investment in monitoring its implementation, engaging communities and scaling-up of effective teacher training.
-
-        FLE is most effective when combined with other activities such as YFS provided in health facilities, as part of more comprehensive youth development programs, or through peer outreach. The success of FLE is largely determined by the context in which these programs are developed and the manner in which it is delivered especially in communities where adolescent sexuality is a sensitive issue.
-
-        The integration of a gender perspective throughout FLE curricula is integral to the effectiveness of the programs. There is evidence that curricula that examine, question, and critically engage gender norms are more effective than gender-blind approaches.
-
-        The decision to initiate a family life education program should not be solely motivated by its ability to achieve reductions in adverse health events alone.  Rather, decision-makers should also consider that these programs have major non-health benefits such as reducing gender inequality, improving communication, strengthening the quality of relationships, increasing self-efficacy in decision-making, and reducing sexual violence.
-
-        \
-        **Suggested activities**
-
-        1. **Build support for family life education.** The ministries of health, education, youth, gender play critical roles in providing policy and moral national leadership, which is essential in creating a climate that is conducive to FLE.[^41] In winning over support at every level:
-        - Use evidence that demonstrates young people's existing needs within national and local contexts.
-        - Use existing international, regional and local frameworks and international agreements that support FLE.
-        - Identify key thought leaders to influence support for FLE in their networks and beyond.
-        - Advocate sufficient funding for the FLE policy to successfully support its implementation and scale-up.
-
-        2. **Involve a broad coalition of stakeholders in planning FLE.** Ensure multiple constituencies are involved in planning and implementing FLE. The coalition may include school officials, teachers, health care providers, students, religious leaders, community leaders, parents, NGOs, and the media. Broad involvement will help to ensure that community concerns are addressed early in the planning process and that societal support—including sustainability and a sense of ownership—for FLE is built.
-
-        3. **Ensure effective coordination.** National FLE programs falter or sometimes fail because there is insufficient coordination among stakeholders, including central and local governments, NGOs, and other development partners. Clarity about roles, including responsibility for the implementation of FLE, is vital.
-
-        4. **Ensure that the FLE curriculum is responsive to local needs.*** Sometimes a blanket national curriculum is not sufficiently responsive to local needs, especially in areas where there are significant socio-demographic differences. Using a broad coalition of stakeholders in the planning and implementation processes will help to ensure the curriculum is responsive to local health priorities and in alignment with progressive social norms.
-
-        5. **Ensure that adequate monitoring and evaluation systems are in place.** Effective monitoring and evaluation systems are important in the success of FLE. This includes mechanisms for evaluating the effectiveness of teachers and assessing the impact of the program on students.
-
-        \
-        **Programmatic Example**
-
-        A useful UNESCO resource includes a series of case studies documenting various phases of planning for, and implementing, FLE. One case study highlights the experience of a Pakistani NGO, Aahung, which developed culturally appropriate strategies to respond to the community’s RH/FP needs. The NGO successfully integrated its life skills-based education program into both public and private schools in Sindh province. An important component of this work was engaging with parents and community leaders to ensure local support for the project. Question and answer sessions were organized with parents, giving them the opportunity to express any concerns. Because of their Aahung’s efforts, parents recognized the benefits of having Aahung’s evidence-based curriculum which was delivered by trained professionals. Aahung found that “involving parents in this way increases support for the program and results in fewer barriers for the project’s implementation.”[^42]
-
-        [^41]: Keogh SC, Stillman M, Awusabo-Asare K, et al. Challenges to implementing national comprehensive sexuality education curricula in low- and middle-income countries: Case studies of Ghana, Kenya, Peru, and Guatemala. PLos One. 2018;13(7):e0200513.
-
-        [^42]: UNESCO. Emerging Evidence, Lessons, and Practice in Comprehensive Sexuality Education: A Global Review. Paris: UNESCO; 2015.        
+      body: "**What is it?**\nFamily life education (FLE) is a curriculum-based process\
+        \ of teaching and learning about the cognitive, emotional, physical and social\
+        \ aspects of adolescence, growth and development, and relationships that will\
+        \ equip children and young people with knowledge, skills, attitudes and values\
+        \ that will enable them realize their health, well-being and dignity; develop\
+        \ respectful relationships; consider how their choices affect their own well-being\
+        \ and that of others; and understand and ensure the protection of their rights\
+        \ throughout their lives. Below are key characteristics of an effective FLE\
+        \ program:\n- Scientifically accurate\n- Incremental (each lesson building\
+        \ on the last)\n- Age- and developmentally-appropriate\n- Curriculum-based\n\
+        - Comprehensive to ensure young people can make informed choices about their\
+        \ health\n- Based on a human rights approach\n- Culturally relevant and context\
+        \ appropriate\n- Gender-transformative (promoting gender equality)\n- Skills\
+        \ focused\n\n\\\n**Why is it important?**\n\nFLE is an effective and evidence-informed\
+        \ approach that empowers adolescents and young people, improves and protects\
+        \ their health, well-being and dignity, supports them to develop critical\
+        \ thinking and decision-making skills, promotes citizenship, and fosters equal,\
+        \ healthy and positive relationships. There is convincing evidence of the\
+        \ positive effect of FLE on RH/FP, particularly in reducing the incidence\
+        \ of sexually transmitted infections, HIV, and unintended pregnancy.\n\n\\\
+        \n**Implementation considerations**\n\nUNESCO’s global review of evidence,\
+        \ lessons and best practices reports that many countries who embrace the need\
+        \ for FLE are engaged in national efforts to institute school-based programs\
+        \ through the integration of FLE into national curricula, investment in monitoring\
+        \ its implementation, engaging communities and scaling-up of effective teacher\
+        \ training.\n\nFLE is most effective when combined with other activities such\
+        \ as YFS provided in health facilities, as part of more comprehensive youth\
+        \ development programs, or through peer outreach. The success of FLE is largely\
+        \ determined by the context in which these programs are developed and the\
+        \ manner in which it is delivered especially in communities where adolescent\
+        \ sexuality is a sensitive issue.\n\nThe integration of a gender perspective\
+        \ throughout FLE curricula is integral to the effectiveness of the programs.\
+        \ There is evidence that curricula that examine, question, and critically\
+        \ engage gender norms are more effective than gender-blind approaches.\n\n\
+        The decision to initiate a family life education program should not be solely\
+        \ motivated by its ability to achieve reductions in adverse health events\
+        \ alone.  Rather, decision-makers should also consider that these programs\
+        \ have major non-health benefits such as reducing gender inequality, improving\
+        \ communication, strengthening the quality of relationships, increasing self-efficacy\
+        \ in decision-making, and reducing sexual violence.\n\n\\\n**Suggested activities**\n\
+        \n1. **Build support for family life education.** The ministries of health,\
+        \ education, youth, gender play critical roles in providing policy and moral\
+        \ national leadership, which is essential in creating a climate that is conducive\
+        \ to FLE.[^41] In winning over support at every level:\n- Use evidence that\
+        \ demonstrates young people's existing needs within national and local contexts.\n\
+        - Use existing international, regional and local frameworks and international\
+        \ agreements that support FLE.\n- Identify key thought leaders to influence\
+        \ support for FLE in their networks and beyond.\n- Advocate sufficient funding\
+        \ for the FLE policy to successfully support its implementation and scale-up.\n\
+        \n2. **Involve a broad coalition of stakeholders in planning FLE.** Ensure\
+        \ multiple constituencies are involved in planning and implementing FLE. The\
+        \ coalition may include school officials, teachers, health care providers,\
+        \ students, religious leaders, community leaders, parents, NGOs, and the media.\
+        \ Broad involvement will help to ensure that community concerns are addressed\
+        \ early in the planning process and that societal support—including sustainability\
+        \ and a sense of ownership—for FLE is built.\n\n3. **Ensure effective coordination.**\
+        \ National FLE programs falter or sometimes fail because there is insufficient\
+        \ coordination among stakeholders, including central and local governments,\
+        \ NGOs, and other development partners. Clarity about roles, including responsibility\
+        \ for the implementation of FLE, is vital.\n\n4. **Ensure that the FLE curriculum\
+        \ is responsive to local needs.*** Sometimes a blanket national curriculum\
+        \ is not sufficiently responsive to local needs, especially in areas where\
+        \ there are significant socio-demographic differences. Using a broad coalition\
+        \ of stakeholders in the planning and implementation processes will help to\
+        \ ensure the curriculum is responsive to local health priorities and in alignment\
+        \ with progressive social norms.\n\n5. **Ensure that adequate monitoring and\
+        \ evaluation systems are in place.** Effective monitoring and evaluation systems\
+        \ are important in the success of FLE. This includes mechanisms for evaluating\
+        \ the effectiveness of teachers and assessing the impact of the program on\
+        \ students.\n\n\\\n**Programmatic Example**\n\nA useful UNESCO resource includes\
+        \ a series of case studies documenting various phases of planning for, and\
+        \ implementing, FLE. One case study highlights the experience of a Pakistani\
+        \ NGO, Aahung, which developed culturally appropriate strategies to respond\
+        \ to the community’s RH/FP needs. The NGO successfully integrated its life\
+        \ skills-based education program into both public and private schools in Sindh\
+        \ province. An important component of this work was engaging with parents\
+        \ and community leaders to ensure local support for the project. Question\
+        \ and answer sessions were organized with parents, giving them the opportunity\
+        \ to express any concerns. Because of their Aahung’s efforts, parents recognized\
+        \ the benefits of having Aahung’s evidence-based curriculum which was delivered\
+        \ by trained professionals. Aahung found that “involving parents in this way\
+        \ increases support for the program and results in fewer barriers for the\
+        \ project’s implementation.”[^42]\n\n[^41]: Keogh SC, Stillman M, Awusabo-Asare\
+        \ K, et al. Challenges to implementing national comprehensive sexuality education\
+        \ curricula in low- and middle-income countries: Case studies of Ghana, Kenya,\
+        \ Peru, and Guatemala. PLos One. 2018;13(7):e0200513.\n\n[^42]: UNESCO. Emerging\
+        \ Evidence, Lessons, and Practice in Comprehensive Sexuality Education: A\
+        \ Global Review. Paris: UNESCO; 2015.        "
       resources:
         resource1:
           title: Resource Title
@@ -841,7 +875,9 @@ en:
       # Do Not Translate
       sourceUrl: 'https://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2017_POP_F15_1_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx'
       # Do Not Translate
-      sourceCitation: 'United Nations, Department of Economic and Social Affairs, Population Division (2017). World Population Prospects: The 2017 Revision, DVD Edition.'
+      sourceCitation: 'United Nations, Department of Economic and Social Affairs,
+        Population Division (2017). World Population Prospects: The 2017 Revision,
+        DVD Edition.'
       # Do Not Translate
       fileName: 'percentYouth.csv'
       # Do Not Translate - input the string of the heading that has the ISO2 code
@@ -852,30 +888,14 @@ en:
       questions:
         1: How does your budget compare to the needs of your youth population?
         2: In what ways could your budget be better allocated to meet the diverse needs of your youth population?
-      # === NOTE MOST NEW INDICATORS WILL NOT HAVE THIS COMPARATOR AREA ====
-      # Do Not Translate - this should be a comparison operator (>, <, ===, !=, <=, >=)
-      # For all comparison operators -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Comparison_operators
-      # Note this is evaluated as follows:
-      #   country_indicator {operator} comparator_indicator
-      # ex: percent of youth in country > youth focused budget %
-      # === A NOTE ON COMPARATOR MATH ===
-      # Note the indicator is run through parseFloat - so it will be compared as a number in its current format, ie 41.2% will be compared at 41.2 not .412
-      # So be sure that your comparator is similarly structutured ie 41 vs. .41
-      # comparatorOperator: '>'
-      # # Do Not Translate - this should be the ID of the indicator to compare against or a special string.
-      # comparatorIndicator: 'youthFocusBudget'
-      # comparatorTextTrue: 'Congrats your budget is larger'
-      # comparatorTextFalse: 'Your budget is smaller'
-      # # Do not translate - this should be one of warning, success, info
-      # comparatorTextTrueType: 'success'
-      # # Do not translate - this should be one of warning, success, info
-      # comparatorTextFalseType: 'warning'
     indicator2:
-      name: 'Percentage of women aged 15-19 using modern methods of contraception in your country'
+      name: 'Percentage of women aged 15-19 using modern methods of contraception
+        in your country'
       # Do Not Translate
       sourceUrl: 'https://statcompiler.com/en/'
       # Do Not Translate
-      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently using any modern method of contraception.'
+      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently
+        using any modern method of contraception.'
       # Do Not Translate
       fileName: 'contraceptionUse.csv'
       # Do Not Translate - input the string of the heading that has the ISO2 code
@@ -887,11 +907,13 @@ en:
         1: How does your plan address reproductive healthcare and availability of contraceptive information and services?
         2: How does your plan, through contraceptive information and services, address unintended and early pregnancies among adolescents (15-19 years)
     indicator3:
-      name: 'Percentage of women aged 20-24 using modern methods of contraception in your country'
+      name: 'Percentage of women aged 20-24 using modern methods of contraception
+        in your country'
       # Do Not Translate
       sourceUrl: 'https://statcompiler.com/en/'
       # Do Not Translate
-      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently using any modern method of contraception.'
+      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently
+        using any modern method of contraception.'
       # Do Not Translate
       fileName: 'contraceptionUse.csv'
       # Do Not Translate - input the string of the heading that has the ISO2 code
