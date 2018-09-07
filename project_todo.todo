@@ -9,12 +9,15 @@
    ✔ Order FR translations @haley @done (18-09-07 15:18)
 
  # Browser testing/debugging/deployment
- ☐ Make sure layouts work without flexbox @jay
-   ☐ Timeline nav
+ ✔ Make sure layouts work without flexbox @jay @done (18-09-07 18:00)
+   ✔ Timeline nav @done (18-09-07 18:00)
  ☐ Debug electron SVG issues:
    ☐ Use debugging protocol outlined in README.
  ☐ Debug french input...
  ☐ Test in IE/windows
+   ☐ header is breaking - flexbox?
+   ☐ svg logo aspect ratios breaking
+   ☐ setup page does not validate and continue btn never appears
  ✔ Look at issue with colors in charts on production @done (18-09-07 13:49)
 
  # Nice to have
