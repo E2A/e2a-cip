@@ -49,7 +49,7 @@ en:
     selectCountry: Select your country
     selectCurrency: Select the currency used in your plan
     selectRole: Select your affiliation
-    selectActivityType: Select activity type
+    selectActivityType: Categorize your activity by type
     setupRequired: Please enter all setup fields before adding activities.
     restoreActivities: Restore your activities
     addActivities: Add your Activites
