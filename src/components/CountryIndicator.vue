@@ -94,47 +94,6 @@ export default {
     BaseBodyText,
     BaseGutterWrapper,
     BaseCalloutBox
-  },
-  computed: {
-    // DEPRECATED - disabling country notification logic here b/c we're prob not using comparators
-    // countryNotification: function () {
-    //   if (!this.countryIndicator.comparatorIndicator) {
-    //     return false
-    //   }
-
-    //   // Set comparator value
-    //   var comparatorIndicatorValue = 0
-
-    //   // set to special string value
-    //   if (this.countryIndicator.comparatorIndicator === 'youthFocusBudget') {
-    //     comparatorIndicatorValue = this.getChartData(this.getActvityData()).youthCentricBudgetData[0].youthCentricPercent * 100
-    //   }
-
-    //   // Use other country indicator, if valid
-    //   if (!this.getCountryIndicator(this.countryIndicator.comparatorIndicator).error) {
-    //     comparatorIndicatorValue = this.getCountryIndicator(this.countryIndicator.comparatorIndicator).value
-    //   }
-
-    //   // Run comparison & set notification text & type
-    //   var notificationObj = {}
-
-    //   // Using eval to be able to parse comparator operator.
-    //   // ">" = >
-    //   // eslint-disable-next-line
-    //   if (eval(`${parseFloat(this.countryIndicator.value)} ${this.countryIndicator.comparatorOperator} ${parseFloat(comparatorIndicatorValue)}`)) {
-    //     notificationObj = {
-    //       text: this.countryIndicator.comparatorTextTrue,
-    //       type: this.countryIndicator.comparatorTextTrueType
-    //     }
-    //   } else {
-    //     notificationObj = {
-    //       text: this.countryIndicator.comparatorTextFalse,
-    //       type: this.countryIndicator.comparatorTextFalseType
-    //     }
-    //   }
-
-    //   return notificationObj
-    // }
   }
 }
 </script>
@@ -150,25 +109,22 @@ export default {
 .wrapper {
   display: block;
   font-size: 0;
-}
 
-.breakpoint {
-  display: block;
-  // width: calc((42em - 100%) * 1000);
-  // max-width: 100%;
-  // vertical-align: top;
+  @media print {
+    page-break-inside: avoid;
+  }
 }
 
 .stats {
-  composes: breakpoint;
   composes: scaleDefault from 'styles/type.scss';
+  display: block;
   min-width: 33%;
 }
 
 .questions {
-  composes: breakpoint;
   composes: scaleZeta from 'styles/type.scss';
   composes: midtone from 'styles/color.scss';
+  display: block;
   min-width: 66%;
 }
 

@@ -86,6 +86,12 @@ $base-type-sizes: (
 @include font-face('lora-bold-normal', 'lora/lora-bold', 700);
 @include font-face('lora-bold-italic', 'lora/lora-bold-italic', 700, 'italic');
 
+@media print {
+  @page {
+    margin: 0.5cm;
+  }
+}
+
 html {
   box-sizing: border-box;
   font-size: map-get($base-type-sizes, 'default');
@@ -96,6 +102,10 @@ html {
         font-size: $size;
       }
     }
+  }
+
+  @media print {
+    font-size: 12pt;
   }
 }
 
@@ -112,6 +122,10 @@ body {
   line-height: leading();
   font-feature-settings: 'liga', 'kern';
   text-rendering: geometricPrecision;
+
+  @media print {
+     color: #000;
+  }
 }
 
 audio,

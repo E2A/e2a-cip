@@ -71,7 +71,9 @@ export default {
     console.log(this.seriesData)
     // eslint-disable-next-line
     new Chartist['Pie'](`#${this.chartName}`, {
-      series: this.seriesData
+      series: this.seriesData,
+      width: '100%',
+      height: '100%'
     })
   }
 }
@@ -100,6 +102,12 @@ export default {
 
   @supports (flex: 1 0 #{$size}) {
     flex: 1 0 #{$size};
+  }
+
+  @media print {
+    flex: none;
+    width: 100%;
+    height: 220pt; // set static height to try to force whole circle to render
   }
 }
 

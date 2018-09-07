@@ -168,6 +168,10 @@ export default {
   composes: paddingVerticalNarrow from 'styles/spacing.scss';
   display: block;
   position: relative;
+
+  @media print {
+    page-break-inside: avoid;
+  }
 }
 
 .expandedWrapper {
