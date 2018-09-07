@@ -11,7 +11,8 @@
     <BaseFlyout
       v-show="isOpen"
       :class="base.flyout"
-      align="right"
+      :align="align"
+      :size="flyoutSize"
     >
       <slot>Add flyout content</slot>
     </BaseFlyout>
@@ -31,10 +32,20 @@ export default {
       default: 'default'
     },
     size: {
+      type: String
+    },
+    align: {
       type: String,
-      default: 'default'
+      default: 'right'
+    },
+    flyoutSize: {
+      type: Number
     },
     reverseColors: {
+      type: Boolean,
+      default: false
+    },
+    open: {
       type: Boolean,
       default: false
     }
@@ -45,13 +56,20 @@ export default {
   },
   data () {
     return {
-      isOpen: false
+      isOpen: this.open || false
     }
   },
   methods: {
     toggleFlyout () {
       this.isOpen = !this.isOpen
       this.isOpen ? this.$emit('open') : this.$emit('close')
+    }
+  },
+  watch: {
+    // watch the open prop and keep isOpen updated
+    // -> so when its parent tells it to open, it's reflected in internal state
+    open () {
+      this.isOpen = this.open
     }
   }
 }

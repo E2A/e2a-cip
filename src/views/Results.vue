@@ -61,16 +61,19 @@
 
         <!-- country indicators -->
         <section :class="space.paddingTop">
-          <!-- <BaseGallery :items="countryIndicators"> -->
+          <BaseGallery
+            :items="countryIndicators"
+            size="large"
+          >
             <div
-              v-for="(indicator, index) in countryIndicators"
-              :key="`indicator-${index}`"
-              :class="[border.top, border.secondary, space.paddingTop, index !== 0 && space.marginTop]"
+              v-if="!item.error"
+              :class="[border.top, border.secondary, space.paddingTop]"
+              slot-scope="{item}"
             >
-              <CountryIndicator :countryIndicator="getCountryIndicator(indicator.id)"
+              <CountryIndicator :countryIndicator="getCountryIndicator(item.id)"
               />
             </div>
-          <!-- </BaseGallery> -->
+          </BaseGallery>
         </section>
       </BaseWidthWrapper>
 

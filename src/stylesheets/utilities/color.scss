@@ -1,5 +1,6 @@
 // Global color utilities
 @import '../config/color';
+@import '../config/animation';
 
 @each $name, $color in $colors {
   // foreground
@@ -30,4 +31,12 @@
 // default drop shadow
 .shadow {
   box-shadow: 0 1px 0.3rem shadow('white');
+}
+
+.shadowHover {
+  @include transition;
+
+  &:hover {
+    box-shadow: 0 1px 0.3rem shadow('white');
+  }
 }

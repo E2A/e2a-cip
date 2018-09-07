@@ -143,7 +143,7 @@ export default {
   border-radius: $border-radius;
   box-shadow: none !important;
   display: block;
-  line-spacing: leading();
+  line-height: leading();
   outline: 0;
   outline: thin dotted \9;
   padding: space('xnarrow');

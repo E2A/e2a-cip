@@ -233,10 +233,6 @@ export default {
   @include media('>medium') {
     width: 50%;
   }
-
-  // @include media('>xlarge') {
-  //   width: 25%;
-  // }
 }
 
 // hide default chartist labels

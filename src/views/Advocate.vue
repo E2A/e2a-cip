@@ -5,8 +5,16 @@
       :blurb="$t('advocate.intro')"
     />
     <BaseSectionWrapper>
-      <BaseHeading :level="2" centered>{{$t('advocate.stepsTitle')}}</BaseHeading>
-      <BaseWidthWrapper width="wide" :class="space.paddingTop">
+      <BaseHeading
+        :level="2"
+        centered
+      >
+        {{$t('advocate.stepsTitle')}}
+      </BaseHeading>
+      <BaseWidthWrapper
+        :class="space.paddingTop"
+        width="wide"
+      >
         <BaseStepList :steps="steps" />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
@@ -14,14 +22,19 @@
       :class="type.center"
       border
     >
-      <BaseButtonLink
-        :to="{name: 'print'}"
-        :class="space.marginBottom"
-        :label="$t('advocate.print')"
-        role="primary"
-        size="large"
+      <div :class="space.paddingBottom">
+        <BaseButtonLink
+          :to="{name: 'print'}"
+          :label="$t('advocate.print')"
+          iconLeft="print"
+          role="primary"
+          size="large"
+        />
+      </div>
+      <FileExport
+        size="default"
+        align="center"
       />
-      <FileExport />
     </BaseSectionWrapper>
   </article>
 </template>

@@ -421,6 +421,7 @@ en:
         In terms of AYRH, participation means youth having the capabilities and opportunities to seek information; express one’s opinions, ideas, and decisions; be informed and consulted on decisions that pertain to youth (programs and policies); take an active role in the various steps of designing, implementing, and monitoring a health service or policy; have the knowledge, skills, and desire to make an enact informed choices about one’s reproductive life; and have the knowledge and skills necessary to hold duty-bearers responsible. Youth participation is about nurturing all the skills that are vital for individuals to possess to promote a thriving civil society sector and functioning democratic institutions, including responsive health systems and services.
       body: |-
         **What is it?**
+
         In terms of AYRH, participation means youth having the capabilities and opportunities to seek information; express one’s opinions, ideas, and decisions; be informed and consulted on decisions that pertain to youth (programs and policies); take an active role in the various steps of designing, implementing, and monitoring a health service or policy; have the knowledge, skills, and desire to make an enact informed choices about one’s reproductive life; and have the knowledge and skills necessary to hold duty-bearers responsible. Youth participation is about nurturing all the skills that are vital for individuals to possess to promote a thriving civil society sector and functioning democratic institutions, including responsive health systems and services.
 
         \
@@ -778,8 +779,11 @@ en:
           A message that emerges clearly from the EIPs is that AYRH thrives in settings where where unbiased services are provided in a welcoming environment, where there is multi-sectoral and community support, and where youth understand their reproductive health needs and have the skills to hold duty-bearers to account. A variety of resources exist to help youth and their adult allies plan effective advocacy campaigns.
   fileUpload:
     selectFormat: Select an export format
-    json: JSON - preferred for import
-    csv: CSV - preferred for subsequent analysis
+    directions: |-
+      - The **JSON format** is preferred for importing (and restoring) your data here.
+      - The **CSV format** is preferred for subsequent analysis in a spreadsheet editor.
+    json: JSON format
+    csv: CSV format
     successImport: Successfully imported
     textReaderImport: Import Data
     jsonFileName: e2a-export-%{timestamp}.json

@@ -31,11 +31,5 @@ export default {
 }
 .back {
   composes: midtone from 'styles/color.scss';
-  text-decoration: none;
-
-  &:hover,
-  &:active {
-    text-decoration: underline;
-  }
 }
 </style>

@@ -19,7 +19,10 @@
       <!-- nav for small screens -->
       <nav :class="base.smallNav">
         <BaseButtonFlyout
-          :label="getCurrentRoute()"
+          @open="openNavFlyout"
+          @close="closeNavFlyout"
+          :label="getCurrentRoute() || 'Menu'"
+          :open="flyoutOpen"
           size="small"
           reverseColors
         >
@@ -30,6 +33,7 @@
             >
               <router-link
                 v-if="link.active"
+                @click.native="closeNavFlyout"
                 :to="{
                   name: link.name,
                   params: link.params
@@ -128,7 +132,8 @@ export default {
   },
   data: function () {
     return {
-      notificationMessage: ''
+      notificationMessage: '',
+      flyoutOpen: false
     }
   },
   computed: {
@@ -154,6 +159,7 @@ export default {
         },
         bestPractices: {
           name: 'evidence-informed-practices',
+          childName: 'evidence-informed-practice',
           text: this.$t('nav.bestPractices'),
           active: true
         },
@@ -177,10 +183,11 @@ export default {
   },
   methods: {
     getCurrentRoute: function () {
+      console.log(this.$route.name)
       // get the (translated) name of the current route
       return Object.values(this.links).find(link => {
-        return link.name === this.$route.name
-      }).text
+        return link.name === this.$route.name || link.childName === this.$route.name
+      }).text || false
     },
     globalNotification: function (value) {
       const notification = this.$store.getters['entities/globalnotifications/query']().first()
@@ -189,6 +196,12 @@ export default {
     getLinks: function () {
       this.updateActiveLinks()
       return this.links
+    },
+    closeNavFlyout: function (event) {
+      this.flyoutOpen = false
+    },
+    openNavFlyout: function (event) {
+      this.flyoutOpen = true
     },
     notificationTrigger: function () {
       this.notify(this.notificationMessage, 'info', 3000)

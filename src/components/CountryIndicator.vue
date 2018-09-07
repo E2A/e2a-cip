@@ -56,14 +56,18 @@
       >
         {{$t('results.indicatorQuestions')}}
       </BaseHeading>
-      <ul :class="base.questionList">
+      <ol :class="base.questionList">
         <li
           v-for="(question, index) in countryIndicator.questions"
           :key="`question-${index}`"
         >
-          <BaseBodyText :content="question" />
+          <BaseBodyText
+            :content="question"
+            :class="color.dark"
+            font="display"
+          />
         </li>
-      </ul>
+      </ol>
     </div>
   </BaseGutterWrapper>
 </template>
@@ -137,6 +141,7 @@ export default {
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
+<style src="styles/color.scss" lang="scss" module="color"></style>
 
 <style lang="scss" module="base">
 @import '~bourbon/core/bourbon';
@@ -148,25 +153,31 @@ export default {
 }
 
 .breakpoint {
-  composes: scaleDefault from 'styles/type.scss';
-  display: inline-block;
-  width: calc((42em - 100%) * 1000);
-  max-width: 100%;
-  vertical-align: top;
+  display: block;
+  // width: calc((42em - 100%) * 1000);
+  // max-width: 100%;
+  // vertical-align: top;
 }
 
 .stats {
   composes: breakpoint;
+  composes: scaleDefault from 'styles/type.scss';
   min-width: 33%;
 }
 
 .questions {
   composes: breakpoint;
+  composes: scaleZeta from 'styles/type.scss';
+  composes: midtone from 'styles/color.scss';
   min-width: 66%;
 }
 
 .questionList {
-  padding-left: 1em;
+  padding-left: 1.2em;
+
+  > li + li {
+    padding-top: 0.5em;
+  }
 }
 
 .citation {
