@@ -5,16 +5,17 @@
 
 <template>
   <li :class="base.wrapper">
-    <BaseDetailsPrint>
-      <template slot="summaryLeft">
-        <BaseHeading
-          :centered="false"
-          scale="zeta"
-          sub
-        >
-          {{activityInstance.text}}
-        </BaseHeading>
-      </template>
+    <div>
+      <BaseHeading
+        :centered="false"
+        :class="type.leadingDefault"
+        weight="regular"
+        color="dark"
+        scale="zeta"
+        sub
+      >
+        {{activityInstance.text}}
+      </BaseHeading>
 
       <!-- data -->
       <div :class="base.expandedWrapper">
@@ -36,6 +37,7 @@
             <BestPracticeIcon
               :id="bestPractice.id"
               :activityID="activityInstance.id"
+              :align="index > 4 ? 'right' : 'center'"
             />
           </li>
         </BaseGutterWrapper>
@@ -48,28 +50,36 @@
           :centered="false"
           :class="space.paddingBottomXnarrow"
           scale="zeta"
+          weight="bold"
+          color="dark"
         >
           {{$t('suggestedImprovements')}}
         </BaseHeading>
-        <ol :class="[base.recommendations, space.paddingVerticalNarrow]">
-          <li
+        <ol :class="[base.recommendations]">
+          <template
             v-for="recommendation of activityRecommendations"
-            :key="recommendation.id"
           >
-          <BaseBodyText
-            :content="recommendation.text"
-          />
-        </li>
+            <li
+              v-if="recommendation.text.length > 0"
+              :key="recommendation.id"
+            >
+            <BaseBodyText
+              :class="color.highlight"
+              :content="recommendation.text"
+              size="zeta"
+              font="display"
+            />
+                    </li>
+          </template>
         </ol>
       </div>
-    </BaseDetailsPrint>
+    </div>
   </li>
 </template>
 
 <script>
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseButton from '@/components/BaseButton.vue'
-import BaseDetailsPrint from '@/components/BaseDetailsPrint.vue'
 import BaseBodyText from '@/components/BaseBodyText.vue'
 import BestPracticeIcon from '@/components/BestPracticeIcon.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
@@ -84,7 +94,6 @@ export default {
   components: {
     BaseHeading,
     BaseButton,
-    BaseDetailsPrint,
     BestPracticeIcon,
     BaseGutterWrapper,
     BaseDataGrid,
@@ -149,6 +158,7 @@ export default {
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
+<style src="styles/color.scss" lang="scss" module="color"></style>
 
 <style lang="scss" module="base">
 .wrapper {
@@ -207,7 +217,9 @@ export default {
 }
 
 .recommendations {
+  composes: midtone from 'styles/color.scss';
+  composes: scaleEta from 'styles/type.scss';
   counter-reset: recommendations;
-  padding-left: 0;
+  padding-left: 1.2em;
 }
 </style>

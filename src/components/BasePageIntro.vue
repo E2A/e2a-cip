@@ -13,7 +13,7 @@
     >
       {{ subtitle }}
     </BaseHeading>
-    <BaseWidthWrapper v-if="blurb.length > 0">
+    <BaseWidthWrapper v-if="blurb && blurb.length > 0">
       <BaseBodyText :content="blurb" />
     </BaseWidthWrapper>
   </header>
@@ -35,7 +35,8 @@ export default {
       type: String
     },
     blurb: {
-      type: String
+      type: String,
+      default: ''
     }
   },
   components: {

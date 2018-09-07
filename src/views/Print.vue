@@ -24,14 +24,15 @@
             :key="`gA-${index}`"
           >
             <template v-if="activities.activityObjects.length > 0">
-              <BaseHeading
-                :level="3"
-                scale="eta"
-                :centered="false"
-                :class="[space.paddingXxnarrow, color.light, type.uppercase, color.midtoneBg, border.top]"
-              >
+              <!-- activity type heading with stats -->
+              <ActivitiesTypeHeading>
                 {{activities.activityTypeName}}
-              </BaseHeading>
+                <template slot="stats">
+                  <BaseProgressBar
+                    :label="$t('results.activityWithEIPbyType')"
+                    :percentage="percentBPActivitesByType(activities.activityTypeName)" />
+                </template>
+              </ActivitiesTypeHeading>
               <ActivitiesItemResultPrint
                 v-for="(activity, index) in activities.activityObjects"
                 :key="`activity-${index}`"
@@ -50,10 +51,12 @@ import ResultsCharts from '@/components/ResultsCharts.vue'
 import ActivitiesListHeader from '@/components/ActivitiesListHeader.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseButton from '@/components/BaseButton.vue'
+import BaseProgressBar from '@/components/BaseProgressBar.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
+import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
 import ActivitiesItemResultPrint from '@/components/ActivitiesItemResultPrint.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import ChartItems from '@/components/ChartItems.vue'
@@ -70,11 +73,13 @@ export default {
     ActivitiesListHeader,
     BaseHeading,
     BaseButton,
+    BaseProgressBar,
     BaseSectionWrapper,
     BaseWidthWrapper,
     BaseGutterWrapper,
     PrintPage,
     ActivitiesList,
+    ActivitiesTypeHeading,
     ActivitiesItemResultPrint,
     ClearItems,
     ChartItems,
@@ -99,6 +104,17 @@ export default {
           }
         ]
       }
+    }
+  },
+  methods: {
+    percentBPActivitesByType: function (activityType) {
+      const activitiesWithBP = this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
+        query.where('value', [this.$t('bestPracticeOptions.yesKey')])
+      }).where('type', activityType).count()
+
+      const activitiesInType = this.$store.getters['entities/activities/query']().where('type', activityType).count()
+
+      return (activitiesWithBP / activitiesInType).toFixed(2) * 100
     }
   }
 }

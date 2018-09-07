@@ -40,7 +40,7 @@
             <BestPracticeIcon
               :id="bestPractice.id"
               :activityID="id"
-              :align="index > 5 ? 'right' : 'center'"
+              :align="index > 4 ? 'right' : 'center'"
               editable
             />
           </li>
