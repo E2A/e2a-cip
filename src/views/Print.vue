@@ -4,85 +4,50 @@
     :leftButtons="navButtons.left"
     :rightButtons="navButtons.right"
   >
-    <BaseSectionWrapper el="div">
-      <header :class="[type.center, space.paddingTop]">
-        <BaseHeading :class="space.paddingBottomNarrow">{{setupTitle}}</BaseHeading>
-        <BaseGutterWrapper
-          gutterX="medium"
-          gutterY="xnarrow"
-        >
-          <BaseHeading
-            scale="zeta"
-            :class="base.byline"
-            sub
-          >
-            {{setupRole}}
-          </BaseHeading>
-          <BaseHeading
-            scale="zeta"
-            :class="base.byline"
-            sub
-          >
-            {{setupCountry}}
-          </BaseHeading>
-        </BaseGutterWrapper>
-      </header>
-
-      <!-- charts -->
-      <section>
-        <BaseHeading
-          :class="space.paddingVerticalWide"
-          scale="gamma"
-          sub
-        >
-          {{$t('resultsSubhead')}}
-        </BaseHeading>
-        <ChartItems viewType="print" />
-      </section>
-    </BaseSectionWrapper>
+    <!-- header and charts -->
+    <ResultsCharts />
 
     <!-- Activities list -->
-    <BaseSectionWrapper border>
+    <BaseSectionWrapper
+      :class="space.paddingTop"
+      border
+    >
+      <BaseWidthWrapper width="xxwide">
 
-      <!-- Count & export tools -->
-      <header :class="base.toolTray">
-        <BaseHeading
-          :centered="false"
-          :level="2"
-          scale="delta"
-        >
-          <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
-        </BaseHeading>
-      </header>
+        <!-- Count & export tools -->
+        <ActivitiesListHeader />
 
-      <!-- Table -->
-      <ActivitiesList ref="activityList">
-        <div
-          v-for="(activities, index) in groupedActivities"
-          :key="`gA-${index}`"
-        >
-          <template v-if="activities.activityObjects.length > 0">
-            <BaseHeading
-              :level="3"
-              scale="eta"
-              :centered="false"
-              :class="[space.paddingXxnarrow, color.light, type.uppercase, color.midtoneBg, border.top]"
-            >
-              {{activities.activityTypeName}}
-            </BaseHeading>
-            <ActivitiesItemResultPrint
-              v-for="(activity, index) in activities.activityObjects"
-              :key="`activity-${index}`"
-              :activityInstance="activity"
-            />
-          </template>
-        </div>
-      </ActivitiesList>
+        <!-- Table -->
+        <ActivitiesList ref="activityList">
+          <div
+            v-for="(activities, index) in groupedActivities"
+            :key="`gA-${index}`"
+          >
+            <template v-if="activities.activityObjects.length > 0">
+              <BaseHeading
+                :level="3"
+                scale="eta"
+                :centered="false"
+                :class="[space.paddingXxnarrow, color.light, type.uppercase, color.midtoneBg, border.top]"
+              >
+                {{activities.activityTypeName}}
+              </BaseHeading>
+              <ActivitiesItemResultPrint
+                v-for="(activity, index) in activities.activityObjects"
+                :key="`activity-${index}`"
+                :activityInstance="activity"
+              />
+            </template>
+          </div>
+        </ActivitiesList>
+      </BaseWidthWrapper>
     </BaseSectionWrapper>
   </NavFooter>
 </template>
 
 <script>
+import ResultsCharts from '@/components/ResultsCharts.vue'
+import ActivitiesListHeader from '@/components/ActivitiesListHeader.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
@@ -101,6 +66,8 @@ export default {
   name: 'Print',
   mixins: [activityTypes, dataMethods],
   components: {
+    ResultsCharts,
+    ActivitiesListHeader,
     BaseHeading,
     BaseButton,
     BaseSectionWrapper,

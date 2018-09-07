@@ -18,30 +18,7 @@
       <BaseWidthWrapper width="xxwide">
 
         <!-- Count & export tools -->
-        <BaseGutterWrapper
-          :class="base.tableHeader"
-          el="header"
-          gutterX="narrow"
-          gutterY="narrow"
-        >
-          <BaseHeading
-            :class="base.inlineBlock"
-            :centered="false"
-            :level="2"
-            scale="delta"
-            color="dark"
-          >
-            <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
-          </BaseHeading>
-          <div :class="[base.inlineBlock, space.marginHorizontalBetweenNarrow]">
-            <BaseProgressBar
-              :label="$t('results.percentActivitesWithBP')"
-              :percentage="percentBPActivites"
-              id="percent-BP-activities"
-            />
-            <ClearItems :clearType="['Recommendations']" />
-          </div>
-        </BaseGutterWrapper>
+        <ActivitiesListHeader clearRecommendations />
 
         <!-- Table -->
         <ActivitiesList ref="activityList">
@@ -84,15 +61,13 @@ import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
+import ActivitiesListHeader from '@/components/ActivitiesListHeader.vue'
 import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
 import BaseProgressBar from '@/components/BaseProgressBar.vue'
 import ActivitiesItemResult from '@/components/ActivitiesItemResult.vue'
 import ClearItems from '@/components/ClearItems.vue'
-import ChartItems from '@/components/ChartItems.vue'
 import NavFooter from '@/components/NavFooter.vue'
 import PrintPage from '@/components/PrintPage.vue'
-import CountryIndicator from '@/components/CountryIndicator.vue'
-import BaseGallery from '@/components/BaseGallery.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { bestPracticeData } from '@/components/mixins/bestPracticeData'
 import { dataMethods } from '@/components/mixins/dataMethods'
@@ -110,14 +85,12 @@ export default {
     BaseGutterWrapper,
     PrintPage,
     ActivitiesList,
+    ActivitiesListHeader,
     ActivitiesTypeHeading,
     BaseProgressBar,
     ActivitiesItemResult,
     ClearItems,
-    ChartItems,
-    NavFooter,
-    CountryIndicator,
-    BaseGallery
+    NavFooter
   },
   data () {
     return {
@@ -137,15 +110,6 @@ export default {
           }
         ]
       }
-    }
-  },
-  computed: {
-    percentBPActivites: function () {
-      const activitiesWithBP = this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
-        query.where('value', [this.$t('bestPracticeOptions.yesKey')])
-      }).count()
-
-      return (activitiesWithBP / this.getItemCount('activities')).toFixed(2) * 100
     }
   },
   methods: {

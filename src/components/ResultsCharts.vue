@@ -1,5 +1,5 @@
 <template>
-  <BaseSectionWrapper :el="wrapper">
+  <BaseSectionWrapper :el="wrapperEl">
     <header :class="[type.center]">
       <BaseHeading
         :class="space.paddingBottomNarrow"
@@ -104,7 +104,7 @@ export default {
   name: 'ResultsCharts',
   mixins: [dataMethods, initData],
   props: {
-    wrapper: {
+    wrapperEl: {
       type: String,
       default: 'div'
     }
