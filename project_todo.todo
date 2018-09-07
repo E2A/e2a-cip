@@ -14,6 +14,9 @@
  ☐ Debug electron SVG issues:
    ☐ Use debugging protocol outlined in README.
  ☐ Debug french input...
+ ☐ Test in IE/windows
+ ☐ Look at issue with colors in charts on production
+ ☐
 
  # Nice to have
  ☐ Activity editor

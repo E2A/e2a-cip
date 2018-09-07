@@ -7,95 +7,8 @@
     <!-- Export tool tray -->
     <ActivitiesExportTray charts />
 
-    <!-- header -->
-    <BaseSectionWrapper el="div">
-      <header :class="[type.center, space.paddingTop]">
-        <BaseHeading
-          :class="space.paddingBottomNarrow"
-          scale="beta"
-        >
-          {{setupTitle}}
-        </BaseHeading>
-        <BaseGutterWrapper
-          gutterX="medium"
-          gutterY="xnarrow"
-        >
-          <BaseHeading
-            scale="zeta"
-            :class="base.byline"
-            weight="regular"
-            color="midtone"
-            sub
-          >
-            {{setupRole}}
-          </BaseHeading>
-          <BaseHeading
-            scale="zeta"
-            :class="base.byline"
-            weight="regular"
-            color="midtone"
-            sub
-          >
-            {{setupCountry}}
-          </BaseHeading>
-        </BaseGutterWrapper>
-      </header>
-
-      <!-- country analysis -->
-      <BaseWidthWrapper
-        :class="space.paddingTopWide"
-        el="section"
-        width="wide"
-      >
-        <BaseHeading
-          :class="space.paddingBottomWide"
-          :level="2"
-          scale="gamma"
-          color="midtone"
-        >
-          {{$t('results.analysis.country')}}
-        </BaseHeading>
-        <ChartItems
-          :chartNames="['youthFocusBudget', 'youthFocusCount']"
-        />
-
-        <!-- country indicators -->
-        <section :class="space.paddingTop">
-          <BaseGallery
-            :items="countryIndicators"
-            size="large"
-          >
-            <div
-              v-if="!item.error"
-              :class="[border.top, border.secondary, space.paddingTop]"
-              slot-scope="{item}"
-            >
-              <CountryIndicator :countryIndicator="getCountryIndicator(item.id)"
-              />
-            </div>
-          </BaseGallery>
-        </section>
-      </BaseWidthWrapper>
-
-      <!-- activity analysis -->
-      <BaseWidthWrapper
-        :class="space.paddingTopWide"
-        el="section"
-        width="wide"
-      >
-        <BaseHeading
-          :class="space.paddingBottomWide"
-          scale="gamma"
-          color="midtone"
-          sub
-        >
-          {{$t('results.analysis.activity')}}
-        </BaseHeading>
-        <ChartItems
-          :chartNames="['activityTypeBudget', 'activityTypeCount']"
-        />
-      </BaseWidthWrapper>
-    </BaseSectionWrapper>
+    <!-- header & charts -->
+    <ResultsCharts />
 
     <!-- Activities list -->
     <BaseSectionWrapper
@@ -164,6 +77,7 @@
 
 <script>
 import ActivitiesExportTray from '@/components/ActivitiesExportTray.vue'
+import ResultsCharts from '@/components/ResultsCharts.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
@@ -182,13 +96,13 @@ import BaseGallery from '@/components/BaseGallery.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { bestPracticeData } from '@/components/mixins/bestPracticeData'
 import { dataMethods } from '@/components/mixins/dataMethods'
-import { initData } from '@/components/mixins/initData'
 
 export default {
   name: 'Results',
-  mixins: [activityTypes, dataMethods, bestPracticeData, initData],
+  mixins: [activityTypes, dataMethods, bestPracticeData],
   components: {
     ActivitiesExportTray,
+    ResultsCharts,
     BaseHeading,
     BaseButton,
     BaseSectionWrapper,
@@ -208,9 +122,6 @@ export default {
   data () {
     return {
       groupedActivities: this.getGroupedActivites(),
-      setupTitle: this.getItemValue('setup', 'title'),
-      setupRole: this.getItemValue('setup', 'role'),
-      setupCountry: this.getItemValue('setup', 'countryName'),
       navButtons: {
         left: [
           {
@@ -261,22 +172,6 @@ export default {
 <style src="styles/color.scss" lang="scss" module="color"></style>
 
 <style lang="scss" module="base">
-@import '~styleConfig/borders';
-@import '~styleConfig/breakpoints';
-
-.byline {
-  composes: midtone from 'styles/color.scss';
-  composes: leadingTight from 'styles/type.scss';
-  display: block;
-
-  @include media('>xsmall') {
-    display: inline-block;
-
-    & + & {
-      @include border('left');
-    }
-  }
-}
 
 .tableHeader {
   composes: paddingBottom from 'styles/spacing.scss';
