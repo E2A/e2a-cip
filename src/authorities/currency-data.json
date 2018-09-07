@@ -1,18 +1,33 @@
 [
     {
-      "label": "Albania Lek",
-      "value": "ALL",
-      "symbol": "&#76;&#101;&#107;"
-    },
-    {
       "label": "Afghanistan Afghani",
       "value": "AFN",
       "symbol": "&#1547;"
     },
     {
+      "label": "Albania Lek",
+      "value": "ALL",
+      "symbol": "&#76;&#101;&#107;"
+    },
+    {
+      "label": "Algeria Dinar",
+      "value": "DZD",
+      "symbol": ""
+    },
+    {
+      "label": "Angola Kwanza",
+      "value": "AOA",
+      "symbol": ""
+    },
+    {
       "label": "Argentina Peso",
       "value": "ARS",
       "symbol": "&#36;"
+    },
+    {
+      "label": "Armenia Dram",
+      "value": "AMD",
+      "symbol": ""
     },
     {
       "label": "Aruba Guilder",
@@ -35,6 +50,16 @@
       "symbol": "&#36;"
     },
     {
+      "label": "Bahrain Dinar",
+      "value": "BHD",
+      "symbol": ""
+    },
+    {
+      "label": "Bangladesh Taka",
+      "value": "BDT",
+      "symbol": ""
+    },
+    {
       "label": "Barbados Dollar",
       "value": "BBD",
       "symbol": "&#36;"
@@ -55,6 +80,11 @@
       "symbol": "&#36;"
     },
     {
+      "label": "Bhutan Ngultrum",
+      "value": "BTN",
+      "symbol": ""
+    },
+    {
       "label": "Bolivia Boliviano",
       "value": "BOB",
       "symbol": "&#36;&#98;"
@@ -70,11 +100,6 @@
       "symbol": "&#80;"
     },
     {
-      "label": "Bulgaria Lev",
-      "value": "BGN",
-      "symbol": "&#1083;&#1074;"
-    },
-    {
       "label": "Brazil Real",
       "value": "BRL",
       "symbol": "&#82;&#36;"
@@ -83,6 +108,16 @@
       "label": "Brunei Darussalam Dollar",
       "value": "BND",
       "symbol": "&#36;"
+    },
+    {
+      "label": "Bulgaria Lev",
+      "value": "BGN",
+      "symbol": "&#1083;&#1074;"
+    },
+    {
+      "label": "Burundi Franc",
+      "value": "BIF",
+      "symbol": ""
     },
     {
       "label": "Cambodia Riel",
@@ -100,6 +135,21 @@
       "symbol": "&#36;"
     },
     {
+      "label": "CFA Franc BCEAO",
+      "value": "XOF",
+      "symbol": ""
+    },
+    {
+      "label": "CFA Franc BEAC",
+      "value": "XAF",
+      "symbol": ""
+    },
+    {
+      "label": "CFP Franc",
+      "value": "XPF",
+      "symbol": ""
+    },
+    {
       "label": "Chile Peso",
       "value": "CLP",
       "symbol": "&#36;"
@@ -113,6 +163,16 @@
       "label": "Colombia Peso",
       "value": "COP",
       "symbol": "&#36;"
+    },
+    {
+      "label": "Comorian Franc",
+      "value": "KMF",
+      "symbol": ""
+    },
+    {
+      "label": "Congo Franc",
+      "value": "CDF",
+      "symbol": ""
     },
     {
       "label": "Costa Rica Colon",
@@ -140,6 +200,11 @@
       "symbol": "&#107;&#114;"
     },
     {
+      "label": "Djibouti Franc",
+      "value": "DJF",
+      "symbol": ""
+    },
+    {
       "label": "Dominican Republic Peso",
       "value": "DOP",
       "symbol": "&#82;&#68;&#36;"
@@ -160,9 +225,14 @@
       "symbol": "&#36;"
     },
     {
-      "label": "Estonia Kroon",
-      "value": "EEK",
-      "symbol": "&#107;&#114;"
+      "label": "Eritrea Nakfa",
+      "value": "ERN",
+      "symbol": ""
+    },
+    {
+      "label": "Ethiopia Birr",
+      "value": "ETB",
+      "symbol": ""
     },
     {
       "label": "Euro Member Countries",
@@ -180,7 +250,17 @@
       "symbol": "&#36;"
     },
     {
-      "label": "Ghana Cedis",
+      "label": "Gambia Dalasi",
+      "value": "GMD",
+      "symbol": ""
+    },
+    {
+      "label": "Georgia Lari",
+      "value": "GEL",
+      "symbol": ""
+    },
+    {
+      "label": "Ghana Cedi",
       "value": "GHC",
       "symbol": "&#162;"
     },
@@ -200,9 +280,19 @@
       "symbol": "&#163;"
     },
     {
+      "label": "Guinea Franc",
+      "value": "GNF",
+      "symbol": ""
+    },
+    {
       "label": "Guyana Dollar",
       "value": "GYD",
       "symbol": "&#36;"
+    },
+    {
+      "label": "Haiti Gourde",
+      "value": "HTG",
+      "symbol": ""
     },
     {
       "label": "Honduras Lempira",
@@ -240,6 +330,11 @@
       "symbol": "&#65020;"
     },
     {
+      "label": "Iraq Dinar",
+      "value": "IQD",
+      "symbol": ""
+    },
+    {
       "label": "Isle of Man Pound",
       "value": "IMP",
       "symbol": "&#163;"
@@ -265,9 +360,19 @@
       "symbol": "&#163;"
     },
     {
+      "label": "Jordan Dinar",
+      "value": "JOD",
+      "symbol": ""
+    },
+    {
       "label": "Kazakhstan Tenge",
       "value": "KZT",
       "symbol": "&#1083;&#1074;"
+    },
+    {
+      "label": "Kenya Shilling",
+      "value": "KES",
+      "symbol": ""
     },
     {
       "label": "Korea (North) Won",
@@ -280,6 +385,11 @@
       "symbol": "&#8361;"
     },
     {
+      "label": "Kuwait Dinar",
+      "value": "KWD",
+      "symbol": ""
+    },
+    {
       "label": "Kyrgyzstan Som",
       "value": "KGS",
       "symbol": "&#1083;&#1074;"
@@ -290,14 +400,14 @@
       "symbol": "&#8365;"
     },
     {
-      "label": "Latvia Lat",
-      "value": "LVL",
-      "symbol": "&#76;&#115;"
-    },
-    {
       "label": "Lebanon Pound",
       "value": "LBP",
       "symbol": "&#163;"
+    },
+    {
+      "label": "Lesotho Loti",
+      "value": "LSL",
+      "symbol": ""
     },
     {
       "label": "Liberia Dollar",
@@ -305,9 +415,14 @@
       "symbol": "&#36;"
     },
     {
-      "label": "Lithuania Litas",
-      "value": "LTL",
-      "symbol": "&#76;&#116;"
+      "label": "Libya Dinar",
+      "value": "LYD",
+      "symbol": ""
+    },
+    {
+      "label": "Macau Pataca",
+      "value": "MOP",
+      "symbol": ""
     },
     {
       "label": "Macedonia Denar",
@@ -315,9 +430,29 @@
       "symbol": "&#1076;&#1077;&#1085;"
     },
     {
+      "label": "Madagascar Ariary",
+      "value": "MGA",
+      "symbol": ""
+    },
+    {
+      "label": "Malawi Kwacha",
+      "value": "MWK",
+      "symbol": ""
+    },
+    {
       "label": "Malaysia Ringgit",
       "value": "MYR",
       "symbol": "&#82;&#77;"
+    },
+    {
+      "label": "Maldives Rufiyaa",
+      "value": "MVR",
+      "symbol": ""
+    },
+    {
+      "label": "Mauritania Ouguiya",
+      "value": "MRU",
+      "symbol": ""
     },
     {
       "label": "Mauritius Rupee",
@@ -330,14 +465,29 @@
       "symbol": "&#36;"
     },
     {
+      "label": "Moldova Leu",
+      "value": "MDL",
+      "symbol": ""
+    },
+    {
       "label": "Mongolia Tughrik",
       "value": "MNT",
       "symbol": "&#8366;"
     },
     {
+      "label": "Morocco Dirham",
+      "value": "MAD",
+      "symbol": ""
+    },
+    {
       "label": "Mozambique Metical",
       "value": "MZN",
       "symbol": "&#77;&#84;"
+    },
+    {
+      "label": "Myanmar (Burma) Kyat",
+      "value": "MMK",
+      "symbol": ""
     },
     {
       "label": "Namibia Dollar",
@@ -370,11 +520,6 @@
       "symbol": "&#8358;"
     },
     {
-      "label": "Korea (North) Won",
-      "value": "KPW",
-      "symbol": "&#8361;"
-    },
-    {
       "label": "Norway Krone",
       "value": "NOK",
       "symbol": "&#107;&#114;"
@@ -393,6 +538,11 @@
       "label": "Panama Balboa",
       "value": "PAB",
       "symbol": "&#66;&#47;&#46;"
+    },
+    {
+      "label": "Papua New Guinea Kina",
+      "value": "PGK",
+      "symbol": ""
     },
     {
       "label": "Paraguay Guarani",
@@ -430,9 +580,19 @@
       "symbol": "&#1088;&#1091;&#1073;"
     },
     {
+      "label": "Rwanda Franc",
+      "value": "RWF",
+      "symbol": ""
+    },
+    {
       "label": "Saint Helena Pound",
       "value": "SHP",
       "symbol": "&#163;"
+    },
+    {
+      "label": "Samoa Tala",
+      "value": "WST",
+      "symbol": ""
     },
     {
       "label": "Saudi Arabia Riyal",
@@ -448,6 +608,11 @@
       "label": "Seychelles Rupee",
       "value": "SCR",
       "symbol": "&#8360;"
+    },
+    {
+      "label": "Sierra Leone Leone",
+      "value": "SLL",
+      "symbol": ""
     },
     {
       "label": "Singapore Dollar",
@@ -470,14 +635,24 @@
       "symbol": "&#82;"
     },
     {
-      "label": "Korea (South) Won",
-      "value": "KRW",
-      "symbol": "&#8361;"
-    },
-    {
       "label": "Sri Lanka Rupee",
       "value": "LKR",
       "symbol": "&#8360;"
+    },
+    {
+      "label": "Sudan Pound",
+      "value": "SDG",
+      "symbol": ""
+    },
+    {
+      "label": "Suriname Dollar",
+      "value": "SRD",
+      "symbol": "&#36;"
+    },
+    {
+      "label": "Swaziland Lilangeni",
+      "value": "SZL",
+      "symbol": ""
     },
     {
       "label": "Sweden Krona",
@@ -490,14 +665,14 @@
       "symbol": "&#67;&#72;&#70;"
     },
     {
-      "label": "Suriname Dollar",
-      "value": "SRD",
-      "symbol": "&#36;"
-    },
-    {
       "label": "Syria Pound",
       "value": "SYP",
       "symbol": "&#163;"
+    },
+    {
+      "label": "Sao Tome and Principe Dobra",
+      "value": "STN",
+      "symbol": ""
     },
     {
       "label": "Taiwan New Dollar",
@@ -505,9 +680,24 @@
       "symbol": "&#78;&#84;&#36;"
     },
     {
+      "label": "Tajikistan Somoni",
+      "value": "TJS",
+      "symbol": ""
+    },
+    {
+      "label": "Tanzania Shilling",
+      "value": "TZS",
+      "symbol": ""
+    },
+    {
       "label": "Thailand Baht",
       "value": "THB",
       "symbol": "&#3647;"
+    },
+    {
+      "label": "Tonga Pa'anga",
+      "value": "TOP",
+      "symbol": ""
     },
     {
       "label": "Trinidad and Tobago Dollar",
@@ -515,14 +705,19 @@
       "symbol": "&#84;&#84;&#36;"
     },
     {
-      "label": "Turkey Lira",
-      "value": "TRY",
-      "symbol": null
+      "label": "Tunisia Dinar",
+      "value": "TND",
+      "symbol": ""
     },
     {
       "label": "Turkey Lira",
-      "value": "TRL",
-      "symbol": "&#8356;"
+      "value": "TRY",
+      "symbol": ""
+    },
+    {
+      "label": "Turkmenistan Manat",
+      "value": "TMT",
+      "symbol": ""
     },
     {
       "label": "Tuvalu Dollar",
@@ -530,9 +725,19 @@
       "symbol": "&#36;"
     },
     {
+      "label": "Uganda Shilling",
+      "value": "UGX",
+      "symbol": ""
+    },
+    {
       "label": "Ukraine Hryvna",
       "value": "UAH",
       "symbol": "&#8372;"
+    },
+    {
+      "label": "United Arab Emirates Dirham",
+      "value": "AED",
+      "symbol": ""
     },
     {
       "label": "United Kingdom Pound",
@@ -555,6 +760,11 @@
       "symbol": "&#1083;&#1074;"
     },
     {
+      "label": "Vanuatu Vatu",
+      "value": "VUV",
+      "symbol": ""
+    },
+    {
       "label": "Venezuela Bolivar",
       "value": "VEF",
       "symbol": "&#66;&#115;"
@@ -568,6 +778,11 @@
       "label": "Yemen Rial",
       "value": "YER",
       "symbol": "&#65020;"
+    },
+    {
+      "label": "Zambia Kwacha",
+      "value": "ZMW",
+      "symbol": ""
     },
     {
       "label": "Zimbabwe Dollar",
