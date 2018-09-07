@@ -73,8 +73,6 @@ $base-type-sizes: (
 }
 
 // Lato
-@include font-face('lato-thin-normal', 'lato/lato-thin', 300);
-@include font-face('lato-thin-italic', 'lato/lato-thin-italic', 300, 'italic');
 @include font-face('lato-light-normal', 'lato/lato-light', 300);
 @include font-face('lato-light-italic', 'lato/lato-light-italic', 300, 'italic');
 @include font-face('lato-regular-normal', 'lato/lato');
