@@ -161,6 +161,8 @@ export default {
 <style src="styles/color.scss" lang="scss" module="color"></style>
 
 <style lang="scss" module="base">
+@import '~styleConfig/spacing';
+
 .wrapper {
   composes: top from 'styles/borders.scss';
   composes: paddingVerticalNarrow from 'styles/spacing.scss';
@@ -221,5 +223,9 @@ export default {
   composes: scaleEta from 'styles/type.scss';
   counter-reset: recommendations;
   padding-left: 1.2em;
+
+  > li + li {
+    padding-top: space('xnarrow');
+  }
 }
 </style>

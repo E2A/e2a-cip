@@ -6,6 +6,12 @@
   // foreground
   .#{$name} {
     color: $color;
+
+    @if ($name == 'dark') {
+      @media print {
+        color: $black-print;
+      }
+    }
   }
 
   // background

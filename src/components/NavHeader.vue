@@ -267,6 +267,10 @@ $nav-breakpoint: 81em; // ~1400px
     justify-content: space-between;
     align-items: stretch;
   }
+
+  @media print {
+    display: none;
+  }
 }
 
 .logo {

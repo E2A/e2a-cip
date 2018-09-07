@@ -92,6 +92,10 @@ export default {
 .wrapper {
   // make sure all content can scroll past the sticky nav
   padding-bottom: 5rem;
+
+  @media print {
+    padding-bottom: 0;
+  }
 }
 
 .nav {
@@ -104,6 +108,10 @@ export default {
   right: 0;
   bottom: 0;
   font-size: 0;
+
+  @media print {
+    display: none;
+  }
 }
 
 .buttonGroup {

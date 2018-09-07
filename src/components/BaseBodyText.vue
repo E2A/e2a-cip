@@ -46,6 +46,10 @@ export default {
 $gutter: 0.7em; // eta on scale
 
 .content {
+  @media print {
+    color: #000;
+  }
+
   p {
     margin-bottom: 0;
     margin-top: 0;
