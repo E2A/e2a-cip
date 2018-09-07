@@ -46,10 +46,6 @@ export default {
 $gutter: 0.7em; // eta on scale
 
 .content {
-  @media print {
-    color: #000;
-  }
-
   p {
     margin-bottom: 0;
     margin-top: 0;
@@ -101,9 +97,19 @@ $gutter: 0.7em; // eta on scale
       font-size: scale-type('zeta');
       color: color('midtone');
     }
+  }
 
-    // superscript footnote links
-    // .footnote-ref {}
+  @media print {
+    // display urls of external links
+    a {
+      &[href^="http://"],
+      &[href^="https://"] {
+        &:after {
+          content: " (" attr(href) ")";
+          font-size: 0.8em;
+        }
+      }
+    }
   }
 }
 </style>
