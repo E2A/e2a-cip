@@ -2,11 +2,11 @@
 
 # Styling @jay
  # Global
-   ☐ Print styles
+   ✔ Print styles @done (18-09-07 15:18)
 
 # Additional scope items:
- ☐ Adding FR translation [started]
-   ☐ Order FR translations @haley
+ ✔ Adding FR translation [started] @done (18-09-07 15:18)
+   ✔ Order FR translations @haley @done (18-09-07 15:18)
 
  # Browser testing/debugging/deployment
  ☐ Make sure layouts work without flexbox @jay
@@ -14,8 +14,11 @@
  ☐ Debug electron SVG issues:
    ☐ Use debugging protocol outlined in README.
  ☐ Debug french input...
+ ☐ Test in IE/windows
+ ✔ Look at issue with colors in charts on production @done (18-09-07 13:49)
 
  # Nice to have
+ ☐ If there is zero budget, show an empty state instead of a chart (e.g. "No budget in your plan")
  ☐ Activity editor
    ☐ Move save button to bottom nav and alternate w/'add another' depending on save state @nice-to-have
    ☐ Move delete button to top right? @nice-to-have

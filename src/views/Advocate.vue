@@ -47,7 +47,6 @@ import BaseStepList from '@/components/BaseStepList.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
-import PrintPage from '@/components/PrintPage.vue'
 import FileExport from '@/components/FileExport.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 
@@ -61,7 +60,6 @@ export default {
     BaseSectionWrapper,
     BaseButtonLink,
     BaseWidthWrapper,
-    PrintPage,
     FileExport
   },
   data: function () {

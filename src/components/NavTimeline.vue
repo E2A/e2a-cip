@@ -58,14 +58,14 @@
         gutterY="xnarrow"
       >
         <BaseHeading
-          :class="base.inlineBlock"
+          :class="display.inlineBlock"
           :centered="false"
           scale="zeta"
           sub
         >
           <strong>{{items.length}}</strong> {{countLabel || $t('activities')}}
         </BaseHeading>
-        <div :class="base.inlineBlock">
+        <div :class="display.inlineBlock">
           <FileExport size="small" />
         </div>
       </BaseGutterWrapper>
@@ -157,6 +157,7 @@ export default {
 <style src="styles/borders.scss" lang="scss" module="border"></style>
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/color.scss" lang="scss" module="color"></style>
+<style src="styles/display.scss" lang="scss" module="display"></style>
 
 <style lang="scss" module="base">
 @import '~styleConfig/borders';
@@ -165,7 +166,9 @@ export default {
 @import '~styleConfig/zIndex';
 @import '~styleConfig/scale';
 @import '~styleConfig/spacing';
+@import '~styleConfig/breakpoints';
 
+$breakpoint: 'small';
 $dot-size: scale-type('epsilon');
 
 .wrapper {
@@ -178,40 +181,64 @@ $dot-size: scale-type('epsilon');
     align-items: stretch;
   }
 
-  &::before {
-    background: linear-gradient(to right, well('light'), rgba(well('light'), 0));
-    bottom: 0;
-    content: '';
-    display: block;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: space('xwide');
-    z-index: z('high');
+  @include media('>#{$breakpoint}') {
+    @supports (background: linear-gradient(to right, #{well('light')}, #{rgba(well('light'), 0)})) {
+      &::before {
+        background: linear-gradient(to right, well('light'), rgba(well('light'), 0));
+        bottom: 0;
+        content: '';
+        display: block;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: space('xwide');
+        z-index: z('high');
+      }
+    }
   }
 }
 
 .leftPane {
   composes: paddingVerticalNarrow from 'styles/spacing.scss';
+  display: none;
   bottom: 0;
   left: 0;
   overflow-x: scroll;
   position: relative;
+  // no-flexbox fallback
   right: 0;
   top: 0;
+  padding-right: 18rem; // approximate width of rightPane
+  width: 100%;
 
   @supports (flex: 1) {
     flex: 1;
+    padding-right: 0;
+  }
+
+  @include media('>#{$breakpoint}') {
+    display: block;
   }
 }
 
 .rightPane {
   composes: paddingHorizontal paddingVerticalNarrow from 'styles/spacing.scss';
-  display: inline-block;
+  text-align: right;
+  width: 100%;
 
-  @supports (display: flex) {
-    display: flex;
-    align-items: center;
+  @include media('>#{$breakpoint}') {
+    // no-flexbox fallback
+    display: inline-block;
+    width: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @supports (display: flex) {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
   }
 }
 
@@ -269,10 +296,6 @@ $dot-size: scale-type('epsilon');
   width: $dot-size;
   height: $dot-size;
   z-index: z('middle');
-}
-
-.inlineBlock {
-  display: inline-block;
 }
 
 .flyout {

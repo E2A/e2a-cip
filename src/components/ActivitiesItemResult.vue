@@ -90,6 +90,7 @@
             <BestPracticeIcon
               :id="bestPractice.id"
               :activityID="activityInstance.id"
+              :align="index > 4 ? 'right' : 'center'"
             />
           </li>
         </BaseGutterWrapper>

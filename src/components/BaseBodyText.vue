@@ -97,9 +97,23 @@ $gutter: 0.7em; // eta on scale
       font-size: scale-type('zeta');
       color: color('midtone');
     }
+  }
 
-    // superscript footnote links
-    // .footnote-ref {}
+  @media print {
+    // display urls of external links
+    a {
+      color: #000;
+
+      &[href^="http://"],
+      &[href^="https://"] {
+        word-wrap: break-word;
+
+        &:after {
+          content: " (" attr(href) ")";
+          font-size: 0.8em;
+        }
+      }
+    }
   }
 }
 </style>

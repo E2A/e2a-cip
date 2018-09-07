@@ -6,6 +6,12 @@
   // foreground
   .#{$name} {
     color: $color;
+
+    @if ($name == 'dark') {
+      @media print {
+        color: $black-print;
+      }
+    }
   }
 
   // background
@@ -17,10 +23,6 @@
   .#{$name}Border {
     border-color: $color !important;
   }
-
-  // .#{$name}Shadow {
-  //   box-shadow: 0 1px 0.3rem shadow($name);
-  // }
 }
 
 // a default 'well' over a white bg

@@ -6,7 +6,6 @@
   >
     <BasePageIntro
       :title="$t('bestPracticeTitle')"
-      :blurb="$t('bestPracticeIntro')"
     />
     <div :class="space.paddingWide">
       <BaseWidthWrapper>

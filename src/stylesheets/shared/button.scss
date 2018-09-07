@@ -53,6 +53,11 @@
       color: color('white');
     }
   }
+
+  // hide buttons in print b/c interactive elements are useless there
+  @media print {
+    display: none;
+  }
 }
 
 .large {

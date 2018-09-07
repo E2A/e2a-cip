@@ -4,7 +4,7 @@
 -->
 
 <template>
-  <component :is="el" :class="[marginClass, border && borders.top]">
+  <component :is="el" :class="[marginClass, {[borders.top]: border}]">
     <slot>Add stuff here!</slot>
   </component>
 </template>

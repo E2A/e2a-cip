@@ -71,6 +71,9 @@ $color-value-complete: color('yes');
 .wrapper {
   composes: marginHorizontalBetweenXnarrow from 'styles/spacing.scss';
   display: inline-block;
+
+  // try to make webkit/chrome print background colors here
+  -webkit-print-color-adjust: exact;
 }
 
 .bar {

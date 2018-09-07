@@ -175,6 +175,7 @@ export default {
         },
         advocate: {
           name: 'advocate',
+          childName: 'print',
           text: this.$t('nav.advocate'),
           active: false
         }
@@ -183,11 +184,10 @@ export default {
   },
   methods: {
     getCurrentRoute: function () {
-      console.log(this.$route.name)
       // get the (translated) name of the current route
       return Object.values(this.links).find(link => {
         return link.name === this.$route.name || link.childName === this.$route.name
-      }).text || false
+      }).text
     },
     globalNotification: function (value) {
       const notification = this.$store.getters['entities/globalnotifications/query']().first()
@@ -266,6 +266,10 @@ $nav-breakpoint: 81em; // ~1400px
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+  }
+
+  @media print {
+    display: none;
   }
 }
 

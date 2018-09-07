@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="base.wrapper">
     <BaseHeading
       v-if="title"
       :class="space.paddingBottomNarrow"
@@ -218,6 +218,12 @@ export default {
 @import '~styleConfig/type';
 @import '~styleConfig/color';
 
+.wrapper {
+  @media print {
+    page-break-inside: avoid;
+  }
+}
+
 .grid {
   display: block;
   font-size: 0;
@@ -231,6 +237,10 @@ export default {
   width: 100%;
 
   @include media('>medium') {
+    width: 50%;
+  }
+
+  @media print {
     width: 50%;
   }
 }
