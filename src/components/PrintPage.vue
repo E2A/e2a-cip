@@ -6,12 +6,14 @@
       :label="$t('results.exportPDF')"
       :size="size"
       :role="role"
+      iconLeft="print"
     />
     <BaseButton
       @click="printPage"
       :label="$t('results.printPage')"
       :size="size"
       :role="role"
+      iconLeft="print"
     />
     <p v-if="pdfPrintError">{{$t('results.pdfPrintError')}}</p>
   </div>
@@ -26,10 +28,7 @@ export default {
   name: 'PrintPage',
   mixins: [electronPDF, dataMethods],
   props: {
-    size: {
-      type: String,
-      default: 'small'
-    },
+    size: String,
     role: {
       type: String,
       default: 'default'

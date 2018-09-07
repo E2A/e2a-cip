@@ -100,7 +100,8 @@ export default {
         ],
         right: [
           {
-            type: 'print'
+            type: 'print',
+            size: 'default'
           }
         ]
       }
