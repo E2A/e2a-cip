@@ -102,8 +102,12 @@ $gutter: 0.7em; // eta on scale
   @media print {
     // display urls of external links
     a {
+      color: #000;
+
       &[href^="http://"],
       &[href^="https://"] {
+        word-wrap: break-word;
+
         &:after {
           content: " (" attr(href) ")";
           font-size: 0.8em;
