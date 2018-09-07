@@ -68,6 +68,7 @@ export default {
     ChartLegend
   },
   mounted () {
+    console.log(this.seriesData)
     // eslint-disable-next-line
     new Chartist['Pie'](`#${this.chartName}`, {
       series: this.seriesData
