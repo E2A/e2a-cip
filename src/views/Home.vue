@@ -1,6 +1,27 @@
 <template>
   <article>
 
+    <aside
+      :class="[space.paddingHorizontal, space.paddingVerticalNarrow, color.well, border.bottom, type.right]"
+    >
+      <BaseGutterWrapper
+        gutterY="xnarrow"
+        gutterX="xnarrow"
+      >
+        <BaseHeading
+          :class="display.inlineBlock"
+          :centered="false"
+          scale="zeta"
+          color="dark"
+          sub
+        >
+          {{$t('home.chooseLanguage')}}
+        </BaseHeading>
+        <!-- Language selector -->
+        <LanguageSwitcher />
+      </BaseGutterWrapper>
+    </aside>
+
     <BaseWidthWrapper :class="[space.paddingVerticalWide, space.paddingHorizontal, border.bottom]">
       <BaseGutterWrapper :class="base.logoGrid">
         <div :class="base.logo">
@@ -109,6 +130,7 @@
 
 <script>
 import i18n from '@/i18n.js'
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
@@ -125,6 +147,7 @@ export default {
   name: 'Home',
   mixins: [dataMethods, initData],
   components: {
+    LanguageSwitcher,
     BasePageIntro,
     BaseSectionWrapper,
     BaseWidthWrapper,
@@ -153,6 +176,7 @@ export default {
 <style src="styles/borders.scss" lang="scss" module="border"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
 <style src="styles/color.scss" lang="scss" module="color"></style>
+<style src="styles/display.scss" lang="scss" module="display"></style>
 
 <style lang="scss" module="base">
 @import '~styleConfig/breakpoints';

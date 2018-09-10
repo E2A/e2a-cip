@@ -12,7 +12,7 @@
         >
           <img src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg" alt="E2A and Pathfinder" />
         </router-link>
-        <!-- Initial translation wiring -->
+        <!-- Language selector -->
         <LanguageSwitcher />
       </BaseGutterWrapper>
 
