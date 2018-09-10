@@ -73,7 +73,7 @@ export default {
   },
   computed: {
     resources: function () {
-      return Object.values(this.bestPractices[this.id - 1].resources).map(item => {
+      return this.bestPractices[this.id - 1].resources && Object.values(this.bestPractices[this.id - 1].resources).map(item => {
         return {
           title: item.title,
           teaser: item.teaser,

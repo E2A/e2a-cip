@@ -39,7 +39,7 @@ en:
     downloadMac: Macintosh (57MB)
     # Do Not Translate
     downloadMacUrl: https://github.com/E2A/e2a-electron-builds/raw/master/mac-installer.zip
-    downloadWindows: Windows (51MB)
+    downloadWindows: Windows (MB)
     # Do Not Translate
     downloadWindowsUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer.zip
     downloadWindowsPortable: Windows Portable (72MB)
@@ -249,13 +249,13 @@ en:
         [^8]: WHO/UNAIDS, Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents. Geneva: World Health Organization; 2015.
 
         [^9]: Rosenberg NE, Bhushan NL, Vansia D, et al. Comparing Youth Friendly Health Services to the Standard of Care through "Girl Power-Malawi": A Quasi-Experimental Cohort Study. J Acquir Immune Defic Syndr. 2018; Aug 1. doi: 10.1097/QAI.0000000000001830.
-      resources:
-        resource1:
-          title: Resource Title
-          teaser: |-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
-          # Do Not Translate
-          url: /uploads/resources/bestpractice1.png
+      # resources:
+      #   resource1:
+      #     title: Resource Title
+      #     teaser: |-
+      #       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+      #     # Do Not Translate
+      #     url: /uploads/resources/bestpractice1.png
     bestPractice2:
       title: "Ensuring Access to the Full Range of Contraceptive Methods"
       # Do Not Translate
@@ -339,13 +339,13 @@ en:
           [^15]: Centers for Disease Control. “Effectiveness of Family Planning Methods.” 2014. [https://www.cdc.gov/reproductivehealth/contraception/unintendedpregnancy/pdf/Family-Planning-Methods-2014.pdf] Accessed 7 August 2018.
 
           [^16]: Fikree FF, Abshiro WK, Mai MM, et al. Strengthening Youth Friendly Health Services through Expanding Method Choice to include Long-Acting Reversible Contraceptives for Ethiopian Youth. Afr J Reprod Health. 2017; 21[3]: 37-48.
-      resources:
-        resource1:
-          title: Resource Title
-          teaser: |-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
-          # Do Not Translate
-          url: /uploads/resources/bestpractice1.png
+      # resources:
+      #   resource1:
+      #     title: Resource Title
+      #     teaser: |-
+      #       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+      #     # Do Not Translate
+      #     url: /uploads/resources/bestpractice1.png
     bestPractice3:
       title: "Strong Coordination Across Sectors that Affect AYRH"
       # Do Not Translate
@@ -405,13 +405,13 @@ en:
         [^26]: United Nations Secretary-General. The global strategy for women’s, children’s and adolescent’s health (2016–2030): survive thrive transform. 2015. [http://www.who.int/life-course/partners/globalstrategy/globalstrategyreport2016-2030-lowres.pdf?ua=1] Accessed 3 May 2017.
 
         [^27]: Chandra-Mouli et al. Programa Geração Biz, Mozambique: how did this adolescent health initiative grow from a pilot to a national programme, and what did it achieve? Reproductive Health. 2015; 12:12.
-      resources:
-        resource1:
-          title: Resource Title
-          teaser: |-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
-          # Do Not Translate
-          url: /uploads/resources/bestpractice1.png
+      # resources:
+      #   resource1:
+      #     title: Resource Title
+      #     teaser: |-
+      #       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+      #     # Do Not Translate
+      #     url: /uploads/resources/bestpractice1.png
     bestPractice4:
       title: "Youth participation in AYRH programs"
       # Do Not Translate
@@ -488,13 +488,13 @@ en:
         [^39]: Chandra-Mouli V, Lane C, Wong S. What Does Not Work in Adolescent Sexual and Reproductive Health: A Review of Evidence on Interventions Commonly Accepted as Best Practices. Global Health: Science and Practice. 2015; 3(3): 333-40.
 
         [^40]: Babalola S, Ramirez-Ferrero E, Muya A. Survey on Sexual Attitudes and Behaviors among Tanzanian Youth: Baseline Assessment in Five Regions: Report of Findings. Dar es Salaam: HealthScope Tanzania and the Johns Hopkins Center for Communication Programs; 2005.
-      resources:
-        resource1:
-          title: Resource Title
-          teaser: |-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
-          # Do Not Translate
-          url: /uploads/resources/bestpractice1.png
+      # resources:
+      #   resource1:
+      #     title: Resource Title
+      #     teaser: |-
+      #       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+      #     # Do Not Translate
+      #     url: /uploads/resources/bestpractice1.png
     bestPractice5:
       title: "Family Life Education (FLE)"
       # Do Not Translate
@@ -591,13 +591,13 @@ en:
         \ Peru, and Guatemala. PLos One. 2018;13(7):e0200513.\n\n[^42]: UNESCO. Emerging\
         \ Evidence, Lessons, and Practice in Comprehensive Sexuality Education: A\
         \ Global Review. Paris: UNESCO; 2015.        "
-      resources:
-        resource1:
-          title: Resource Title
-          teaser: |-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
-          # Do Not Translate
-          url: /uploads/resources/bestpractice1.png
+      # resources:
+      #   resource1:
+      #     title: Resource Title
+      #     teaser: |-
+      #       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+      #     # Do Not Translate
+      #     url: /uploads/resources/bestpractice1.png
     bestPractice6:
       title: "Fostering Family and Community Support for AYRH"
       # Do Not Translate
@@ -657,13 +657,13 @@ en:
         [^52]: Svanemyr, J. et al. Creating an Enabling Environment for Adolescent Sexual and Reproductive Health: A Framework and Promising Approaches. Journal of Adolescent Health. 2015; 56. S7-S14.
 
         [^53]: The Health Compass. Gender Roles, Equality and Transformation (GREAT) Project. [https://www.thehealthcompass.org/sbcc-spotlights/gender-roles-equality-and-transformation-great-project] Accessed 23 June 2018.
-      resources:
-        resource1:
-          title: Resource Title
-          teaser: |-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
-          # Do Not Translate
-          url: /uploads/resources/bestpractice1.png
+      # resources:
+      #   resource1:
+      #     title: Resource Title
+      #     teaser: |-
+      #       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+      #     # Do Not Translate
+      #     url: /uploads/resources/bestpractice1.png
     bestPractice7:
       title: "Empowering Girls to Take Action for FP/RH Health"
       # Do Not Translate
@@ -718,13 +718,13 @@ en:
         [^61]: Girls Not Brides (2017). The Case for a Minimum Age of Marriage of 18. [https://www.girlsnotbrides.org/wp-content/uploads/2017/12/Why-a-minimum-age-of-marriage-of-18.pdf] Accessed 13 August 2018.
 
         [^62]: Promundo. Program M. [https://promundoglobal.org/programs/program-m/] Accessed 14 August 2018.
-      resources:
-        resource1:
-          title: Resource Title
-          teaser: |-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
-          # Do Not Translate
-          url: /uploads/resources/bestpractice1.png
+      # resources:
+      #   resource1:
+      #     title: Resource Title
+      #     teaser: |-
+      #       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+      #     # Do Not Translate
+      #     url: /uploads/resources/bestpractice1.png
   analysis:
     title: Analyze your activities
     intro: |-

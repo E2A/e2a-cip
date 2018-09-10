@@ -10,7 +10,7 @@ export const bestPracticeData = {
           icon: this.$t(`bestPractices.bestPractice${index + 1}.icon`),
           teaser: this.$t(`bestPractices.bestPractice${index + 1}.teaser`),
           body: this.$t(`bestPractices.bestPractice${index + 1}.body`),
-          resources: this.$t(`bestPractices.bestPractice${index + 1}.resources`),
+          resources: bestPractice.resources ? this.$t(`bestPractices.bestPractice${index + 1}.resources`) : false,
           checkListName: this.$t(`bestPractices.bestPractice${index + 1}.checkListName`),
           id: (index + 1)
         }
