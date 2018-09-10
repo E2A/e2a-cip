@@ -13,7 +13,10 @@
    ✔ Timeline nav @done (18-09-07 18:00)
  ☐ Debug electron SVG issues:
    ☐ Use debugging protocol outlined in README.
- ☐ Debug french input...
+ ☐ Debug french translation
+   ☐ The tool keeps reverting back to English every time text is inputted or a topic is selected from a drop down menu
+   ☐ All indicators and questions are showing up in English during the French tool
+   ☐ Add language selector to landing page
  ☐ Test in IE/windows
    ☐ header is breaking - flexbox?
    ☐ svg logo aspect ratios breaking
