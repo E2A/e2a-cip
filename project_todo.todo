@@ -16,6 +16,8 @@
  ☐ Debug french translation
    ✔ The tool keeps reverting back to English every time text is inputted or a topic is selected from a drop down menu @done (18-09-10 22:42)
    ☐ All indicators and questions are showing up in English during the French tool
+   ☐ Chart and legend colors are breaking in french
+     Apparently class names are getting translated?
    ☐ Any element accepting a translated prop does not re-render when the locale changes
      Would a watcher help this?
      ☐ Country indicators
