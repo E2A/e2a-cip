@@ -2,12 +2,6 @@ import Papa from 'papaparse'
 import i18n from '@/i18n.js'
 
 export const initData = {
-  created () {
-    // Initialize data on create
-    if (this.$store.getters['entities/countryindicators/query']().count() === 0) {
-      this.setupCountryIndicators()
-    }
-  },
   computed: {
     countryIndicators: function () {
       // Get indicators from i18n and pull into object
@@ -37,8 +31,28 @@ export const initData = {
       })
     }
   },
+  data () {
+    return {
+      currentLocale: this.$i18n.locale
+    }
+  },
+  created () {
+    // Initialize data on create
+    if (this.$store.getters['entities/countryindicators/query']().count() === 0) {
+      this.setupCountryIndicators()
+    }
+  },
+  watch: {
+    $i18n: function (newLocale) {
+      console.log(this.$i18n.locale)
+      if (this.$i18n.locale !== newLocale) {
+        this.setupCountryIndicators()
+      }
+    }
+  },
   methods: {
     setupCountryIndicators: function () {
+      console.log('setup indicators')
       // For each indicator, parse file and send data to be stored
       this.countryIndicators.forEach((indicator) => {
         Papa.parse(`uploads/country_indicators/${indicator.fileName}`, {
@@ -65,8 +79,6 @@ export const initData = {
           questions: indicator.questions || null
         }
       })
-
-      console.log(setupData)
 
       // Create for initial load
       this.$store.dispatch('entities/countryindicators/insert', { data: setupData })
