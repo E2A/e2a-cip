@@ -10,7 +10,7 @@
         color="dark"
         sub
       >
-        {{ heading.title }}
+        {{ $t(heading.title) }}
       </BaseHeading>
     </div>
     <ul :class="base.list">
@@ -34,10 +34,10 @@ export default {
       default: function () {
         return [
           {
-            title: this.$t('activityTable.defaultTitle')
+            title: 'activityTable.defaultTitle'
           },
           {
-            title: this.$t('activityTable.defaultEIP'),
+            title: 'activityTable.defaultEIP',
             align: 'right'
           }
         ]
