@@ -2,19 +2,13 @@
 
 # Styling @jay
  # Global
-   ✔ Print styles @done (18-09-07 15:18)
 
 # Additional scope items:
- ✔ Adding FR translation [started] @done (18-09-07 15:18)
-   ✔ Order FR translations @haley @done (18-09-07 15:18)
 
  # Browser testing/debugging/deployment
- ✔ Make sure layouts work without flexbox @jay @done (18-09-07 18:00)
-   ✔ Timeline nav @done (18-09-07 18:00)
  ☐ Debug electron SVG issues:
    ☐ Use debugging protocol outlined in README.
  ☐ Debug french translation
-   ✔ The tool keeps reverting back to English every time text is inputted or a topic is selected from a drop down menu @done (18-09-10 22:42)
    ☐ All indicators and questions are showing up in English during the French tool
    ☐ Chart and legend colors are breaking in french
      Apparently class names are getting translated?
@@ -23,12 +17,10 @@
      ☐ Country indicators
      ☐ NavFooter
      ☐ Activity Table Headings
-   ✔ Add language selector to landing page @done (18-09-10 13:03)
  ☐ Test in IE/windows
    ☐ header is breaking - flexbox?
    ☐ svg logo aspect ratios breaking
    ☐ setup page does not validate and continue btn never appears
- ✔ Look at issue with colors in charts on production @done (18-09-07 13:49)
 
  # Nice to have
  ☐ If there is zero budget, show an empty state instead of a chart (e.g. "No budget in your plan")
@@ -52,6 +44,14 @@
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ The tool keeps reverting back to English every time text is inputted or a topic is selected from a drop down menu @done (18-09-10 22:42)
+ ✔ Add language selector to landing page @done (18-09-10 13:03)
+ ✔ Timeline nav @done (18-09-07 18:00)
+ ✔ Make sure layouts work without flexbox @jay @done (18-09-07 18:00)
+ ✔ Print styles @done (18-09-07 15:18)
+ ✔ Order FR translations @haley @done (18-09-07 15:18)
+ ✔ Adding FR translation [started] @done (18-09-07 15:18)
+ ✔ Look at issue with colors in charts on production @done (18-09-07 13:49)
  ✔ move export button below the print button/clean up @done (18-09-06 19:06)
  ✔ Convert file export to a dropdown button @done (18-09-06 18:35)
  ✔ see if we can move up next to form label? @done (18-09-06 16:32)
