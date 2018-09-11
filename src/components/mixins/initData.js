@@ -66,7 +66,7 @@ export const initData = {
         }
       })
 
-      console.log()
+      console.log(setupData)
 
       // Create for initial load
       this.$store.dispatch('entities/countryindicators/insert', { data: setupData })

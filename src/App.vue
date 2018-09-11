@@ -50,16 +50,12 @@ export default {
     }
   },
   created () {
-    console.log(`app created: ${this.$i18n.locale}`)
     // Force redirect to home if electron
     if (this.checkElectron()) {
       this.$router.replace('/')
     }
 
     this.detectLanguage()
-  },
-  beforeRouteUpdate (to, from, next) {
-    console.log('hello')
   }
 }
 
