@@ -905,8 +905,7 @@ en:
         1: How does your plan address reproductive healthcare and availability of contraceptive information and services?
         2: How does your plan, through contraceptive information and services, address unintended and early pregnancies among adolescents (15-19 years)
     indicator3:
-      name: 'Percentage of women aged 20-24 using modern methods of contraception
-        in your country'
+      name: 'Percentage of women aged 20-24 using modern methods of contraception in your country'
       # Do Not Translate
       sourceUrl: 'https://statcompiler.com/en/'
       # Do Not Translate

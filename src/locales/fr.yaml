@@ -871,11 +871,10 @@ fr:
       # Do Not Translate - input the string of the heading that has the indicator value
       indicatorValueHeader: '15-19'
       questions:
-        1: Comment votre plan aborde-t-il les soins de santé en matière de reproduction et la disponibilité des informations et des services en matière de contraception?
-        2: Comment votre plan, à travers les informations et les services de contraception, aborde-t-il les grossesses non désirées et précoces chez les adolescents (15-19 ans)?
+        1: "Comment votre plan aborde-t-il les soins de santé en matière de reproduction et la disponibilité des informations et des services en matière de contraception?"
+        2: "Comment votre plan, à travers les informations et les services de contraception, aborde-t-il les grossesses non désirées et précoces chez les adolescents (15-19 ans)?"
     indicator3:
-      name: 'Pourcentage de femmes âgées de 20 à 24 ans utilisant des méthodes modernes
-        de contraception dans votre pays'
+      name: 'Pourcentage de femmes âgées de 20 à 24 ans utilisant des méthodes modernes de contraception dans votre pays'
       # Do Not Translate
       sourceUrl: 'https://statcompiler.com/en/'
       # Do Not Translate
@@ -883,7 +882,7 @@ fr:
       # Do Not Translate
       fileName: 'contraceptionUse.csv'
       # Do Not Translate - input the string of the heading that has the ISO2 code
-      iso2codeHeader: 'code postal'
+      iso2codeHeader: 'countryCode'
       indicatorValueUnit: '%'
       # Do Not Translate - input the string of the heading that has the indicator value
       indicatorValueHeader: '20-24'
