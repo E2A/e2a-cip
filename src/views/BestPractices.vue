@@ -101,9 +101,9 @@ export default {
     BaseButtonLink,
     NavFooter
   },
-  data: function () {
-    return {
-      navButtons: {
+  computed: {
+    navButtons: function () {
+      return {
         left: [
           {
             to: {name: 'summary'},
@@ -113,7 +113,7 @@ export default {
         right: [
           {
             to: {name: 'assessment'},
-            label: 'Analysis',
+            label: this.$t('nav.assessment'),
             role: 'primary'
           }
         ]

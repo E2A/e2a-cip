@@ -92,10 +92,9 @@ export default {
     ClearItems,
     NavFooter
   },
-  data () {
-    return {
-      groupedActivities: this.getGroupedActivites(),
-      navButtons: {
+  computed: {
+    navButtons: function () {
+      return {
         left: [
           {
             to: {name: 'assessment'},
@@ -110,6 +109,11 @@ export default {
           }
         ]
       }
+    }
+  },
+  data () {
+    return {
+      groupedActivities: this.getGroupedActivites()
     }
   },
   methods: {
