@@ -14,8 +14,13 @@
  ☐ Debug electron SVG issues:
    ☐ Use debugging protocol outlined in README.
  ☐ Debug french translation
-   ☐ The tool keeps reverting back to English every time text is inputted or a topic is selected from a drop down menu
+   ✔ The tool keeps reverting back to English every time text is inputted or a topic is selected from a drop down menu @done (18-09-10 22:42)
    ☐ All indicators and questions are showing up in English during the French tool
+   ☐ Any element accepting a translated prop does not re-render when the locale changes
+     Would a watcher help this?
+     ☐ Country indicators
+     ☐ NavFooter
+     ☐ Activity Table Headings
    ✔ Add language selector to landing page @done (18-09-10 13:03)
  ☐ Test in IE/windows
    ☐ header is breaking - flexbox?
