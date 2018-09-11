@@ -845,9 +845,7 @@ fr:
       # Do Not Translate
       sourceUrl: 'https://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2017_POP_F15_1_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx'
       # Do Not Translate
-      sourceCitation: 'Nations Unies, Département des affaires économiques et sociales,
-        Division de la population (2017). Perspectives de la population mondiale:
-        révision de 2017, édition DVD.'
+      sourceCitation: 'United Nations, Department of Economic and Social Affairs, Population Division (2017). World Population Prospects: The 2017 Revision, DVD Edition.'
       # Do Not Translate
       fileName: 'percentYouth.csv'
       # Do Not Translate - input the string of the heading that has the ISO2 code
@@ -864,8 +862,7 @@ fr:
       # Do Not Translate
       sourceUrl: 'https://statcompiler.com/en/'
       # Do Not Translate
-      sourceCitation: 'USAID, The DHS Program (2018). Compilateur STAT: Femmes utilisant
-        actuellement une méthode moderne de contraception.'
+      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently using any modern method of contraception.'
       # Do Not Translate
       fileName: 'contraceptionUse.csv'
       # Do Not Translate - input the string of the heading that has the ISO2 code
@@ -882,16 +879,14 @@ fr:
       # Do Not Translate
       sourceUrl: 'https://statcompiler.com/en/'
       # Do Not Translate
-      sourceCitation: 'USAID, The DHS Program (2018). Compilateur STAT: Femmes utilisant
-        actuellement une méthode moderne de contraception.'
+      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently using any modern method of contraception.'
       # Do Not Translate
-      fileName: 'contraceptionUtilisation.csv'
+      fileName: 'contraceptionUse.csv'
       # Do Not Translate - input the string of the heading that has the ISO2 code
       iso2codeHeader: 'code postal'
       indicatorValueUnit: '%'
       # Do Not Translate - input the string of the heading that has the indicator value
       indicatorValueHeader: '20-24'
       questions:
-        1: "Comment votre plan encourage-t-il la synchronisation et l'espacement des\
-          \ grossesses chez les jeunes?"
-        2: Comment votre plan, grâce aux informations et aux services de contraception, aborde-t-il les grossesses non désirées chez les jeunes (20-24 ans)?
+        1: "Comment votre plan encourage-t-il la synchronisation et l'espacement des grossesses chez les jeunes?"
+        2: "Comment votre plan, grâce aux informations et aux services de contraception, aborde-t-il les grossesses non désirées chez les jeunes (20-24 ans)?"

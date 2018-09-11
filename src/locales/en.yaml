@@ -876,9 +876,7 @@ en:
       # Do Not Translate
       sourceUrl: 'https://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2017_POP_F15_1_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx'
       # Do Not Translate
-      sourceCitation: 'United Nations, Department of Economic and Social Affairs,
-        Population Division (2017). World Population Prospects: The 2017 Revision,
-        DVD Edition.'
+      sourceCitation: 'United Nations, Department of Economic and Social Affairs, Population Division (2017). World Population Prospects: The 2017 Revision, DVD Edition.'
       # Do Not Translate
       fileName: 'percentYouth.csv'
       # Do Not Translate - input the string of the heading that has the ISO2 code
@@ -895,8 +893,7 @@ en:
       # Do Not Translate
       sourceUrl: 'https://statcompiler.com/en/'
       # Do Not Translate
-      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently
-        using any modern method of contraception.'
+      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently using any modern method of contraception.'
       # Do Not Translate
       fileName: 'contraceptionUse.csv'
       # Do Not Translate - input the string of the heading that has the ISO2 code
@@ -913,8 +910,7 @@ en:
       # Do Not Translate
       sourceUrl: 'https://statcompiler.com/en/'
       # Do Not Translate
-      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently
-        using any modern method of contraception.'
+      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently using any modern method of contraception.'
       # Do Not Translate
       fileName: 'contraceptionUse.csv'
       # Do Not Translate - input the string of the heading that has the ISO2 code
