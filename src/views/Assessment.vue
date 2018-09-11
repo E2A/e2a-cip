@@ -164,6 +164,7 @@ export default {
 .item {
   display: inline-block;
   width: (100% / 3);
+  vertical-align: top;
 }
 
 .swatch {
