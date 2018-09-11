@@ -6,7 +6,7 @@
     :align="align"
     label="Export your data"
   >
-    <div :class="space.paddingNarrow">
+    <div :class="[space.paddingNarrow, type.left]">
       <BaseHeading
         :class="space.paddingBottomXnarrow"
         scale="epsilon"
@@ -96,6 +96,7 @@ export default {
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
+<style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
 .buttonGroup {

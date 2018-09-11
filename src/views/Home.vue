@@ -13,6 +13,7 @@
           :centered="false"
           scale="zeta"
           color="dark"
+          weight="regular"
           sub
         >
           {{$t('home.chooseLanguage')}}

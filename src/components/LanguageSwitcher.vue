@@ -12,7 +12,6 @@
 
 <script>
 import BaseFormSelect from './BaseFormSelect.vue'
-import locale2 from 'locale2'
 import { dataMethods } from '@/components/mixins/dataMethods'
 
 export default {
@@ -24,8 +23,14 @@ export default {
   data () {
     return {
       langs: [
-        {label: 'French', value: 'fr'},
-        {label: 'English', value: 'en'}
+        {
+          label: 'Fran\u00E7ais', // Français w/unicode escape, so the dangly bit on the c will hopefully render consistently
+          value: 'fr'
+        },
+        {
+          label: 'English',
+          value: 'en'
+        }
       ]
     }
   },
@@ -35,32 +40,11 @@ export default {
         return this.langs.filter(locale => locale.value === this.$i18n.locale)[0]
       },
       set (locale) {
-        const setLocale = locale ? locale.value : 'en'
-        this.$i18n.locale = setLocale
+        if (locale.value !== this.$i18n.locale) {
+          this.$i18n.locale = locale.value
+        }
       }
     }
-  },
-  methods: {
-    detectLanguage: function () {
-      var locale = ''
-      // Browser sniff
-      if (locale2) {
-        locale = locale2
-      }
-
-      // Use URL Query for Native App and to allow forced language
-      if (this.$route.query.lang) {
-        locale = this.$route.query.lang
-      }
-
-      if (locale) {
-        locale = locale.split('-')[0]
-        this.$i18n.locale = locale
-      }
-    }
-  },
-  created () {
-    this.detectLanguage()
   }
 }
 </script>
