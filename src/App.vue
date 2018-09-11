@@ -14,6 +14,7 @@ import 'normalize.css' // global reset styles - import here b/c sass doesn't lik
 import NavHeader from '@/components/NavHeader.vue'
 import BaseIconSpriteMap from '@/components/BaseIconSpriteMap.vue'
 import { dataMethods } from '@/components/mixins/dataMethods.js'
+import locale2 from 'locale2'
 
 export default {
   name: 'AppRoot',
@@ -28,11 +29,34 @@ export default {
       return this.$route.name !== 'home'
     }
   },
+  methods: {
+    detectLanguage: function () {
+      let locale = ''
+
+      // Browser sniff
+      if (locale2) {
+        locale = locale2
+      }
+
+      // Use URL Query for Native App and to allow forced language
+      if (this.$route.query.lang) {
+        locale = this.$route.query.lang
+      }
+
+      if (locale) {
+        locale = locale.split('-')[0]
+        this.$i18n.locale = locale
+      }
+    }
+  },
   created () {
+    console.log(`app created: ${this.$i18n.locale}`)
     // Force redirect to home if electron
     if (this.checkElectron()) {
       this.$router.replace('/')
     }
+
+    this.detectLanguage()
   },
   beforeRouteUpdate (to, from, next) {
     console.log('hello')
