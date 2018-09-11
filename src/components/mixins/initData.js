@@ -33,20 +33,6 @@ export const initData = {
             indicator.questions.push(this.$t(`${translatedIndicator}.questions.${i + 1}`))
           })
         }
-
-        // Deprecated?
-        if (countryIndicator.comparatorOperator) {
-          // if a comparator is present, append those props to the indicator object
-          indicator = {
-            ...indicator,
-            comparatorOperator: this.$t(`${translatedIndicator}.comparatorOperator`),
-            comparatorIndicator: this.$t(`${translatedIndicator}.comparatorIndicator`),
-            comparatorTextTrue: this.$t(`${translatedIndicator}.comparatorTextTrue`),
-            comparatorTextFalse: this.$t(`${translatedIndicator}.comparatorTextFalse`),
-            comparatorTextTrueType: this.$t(`${translatedIndicator}.comparatorTextTrueType`),
-            comparatorTextFalseType: this.$t(`${translatedIndicator}.comparatorTextFalseType`)
-          }
-        }
         return indicator
       })
     }
@@ -67,7 +53,7 @@ export const initData = {
     storeCountryIndicators: function (indicator, indicatorData) {
       // Map Data to Model format
       const setupData = indicatorData.map((dataItem) => {
-        let props = {
+        return {
           countryCode: dataItem[indicator.iso2codeHeader],
           name: indicator.name,
           description: indicator.description,
@@ -78,20 +64,9 @@ export const initData = {
           citation: indicator.citation,
           questions: indicator.questions || null
         }
-
-        if (indicator.comparatorOperator) {
-          props = {
-            ...props,
-            comparatorOperator: indicator.comparatorOperator,
-            comparatorIndicator: indicator.comparatorIndicator,
-            comparatorTextTrue: indicator.comparatorTextTrue,
-            comparatorTextFalse: indicator.comparatorTextFalse,
-            comparatorTextTrueType: indicator.comparatorTextTrueType,
-            comparatorTextFalseType: indicator.comparatorTextFalseType
-          }
-        }
-        return props
       })
+
+      console.log()
 
       // Create for initial load
       this.$store.dispatch('entities/countryindicators/insert', { data: setupData })
