@@ -71,9 +71,6 @@ export default {
         }
       })
     }
-  },
-  created () {
-    console.log(this.steps)
   }
 }
 </script>
