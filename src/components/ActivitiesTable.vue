@@ -7,7 +7,7 @@
           :key="index"
           :class="[base.heading, type[heading.align || 'left']]"
         >
-          {{ heading.title }}
+          {{ translateHeadings ? $t(heading.title) : heading.title }}
         </th>
         <th
           v-if="actionColumn"
@@ -28,18 +28,22 @@ export default {
       default: function () {
         return [
           {
-            title: this.$t('activityTable.defaultTitle')
+            title: 'activityTable.defaultTitle'
           }, {
-            title: this.$t('activityTable.defaultBudget'),
+            title: 'activityTable.defaultBudget',
             align: 'right'
           }, {
-            title: this.$t('activityTable.defaultYouthCentered'),
+            title: 'activityTable.defaultYouthCentered',
             align: 'center'
           }
         ]
       }
     },
     actionColumn: {
+      type: Boolean,
+      default: true
+    },
+    translateHeadings: {
       type: Boolean,
       default: true
     }
