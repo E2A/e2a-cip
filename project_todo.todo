@@ -10,7 +10,7 @@
    ☐ Use debugging protocol outlined in README.
  ☐ Debug french translation
    ☐ All indicators and questions are showing up in English during the French tool
-   ☐ Chart and legend colors are breaking in french
+   ✔ Chart and legend colors are breaking in french @done (18-09-11 15:18)
      Apparently class names are getting translated?
    ☐ Any element accepting a translated prop does not re-render when the locale changes
      Would a watcher help this?
