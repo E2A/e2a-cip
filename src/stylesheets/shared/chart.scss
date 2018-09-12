@@ -1,0 +1,37 @@
+@import '~styleConfig/color';
+
+$chart-light-gray: color('light', $grade: -10);
+
+$color-codes: (
+  'supply': $chart-light-gray,
+  'demand': color('accent'),
+  'enablingEnvironment': color('highlight'),
+  'coordination': color('primary'),
+  'youthCentric': color('primary'),
+  'notYouthCentric': $chart-light-gray
+);
+
+// getter helper for map above
+@function color-code($c) {
+  @return map-get($color-codes, $c);
+}
+
+// local classes for chart legends
+@each $name, $color in $color-codes {
+  .#{$name} {
+    background-color: color-code($name);
+    // adjust FG color based on bg lightness
+    // -> http://www.thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass
+    color: if(lightness($color) > 70, color('dark'), color('white'));
+  }
+}
+
+// global classes for chart svgs
+:global {
+  @each $name, $color in $color-codes {
+    .#{$name} {
+      fill: color-code($name);
+      stroke: color-code($name);
+    }
+  }
+}

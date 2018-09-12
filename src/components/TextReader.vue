@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style src="@/stylesheets/shared/button.scss" lang="scss" module="button"></style>
+<style src="styleShared/button.scss" lang="scss" module="button"></style>
 
 <style lang="scss" module="base">
 .wrapper {

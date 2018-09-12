@@ -3,6 +3,7 @@ module.exports = {
     resolve: {
       alias: {
         styleConfig: '@/stylesheets/config',
+        styleShared: '@/stylesheets/shared',
         styles: '@/stylesheets/utilities'
       }
     }
