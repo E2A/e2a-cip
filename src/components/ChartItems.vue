@@ -123,12 +123,12 @@ export default {
         {
           value: chartData.youthCentricBudgetData[0].youthCentricBudget,
           name: this.$t('chartTitles.youthCentricLabel'),
-          className: 'youth-centric'
+          className: 'youthCentric'
         },
         {
           value: chartData.youthCentricBudgetData[0].notYouthCentricBudget,
           name: this.$t('chartTitles.notYouthCentricLabel'),
-          className: 'not-youth-centric'
+          className: 'notYouthCentric'
         }
       ]
 
@@ -136,12 +136,12 @@ export default {
         {
           value: chartData.youthCentricActivityData[0].youthCentricCount,
           name: this.$t('chartTitles.youthCentricLabel'),
-          className: 'youth-centric'
+          className: 'youthCentric'
         },
         {
           value: chartData.youthCentricActivityData[0].notYouthCentricCount,
           name: this.$t('chartTitles.notYouthCentricLabel'),
-          className: 'not-youth-centric'
+          className: 'notYouthCentric'
         }
       ]
 
@@ -151,12 +151,12 @@ export default {
         {
           value: Math.round(chartData.youthCentricActivityData[0].notYouthCentricPercent * 100),
           labelText: this.$t('chartTitles.notYouthCentricLabel'),
-          className: 'not-youth-centric'
+          className: 'notYouthCentric'
         },
         {
           value: Math.round(chartData.youthCentricActivityData[0].youthCentricPercent * 100),
           labelText: this.$t('chartTitles.youthCentricLabel'),
-          className: 'youth-centric'
+          className: 'youthCentric'
         }
       ]
 
@@ -164,12 +164,12 @@ export default {
         {
           value: Math.round(chartData.youthCentricBudgetData[0].notYouthCentricPercent * 100),
           labelText: this.$t('chartTitles.notYouthCentricLabel'),
-          className: 'not-youth-centric'
+          className: 'notYouthCentric'
         },
         {
           value: Math.round(chartData.youthCentricBudgetData[0].youthCentricPercent * 100),
           labelText: this.$t('chartTitles.youthCentricLabel'),
-          className: 'youth-centric'
+          className: 'youthCentric'
         }
       ]
 

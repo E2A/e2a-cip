@@ -94,15 +94,15 @@ export const dataMethods = {
 
       // Get counts, budget and percents for each activityType
       for (const activityType of activityTypes) {
-        const activityCount = this.$store.getters['entities/activities/query']().where('type', activityType.title).count()
-        const activityTypesObjects = this.$store.getters['entities/activities/query']().where('type', activityType.title).get()
+        const activityCount = this.$store.getters['entities/activities/query']().where('type', activityType.key).count()
+        const activityTypesObjects = this.$store.getters['entities/activities/query']().where('type', activityType.key).get()
         activityTypeData.push({
           type: activityType.title,
           count: activityCount,
           countPercent: (activityCount / totalActivities).toFixed(3),
           budgetAmount: this.getBudgetTotal(activityTypesObjects),
           budgetPercent: (this.getBudgetTotal(activityTypesObjects) / totalBudget).toFixed(3),
-          class: activityType.title.replace(/\s+/g, '-').toLowerCase()
+          class: activityType.key
         })
       }
       chartDataObject['activityTypeData'] = activityTypeData

@@ -145,7 +145,7 @@ fr:
     type3:
       title: Environnement habilitant
       # do not translate
-      key: enabling-environment
+      key: enablingEnvironment
       body: |-
         L'un des avantages du modèle SEED est qu'il prend en compte le contexte spécifique dans lequel les services de planification familiale sont demandés et fournis. Des facteurs culturels, politiques, économiques et religieux influent sur le fonctionnement des services de santé et sur les normes sociales entourant ces services. Un environnement propice à la santé nécessite «des politiques équitables; ressources suffisantes; bonne gouvernance, gestion et responsabilité; normes sociales et culturelles favorables; et l'équité entre les sexes. »[^ 1] Toute activité visant à influencer le contexte plus large des programmes de planification familiale relèverait de ce domaine. Ces activités peuvent inclure:
         - Plaidoyer pour promouvoir des politiques et des lignes directrices favorables à l'AYRH

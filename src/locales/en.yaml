@@ -144,7 +144,7 @@ en:
     type3:
       title: Enabling environment
       # do not translate
-      key: enabling-environment
+      key: enablingEnvironment
       body: |-
         One of the advantages of the SEED Model is that it takes into consideration the specific context in which family planning services are demanded and delivered. Cultural, political, economic, and religious factors affect how health services function and the social norms around those services. An Enabling Environment for health requires “equitable policies; adequate resources; good governance, management, and accountability; supportive social and cultural norms; and gender equity.”[^1] Any activity that attempts to influence the wider context of family planning programming would fall under this domain. These activities can include:
         - Advocacy to promote policies and guidelines that are supportive of AYRH

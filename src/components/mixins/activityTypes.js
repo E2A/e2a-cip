@@ -31,6 +31,7 @@ export const activityTypes = {
       return Object.values(i18n.messages[i18n.locale].activityTypes).map((activityType, index) => {
         return {
           title: this.$t(`activityTypes.type${index + 1}.title`),
+          // "key" is an untranslated, camelcase key used to match types across locales and also as class names for charts
           key: this.$t(`activityTypes.type${index + 1}.key`),
           body: this.$t(`activityTypes.type${index + 1}.body`)
         }
