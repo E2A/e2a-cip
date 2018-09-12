@@ -119,11 +119,12 @@ export default {
     ActivitiesExportTray,
     ClearItems
   },
-  data () {
-    return {
-      groupedActivities: this.getGroupedActivites(),
-      cipTitle: this.getItemValue('setup', 'title'),
-      navButtons: {
+  computed: {
+    groupedActivities: function () {
+      return this.getGroupedActivites()
+    },
+    navButtons: function () {
+      return {
         left: [
           {
             to: {name: 'evidence-informed-practices'},
@@ -138,6 +139,11 @@ export default {
           }
         ]
       }
+    }
+  },
+  data () {
+    return {
+      cipTitle: this.getItemValue('setup', 'title')
     }
   },
   created () {

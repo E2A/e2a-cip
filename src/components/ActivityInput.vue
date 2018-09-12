@@ -186,7 +186,12 @@ export default {
       setupTitle: this.getItemValue('setup', 'title'),
       activityType: '',
       activityText: '',
-      activityTypeOptions: this.getActvityData().map(item => item.title)
+      activityTypeOptions: this.getActvityData().map(activityType => {
+        return {
+          label: activityType.title,
+          value: activityType.key
+        }
+      })
     }
   },
   methods: {
@@ -269,7 +274,7 @@ export default {
               text: this.activityText,
               budget: this.activityBudget,
               youthCentric: this.activityYouthCentric,
-              type: this.activityType,
+              type: this.activityType.value,
               activityNumber: this.activityNumber
             })
           } else {
@@ -278,7 +283,7 @@ export default {
                 text: this.activityText,
                 budget: this.activityBudget,
                 youthCentric: this.activityYouthCentric,
-                type: this.activityType,
+                type: this.activityType.value,
                 activityNumber: this.activityNumber
               }
             })

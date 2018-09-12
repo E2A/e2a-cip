@@ -172,11 +172,6 @@ export default {
       isOpen: false,
       activeAssessments: this.activityInstance.assessments,
       recommendationText: '',
-      expandedData: {
-        [this.$t('activityTable.defaultID')]: this.activityInstance.id,
-        [this.$t('activityTable.defaultBudget')]: `${this.activityInstance.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
-        [this.$t('activityTable.defaultYouthCentered')]: this.activityInstance.youthCentric ? this.$t('yesRaw') : this.$t('noRaw')
-      },
       displayText: this.activityInstance.shortText || this.activityInstance.text
     }
   },
@@ -187,6 +182,13 @@ export default {
     activityRecommendations: function () {
       // Get current recommendations on a given activity.
       return this.$store.getters['entities/activities/query']().with('recommendations').find(this.activityInstance.id).recommendations
+    },
+    expandedData: function () {
+      return {
+        [this.$t('activityTable.defaultID')]: this.activityInstance.id,
+        [this.$t('activityTable.defaultBudget')]: `${this.activityInstance.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
+        [this.$t('activityTable.defaultYouthCentered')]: this.activityInstance.youthCentric ? this.$t('yesRaw') : this.$t('noRaw')
+      }
     }
   },
   methods: {

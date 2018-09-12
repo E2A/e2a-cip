@@ -78,6 +78,7 @@ export default {
 }
 </script>
 
+<style src="styleShared/chart.scss" lang="scss" module="chart"></style>
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/borders.scss" lang="scss" module="border"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>

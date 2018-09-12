@@ -42,9 +42,7 @@ export default {
             label: this.$t('goBack')
           }
         ],
-        right: [
-
-        ]
+        right: []
       }
 
       if (this.getItemCount('activities') > 0) {

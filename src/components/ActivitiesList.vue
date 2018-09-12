@@ -10,7 +10,7 @@
         color="dark"
         sub
       >
-        {{ $t(heading.title) }}
+        {{ translateHeadings ? $t(heading.title) : heading.title }}
       </BaseHeading>
     </div>
     <ul :class="base.list">
@@ -42,6 +42,10 @@ export default {
           }
         ]
       }
+    },
+    translateHeadings: {
+      type: Boolean,
+      default: true
     }
   },
   components: {

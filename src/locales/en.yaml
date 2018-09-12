@@ -110,6 +110,8 @@ en:
   activityTypes:
     type1:
       title: Supply
+      # do not translate
+      key: supply
       body: |-
         Health services are essential to any family planning or reproductive health program. Many factors influence the quality of services. For the purposes of the TARP, any proposed activities that seek to improve the quality, accessibility, acceptability, and affordability of services would fall under this domain. These activities can include:
         - Training staff to offer adolescent and youth friendly services or to increase their knowledge or skills in the provision of FP/RH services, including expanding method choice
@@ -127,6 +129,8 @@ en:
         - The integration of family planning services within other services, like antenatal care, post-partum care, or HIV services
     type2:
       title: Demand
+      # do not translate
+      key: demand
       body: |-
         Many factors can influence the demand for family planning and reproductive health services in communities. These include knowledge about services, social norms regarding the acceptability of family planning utilization, and misconceptions about family planning methods. A variety of approaches using mass media, interpersonal outreach, small-group education, social marketing, and home-based outreach can all be used. It is best if efforts to influence demand are well coordinated within a community, district, province, or country. Any activities in your plan that address demand factors would fall under this domain. These activities can include:
         - Community outreach activities to increase knowledge about the availability of family planning services
@@ -139,6 +143,8 @@ en:
         - Efforts to promote family communication about family planning and reproductive health
     type3:
       title: Enabling environment
+      # do not translate
+      key: enablingEnvironment
       body: |-
         One of the advantages of the SEED Model is that it takes into consideration the specific context in which family planning services are demanded and delivered. Cultural, political, economic, and religious factors affect how health services function and the social norms around those services. An Enabling Environment for health requires “equitable policies; adequate resources; good governance, management, and accountability; supportive social and cultural norms; and gender equity.”[^1] Any activity that attempts to influence the wider context of family planning programming would fall under this domain. These activities can include:
         - Advocacy to promote policies and guidelines that are supportive of AYRH
@@ -153,6 +159,8 @@ en:
         [^1]: https://www.engenderhealth.org/files/pubs/family-planning/seed-model/SEED-8pg-English.pdf
     type4:
       title: Coordination
+      # do not translate
+      key: coordination
       body: |-
         Coordination involves deliberate and planned collaboration among all the stakeholders involved in supply, demand, and creating an enabling environment to maximize the often-limited resources to achieve desired family planning and reproductive health outcomes. Important coordination activities include:
         - Assessments to gain a comprehensive, contextual understanding of the challenges to achieving AYRH
@@ -188,7 +196,7 @@ en:
       body: |-
         **What is it?**
 
-        Even though the ages 15 to 24 years represent a relatively short time frame, youth can vary substantially in their life experiences. The term encompasses young people who are just beginning to discover and explore relationships; are unmarried or married; have no children, are first-time parents, or have multiple children. It also includes young people who may be HIV-infected, youth who have access to health information and supportive parents, or young people who or struggling to make sense of their feelings with little information or support. Healthcare that takes into account young people’s life stage and particular needs are sometimes described as “adolescent- and youth-friendly.” Adolescent- and youth-friendly reproductive (AYRH) healthcare complies with the five World Health Organization-established standards as well as international norms for improved quality of health care for adolescents.  This care, for both young men and women, commonly includes safe and affordable contraceptive methods; prevention and treatment of HIV/AIDS and care for other STIs; the provision of accurate health information; and sensitive counselling and care for overall well-being. It may also include youth-friendly obstetric and antenatal care for pregnant girls and women; post-abortion care, prevention, detection, and counselling for gender-based violence; and the prevention, detection, and treatment cervical cancer.[^2]
+        Even though the ages 15 to 24 years represent a relatively short time frame, youth can vary substantially in their life experiences. The term encompasses young people who are just beginning to discover and explore relationships; are unmarried or married; have no children, are first-time parents, or have multiple children. It also includes young people who may be HIV-infected, youth who have access to health information and supportive parents, or young people who or struggling to make sense of their feelings with little information or support. Healthcare that takes into account young people’s life stage and particular needs are sometimes described as "adolescent- and youth-friendly." Adolescent- and youth-friendly reproductive (AYRH) healthcare complies with the five World Health Organization-established standards as well as international norms for improved quality of health care for adolescents.  This care, for both young men and women, commonly includes safe and affordable contraceptive methods; prevention and treatment of HIV/AIDS and care for other STIs; the provision of accurate health information; and sensitive counselling and care for overall well-being. It may also include youth-friendly obstetric and antenatal care for pregnant girls and women; post-abortion care, prevention, detection, and counselling for gender-based violence; and the prevention, detection, and treatment cervical cancer.[^2]
 
         \
         **Why is it important?**
@@ -803,6 +811,7 @@ en:
         blurb: |-
           A message that emerges clearly from the EIPs is that AYRH thrives in settings where where unbiased services are provided in a welcoming environment, where there is multi-sectoral and community support, and where youth understand their reproductive health needs and have the skills to hold duty-bearers to account. A variety of resources exist to help youth and their adult allies plan effective advocacy campaigns.
   fileUpload:
+    label: Export your data
     selectFormat: Select an export format
     directions: |-
       - The **JSON format** is preferred for importing (and restoring) your data here.

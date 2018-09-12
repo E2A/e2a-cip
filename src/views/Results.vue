@@ -33,7 +33,7 @@
                 <template slot="stats">
                   <BaseProgressBar
                     :label="$t('results.activityWithEIPbyType')"
-                    :percentage="percentBPActivitesByType(activities.activityTypeName)" />
+                    :percentage="percentBPActivitesByType(activities.activityTypeKey)" />
                 </template>
               </ActivitiesTypeHeading>
 
@@ -92,10 +92,12 @@ export default {
     ClearItems,
     NavFooter
   },
-  data () {
-    return {
-      groupedActivities: this.getGroupedActivites(),
-      navButtons: {
+  computed: {
+    groupedActivities: function () {
+      return this.getGroupedActivites()
+    },
+    navButtons: function () {
+      return {
         left: [
           {
             to: {name: 'assessment'},

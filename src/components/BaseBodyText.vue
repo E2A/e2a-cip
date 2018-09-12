@@ -1,7 +1,8 @@
 <template>
-  <VueMarkdown :class="[base.content, type[font], type[typeScaleClass(size)]]">
-    {{content}}
-  </VueMarkdown>
+  <VueMarkdown
+    :source="content"
+    :class="[base.content, type[font], type[typeScaleClass(size)]]"
+  ></VueMarkdown>
 </template>
 
 <script>

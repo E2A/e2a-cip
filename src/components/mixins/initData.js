@@ -2,14 +2,27 @@ import Papa from 'papaparse'
 import i18n from '@/i18n.js'
 
 export const initData = {
+  computed: {
+    currentLocale: function () {
+      return this.$i18n.locale
+    },
+    countryIndicators: function () {
+      return this.getTranslatedCountryIndicators()
+    }
+  },
   created () {
     // Initialize data on create
     if (this.$store.getters['entities/countryindicators/query']().count() === 0) {
       this.setupCountryIndicators()
     }
   },
-  computed: {
-    countryIndicators: function () {
+  watch: {
+    currentLocale: function (newLocale) {
+      this.setupCountryIndicators()
+    }
+  },
+  methods: {
+    getTranslatedCountryIndicators: function () {
       // Get indicators from i18n and pull into object
       return Object.values(i18n.messages[i18n.locale].countryIndicators).map((countryIndicator, index) => {
         const translatedIndicator = `countryIndicators.indicator${index + 1}`
@@ -33,28 +46,14 @@ export const initData = {
             indicator.questions.push(this.$t(`${translatedIndicator}.questions.${i + 1}`))
           })
         }
-
-        // Deprecated?
-        if (countryIndicator.comparatorOperator) {
-          // if a comparator is present, append those props to the indicator object
-          indicator = {
-            ...indicator,
-            comparatorOperator: this.$t(`${translatedIndicator}.comparatorOperator`),
-            comparatorIndicator: this.$t(`${translatedIndicator}.comparatorIndicator`),
-            comparatorTextTrue: this.$t(`${translatedIndicator}.comparatorTextTrue`),
-            comparatorTextFalse: this.$t(`${translatedIndicator}.comparatorTextFalse`),
-            comparatorTextTrueType: this.$t(`${translatedIndicator}.comparatorTextTrueType`),
-            comparatorTextFalseType: this.$t(`${translatedIndicator}.comparatorTextFalseType`)
-          }
-        }
         return indicator
       })
-    }
-  },
-  methods: {
+    },
     setupCountryIndicators: function () {
+      // wipe out the indicators to make sure we have a clean slate
+      this.$store.dispatch('entities/countryindicators/deleteAll')
       // For each indicator, parse file and send data to be stored
-      this.countryIndicators.forEach((indicator) => {
+      this.getTranslatedCountryIndicators().forEach((indicator) => {
         Papa.parse(`uploads/country_indicators/${indicator.fileName}`, {
           download: true,
           header: true,
@@ -67,7 +66,7 @@ export const initData = {
     storeCountryIndicators: function (indicator, indicatorData) {
       // Map Data to Model format
       const setupData = indicatorData.map((dataItem) => {
-        let props = {
+        return {
           countryCode: dataItem[indicator.iso2codeHeader],
           name: indicator.name,
           description: indicator.description,
@@ -78,19 +77,6 @@ export const initData = {
           citation: indicator.citation,
           questions: indicator.questions || null
         }
-
-        if (indicator.comparatorOperator) {
-          props = {
-            ...props,
-            comparatorOperator: indicator.comparatorOperator,
-            comparatorIndicator: indicator.comparatorIndicator,
-            comparatorTextTrue: indicator.comparatorTextTrue,
-            comparatorTextFalse: indicator.comparatorTextFalse,
-            comparatorTextTrueType: indicator.comparatorTextTrueType,
-            comparatorTextFalseType: indicator.comparatorTextFalseType
-          }
-        }
-        return props
       })
 
       // Create for initial load

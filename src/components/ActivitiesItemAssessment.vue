@@ -140,13 +140,17 @@ export default {
     BaseButtonLink,
     BaseDataGrid
   },
-  data: function () {
-    return {
-      expandedData: {
+  computed: {
+    expandedData: function () {
+      return {
         [this.$t('activityTable.defaultID')]: this.id,
         [this.$t('activityTable.defaultBudget')]: `${this.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
         [this.$t('activityTable.defaultYouthCentered')]: this.youth ? this.$t('yesRaw') : this.$t('noRaw')
-      },
+      }
+    }
+  },
+  data: function () {
+    return {
       displayText: this.shortText || this.text,
       isOpen: false
     }

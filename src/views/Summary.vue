@@ -81,11 +81,12 @@ export default {
     ActivitiesTable,
     ActivitiesItemSummary
   },
-  data () {
-    return {
-      groupedActivities: this.getGroupedActivites(),
-      cipTitle: this.getItemValue('setup', 'title'),
-      navButtons: {
+  computed: {
+    groupedActivities: function () {
+      return this.getGroupedActivites()
+    },
+    navButtons: function () {
+      return {
         left: [
           {
             to: {name: 'setup'},
@@ -100,6 +101,11 @@ export default {
           }
         ]
       }
+    }
+  },
+  data () {
+    return {
+      cipTitle: this.getItemValue('setup', 'title')
     }
   }
 }
