@@ -17,11 +17,6 @@ export const bestPracticeData = {
       })
     }
   },
-  data: function () {
-    return {
-
-    }
-  },
   methods: {
     getActivityTypeCounts: function (activityType) {
       return this.bestPractices.map((bestPractice) => {
