@@ -32,8 +32,6 @@ export default {
 <style src="styleShared/chart.scss" lang="scss" module="legend"></style>
 
 <style lang="scss" module="base">
-@import '~styleConfig/color';
-
 .wrapper {
   composes: paddingVerticalBetweenXnarrow from 'styles/spacing.scss';
   display: block;

@@ -51,11 +51,6 @@ export default {
     BaseHeading,
     BaseGutterWrapper
   },
-  data () {
-    return {
-      chartData: this.renderChartData()
-    }
-  },
   props: {
     viewType: {
       type: [String],
@@ -88,6 +83,23 @@ export default {
     },
     title: {
       type: String
+    }
+  },
+  computed: {
+    currentLocale: function () {
+      return this.$i18n.locale
+    }
+  },
+  data () {
+    return {
+      chartData: this.renderChartData()
+    }
+  },
+  watch: {
+    // re-render the charts if the language changes
+    // so the legend labels update
+    currentLocale: function (newLocale) {
+      this.chartData = this.renderChartData()
     }
   },
   methods: {
