@@ -62,9 +62,9 @@ export default {
     BaseWidthWrapper,
     FileExport
   },
-  data: function () {
-    return {
-      steps: Object.values(i18n.messages[i18n.locale].advocate.steps).map((step, index) => {
+  computed: {
+    steps: function () {
+      return Object.values(i18n.messages[i18n.locale].advocate.steps).map((step, index) => {
         return {
           title: this.$t(`advocate.steps.step${index + 1}.title`),
           blurb: this.$t(`advocate.steps.step${index + 1}.blurb`)

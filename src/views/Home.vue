@@ -159,14 +159,18 @@ export default {
     BaseButtonLink,
     ClearItems
   },
-  data: function () {
-    return {
-      steps: Object.values(i18n.messages[i18n.locale].home.steps).map((step, index) => {
+  computed: {
+    steps: function () {
+      return Object.values(i18n.messages[i18n.locale].home.steps).map((step, index) => {
         return {
           title: this.$t(`home.steps.step${index + 1}.title`),
           blurb: this.$t(`home.steps.step${index + 1}.blurb`)
         }
-      }),
+      })
+    }
+  },
+  data: function () {
+    return {
       electron: this.checkElectron()
     }
   }

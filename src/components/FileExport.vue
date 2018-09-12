@@ -4,7 +4,7 @@
     :flyoutSize="18"
     :role="role"
     :align="align"
-    label="Export your data"
+    :label="$t('fileUpload.label')"
   >
     <div :class="[space.paddingNarrow, type.left]">
       <BaseHeading
