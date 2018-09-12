@@ -16,12 +16,13 @@ export const activityTypes = {
       for (const activityType of activityTypeList) {
         groupedActivities.push({
           activityTypeName: activityType.title,
+          activityTypeKey: activityType.key,
           activityObjects: this.$store.getters['entities/activities/query']().with('assessments', (query) => {
             query.where('value', [
               this.$t('bestPracticeOptions.yesKey'),
               this.$t('bestPracticeOptions.maybeKey')
             ])
-          }).where('type', activityType.title).get()
+          }).where('type', activityType.key).get()
         })
       }
       return groupedActivities
@@ -30,6 +31,7 @@ export const activityTypes = {
       return Object.values(i18n.messages[i18n.locale].activityTypes).map((activityType, index) => {
         return {
           title: this.$t(`activityTypes.type${index + 1}.title`),
+          key: this.$t(`activityTypes.type${index + 1}.key`),
           body: this.$t(`activityTypes.type${index + 1}.body`)
         }
       })

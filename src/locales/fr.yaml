@@ -111,6 +111,8 @@ fr:
   activityTypes:
     type1:
       title: La fourniture
+      # do not translate
+      key: supply
       body: |-
         Les services de santé sont essentiels à tout programme de planification familiale ou de santé génésique. De nombreux facteurs influencent la qualité des services. Aux fins du TARP, toute activité proposée visant à améliorer la qualité, l'accessibilité, l'acceptabilité et l'accessibilité financière des services relèverait de ce domaine. Ces activités peuvent inclure:
         - Former le personnel à offrir des services adaptés aux adolescents et aux jeunes ou à accroître leurs connaissances ou compétences en matière de prestation de services de PF / SR, y compris en élargissant le choix de la méthode.
@@ -128,6 +130,8 @@ fr:
         - L'intégration des services de planification familiale dans d'autres services, tels que les soins prénatals, les soins post-partum ou les services VIH
     type2:
       title: Demande
+      # do not translate
+      key: demand
       body: |-
         De nombreux facteurs peuvent influencer la demande de services de planification familiale et de santé génésique dans les communautés. Celles-ci incluent des connaissances sur les services, des normes sociales concernant l'acceptabilité de l'utilisation de la planification familiale et des idées fausses sur les méthodes de planification familiale. Une variété d'approches utilisant les médias, la sensibilisation interpersonnelle, l'éducation en petits groupes, le marketing social et la sensibilisation à domicile peuvent toutes être utilisées. Il est préférable que les efforts visant à influencer la demande soient bien coordonnés au sein d’une communauté, d’un district, d’une province ou d’un pays. Toutes les activités de votre plan qui traitent des facteurs de demande relèveraient de ce domaine. Ces activités peuvent inclure:
         - Activités de sensibilisation communautaires visant à accroître les connaissances sur la disponibilité des services de planification familiale
@@ -140,6 +144,8 @@ fr:
         - Efforts pour promouvoir la communication familiale sur la planification familiale et la santé reproductive
     type3:
       title: Environnement habilitant
+      # do not translate
+      key: enabling-environment
       body: |-
         L'un des avantages du modèle SEED est qu'il prend en compte le contexte spécifique dans lequel les services de planification familiale sont demandés et fournis. Des facteurs culturels, politiques, économiques et religieux influent sur le fonctionnement des services de santé et sur les normes sociales entourant ces services. Un environnement propice à la santé nécessite «des politiques équitables; ressources suffisantes; bonne gouvernance, gestion et responsabilité; normes sociales et culturelles favorables; et l'équité entre les sexes. »[^ 1] Toute activité visant à influencer le contexte plus large des programmes de planification familiale relèverait de ce domaine. Ces activités peuvent inclure:
         - Plaidoyer pour promouvoir des politiques et des lignes directrices favorables à l'AYRH
@@ -154,6 +160,8 @@ fr:
         [^ 1]: https://www.engenderhealth.org/files/pubs/family-planning/seed-model/SEED-8pg-English.pdf
     type4:
       title: Coordination
+      # do not translate
+      key: coordination
       body: |-
         La coordination implique une collaboration délibérée et planifiée entre toutes les parties prenantes impliquées dans l'offre, la demande et la création d'un environnement propice pour maximiser les ressources souvent limitées pour atteindre les objectifs de planification familiale et de santé reproductive souhaités. Les activités de coordination importantes comprennent:
         - des évaluations visant à obtenir une compréhension globale et contextuelle des défis à relever pour atteindre AYRH

@@ -82,6 +82,9 @@ export default {
     ActivitiesItemSummary
   },
   computed: {
+    groupedActivities: function () {
+      return this.getGroupedActivites()
+    },
     navButtons: function () {
       return {
         left: [
@@ -102,7 +105,6 @@ export default {
   },
   data () {
     return {
-      groupedActivities: this.getGroupedActivites(),
       cipTitle: this.getItemValue('setup', 'title')
     }
   }
