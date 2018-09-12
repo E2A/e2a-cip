@@ -27,6 +27,7 @@ $color-codes: (
 }
 
 // global classes for chart svgs
+// -> need to be global b/c they're inserted into the svgs by chartist
 :global {
   @each $name, $color in $color-codes {
     .#{$name} {

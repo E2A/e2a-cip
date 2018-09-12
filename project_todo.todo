@@ -8,16 +8,6 @@
  # Browser testing/debugging/deployment
  ☐ Debug electron SVG issues:
    ☐ Use debugging protocol outlined in README.
- ☐ Debug french translation
-   ✔ All indicators and questions are showing up in English during the French tool @done (18-09-11 17:23)
-   ✔ Chart and legend colors are breaking in french @done (18-09-11 15:18)
-     Apparently class names are getting translated?
-   ☐ Any element accepting a translated prop does not re-render when the locale changes
-     Would a watcher help this?
-     ✔ Country indicators @done (18-09-11 17:23)
-     ✔ NavFooter @done (18-09-11 17:23)
-     ✔ Activity Table Headings @done (18-09-11 17:28)
-     ☐ Activity Type Headings
  ☐ Test in IE/windows
    ☐ header is breaking - flexbox?
    ☐ svg logo aspect ratios breaking
@@ -37,14 +27,24 @@
  ☐ Home
    ☐ Move clear all btn to setup page @nice-to-have
  ☐ Dot seems to not change on nav change (likely b/c prop or computed property?) @scott?
- ☐ Adjust value storage to work with keys that are not based on translation... @scott
-   ☐ Causes errors when you have data and you then change language...
   ☐ Refactor Activity Input @scott
    ☐ To only have input new item
    ☐ To save continually (also maybe migrate to get / set versions of vuex to by dryer and not deal with "update value" issues) - on save show notification.
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Causes errors when you have data and you then change language... @done (18-09-11 22:58)
+ ✔ Adjust value storage to work with keys that are not based on translation... @scott @done (18-09-11 22:58)
+ ✔ Debug french translation @done (18-09-11 22:57)
+ ✔ Any element accepting a translated prop does not re-render when the locale changes @done (18-09-11 22:57)
+  Would a watcher help this?
+ ✔ Activity Type Headings @done (18-09-11 22:57)
+ ✔ Activity Table Headings @done (18-09-11 17:28)
+ ✔ NavFooter @done (18-09-11 17:23)
+ ✔ Country indicators @done (18-09-11 17:23)
+ ✔ All indicators and questions are showing up in English during the French tool @done (18-09-11 17:23)
+ ✔ Chart and legend colors are breaking in french @done (18-09-11 15:18)
+  Apparently class names are getting translated?
  ✔ The tool keeps reverting back to English every time text is inputted or a topic is selected from a drop down menu @done (18-09-10 22:42)
  ✔ Add language selector to landing page @done (18-09-10 13:03)
  ✔ Timeline nav @done (18-09-07 18:00)
