@@ -30,8 +30,8 @@
                 <template slot="stats">
                   <BaseProgressBar
                     :label="$t('results.activityWithEIPbyType')"
-                    :percentage="percentBPActivitesByType(activities.activityTypeName)" />
-                </template>
+                    :percentage="percentBPActivitesByType(activities.activityTypeKey)" />
+                </template>z
               </ActivitiesTypeHeading>
               <ActivitiesItemResultPrint
                 v-for="(activity, index) in activities.activityObjects"
