@@ -114,17 +114,6 @@ export default {
       }
     }
   },
-  methods: {
-    percentBPActivitesByType: function (activityType) {
-      const activitiesWithBP = this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
-        query.where('value', [this.$t('bestPracticeOptions.yesKey')])
-      }).where('type', activityType).count()
-
-      const activitiesInType = this.$store.getters['entities/activities/query']().where('type', activityType).count()
-
-      return (activitiesWithBP / activitiesInType).toFixed(2) * 100
-    }
-  },
   created () {
     // Clear any open icons
     this.$store.dispatch('entities/bestpracticeicons/deleteAll')

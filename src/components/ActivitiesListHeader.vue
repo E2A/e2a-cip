@@ -62,6 +62,8 @@ export default {
         query.where('value', [this.$t('bestPracticeOptions.yesKey')])
       }).count()
 
+      console.log(`all: ${this.$store.getters['entities/activities/query']().count()} | has bp: ${activitiesWithBP}`)
+
       return (activitiesWithBP / this.getItemCount('activities')).toFixed(2) * 100
     }
   },

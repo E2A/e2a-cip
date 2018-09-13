@@ -64,10 +64,11 @@ import NavFooter from '@/components/NavFooter.vue'
 import PrintPage from '@/components/PrintPage.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { dataMethods } from '@/components/mixins/dataMethods'
+import { bestPracticeData } from '@/components/mixins/bestPracticeData'
 
 export default {
   name: 'Print',
-  mixins: [activityTypes, dataMethods],
+  mixins: [activityTypes, dataMethods, bestPracticeData],
   components: {
     ResultsCharts,
     ActivitiesListHeader,
@@ -105,17 +106,6 @@ export default {
           }
         ]
       }
-    }
-  },
-  methods: {
-    percentBPActivitesByType: function (activityType) {
-      const activitiesWithBP = this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
-        query.where('value', [this.$t('bestPracticeOptions.yesKey')])
-      }).where('type', activityType).count()
-
-      const activitiesInType = this.$store.getters['entities/activities/query']().where('type', activityType).count()
-
-      return (activitiesWithBP / activitiesInType).toFixed(2) * 100
     }
   }
 }
