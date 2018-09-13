@@ -86,13 +86,12 @@ export default {
     ChartItems,
     NavFooter
   },
-  data () {
-    return {
-      groupedActivities: this.getGroupedActivites(),
-      setupTitle: this.getItemValue('setup', 'title'),
-      setupRole: this.getItemValue('setup', 'role'),
-      setupCountry: this.getItemValue('setup', 'countryName'),
-      navButtons: {
+  computed: {
+    groupedActivities: function () {
+      return this.getGroupedActivites()
+    },
+    navButtons: function () {
+      return {
         left: [
           {
             to: {name: 'advocate'},
@@ -106,6 +105,13 @@ export default {
           }
         ]
       }
+    }
+  },
+  data () {
+    return {
+      setupTitle: this.getItemValue('setup', 'title'),
+      setupRole: this.getItemValue('setup', 'role'),
+      setupCountry: this.getItemValue('setup', 'countryName')
     }
   }
 }
