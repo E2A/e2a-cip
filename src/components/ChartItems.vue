@@ -103,6 +103,33 @@ export default {
     }
   },
   methods: {
+    // Use Largest Remainder Method to ensure rounded percentages always add to 100
+    // https://stackoverflow.com/questions/1410711/rounding-an-arrays-of-values-to-100
+    getRoundedPercentages: function (numbers) {
+      const numberVersions = numbers.map(number => {
+        const rounded = Math.floor(number)
+        return {
+          original: number,
+          rounded: rounded,
+          remainder: (number - rounded)
+        }
+      }).sort((a, b) => {
+        return a.remainder - b.remainder
+      })
+
+      numberVersions.forEach(number => {
+        const integerSum = numberVersions.reduce((sum, number) => {
+          return sum + number.rounded
+        }, 0)
+
+        if (integerSum < 100) {
+          // round up
+          number.rounded = Math.ceil(number.original)
+        }
+      })
+
+      return numberVersions.map(number => number.rounded)
+    },
     renderChartData: function () {
       // Get Data
       const chartData = this.getChartData(this.getActvityData())
@@ -157,45 +184,58 @@ export default {
         }
       ]
 
-      // Build Labels
+      const youthFocusedCountRoundedPercetages = this.getRoundedPercentages([
+        chartData.youthCentricActivityData[0].notYouthCentricPercent * 100,
+        chartData.youthCentricActivityData[0].youthCentricPercent * 100
+      ])
 
+      // Build Labels
       const youthFocusedCountLabel = [
         {
-          value: Math.round(chartData.youthCentricActivityData[0].notYouthCentricPercent * 100),
+          value: youthFocusedCountRoundedPercetages[0],
           labelText: this.$t('chartTitles.notYouthCentricLabel'),
           className: 'notYouthCentric'
         },
         {
-          value: Math.round(chartData.youthCentricActivityData[0].youthCentricPercent * 100),
+          value: youthFocusedCountRoundedPercetages[1],
           labelText: this.$t('chartTitles.youthCentricLabel'),
           className: 'youthCentric'
         }
       ]
+
+      const youthFocusedBudgetRoundedPercetages = this.getRoundedPercentages([
+        chartData.youthCentricBudgetData[0].notYouthCentricPercent * 100,
+        chartData.youthCentricBudgetData[0].youthCentricPercent * 100
+      ])
 
       const youthFocusedBudgetLabel = [
         {
-          value: Math.round(chartData.youthCentricBudgetData[0].notYouthCentricPercent * 100),
+          value: youthFocusedBudgetRoundedPercetages[0],
           labelText: this.$t('chartTitles.notYouthCentricLabel'),
           className: 'notYouthCentric'
         },
         {
-          value: Math.round(chartData.youthCentricBudgetData[0].youthCentricPercent * 100),
+          value: youthFocusedBudgetRoundedPercetages[1],
           labelText: this.$t('chartTitles.youthCentricLabel'),
           className: 'youthCentric'
         }
       ]
 
-      const activtyTypeBudgetLabel = chartData.activityTypeData.map((item) => {
+      const activtyTypeBudgetRoundedPercetages = this.getRoundedPercentages(chartData.activityTypeData.map((item) => item.budgetPercent * 100))
+
+      const activtyTypeBudgetLabel = chartData.activityTypeData.map((item, index) => {
         return {
-          value: Math.round(item.budgetPercent * 100),
+          value: activtyTypeBudgetRoundedPercetages[index],
           labelText: item.type,
           className: item.class
         }
       })
 
-      const activtyTypeCountLabel = chartData.activityTypeData.map((item) => {
+      const activtyTypeCountRoundedPercetages = this.getRoundedPercentages(chartData.activityTypeData.map((item) => item.countPercent * 100))
+
+      const activtyTypeCountLabel = chartData.activityTypeData.map((item, index) => {
         return {
-          value: Math.round(item.countPercent * 100),
+          value: activtyTypeCountRoundedPercetages[index],
           labelText: item.type,
           className: item.class
         }
