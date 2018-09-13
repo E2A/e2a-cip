@@ -30,7 +30,7 @@
                 <template slot="stats">
                   <BaseProgressBar
                     :label="$t('results.activityWithEIPbyType')"
-                    :percentage="percentBPActivitesByType(activities.activityTypeName)" />
+                    :percentage="percentBPActivitesByType(activities.activityTypeKey)" />
                 </template>
               </ActivitiesTypeHeading>
               <ActivitiesItemResultPrint
@@ -64,10 +64,11 @@ import NavFooter from '@/components/NavFooter.vue'
 import PrintPage from '@/components/PrintPage.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { dataMethods } from '@/components/mixins/dataMethods'
+import { bestPracticeData } from '@/components/mixins/bestPracticeData'
 
 export default {
   name: 'Print',
-  mixins: [activityTypes, dataMethods],
+  mixins: [activityTypes, dataMethods, bestPracticeData],
   components: {
     ResultsCharts,
     ActivitiesListHeader,
@@ -85,13 +86,12 @@ export default {
     ChartItems,
     NavFooter
   },
-  data () {
-    return {
-      groupedActivities: this.getGroupedActivites(),
-      setupTitle: this.getItemValue('setup', 'title'),
-      setupRole: this.getItemValue('setup', 'role'),
-      setupCountry: this.getItemValue('setup', 'countryName'),
-      navButtons: {
+  computed: {
+    groupedActivities: function () {
+      return this.getGroupedActivites()
+    },
+    navButtons: function () {
+      return {
         left: [
           {
             to: {name: 'advocate'},
@@ -107,15 +107,11 @@ export default {
       }
     }
   },
-  methods: {
-    percentBPActivitesByType: function (activityType) {
-      const activitiesWithBP = this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
-        query.where('value', [this.$t('bestPracticeOptions.yesKey')])
-      }).where('type', activityType).count()
-
-      const activitiesInType = this.$store.getters['entities/activities/query']().where('type', activityType).count()
-
-      return (activitiesWithBP / activitiesInType).toFixed(2) * 100
+  data () {
+    return {
+      setupTitle: this.getItemValue('setup', 'title'),
+      setupRole: this.getItemValue('setup', 'role'),
+      setupCountry: this.getItemValue('setup', 'countryName')
     }
   }
 }

@@ -24,6 +24,7 @@
           :class="base.data"
         />
         <BaseGutterWrapper
+          v-if="activityInstance.youthCentric"
           :class="base.icons"
           el="ul"
           gutterX="xnarrow"
@@ -44,7 +45,10 @@
       </div>
 
       <!-- recommendations -->
-      <div :class="space.paddingTopNarrow">
+      <div
+        v-if="activityRecommendations.length > 0"
+        :class="space.paddingTopNarrow"
+      >
         <BaseHeading
           :level="5"
           :centered="false"
@@ -63,13 +67,13 @@
               v-if="recommendation.text.length > 0"
               :key="recommendation.id"
             >
-            <BaseBodyText
-              :class="color.highlight"
-              :content="recommendation.text"
-              size="zeta"
-              font="display"
-            />
-                    </li>
+              <BaseBodyText
+                :class="color.highlight"
+                :content="recommendation.text"
+                size="zeta"
+                font="display"
+              />
+            </li>
           </template>
         </ol>
       </div>
@@ -109,26 +113,28 @@ export default {
   data () {
     return {
       activeAssessments: this.activityInstance.assessments,
-      recommendationText: '',
-      expandedData: {
+      recommendationText: ''
+    }
+  },
+  computed: {
+    expandedData: function () {
+      return {
         [this.$t('activityTable.defaultID')]: this.activityInstance.id,
         [this.$t('activityTable.defaultBudget')]: `${this.activityInstance.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
         [this.$t('activityTable.defaultYouthCentered')]: this.activityInstance.youthCentric ? this.$t('yesRaw') : this.$t('noRaw')
       }
-    }
-  },
-  computed: {
+    },
     recommendationsNotPresent: function () {
       return this.activityRecommendations.length === 0
     },
     activityRecommendations: function () {
-      // Get current recommendations on a given activity.
+      // Get current recommendations on a given activity
       return this.$store.getters['entities/activities/query']().with('recommendations').find(this.activityInstance.id).recommendations
     }
   },
   methods: {
     getActivityRecommendations: function () {
-      // Get current recommendations on a given activity.
+      // Get current recommendations on a given activity
       return this.$store.getters['entities/activities/query']().with('recommendations').find(this.activityInstance.id).recommendations
     },
     getBestPracticePresence: function (bestPracticeText) {
