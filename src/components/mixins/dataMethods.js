@@ -75,11 +75,9 @@ export const dataMethods = {
       }
     },
     getBudgetTotal: function (queryObject) {
-      var budgetTotal = 0
-      for (const entity of queryObject) {
-        budgetTotal += entity.budget
-      }
-      return budgetTotal
+      return queryObject.reduce((budgetTotal, entity) => {
+        return budgetTotal + entity.budget
+      }, 0)
     },
     getYouthCentricBudget: function () {
       return this.getBudgetTotal(this.$store.getters['entities/activities/query']().where('youthCentric', true).get())
