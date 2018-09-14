@@ -38,11 +38,12 @@ export const bestPracticeData = {
     percentBPActivitesByType: function (activityType) {
       const activitiesWithBP = this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
         query.where('value', [this.$t('bestPracticeOptions.yesKey')])
-      }).where('type', activityType).count()
+      }).where('type', activityType).where('youthCentric', true).count()
 
-      const activitiesInType = this.$store.getters['entities/activities/query']().where('type', activityType).count()
+      const activitiesInType = this.$store.getters['entities/activities/query']().where('type', activityType).where('youthCentric', true).count()
 
-      return (activitiesWithBP / activitiesInType).toFixed(2) * 100
+      // make sure activitiesInType is not zero to avoid dividing by it and returning NaN - if so just return 0
+      return activitiesInType > 0 ? (activitiesWithBP / activitiesInType).toFixed(2) * 100 : 0
     }
   }
 }

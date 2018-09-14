@@ -70,7 +70,7 @@ export default {
   methods: {
     getYouthCenteredActivitiesCount () {
       return this.$store.getters['entities/activities/query']()
-        .where('youthCentric', [true]).count()
+        .where('youthCentric', true).count()
     },
     getActivitiesWithBP () {
       return this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {

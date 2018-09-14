@@ -31,9 +31,6 @@ import BaseGutterWrapper from './BaseGutterWrapper.vue'
 
 export default {
   name: 'ActivitiesTypeHeading',
-  props: {
-
-  },
   components: {
     BaseHeading,
     BaseGutterWrapper
