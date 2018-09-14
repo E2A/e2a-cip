@@ -86,9 +86,9 @@
               v-validate="'required'"
               :label="$t('selectActivityType')"
               :helpText="$t('supportText.selectActivityType')"
-              :value="activityType"
               :data-vv-as="`${$t('activityType')}`"
               :options="activityTypeOptions"
+              :value="activityType.label"
               :searchable="false"
               :error="errors.first('activityType')"
               name="activityType"
@@ -113,7 +113,7 @@
             </li>
             <li :class="base.buttonWrapper">
               <BaseButton
-                v-if="this.getActivity()"
+                v-if="getActivity()"
                 @click="deleteActivity"
                 :label="$t('deleteActivity')"
                 size="small"
@@ -166,6 +166,14 @@ export default {
     }
   },
   computed: {
+    activityTypeOptions: function () {
+      return this.getActvityData().map(activityType => {
+        return {
+          label: activityType.title,
+          value: activityType.key
+        }
+      })
+    },
     navItems: function () {
       return this.getAllActivities().map(activity => {
         return {
@@ -185,13 +193,7 @@ export default {
       activityYouthCentric: false,
       setupTitle: this.getItemValue('setup', 'title'),
       activityType: '',
-      activityText: '',
-      activityTypeOptions: this.getActvityData().map(activityType => {
-        return {
-          label: activityType.title,
-          value: activityType.key
-        }
-      })
+      activityText: ''
     }
   },
   methods: {
@@ -213,19 +215,24 @@ export default {
         this.existingActivity = activityInstance
         this.activityBudget = activityInstance.budget
         this.activityYouthCentric = activityInstance.youthCentric
-        this.activityType = activityInstance.type
+        this.activityType = {
+          label: this.activityTypeOptions.find(option => {
+            return option.value === activityInstance.type
+          }).label,
+          value: activityInstance.type
+        }
         this.currentActivityID = this.activityId
         this.activityText = activityInstance.text
         this.activityNumber = activityInstance.activityNumber
-      } else {
-        this.currentActivityID = this.activityId
-        this.existingActivity = {}
-        this.activityBudget = 0
-        this.activityYouthCentric = false
-        this.activityType = ''
-        this.activityText = ''
-        this.activityNumber = this.activityId
+        return
       }
+      this.currentActivityID = this.activityId
+      this.existingActivity = {}
+      this.activityBudget = 0
+      this.activityYouthCentric = false
+      this.activityType = ''
+      this.activityText = ''
+      this.activityNumber = this.activityId
     },
     getActivity: function (field = '') {
       const activityInstance = this.$store.getters['entities/activities/find'](this.activityId)
@@ -235,30 +242,6 @@ export default {
         return activityInstance
       } else {
         return null
-      }
-    },
-    setActivity: function (field, inputValue) {
-      // DEPRECATED
-      // Potentially useful to use for get / set on vModel
-      const activity = this.getActivity()
-      const value = this.stripWhitespace(inputValue)
-
-      if (field && value && activity) {
-        this.$store.dispatch('entities/activities/update', {
-          where: activity.id,
-          data (item) {
-            item[`${field}`] = value
-          }
-        }).then((e) => { this.notify(this.$t('saveSuccess'), 'success') })
-      }
-
-      if (field && value && !activity) {
-        const createJSON = `{"${field}": "${value}"}`
-        const createObj = JSON.parse(createJSON)
-
-        this.$store.dispatch('entities/activities/insert', {
-          data: createObj
-        }).then((e) => { this.notify(this.$t('saveSuccess'), 'success') })
       }
     },
     addActivity: function () {

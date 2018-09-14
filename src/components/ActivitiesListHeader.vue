@@ -13,7 +13,7 @@
       scale="delta"
       color="dark"
     >
-      <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('activity') : $t('activities')}}
+      <strong>{{getYouthCenteredActivitiesCount()}}</strong> {{getItemCount('activities') === 1 ? $t('results.youthCenteredActivity') : $t('results.youthCenteredActivities')}}
     </BaseHeading>
     <div :class="[display.inlineBlock, space.marginHorizontalBetweenNarrow]">
       <BaseProgressBar
@@ -58,11 +58,7 @@ export default {
   },
   computed: {
     percentBPActivites: function () {
-      const activitiesWithBP = this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
-        query.where('value', [this.$t('bestPracticeOptions.yesKey')])
-      }).count()
-
-      return (activitiesWithBP / this.getItemCount('activities')).toFixed(2) * 100
+      return (this.getActivitiesWithBP() / this.getYouthCenteredActivitiesCount()).toFixed(2) * 100
     }
   },
   components: {
@@ -70,6 +66,17 @@ export default {
     BaseGutterWrapper,
     BaseProgressBar,
     ClearItems
+  },
+  methods: {
+    getYouthCenteredActivitiesCount () {
+      return this.$store.getters['entities/activities/query']()
+        .where('youthCentric', true).count()
+    },
+    getActivitiesWithBP () {
+      return this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
+        query.where('value', [this.$t('bestPracticeOptions.yesKey')])
+      }).count()
+    }
   }
 }
 </script>

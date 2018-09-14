@@ -184,7 +184,7 @@ export default {
         }
       ]
 
-      const youthFocusedCountRoundedPercetages = this.getRoundedPercentages([
+      const youthFocusedCountRoundedPercentages = this.getRoundedPercentages([
         chartData.youthCentricActivityData[0].notYouthCentricPercent * 100,
         chartData.youthCentricActivityData[0].youthCentricPercent * 100
       ])
@@ -192,50 +192,50 @@ export default {
       // Build Labels
       const youthFocusedCountLabel = [
         {
-          value: youthFocusedCountRoundedPercetages[0],
+          value: youthFocusedCountRoundedPercentages[0],
           labelText: this.$t('chartTitles.notYouthCentricLabel'),
           className: 'notYouthCentric'
         },
         {
-          value: youthFocusedCountRoundedPercetages[1],
+          value: youthFocusedCountRoundedPercentages[1],
           labelText: this.$t('chartTitles.youthCentricLabel'),
           className: 'youthCentric'
         }
       ]
 
-      const youthFocusedBudgetRoundedPercetages = this.getRoundedPercentages([
+      const youthFocusedBudgetRoundedPercentages = this.getRoundedPercentages([
         chartData.youthCentricBudgetData[0].notYouthCentricPercent * 100,
         chartData.youthCentricBudgetData[0].youthCentricPercent * 100
       ])
 
       const youthFocusedBudgetLabel = [
         {
-          value: youthFocusedBudgetRoundedPercetages[0],
+          value: youthFocusedBudgetRoundedPercentages[0],
           labelText: this.$t('chartTitles.notYouthCentricLabel'),
           className: 'notYouthCentric'
         },
         {
-          value: youthFocusedBudgetRoundedPercetages[1],
+          value: youthFocusedBudgetRoundedPercentages[1],
           labelText: this.$t('chartTitles.youthCentricLabel'),
           className: 'youthCentric'
         }
       ]
 
-      const activtyTypeBudgetRoundedPercetages = this.getRoundedPercentages(chartData.activityTypeData.map((item) => item.budgetPercent * 100))
+      const activtyTypeBudgetRoundedPercentages = this.getRoundedPercentages(chartData.activityTypeData.map((item) => item.budgetPercent * 100))
 
       const activtyTypeBudgetLabel = chartData.activityTypeData.map((item, index) => {
         return {
-          value: activtyTypeBudgetRoundedPercetages[index],
+          value: activtyTypeBudgetRoundedPercentages[index],
           labelText: item.type,
           className: item.class
         }
       })
 
-      const activtyTypeCountRoundedPercetages = this.getRoundedPercentages(chartData.activityTypeData.map((item) => item.countPercent * 100))
+      const activtyTypeCountRoundedPercentages = this.getRoundedPercentages(chartData.activityTypeData.map((item) => item.countPercent * 100))
 
       const activtyTypeCountLabel = chartData.activityTypeData.map((item, index) => {
         return {
-          value: activtyTypeCountRoundedPercetages[index],
+          value: activtyTypeCountRoundedPercentages[index],
           labelText: item.type,
           className: item.class
         }

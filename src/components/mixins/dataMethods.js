@@ -75,11 +75,12 @@ export const dataMethods = {
       }
     },
     getBudgetTotal: function (queryObject) {
-      var budgetTotal = 0
-      for (const entity of queryObject) {
-        budgetTotal += entity.budget
-      }
-      return budgetTotal
+      return queryObject.reduce((budgetTotal, entity) => {
+        return budgetTotal + entity.budget
+      }, 0)
+    },
+    getYouthCentricBudget: function () {
+      return this.getBudgetTotal(this.$store.getters['entities/activities/query']().where('youthCentric', true).get())
     },
     getChartData: function (activityTypes) {
       // Get chart data
@@ -89,13 +90,14 @@ export const dataMethods = {
       var activityTypeData = []
       var youthCentricBudgetData = []
       var youthCentricAcitivtyData = []
-      const totalActivities = this.getItemCount('activities')
+      // only count youth-centric activities
+      const totalActivities = this.$store.getters['entities/activities/query']().where('youthCentric', true).count()
       const totalBudget = this.getBudgetTotal(this.$store.getters['entities/activities/all']())
 
       // Get counts, budget and percents for each activityType
       for (const activityType of activityTypes) {
-        const activityCount = this.$store.getters['entities/activities/query']().where('type', activityType.key).count()
-        const activityTypesObjects = this.$store.getters['entities/activities/query']().where('type', activityType.key).get()
+        const activityCount = this.$store.getters['entities/activities/query']().where('type', activityType.key).where('youthCentric', true).count()
+        const activityTypesObjects = this.$store.getters['entities/activities/query']().where('type', activityType.key).where('youthCentric', true).get()
         activityTypeData.push({
           type: activityType.title,
           count: activityCount,
@@ -108,7 +110,7 @@ export const dataMethods = {
       chartDataObject['activityTypeData'] = activityTypeData
 
       // Budget % youth centric
-      const youthCentricBudget = this.getBudgetTotal(this.$store.getters['entities/activities/query']().where('youthCentric', true).get())
+      const youthCentricBudget = this.getYouthCentricBudget()
 
       // Add to array (so that CSV can read correctly)
       youthCentricBudgetData.push({

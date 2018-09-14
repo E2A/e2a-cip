@@ -18,7 +18,7 @@
           :class="type.leadingDefault"
           scale="zeta"
           weight="regular"
-          color="dark"
+          :color="youth ? 'dark' : 'midtone'"
           sub
         >
           {{displayText}}
@@ -176,6 +176,9 @@ export default {
     }
   },
   computed: {
+    youth: function () {
+      return this.activityInstance.youthCentric
+    },
     recommendationsNotPresent: function () {
       return this.activityRecommendations.length === 0
     },

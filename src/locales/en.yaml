@@ -776,7 +776,9 @@ en:
     printPage: Print Page
     previousStep: Go back to analysis
     nextStep: Print Results & Advocate
-    percentActivitesWithBP: "activites with an EIP"
+    youthCenteredActivity: youth-centered activity
+    youthCenteredActivities: youth-centered activities
+    percentActivitesWithBP: "Activites with an EIP"
     activityWithEIPbyType: Activity With EIP by Type
     exportChartSuccess: 'You successfully exported your chart data'
   chartTitles:
