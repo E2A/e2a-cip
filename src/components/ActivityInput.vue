@@ -244,30 +244,6 @@ export default {
         return null
       }
     },
-    setActivity: function (field, inputValue) {
-      // DEPRECATED
-      // Potentially useful to use for get / set on vModel
-      const activity = this.getActivity()
-      const value = this.stripWhitespace(inputValue)
-
-      if (field && value && activity) {
-        this.$store.dispatch('entities/activities/update', {
-          where: activity.id,
-          data (item) {
-            item[`${field}`] = value
-          }
-        }).then((e) => { this.notify(this.$t('saveSuccess'), 'success') })
-      }
-
-      if (field && value && !activity) {
-        const createJSON = `{"${field}": "${value}"}`
-        const createObj = JSON.parse(createJSON)
-
-        this.$store.dispatch('entities/activities/insert', {
-          data: createObj
-        }).then((e) => { this.notify(this.$t('saveSuccess'), 'success') })
-      }
-    },
     addActivity: function () {
       // Add or update activity
       const activityInstance = this.getActivity()
