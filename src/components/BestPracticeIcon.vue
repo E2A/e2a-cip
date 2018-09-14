@@ -154,7 +154,7 @@ export default {
       const assessmentPresent = this.$store.getters['entities/activities/query']()
         .with('assessments', (query) => {
           query
-            .where('text', bestPracticeText)
+            .where('best_practice_id', this.id)
         }).find(this.activityID).assessments
 
       if (assessmentPresent && assessmentPresent.length > 0) {
