@@ -153,8 +153,7 @@ export default {
       // Check if assessment is present, if so add 'assessment-selected' class to selection
       const assessmentPresent = this.$store.getters['entities/activities/query']()
         .with('assessments', (query) => {
-          query
-            .where('best_practice_id', this.id)
+          query.where('best_practice_id', this.id)
         }).find(this.activityID).assessments
 
       if (assessmentPresent && assessmentPresent.length > 0) {
@@ -165,7 +164,7 @@ export default {
     updateAssessment: function (bestPracticeText, bestPracticeValue, bestPracticeID) {
       // Check if assessment for current activity is store
       const assessmentPresent = this.$store.getters['entities/activities/query']().with('assessments', (query) => {
-        query.where('text', bestPracticeText)
+        query.where('best_practice_id', bestPracticeID)
       }).with('recommendations').find(this.activityID).assessments[0]
 
       if (assessmentPresent) {
