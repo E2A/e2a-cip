@@ -13,7 +13,7 @@
       scale="delta"
       color="dark"
     >
-      <strong>{{getItemCount('activities')}}</strong> {{getItemCount('activities') === 1 ? $t('results.youthCenteredActivity') : $t('results.youthCenteredActivities')}}
+      <strong>{{getYouthCenteredActivitiesCount()}}</strong> {{getItemCount('activities') === 1 ? $t('results.youthCenteredActivity') : $t('results.youthCenteredActivities')}}
     </BaseHeading>
     <div :class="[display.inlineBlock, space.marginHorizontalBetweenNarrow]">
       <BaseProgressBar
