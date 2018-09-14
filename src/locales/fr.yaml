@@ -744,7 +744,9 @@ fr:
     printPage: Imprimer la page
     previousStep: "Revenir à l'analyse"
     nextStep: "Résultats d'impression et avocat"
-    percentActivitesWithBP: "activités avec un EIP"
+    youthCenteredActivity: activité centré sur la jeunesse
+    youthCenteredActivities: centré sur la jeunesse activités
+    percentActivitesWithBP: "Activités avec un EIP"
     activityWithEIPbyType: Activité avec EIP par type
     exportChartSuccess: 'Vous avez exporté avec succès vos données de graphique'
   chartTitles:
