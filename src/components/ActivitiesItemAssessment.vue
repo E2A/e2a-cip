@@ -5,7 +5,7 @@
 -->
 
 <template>
-  <div :class="[base.wrapper, {youth: base.disabled}]">
+  <div :class="[base.wrapper]">
     <BaseDetails
       @open="handleOpen"
       @close="handleClose"
