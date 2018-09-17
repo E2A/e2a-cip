@@ -8,6 +8,15 @@ module.exports = {
       }
     }
   },
+  transpileDependencies: [
+    '@vuex-orm/core',
+    'vee-validate',
+    'vue-i18n',
+    'vuex-persistedstate',
+    'yaml-loader',
+    'json-loader',
+    'register-service-worker'
+  ],
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()

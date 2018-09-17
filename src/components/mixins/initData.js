@@ -1,4 +1,4 @@
-import Papa from 'papaparse'
+import * as Papa from 'papaparse'
 import i18n from '@/i18n.js'
 
 export const initData = {

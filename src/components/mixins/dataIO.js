@@ -1,5 +1,5 @@
 import { saveAs } from 'file-saver/FileSaver'
-import Papa from 'papaparse'
+import * as Papa from 'papaparse'
 import Blob from 'blob'
 
 export const dataIO = {

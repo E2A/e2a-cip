@@ -37,7 +37,7 @@
 import BaseHeading from './BaseHeading.vue'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
 import ChartLegend from './ChartLegend.vue'
-import Chartist from 'chartist'
+import * as Chartist from 'chartist'
 import { dataMethods } from './mixins/dataMethods'
 
 export default {
