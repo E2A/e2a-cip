@@ -196,11 +196,25 @@ export default {
   display: inline-block;
   max-width: 36rem;
   vertical-align: middle;
+
+  @include media('>small') {
+    min-width: 30rem;
+  }
+
+  // for IE
+  > img[src$=".svg"] {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .logoSmall {
   composes: logo;
   max-width: 16em;
+
+  @include media('>small') {
+    min-width: 13rem;
+  }
 }
 
 .centeredSubheads {

@@ -2,6 +2,7 @@
   <div>
     <header :class="base.wrapper">
       <BaseGutterWrapper
+        :class="base.leftPane"
         gutterY="xnarrow"
         gutterX="xnarrow"
       >
@@ -273,26 +274,45 @@ $nav-breakpoint: 81em; // ~1400px
   }
 }
 
+.leftPane {
+  composes: inlineBlock from 'styles/display.scss';
+  width: 50%;
+
+  @supports (flex: 1) {
+    flex: 1;
+    width: auto;
+  }
+}
+
 .logo {
   composes: paddingRightNarrow paddingVerticalNarrow from 'styles/spacing.scss';
   border: none !important; // override default anchor underlines
   display: inline-block;
   max-width: 11rem;
-  min-width: 5rem;
 
   &:after {
     content: none !important; // never show active styles
+  }
+
+  // for IE
+  > img[src$=".svg"] {
+    width: 100%;
+    height: 100%;
   }
 }
 
 .smallNav {
   display: inline-block;
+  text-align: right;
   vertical-align: middle;
+  width: 50%;
 
   @supports (display: flex) {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: left;
+    width: auto;
   }
 
   @include media('>#{$nav-breakpoint}') {
