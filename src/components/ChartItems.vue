@@ -113,8 +113,13 @@ export default {
           rounded: rounded,
           remainder: (number - rounded)
         }
-      }).sort((a, b) => {
-        return a.remainder - b.remainder
+      }).map((item, index, initArray) => {
+        const nextRemainder = initArray[index + 1] ? initArray[index + 1].remainder : 0
+        return ({
+          original: item.original,
+          rounded: item.rounded,
+          remainder: item.remainder - nextRemainder
+        })
       })
 
       numberVersions.forEach(number => {
