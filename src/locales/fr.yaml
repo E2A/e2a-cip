@@ -1023,7 +1023,7 @@ fr:
       # Do Not Translate
       fileName: 'contraceptionUse.csv'
       # Do Not Translate - input the string of the heading that has the ISO2 code
-      iso2codeHeader: 'code pays'
+      iso2codeHeader: 'countryCode'
       indicatorValueUnit: '%'
       # Do Not Translate - input the string of the heading that has the indicator value
       indicatorValueHeader: '20-24'
