@@ -108,6 +108,7 @@ export default {
     getRoundedPercentages: function (numbers) {
       let numberVersions = numbers.map((number, index) => {
         const rounded = Math.floor(number)
+        // make an array of objects with each 'version' of the number we need to process
         return {
           index: index,
           original: number,
@@ -115,23 +116,29 @@ export default {
           remainder: (number - rounded)
         }
       }).sort((a, b) => {
-        return a.remainder - b.remainder
+        // sort by remainder in descending order (biggest remainder first)
+        return b.remainder - a.remainder
       })
 
+      // loop through the array and adjust the rounded integers to get the correct total
+      // starting with the biggest remainders so they get rounded up first
       numberVersions.forEach(number => {
+        // add up the integers
         const integerSum = numberVersions.reduce((sum, number) => {
           return sum + number.rounded
         }, 0)
 
+        // if the current total is less than 100...
         if (integerSum < 100) {
-          // round up
+          // round this number up and move on to the next one
           number.rounded = Math.ceil(number.original)
         }
       })
 
-      return numberVersions.map(number => number.rounded).sort((a, b) => {
-        return b.index - a.index
-      })
+      return numberVersions.sort((a, b) => {
+        // restore the original order
+        return a.index - b.index
+      }).map(number => number.rounded) // and output just the rounded numbers
     },
     renderChartData: function () {
       // Get Data
