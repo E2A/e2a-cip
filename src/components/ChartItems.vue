@@ -106,20 +106,16 @@ export default {
     // Use Largest Remainder Method to ensure rounded percentages always add to 100
     // https://stackoverflow.com/questions/1410711/rounding-an-arrays-of-values-to-100
     getRoundedPercentages: function (numbers) {
-      let numberVersions = numbers.map(number => {
+      let numberVersions = numbers.map((number, index) => {
         const rounded = Math.floor(number)
         return {
+          index: index,
           original: number,
           rounded: rounded,
           remainder: (number - rounded)
         }
-      }).map((item, index, initArray) => {
-        const nextRemainder = initArray[index + 1] ? initArray[index + 1].remainder : 0
-        return ({
-          original: item.original,
-          rounded: item.rounded,
-          remainder: item.remainder - nextRemainder
-        })
+      }).sort((a, b) => {
+        return a.remainder - b.remainder
       })
 
       numberVersions.forEach(number => {
@@ -133,7 +129,9 @@ export default {
         }
       })
 
-      return numberVersions.map(number => number.rounded)
+      return numberVersions.map(number => number.rounded).sort((a, b) => {
+        return b.index - a.index
+      })
     },
     renderChartData: function () {
       // Get Data
