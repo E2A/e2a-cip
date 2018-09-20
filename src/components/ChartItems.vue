@@ -110,13 +110,14 @@ export default {
         const rounded = Math.floor(number)
         // make an array of objects with each 'version' of the number we need to process
         return {
-          index: index,
-          original: number,
-          rounded: rounded,
-          remainder: (number - rounded)
+          index: index, // grab the original index so we can remember the order
+          original: number, // a reference to the original decimal
+          rounded: rounded, // the integer
+          remainder: (number - rounded) // just the decimal value
         }
       }).sort((a, b) => {
         // sort by remainder in descending order (biggest remainder first)
+        // e.g. [0.8, 0.5, 0.3, 0.1]
         return b.remainder - a.remainder
       })
 
