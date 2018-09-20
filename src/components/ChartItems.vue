@@ -106,34 +106,40 @@ export default {
     // Use Largest Remainder Method to ensure rounded percentages always add to 100
     // https://stackoverflow.com/questions/1410711/rounding-an-arrays-of-values-to-100
     getRoundedPercentages: function (numbers) {
-      let numberVersions = numbers.map(number => {
+      let numberVersions = numbers.map((number, index) => {
         const rounded = Math.floor(number)
+        // make an array of objects with each 'version' of the number we need to process
         return {
-          original: number,
-          rounded: rounded,
-          remainder: (number - rounded)
+          index: index, // grab the original index so we can remember the order
+          original: number, // a reference to the original decimal
+          rounded: rounded, // the integer
+          remainder: (number - rounded) // just the decimal value
         }
-      }).map((item, index, initArray) => {
-        const nextRemainder = initArray[index + 1] ? initArray[index + 1].remainder : 0
-        return ({
-          original: item.original,
-          rounded: item.rounded,
-          remainder: item.remainder - nextRemainder
-        })
+      }).sort((a, b) => {
+        // sort by remainder in descending order (biggest remainder first)
+        // e.g. [0.8, 0.5, 0.3, 0.1]
+        return b.remainder - a.remainder
       })
 
+      // loop through the array and adjust the rounded integers to get the correct total
+      // starting with the biggest remainders so they get rounded up first
       numberVersions.forEach(number => {
+        // add up the integers
         const integerSum = numberVersions.reduce((sum, number) => {
           return sum + number.rounded
         }, 0)
 
+        // if the current total is less than 100...
         if (integerSum < 100) {
-          // round up
+          // round this number up and move on to the next one
           number.rounded = Math.ceil(number.original)
         }
       })
 
-      return numberVersions.map(number => number.rounded)
+      return numberVersions.sort((a, b) => {
+        // restore the original order
+        return a.index - b.index
+      }).map(number => number.rounded) // and output just the rounded numbers
     },
     renderChartData: function () {
       // Get Data
