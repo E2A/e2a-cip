@@ -47,7 +47,7 @@
         {{$t('results.analysis.country')}}
       </BaseHeading>
       <ChartItems
-        :chartNames="['youthFocusBudget', 'youthFocusCount']"
+        :chartNames="['youthFocusCount', 'youthFocusBudget']"
       />
 
       <!-- country indicators -->
