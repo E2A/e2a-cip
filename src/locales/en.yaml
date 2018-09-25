@@ -32,17 +32,17 @@ en:
     downloadTitle: Download offline versions
     downloadBlurb: |-
       If you are having issues with your browser, want to access the application offline, or you just want to use the application on your desktop without using a browser, you can download any of the following versions for your needs.
-      *Note*: The application will still work in the browser even if internet disconnects. A portable option with no installation necessary (ie a single .exe) version of the app is available for windows but is a higer file size.
+      *Note*: The application will still work in the browser even if internet disconnects.
       ### Installation Instructions:
       - For **Macintosh** unzip the file and use the DMG to install the application.
       - For **Windows** unzip the folder and run the .exe file in the folder.
     downloadMac: Macintosh (57MB)
     # Do Not Translate
     downloadMacUrl: https://github.com/E2A/e2a-electron-builds/raw/master/mac-installer.zip
-    downloadWindows: Windows (MB)
-    # Do Not Translate
-    downloadWindowsUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer.zip
-    downloadWindowsPortable: Windows Portable (72MB)
+    # downloadWindows: Windows (MB)
+    # # Do Not Translate
+    # downloadWindowsUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer.zip
+    downloadWindowsPortable: Windows (72MB)
     # Do Not Translate
     downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
   setup:

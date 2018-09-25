@@ -13,6 +13,20 @@
    ☐ svg logo aspect ratios breaking
    ☐ setup page does not validate and continue btn never appears
 
+# New Scope
+ ☐ Add Google analyitics to app:
+       <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126405331-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-126405331-1');
+      </script>
+
+      Tracking ID: UA-126405331-1
+
  # Nice to have
  ☐ If there is zero budget, show an empty state instead of a chart (e.g. "No budget in your plan")
  ☐ Activity editor
