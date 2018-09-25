@@ -111,13 +111,6 @@
           </li>
           <li :class="base.gutterItem">
             <BaseButtonLink
-              :to="$t('home.downloadWindowsUrl')"
-              :label="$t('home.downloadWindows')"
-              :router="false"
-            />
-          </li>
-          <li :class="base.gutterItem">
-            <BaseButtonLink
               :to="$t('home.downloadWindowsPortableUrl')"
               :label="$t('home.downloadWindowsPortable')"
               :router="false"
