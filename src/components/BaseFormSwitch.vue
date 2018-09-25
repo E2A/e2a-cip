@@ -63,6 +63,9 @@ export default {
 
 <style lang="scss" module="base">
 // https://danklammer.com/articles/simple-css-toggle-switch/
+// https://thestizmedia.com/radio-buttons-as-toggle-buttons-with-css/
+// https://stackoverflow.com/questions/18449299/css-turn-2-radio-buttons-into-1-switch
+
 @import '~styleConfig/color';
 @import '~styleConfig/borders';
 
@@ -74,61 +77,54 @@ export default {
   composes: default from 'styles/animation.scss';
   composes: scaleZeta display uppercase bold from 'styles/type.scss';
   composes: default round from 'styles/borders.scss';
-  appearance: none;
-  background-color: color('light');
-  border-radius: 6px;
-  color: color('midtone');
-  cursor: pointer;
   display: inline-block;
-  height: $height;
-  width: $width;
+  height: 2em;
+  width: 2em;
 
-  &:focus {
-    outline: none;
-  }
+  @supports (width: calc(50% - #{$gutter})) {
+    border-radius: 6px;
+    cursor: pointer;
+    color: color('midtone');
+    appearance: none;
+    background-color: color('light');
+    width: $width;
+    height: $height;
 
-  &::before,
-  &::after {
-    border-radius: $border-radius;
-    display: inline-block;
-    line-height: $height;
-    text-align: center;
-    text-transform: uppercase;
-    width: 50%;
-
-    // add some fancier gutters if calc() is supported
-    @supports (width: calc(50% - #{$gutter})) {
-      width: calc(50% - #{$gutter});
-      line-height: calc(#{$height - ($gutter * 2)} - #{border-w('thin') * 2});
+    &:focus {
+      outline: none;
     }
-  }
 
-  &::before {
-    content: attr(data-label-on);
+    &::before,
+    &::after {
+      border-radius: $border-radius;
+      display: inline-block;
+      line-height: calc(#{$height - ($gutter * 2)} - #{border-w('thin') * 2});
+      text-align: center;
+      text-transform: uppercase;
+      width: calc(50% - #{$gutter});
+    }
 
-    @supports (width: calc(50% - #{$gutter})) {
+    &::before {
+      content: attr(data-label-on);
       margin: $gutter 0 $gutter $gutter;
     }
-  }
 
-  &::after {
-    background-color: color('warning');
-    color: color('white');
-    content: attr(data-label-off);
-
-    @supports (width: calc(50% - #{$gutter})) {
+    &::after {
+      background-color: color('warning');
+      color: color('white');
+      content: attr(data-label-off);
       margin: $gutter $gutter $gutter 0;
     }
-  }
 
-  &[value="true"]::before {
-    background-color: color('success');
-    color: color('white');
-  }
+    &[value="true"]::before {
+      background-color: color('success');
+      color: color('white');
+    }
 
-  &[value="true"]::after {
-    background-color: transparent;
-    color: color('midtone');
+    &[value="true"]::after {
+      background-color: transparent;
+      color: color('midtone');
+    }
   }
 }
 </style>
