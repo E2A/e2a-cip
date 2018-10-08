@@ -63,6 +63,7 @@ export default {
 
 <style lang="scss" module="base">
 // https://danklammer.com/articles/simple-css-toggle-switch/
+// https://codersblock.com/blog/checkbox-trickery-with-css/
 // https://thestizmedia.com/radio-buttons-as-toggle-buttons-with-css/
 // https://stackoverflow.com/questions/18449299/css-turn-2-radio-buttons-into-1-switch
 
