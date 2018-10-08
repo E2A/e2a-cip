@@ -4,6 +4,23 @@
       :title="$t('advocate.title')"
       :blurb="$t('advocate.intro')"
     />
+    <!-- Global Recommendations -->
+    <BaseSectionWrapper>
+      <BaseHeading
+        :level="1"
+        centered
+      >
+        {{$t('advocate.globalRecommendations')}}
+      </BaseHeading>
+      <BaseWidthWrapper
+        :class="space.paddingTop"
+        width="wide"
+      >
+        <GlobalRecommendation />
+      </BaseWidthWrapper>
+    </BaseSectionWrapper>
+
+    <!-- Advocate Steps -->
     <BaseSectionWrapper>
       <BaseHeading
         :level="2"
@@ -49,6 +66,7 @@ import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import FileExport from '@/components/FileExport.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
+import GlobalRecommendation from '@/components/GlobalRecommendation.vue'
 
 export default {
   name: 'Advocate',
@@ -60,7 +78,8 @@ export default {
     BaseSectionWrapper,
     BaseButtonLink,
     BaseWidthWrapper,
-    FileExport
+    FileExport,
+    GlobalRecommendation
   },
   computed: {
     steps: function () {

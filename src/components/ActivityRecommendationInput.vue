@@ -51,7 +51,7 @@ export default {
   props: {
     'activityInstance': {
       type: Object,
-      required: true
+      required: false
     },
     'recommendationId': {
       type: Number,
@@ -65,6 +65,10 @@ export default {
         return ['insert', 'update'].indexOf(value) !== -1
       }
     },
+    'globalRecommendation': {
+      type: Boolean,
+      required: false
+    },
     'existingRecommendationText': {
       type: String,
       required: false
@@ -72,32 +76,52 @@ export default {
   },
   data () {
     return {
-      activityRecommendations: this.activityInstance.recommendations,
       recommendationText: this.existingRecommendationText
     }
   },
   methods: {
     updateRecommendation: function () {
-      if (this.recommendationType === 'update') {
-        // Update recommendation
-        this.$store.dispatch('entities/recommendations/update', {
-          id: this.recommendationId,
-          activity_id: this.activityInstance.id,
-          text: this.recommendationText
-        })
-      } else if (this.recommendationType === 'insert') {
-        // Add a new recommendation
-        this.$store.dispatch('entities/recommendations/insert', {
-          data: {
+      if (this.globalRecommendation) {
+        if (this.recommendationType === 'update') {
+          // Update recommendation
+          this.$store.dispatch('entities/globalrecommendations/update', {
+            id: this.recommendationId,
+            text: this.recommendationText
+          })
+        } else if (this.recommendationType === 'insert') {
+          // Add a new recommendation
+          this.$store.dispatch('entities/globalrecommendations/insert', {
+            data: {
+              text: this.recommendationText
+            }
+          })
+        }
+      } else {
+        if (this.recommendationType === 'update') {
+          // Update recommendation
+          this.$store.dispatch('entities/recommendations/update', {
+            id: this.recommendationId,
             activity_id: this.activityInstance.id,
             text: this.recommendationText
-          }
-        })
+          })
+        } else if (this.recommendationType === 'insert') {
+          // Add a new recommendation
+          this.$store.dispatch('entities/recommendations/insert', {
+            data: {
+              activity_id: this.activityInstance.id,
+              text: this.recommendationText
+            }
+          })
+        }
       }
     },
     deleteRecommendation: function () {
       // Remove recommendation
-      this.$store.dispatch('entities/recommendations/delete', this.recommendationId)
+      if (this.globalRecommendation) {
+        this.$store.dispatch('entities/globalrecommendations/delete', this.recommendationId)
+      } else {
+        this.$store.dispatch('entities/recommendations/delete', this.recommendationId)
+      }
     }
   }
 }
