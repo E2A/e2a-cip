@@ -742,6 +742,10 @@ en:
     notYouthCentricLabel: "Not Youth Centric"
   print:
     previousStep: Go back to advocate
+    globalRecommendations:
+      title: Key Recommendations for Action
+      content: The following are key insights that is suggested for focused action.
+      recommendation: Recommendation %{count}
   advocate:
     globalRecommendations:
       title: Add key recommendations
