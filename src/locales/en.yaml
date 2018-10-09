@@ -742,7 +742,14 @@ en:
     notYouthCentricLabel: "Not Youth Centric"
   print:
     previousStep: Go back to advocate
+    globalRecommendations:
+      title: Key Recommendations for Action
+      content: The following are key insights that is suggested for focused action.
+      recommendation: Recommendation %{count}
   advocate:
+    globalRecommendations:
+      title: Add key recommendations
+      content:  Use the results to inform dialogue about youth needs and innovative strategies to meet those needs. Raise awareness about the importance of investing in the reproductive health of youth so as to lay the foundation for healthier future generations.
     print: Print your results to share
     title: 'Moving forward…'
     intro: |-

@@ -7,6 +7,8 @@ import Assessment from '@/models/Assessment'
 import assessments from './modules/assessments'
 import Recommendation from '@/models/Recommendation'
 import recommendations from './modules/recommendations'
+import GlobalRecommendation from '@/models/GlobalRecommendation'
+import globalrecommendations from './modules/globalrecommendations'
 import BestPracticeIcon from '@/models/BestPracticeIcon'
 import bestpracticeicons from './modules/bestpracticeicons'
 import CountryIndicator from '@/models/CountryIndicator'
@@ -20,6 +22,7 @@ database.register(Activity, activities)
 database.register(Setup, setup)
 database.register(Assessment, assessments)
 database.register(Recommendation, recommendations)
+database.register(GlobalRecommendation, globalrecommendations)
 database.register(BestPracticeIcon, bestpracticeicons)
 database.register(CountryIndicator, countryindicators)
 database.register(GlobalNotification, globalnotifications)

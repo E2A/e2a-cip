@@ -7,6 +7,43 @@
     <!-- header and charts -->
     <ResultsCharts />
 
+    <!-- Global Recommendations -->
+    <BaseSectionWrapper
+      border
+    >
+      <BaseHeading
+        :level="1"
+        centered
+        :class="space.paddingBottom"
+      >
+        {{$t('print.globalRecommendations.title')}}
+      </BaseHeading>
+      <BaseWidthWrapper
+        :class="space.paddingBottom"
+      >
+        <BaseBodyText :content="$t('print.globalRecommendations.content')" />
+      </BaseWidthWrapper>
+
+      <div
+        v-for="(recommendation, index) in globalRecommendations"
+        :key="`gR-${index}`"
+      >
+        <BaseHeading
+          v-if="recommendation.text"
+          :level="3"
+          :class="space.paddingBottom"
+        >
+         {{ $t('print.globalRecommendations.recommendation', { count: index+1 }) }}
+        </BaseHeading>
+        <BaseWidthWrapper
+          v-if="recommendation.text"
+        >
+          <BaseBodyText :content="recommendation.text" />
+        </BaseWidthWrapper>
+      </div>
+
+    </BaseSectionWrapper>
+
     <!-- Activities list -->
     <BaseSectionWrapper
       :class="space.paddingTop"
@@ -50,6 +87,7 @@
 import ResultsCharts from '@/components/ResultsCharts.vue'
 import ActivitiesListHeader from '@/components/ActivitiesListHeader.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseProgressBar from '@/components/BaseProgressBar.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
@@ -73,6 +111,7 @@ export default {
     ResultsCharts,
     ActivitiesListHeader,
     BaseHeading,
+    BaseBodyText,
     BaseButton,
     BaseProgressBar,
     BaseSectionWrapper,
@@ -111,7 +150,8 @@ export default {
     return {
       setupTitle: this.getItemValue('setup', 'title'),
       setupRole: this.getItemValue('setup', 'role'),
-      setupCountry: this.getItemValue('setup', 'countryName')
+      setupCountry: this.getItemValue('setup', 'countryName'),
+      globalRecommendations: this.$store.getters['entities/globalrecommendations/all']()
     }
   }
 }
