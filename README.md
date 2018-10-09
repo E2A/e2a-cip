@@ -75,3 +75,19 @@ Edit ERD by going to [draw.io](https://draw.io) and upload the [E2A_ERD.xml](/do
 
 ### ERD Diagram for Application
 ![ERD](docs/E2A_ERD.png)
+
+# Editing and generating icons
+Icons are mainly handled through SVG sprites: they are compiled into `src/assets/images/spritemap.svg` and then placed in templates via the `BaseIcon` component. To edit or create new icons:
+
+1. Save your new icon files into `src/assets/images/icons`.
+2. Open your icons in a code editor and make sure that any `fill` attributes are set to `fill='currentColor'` (if there's a hex color there, it will override our CSS).
+3. Run `yarn icons` in Terminal/Bash.
+
+Best Practice icons are managed in the locale files, e.g. `en.yaml` in the `bestPractices` fields. Just changed the icon name in the `icon` field:
+
+```yaml
+bestPractice2:
+  title: "Ensuring Access to the Full Range of Contraceptive Methods"
+  # Do Not Translate
+  icon: eip-contraceptives
+```

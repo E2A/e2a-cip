@@ -4,7 +4,30 @@
       :title="$t('advocate.title')"
       :blurb="$t('advocate.intro')"
     />
+    <!-- Global Recommendations -->
     <BaseSectionWrapper>
+      <BaseHeading
+        :level="1"
+        centered
+        :class="space.paddingBottom"
+      >
+        {{$t('advocate.globalRecommendations.title')}}
+      </BaseHeading>
+      <BaseWidthWrapper>
+        <BaseBodyText :content="$t('advocate.globalRecommendations.content')" />
+      </BaseWidthWrapper>
+      <BaseWidthWrapper
+        :class="[space.paddingTop, type.center]"
+        width="wide"
+      >
+        <GlobalRecommendation />
+      </BaseWidthWrapper>
+    </BaseSectionWrapper>
+
+    <!-- Advocate Steps -->
+    <BaseSectionWrapper
+      border
+    >
       <BaseHeading
         :level="2"
         centered
@@ -45,10 +68,12 @@ import NavFooter from '@/components/NavFooter.vue'
 import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseStepList from '@/components/BaseStepList.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import FileExport from '@/components/FileExport.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
+import GlobalRecommendation from '@/components/GlobalRecommendation.vue'
 
 export default {
   name: 'Advocate',
@@ -57,10 +82,12 @@ export default {
     BasePageIntro,
     BaseStepList,
     BaseHeading,
+    BaseBodyText,
     BaseSectionWrapper,
     BaseButtonLink,
     BaseWidthWrapper,
-    FileExport
+    FileExport,
+    GlobalRecommendation
   },
   computed: {
     steps: function () {
