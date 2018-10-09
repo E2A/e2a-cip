@@ -23,6 +23,7 @@
         </div>
         <div :class="base.gutter">
           <BaseButton
+            v-if="this.recommendationId"
             @click="deleteRecommendation()"
             :label="$t('delete')"
             size="small"

@@ -9,11 +9,15 @@
       <BaseHeading
         :level="1"
         centered
+        :class="space.paddingBottom"
       >
-        {{$t('advocate.globalRecommendations')}}
+        {{$t('advocate.globalRecommendations.title')}}
       </BaseHeading>
+      <BaseWidthWrapper>
+        <BaseBodyText :content="$t('advocate.globalRecommendations.content')" />
+      </BaseWidthWrapper>
       <BaseWidthWrapper
-        :class="space.paddingTop"
+        :class="[space.paddingTop, type.center]"
         width="wide"
       >
         <GlobalRecommendation />
@@ -21,7 +25,9 @@
     </BaseSectionWrapper>
 
     <!-- Advocate Steps -->
-    <BaseSectionWrapper>
+    <BaseSectionWrapper
+      border
+    >
       <BaseHeading
         :level="2"
         centered
@@ -62,6 +68,7 @@ import NavFooter from '@/components/NavFooter.vue'
 import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseStepList from '@/components/BaseStepList.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import FileExport from '@/components/FileExport.vue'
@@ -75,6 +82,7 @@ export default {
     BasePageIntro,
     BaseStepList,
     BaseHeading,
+    BaseBodyText,
     BaseSectionWrapper,
     BaseButtonLink,
     BaseWidthWrapper,
