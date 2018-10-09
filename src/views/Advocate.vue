@@ -7,8 +7,7 @@
     <!-- Global Recommendations -->
     <BaseSectionWrapper>
       <BaseHeading
-        :level="1"
-        centered
+        :level="2"
         :class="space.paddingBottom"
       >
         {{$t('advocate.globalRecommendations.title')}}
