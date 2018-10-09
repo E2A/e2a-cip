@@ -1,5 +1,11 @@
 <template>
-  <BaseGutterWrapper el="ol" :class="base.wrapper">
+  <BaseGutterWrapper
+    el="ol"
+    :class="[
+      base.wrapper,
+      size !== 'default' ? base[size] : ''
+    ]"
+  >
     <li
       v-for="(step, index) in steps"
       :key="index"
@@ -37,6 +43,13 @@ export default {
     steps: {
       type: Array,
       required: true
+    },
+    size: {
+      type: String,
+      default: 'default',
+      validator (value) {
+        return ['small', 'default'].indexOf(value) !== -1
+      }
     }
   },
   components: {
@@ -70,6 +83,14 @@ export default {
 
     @include media('>medium') {
       width: (100%/3);
+    }
+  }
+}
+
+.small {
+  > li {
+    @include media('>xlarge') {
+      width: (100%/4);
     }
   }
 }

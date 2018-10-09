@@ -56,8 +56,14 @@
     <!-- How it works -->
     <BaseSectionWrapper>
       <BaseHeading :level="2" centered>{{$t('home.stepsTitle')}}</BaseHeading>
-      <BaseWidthWrapper width="wide" :class="space.paddingTop">
-        <BaseStepList :steps="steps" />
+      <BaseWidthWrapper
+        width="xwide"
+        :class="space.paddingTop"
+      >
+        <BaseStepList
+          :steps="steps"
+          size="small"
+        />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
 
@@ -153,7 +159,7 @@ export default {
     ClearItems
   },
   computed: {
-    steps: function () {
+    steps () {
       return Object.values(i18n.messages[i18n.locale].home.steps).map((step, index) => {
         return {
           title: this.$t(`home.steps.step${index + 1}.title`),
@@ -162,7 +168,7 @@ export default {
       })
     }
   },
-  data: function () {
+  data () {
     return {
       electron: this.checkElectron()
     }

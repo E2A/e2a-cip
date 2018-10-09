@@ -28,6 +28,10 @@ fr:
         title: Obtenir vos résultats
         blurb: |-
           La page des résultats vous montrera la proportion des activités et du budget consacrés à la jeunesse dans votre plan. Les données générées par l'outil sur les jeunes dans votre pays vous aideront à déterminer si les activités et le budget proposés correspondent aux besoins des jeunes. On vous montrera également un graphique qui expose dans quelle mesure les activités de votre plan sont conformes aux pratiques fondées sur les données probantes (EIP). Enfin, en utilisant les informations sur les EIP, vous aurez l'occasion d'ajuster et de renforcer les activités.
+      step4:
+        title: Lorem ipsum dolor sit
+        blurb: |-
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et hercule-fatendum est enim, quod sentio -mirabilis est apud illos contextus rerum. Quae si potest singula consolando levare, universa quo modo sustinebit? Quod ea non occurrentia fingunt, vincunt Aristonem; Zenonis est, inquam, hoc Stoici.
     getStartedButton: Commencer
     downloadTitle: Télécharger les versions hors ligne
     downloadBlurb: |-

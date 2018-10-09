@@ -20,7 +20,7 @@
       ]"
       :key="item.id || `list-${index}`"
     >
-      <slot :item="item">{{ item }}</slot>
+      <slot :item="item" :index="index">{{ item }}</slot>
     </component>
   </component>
 </template>

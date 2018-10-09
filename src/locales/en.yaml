@@ -28,6 +28,10 @@ en:
         title: Get your results
         blurb: |-
           The results page will show you the proportion of activities and budget devoted to youth in your plan. Data generated through the tool about young people in your country will help you determine whether your proposed activities and budget are in line with youth needs. You will also be shown a graph which depicts the degree to which your plan’s activities align with EIPs. Finally, using the information on EIPs, you will be given the opportunity to revise and strengthen the activities.
+      step4:
+        title: Lorem ipsum dolor sit
+        blurb: |-
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et hercule-fatendum est enim, quod sentio -mirabilis est apud illos contextus rerum. Quae si potest singula consolando levare, universa quo modo sustinebit? Quod ea non occurrentia fingunt, vincunt Aristonem; Zenonis est, inquam, hoc Stoici.
     getStartedButton: Get started
     downloadTitle: Download offline versions
     downloadBlurb: |-
