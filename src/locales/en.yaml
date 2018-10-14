@@ -347,7 +347,7 @@ en:
     bestPractice3:
       title: "Strong Coordination Across Sectors that Affect AYRH"
       # Do Not Translate
-      icon: eip-couple
+      icon: eip-coordination
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
@@ -482,7 +482,7 @@ en:
     bestPractice5:
       title: "Family Life Education (FLE)"
       # Do Not Translate
-      icon: eip-coordination
+      icon: eip-education
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
@@ -578,7 +578,7 @@ en:
     bestPractice6:
       title: "Fostering Family and Community Support for AYRH"
       # Do Not Translate
-      icon: eip-book
+      icon: eip-community
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
@@ -637,7 +637,7 @@ en:
     bestPractice7:
       title: "Empowering Girls to Take Action for FP/RH Health"
       # Do Not Translate
-      icon: eip-community
+      icon: eip-equality
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
