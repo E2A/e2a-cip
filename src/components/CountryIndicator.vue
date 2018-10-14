@@ -43,32 +43,11 @@
         </a>
       </div>
     </div>
-    <div
+    <ResultsQuestions
       v-if="countryIndicator.questions"
+      :questions="countryIndicator.questions"
       :class="base.questions"
-    >
-      <BaseHeading
-        :level="4"
-        :centered="false"
-        :class="space.paddingBottomXnarrow"
-        scale="epsilon"
-        color="midtone"
-      >
-        {{$t('results.indicatorQuestions')}}
-      </BaseHeading>
-      <ol :class="base.questionList">
-        <li
-          v-for="(question, index) in countryIndicator.questions"
-          :key="`question-${index}`"
-        >
-          <BaseBodyText
-            :content="question"
-            :class="color.dark"
-            font="display"
-          />
-        </li>
-      </ol>
-    </div>
+    />
   </BaseGutterWrapper>
 </template>
 
@@ -77,6 +56,7 @@ import BaseHeading from './BaseHeading.vue'
 import BaseBodyText from './BaseBodyText.vue'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
 import BaseCalloutBox from './BaseCalloutBox.vue'
+import ResultsQuestions from './ResultsQuestions.vue'
 import { dataMethods } from './mixins/dataMethods'
 import { activityTypes } from './mixins/activityTypes'
 
@@ -93,7 +73,8 @@ export default {
     BaseHeading,
     BaseBodyText,
     BaseGutterWrapper,
-    BaseCalloutBox
+    BaseCalloutBox,
+    ResultsQuestions
   }
 }
 </script>
@@ -122,8 +103,6 @@ export default {
 }
 
 .questions {
-  composes: scaleZeta from 'styles/type.scss';
-  composes: midtone from 'styles/color.scss';
   display: block;
   min-width: 66%;
 }

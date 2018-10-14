@@ -739,7 +739,11 @@ en:
   chartTitles:
     defaultGroupHeading: 'Default Group heading'
     activityTypeCount: "% Activity count by type"
+    activityTypeCountQuestions:
+      1: 'Personal biases of both health care providers and the public affect the utilization of family planning methods by young people. Does the distribution of activities by domain reflect a concern about helping to address these biases in community and health settings?'
     activityTypeBudget: "Budget % of total by activity types"
+    activityTypeBudgetQuestions:
+      1: 'Government policies and strategies that are developed through a well-coordinated process of stakeholder involvement are the foundation for acceptance of youth family planning utilization in communities. Does the distribution of activities by domain in your plan reflect a sufficient concern with coordination and creating an enabling environment?'
     youthFocusBudget: "Budget % youth focused"
     youthFocusCount: "% activity count by youth focused"
     youthCentricLabel: "Youth Centric"
