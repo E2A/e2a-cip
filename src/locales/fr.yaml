@@ -17,21 +17,21 @@ fr:
     stepsTitle: Comment ça marche ?
     steps:
       step1:
-        title: Entrez vos activités
-        blurb: |-
-          Après avoir entré le titre de votre plan, votre pays et le titre/rôle, on vous demandera d'entrer TOUTES les activités contenues dans votre plan (pas seulement celles qui concernent les jeunes !). On vous demandera de classer les activités en quatre catégories, d'inscrire le montant du budget alloué à chaque activité et de déterminer si l'activité est axée sur les jeunes. Une page récapitulative apparaîtra et vous permettra de modifier les informations que vous avez fournies.
-      step2:
-        title: Analyser vos activités
-        blurb: |-
-          Ensuite, vous aurez l'occasion d'en apprendre davantage sur les pratiques fondées sur des données probantes (EIP), des pratiques prometteuses pour améliorer  la santé reproductive des adolescents et des jeunes (AYRH). Vous utiliserez ce que vous avez appris au sujet des EIP pour déterminer dans quelle mesure les activités consacrées aux jeunes dans votre plan sont en accord avec ces EIP. Une fois ces deux étapes terminées, vous obtiendrez vos résultats !
-      step3:
-        title: Obtenir vos résultats
-        blurb: |-
-          La page des résultats vous montrera la proportion des activités et du budget consacrés à la jeunesse dans votre plan. Les données générées par l'outil sur les jeunes dans votre pays vous aideront à déterminer si les activités et le budget proposés correspondent aux besoins des jeunes. On vous montrera également un graphique qui expose dans quelle mesure les activités de votre plan sont conformes aux pratiques fondées sur les données probantes (EIP). Enfin, en utilisant les informations sur les EIP, vous aurez l'occasion d'ajuster et de renforcer les activités.
-      step4:
         title: Lorem ipsum dolor sit
         blurb: |-
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et hercule-fatendum est enim, quod sentio -mirabilis est apud illos contextus rerum. Quae si potest singula consolando levare, universa quo modo sustinebit? Quod ea non occurrentia fingunt, vincunt Aristonem; Zenonis est, inquam, hoc Stoici.
+      step2:
+        title: Entrez vos activités
+        blurb: |-
+          Après avoir entré le titre de votre plan, votre pays et le titre/rôle, on vous demandera d'entrer TOUTES les activités contenues dans votre plan (pas seulement celles qui concernent les jeunes !). On vous demandera de classer les activités en quatre catégories, d'inscrire le montant du budget alloué à chaque activité et de déterminer si l'activité est axée sur les jeunes. Une page récapitulative apparaîtra et vous permettra de modifier les informations que vous avez fournies.
+      step3:
+        title: Analyser vos activités
+        blurb: |-
+          Ensuite, vous aurez l'occasion d'en apprendre davantage sur les pratiques fondées sur des données probantes (EIP), des pratiques prometteuses pour améliorer  la santé reproductive des adolescents et des jeunes (AYRH). Vous utiliserez ce que vous avez appris au sujet des EIP pour déterminer dans quelle mesure les activités consacrées aux jeunes dans votre plan sont en accord avec ces EIP. Une fois ces deux étapes terminées, vous obtiendrez vos résultats !
+      step4:
+        title: Obtenir vos résultats
+        blurb: |-
+          La page des résultats vous montrera la proportion des activités et du budget consacrés à la jeunesse dans votre plan. Les données générées par l'outil sur les jeunes dans votre pays vous aideront à déterminer si les activités et le budget proposés correspondent aux besoins des jeunes. On vous montrera également un graphique qui expose dans quelle mesure les activités de votre plan sont conformes aux pratiques fondées sur les données probantes (EIP). Enfin, en utilisant les informations sur les EIP, vous aurez l'occasion d'ajuster et de renforcer les activités.
     getStartedButton: Commencer
     downloadTitle: Télécharger les versions hors ligne
     downloadBlurb: |-
