@@ -27,6 +27,11 @@
             :seriesData="chartData.seriesData[chartName]"
             :labelData="chartData.labelData[chartName]"
           />
+          <ResultsQuestions
+            v-if="questions"
+            :class="space.paddingTop"
+            :questions="questions.find(question => question.name === chartName).questions"
+          />
         </div>
       </li>
     </BaseGutterWrapper>
@@ -41,6 +46,7 @@ import Chart from './Chart.vue'
 import BaseButton from './BaseButton.vue'
 import BaseHeading from './BaseHeading.vue'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
+import ResultsQuestions from './ResultsQuestions.vue'
 
 export default {
   name: 'ChartItems',
@@ -49,7 +55,8 @@ export default {
     Chart,
     BaseButton,
     BaseHeading,
-    BaseGutterWrapper
+    BaseGutterWrapper,
+    ResultsQuestions
   },
   props: {
     viewType: {
@@ -60,7 +67,7 @@ export default {
     chartNames: {
       type: Array,
       required: false,
-      default: () => {
+      default () {
         return [
           'youthFocusBudget',
           'youthFocusCount',
@@ -83,11 +90,19 @@ export default {
     },
     title: {
       type: String
+    },
+    questions: {
+      type: Array
     }
   },
   computed: {
-    currentLocale: function () {
+    currentLocale () {
       return this.$i18n.locale
+    },
+    parsedQuestions () {
+      return this.questions.map(question => {
+        return question.questions
+      })
     }
   },
   data () {

@@ -17,21 +17,21 @@ en:
     stepsTitle: How it works
     steps:
       step1:
+        title: Get to know your plan
+        blurb: |-
+          It is important to become familiar with the plan you will analyze. Locate the strategic priorities and objectives of your plan. The specific activities you will use in this exercise can usually be found here. How is the budget organized? Does each activity have a budget amount attached to it? Don’t forget to check the annexes. Sometimes activities and their specific budget amounts can be found here. If budget numbers are given for the broader strategic areas and not for specific activities, it will not be possible to analyze the budget. However, you can still analyze the specific activities!
+      step2:
         title: Enter your Activities
         blurb: |-
           After entering the title of your plan, your country, and title/role, you will be asked to enter ALL of the activities contained in your plan (not just the ones focused on youth!). You will be asked to categorize the activities by four types, enter the budget amount allocated to each activity, and determine whether the activity is focused on youth. A summary page will appear that will allow you to edit any of the information you have provided.
-      step2:
+      step3:
         title: Analyze your activities
         blurb: |-
           Next, you will have the opportunity to learn about evidence-informed practices (EIPs), promising practices for improving AYRH. You will use what you have learned about EIPs to determine to what degree the youth-focused activities in your plan are aligned with the EIPs. Once you complete these two steps, you will get your results!
-      step3:
+      step4:
         title: Get your results
         blurb: |-
           The results page will show you the proportion of activities and budget devoted to youth in your plan. Data generated through the tool about young people in your country will help you determine whether your proposed activities and budget are in line with youth needs. You will also be shown a graph which depicts the degree to which your plan’s activities align with EIPs. Finally, using the information on EIPs, you will be given the opportunity to revise and strengthen the activities.
-      step4:
-        title: Lorem ipsum dolor sit
-        blurb: |-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et hercule-fatendum est enim, quod sentio -mirabilis est apud illos contextus rerum. Quae si potest singula consolando levare, universa quo modo sustinebit? Quod ea non occurrentia fingunt, vincunt Aristonem; Zenonis est, inquam, hoc Stoici.
     getStartedButton: Get started
     downloadTitle: Download offline versions
     downloadBlurb: |-
@@ -347,7 +347,7 @@ en:
     bestPractice3:
       title: "Strong Coordination Across Sectors that Affect AYRH"
       # Do Not Translate
-      icon: eip-couple
+      icon: eip-coordination
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
@@ -482,7 +482,7 @@ en:
     bestPractice5:
       title: "Family Life Education (FLE)"
       # Do Not Translate
-      icon: eip-coordination
+      icon: eip-education
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
@@ -578,7 +578,7 @@ en:
     bestPractice6:
       title: "Fostering Family and Community Support for AYRH"
       # Do Not Translate
-      icon: eip-book
+      icon: eip-community
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
@@ -637,7 +637,7 @@ en:
     bestPractice7:
       title: "Empowering Girls to Take Action for FP/RH Health"
       # Do Not Translate
-      icon: eip-community
+      icon: eip-equality
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
@@ -739,7 +739,11 @@ en:
   chartTitles:
     defaultGroupHeading: 'Default Group heading'
     activityTypeCount: "% Activity count by type"
+    activityTypeCountQuestions:
+      1: 'Personal biases of both health care providers and the public affect the utilization of family planning methods by young people. Does the distribution of activities by domain reflect a concern about helping to address these biases in community and health settings?'
     activityTypeBudget: "Budget % of total by activity types"
+    activityTypeBudgetQuestions:
+      1: 'Government policies and strategies that are developed through a well-coordinated process of stakeholder involvement are the foundation for acceptance of youth family planning utilization in communities. Does the distribution of activities by domain in your plan reflect a sufficient concern with coordination and creating an enabling environment?'
     youthFocusBudget: "Budget % youth focused"
     youthFocusCount: "% activity count by youth focused"
     youthCentricLabel: "Youth Centric"
