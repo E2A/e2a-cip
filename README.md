@@ -1,9 +1,9 @@
 # Technical setup
-## Get Started / Installation
+## Get started / installation
 1) Install [yarn](https://yarnpkg.com/lang/en/)
 2) In the root of this directory run `yarn install` to install dependencies
 
-## To Develop Locally
+## To develop locally
 1) Run `yarn serve` in the root dir to run a server on localhost
 2) Go to `localhost:8080` to view the app
 3) To run / debug electron app on MacOS run: `./dist_electron/mac/E2A-Analysis.app/Contents/MacOS/E2A-Analysis` and any `console.log()` and other electron errors will display in terminal.
