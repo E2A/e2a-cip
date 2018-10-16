@@ -261,6 +261,72 @@ en:
         [^8]: WHO/UNAIDS, Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents. Geneva: World Health Organization; 2015.
 
         [^9]: Rosenberg NE, Bhushan NL, Vansia D, et al. Comparing Youth Friendly Health Services to the Standard of Care through "Girl Power-Malawi": A Quasi-Experimental Cohort Study. J Acquir Immune Defic Syndr. 2018; Aug 1. doi: 10.1097/QAI.0000000000001830.
+      resources:
+        resource1:
+          title: Thinking outside the separate space: A decision-making tool for designing youth-friendly services
+          teaser: |-
+            Callie Simon, Regina Benevides, Gwyn Hainsworth, Gwendolyn Morgan, and Katie Chau, Thinking outside the separate space: A decision-making tool for designing youth-friendly services. Washington, DC: Evidence to Action Project/Pathfinder International, March 2015.
+          # Do Not Translate
+          url: https://www.e2aproject.org/wp-content/uploads/thinking-outside-the-separate-space-yfs-tool.pdf
+        resource2:
+          title: What does not work in adolescent sexual and reproductive health: a review of evidence on interventions commonly accepted as best practices.
+          teaser: |-
+            Chandra-Mouli, V., Lane, C., & Wong, S. (2015). What does not work in adolescent sexual and reproductive health: a review of evidence on interventions commonly accepted as best practices. Global Health: Science and Practice, 3(3), 333-340.
+          # Do Not Translate
+          url: http://www.ghspjournal.org/content/3/3/333.short
+       resource3:
+          title: High-Impact Practices in Family Planning (HIPs). Adolescent-friendly contraceptive services: mainstreaming adolescent-friendly elements into existing contraceptive services.
+          teaser: |-
+            High-Impact Practices in Family Planning (HIPs). Adolescent-friendly contraceptive services: mainstreaming adolescent-friendly elements into existing contraceptive services. Washington (DC): USAID; 2015.
+          # Do Not Translate 
+          url: https://www.fphighimpactpractices.org/afcs
+      resource4:
+          title: International Conference on Population and Development
+          teaser: |-
+            Journal of Adolescent Health. January 2015. Volume 56, Issue 1, Supplement, S1 – S60: International Conference on Population and Development.
+          # Do Not Translate 
+          url: http://www.jahonline.org/issue/S1054-139X(14)X0004-2
+      resource5:
+          title: Interventions to Prevent Unintended and Repeat Pregnancy Among Young People in Low-and Middle-Income Countries: A Systematic Review of the Published and Gray Literature
+          teaser: |-
+            Michelle J. Hindin et al., “Interventions to Prevent Unintended and Repeat Pregnancy Among Young People in Low-and Middle-Income Countries: A Systematic Review of the Published and Gray Literature,” Journal of Adolescent Health 59, no. 3 (2016): S8-S15.
+          # Do Not Translate 
+          url: https://www.ncbi.nlm.nih.gov/pubmed/27562452     
+     resource6:
+          title: Preventing early pregnancy and poor reproductive outcomes among adolescents in developing countries: what the evidence says.
+          teaser: |-
+            World Health Organization. (2011). Preventing early pregnancy and poor reproductive outcomes among adolescents in developing countries: what the evidence says.
+          # Do Not Translate 
+          url: http://apps.who.int/iris/bitstream/10665/70813/1/WHO_FWC_MCA_12_02_eng.pdf
+     resource7:
+          title: Une approche fondée sur les normes pour améliorer la qualité des services de santé destinés aux adolescents : note d'orientation
+          teaser: |-
+            Organisation mondiale de la Santé (2015). "Une approche fondée sur les normes pour améliorer la qualité des services de santé destinés aux adolescents : note d'orientation."
+          # Do Not Translate 
+          url: http://apps.who.int/iris/bitstream/10665/246105/1/WHO-FWC-MCA-15.06-fre.pdf?ua=1
+     resource8:
+          title: Our future: a Lancet commission on adolescent health and wellbeing
+          teaser: |-
+            Patton, George C., et al. (2016). “Our future: a Lancet commission on adolescent health and wellbeing”. The Lancet 387.10036: 2423-2478.
+          # Do Not Translate 
+     resource9:
+          title: Youth Contraceptive Use: Effective Interventions A Reference Guide.
+          teaser: |-
+            Population Reference Bureau (2017). Youth Contraceptive Use: Effective Interventions A Reference Guide.
+          # Do Not Translate           
+          url: http://www.prb.org/pdf17/PRB%20Youth%20Policies%20Reference%20Guide.pdf
+     resource10:
+          title: Global Accelerated Action for the Health of Adolescents (AA-HA!): guidance to support country implementation.
+          teaser: |-
+            WHO. (2017). Global Accelerated Action for the Health of Adolescents (AA-HA!): guidance to support country implementation. 
+          # Do Not Translate           
+          url: http://apps.who.int/iris/bitstream/handle/10665/255415/9789241512343-eng.pdf?sequence=1
+     resource11:
+          title: Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents.
+          teaser: |-
+            WHO/UNAIDS (2015). Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents.
+          # Do Not Translate           
+          url: http://apps.who.int/iris/bitstream/handle/10665/183935/9789241549332_vol1_eng.pdf?sequence=1     
     bestPractice2:
       title: "Ensuring Access to the Full Range of Contraceptive Methods"
       # Do Not Translate
