@@ -55,6 +55,21 @@ For updating the UN Country population data you can use [this google sheet](http
 
 If you need to convert from other ISO formats to ISO2, you can use this [JSON file](https://github.com/E2A/e2a-cip/blob/master/src/authorities/country-conversion-table.json).
 
+# Adding resources to a best practice 
+You can add resources to a best pracitce by adding the following to a Best Practice area on the site:
+
+```
+resources:
+        resource1:
+          title: Resource Title
+          teaser: |-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
+          url: /uploads/resources/bestpractice1.png
+```
+Note the file itself should be uploaded to `public/uploads/resources` you can find it [here](https://github.com/E2A/e2a-cip/tree/master/public/uploads/resources)
+
+You should add an integer infront of each resource you add, ie `resource1:`, `resource2:` etc
 
 # A note on lanuage
 We are using LingoHub for translation.
