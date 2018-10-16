@@ -19,7 +19,7 @@ en:
       step1:
         title: Get to know your plan
         blurb: |-
-          It is important to become familiar with the plan you will analyze. Locate the strategic priorities and objectives of your plan. The specific activities you will use in this exercise can usually be found here. How is the budget organized? Does each activity have a budget amount attached to it? Don’t forget to check the annexes. Sometimes activities and their specific budget amounts can be found here. If budget numbers are given for the broader strategic areas and not for specific activities, it will not be possible to analyze the budget. However, you can still analyze the specific activities!
+          It is important to become familiar with the plan you will analyze. Locate the strategic priorities and objectives of your plan. The specific activities you will use in this exercise can usually be found in this section. How is the budget organized? Does each activity have a budget amount attached to it? Don’t forget to check the annexes. Sometimes activities and their specific budget amounts can be found in the annexes. If budget numbers are given for the broader strategic areas and not for specific activities, it will not be possible to analyze the budget. However, you can still analyze the specific activities!
       step2:
         title: Enter your Activities
         blurb: |-
@@ -36,7 +36,7 @@ en:
     downloadTitle: Download offline versions
     downloadBlurb: |-
       If you are having issues with your browser, want to access the application offline, or you just want to use the application on your desktop without using a browser, you can download any of the following versions for your needs.
-      *Note*: The application will still work in the browser even if internet disconnects.
+      *Note*: The application will still work in the browser even if internet disconnects. Once downloaded, the application will automatically save to the Downloads folder on your device. To ensure you do not lose track of the application, you may consider saving the application to your another folder on your device. 
       ### Installation Instructions:
       - For **Macintosh** unzip the file and use the DMG to install the application.
       - For **Windows** unzip the folder and run the .exe file in the folder.
@@ -196,7 +196,7 @@ en:
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
-        Even though the ages 15 to 24 years represent a relatively short time frame, youth can vary substantially in their life experiences. The term encompasses young people who are just beginning to discover and explore relationships; are unmarried or married; have no children, are first-time parents, or have multiple children. It also includes young people who may be HIV-infected, youth who have access to health information and supportive parents, or young people who or struggling to make sense of their feelings with little information or support. Services that take into account young people’s life stage and particular needs are sometimes described as “adolescent- and youth-friendly.”
+        Services that take into account young people’s life stage and particular needs are sometimes described as “adolescent- and youth-friendly.” These services commonly include safe and affordable contraceptive methods; prevention and treatment of HIV/AIDS and care for other STIs; the provision of accurate health information; and sensitive counselling and care for overall wellbeing. Services may also include youth-friendly obstetric and antenatal care for pregnant girls and women; post-abortion care services, prevention, detection, and counselling for gender-based violence; and the prevention, detection, and treatment cervical cancer.
       body: |-
         **What is it?**
 
@@ -268,7 +268,7 @@ en:
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
-        AYRH services related to contraceptive use has quality counseling as its centerpiece. The objective of this counseling is to ensure that young people are aware of the voluntary nature of contraceptive use and knowledgeable of the full range of contraceptive options available to them.  Providing quality counseling along with a full range of contraceptives, including long-acting and reversible contraceptives (LARCs), to adolescents and young people facilitates their uptake of contraception  and enables them to make an informed choice about a method that is in line with their own preferences and goals. Quality counseling along with expanded method choice should also empower young people to switch methods should they experience undesirable side-effects.
+        Providing quality counseling along with a full range of contraceptives, including long-acting and reversible contraceptives (LARCs), to adolescents and young people facilitates their uptake of contraception  and enables them to make an informed choice about a method that is in line with their own preferences and goals. Quality counseling along with expanded method choice should also empower young people to switch methods should they experience undesirable side-effects.
       body: |-
         **What is it?**
         AYRH care related to contraceptive use has quality counseling as its centerpiece. The objective of this counseling is to ensure that young people are aware of the voluntary nature of contraceptive use and knowledgeable of the full range of contraceptive options available to them.  Providing quality counseling along with a full range of contraceptives, including long-acting and reversible contraceptives (LARCs), to adolescents and young people facilitates their uptake of contraception[^10] and enables them to make an informed choice about a method that is in line with their own preferences and goals. Quality counseling along with expanded method choice should also empower young people to switch methods should they experience undesirable side-effects. Expanding contraceptive choice is in alignment with the WHO’s third norm for improved quality of healthcare for adolescents (WHO, 2015). Any adolescent can use any contraceptive method according to the WHO’s Medical Eligibility Criteria for contraceptive use. Age alone does not constitute a contraindication to the use of contraceptive methods.
@@ -351,7 +351,7 @@ en:
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
-        Multi-sectoral coordination involves deliberate and planned collaboration among “various stakeholder groups (e.g., government, civil society, and private sector) and sectors (e.g., health, education, environment, economy) to jointly achieve a policy outcome.”  The advantages of such coordination, if thoughtfully and carefully done, can include an increase in the amount of resources brought to bear to address a health problem. These resources can include: expertise and human resources, material and financial resources, greater coverage of programs, and increased social and political support for solutions. AYRH challenges are complex, implicating social norms, education, economic disparity, gender inequality, and environmental factors, among others.  The response must be equally comprehensive. Well-planned and thoughtful multi-sectoral coordination can provide a holistic approach to AYRH problems and help increase the probability of the success of the response.
+        Multi-sectoral coordination involves deliberate and planned collaboration among “various stakeholder groups (e.g., government, civil society, and private sector) and sectors (e.g., health, education, environment, economy) to jointly achieve a policy outcome.”  The advantages of such coordination, if thoughtfully and carefully done, can include an increase in the amount of resources brought to bear to address a health problem.
       body: |-
         **What is it?**
 
@@ -410,7 +410,7 @@ en:
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
-        In terms of AYRH, participation means youth having the capabilities and opportunities to seek information; express one’s opinions, ideas, and decisions; be informed and consulted on decisions that pertain to youth (programs and policies); take an active role in the various steps of designing, implementing, and monitoring a health service or policy; have the knowledge, skills, and desire to make an enact informed choices about one’s reproductive life; and have the knowledge and skills necessary to hold duty-bearers responsible. Youth participation is about nurturing all the skills that are vital for individuals to possess to promote a thriving civil society sector and functioning democratic institutions, including responsive health systems and services.
+        In terms of AYRH, participation means youth having the capabilities and opportunities to seek information; be informed and consulted on decisions that pertain to youth; have the knowledge, skills, and desire to make an enact informed choices about one’s reproductive life; and have the knowledge and skills necessary to hold duty-bearers responsible. Youth participation is about nurturing all the skills that are vital for individuals to possess to promote a thriving civil society sector and functioning democratic institutions, including responsive health systems and services.
       body: |-
         **What is it?**
 
@@ -582,7 +582,7 @@ en:
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
-        Communities and families sustain, and sometimes transform, the norms and resources that influence adolescent and youth health and well-being, and therefore, are critical partners for AYRH programs.  Community engagement means working collaboratively with groups of people who “are affiliated by geographic proximity, special interests, or similar situations with respect to issues affecting their well-being.”  For AYRH, this involves working with community groups  and gatekeepers – including parents and families - to challenge and change social norms and harness local systems and structure to provide a supportive environment for AYRH programs and young people to take action.
+        Community engagement means working collaboratively with groups of people who “are affiliated by geographic proximity, special interests, or similar situations with respect to issues affecting their well-being.”  For AYRH, this involves working with community groups  and gatekeepers – including parents and families - to challenge and change social norms and harness local systems and structure to provide a supportive environment for AYRH programs and young people to take action.
       body: |-
         **What is it?**
 
@@ -641,7 +641,7 @@ en:
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
-        While all youth should have access to quality FP/RH information and care, special focus is needed to ensure that girls and young women are able to take appropriate action.  Empowering girls and young women expands their choices, strengthens their voices, and changes the dynamics of power so that girls and young women have more control over their futures. Empowerment is not only a process of individual and collective change, but also an outcome “of women and girls having greater influence and control over their own lives and futures.”
+        Empowering girls and young women expands their choices, strengthens their voices, and changes the dynamics of power so that girls and young women have more control over their futures. Empowerment is not only a process of individual and collective change, but also an outcome “of women and girls having greater influence and control over their own lives and futures.”
       body: |-
         **What is it?**
 
