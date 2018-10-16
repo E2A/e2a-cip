@@ -27,7 +27,7 @@ After having gone through the get started steps:
 
 # Adding and editing content
 ## How-to guide
-[Here](e2a-cip/public/uploads/Github_LingoHub_How-to.pdf) is a how-to guide that provides info that this readme doesn't cover with regards to Github and Lingohub changes.
+[Here](https://github.com/E2A/e2a-cip/blob/master/public/uploads/Github_LingoHub_How-to.pdf) is a how-to guide that provides info that this readme doesn't cover with regards to Github and Lingohub changes.
 
 ## A note on adding country indicators
 Country indicators need to be added to the [en.yaml file](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml) in the below format.
