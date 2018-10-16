@@ -67,6 +67,9 @@ resources:
           # Do Not Translate
           url: /uploads/resources/bestpractice1.png
 ```
+
+You can see example of placeholder resources in the yaml file [here](https://github.com/E2A/e2a-cip/blob/69981e8de7eab0dcbe39560029e555d7a650e0c8/src/locales/en.yaml#L250)
+
 Note the file itself should be uploaded to `public/uploads/resources` you can find it [here](https://github.com/E2A/e2a-cip/tree/master/public/uploads/resources)
 
 You should add an integer infront of each resource you add, ie `resource1:`, `resource2:` etc
