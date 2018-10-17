@@ -28,7 +28,7 @@
 
          <BaseBodyText
          :class="space.paddingTop"
-          :content="$t('setup.saveDataReminder', {exportLink: 'http://www.google.com'})"
+          :content="$t('setup.saveDataReminder', {exportLink: `/export/${this.$route.name}`})"
          />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
@@ -92,6 +92,9 @@ export default {
     updateInput: function () {
       this.inputKey = this.getItemCount('all')
     }
+  },
+  created () {
+    console.log(this.$route.name)
   }
 }
 </script>

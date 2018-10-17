@@ -1144,6 +1144,7 @@ en:
     label: Save your data
     exportLabel: Export your data
     selectFormat: Select a format to save
+    exportUrlText: JSON is being exported
     exportSelectFormat: Select a format to export
     directions: |-
       - The **JSON format** is preferred for importing (and restoring) your data here.
