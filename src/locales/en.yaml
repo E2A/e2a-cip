@@ -263,66 +263,66 @@ en:
         [^9]: Rosenberg NE, Bhushan NL, Vansia D, et al. Comparing Youth Friendly Health Services to the Standard of Care through "Girl Power-Malawi": A Quasi-Experimental Cohort Study. J Acquir Immune Defic Syndr. 2018; Aug 1. doi: 10.1097/QAI.0000000000001830.
       resources:
         resource1:
-          title: Thinking outside the separate space: A decision-making tool for designing youth-friendly services
+          title: 'Thinking outside the separate space: A decision-making tool for designing youth-friendly services'
           teaser: |-
             Callie Simon, Regina Benevides, Gwyn Hainsworth, Gwendolyn Morgan, and Katie Chau, Thinking outside the separate space: A decision-making tool for designing youth-friendly services. Washington, DC: Evidence to Action Project/Pathfinder International, March 2015.
           # Do Not Translate
           url: https://www.e2aproject.org/wp-content/uploads/thinking-outside-the-separate-space-yfs-tool.pdf
         resource2:
-          title: What does not work in adolescent sexual and reproductive health: a review of evidence on interventions commonly accepted as best practices.
+          title: 'What does not work in adolescent sexual and reproductive health: a review of evidence on interventions commonly accepted as best practices.'
           teaser: |-
             Chandra-Mouli, V., Lane, C., & Wong, S. (2015). What does not work in adolescent sexual and reproductive health: a review of evidence on interventions commonly accepted as best practices. Global Health: Science and Practice, 3(3), 333-340.
           # Do Not Translate
           url: http://www.ghspjournal.org/content/3/3/333.short
-       resource3:
-          title: High-Impact Practices in Family Planning (HIPs). Adolescent-friendly contraceptive services: mainstreaming adolescent-friendly elements into existing contraceptive services.
+        resource3:
+          title: 'High-Impact Practices in Family Planning (HIPs). Adolescent-friendly contraceptive services: mainstreaming adolescent-friendly elements into existing contraceptive services.'
           teaser: |-
             High-Impact Practices in Family Planning (HIPs). Adolescent-friendly contraceptive services: mainstreaming adolescent-friendly elements into existing contraceptive services. Washington (DC): USAID; 2015.
           # Do Not Translate 
           url: https://www.fphighimpactpractices.org/afcs
-      resource4:
+        resource4:
           title: International Conference on Population and Development
           teaser: |-
             Journal of Adolescent Health. January 2015. Volume 56, Issue 1, Supplement, S1 – S60: International Conference on Population and Development.
           # Do Not Translate 
           url: http://www.jahonline.org/issue/S1054-139X(14)X0004-2
-      resource5:
-          title: Interventions to Prevent Unintended and Repeat Pregnancy Among Young People in Low-and Middle-Income Countries: A Systematic Review of the Published and Gray Literature
+        resource5:
+          title: 'Interventions to Prevent Unintended and Repeat Pregnancy Among Young People in Low-and Middle-Income Countries: A Systematic Review of the Published and Gray Literature'
           teaser: |-
             Michelle J. Hindin et al., “Interventions to Prevent Unintended and Repeat Pregnancy Among Young People in Low-and Middle-Income Countries: A Systematic Review of the Published and Gray Literature,” Journal of Adolescent Health 59, no. 3 (2016): S8-S15.
           # Do Not Translate 
           url: https://www.ncbi.nlm.nih.gov/pubmed/27562452     
-     resource6:
-          title: Preventing early pregnancy and poor reproductive outcomes among adolescents in developing countries: what the evidence says.
+        resource6:
+          title: 'Preventing early pregnancy and poor reproductive outcomes among adolescents in developing countries: what the evidence says.'
           teaser: |-
             World Health Organization. (2011). Preventing early pregnancy and poor reproductive outcomes among adolescents in developing countries: what the evidence says.
           # Do Not Translate 
           url: http://apps.who.int/iris/bitstream/10665/70813/1/WHO_FWC_MCA_12_02_eng.pdf
-     resource7:
-          title: Une approche fondée sur les normes pour améliorer la qualité des services de santé destinés aux adolescents : note d'orientation
+        resource7:
+          title: 'Une approche fondée sur les normes pour améliorer la qualité des services de santé destinés aux adolescents : note d'orientation'
           teaser: |-
             Organisation mondiale de la Santé (2015). "Une approche fondée sur les normes pour améliorer la qualité des services de santé destinés aux adolescents : note d'orientation."
           # Do Not Translate 
           url: http://apps.who.int/iris/bitstream/10665/246105/1/WHO-FWC-MCA-15.06-fre.pdf?ua=1
-     resource8:
-          title: Our future: a Lancet commission on adolescent health and wellbeing
+        resource8:
+          title: 'Our future: a Lancet commission on adolescent health and wellbeing'
           teaser: |-
             Patton, George C., et al. (2016). “Our future: a Lancet commission on adolescent health and wellbeing”. The Lancet 387.10036: 2423-2478.
           # Do Not Translate 
-     resource9:
-          title: Youth Contraceptive Use: Effective Interventions A Reference Guide.
+        resource9:
+          title: 'Youth Contraceptive Use: Effective Interventions A Reference Guide.'
           teaser: |-
             Population Reference Bureau (2017). Youth Contraceptive Use: Effective Interventions A Reference Guide.
           # Do Not Translate           
           url: http://www.prb.org/pdf17/PRB%20Youth%20Policies%20Reference%20Guide.pdf
-     resource10:
-          title: Global Accelerated Action for the Health of Adolescents (AA-HA!): guidance to support country implementation.
+        resource10:
+          title: 'Global Accelerated Action for the Health of Adolescents (AA-HA!): guidance to support country implementation.'
           teaser: |-
             WHO. (2017). Global Accelerated Action for the Health of Adolescents (AA-HA!): guidance to support country implementation. 
           # Do Not Translate           
           url: http://apps.who.int/iris/bitstream/handle/10665/255415/9789241512343-eng.pdf?sequence=1
-     resource11:
-          title: Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents.
+        resource11:
+          title: 'Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents.'
           teaser: |-
             WHO/UNAIDS (2015). Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents.
           # Do Not Translate           
@@ -423,50 +423,50 @@ en:
             Health Policy + (2017).  Pathways of Change: How DMPA-SC Introduction May Impact a National Family Planning Program
           # Do Not Translate
           url: http://www.healthpolicyplus.com/ns/pubs/7133-7240_PPathwaysofChangeBriefJan.pdf
-       resource3:
-          title: High-Impact Practices in Family Planning (HIPs). Adolescent-friendly contraceptive services: mainstreaming adolescent-friendly elements into existing contraceptive services.
+        resource3:
+          title: 'High-Impact Practices in Family Planning (HIPs). Adolescent-friendly contraceptive services: mainstreaming adolescent-friendly elements into existing contraceptive services.'
           teaser: |-
             High-Impact Practices in Family Planning (HIPs). Adolescent-friendly contraceptive services: mainstreaming adolescent-friendly elements into existing contraceptive services. Washington (DC): USAID; 2015.
           # Do Not Translate 
           url: https://www.fphighimpactpractices.org/afcs
-      resource4:
-          title: Interventions to Prevent Unintended and Repeat Pregnancy Among Young People in Low-and Middle-Income Countries: A Systematic Review of the Published and Gray Literature
+        resource4:
+          title: 'Interventions to Prevent Unintended and Repeat Pregnancy Among Young People in Low-and Middle-Income Countries: A Systematic Review of the Published and Gray Literature'
           teaser: |-
             Michelle J. Hindin et al., “Interventions to Prevent Unintended and Repeat Pregnancy Among Young People in Low-and Middle-Income Countries: A Systematic Review of the Published and Gray Literature,” Journal of Adolescent Health 59, no. 3 (2016): S8-S15.
           # Do Not Translate 
           url: https://www.ncbi.nlm.nih.gov/pubmed/27562452
-      resource5:
-          title: Preventing unintended pregnancy among young women in Kenya: prospective cohort study to offer contraceptive implants
+        resource5:
+          title: 'Preventing unintended pregnancy among young women in Kenya: prospective cohort study to offer contraceptive implants'
           teaser: |-
             Hubacher, D., Olawo, A., Manduku, C., Kiarie, J., & Chen, P.L. “Preventing unintended pregnancy among young women in Kenya: prospective cohort study to offer contraceptive implants.”  Contraception 86 (2012): 511–517. DOI: 10.1016/j.contraception.2012.04.013
           # Do Not Translate 
           url: https://www.ncbi.nlm.nih.gov/pubmed/22633247     
-     resource6:
+        resource6:
           title: Cue Cards for Counseling Adolescents on Contraception
           teaser: |-
             Pathfinder International (2016). Cue Cards for Counseling Adolescents on Contraception.
           # Do Not Translate 
           url: http://www.pathfinder.org/wp-content/uploads/2016/11/Adolescent-Contraception-Cue- Cards.pdf
-     resource7:
+        resource7:
           title: Algorithm for Using the Balanced Counseling Strategy Plus
           teaser: |-
             Population Council (2015). Algorithm for Using the Balanced Counseling Strategy Plus.
           # Do Not Translate 
           url: https://www.k4health.org/sites/default/files/Balanced%20Counseling%20Strategy%20Plus%20Algorithm.pdf
-     resource8:
-          title: Adolescent job aid: a handy desk reference tool for primary level health workers
+        resource8:
+          title: 'Adolescent job aid: a handy desk reference tool for primary level health workers'
           teaser: |-
             World Health Organization (2010). Adolescent job aid: a handy desk reference tool for primary level health workers. Geneva: World Health Organization.
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/handle/10665/44387/9789241599962_eng.pdf?sequence=1
-     resource9:
-          title: Core competencies in adolescent health and development for primary care providers: including a tool to assess the adolescent health and development component in pre-service education of health-care providers.
+        resource9:
+          title: 'Core competencies in adolescent health and development for primary care providers: including a tool to assess the adolescent health and development component in pre-service education of health-care providers.'
           teaser: |-
             WHO (2015). Core competencies in adolescent health and development for primary care providers: including a tool to assess the adolescent health and development component in pre-service education of health-care providers. Geneva: World Health Organization.
           # Do Not Translate           
           url: http://apps.who.int/iris/bitstream/handle/10665/148354/9789241508315_eng.pdf?sequence=1
-     resource10:
-          title: Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents
+        resource10:
+          title: 'Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents'
           teaser: |-
             WHO/UNAIDS (2015). Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents. 
           # Do Not Translate           
@@ -532,7 +532,7 @@ en:
         [^27]: Chandra-Mouli et al. Programa Geração Biz, Mozambique: how did this adolescent health initiative grow from a pilot to a national programme, and what did it achieve? Reproductive Health. 2015; 12:12.
       resources:
         resource1:
-          title: Health for the world’s adolescents: A second chance in the second decade
+          title: 'Health for the world’s adolescents: A second chance in the second decade'
           teaser: |-
             World Health Organization (2014). Health for the world’s adolescents: A second chance in the second decade
           # Do Not Translate
@@ -542,13 +542,13 @@ en:
           teaser: |-
             West African Health Organization (2016). Orientation Manual for Development of National Strategies for Adolescent and Youth Health in ECOWAS Member States.
           # Do Not Translate
-       resource3:
-          title: Our future: a Lancet commission on adolescent health and wellbeing
+        resource3:
+          title: 'Our future: a Lancet commission on adolescent health and wellbeing'
           teaser: |-
             Patton, George C., et al. (2016). “Our future: a Lancet commission on adolescent health and wellbeing”. The Lancet 387.10036: 2423-2478.
           # Do Not Translate 
           url: http://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)00579-1/abstract
-      resource4:
+        resource4:
           title: Guide to cross sectorial Youth assessment.
           teaser: |-
             USAID; Equip3 (2009). Guide to cross sectorial Youth assessment.
@@ -632,65 +632,65 @@ en:
         [^40]: Babalola S, Ramirez-Ferrero E, Muya A. Survey on Sexual Attitudes and Behaviors among Tanzanian Youth: Baseline Assessment in Five Regions: Report of Findings. Dar es Salaam: HealthScope Tanzania and the Johns Hopkins Center for Communication Programs; 2005.
       resources:
         resource1:
-          title: What does not work in adolescent sexual and reproductive health: a review of evidence on interventions commonly accepted as best practices.
+          title: 'What does not work in adolescent sexual and reproductive health: a review of evidence on interventions commonly accepted as best practices.'
           teaser: |-
             Chandra-Mouli, V., Lane, C., & Wong, S. (2015). What does not work in adolescent sexual and reproductive health: a review of evidence on interventions commonly accepted as best practices. Global Health: Science and Practice, 3(3), 333-340.
           # Do Not Translate
           url: http://www.ghspjournal.org/content/3/3/333.short
         resource2:
-          title: Health for the world’s adolescents: A second chance in the second decade
+          title: 'Health for the world’s adolescents: A second chance in the second decade'
           teaser: |-
             World Health Organization (2014). Health for the world’s adolescents: A second chance in thesecond decade.
           # Do Not Translate
           url: http://apps.who.int/adolescent/second-decade/
-       resource3:
-          title: A standards-driven approach to improve the quality of health- care services for adolescents: Policy Brief.
+        resource3:
+          title: 'A standards-driven approach to improve the quality of health- care services for adolescents: Policy Brief.'
           teaser: |-
             World Health Organization (2015). A standards-driven approach to improve the quality of health- care services for adolescents: Policy Brief.
           # Do Not Translate 
           url: http://apps.who.int/iris/bitstream/10665/184035/1/WHO_FWC_MCA_15.06_eng.pdf
-      resource4:
+        resource4:
           title: Orientation Manual for Development of National Strategies for Adolescent and Youth Health in ECOWAS Member States.
           teaser: |-
             West African Health Organization (2016). Orientation Manual for Development of National Strategies for Adolescent and Youth Health in ECOWAS Member States.
           # Do Not Translate 
-      resource5:
-          title: Our future: a Lancet commission on adolescent health and wellbeing
+        resource5:
+          title: 'Our future: a Lancet commission on adolescent health and wellbeing'
           teaser: |-
             Patton, George C., et al. (2016). “Our future: a Lancet commission on adolescent health and wellbeing”. The Lancet 387.10036: 2423-2478.
           # Do Not Translate 
           url: http://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)00579-1/abstract    
-     resource6:
+        resource6:
           title: IMAP Statement on youth peer provision models to deliver sexual and reproductive health services to young people.
           teaser: |-
             International Planned Parenthood Federation (2016). IMAP Statement on youth peer provision models to deliver sexual and reproductive health services to young people.
           # Do Not Translate 
           url: https://www.ippf.org/sites/default/files/2017-03/imap_peer%20provision.pdf
-     resource7:
+        resource7:
           title: Advocating for change for adolescents! A Practical Toolkit for Young People to Advocate for Improved Adolescent Health and Wellbeing.
           teaser: |-
             WHO (2017). Advocating for change for adolescents! A Practical Toolkit for Young People to Advocate for Improved Adolescent Health and Wellbeing.
           # Do Not Translate 
           url: http://www.who.int/pmnch/knowledge/publications/advocacy_toolkit.pdf?ua=1 
-     resource8:
+        resource8:
           title: USAID Youth Engagement Training in DREAMS Countries Toolkit
           teaser: |-
             Youth Power (2017). USAID Youth Engagement Training in DREAMS Countries Toolkit.
           # Do Not Translate
           url: http://www.youthpower.org/usaid-youth-engagement-training-dreams-countries
-     resource9:
-          title: Power, Rights & Participation: A practical guide for youth action in a post-2015 world
+        resource9:
+          title: 'Power, Rights & Participation: A practical guide for youth action in a post-2015 world'
           teaser: |-
             Plan UK (2015). Power, Rights & Participation: A practical guide for youth action in a post-2015 world.
           # Do Not Translate           
           url: http://restlessdevelopment.org/file/power-rights-andparticipation-pdf
-     resource10:
-          title: Accountability in Action: A Practical Guide for Young People Tracking the Sustainable Development Goals.
+        resource10:
+          title: 'Accountability in Action: A Practical Guide for Young People Tracking the Sustainable Development Goals.'
           teaser: |-
             Restless Development (2015). Accountability in Action: A Practical Guide for Young People Tracking the Sustainable Development Goals.
           # Do Not Translate           
           url: http://restlessdevelopment.org/youth-led-monitoring-of-the-global-goals-toolkit
-     resource11:
+        resource11:
           title: Advocating for Adolescent Reproductive Health in Sub-Saharan Africa.
           teaser: |-
             Advocates for Youth (1998).  Advocating for Adolescent Reproductive Health in Sub-Saharan Africa.
@@ -800,7 +800,7 @@ en:
           # Do Not Translate
           url: http://www.who.int/maternal_child_adolescent/documents/preventing_early_pregnancy/en/
         resource2:
-          title: Global Accelerated Action for the Health of Adolescents(AA-HA!): guidance to support country implementation
+          title: 'Global Accelerated Action for the Health of Adolescents(AA-HA!): guidance to support country implementation'
           teaser: |-
             WHO. (2017). Global Accelerated Action for the Health of Adolescents (AA-HA!): guidance to support country implementation. 
           # Do Not Translate
@@ -876,43 +876,43 @@ en:
             Harris, S, et al. (2017) Youth Family Planning Policy Score Card. April 2017. 
           # Do Not Translate
           url: www.prb.org/Publications/Reports/2017/Global-Youth-Family-Planning-Index.aspx
-       resource3:
-          title: Community Group Engagement: Changing Norms to Improve Sexual and Reproductive Health 
+        resource3:
+          title: 'Community Group Engagement: Changing Norms to Improve Sexual and Reproductive Health'
           teaser: |-
             Plourde, K. et al., Community Group Engagement: Changing Norms to Improve Sexual and Reproductive Health (Washington, DC: USAID, 2016). 
           # Do Not Translate 
           url: www.fphighimpactpractices.org/sites/fphips/files/hip_cge_brief.pdf
-      resource4:
-          title: Creating an Enabling Environment for Adolescent Sexual and Reproductive Health: A Framework and Promising Approaches
+        resource4:
+          title: 'Creating an Enabling Environment for Adolescent Sexual and Reproductive Health: A Framework and Promising Approaches'
           teaser: |-
             Svanemyr, J. et al. 2015 “Creating an Enabling Environment for Adolescent Sexual and Reproductive Health: A Framework and Promising Approaches”. Journal of Adolescent Health 56. S7-S14.
           # Do Not Translate 
-      resource5:
-          title: Civil Society Involvement in Family Planning: A Review of Global Programming and Evidence
+        resource5:
+          title: 'Civil Society Involvement in Family Planning: A Review of Global Programming and Evidence'
           teaser: |-
             Boydell, Victoria, Robin Keeley, Kumudha Aruldas, and Karen Hardee. 2017. “Civil Society Involvement in Family Planning: A Review of Global Programming and Evidence,” Working Paper. Washington, DC: Population Council, The Evidence Project. 
           # Do Not Translate 
           url: http://evidenceproject.popcouncil.org/wp-content/uploads/2017/12/India-CSO_Research-Report.pdf      
-     resource6:
-          title: Engaging Men and Boys in Family Planning: A Strategic Planning Guide
+        resource6:
+          title: 'Engaging Men and Boys in Family Planning: A Strategic Planning Guide'
           teaser: |-
             High-Impact Practices in Family Planning (HIPs). Engaging Men and Boys in Family Planning: A Strategic Planning Guide. Washington (DC): USAID; 2017.  
           # Do Not Translate 
           url: https://www.fphighimpactpractices.org/guides/engaging-men-and-boys-in-family-planning/
-     resource7:
-          title: Community Group Engagement: Changing Norms to Improve Sexual and Reproductive Health
+        resource7:
+          title: 'Community Group Engagement: Changing Norms to Improve Sexual and Reproductive Health'
           teaser: |-
             High-Impact Practices in Family Planning (HIPs). Community Group Engagement: Changing Norms to Improve Sexual and Reproductive Health. Washington (DC): USAID; 2016. 
           # Do Not Translate 
           url: https://www.fphighimpactpractices.org/briefs/community-group-engagement/
-     resource8:
-          title: Strengthening CSO-Government Partnerships to Scale Up Approaches Engaging Men and Boys for Gender Equality and SRHR: A Tool for Action
+        resource8:
+          title: 'Strengthening CSO-Government Partnerships to Scale Up Approaches Engaging Men and Boys for Gender Equality and SRHR: A Tool for Action'
           teaser: |-
             Promundo and UNFPA. (2016). Strengthening CSO-Government Partnerships to Scale Up Approaches Engaging Men and Boys for Gender Equality and SRHR: A Tool for Action. Washington, D.C.: Promundo-US and New York City, NY: UNFPA. 
           # Do Not Translate
           url: https://promundoglobal.org/wp-content/uploads/2017/01/50694-Scaling-up-Men-and-Boys-web-postprint.pdf 
-     resource9:
-          title: Integrated Community Strategies for Linking Youth to Adolescent Reproductive Health Services: A Case Study.
+        resource9:
+          title: 'Integrated Community Strategies for Linking Youth to Adolescent Reproductive Health Services: A Case Study.'
           teaser: |-
             Sotolongo J, House DL, Swanson S, et al. (2017). Integrated Community Strategies for Linking Youth to Adolescent Reproductive Health Services: A Case Study. Journal of Adolescent Health 60: S45-S50. 
           # Do Not Translate           
@@ -983,66 +983,66 @@ en:
           teaser: |-
             Gavin, Lorrie E., Richard F. Catalano, and Christine M. Markham. (2010) "Positive youth development as a strategy to promote adolescent sexual and reproductive health." Journal of Adolescent Health 46: S1-S6. 
           # Do Not Translate
-       resource3:
+        resource3:
           title: The Case for a Minimum Age of Marriage of 18 
           teaser: |-
             Girls Not Brides (2017). The Case for a Minimum Age of Marriage of 18. 
           # Do Not Translate 
           url: https://www.girlsnotbrides.org/wp-content/uploads/2017/12/Why-a-minimum-age-of-marriage-of-18.pdf 
-      resource4:
-          title: Insights and Evidence Gaps in Girl-Centered Programming: A Systematic Review
+        resource4:
+          title: 'Insights and Evidence Gaps in Girl-Centered Programming: A Systematic Review'
           teaser: |-
             Haberland, Nicole A., Katharine J. McCarthy, and Martha Brady. 2018. “Insights and Evidence Gaps in Girl-Centered Programming: A Systematic Review,” GIRL Center Research Brief No. 3. New York: Population Council. 
           # Do Not Translate
           url: http://www.popcouncil.org/uploads/pdfs/2018PGY_GIRLCenterResearchBrief_03.pdf 
-      resource5:
-          title: Addressing Gender-based Violence through USAID’s Health Programs: A Guide for Health Sector Program Offi cers
+        resource5:
+          title: 'Addressing Gender-based Violence through USAID’s Health Programs: A Guide for Health Sector Program Officers'
           teaser: |-
             Inter-Agency Gender Working Group of USAID. 2008. Addressing Gender-based Violence through USAID’s Health Programs: A Guide for Health Sector Program Offi cers. Second Edition. Washington, D.C. 
           # Do Not Translate 
-     resource6:
-          title: Building Girls’ Protective Assets: A Collection of Tools for Program Design
+        resource6:
+          title: 'Building Girls’ Protective Assets: A Collection of Tools for Program Design'
           teaser: |-
             Population Council. 2016. Building Girls’ Protective Assets: A Collection of Tools for Program Design. New York: Population Council.    
           # Do Not Translate 
           url: http://www.popcouncil.org/uploads/pdfs/2016PGY_GirlsProtectiveAssetsTools.pdf
-     resource7:
-          title: Interventions for Preventing Unintended, Rapid Repeat Pregnancy Among Adolescents: A Review of the Evidence and Lessons From High-Quality Evaluations
+        resource7:
+          title: 'Interventions for Preventing Unintended, Rapid Repeat Pregnancy Among Adolescents: A Review of the Evidence and Lessons From High-Quality Evaluations'
           teaser: |-
             Norton M, Chandra-Mouli V, and Lane C. (2017). Interventions for Preventing Unintended, Rapid Repeat Pregnancy Among Adolescents: A Review of the Evidence and Lessons From High-Quality Evaluations. GHSP 5:4.  
           # Do Not Translate 
           url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5752603/
-     resource8:
-          title: Family Planning: The adolescent imperative
+        resource8:
+          title: 'Family Planning: The adolescent imperative'
           teaser: |-
             Presler-Marshall E and Jones N (2017). Family Planning: The adolescent imperative. Overseas Development Institute.  
           # Do Not Translate
           url: https://www.odi.org/sites/odi.org.uk/files/resource-documents/11646.pdf 
-     resource9:
-          title: Brief: Adolescent Girls Empowerment Program: Health
+        resource9:
+          title: 'Brief: Adolescent Girls Empowerment Program: Health'
           teaser: |-
             Population Council (2017). Brief: Adolescent Girls Empowerment Program: Health.  
           # Do Not Translate           
           url: http://www.popcouncil.org/uploads/pdfs/2018PGY_AGEP-HealthBrief.pdf   
-     resource10:
+        resource10:
           title: Preventing early pregnancy and poor reproductive outcomes among adolescents in developing countries  
           teaser: |-
             WHO (2011). Preventing early pregnancy and poor reproductive outcomes among adolescents in developing countries   
           # Do Not Translate           
           url: http://apps.who.int/iris/bitstream/10665/44691/1/9789241502214_eng.pdf
-     resource11:
+        resource11:
           title: Popular version of the violence against women and girls section of The global plan of action to strengthen the role of the health system within a national multisectoral response to address interpersonal violence, in particular against women and girls, and against children. 
           teaser: |-
             WHO (2016). Popular version of the violence against women and girls section of The global plan of action to strengthen the role of the health system within a national multisectoral response to address interpersonal violence, in particular against women and girls, and against children. World Health Assembly, Resolution 69.5, May 2016 
           # Do Not Translate           
           url: http://apps.who.int/gb/ebwha/pdf_files/WHA69/A69_9-en.pdf 
-     resource12:
-          title: Educating Girls: Creating a foundation for positive sexual and reproductive health behaviors
+        resource12:
+          title: 'Educating Girls: Creating a foundation for positive sexual and reproductive health behaviors'
           teaser: |-
             High Impact Practices (HIPs) for Family Planning. Educating Girls: Creating a foundation for positive sexual and reproductive health behaviors. Washington, DC. USAID, 2014. 
           # Do Not Translate           
           url: https://www.fphighimpactpractices.org/briefs/educating-girls/
-     resource13:
+        resource13:
           title: Positive Youth Development Measurement Toolkit
           teaser: |-
             Youth Power (2017). Positive Youth Development Measurement Toolkit. 
