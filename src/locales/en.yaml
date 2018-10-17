@@ -1140,8 +1140,9 @@ en:
           A message that emerges clearly from the EIPs is that AYRH thrives in settings where where unbiased services are provided in a welcoming environment, where there is multi-sectoral and community support, and where youth understand their reproductive health needs and have the skills to hold duty-bearers to account. A variety of resources exist to help youth and their adult allies plan effective advocacy campaigns.
   fileUpload:
     label: Save your data
-    advocateLable: Export your data
-    selectFormat: Select an format to save
+    exportLabel: Export your data
+    selectFormat: Select a format to save
+    exportSelectFormat: Select a format to export
     directions: |-
       - The **JSON format** is preferred for importing (and restoring) your data here.
       - The **CSV format** is preferred for subsequent analysis in a spreadsheet editor.

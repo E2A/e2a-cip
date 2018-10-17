@@ -19,7 +19,14 @@
             v-if="files"
             :class="base.inlineBlock"
           >
-            <FileExport />
+            <FileExport
+              v-if="charts"
+              :label="$t('fileUpload.exportLabel')"
+              :selectLabel="$t('fileUpload.exportSelectFormat')"
+            />
+            <FileExport
+              v-else
+            />
           </span>
           <span
             v-if="charts"
