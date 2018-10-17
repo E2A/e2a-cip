@@ -36,6 +36,7 @@ en:
     downloadTitle: Download offline versions
     downloadBlurb: |-
       If you are having issues with your browser, want to access the application offline, or you just want to use the application on your desktop without using a browser, you can download any of the following versions for your needs.
+
       *Note*: The application will still work in the browser even if internet disconnects. Once downloaded, the application will automatically save to the Downloads folder on your device. To ensure you do not lose track of the application, you may consider saving the application to your another folder on your device.
       ### Installation Instructions:
       - For **Macintosh** unzip the file and use the DMG to install the application.
@@ -60,6 +61,7 @@ en:
     restoreActivities: Restore your activities
     addActivities: Add your Activites
     editActivities: Edit your Activites
+    saveDataReminder: 'Your web browser will automatically keep your data present. However, **this is not a gurantee that your data will always be saved.** We recommend you save your data manually on a regular basis to make sure you dont lose any data. There are many prompts to save your data and you can click [here](%{exportLink}) to save your data.'
   userRoles:
     role1: NGO
     role2: Youth Advocate
