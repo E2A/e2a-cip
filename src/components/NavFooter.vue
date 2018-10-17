@@ -23,10 +23,9 @@
             :class="base.buttonWrapper"
             :key="`navFooter-${group}-${index}`"
           >
-
             <BaseButton
               v-if="button.type === 'button'"
-              @click="button.click"
+              v-on:click.native="saveReminder"
               :label="button.label"
               :role="button.role || 'default'"
               :iconLeft="button.iconLeft || getDefaultIcon(group, 'left')"
@@ -36,6 +35,7 @@
             <BaseButtonLink
               v-else
               :to="button.to"
+              v-on:click.native="saveReminder"
               :label="button.label"
               :role="button.role || 'default'"
               :iconLeft="button.iconLeft || getDefaultIcon(group, 'left')"
@@ -53,9 +53,11 @@ import BaseButton from '@/components/BaseButton.vue'
 import PrintPage from '@/components/PrintPage.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
+import { dataMethods } from '@/components/mixins/dataMethods.js'
 
 export default {
   name: 'NavFooter',
+  mixins: [dataMethods],
   props: {
     wrapperEl: {
       type: String,
@@ -79,6 +81,13 @@ export default {
         return group === 'left' ? 'arrow-left' : 'none'
       }
       return group === 'right' ? 'arrow-right' : 'none'
+    },
+    saveReminder: function () {
+      this.notify(
+        this.$t('saveRecommended', {exportLink: 'http://www.google.com'}),
+        'warning',
+        10000
+      )
     }
   }
 }
