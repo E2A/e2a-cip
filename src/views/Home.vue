@@ -125,6 +125,28 @@
         </BaseGutterWrapper>
       </BaseWidthWrapper>
     </BaseSectionWrapper>
+
+    <!-- Acknowledgements -->
+    <BaseSectionWrapper
+      el="div"
+      border
+    >
+      <BaseHeading
+        :level="3"
+        centered
+      >
+        {{$t('home.acknowldgementTitle')}}
+      </BaseHeading>
+      <BaseWidthWrapper
+        :class="space.paddingTop"
+      >
+        <BaseBodyText
+          :content="$t('home.acknowledgementText')"
+          :class="base.centeredSubheads"
+           size="zeta"
+        />
+      </BaseWidthWrapper>
+    </BaseSectionWrapper>
   </article>
 </template>
 
