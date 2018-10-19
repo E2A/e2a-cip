@@ -56,6 +56,8 @@
       <FileExport
         size="default"
         align="center"
+        :label="$t('fileUpload.exportLabel')"
+        :selectLabel="$t('fileUpload.exportSelectFormat')"
       />
     </BaseSectionWrapper>
   </article>

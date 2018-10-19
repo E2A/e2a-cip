@@ -25,6 +25,11 @@
             iconRight="arrow-right"
           />
         </div>
+
+         <BaseBodyText
+         :class="space.paddingTop"
+          :content="$t('setup.saveDataReminder', {exportLink: `/export/${this.$route.name}`})"
+         />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
 
@@ -46,6 +51,7 @@
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
 import BaseCalloutBox from '@/components/BaseCalloutBox.vue'
 import SetupInput from '@/components/SetupInput.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
@@ -59,6 +65,7 @@ export default {
     BaseSectionWrapper,
     BaseWidthWrapper,
     BaseHeading,
+    BaseBodyText,
     BaseCalloutBox,
     SetupInput,
     BaseButtonLink,
@@ -85,6 +92,9 @@ export default {
     updateInput: function () {
       this.inputKey = this.getItemCount('all')
     }
+  },
+  created () {
+    console.log(this.$route.name)
   }
 }
 </script>
