@@ -68,7 +68,7 @@ en:
     restoreActivities: Restore your activities
     addActivities: Add your activities
     editActivities: Edit your activities
-    saveDataReminder: 'Your web browser will automatically keep your data present. However, **this is not a gurantee that your data will always be saved.** We recommend you save your data manually on a regular basis to make sure you don't lose any data. There are many prompts to save your data and you can click [here](%{exportLink}) to save your data.'
+    saveDataReminder: "Your web browser will automatically keep your data present. However, **this is not a gurantee that your data will always be saved.** We recommend you save your data manually on a regular basis to make sure you don't lose any data. There are many prompts to save your data and you can click [here](%{exportLink}) to save your data."
   userRoles:
     role1: NGO
     role2: Youth Advocate
