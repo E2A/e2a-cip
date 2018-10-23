@@ -114,7 +114,8 @@ export default {
 
   .open-indicator {
     $size: 0.7em; // matched roughly to original size but in ems
-    background-image: url('../assets/images/icons/_external/arrow-down-midtone.svg') !important;
+    // arrow-down-midtone.svg, base64 encoded so the native app can find it
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTggMTAuMjQ5bDUuNjk0LTUuODQ0YTEuMzcgMS4zNyAwIDAgMSAxLjg4NS0uMDU4Yy41MzcuNDg1LjU2NCAxLjI5Ni4wNiAxLjgxM0w4IDE0IC4zNiA2LjE2YTEuMjQ5IDEuMjQ5IDAgMCAxIC4wNjEtMS44MTMgMS4zNyAxLjM3IDAgMCAxIDEuODg1LjA1OEw4IDEwLjI1eiIgZmlsbD0iIzhEQTNDMCIgZmlsbC1ydWxlPSJub256ZXJvIi8+PC9zdmc+) !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: contain !important;
@@ -146,7 +147,8 @@ export default {
     // clear button
     .clear {
       $size: 0.6em;
-      background-image: url('../assets/images/icons/_external/close-midtone.svg') !important;
+      // arrow-down-midtone.svg, base64 encoded so the native app can find it
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTggNi4xNDRsNC43Ni00Ljc2YTEuMzEzIDEuMzEzIDAgMCAxIDEuODU2IDEuODU3TDkuODU2IDhsNC43NiA0Ljc2YTEuMzEzIDEuMzEzIDAgMCAxLTEuODU3IDEuODU2TDggOS44NTZsLTQuNzYgNC43NmExLjMxMyAxLjMxMyAwIDAgMS0xLjg1Ni0xLjg1N0w2LjE0NCA4bC00Ljc2LTQuNzZhMS4zMTIgMS4zMTIgMCAxIDEgMS44NTctMS44NTZMOCA2LjE0NHoiIGZpbGw9IiM4REEzQzAiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==) !important;
       background-position: center !important;
       background-repeat: no-repeat !important;
       background-size: contain !important;
