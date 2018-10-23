@@ -84,12 +84,23 @@
       </BaseHeading>
       <ChartItems
         :chartNames="['activityTypeBudget', 'activityTypeCount']"
+        :questions="[
+          {
+            name: 'activityTypeBudget',
+            questions: findQuestions('activityTypeBudgetQuestions')
+          },
+          {
+            name: 'activityTypeCount',
+            questions: findQuestions('activityTypeCountQuestions')
+          }
+        ]"
       />
     </BaseWidthWrapper>
   </BaseSectionWrapper>
 </template>
 
 <script>
+import i18n from '@/i18n.js'
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
@@ -123,6 +134,11 @@ export default {
       setupTitle: this.getItemValue('setup', 'title'),
       setupRole: this.getItemValue('setup', 'role'),
       setupCountry: this.getItemValue('setup', 'countryName')
+    }
+  },
+  methods: {
+    findQuestions (translationKey) {
+      return Object.values(i18n.messages[i18n.locale].chartTitles[translationKey]).map((question, index) => this.$t(`chartTitles.${translationKey}.${index + 1}`))
     }
   }
 }

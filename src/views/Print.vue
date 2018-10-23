@@ -8,13 +8,11 @@
     <ResultsCharts />
 
     <!-- Global Recommendations -->
-    <BaseSectionWrapper
-      border
-    >
+    <BaseSectionWrapper border>
       <BaseHeading
-        :level="1"
-        centered
+        :level="2"
         :class="space.paddingBottom"
+        scale="gamma"
       >
         {{$t('print.globalRecommendations.title')}}
       </BaseHeading>
@@ -22,25 +20,28 @@
         :class="space.paddingBottom"
       >
         <BaseBodyText :content="$t('print.globalRecommendations.content')" />
-      </BaseWidthWrapper>
 
-      <div
-        v-for="(recommendation, index) in globalRecommendations"
-        :key="`gR-${index}`"
-      >
-        <BaseHeading
-          v-if="recommendation.text"
-          :level="3"
-          :class="space.paddingBottom"
+        <BaseVerticalList
+          :items="globalRecommendations"
+          :class="[space.paddingTop, space.marginTop, border.top, border.secondary]"
         >
-         {{ $t('print.globalRecommendations.recommendation', { count: index+1 }) }}
-        </BaseHeading>
-        <BaseWidthWrapper
-          v-if="recommendation.text"
-        >
-          <BaseBodyText :content="recommendation.text" />
-        </BaseWidthWrapper>
-      </div>
+          <template slot-scope="{ item, index }">
+            <template v-if="item.text">
+              <BaseHeading
+                :level="2"
+                :centered="false"
+                :class="space.paddingBottomXnarrow"
+                weight="bold"
+                color="midtone"
+                scale="epsilon"
+              >
+               {{ $t('print.globalRecommendations.recommendation', { count: index+1 }) }}
+              </BaseHeading>
+              <BaseBodyText :content="item.text" />
+            </template>
+          </template>
+        </BaseVerticalList>
+      </BaseWidthWrapper>
 
     </BaseSectionWrapper>
 
@@ -93,6 +94,7 @@ import BaseProgressBar from '@/components/BaseProgressBar.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
+import BaseVerticalList from '@/components/BaseVerticalList.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
 import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
 import ActivitiesItemResultPrint from '@/components/ActivitiesItemResultPrint.vue'
@@ -117,6 +119,7 @@ export default {
     BaseSectionWrapper,
     BaseWidthWrapper,
     BaseGutterWrapper,
+    BaseVerticalList,
     PrintPage,
     ActivitiesList,
     ActivitiesTypeHeading,

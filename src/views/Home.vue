@@ -56,8 +56,14 @@
     <!-- How it works -->
     <BaseSectionWrapper>
       <BaseHeading :level="2" centered>{{$t('home.stepsTitle')}}</BaseHeading>
-      <BaseWidthWrapper width="wide" :class="space.paddingTop">
-        <BaseStepList :steps="steps" />
+      <BaseWidthWrapper
+        width="xwide"
+        :class="space.paddingTop"
+      >
+        <BaseStepList
+          :steps="steps"
+          size="small"
+        />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
 
@@ -119,6 +125,28 @@
         </BaseGutterWrapper>
       </BaseWidthWrapper>
     </BaseSectionWrapper>
+
+    <!-- Acknowledgements -->
+    <BaseSectionWrapper
+      el="div"
+      border
+    >
+      <BaseHeading
+        :level="3"
+        centered
+      >
+        {{$t('home.acknowldgementTitle')}}
+      </BaseHeading>
+      <BaseWidthWrapper
+        :class="space.paddingTop"
+      >
+        <BaseBodyText
+          :content="$t('home.acknowledgementText')"
+          :class="base.centeredSubheads"
+           size="zeta"
+        />
+      </BaseWidthWrapper>
+    </BaseSectionWrapper>
   </article>
 </template>
 
@@ -153,7 +181,7 @@ export default {
     ClearItems
   },
   computed: {
-    steps: function () {
+    steps () {
       return Object.values(i18n.messages[i18n.locale].home.steps).map((step, index) => {
         return {
           title: this.$t(`home.steps.step${index + 1}.title`),
@@ -162,7 +190,7 @@ export default {
       })
     }
   },
-  data: function () {
+  data () {
     return {
       electron: this.checkElectron()
     }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="this.$route.name !== 'export'">
     <header :class="base.wrapper">
       <BaseGutterWrapper
         :class="base.leftPane"

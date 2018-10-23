@@ -11,6 +11,7 @@ import Assessment from './views/Assessment.vue'
 import Results from './views/Results.vue'
 import Advocate from './views/Advocate.vue'
 import Print from './views/Print.vue'
+import Export from './views/Export.vue'
 
 Vue.use(Router)
 
@@ -73,6 +74,12 @@ export default new Router({
       path: '/print',
       name: 'print',
       component: Print
+    },
+    {
+      path: '/export/:redirect',
+      name: 'export',
+      component: Export,
+      props: true
     }
 
   ],
