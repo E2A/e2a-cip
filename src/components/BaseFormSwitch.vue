@@ -6,7 +6,10 @@
   >
     <input
       @change="emitChange($event)"
-      :class="base.switch"
+      :class="[
+        base.switch,
+        {[base.enhanced]: supportStyledCheckbox}
+      ]"
       :name="name"
       :id="name"
       :value="value"
@@ -44,6 +47,11 @@ export default {
     labelOff: String,
     error: String
   },
+  data () {
+    return {
+      supportStyledCheckbox: false
+    }
+  },
   components: {
     BaseFormLabel,
     BaseCalloutBox
@@ -57,6 +65,11 @@ export default {
   },
   created () {
     this.checked = this.value
+
+    // detect Edge
+    if (navigator.userAgent.indexOf('Edge') === -1) {
+      this.supportStyledCheckbox = true
+    }
   }
 }
 </script>
@@ -71,17 +84,20 @@ export default {
 @import '~styleConfig/borders';
 
 .switch {
-  $height: 2.6rem;
-  $width: 8rem;
-  $gutter: 0.2rem;
-
   composes: default from 'styles/animation.scss';
   composes: scaleZeta display uppercase bold from 'styles/type.scss';
   composes: default round from 'styles/borders.scss';
   display: inline-block;
   height: 2em;
   width: 2em;
+}
 
+.enhanced {
+  $gutter: 0.2rem;
+  $height: 2.6rem;
+  $width: 8rem;
+
+  // wrap all of this in a feature query to prevent IE and Opera from rendering it
   @supports (width: calc(50% - #{$gutter})) {
     border-radius: 6px;
     cursor: pointer;
