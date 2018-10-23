@@ -6,7 +6,10 @@
   >
     <input
       @change="emitChange($event)"
-      :class="base.switch"
+      :class="[
+        base.switch,
+        {[base.enhanced]: supportStyledCheckbox}
+      ]"
       :name="name"
       :id="name"
       :value="value"
@@ -44,6 +47,11 @@ export default {
     labelOff: String,
     error: String
   },
+  data () {
+    return {
+      supportStyledCheckbox: false
+    }
+  },
   components: {
     BaseFormLabel,
     BaseCalloutBox
@@ -57,78 +65,83 @@ export default {
   },
   created () {
     this.checked = this.value
+
+    // detect Edge
+    if (navigator.userAgent.indexOf('Edge') === -1) {
+      this.supportStyledCheckbox = true
+    }
   }
 }
 </script>
 
 <style lang="scss" module="base">
 // https://danklammer.com/articles/simple-css-toggle-switch/
+// https://codersblock.com/blog/checkbox-trickery-with-css/
+// https://thestizmedia.com/radio-buttons-as-toggle-buttons-with-css/
+// https://stackoverflow.com/questions/18449299/css-turn-2-radio-buttons-into-1-switch
+
 @import '~styleConfig/color';
 @import '~styleConfig/borders';
 
 .switch {
-  $height: 2.6rem;
-  $width: 8rem;
-  $gutter: 0.2rem;
-
   composes: default from 'styles/animation.scss';
   composes: scaleZeta display uppercase bold from 'styles/type.scss';
   composes: default round from 'styles/borders.scss';
-  appearance: none;
-  background-color: color('light');
-  border-radius: 6px;
-  color: color('midtone');
-  cursor: pointer;
   display: inline-block;
-  height: $height;
-  width: $width;
+  height: 2em;
+  width: 2em;
+}
 
-  &:focus {
-    outline: none;
-  }
+.enhanced {
+  $gutter: 0.2rem;
+  $height: 2.6rem;
+  $width: 8rem;
 
-  &::before,
-  &::after {
-    border-radius: $border-radius;
-    display: inline-block;
-    line-height: $height;
-    text-align: center;
-    text-transform: uppercase;
-    width: 50%;
+  // wrap all of this in a feature query to prevent IE and Opera from rendering it
+  @supports (width: calc(50% - #{$gutter})) {
+    border-radius: 6px;
+    cursor: pointer;
+    color: color('midtone');
+    appearance: none;
+    background-color: color('light');
+    width: $width;
+    height: $height;
 
-    // add some fancier gutters if calc() is supported
-    @supports (width: calc(50% - #{$gutter})) {
-      width: calc(50% - #{$gutter});
-      line-height: calc(#{$height - ($gutter * 2)} - #{border-w('thin') * 2});
+    &:focus {
+      outline: none;
     }
-  }
 
-  &::before {
-    content: attr(data-label-on);
+    &::before,
+    &::after {
+      border-radius: $border-radius;
+      display: inline-block;
+      line-height: calc(#{$height - ($gutter * 2)} - #{border-w('thin') * 2});
+      text-align: center;
+      text-transform: uppercase;
+      width: calc(50% - #{$gutter});
+    }
 
-    @supports (width: calc(50% - #{$gutter})) {
+    &::before {
+      content: attr(data-label-on);
       margin: $gutter 0 $gutter $gutter;
     }
-  }
 
-  &::after {
-    background-color: color('warning');
-    color: color('white');
-    content: attr(data-label-off);
-
-    @supports (width: calc(50% - #{$gutter})) {
+    &::after {
+      background-color: color('warning');
+      color: color('white');
+      content: attr(data-label-off);
       margin: $gutter $gutter $gutter 0;
     }
-  }
 
-  &[value="true"]::before {
-    background-color: color('success');
-    color: color('white');
-  }
+    &[value="true"]::before {
+      background-color: color('success');
+      color: color('white');
+    }
 
-  &[value="true"]::after {
-    background-color: transparent;
-    color: color('midtone');
+    &[value="true"]::after {
+      background-color: transparent;
+      color: color('midtone');
+    }
   }
 }
 </style>

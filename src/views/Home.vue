@@ -127,13 +127,10 @@
     </BaseSectionWrapper>
 
     <!-- Acknowledgements -->
-    <BaseSectionWrapper
-      el="div"
-      border
-    >
+    <BaseSectionWrapper border>
       <BaseHeading
-        :level="3"
-        centered
+        :level="2"
+        scale="gamma"
       >
         {{$t('home.acknowldgementTitle')}}
       </BaseHeading>
@@ -143,7 +140,7 @@
         <BaseBodyText
           :content="$t('home.acknowledgementText')"
           :class="base.centeredSubheads"
-           size="zeta"
+          size="zeta"
         />
       </BaseWidthWrapper>
     </BaseSectionWrapper>

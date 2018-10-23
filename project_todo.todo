@@ -6,12 +6,12 @@
 # Additional scope items:
 
  # Browser testing/debugging/deployment
- ☐ Debug electron SVG issues:
-   ☐ Use debugging protocol outlined in README.
- ☐ Test in IE/windows
-   ☐ header is breaking - flexbox?
-   ☐ svg logo aspect ratios breaking
-   ☐ setup page does not validate and continue btn never appears
+ ✔ Debug electron SVG issues: @done (18-10-23 12:49)
+   ✔ Use debugging protocol outlined in README. @done (18-10-23 12:49)
+ ✔ Test in IE/windows @done (18-10-23 11:28)
+   ✔ header is breaking - flexbox? @done (18-10-23 11:28)
+   ✔ svg logo aspect ratios breaking @done (18-10-23 11:28)
+   ✔ setup page does not validate and continue btn never appears @done (18-10-23 11:28)
 
  # Nice to have
  ☐ If there is zero budget, show an empty state instead of a chart (e.g. "No budget in your plan")
