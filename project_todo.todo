@@ -6,8 +6,8 @@
 # Additional scope items:
 
  # Browser testing/debugging/deployment
- ☐ Debug electron SVG issues:
-   ☐ Use debugging protocol outlined in README.
+ ✔ Debug electron SVG issues: @done (18-10-23 12:49)
+   ✔ Use debugging protocol outlined in README. @done (18-10-23 12:49)
  ✔ Test in IE/windows @done (18-10-23 11:28)
    ✔ header is breaking - flexbox? @done (18-10-23 11:28)
    ✔ svg logo aspect ratios breaking @done (18-10-23 11:28)
