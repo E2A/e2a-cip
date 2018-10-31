@@ -36,6 +36,7 @@ fr:
     downloadTitle: Télécharger les versions hors ligne
     downloadBlurb: |-
       Si vous avez des problèmes avec votre navigateur, si vous voulez accéder à l'application hors ligne ou simplement utiliser l'application sur votre bureau sans utiliser de navigateur, vous pouvez télécharger l'une des versions suivantes.
+
       *Remarque* : L'application fonctionnera toujours dans le navigateur même si vous perdez la connexion à Internet. Une option portable sans installation nécessaire (c'est-à-dire une seule version.exe) de l'application est disponible pour Windows, mais la taille du fichier est plus grande.
       ### Instructions d'installation :
       - Pour **Macintosh** décompressez le fichier et utilisez le DMG pour installer l'application.
@@ -43,12 +44,17 @@ fr:
     downloadMac: Macintosh (51 Mo)
     # Do Not Translate
     downloadMacUrl: https://github.com/E2A/e2a-electron-builds/raw/master/mac-installer.zip
-    downloadWindows: Windows (45 Mo)
-    # Do Not Translate
-    downloadWindowsUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer.zip
+    # # Do Not Translate
     downloadWindowsPortable: Windows Portable (67MO)
     # Do Not Translate
     downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
+    acknowldgementTitle: Remerciements
+    acknowledgementText: |-
+      Le projet Evidence to Action (E2A) remercie le soutien généreux de l’Agency for International Development des États-Unis (USAID) pour la création de ce projet, Sans nous! Un outil numérique pour une planification adaptée à l'AYRH.
+
+      Nous remercions les collègues qui ont participé à une petite consultation d'experts pour fournir une analyse initiale de l'outil et des commentaires critiques, notamment Patricia MacDonald, Melissa Freeman, Teshome Woldemedhin, Zema Mirza et Michal Avni de l'USAID; Emily Sullivan, Planification familiale 2020; Amy Uccello, PSI; Adriana Martin Huber, Institut STPH; et Catherine Lane, Pathfinder International. Nous voudrions remercier Regina Benevides, Katie Chau et Allison Gato, anciennement de Pathfinder International, pour l’élaboration de la première version de cet outil. Au sein de E2A, nous voudrions remercier Rita Badiani, Eric Ramirez, Ginette Hounkanrin, Anjala Kanesathasan, Elizabeth Williams et Laurel Lundstrom de Pathfinder International pour le travail qu'ils ont mené à finaliser cet outil. Enfin, nous souhaitons remercier Bivee pour son aide dans la conception et la numérisation de l’outil.
+
+      Cette publication a été rendue possible grâce au soutien du Bureau de la santé mondiale et de la santé de la population et de la santé génésique de l’Agency for International Development des États-Unis, selon les termes de la sentence n ° AID-OAA-A-11-00024. Les opinions exprimées dans ce document sont celles de l’auteur ou des auteurs et ne reflètent pas nécessairement les vues de l’Agence américaine pour le développement international.
   setup:
     CIPTitle: Entrez le titre de votre plan
     configureCIP: "Tout d'abord, configurons votre plan"
@@ -61,6 +67,12 @@ fr:
     restoreActivities: Restaurer vos activités
     addActivities: Ajouter vos activités
     editActivities: Modifier vos activités
+    saveDataReminder: "Votre navigateur Web tiendra automatiquement vos données à\
+      \ jour. Cependant, ** ceci n'est pas une garantie que vos données seront toujours\
+      \ sauvegardées. ** Nous vous recommandons de sauvegarder vos données manuellement\
+      \ et régulièrement afin de vous assurer de ne perdre aucune donnée. Il existe\
+      \ de nombreuses invites pour enregistrer vos données et vous pouvez cliquer\
+      \ sur [ici] (%{exportLink}) pour enregistrer vos données."
   userRoles:
     role1: ONG
     role2: Défenseur de la jeunesse
@@ -369,6 +381,84 @@ fr:
         \ NL, Vansia D, et al. Comparer les services de santé adaptés aux jeunes aux\
         \ normes de soins via le cas \"Girl Power-Malawi\" : une étude de cohorte\
         \ quasi-expérimentale. J Acquir Immune Defic Syndr. 1er août 3018. doi: 10.1097/QAI.0000000000001830."
+      resources:
+        resource1:
+          title: 'Titre de la ressource'
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
+          url: /uploads/resources/bestpractice1.png
+        resource2:
+          title: 'Ce qui ne fonctionne pas dans le domaine de la santé sexuelle et
+            reproductive des adolescents: un examen des données probantes sur les
+            interventions communément acceptées en tant que meilleures pratiques.'
+          teaser: |-
+            Chandra-Mouli, V., Lane, C. et Wong, S. (2015). Ce qui ne fonctionne pas dans le domaine de la santé sexuelle et reproductive des adolescents: un examen des données probantes sur les interventions communément acceptées en tant que meilleures pratiques. Global Health: Science and Practice, 3 (3), 333-340.
+          # Do Not Translate
+          url: http://www.ghspjournal.org/content/3/3/333.short
+        resource3:
+          title: 'Pratiques à fort impact en planification familiale (HIP). Services
+            de contraception adaptés aux adolescents: intégration des éléments adaptés
+            aux adolescents dans les services de contraception existants.'
+          teaser: |-
+            Pratiques à fort impact en planification familiale (HIP). Services de contraception adaptés aux adolescents: intégration des éléments adaptés aux adolescents dans les services de contraception existants. Washington (DC): USAID; 2015.
+          # Do Not Translate
+          url: https://www.fphighimpactpractices.org/afcs
+        resource4:
+          title: Conférence internationale sur la population et le développement
+          teaser: |-
+            Journal de la santé des adolescents. Janvier 2015. Volume 56, numéro 1, supplément, S1 - S60: Conférence internationale sur la population et le développement.
+          # Do Not Translate
+          url: http://www.jahonline.org/issue/S1054-139X(14)X0004-2
+        resource5:
+          title: 'Interventions visant à prévenir les grossesses non désirées et répétées
+            chez les jeunes des pays à revenu faible ou intermédiaire: examen systématique
+            de la littérature publiée et de la littérature grise'
+          teaser: |-
+            Michelle J. Hindin et al., «Interventions visant à prévenir les grossesses non désirées et répétées chez les jeunes des pays à revenu faible ou intermédiaire: examen systématique de la littérature publiée et de la littérature grise», Journal of Adolescent Health 59, no. 3 (2016): S8-S15.
+          # Do Not Translate
+          url: https://www.ncbi.nlm.nih.gov/pubmed/27562452
+        resource6:
+          title: 'Prévenir les grossesses précoces et les mauvais résultats en matière
+            de procréation chez les adolescentes des pays en développement: ce que
+            disent les preuves.'
+          teaser: |-
+            Organisation mondiale de la santé. (2011). Prévenir les grossesses précoces et les mauvais résultats en matière de procréation chez les adolescentes des pays en développement: ce que disent les preuves.
+          # Do Not Translate
+          url: http://apps.who.int/iris/bitstream/10665/70813/1/WHO_FWC_MCA_12_02_eng.pdf
+        resource7:
+          title: "Not-to-the-health-based health care for adolescents: note d'orientation"
+          teaser: |-
+            Organisation mondiale de la santé (2015). "Une approche optimisée pour améliorer la qualité des services de santé destinés aux adolescents: note d'orientation."
+          # Do Not Translate
+          url: http://apps.who.int/iris/bitstream/10665/246105/1/WHO-FWC-MCA-15.06-fre.pdf?ua=1
+        resource8:
+          title: 'Notre avenir: une commission du Lancet sur la santé et le bien-être
+            des adolescents'
+          teaser: |-
+            Patton, George C. et al. (2016). «Notre avenir: une commission du Lancet sur la santé et le bien-être des adolescents». The Lancet 387.10036: 2423-2478.
+        resource9:
+          title: 'Utilisation de la contraception par les jeunes: Des interventions
+            efficaces Un guide de référence.'
+          teaser: |-
+            Population Reference Bureau (2017). Utilisation de la contraception par les jeunes: Des interventions efficaces Un guide de référence.
+          # Do Not Translate
+          url: http://www.prb.org/pdf17/PRB%20Youth%20Policies%20Reference%20Guide.pdf
+        resource10:
+          title: 'Action mondiale accélérée pour la santé des adolescents (AA-HA!):
+            Conseils pour soutenir la mise en œuvre dans les pays.'
+          teaser: |-
+            QUI. (2017). Action mondiale accélérée pour la santé des adolescents (AA-HA!): Conseils pour soutenir la mise en œuvre dans les pays.
+          # Do Not Translate
+          url: http://apps.who.int/iris/bitstream/handle/10665/255415/9789241512343-fra.pdf?sequence=1
+        resource11:
+          title: 'Normes mondiales pour des services de santé de qualité pour les
+            adolescents: guide pour la mise en œuvre d''une approche normalisée visant
+            à améliorer la qualité des services de santé pour les adolescents.'
+          teaser: |-
+            OMS / ONUSIDA (2015). Normes mondiales pour des services de santé de qualité pour les adolescents: guide pour la mise en œuvre d'une approche normalisée visant à améliorer la qualité des services de santé pour les adolescents.
+          # Do Not Translate
+          url: http://apps.who.int/iris/bitstream/handle/10665/183935/9789241549332_vol1_eng.pdf?sequence=1
     bestPractice2:
       title: "Garantir l'accès à la gamme complète des méthodes contraceptives"
       # Do Not Translate
@@ -452,6 +542,79 @@ fr:
           [^15]: Centres de contrôle des maladies. “Efficacité des méthodes de planification familiale.” 2014. [https://www.cdc.gov/reproductivehealth/contraception/unintendedpregnancy/pdf/Family-Planning-Methods-2014.pdf] Consulté le 7 août 2018.
 
           [^16]: Fikree FF, Abshiro WK, Mai MM, et al. Renforcer les services de santé adaptés aux jeunes en élargissant le choix des méthodes pour inclure les contraceptifs réversibles à longue durée d’action (MLD) pour les jeunes Éthiopiens. Afr J Reprod Health. 2017; 21[3]: 37-48.
+      resources:
+        resource1:
+          title: Titre de la ressource
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
+          url: /uploads/resources/bestpractice1.png
+        resource2:
+          title: 'Voies de changement: comment l''introduction du DMPA-SC peut avoir
+            un impact sur un programme national de planification familiale'
+          teaser: |-
+            Politique de santé + (2017). Voies de changement: comment l'introduction du DMPA-SC peut avoir un impact sur un programme national de planification familiale
+          # Do Not Translate
+          url: http://www.healthpolicyplus.com/ns/pubs/7133-7240_PPathwaysofChangeBriefJan.pdf
+        resource3:
+          title: 'Pratiques à fort impact en planification familiale (HIP). Services
+            de contraception adaptés aux adolescents: intégration des éléments adaptés
+            aux adolescents dans les services de contraception existants.'
+          teaser: |-
+            Pratiques à fort impact en planification familiale (HIP). Services de contraception adaptés aux adolescents: intégration des éléments adaptés aux adolescents dans les services de contraception existants.
+          # Do Not Translate
+          url: https://www.fphighimpactpractices.org/afcs
+        resource4:
+          title: 'Interventions visant à prévenir les grossesses non désirées et répétées
+            chez les jeunes des pays à revenu faible ou intermédiaire: examen systématique
+            de la littérature publiée et de la littérature grise'
+          teaser: |-
+            Michelle J. Hindin et al., «Interventions visant à prévenir les grossesses non désirées et répétées chez les jeunes des pays à revenu faible ou intermédiaire: examen systématique de la littérature publiée et de la littérature grise», Journal of Adolescent Health 59, no. 3 (2016): S8-S15.
+          # Do Not Translate
+          url: https://www.ncbi.nlm.nih.gov/pubmed/27562452
+        resource5:
+          title: 'Prévention des grossesses non désirées chez les jeunes femmes au
+            Kenya: étude de cohorte prospective visant à proposer des implants contraceptifs'
+          teaser: |-
+            Hubacher, D., Olawo, A., C. Manduku, J. Kiarie et P.L.L. «Prévenir les grossesses non désirées chez les jeunes femmes au Kenya: étude de cohorte prospective visant à proposer des implants contraceptifs.» Contraception 86 (2012): 511-517. DOI: 10.1016 / j.contraception.2012.04.013
+          # Do Not Translate
+          url: https://www.ncbi.nlm.nih.gov/pubmed/22633247
+        resource6:
+          title: Fiches signalétiques pour conseiller les adolescents sur la contraception
+          teaser: |-
+            Pathfinder International (2016). Fiches signalétiques pour conseiller les adolescents sur la contraception.
+          # Do Not Translate
+          url: http://www.pathfinder.org/wp-content/uploads/2016/11/Adolescent-Contraception-Cue- Cards.pdf
+        resource7:
+          title: "Algorithme d'utilisation de la stratégie de conseil équilibré Plus"
+          teaser: |-
+            Population Council (2015). Algorithme d'utilisation de la stratégie de conseil équilibré Plus.
+          # Do Not Translate
+          url: https://www.k4health.org/sites/default/files/Balanced%20Counseling%20Strategy%20Plus%20Algorithm.pdf
+        resource8:
+          title: 'Aide à l''emploi pour adolescent: un outil de référence pratique
+            pour les agents de santé de niveau primaire'
+          teaser: |-
+            Organisation mondiale de la santé (2010). Aide-mémoire pour adolescents: un outil de référence pratique pour les agents de santé de niveau primaire. Genève: Organisation mondiale de la santé.
+          # Do Not Translate
+          url: http://apps.who.int/iris/bitstream/handle/10665/44387/9789241599962_eng.pdf?sequence=1
+        resource9:
+          title: 'Compétences essentielles en matière de santé et de développement
+            des adolescents pour les prestataires de soins de santé primaires: comprenant
+            un outil permettant d’évaluer l’élément santé et développement des adolescents
+            dans la formation initiale des prestataires de soins de santé.'
+          teaser: |-
+            OMS (2015). Compétences essentielles en matière de santé et de développement des adolescents pour les prestataires de soins de santé primaires: comprenant un outil permettant d’évaluer l’élément santé et développement des adolescents dans la formation initiale des prestataires de soins de santé. Genève: Organisation mondiale de la santé.
+          # Do Not Translate
+          url: http://apps.who.int/iris/bitstream/handle/10665/148354/9789241508315_eng.pdf?sequence=1
+        resource10:
+          title: 'Normes mondiales pour des services de santé de qualité pour les
+            adolescents: guide pour la mise en œuvre d''une approche normalisée visant
+            à améliorer la qualité des services de santé pour les adolescents.'
+          teaser: |-
+            Normes mondiales pour des services de santé de qualité pour les adolescents: guide pour la mise en œuvre d'une approche normalisée visant à améliorer la qualité des services de santé pour les adolescents.
+          # Do Not Translate
+          url: http://apps.who.int/iris/bitstream/handle/10665/183935/9789241549332_vol1_eng.pdf?sequence=1
     bestPractice3:
       title: "Une forte coordination entre les secteurs qui affectent l'AYRH"
       # Do Not Translate
@@ -511,6 +674,32 @@ fr:
         [^26]: Secrétaire général des Nations unies. La stratégie mondiale pour la santé des femmes, des enfants et des adolescents (2016-2030) : survie, épanouissement, transformation. 2015. [http://www.who.int/life-course/partners/globalstrategy/globalstrategyreport2016-2030-lowres.pdf?ua=1] Consulté le 3 mai 2017.
 
         [^27]: Chandra-Mouli et al. Programa Geração Biz, Mozambique : comment cette initiative en faveur de la santé des adolescents est-elle passée d'un programme pilote à un programme national, et pour quels résultats ? Santé reproductive 2015 ; 12:12.
+      resources:
+        resource1:
+          title: 'Titre de la ressource'
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
+          url: /uploads/resources/bestpractice1.png
+        resource2:
+          title: "Manuel d'orientation pour l'élaboration de stratégies nationales\
+            \ pour la santé des adolescents et des jeunes dans les États membres de\
+            \ la CEDEAO."
+          teaser: |-
+            Organisation ouest-africaine de la santé (2016). Manuel d'orientation pour l'élaboration de stratégies nationales pour la santé des adolescents et des jeunes dans les États membres de la CEDEAO.
+        resource3:
+          title: 'Notre avenir: une commission du Lancet sur la santé et le bien-être
+            des adolescents'
+          teaser: |-
+            Patton, George C. et al. (2016). «Notre avenir: une commission du Lancet sur la santé et le bien-être des adolescents». The Lancet 387.10036: 2423-2478.
+          # Do Not Translate
+          url: http://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)00579-1/abstract
+        resource4:
+          title: "Guide d'évaluation intersectorielle de la jeunesse."
+          teaser: |-
+            TU AS DIT; Equip3 (2009). Guide d'évaluation intersectorielle de la jeunesse.
+          # Do Not Translate
+          url: https://static.globalinnovationexchange.org/s3fs-public/asset/document/Guide%20to%20Cross-Sectoral-%20Youth%20Assessments.pdf?cEzNMwlDyHmmAOdYf5PNlWGiCo617PLB
     bestPractice4:
       title: "Participation des jeunes aux programmes de santé reproductive des adolescents\
         \ et des jeunes (AYRH)"
@@ -588,6 +777,80 @@ fr:
         [^39]: Chandra-Mouli V, Lane C, Wong S. Ce qui ne fonctionne pas dans le domaine de la santé sexuelle et reproductive des adolescents : Examen des données probantes sur les interventions communément acceptées comme pratiques exemplaires. Santé mondiale : Science et pratique. 2015; 3(3): 333-40.
 
         [^40]: Babalola S, Ramirez-Ferrero E, Muya A. Enquête sur les attitudes et comportements sexuels des jeunes Tanzaniens : Évaluation de base dans cinq régions : Rapport de résultats. Dar es Salaam : HealthScope Tanzania et le Centre Johns Hopkins pour les programmes de communication ; 2005.
+      resources:
+        resource1:
+          title: 'Titre de la ressource'
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
+          url: /uploads/resources/bestpractice1.png
+        resource2:
+          title: 'Titre de la ressource'
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
+          url: /uploads/resources/bestpractice1.png
+        resource3:
+          title: 'Une approche axée sur les normes pour améliorer la qualité des services
+            de santé destinés aux adolescents: Note d''orientation.'
+          teaser: |-
+            Organisation mondiale de la santé (2015). Une approche axée sur les normes pour améliorer la qualité des services de santé destinés aux adolescents: Note d'orientation.
+          # Do Not Translate
+          url: http://apps.who.int/iris/bitstream/10665/184035/1/WHO_FWC_MCA_15.06_eng.pdf
+        resource4:
+          title: "Manuel d'orientation pour l'élaboration de stratégies nationales\
+            \ pour la santé des adolescents et des jeunes dans les États membres de\
+            \ la CEDEAO."
+          teaser: |-
+            Organisation ouest-africaine de la santé (2016). Manuel d'orientation pour l'élaboration de stratégies nationales pour la santé des adolescents et des jeunes dans les États membres de la CEDEAO.
+        resource5:
+          title: 'Notre avenir: une commission du Lancet sur la santé et le bien-être
+            des adolescents'
+          teaser: |-
+            Patton, George C. et al. (2016). «Notre avenir: une commission du Lancet sur la santé et le bien-être des adolescents». The Lancet 387.10036: 2423-2478.
+          # Do Not Translate
+          url: http://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)00579-1/abstract
+        resource6:
+          title: Déclaration IMAP sur les modèles de prestation de services par les pairs pour les jeunes afin de fournir des services de santé sexuelle et reproductive aux jeunes.
+          teaser: |-
+            Fédération internationale de planification familiale (2016). Déclaration IMAP sur les modèles de prestation de services par les pairs pour les jeunes afin de fournir des services de santé sexuelle et reproductive aux jeunes.
+          # Do Not Translate
+          url: https://www.ippf.org/sites/default/files/2017-03/imap_peer%20provision.pdf
+        resource7:
+          title: "Plaider pour le changement chez les adolescents! Une boîte à outils\
+            \ pratique pour les jeunes afin de promouvoir l'amélioration de la santé\
+            \ et du bien-être des adolescents."
+          teaser: |-
+            OMS (2017). Plaider pour le changement chez les adolescents! Une boîte à outils pratique pour les jeunes afin de promouvoir l'amélioration de la santé et du bien-être des adolescents.
+          # Do Not Translate
+          url: http://www.who.int/pmnch/knowledge/publications/advocacy_toolkit.pdf?ua=1
+        resource8:
+          title: "Boîte à outils de formation USAID sur l'engagement des jeunes dans\
+            \ les pays DREAMS"
+          teaser: |-
+            Le pouvoir des jeunes (2017). Kit de formation USAID sur l'engagement des jeunes dans les pays DREAMS.
+          # Do Not Translate
+          url: http://www.youthpower.org/usaid-youth-engagement-training-dreams-countries
+        resource9:
+          title: 'Pouvoir, droits et participation: Guide pratique pour l''action
+            de la jeunesse dans le monde de l''après-2015'
+          teaser: |-
+            Plan UK (2015). Pouvoir, droits et participation: Guide pratique sur l'action des jeunes dans le monde de l'après-2015.
+          # Do Not Translate
+          url: http://restlessdevelopment.org/file/power-rights-andparticipation-pdf
+        resource10:
+          title: 'La redevabilité en action: Guide pratique à l''intention des jeunes
+            pour suivre les objectifs de développement durable.'
+          teaser: |-
+            Développement agité (2015). La redevabilité en action: Guide pratique à l'intention des jeunes pour suivre les objectifs de développement durable.
+          # Do Not Translate
+          url: http://restlessdevelopment.org/youth-led-monitoring-of-the-global-goals-toolkit
+        resource11:
+          title: Plaidoyer pour la santé reproductive des adolescents en Afrique subsaharienne.
+          teaser: |-
+            Advocates for Youth (1998). Plaidoyer pour la santé reproductive des adolescents en Afrique subsaharienne.
+          # Do Not Translate
+          url: http://www.advocatesforyouth.org/storage/advfy/documents/advocating.pdf
     bestPractice5:
       title: "Éducation à la vie familiale (EVF)"
       # Do Not Translate
@@ -712,6 +975,20 @@ fr:
         \ du Guatemala. PLos One. 2018;13(7):e0200513.\n\n[^42]: UNESCO. Nouvelles\
         \ données probantes, leçons et pratiques en matière d'éducation sexuelle globale\
         \ : une revue globale. Paris : UNESCO ; 2015.        "
+      resources:
+        resource1:
+          title: Titre de la ressource
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
+          url: /uploads/resources/bestpractice1.png
+        resource2:
+          title: 'QUI. (2017). Action mondiale accélérée pour la santé des adolescents
+            (AA-HA!): Conseils pour soutenir la mise en œuvre dans les pays.'
+          teaser: |-
+            QUI. (2017). Action mondiale accélérée pour la santé des adolescents (AA-HA!): Conseils pour soutenir la mise en œuvre dans les pays.
+          # Do Not Translate
+          url: http://apps.who.int/iris/bitstream/handle/10665/255415/9789241512343-fra.pdf?sequence=1
     bestPractice6:
       title: "Favoriser le soutien familial et communautaire en faveur de la santé\
         \ reproductive des adolescents et des jeunes (AYRH)"
@@ -772,6 +1049,67 @@ fr:
         [^52]: Svanemyr, J. et al. Créer un environnement favorable à la santé sexuelle et reproductive des adolescents : un cadre et des approches prometteuses. Journal of Adolescent Health. 2015; 56. S7-S14.
 
         [^53]: La boussole de santé. Projet sur les rôles, l'égalité et la transformation des sexes (GREAT). [https://www.thehealthcompass.org/sbcc-spotlights/gender-roles-equality-and-transformation-great-project] Consulté le 23 juin 2018.
+      resources:
+        resource1:
+          title: Titre de la ressource
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+        resource2:
+          title: Carte de pointage de la politique de planification familiale des jeunes
+          teaser: |-
+            Harris, S et al. (2017) Carte de score de la politique de planification familiale pour les jeunes. Avril 2017.
+          # Do Not Translate
+          url: www.prb.org/Publications/Reports/2017/Global-Youth-Family-Planning-Index.aspx
+        resource3:
+          title: 'Engagement des groupes communautaires: Changer les normes pour améliorer
+            la santé sexuelle et génésique'
+          teaser: |-
+            Plourde, K. et al., Engagement dans les groupes communautaires: Changer les normes pour améliorer la santé sexuelle et reproductive (Washington, DC: USAID, 2016).
+          # Do Not Translate
+          url: www.fphighimpactpractices.org/sites/fphips/files/hip_cge_brief.pdf
+        resource4:
+          title: 'Créer un environnement propice à la santé sexuelle et reproductive
+            des adolescents: cadre et approches prometteuses'
+          teaser: |-
+            Svanemyr, J. et al. 2015 «Créer un environnement favorable à la santé sexuelle et reproductive des adolescents: Un cadre et des approches prometteuses». Journal de la santé des adolescents 56. S7-S14.
+        resource5:
+          title: 'Participation de la société civile à la planification familiale:
+            examen de la programmation mondiale et des bases factuelles'
+          teaser: |-
+            Boydell, Victoria, Robin Keeley, Kumudha Aruldas et Karen Hardee. 2017. «Participation de la société civile à la planification familiale: examen de la programmation mondiale et des bases factuelles», document de travail. Washington, DC: Population Council, The Evidence Project.
+          # Do Not Translate
+          url: http://evidenceproject.popcouncil.org/wp-content/uploads/2017/12/India-CSO_Research-Report.pdf
+        resource6:
+          title: 'Faire participer les hommes et les garçons à la planification familiale:
+            Un guide de planification stratégique'
+          teaser: |-
+            Pratiques à fort impact en planification familiale (HIP). Faire participer les hommes et les garçons à la planification familiale: Un guide de planification stratégique. Washington (DC): USAID; 2017
+          # Do Not Translate
+          url: https://www.fphighimpactpractices.org/guides/engaging-men-and-boys-in-family-planning/
+        resource7:
+          title: 'Engagement des groupes communautaires: Changer les normes pour améliorer
+            la santé sexuelle et génésique'
+          teaser: |-
+            Pratiques à fort impact en planification familiale (HIP). Engagement des groupes communautaires: Changer les normes pour améliorer la santé sexuelle et génésique. Washington (DC): USAID; 2016
+          # Do Not Translate
+          url: https://www.fphighimpactpractices.org/briefs/community-group-engagement/
+        resource8:
+          title: 'Renforcement des partenariats entre les organisations de la société
+            civile et le gouvernement pour renforcer les approches impliquant les
+            hommes et les garçons en faveur de l''égalité des sexes et de la santé
+            et des droits au sexe: un instrument d''action'
+          teaser: |-
+            Promundo et UNFPA. (2016). Renforcement des partenariats entre les organisations de la société civile et le gouvernement pour intensifier les approches impliquant les hommes et les garçons pour l'égalité des sexes et la santé et les droits au sexe: un outil d'action. Washington, D.C .: Promundo-États-Unis et New York, NY: UNFPA.
+          # Do Not Translate
+          url: https://promundoglobal.org/wp-content/uploads/2017/01/50694-Scaling-up-Men-and-Boys-web-postprint.pdf
+        resource9:
+          title: 'Stratégies communautaires intégrées pour relier les services de
+            santé en matière de reproduction aux adolescents pour les adolescents:
+            une étude de cas.'
+          teaser: |-
+            Sotolongo J, Maison DL, Swanson S, et al. (2017). Stratégies communautaires intégrées pour relier les services de santé en matière de reproduction aux adolescents pour les adolescents: une étude de cas. Journal de la santé des adolescents 60: S45-S50.
+          # Do Not Translate
+          url: https://www.jahonline.org/article/S1054-139X(16)30879-5/pdf
     bestPractice7:
       title: "Donner aux filles les moyens d'agir pour la planification familiale/santé\
         \ reproductive"
@@ -825,6 +1163,98 @@ fr:
         [^61]: des filles, pas des épouses (Girls Not Brides) ; 2017. L'argument en faveur de l'âge minimum de 18 ans pour le mariage. [https://www.girlsnotbrides.org/wp-content/uploads/2017/12/Why-a-minimum-age-of-marriage-of-18.pdf] Consulté le 13 août 2018.
 
         [^62]: Promundo. Program M. [https://promundoglobal.org/programs/program-m/] Consulté le 14 août 2018.
+      resources:
+        resource1:
+          title: Titre de la ressource
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
+          url: /uploads/resources/bestpractice1.png
+        resource2:
+          title: Développement positif des jeunes en tant que stratégie de promotion de la santé sexuelle et reproductive des adolescents
+          teaser: |-
+            Gavin, Lorrie E., Richard F. Catalano et Christine M. Markham. (2010) "Le développement positif des jeunes en tant que stratégie visant à promouvoir la santé sexuelle et reproductive des adolescents." Journal de la santé des adolescents 46: S1-S6.
+        resource3:
+          title: "L'argument en faveur d'un âge minimum du mariage de 18 ans"
+          teaser: |-
+            Les filles ne sont pas mariées (2017). L'argument en faveur d'un âge minimum du mariage de 18 ans.
+          # Do Not Translate
+          url: https://www.girlsnotbrides.org/wp-content/uploads/2017/12/Why-a-minimum-age-of-marriage-of-18.pdf
+        resource4:
+          title: 'Perspectives et lacunes dans les programmes centrés sur les filles:
+            examen systématique'
+          teaser: |-
+            Haberland, Nicole A., Katharine J. McCarthy et Martha Brady. 2018. «Lacunes de la compréhension et des données probantes dans la programmation axée sur les filles: un examen systématique», mémoire de recherche n ° 3 du GIRL Center. New York: Population Council.
+          # Do Not Translate
+          url: http://www.popcouncil.org/uploads/pdfs/2018PGY_GIRLCenterResearchBrief_03.pdf
+        resource5:
+          title: 'Lutte contre la violence sexiste dans les programmes de santé de
+            l’USAID: Guide destiné aux responsables de programme du secteur de la
+            santé'
+          teaser: |-
+            Groupe de travail inter-agences sur le genre de l'USAID. 2008. Lutter contre la violence sexiste dans le cadre des programmes de santé de l’USAID: Guide pour les responsables de programme du secteur de la santé. Deuxième édition. Washington DC.
+        resource6:
+          title: 'Bâtir les actifs de protection des filles: une collection d’outils
+            pour la conception de programmes'
+          teaser: |-
+            Conseil de la population. 2016. Construire les actifs de protection des filles: recueil d’outils pour la conception de programmes. New York: Population Council.
+          # Do Not Translate
+          url: http://www.popcouncil.org/uploads/pdfs/2016PGY_GirlsProtectiveAssetsTools.pdf
+        resource7:
+          title: 'Interventions visant à prévenir les grossesses non désirées et à
+            répétition rapide chez les adolescentes: examen des données probantes
+            et des leçons tirées d''évaluations de grande qualité'
+          teaser: |-
+            Norton M, Chandra-Mouli V et Lane C. (2017). Interventions visant à prévenir les grossesses non désirées et à répétition rapide chez les adolescentes: examen des données probantes et des enseignements tirés d'évaluations de grande qualité. GHSP 5: 4.
+          # Do Not Translate
+          url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5752603/
+        resource8:
+          title: 'Planification familiale: l''impératif des adolescents'
+          teaser: |-
+            Presler-Marshall E et Jones N (2017). Planification familiale: l'impératif de l'adolescence. Overseas Development Institute.
+          # Do Not Translate
+          url: https://www.odi.org/sites/odi.org.uk/files/resource-documents/11646.pdf
+        resource9:
+          title: 'Brief: Programme d''autonomisation des adolescentes: Santé'
+          teaser: |-
+            Population Council (2017). Brief: Programme d'autonomisation des adolescentes: Santé.
+          # Do Not Translate
+          url: http://www.popcouncil.org/uploads/pdfs/2018PGY_AGEP-HealthBrief.pdf
+        resource10:
+          title: 'Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid
+            scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans
+            gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc
+            non est positum in nostra actione. Duo Reges: constructio interrete. Tu
+            quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim
+            a sapientia proficiscitur, id continuo debet expletum esse omnibus suis
+            partibus;'
+          teaser: |-
+            Lorem ipsum dolor assis amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille si lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+          # Do Not Translate
+          url: http://apps.who.int/iris/bitstream/10665/44691/1/9789241502214_eng.pdf
+        resource11:
+          title: "Version populaire de la section consacrée à la violence à l'égard\
+            \ des femmes et des filles du Plan d'action mondial pour renforcer le\
+            \ rôle du système de santé dans le cadre d'une action multisectorielle\
+            \ nationale visant à lutter contre la violence interpersonnelle, en particulier\
+            \ à l'encontre des femmes et des filles, et des enfants."
+          teaser: |-
+            OMS (2016). Version populaire de la section consacrée à la violence à l'égard des femmes et des filles du Plan d'action mondial pour renforcer le rôle du système de santé dans le cadre d'une action multisectorielle nationale visant à lutter contre la violence interpersonnelle, en particulier à l'encontre des femmes et des filles, et des enfants. Assemblée mondiale de la santé, résolution 69.5, mai 2016
+          # Do Not Translate
+          url: http://apps.who.int/gb/ebwha/pdf_files/WHA69/A69_9-en.pdf
+        resource12:
+          title: 'Eduquer les filles: jeter les bases de comportements positifs en
+            matière de santé sexuelle et reproductive'
+          teaser: |-
+            Pratiques à impact élevé (HIP) pour la planification familiale. Éduquer les filles: jeter les bases de comportements positifs en matière de santé sexuelle et reproductive. Washington DC. USAID, 2014.
+          # Do Not Translate
+          url: https://www.fphighimpactpractices.org/briefs/educating-girls/
+        resource13:
+          title: Boîte à outils de mesure du développement positif des jeunes
+          teaser: |-
+            Le pouvoir des jeunes (2017). Boîte à outils de mesure du développement positif des jeunes.
+          # Do Not Translate
+          url: http://www.youthpower.org/positive-youth-development-toolkit
   analysis:
     title: Analyser vos activités
     intro: |-
@@ -877,14 +1307,39 @@ fr:
   chartTitles:
     defaultGroupHeading: 'Intitulé du groupe par défaut'
     activityTypeCount: "% nombre d'activités par type"
+    activityTypeCountQuestions:
+      1: 'Les préjugés personnels des prestataires de soins de santé et du public
+        affectent l''utilisation des méthodes de planification familiale par les jeunes.
+        La répartition des activités par domaine reflète-t-elle une préoccupation
+        quant à la nécessité de remédier à ces préjugés dans les milieux communautaires
+        et de santé?'
     activityTypeBudget: "Budget % du total par type d'activité"
+    activityTypeBudgetQuestions:
+      1: 'Les politiques et stratégies gouvernementales élaborées dans le cadre d''un
+        processus bien coordonné de participation des parties prenantes constituent
+        le fondement de l''acceptation de l''utilisation de la planification familiale
+        par les jeunes dans les communautés. La répartition des activités par domaine
+        dans votre plan reflète-t-elle un souci suffisant de la coordination et de
+        la création d''un environnement favorable?'
     youthFocusBudget: "Budget % axé sur les jeunes"
     youthFocusCount: "Pourcentage d'activités axées sur les jeunes"
     youthCentricLabel: "Centré sur les jeunes"
     notYouthCentricLabel: "Pas axé sur les jeunes"
   print:
     previousStep: "Retourner à l'action sociale"
+    globalRecommendations:
+      title: "Principales recommandations d'action"
+      content: Vous trouverez ci-dessous des informations clés suggérées pour une action ciblée.
+      recommendation: Recommandation %{count}
   advocate:
+    globalRecommendations:
+      title: Ajouter des recommandations clés
+      content: "Maintenant que vous avez les résultats de votre plan, que devriez-vous\
+        \ faire ?\n\nUtilisez ces résultats pour faire avancer le dialogue sur les\
+        \ besoins des jeunes et les stratégies novatrices pour répondre à ces besoins.\
+        \ Sensibilisez le public à l'importance d'investir dans la santé reproductive\
+        \ des jeunes afin d'établir les bases menant à une meilleure santé pour les\
+        \ générations futures."
     print: Imprimez vos résultats pour les partager
     title: 'Aller de l''avant...'
     intro: |-
@@ -896,8 +1351,7 @@ fr:
       step1:
         title: Partager les résultats de cet exercice
         blurb: |-
-          Un des buts de cet exercice est de vous donner une idée de la mesure dans laquelle votre plan répond aux besoins des jeunes dans votre pays et de la mesure dans laquelle votre plan utilise les pratiques fondées sur des données probantes (EIP). Partagez les résultats de ce que vous avez appris. Utilisez la page des résultats pour préparer une présentation ou un rapport pour le reste de votre groupe de planification, le ministère de la Santé ou votre ONG locale. Utilisez les graphiques qui illustrent les proportions d'activités et le budget consacrés à la jeunesse et comparez-les aux données de votre pays sur la population des jeunes et les taux de prévalence de la contraception. Utilisez les pratiques fondées sur des données probantes (EIP)
-          pour suggérer des stratégies visant à renforcer votre plan.
+          Un des buts de cet exercice est de vous donner une idée de la mesure dans laquelle votre plan répond aux besoins des jeunes dans votre pays et de la mesure dans laquelle votre plan utilise les pratiques fondées sur des données probantes (EIP). Partagez les résultats de ce que vous avez appris. Utilisez la page des résultats pour préparer une présentation ou un rapport pour le reste de votre groupe de planification, le ministère de la Santé ou votre ONG locale. Utilisez les graphiques qui illustrent les proportions d'activités et le budget consacrés à la jeunesse et comparez-les aux données de votre pays sur la population des jeunes et les taux de prévalence de la contraception. Utilisez les pratiques fondées sur des données probantes (EIP)pour suggérer des stratégies visant à renforcer votre plan.
       step2:
         title: Démarrer une conversation
         blurb: |-
@@ -908,7 +1362,10 @@ fr:
           Un message qui ressort clairement des EIP est que la santé reproductive des adolescents et des jeunes (AYRH) s'épanouit dans des environnements où des services impartiaux sont fournis dans un environnement accueillant, où il existe un soutien multisectoriel et communautaire et où les jeunes comprennent leurs besoins en matière de santé reproductive et ont les compétences nécessaires pour demander des comptes aux responsables. Il existe une variété de ressources pour aider les jeunes et leurs alliés adultes à planifier des campagnes de sensibilisation efficaces.
   fileUpload:
     label: Exportez vos données
+    exportLabel: Exportez vos données
     selectFormat: "Sélectionnez un format d'exportation"
+    exportUrlText: JSON est exporté
+    exportSelectFormat: Sélectionnez un format à exporter
     directions: |-
       - Le format **JSON** est utilisé pour importer (et restaurer) vos données.
       - Le format **CSV** est utilisé pour une analyse ultérieure dans un éditeur de feuille de calcul.
@@ -939,6 +1396,8 @@ fr:
     defaultYouthCentered: Axé sur les jeunes ?
     defaultEIP: 'Pratiques fondées sur des données probantes (EIP)'
   # Misc Keys
+  saveRecommended: '** N''oubliez pas de sauvegarder vos données! ** Cliquez sur [ici]
+    (%{exportLink}) pour sauvegarder vos données et les utiliser hors ligne.'
   uniquenessError: "La valeur saisie dans %{field} n'est pas unique parmi %{entityType}."
   edit: Éditer
   dismissNotification: Ignorer ce message
