@@ -41,7 +41,7 @@ fr:
       ### Instructions d'installation :
       - Pour **Macintosh**, décompressez le fichier et utilisez DMG pour installer l'application.
       - Pour **Windows**, décompressez le dossier et exécutez le fichier .exe dans le dossier.
-    downloadMac: Macintosh (51 Mo)
+    downloadMac: Macintosh (51MB)
     # Do Not Translate
     downloadMacUrl: https://github.com/E2A/e2a-electron-builds/raw/master/mac-installer.zip
     # # Do Not Translate
