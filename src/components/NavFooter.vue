@@ -84,7 +84,7 @@ export default {
     },
     saveReminder: function () {
       this.notify(
-        this.$t('saveRecommended', {exportLink: `/export/${this.$route.name}`}),
+        this.$t('saveRecommended', {exportLink: '#'}),
         'warning',
         10000
       )

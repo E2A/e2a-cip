@@ -25,10 +25,9 @@
             iconRight="arrow-right"
           />
         </div>
-
          <BaseBodyText
          :class="space.paddingTop"
-          :content="$t('setup.saveDataReminder', {exportLink: `/export/${this.$route.name}`})"
+          :content="$t('setup.saveDataReminder', {exportLink: '#'})"
          />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
@@ -92,9 +91,6 @@ export default {
     updateInput: function () {
       this.inputKey = this.getItemCount('all')
     }
-  },
-  created () {
-    console.log(this.$route.name)
   }
 }
 </script>
