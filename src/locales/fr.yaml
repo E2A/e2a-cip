@@ -29,7 +29,7 @@ fr:
         blurb: |-
           Ensuite, vous pourrez en apprendre davantage sur les pratiques éclairées (PE), pratiques prometteuses pour améliorer l’AYRH. Vous utiliserez ce que vous avez appris sur les PE pour déterminer dans quelle mesure les activités de votre plan axées sur les jeunes sont alignées sur les PE. Vous obtiendrez vos résultats une fois ces deux étapes terminées !
       step4:
-        title: Get your results
+        title: Obtenez vos résultats
         blurb: |-
           Ensuite, vous pourrez en apprendre davantage sur les pratiques éclairées (PE), pratiques prometteuses pour améliorer l’AYRH. Vous utiliserez ce que vous avez appris sur les PE pour déterminer dans quelle mesure les activités de votre plan axées sur les jeunes sont alignées sur les PE. Vous verrez également un graphique illustrant le degré d'alignement des activités de votre plan aux PE. Enfin, en utilisant les informations sur les PE, vous aurez l’occasion de réviser et de renforcer les activités.
     getStartedButton: Commencer
@@ -71,7 +71,7 @@ fr:
       \ présentes. Cependant, **cela ne garantit pas que vos données seront enregistré\
       es.** Nous vous recommandons d'enregistrer vos données manuellement réguliè\
       rement pour vous assurer de ne perdre aucune donnée. Vous êtes invités réguliè\
-      rement à enregistrer vos données et pouvez cliquer [ici] (%{exportLink}) pour\
+      rement à enregistrer vos données et pouvez cliquer <a href=\"%{exportLink}\" class=\"electron-link\">ici</a> pour\
       \ enregistrer vos données."
   userRoles:
     role1: ONG
@@ -1258,7 +1258,7 @@ fr:
     defaultYouthCentered: Axé sur les jeunes ?
     defaultEIP: 'Pratiques fondées sur des données probantes (EIP)'
   # Misc Keys
-  saveRecommended: '**Rappelez-vous d''enregistrer vos données !** Cliquez [ici](%{exportLink})
+  saveRecommended: '**Rappelez-vous d''enregistrer vos données !** Cliquez <a href="%{exportLink}" class="electron-link">ici</a>
     pour enregistrer vos données pour une utilisation hors ligne.'
   uniquenessError: "La valeur saisie dans %{field} n'est pas unique parmi %{entityType}."
   edit: Éditer

@@ -1,18 +1,3 @@
-# Components/layout
-
-# Styling @jay
- # Global
-
-# Additional scope items:
-
- # Browser testing/debugging/deployment
- ✔ Debug electron SVG issues: @done (18-10-23 12:49)
-   ✔ Use debugging protocol outlined in README. @done (18-10-23 12:49)
- ✔ Test in IE/windows @done (18-10-23 11:28)
-   ✔ header is breaking - flexbox? @done (18-10-23 11:28)
-   ✔ svg logo aspect ratios breaking @done (18-10-23 11:28)
-   ✔ setup page does not validate and continue btn never appears @done (18-10-23 11:28)
-
  # Nice to have
  ☐ If there is zero budget, show an empty state instead of a chart (e.g. "No budget in your plan")
  ☐ Activity editor
@@ -27,12 +12,14 @@
  ☐ Home
    ☐ Move clear all btn to setup page @nice-to-have
  ☐ Dot seems to not change on nav change (likely b/c prop or computed property?) @scott?
-  ☐ Refactor Activity Input @scott
-   ☐ To only have input new item
-   ☐ To save continually (also maybe migrate to get / set versions of vuex to by dryer and not deal with "update value" issues) - on save show notification.
-
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Use debugging protocol outlined in README. @done (18-10-23 12:49)
+ ✔ Debug electron SVG issues: @done (18-10-23 12:49)
+ ✔ svg logo aspect ratios breaking @done (18-10-23 11:28)
+ ✔ setup page does not validate and continue btn never appears @done (18-10-23 11:28)
+ ✔ header is breaking - flexbox? @done (18-10-23 11:28)
+ ✔ Test in IE/windows @done (18-10-23 11:28)
  ✔ Causes errors when you have data and you then change language... @done (18-09-11 22:58)
  ✔ Adjust value storage to work with keys that are not based on translation... @scott @done (18-09-11 22:58)
  ✔ Debug french translation @done (18-09-11 22:57)

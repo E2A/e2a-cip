@@ -56,6 +56,18 @@ export default {
     }
 
     this.detectLanguage()
+
+    // This uses vue router vs. normal clicks for electron
+    document.addEventListener('click', event => {
+      // If the clicked element doesn't have the right selector, bail
+      if (!event.target.matches('.electron-link')) return
+
+      // Don't follow the link
+      event.preventDefault()
+
+      // Log the clicked element in the console
+      this.$router.push({name: 'export', params: {redirect: this.$route.name}})
+    }, false)
   }
 }
 

@@ -70,7 +70,7 @@ en:
       \ However, **this is not a gurantee that your data will always be saved.** We\
       \ recommend you save your data manually on a regular basis to make sure you\
       \ don't lose any data. There are many prompts to save your data and you can\
-      \ click [here](%{exportLink}) to save your data."
+      \ click <a href=\"%{exportLink}\" class=\"electron-link\">here</a> to save your data."
   userRoles:
     role1: NGO
     role2: Youth Advocate
@@ -1316,7 +1316,7 @@ en:
     defaultYouthCentered: Youth-centered?
     defaultEIP: 'Evidence-Informed Practices'
   # Misc Keys
-  saveRecommended: '**Remember to save your data!** Click [here](%{exportLink}) to
+  saveRecommended: '**Remember to save your data!** Click <a href="%{exportLink}" class="electron-link">here</a> to
     save your data for offline use.'
   uniquenessError: The value entered in %{field} is not unique amoung %{entityType}
   edit: Edit
