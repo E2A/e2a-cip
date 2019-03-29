@@ -110,7 +110,7 @@ en:
     selectActivityType: Select an activity domain
   # Activity Type Content
   activityTypeLink: Learn more about activity types
-  activityTypeTitle: Learn more about activity types
+  activityTypeTitle: Learn more about activity types. Please save this page before clicking. 
   backToActivities: Back to your activities
   downloadResource: Download Resource
   activityTypeIntro: |-
@@ -1225,7 +1225,7 @@ en:
     exportCharts: 'Export your chart data'
     printPage: Print Page
     previousStep: Go back to analysis
-    nextStep: Print Results & Advocate
+    nextStep: Add Key Recommendations
     youthCenteredActivity: youth-centered activity
     youthCenteredActivities: youth-centered activities
     percentActivitesWithBP: "Activites with an EIP"
