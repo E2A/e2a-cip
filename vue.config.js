@@ -41,7 +41,8 @@ module.exports = {
     loaderOptions: {
       css: {
         localIdentName: '[name]-[local]-[hash:base64:10]',
-        camelCase: 'only'
+        camelCase: 'only',
+        importLoaders: 3
       }
     }
   },
