@@ -72,6 +72,10 @@
   padding: 0.6em 1.2em;
 }
 
+.regular {
+  composes: regular from 'styles/type.scss';
+}
+
 .primary {
   $bgcolor: 'primary';
   $fgcolor: 'white';

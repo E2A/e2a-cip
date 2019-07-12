@@ -8,6 +8,7 @@
         :to="{name: 'activity', params: { activityId: id }}"
         :label="$t('edit')"
         size="small"
+        weight="regular"
       />
     </td>
   </tr>
