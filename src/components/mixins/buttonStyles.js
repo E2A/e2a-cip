@@ -15,6 +15,13 @@ export const buttonStyles = {
         return ['default', 'primary'].indexOf(value) !== -1
       }
     },
+    weight: {
+      type: String,
+      default: 'bold',
+      validator: function (value) {
+        return ['light', 'regular', 'bold'].indexOf(value) !== -1
+      }
+    },
     iconLeft: {
       type: String,
       default: 'none'
@@ -36,6 +43,9 @@ export const buttonStyles = {
     roleClass: function () {
       return this.role !== 'default' && this.button[this.role]
     },
+    weightClass: function () {
+      return this.weight !== 'bold' && this.button[this.weight]
+    },
     iconClass: function () {
       if (this.iconLeft !== 'none') {
         return this.button.hasIconLeft
@@ -48,7 +58,7 @@ export const buttonStyles = {
       return this.reverseColors && this.button.reverse
     },
     defaultClassList: function () {
-      return [this.button.default, this.sizeClass, this.roleClass, this.iconClass, this.reverseClass]
+      return [this.button.default, this.sizeClass, this.roleClass, this.weightClass, this.iconClass, this.reverseClass]
     }
   },
   data () {
