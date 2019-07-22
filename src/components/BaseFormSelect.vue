@@ -99,6 +99,7 @@ export default {
 <!-- using !important everywhere to make sure we override vendor styles -->
 <style lang="scss">
 @import '~bourbon/core/bourbon';
+@import '~vue-select/dist/vue-select.css';
 @import '~styleConfig/type';
 @import '~styleConfig/spacing';
 @import '~styleConfig/color';
@@ -112,7 +113,7 @@ export default {
     border: none !important;
   }
 
-  .open-indicator {
+  .vs__open-indicator {
     $size: 0.7em; // matched roughly to original size but in ems
     // arrow-down-midtone.svg, base64 encoded so the native app can find it
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTggMTAuMjQ5bDUuNjk0LTUuODQ0YTEuMzcgMS4zNyAwIDAgMSAxLjg4NS0uMDU4Yy41MzcuNDg1LjU2NCAxLjI5Ni4wNiAxLjgxM0w4IDE0IC4zNiA2LjE2YTEuMjQ5IDEuMjQ5IDAgMCAxIC4wNjEtMS44MTMgMS4zNyAxLjM3IDAgMCAxIDEuODg1LjA1OEw4IDEwLjI1eiIgZmlsbD0iIzhEQTNDMCIgZmlsbC1ydWxlPSJub256ZXJvIi8+PC9zdmc+) !important;
@@ -130,22 +131,22 @@ export default {
     }
   }
 
-  &.single .selected-tag {
+  &.single .vs__selected {
     position: absolute !important;
   }
 
-  &.open .open-indicator {
+  &.open .vs__open-indicator {
     transform: rotate(180deg) !important;
     bottom: 50% !important; // override different bottom value in .open state
   }
 
-  .dropdown-toggle {
+  .vs__dropdown-toggle {
     @include border();
     padding: space('xxnarrow') !important;
     background-color: color('light') !important;
 
     // clear button
-    .clear {
+    .vs__clear {
       $size: 0.6em;
       // arrow-down-midtone.svg, base64 encoded so the native app can find it
       background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTggNi4xNDRsNC43Ni00Ljc2YTEuMzEzIDEuMzEzIDAgMCAxIDEuODU2IDEuODU3TDkuODU2IDhsNC43NiA0Ljc2YTEuMzEzIDEuMzEzIDAgMCAxLTEuODU3IDEuODU2TDggOS44NTZsLTQuNzYgNC43NmExLjMxMyAxLjMxMyAwIDAgMS0xLjg1Ni0xLjg1N0w2LjE0NCA4bC00Ljc2LTQuNzZhMS4zMTIgMS4zMTIgMCAxIDEgMS44NTctMS44NTZMOCA2LjE0NHoiIGZpbGw9IiM4REEzQzAiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==) !important;
@@ -164,7 +165,7 @@ export default {
     }
   }
 
-  .dropdown-menu {
+  .vs__dropdown-menu {
     .highlight > a {
       background: color('accent');
       color: color('white');
@@ -177,7 +178,7 @@ export default {
 // turn off the 'clear' button if the noClear prop is true
 .noClear {
   :global {
-    .clear {
+    .vs__clear {
       display: none !important;
     }
   }
