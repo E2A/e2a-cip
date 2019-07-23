@@ -21,7 +21,7 @@
       :id="flyoutID"
       :align="align"
     >
-      <div :class="space.paddingXnarrow" @click.stop>
+      <div :class="space.paddingXnarrow">
         <BaseHeading
           :level="4"
           scale="zeta"
@@ -51,7 +51,7 @@
       </div>
 
       <!-- read more link -->
-      <div :class="base.resourceLink" @click.stop>
+      <div :class="base.resourceLink">
 
         <router-link :to="{name: 'evidence-informed-practice', params: {id: id}}">
           {{$t('bestPracticeIconData')}} &rsaquo;

@@ -4,6 +4,7 @@
     :style="{
       width: size + 'rem'
     }"
+    @click.stop
   >
     <div :class="base.content">
       <slot>Add flyout content here</slot>
