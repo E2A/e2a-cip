@@ -50,6 +50,16 @@ export default {
   },
   components: {
     BaseHeading
+  },
+  created () {
+    const closeFlyouts = () => {
+      this.$store.dispatch('entities/bestpracticeicons/create', {
+        data: {
+          flyout: false
+        }
+      })
+    }
+    document.body.addEventListener('click', closeFlyouts)
   }
 }
 </script>

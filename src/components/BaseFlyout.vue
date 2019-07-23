@@ -91,6 +91,6 @@ $size-pointer-h: 0.6rem;
 
 .content {
   max-height: 16rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 </style>

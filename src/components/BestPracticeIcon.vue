@@ -3,7 +3,7 @@
     <a
       :class="[base.iconLink]"
       :href="`#${flyoutID}`"
-      @click.prevent="toggleFlyout"
+      @click.prevent.stop="toggleFlyout()"
     >
       <BaseIcon
         :name="icon"
@@ -21,7 +21,7 @@
       :id="flyoutID"
       :align="align"
     >
-      <div :class="space.paddingXnarrow">
+      <div :class="space.paddingXnarrow" @click.stop>
         <BaseHeading
           :level="4"
           scale="zeta"
@@ -51,7 +51,7 @@
       </div>
 
       <!-- read more link -->
-      <div :class="base.resourceLink">
+      <div :class="base.resourceLink" @click.stop>
 
         <router-link :to="{name: 'evidence-informed-practice', params: {id: id}}">
           {{$t('bestPracticeIconData')}} &rsaquo;
