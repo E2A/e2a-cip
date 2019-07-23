@@ -71,7 +71,7 @@ export const dataMethods = {
       if (countryIndicator) {
         return countryIndicator
       } else {
-        return {error: this.$t('indicatorDataNotPresent', {indicatorName: indicatorName})}
+        return { error: this.$t('indicatorDataNotPresent', { indicatorName: indicatorName }) }
       }
     },
     getBudgetTotal: function (queryObject) {

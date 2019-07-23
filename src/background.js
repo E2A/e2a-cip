@@ -16,7 +16,7 @@ let mainWindow
 protocol.registerStandardSchemes(['app'], { secure: true })
 
 function createMainWindow (language) {
-  const window = new BrowserWindow({width: 1500, height: 1500})
+  const window = new BrowserWindow({ width: 1500, height: 1500 })
 
   if (isDevelopment) {
     // Load the url of the dev server if in development mode

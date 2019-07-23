@@ -19,8 +19,8 @@ export const dataIO = {
 
       if (exportType === 'json') {
         // Export JSON as a file
-        var jsonExport = new Blob([jsonData], {type: 'application/json;charset=utf-8'})
-        saveAs(jsonExport, this.$t('fileUpload.jsonFileName', {timestamp: timestamp}))
+        var jsonExport = new Blob([jsonData], { type: 'application/json;charset=utf-8' })
+        saveAs(jsonExport, this.$t('fileUpload.jsonFileName', { timestamp: timestamp }))
       } else {
         // Export csv data for each data type
         for (const entity of this.entityTypes) {
@@ -39,7 +39,7 @@ export const dataIO = {
           // Look for type of entity in file name
           const fileEntity = fileData.fileObject.name.search(entity)
           if (fileEntity !== -1) {
-            const entityObjects = Papa.parse(fileData.text, {header: true}).data
+            const entityObjects = Papa.parse(fileData.text, { header: true }).data
             this.$store.dispatch(`entities/${entity}/create`, { data: entityObjects })
             return entity
           }
@@ -55,8 +55,8 @@ export const dataIO = {
       var timestamp = customTime || Date.now()
       const entityData = JSON.stringify(item)
       const parsedData = Papa.unparse(entityData)
-      var csvExport = new Blob([parsedData], {type: 'text/csv;charset=utf-8'})
-      saveAs(csvExport, this.$t('fileUpload.csvFileName', {timestamp: timestamp, exportName: exportName}))
+      var csvExport = new Blob([parsedData], { type: 'text/csv;charset=utf-8' })
+      saveAs(csvExport, this.$t('fileUpload.csvFileName', { timestamp: timestamp, exportName: exportName }))
     }
   }
 }
