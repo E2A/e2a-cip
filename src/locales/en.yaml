@@ -104,7 +104,7 @@ en:
   deleteActivity: Delete
   supportText:
     activityNumber: Please enter an activity number
-    activityText: Please enter the text of the activity
+    activityText: Please enter a description of the activity
     activityBudget: Please enter a budget for the activity, if applicable
     activityYouthCentric: Youth-centric should encompass activities targeting adolescents and young people aged 15-24 years.
     selectActivityType: Select an activity domain

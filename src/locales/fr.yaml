@@ -106,7 +106,7 @@ fr:
   deleteActivity: Supprimer
   supportText:
     activityNumber: "Veuillez entrer un numéro d'activité"
-    activityText: "Veuillez entrer le texte de l'activité"
+    activityText: "Veuillez entrer la description de l'activité"
     activityBudget: "Veuillez préciser un budget pour l'activité, si applicable"
     activityYouthCentric: Les activités axées sur les jeunes doivent cibler des adolescents et des jeunes âgés de 15 à 24 ans.
     selectActivityType: "Sélectionner un domaine d'activité"
