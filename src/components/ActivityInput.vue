@@ -33,6 +33,7 @@
          Input fields
         -->
         <form :class="space.paddingVerticalBetween">
+          <!-- Activity Number -->
           <BaseFormInput
             v-validate="`uniqueness:activityNumber,activities,${this.activityId}`"
             v-model='activityNumber'
@@ -42,8 +43,9 @@
             name="activityNumber"
             :helpText="$t('supportText.activityNumber')"
           />
+          <!-- Activity Text -->
           <BaseFormInput
-            v-validate="`required|uniqueness:text,activities,${this.activityId}`"
+            v-validate="`required|uniqueness:text,activities,${this.activityId}|max:5000`"
             v-model="activityText"
             :label="$t('enterActivity')"
             :data-vv-as="`${$t('activityText')}`"
@@ -52,6 +54,7 @@
             name="activityText"
             :helpText="$t('supportText.activityText')"
           />
+          <!-- Activity Budget -->
           <BaseFormInput
             v-model="activityBudget"
             v-validate="'numeric'"
@@ -62,6 +65,7 @@
             :helpText="$t('supportText.activityBudget')"
           />
 
+          <!-- Youth Centric -->
           <BaseFormSwitch
             v-model="activityYouthCentric"
             :label="$t('activityYouthCentric')"
@@ -69,7 +73,7 @@
             name="activityYouthCentric"
             type="checkbox"
           />
-
+          <!-- Activity Type -->
           <div :class="base.activityTypeWrapper">
             <div :class="base.infoBox">
               <BaseCalloutBox
@@ -179,7 +183,7 @@ export default {
         return {
           id: activity.id,
           label: activity.shortText,
-          url: {name: 'activity', params: {activityId: activity.id}}
+          url: { name: 'activity', params: { activityId: activity.id } }
         }
       })
     }
