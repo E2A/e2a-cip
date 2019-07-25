@@ -1,7 +1,7 @@
 <template>
   <header :class="[space.paddingWide, border.bottom]">
     <BaseHeading
-      :class="[subtitle ? space.paddingBottomXnarrow : space.paddingBottom]"
+      :class="[subtitle ? space.paddingBottomXnarrow : space.paddingBottom, base.title]"
     >
       {{ title }}
     </BaseHeading>
@@ -49,3 +49,10 @@ export default {
 
 <style src="styles/borders.scss" lang="scss" module="border"></style>
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
+
+<style lang="scss" module="base">
+.title {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+</style>

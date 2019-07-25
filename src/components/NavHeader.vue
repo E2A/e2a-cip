@@ -373,7 +373,6 @@ $nav-breakpoint: 81em; // ~1400px
     @supports (display: flex) {
       display: flex;
       flex-direction: column;
-      flex: 1;
     }
   }
 
