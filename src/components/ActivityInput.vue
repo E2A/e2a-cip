@@ -45,7 +45,7 @@
           />
           <!-- Activity Text -->
           <BaseFormInput
-            v-validate="`required|uniqueness:text,activities,${this.activityId}|max:280`"
+            v-validate="`required|uniqueness:text,activities,${this.activityId}|max:5000`"
             v-model="activityText"
             :label="$t('enterActivity')"
             :data-vv-as="`${$t('activityText')}`"
