@@ -34,5 +34,9 @@ $color-codes: (
       fill: color-code($name);
       stroke: color-code($name);
     }
+
+    .#{$name}Label { //  TODO: assign this to the chart labels
+      fill: if(lightness($color) > 70, color('dark'), color('white'));
+    }
   }
 }

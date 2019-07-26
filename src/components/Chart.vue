@@ -68,9 +68,14 @@ export default {
     ChartLegend
   },
   mounted () {
+    // Separate data and options
+    // https://gionkunz.github.io/chartist-js/api-documentation.html#chartistpie-function-pie
     // eslint-disable-next-line
     new Chartist['Pie'](`#${this.chartName}`, {
-      series: this.seriesData,
+      // labels: this.seriesData,
+      series: this.seriesData
+    },
+    {
       width: '100%',
       height: '100%'
     })
