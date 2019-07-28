@@ -35,8 +35,10 @@ $color-codes: (
       stroke: color-code($name);
     }
 
-    .#{$name}Label { //  TODO: assign this to the chart labels
+    .#{$name}Label {
+      display: block !important;  // overrides .ct-label
       fill: if(lightness($color) > 70, color('dark'), color('white'));
+      font-size: 1.19rem;
     }
   }
 }

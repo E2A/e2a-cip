@@ -60,6 +60,20 @@ export default {
   computed: {
     activitiesPresent: function () {
       return this.getItemCount('activities') > 0
+    },
+    chartLabelClassNames: function () {
+      return this.seriesData.map(series => series.className)
+    }
+  },
+  methods: {
+    addChartLabels: function () {
+      let labels = document.querySelector(`#${this.chartName}`).firstChild.lastChild.childNodes
+
+      for (let i = 0; i < labels.length; i++) {
+        if (this.seriesData[i].value !== 0) { // TODO: decide a minimum percentage for showing labels
+          labels[i].classList.add(`${this.chartLabelClassNames[i]}Label`) // ex. youthCentricLabel
+        }
+      }
     }
   },
   components: {
@@ -68,17 +82,16 @@ export default {
     ChartLegend
   },
   mounted () {
-    // Separate data and options
-    // https://gionkunz.github.io/chartist-js/api-documentation.html#chartistpie-function-pie
-    // eslint-disable-next-line
-    new Chartist['Pie'](`#${this.chartName}`, {
-      // labels: this.seriesData,
+    const element = `#${this.chartName}`
+    const data = {
       series: this.seriesData
-    },
-    {
-      width: '100%',
+    }
+    const options = {
       height: '100%'
-    })
+    }
+    // eslint-disable-next-line
+    new Chartist['Pie'](element, data, options)
+      .on('draw', () => this.addChartLabels())
   }
 }
 </script>
