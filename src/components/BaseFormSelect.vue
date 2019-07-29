@@ -122,22 +122,14 @@ export default {
     background-size: contain !important;
     bottom: 50% !important;
     height: $size !important;
-    margin-bottom: -($size / 2) !important;
+    fill: none;
+    margin-bottom: 2px;
     right: 0.7em !important;
     width: $size !important;
 
     &::before {
       content: none !important; // kill css triangle in pseudo-element
     }
-  }
-
-  &.single .vs__selected {
-    position: absolute !important;
-  }
-
-  &.open .vs__open-indicator {
-    transform: rotate(180deg) !important;
-    bottom: 50% !important; // override different bottom value in .open state
   }
 
   .vs__dropdown-toggle {
@@ -155,7 +147,6 @@ export default {
       background-size: contain !important;
       bottom: 50% !important;
       height: $size !important;
-      margin-bottom: -($size / 2) !important;
       right: 1.6em !important;
       width: $size !important;
 
