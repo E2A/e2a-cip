@@ -1,11 +1,12 @@
 <template>
-  <div :class="[type.scaleZeta, color.midtone]">
+  <div :class="[type.scaleZeta, color.dark, type.bold]">
     <BaseHeading
       :level="4"
       :centered="false"
       :class="space.paddingBottomXnarrow"
       scale="epsilon"
-      color="midtone"
+      color="dark"
+      weight="bold"
     >
       {{$t('results.indicatorQuestions')}}
     </BaseHeading>
