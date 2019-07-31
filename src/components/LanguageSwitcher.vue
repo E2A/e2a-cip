@@ -57,8 +57,12 @@ export default {
   vertical-align: middle;
 
   :global {
-    .v-select .dropdown-toggle {
-      padding: 0 !important;
+    .v-select .vs__dropdown-toggle {
+      padding: 0 0 4px 4px !important;
+      width: 120px;
+    }
+    .v-select .vs__dropdown-menu {
+      min-width: 120px !important;
     }
   }
 }
