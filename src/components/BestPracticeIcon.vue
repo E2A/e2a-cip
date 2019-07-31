@@ -3,7 +3,7 @@
     <a
       :class="[base.iconLink]"
       :href="`#${flyoutID}`"
-      @click.prevent="toggleFlyout"
+      @click.prevent.stop="toggleFlyout()"
     >
       <BaseIcon
         :name="icon"

@@ -4,6 +4,7 @@
     :style="{
       width: size + 'rem'
     }"
+    @click.stop
   >
     <div :class="base.content">
       <slot>Add flyout content here</slot>
@@ -91,6 +92,6 @@ $size-pointer-h: 0.6rem;
 
 .content {
   max-height: 16rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 </style>
