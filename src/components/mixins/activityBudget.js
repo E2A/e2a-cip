@@ -6,7 +6,7 @@ export const activityBudget = {
       return Object.values(i18n.messages[i18n.locale].budgetScales).map((budgetScale, index) => {
         return {
           title: this.$t(`budgetScales.scale${index + 1}.title`),
-          key: this.$t(`budgetScales.scale${index + 1}.key`)
+          key: +this.$t(`budgetScales.scale${index + 1}.key`)
         }
       })
     }

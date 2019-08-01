@@ -16,7 +16,7 @@
         :is="el"
         :id="name"
         :name="name"
-        :class="inputClasses"
+        :class="[classItems, inputClasses]"
         :rows="el === 'textarea' && height"
         :placeholder="placeholder"
         :value="value"
@@ -91,7 +91,8 @@ export default {
     height: {
       type: Number,
       default: 4
-    }
+    },
+    classItems: String
   },
   computed: {
     contentValue: function () {

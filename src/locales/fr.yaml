@@ -113,14 +113,14 @@ fr:
   # Activity Budget Scales
   budgetScales:
     scale1:
-      title: Billion
-      key: "1000000000"
+      title: Mille
+      key: "1000"
     scale2:
       title: Million
       key: "1000000"
     scale3:
-      title: Thousand
-      key: "1000"
+      title: Milliard
+      key: "1000000000"
   # Activity Type Content
   activityTypeLink: "En savoir plus sur les types d'activités"
   activityTypeTitle: "En savoir plus sur les types d'activités"

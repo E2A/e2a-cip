@@ -56,18 +56,25 @@
           />
           <!-- Activity Budget -->
           <BaseFormInput
-            v-model="activityBudget"
-            v-validate="'numeric'"
+            v-model="activityBudgetBase"
+            v-validate="'decimal'"
             :label="`${$t('enterActivity')} ${$t('budget')}`"
             :data-vv-as="`${$t('activityBudget')}`"
             :error="errors.first('activityBudget')"
             name="activityBudget"
             :helpText="$t('supportText.activityBudget')"
+            :classItems="base.budgetInput"
           >
-            <BaseFormSelect
-              :options="budgetScaleOptions"
-              name="activityBudgetScale"
-            />
+            <div :class="base.budgetSelectWrapper">
+              <BaseFormSelect
+                v-model="activityBudgetScale"
+                v-validate="'required'"
+                :options="budgetScaleOptions"
+                :value="activityType.label"
+                name="activityBudgetScale"
+                noClear
+              />
+            </div>
           </BaseFormInput>
 
           <!-- Youth Centric -->
@@ -206,7 +213,8 @@ export default {
       currentActivityID: this.activityId,
       activityNumber: this.activityNumber,
       existingActivity: {},
-      activityBudget: 0,
+      activityBudgetBase: 0,
+      activityBudgetScale: '',
       activityYouthCentric: false,
       setupTitle: this.getItemValue('setup', 'title'),
       activityType: '',
@@ -225,12 +233,25 @@ export default {
         return this.$t('addActivity')
       }
     },
+    getBudgetScale: function (budget) {
+      const magnitude = budget >= 1e9 ? 1e9 // billion
+        : budget >= 1e6 ? 1e6 // million
+          : 1e3 // thousand
+
+      return {
+        label: this.budgetScaleOptions.find(scale => {
+          return scale.value === magnitude
+        }).label,
+        value: magnitude
+      }
+    },
     updateData: function () {
       // Update component data
       const activityInstance = this.getActivity()
       if (activityInstance) {
         this.existingActivity = activityInstance
-        this.activityBudget = activityInstance.budget
+        this.activityBudgetScale = this.activityBudgetScale || this.getBudgetScale(activityInstance.budget)
+        this.activityBudgetBase = activityInstance.budget / this.activityBudgetScale.value
         this.activityYouthCentric = activityInstance.youthCentric
         this.activityType = {
           label: this.activityTypeOptions.find(option => {
@@ -245,7 +266,8 @@ export default {
       }
       this.currentActivityID = this.activityId
       this.existingActivity = {}
-      this.activityBudget = 0
+      this.activityBudgetBase = null
+      this.activityBudgetScale = this.budgetScaleOptions[0]
       this.activityYouthCentric = false
       this.activityType = ''
       this.activityText = ''
@@ -268,11 +290,12 @@ export default {
       this.$validator.validate().then(result => {
         // If valid, add or update activity, else show errors.
         if (result) {
+          console.log(this.activityBudgetScale.value)
           if (activityInstance) {
             this.$store.dispatch('entities/activities/update', {
               id: Number(this.activityId),
               text: this.activityText,
-              budget: this.activityBudget,
+              budget: this.activityBudgetBase * this.activityBudgetScale.value,
               youthCentric: this.activityYouthCentric,
               type: this.activityType.value,
               activityNumber: this.activityNumber
@@ -281,7 +304,7 @@ export default {
             this.$store.dispatch('entities/activities/insert', {
               data: {
                 text: this.activityText,
-                budget: this.activityBudget,
+                budget: this.activityBudgetBase * this.activityBudgetScale.value,
                 youthCentric: this.activityYouthCentric,
                 type: this.activityType.value,
                 activityNumber: this.activityNumber
@@ -300,7 +323,7 @@ export default {
   },
   created () {
     this.updateData()
-    console.log(this.budgetScaleOptions)
+    console.log(this.activityBudgetScale)
   }
 }
 </script>
@@ -312,6 +335,9 @@ export default {
 @import '~bourbon/core/bourbon';
 @import '~styleConfig/breakpoints';
 @import '~styleConfig/spacing';
+@import '~styleConfig/color';
+
+$budgetSelectWidth: 160px;
 
 .buttonWrapper {
   display: inline-block;
@@ -329,6 +355,44 @@ export default {
     float: right;
     max-width: 25rem;
     padding-bottom: 0;
+  }
+}
+
+.budget {
+  &Input {
+    display: inline-block !important;
+    width: calc(100% - #{$budgetSelectWidth}) !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  &SelectWrapper {
+    float: right;
+    width: $budgetSelectWidth;
+    vertical-align: middle;
+
+    :global {
+      .v-select .vs__dropdown-toggle {
+        padding: 0 0 4px 4px !important;
+        height: 58.5px !important;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: none;
+        // TODO: darken dropdown toggle coloring
+        // background-color: color('no') !important;
+        // .vs__selected {
+        //   color: color('white')
+        // }
+      }
+
+      .vs--open .vs__dropdown-toggle {
+        padding-top: 9px !important;
+      }
+
+      .v-select .vs__dropdown-menu {
+        min-width: $budgetSelectWidth !important;
+      }
+    }
   }
 }
 </style>
