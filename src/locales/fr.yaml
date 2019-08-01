@@ -110,6 +110,17 @@ fr:
     activityBudget: "Veuillez préciser un budget pour l'activité, si applicable"
     activityYouthCentric: Les activités axées sur les jeunes doivent cibler des adolescents et des jeunes âgés de 15 à 24 ans.
     selectActivityType: "Sélectionner un domaine d'activité"
+  # Activity Budget Scales
+  budgetScales:
+    scale1:
+      title: Billion
+      key: "1000000000"
+    scale2:
+      title: Million
+      key: "1000000"
+    scale3:
+      title: Thousand
+      key: "1000"
   # Activity Type Content
   activityTypeLink: "En savoir plus sur les types d'activités"
   activityTypeTitle: "En savoir plus sur les types d'activités"

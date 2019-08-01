@@ -23,6 +23,8 @@
         :type="type"
       >{{contentValue}}</component>
 
+      <slot></slot>
+
       <BaseCalloutBox
         :key="error"
         v-if="error"

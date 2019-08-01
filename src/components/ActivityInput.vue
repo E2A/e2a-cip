@@ -63,7 +63,12 @@
             :error="errors.first('activityBudget')"
             name="activityBudget"
             :helpText="$t('supportText.activityBudget')"
-          />
+          >
+            <BaseFormSelect
+              :options="budgetScaleOptions"
+              name="activityBudgetScale"
+            />
+          </BaseFormInput>
 
           <!-- Youth Centric -->
           <BaseFormSwitch
@@ -143,13 +148,14 @@ import BaseFormInput from './BaseFormInput.vue'
 import BaseFormSwitch from './BaseFormSwitch.vue'
 import BaseFormSelect from './BaseFormSelect.vue'
 import { activityTypes } from './mixins/activityTypes'
+import { activityBudget } from './mixins/activityBudget'
 import { customValidation } from './mixins/customValidation'
 import { dataMethods } from './mixins/dataMethods'
 import { stringHelpers } from './mixins/helpers'
 
 export default {
   name: 'ActivityInput',
-  mixins: [activityTypes, customValidation, dataMethods, stringHelpers],
+  mixins: [activityBudget, activityTypes, customValidation, dataMethods, stringHelpers],
   components: {
     NavTimeline,
     BaseHeading,
@@ -174,6 +180,14 @@ export default {
         return {
           label: activityType.title,
           value: activityType.key
+        }
+      })
+    },
+    budgetScaleOptions: function () {
+      return this.getBudgetScales().map(budgetScale => {
+        return {
+          label: budgetScale.title,
+          value: budgetScale.key
         }
       })
     },
@@ -286,6 +300,7 @@ export default {
   },
   created () {
     this.updateData()
+    console.log(this.budgetScaleOptions)
   }
 }
 </script>
