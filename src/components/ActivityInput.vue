@@ -387,6 +387,10 @@ $budgetSelectWidth: 160px;
 
       .vs--open .vs__dropdown-toggle {
         padding-top: 9px !important;
+
+        .vs__actions {
+          padding-bottom: 9px !important;
+        }
       }
 
       .v-select .vs__dropdown-menu {
