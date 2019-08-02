@@ -39,6 +39,7 @@ import BaseGutterWrapper from './BaseGutterWrapper.vue'
 import ChartLegend from './ChartLegend.vue'
 import * as Chartist from 'chartist'
 import { dataMethods } from './mixins/dataMethods'
+import { parseIntWithSuffix, getCurrencySymbol } from './mixins/helpers'
 
 export default {
   name: 'Chart',
@@ -55,25 +56,66 @@ export default {
     labelData: {
       type: Array,
       required: true
+    },
+    isCurrency: { 
+      type: Boolean,
+      required: false,
     }
   },
   computed: {
     activitiesPresent: function () {
       return this.getItemCount('activities') > 0
-    }
+    },
+    series: function() {
+      return this.seriesData.map(data => data.value)
+    },
   },
   components: {
     BaseHeading,
     BaseGutterWrapper,
     ChartLegend
   },
+  methods: {
+    chartLabels (context) {
+      if (context.type === 'label') {
+        // get the classname from the corresponding data series
+        const labelClass = this.seriesData[context.index].className;
+        // append `label-` to the classname and add it to the node's classlist
+        context.element._node.classList.add(`label-${labelClass}`)
+      }
+    }
+  },
   mounted () {
-    // eslint-disable-next-line
-    new Chartist['Pie'](`#${this.chartName}`, {
-      series: this.seriesData,
-      width: '100%',
-      height: '100%'
-    })
+    const element = `#${this.chartName}`
+    const data = {
+      series: this.seriesData
+    }
+    const isCurrency = this.isCurrency;
+    const setup = this.getItemValue('setup')
+
+    new Chartist.Pie(`#${this.chartName}`, data, {
+      donut: true,
+      donutWidth: 80,
+      donutSolid: true,
+      startAngle: 270,
+      showLabel: true,
+      labelInterpolationFnc: function(value, index, labels) {
+        // Don't render a label if the value is 0
+        if (value <= 0) {
+          return null;
+        }
+        // Format the value with metric suffix (1000 => 1k)
+        let parsedValue = formatNumber(value);
+        
+        let symbol = '';
+        // If the chart represents a currency, add the currency symbol
+        if (isCurrency) {
+          symbol = ` ${getCurrencySymbol(setup.countryCode, setup.currencyCode)}`;
+        }
+
+        return `${parsedValue}${symbol}`;
+      }
+    }).on('draw', (context) => this.chartLabels(context));
   }
 }
 </script>
