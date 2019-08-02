@@ -35,10 +35,9 @@ $color-codes: (
       stroke: color-code($name);
     }
 
-    .#{$name}Label {
+    .label-#{$name} {
       display: block !important;  // overrides .ct-label
-      fill: if(lightness($color) > 70, color('dark'), color('white'));
-      font-size: 1.19rem;
+      fill: if(lightness($color) > 70, color('dark'), $chart-light-gray);
     }
   }
 }

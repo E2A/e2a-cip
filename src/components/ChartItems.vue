@@ -26,6 +26,7 @@
             :chartName="chartName"
             :seriesData="chartData.seriesData[chartName]"
             :labelData="chartData.labelData[chartName]"
+            :isCurrency="chartData.isCurrency[chartName]"
           />
           <ResultsQuestions
             v-if="questions"
@@ -269,6 +270,12 @@ export default {
 
       // Build object
       return {
+        'isCurrency': {
+          'youthFocusBudget': true,
+          'youthFocusCount': false,
+          'activityTypeBudget': true,
+          'activityTypeCount': false,
+        },
         'seriesData': {
           'youthFocusBudget': youthFocusedBudgetSeries,
           'youthFocusCount': youthFocusedCountSeries,
@@ -326,7 +333,8 @@ export default {
 // hide default chartist labels
 :global {
   .ct-label {
-    display: none;
+    display: block;
+    font-size: 14px;
   }
 }
 </style>
