@@ -1,5 +1,5 @@
 <template>
-  <div id="app" @click.capture="closeFlyouts()">
+  <div id="app" @click="closeFlyouts()">
     <BaseIconSpriteMap />
     <NavHeader
       v-if="showNav"
