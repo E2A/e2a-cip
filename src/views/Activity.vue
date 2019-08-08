@@ -7,6 +7,7 @@
       :activityId="currentActivity"
       ref="activityInput"
       :key="this.getLastItem()"
+      @changed="setFill"
     />
   </NavFooter>
 </template>
@@ -34,9 +35,16 @@ export default {
     },
     currentActivity: function () {
       return this.$props.activityId || this.nextActivity()
+  },
+  data: function () {
+    return {
+      formFilled: false
     }
   },
   methods: {
+    setFill: function (value) {
+      this.formFilled = value
+    },
     getNavButtons: function () {
       var navButtons = {
         left: [
@@ -59,7 +67,7 @@ export default {
           {
             to: { name: 'summary' },
             label: this.$t('activitiesDone'),
-            role: 'primary'
+            role: this.formFilled ? 'primary' : 'default'
           }
         )
       }

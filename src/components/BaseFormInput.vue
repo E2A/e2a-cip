@@ -15,6 +15,7 @@
           @input="emitInput"
           @change="emitChange"
           @focus="emitFocus"
+          @blur="emitBlur"
           :is="el"
           :id="name"
           :name="name"
@@ -43,6 +44,7 @@
         @input="emitInput"
         @change="emitChange"
         @focus="emitFocus"
+        @blur="emitBlur"
         :is="el"
         :id="name"
         :name="name"
@@ -124,6 +126,9 @@ export default {
     },
     emitFocus: function (e) {
       this.$emit('focus', e.target.value)
+    },
+    emitBlur: function (e) {
+      this.$emit('blur', e.target.value)
     }
   },
   $_veeValidate: {
