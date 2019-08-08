@@ -7,6 +7,7 @@
       :activityId="activityId"
       ref="activityInput"
       :key="this.getLastItem()"
+      @changed="setFill"
     />
   </NavFooter>
 </template>
@@ -30,15 +31,19 @@ export default {
   },
   data: function () {
     return {
-      nextActivity: this.getNextActivity()
+      nextActivity: this.getNextActivity(),
+      formFilled: false
     }
   },
   methods: {
+    setFill: function (value) {
+      this.formFilled = value
+    },
     getNavButtons: function () {
       var navButtons = {
         left: [
           {
-            to: {name: 'setup'},
+            to: { name: 'setup' },
             label: this.$t('goBack')
           }
         ],
@@ -48,15 +53,15 @@ export default {
       if (this.getItemCount('activities') > 0) {
         navButtons.right.push(
           {
-            to: {name: 'activity', params: {activityId: this.getNextActivity()}},
+            to: { name: 'activity', params: { activityId: this.getNextActivity() } },
             label: this.$t('inputNextActivity'),
             iconLeft: 'add',
             iconRight: 'none'
           },
           {
-            to: {name: 'summary'},
+            to: { name: 'summary' },
             label: this.$t('activitiesDone'),
-            role: 'primary'
+            role: this.formFilled ? 'primary' : 'default'
           }
         )
       }

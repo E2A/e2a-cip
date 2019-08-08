@@ -42,6 +42,7 @@
             :error="errors.first('activityNumber')"
             name="activityNumber"
             :helpText="$t('supportText.activityNumber')"
+            @blur="saveOnBlur"
           />
           <!-- Activity Text -->
           <BaseFormInput
@@ -53,6 +54,7 @@
             el="textarea"
             name="activityText"
             :helpText="$t('supportText.activityText')"
+            @blur="saveOnBlur"
           />
           <!-- Activity Budget -->
           <BaseFormInput
@@ -63,6 +65,7 @@
             :error="errors.first('activityBudget')"
             name="activityBudget"
             :helpText="$t('supportText.activityBudget')"
+            @blur="saveOnBlur"
           />
 
           <!-- Youth Centric -->
@@ -72,6 +75,7 @@
             :helpText="$t('supportText.activityYouthCentric')"
             name="activityYouthCentric"
             type="checkbox"
+            @input="saveOnBlur"
           />
           <!-- Activity Type -->
           <div :class="base.activityTypeWrapper">
@@ -96,6 +100,7 @@
               :searchable="false"
               :error="errors.first('activityType')"
               name="activityType"
+              @input="saveOnBlur"
               noClear
             />
           </div>
@@ -107,14 +112,6 @@
             gutterX="narrow"
             gutterY="narrow"
           >
-            <li :class="base.buttonWrapper">
-              <BaseButton
-                @click="addActivity"
-                :label="$t('save')"
-                size="small"
-                role="primary"
-              />
-            </li>
             <li :class="base.buttonWrapper">
               <BaseButton
                 v-if="getActivity()"
@@ -201,6 +198,16 @@ export default {
     }
   },
   methods: {
+    saveOnBlur: function () {
+      if (this.activityType && this.activityText) {
+        this.addActivity()
+        this.informParent(true)
+      } else this.informParent(false)
+    },
+    informParent: function (bool) {
+      // Tells parent whether the form is complete or not.
+      this.$emit('changed', bool)
+    },
     getAllActivities: function () {
       return this.$store.getters['entities/activities/all']()
     },
@@ -228,6 +235,7 @@ export default {
         this.currentActivityID = this.activityId
         this.activityText = activityInstance.text
         this.activityNumber = activityInstance.activityNumber
+        this.informParent(true)
         return
       }
       this.currentActivityID = this.activityId
@@ -237,6 +245,7 @@ export default {
       this.activityType = ''
       this.activityText = ''
       this.activityNumber = this.activityId
+      this.informParent(false)
     },
     getActivity: function (field = '') {
       const activityInstance = this.$store.getters['entities/activities/find'](this.activityId)
