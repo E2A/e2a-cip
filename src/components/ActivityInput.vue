@@ -35,7 +35,7 @@
         <form :class="space.paddingVerticalBetween">
           <!-- Activity Number -->
           <BaseFormInput
-            v-validate="`uniqueness:activityNumber,activities,${this.activityId}`"
+            v-validate="`required|uniqueness:activityNumber,activities,${this.activityId}`"
             v-model='activityNumber'
             :label="`${$t('enterActivity')} ${$t('number')}`"
             :data-vv-as="`${$t('activityNumber')}`"
@@ -165,8 +165,7 @@ export default {
   },
   props: {
     activityId: {
-      type: [String, Number],
-      required: true
+      type: [String, Number]
     }
   },
   computed: {
@@ -191,7 +190,7 @@ export default {
   data () {
     return {
       currentActivityID: this.activityId,
-      activityNumber: this.activityId,
+      activityNumber: this.activityNumber,
       existingActivity: {},
       activityBudget: 0,
       activityYouthCentric: false,
@@ -236,7 +235,7 @@ export default {
       this.activityYouthCentric = false
       this.activityType = ''
       this.activityText = ''
-      this.activityNumber = this.activityId
+      this.activityNumber = ''
     },
     getActivity: function (field = '') {
       const activityInstance = this.$store.getters['entities/activities/find'](this.activityId)

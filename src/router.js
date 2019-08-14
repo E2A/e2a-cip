@@ -28,7 +28,7 @@ export default new Router({
       component: Setup
     },
     {
-      path: '/activity/:activityId',
+      path: '/activity/:activityId?',
       name: 'activity',
       component: Activity,
       props: true
