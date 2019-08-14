@@ -18,7 +18,7 @@
           :class="[type.center, space.paddingTopWide]"
         >
           <BaseButtonLink
-            :to="{name: 'activity', params: {activityId: 1}}"
+            :to="{name: 'activity'}"
             :label="activityText"
             size="large"
             role="primary"

@@ -165,8 +165,7 @@ export default {
   },
   props: {
     activityId: {
-      type: [String, Number],
-      required: true
+      type: [String, Number]
     }
   },
   computed: {
@@ -191,7 +190,7 @@ export default {
   data () {
     return {
       currentActivityID: this.activityId,
-      activityNumber: this.activityId,
+      activityNumber: this.activityNumber,
       existingActivity: {},
       activityBudget: 0,
       activityYouthCentric: false,

@@ -4,7 +4,7 @@
     :rightButtons="this.getNavButtons().right"
   >
     <ActivityInput
-      :activityId="activityId"
+      :activityId="currentActivity"
       ref="activityInput"
       :key="this.getLastItem()"
     />
@@ -28,9 +28,12 @@ export default {
   props: {
     'activityId': [String, Number]
   },
-  data: function () {
-    return {
-      nextActivity: this.getNextActivity()
+  computed: {
+    nextActivity: function() {
+      return this.getNextActivity;
+    },
+    currentActivity: function () {
+      return this.$props.activityId || this.nextActivity()
     }
   },
   methods: {
@@ -38,7 +41,7 @@ export default {
       var navButtons = {
         left: [
           {
-            to: {name: 'setup'},
+            to: { name: 'setup' },
             label: this.$t('goBack')
           }
         ],
@@ -48,13 +51,13 @@ export default {
       if (this.getItemCount('activities') > 0) {
         navButtons.right.push(
           {
-            to: {name: 'activity', params: {activityId: this.getNextActivity()}},
+            to: { name: 'activity' },
             label: this.$t('inputNextActivity'),
             iconLeft: 'add',
             iconRight: 'none'
           },
           {
-            to: {name: 'summary'},
+            to: { name: 'summary' },
             label: this.$t('activitiesDone'),
             role: 'primary'
           }
