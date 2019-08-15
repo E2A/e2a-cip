@@ -5,7 +5,7 @@
     :helpText="$t('supportText.activityYouthCentric')"
   >
     <input
-      @change="emitChange($event)"
+      @input="emitInput($event)"
       :class="[
         base.switch,
         {[base.enhanced]: supportStyledCheckbox}
@@ -57,7 +57,7 @@ export default {
     BaseCalloutBox
   },
   methods: {
-    emitChange: function (event) {
+    emitInput: function (event) {
       // use event.target.checked instead of value for checkboxes
       // https://medium.com/@relt24/dedicated-vue-js-checkbox-component-360a330a3eb
       this.$emit('input', event.target.checked)

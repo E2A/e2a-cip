@@ -42,7 +42,7 @@
             :error="errors.first('activityNumber')"
             name="activityNumber"
             :helpText="$t('supportText.activityNumber')"
-            @blur="saveOnBlur"
+            @change="saveOnChange"
           />
           <!-- Activity Text -->
           <BaseFormInput
@@ -54,7 +54,7 @@
             el="textarea"
             name="activityText"
             :helpText="$t('supportText.activityText')"
-            @blur="saveOnBlur"
+            @change="saveOnChange"
           />
           <!-- Activity Budget -->
           <BaseFormInput
@@ -65,7 +65,7 @@
             :error="errors.first('activityBudget')"
             name="activityBudget"
             :helpText="$t('supportText.activityBudget')"
-            @blur="saveOnBlur"
+            @change="saveOnChange"
           />
 
           <!-- Youth Centric -->
@@ -75,7 +75,7 @@
             :helpText="$t('supportText.activityYouthCentric')"
             name="activityYouthCentric"
             type="checkbox"
-            @input="saveOnBlur"
+            @input="saveOnChange"
           />
           <!-- Activity Type -->
           <div :class="base.activityTypeWrapper">
@@ -100,7 +100,7 @@
               :searchable="false"
               :error="errors.first('activityType')"
               name="activityType"
-              @input="saveOnBlur"
+              @input="saveOnChange"
               noClear
             />
           </div>
@@ -198,7 +198,7 @@ export default {
     }
   },
   methods: {
-    saveOnBlur: function () {
+    saveOnChange: function () {
       if (this.activityType && this.activityText) {
         this.addActivity()
         this.informParent(true)
