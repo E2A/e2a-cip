@@ -108,6 +108,17 @@ en:
     activityBudget: Please enter a budget for the activity, if applicable
     activityYouthCentric: Youth-centric should encompass activities targeting adolescents and young people aged 15-24 years.
     selectActivityType: Select an activity domain
+  # Activity Budget Scales
+  budgetScales:
+    scale1:
+      title: Thousand
+      key: "1000"
+    scale2:
+      title: Million
+      key: "1000000"
+    scale3:
+      title: Billion
+      key: "1000000000"
   # Activity Type Content
   activityTypeLink: Learn more about activity types
   activityTypeTitle: Learn more about activity types. Please save this page before clicking. 
