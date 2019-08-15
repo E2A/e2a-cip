@@ -4,7 +4,7 @@
     :rightButtons="this.getNavButtons().right"
   >
     <ActivityInput
-      :activityId="activityId"
+      :activityId="currentActivity"
       ref="activityInput"
       :key="this.getLastItem()"
       @changed="setFill"
@@ -29,9 +29,16 @@ export default {
   props: {
     'activityId': [String, Number]
   },
+  computed: {
+    nextActivity: function () {
+      return this.getNextActivity
+    },
+    currentActivity: function () {
+      return this.$props.activityId || this.nextActivity()
+    }
+  },
   data: function () {
     return {
-      nextActivity: this.getNextActivity(),
       formFilled: false
     }
   },

@@ -7,8 +7,39 @@
       :helpText="helpText"
       :textSize="labelTextSize"
     >
-      <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
-      <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
+      <div :class="`inputGroup`">
+        <span v-if="prepend" :class="`inputPrepend`">{{prepend}}</span>
+        <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
+        <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
+        <component
+          @input="emitInput"
+          @change="emitChange"
+          @focus="emitFocus"
+          @blur="emitBlur"
+          :is="el"
+          :id="name"
+          :name="name"
+          :class="[classItems, inputClasses]"
+          :rows="el === 'textarea' && height"
+          :placeholder="placeholder"
+          :value="value"
+          :type="type"
+        >{{contentValue}}</component>
+
+        <slot></slot>
+
+        <BaseCalloutBox
+          :key="error"
+          v-if="error"
+          :message="error"
+          class="callout"
+          role="warning"
+        />
+      </div>
+    </BaseFormLabel>
+    <!-- if there's no label prop, just show the input -->
+    <div :class="`inputGroup`" v-else>
+      <span v-if="prepend" :class="`inputPrepend`">{{prepend}}</span>
       <component
         @input="emitInput"
         @change="emitChange"
@@ -23,31 +54,7 @@
         :value="value"
         :type="type"
       >{{contentValue}}</component>
-
-      <BaseCalloutBox
-        :key="error"
-        v-if="error"
-        :message="error"
-        class="callout"
-        role="warning"
-      />
-    </BaseFormLabel>
-    <!-- if there's no label prop, just show the input -->
-    <component
-      v-else
-      @input="emitInput"
-      @change="emitChange"
-      @focus="emitFocus"
-      @blur="emitBlur"
-      :is="el"
-      :id="name"
-      :name="name"
-      :class="inputClasses"
-      :rows="el === 'textarea' && height"
-      :placeholder="placeholder"
-      :value="value"
-      :type="type"
-    >{{contentValue}}</component>
+    </div>
   </div>
 </template>
 
@@ -69,6 +76,7 @@ export default {
     },
     label: String,
     helpText: String,
+    prepend: String,
     value: [String, Number],
     name: String,
     placeholder: String,
@@ -91,7 +99,8 @@ export default {
     height: {
       type: Number,
       default: 4
-    }
+    },
+    classItems: String
   },
   computed: {
     contentValue: function () {
@@ -181,4 +190,25 @@ export default {
 .callout {
   margin-top: space('narrow');
 }
+
+.inputGroup {
+  position: relative;
+  display: flex;
+}
+
+.inputPrepend {
+  @include border;
+  background-color: color('light');
+  color: color('midtone');
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  padding: space('xnarrow');
+}
+
+.inputPrepend + .input {
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 </style>
