@@ -5,27 +5,14 @@
 
 <template>
   <section>
-    <NavTimeline
-      :class="border.bottom"
-      :items="navItems"
-      :current="activityId"
-    />
+    <NavTimeline :class="border.bottom" :items="navItems" :current="activityId" />
     <BaseSectionWrapper>
       <!--
        Activity Edit / Input Heading
       -->
       <header :class="space.paddingBottomWide">
-        <BaseHeading
-          :level="1"
-          :class="space.paddingBottomXnarrow">
-          {{getActivityTitle()}}
-        </BaseHeading>
-        <BaseHeading
-          :level="5"
-          sub
-        >
-          {{`${capitalize($t('for'))}: ${setupTitle}`}}
-        </BaseHeading>
+        <BaseHeading :level="1" :class="space.paddingBottomXnarrow">{{getActivityTitle()}}</BaseHeading>
+        <BaseHeading :level="5" sub>{{`${capitalize($t('for'))}: ${setupTitle}`}}</BaseHeading>
       </header>
 
       <BaseWidthWrapper>
@@ -35,8 +22,8 @@
         <form :class="space.paddingVerticalBetween">
           <!-- Activity Number -->
           <BaseFormInput
-            v-validate="`required|uniqueness:activityNumber,activities,${this.activityId}`"
-            v-model='activityNumber'
+            v-validate="`uniqueness:activityNumber,activities,${this.activityId}`"
+            v-model="activityNumber"
             :label="`${$t('enterActivity')} ${$t('number')}`"
             :data-vv-as="`${$t('activityNumber')}`"
             :error="errors.first('activityNumber')"
@@ -64,6 +51,7 @@
             name="activityBudget"
             :helpText="$t('supportText.activityBudget')"
             :classItems="base.budgetInput"
+            :prepend="`${this.getItemValue('setup', 'currencyCode')}`"
           >
             <div :class="base.budgetSelectWrapper">
               <BaseFormSelect
@@ -72,6 +60,7 @@
                 :options="budgetScaleOptions"
                 :value="activityType.label"
                 name="activityBudgetScale"
+                :class="base.budgetSelect"
                 noClear
               />
             </div>
@@ -115,17 +104,9 @@
 
         <!-- Save/delete buttons -->
         <div :class="[space.paddingTop, space.marginTop, border.top]">
-          <BaseGutterWrapper
-            gutterX="narrow"
-            gutterY="narrow"
-          >
+          <BaseGutterWrapper gutterX="narrow" gutterY="narrow">
             <li :class="base.buttonWrapper">
-              <BaseButton
-                @click="addActivity"
-                :label="$t('save')"
-                size="small"
-                role="primary"
-              />
+              <BaseButton @click="addActivity" :label="$t('save')" size="small" role="primary" />
             </li>
             <li :class="base.buttonWrapper">
               <BaseButton
@@ -162,7 +143,13 @@ import { stringHelpers } from './mixins/helpers'
 
 export default {
   name: 'ActivityInput',
-  mixins: [activityBudget, activityTypes, customValidation, dataMethods, stringHelpers],
+  mixins: [
+    activityBudget,
+    activityTypes,
+    customValidation,
+    dataMethods,
+    stringHelpers
+  ],
   components: {
     NavTimeline,
     BaseHeading,
@@ -234,9 +221,12 @@ export default {
       }
     },
     getBudgetScale: function (budget) {
-      const magnitude = budget >= 1e9 ? 1e9 // billion
-        : budget >= 1e6 ? 1e6 // million
-          : 1e3 // thousand
+      const magnitude =
+        budget >= 1e9
+          ? 1e9 // billion
+          : budget >= 1e6
+            ? 1e6 // million
+            : 1e3 // thousand
 
       return {
         label: this.budgetScaleOptions.find(scale => {
@@ -250,8 +240,11 @@ export default {
       const activityInstance = this.getActivity()
       if (activityInstance) {
         this.existingActivity = activityInstance
-        this.activityBudgetScale = this.activityBudgetScale || this.getBudgetScale(activityInstance.budget)
-        this.activityBudgetBase = activityInstance.budget / this.activityBudgetScale.value
+        this.activityBudgetScale =
+          this.activityBudgetScale ||
+          this.getBudgetScale(activityInstance.budget)
+        this.activityBudgetBase =
+          activityInstance.budget / this.activityBudgetScale.value
         this.activityYouthCentric = activityInstance.youthCentric
         this.activityType = {
           label: this.activityTypeOptions.find(option => {
@@ -274,7 +267,9 @@ export default {
       this.activityNumber = ''
     },
     getActivity: function (field = '') {
-      const activityInstance = this.$store.getters['entities/activities/find'](this.activityId)
+      const activityInstance = this.$store.getters['entities/activities/find'](
+        this.activityId
+      )
       if (activityInstance && field) {
         return activityInstance[`${field}`]
       } else if (activityInstance) {
@@ -290,7 +285,6 @@ export default {
       this.$validator.validate().then(result => {
         // If valid, add or update activity, else show errors.
         if (result) {
-          console.log(this.activityBudgetScale.value)
           if (activityInstance) {
             this.$store.dispatch('entities/activities/update', {
               id: Number(this.activityId),
@@ -304,7 +298,8 @@ export default {
             this.$store.dispatch('entities/activities/insert', {
               data: {
                 text: this.activityText,
-                budget: this.activityBudgetBase * this.activityBudgetScale.value,
+                budget:
+                  this.activityBudgetBase * this.activityBudgetScale.value,
                 youthCentric: this.activityYouthCentric,
                 type: this.activityType.value,
                 activityNumber: this.activityNumber
@@ -317,7 +312,10 @@ export default {
       })
     },
     deleteActivity: function () {
-      this.$store.dispatch('entities/activities/delete', Number(this.activityId))
+      this.$store.dispatch(
+        'entities/activities/delete',
+        Number(this.activityId)
+      )
       this.notify(this.$t('deleteSuccess'), 'success')
     }
   },
@@ -332,10 +330,10 @@ export default {
 <style src="styles/borders.scss" lang="scss" module="border"></style>
 
 <style lang="scss" module="base">
-@import '~bourbon/core/bourbon';
-@import '~styleConfig/breakpoints';
-@import '~styleConfig/spacing';
-@import '~styleConfig/color';
+@import "~bourbon/core/bourbon";
+@import "~styleConfig/breakpoints";
+@import "~styleConfig/spacing";
+@import "~styleConfig/color";
 
 $budgetSelectWidth: 160px;
 
@@ -349,53 +347,31 @@ $budgetSelectWidth: 160px;
 
 .infoBox {
   display: block;
-  padding-bottom: space('narrow');
+  padding-bottom: space("narrow");
 
-  @include media('>small') {
+  @include media(">small") {
     float: right;
     max-width: 25rem;
     padding-bottom: 0;
   }
 }
 
-.budget {
-  &Input {
-    display: inline-block !important;
-    width: calc(100% - #{$budgetSelectWidth}) !important;
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-  }
+.budgetSelectWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+}
 
-  &SelectWrapper {
-    float: right;
-    width: $budgetSelectWidth;
-    vertical-align: middle;
+.budgetSelect {
+  height: 2.9rem;
 
-    :global {
-      .v-select .vs__dropdown-toggle {
-        padding: 0 0 4px 4px !important;
-        height: 58.5px !important;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-left: none;
-        // TODO: darken dropdown toggle coloring
-        // background-color: color('no') !important;
-        // .vs__selected {
-        //   color: color('white')
-        // }
-      }
+  :global {
+    .vs__dropdown-toggle {
+      height: 2.9rem;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
 
-      .vs--open .vs__dropdown-toggle {
-        padding-top: 9px !important;
-
-        .vs__actions {
-          padding-bottom: 9px !important;
-        }
-      }
-
-      .v-select .vs__dropdown-menu {
-        min-width: $budgetSelectWidth !important;
-      }
     }
   }
 }
