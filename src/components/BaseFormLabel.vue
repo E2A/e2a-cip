@@ -1,6 +1,22 @@
 <template>
   <div>
+    <div v-if="tooltipText">
+      <label
+        :for="id"
+        :class="[
+          base.label,
+          type[typeScaleClass(textSize)],
+          !helpText && space.marginBottomNarrow
+        ]"
+      >
+        {{label}}
+      </label>
+      <BaseTooltip
+        :body="tooltipText"
+      />
+    </div>
     <label
+      v-else
       :for="id"
       :class="[
         base.label,
@@ -24,6 +40,7 @@
 <script>
 import { styleHelpers } from './mixins/helpers.js'
 import BaseBodyText from './BaseBodyText.vue'
+import BaseTooltip from './BaseTooltip.vue'
 
 export default {
   name: 'BaseFormLabel',
@@ -39,10 +56,12 @@ export default {
     helpTextSize: {
       type: String,
       default: 'zeta'
-    }
+    },
+    tooltipText: String
   },
   components: {
-    BaseBodyText
+    BaseBodyText,
+    BaseTooltip
   }
 }
 </script>
@@ -53,7 +72,6 @@ export default {
 <style lang="scss" module="base">
 .label {
   composes: bold leadingTight from 'styles/type.scss';
-  display: block;
 }
 
 .help {

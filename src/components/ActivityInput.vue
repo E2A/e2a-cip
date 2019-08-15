@@ -71,6 +71,7 @@
             v-model="activityYouthCentric"
             :label="$t('activityYouthCentric')"
             :helpText="$t('supportText.activityYouthCentric')"
+            :tooltipText="$t('tooltipText.activityYouthCentric')"
             name="activityYouthCentric"
             type="checkbox"
           />

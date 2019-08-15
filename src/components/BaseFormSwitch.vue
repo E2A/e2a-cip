@@ -3,6 +3,7 @@
     :id="name"
     :label="$t('activityYouthCentric')"
     :helpText="$t('supportText.activityYouthCentric')"
+    :tooltipText="tooltipText"
   >
     <input
       @change="emitChange($event)"
@@ -45,7 +46,8 @@ export default {
     // -> default translations are above in the template
     labelOn: String,
     labelOff: String,
-    error: String
+    error: String,
+    tooltipText: String
   },
   data () {
     return {

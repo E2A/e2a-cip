@@ -103,11 +103,15 @@ en:
   deleteSuccess: Deleted Activity
   deleteActivity: Delete
   supportText:
-    activityNumber: Please enter an activity number
-    activityText: Please enter a description of the activity
-    activityBudget: Please enter a budget for the activity, if applicable
+    activityNumber: Please enter an activity number.
+    activityText: Please enter a description of the activity.
+    activityBudget: Please enter a budget for the activity, if applicable.
     activityYouthCentric: Youth-centric should encompass activities targeting adolescents and young people aged 15-24 years.
-    selectActivityType: Select an activity domain
+    selectActivityType: Select an activity domain.
+  tooltipText:
+    activityText: This should be a summary of the activity. Maximum of 5000 characters.
+    activityBudget: Use the dropdown on the right to easily set the budget.
+    activityYouthCentric: Youth-centric should encompass activities targeting adolescents and young people aged 15-24 years.
   # Activity Budget Scales
   budgetScales:
     scale1:
