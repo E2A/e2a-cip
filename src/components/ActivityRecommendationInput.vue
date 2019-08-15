@@ -171,6 +171,7 @@ export default {
   @supports (flex: 1) {
     flex: 1;
   }
+  width: 80%;
 }
 
 .gutter {
