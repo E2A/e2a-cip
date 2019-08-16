@@ -105,7 +105,7 @@ export default {
           return null;
         }
         // Format the value with metric suffix (1000 => 1k)
-        let parsedValue = formatNumber(value);
+        let parsedValue = parseIntWithSuffix(value);
         
         let symbol = '';
         // If the chart represents a currency, add the currency symbol
