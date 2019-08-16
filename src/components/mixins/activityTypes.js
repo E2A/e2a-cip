@@ -12,7 +12,7 @@ export const activityTypes = {
       var groupedActivities = []
 
       // Build array of activities by type
-      // We only get activity assessments that are yes / maybe (no can be ignored given it is the default)
+      // We only get activity assessments that are yes / partially (no can be ignored given it is the default)
       for (const activityType of activityTypeList) {
         groupedActivities.push({
           activityTypeName: activityType.title,
@@ -20,7 +20,7 @@ export const activityTypes = {
           activityObjects: this.$store.getters['entities/activities/query']().with('assessments', (query) => {
             query.where('value', [
               this.$t('bestPracticeOptions.yesKey'),
-              this.$t('bestPracticeOptions.maybeKey')
+              this.$t('bestPracticeOptions.partiallyKey')
             ])
           }).where('type', activityType.key).get()
         })

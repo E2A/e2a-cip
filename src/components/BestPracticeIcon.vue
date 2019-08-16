@@ -79,7 +79,7 @@ export default {
       type: [String, Number],
       required: true
     },
-    // can you edit the status, e.g. yes, maybe, etc.?
+    // can you edit the status, e.g. yes, partially, etc.?
     // -> if so, we'll show the buttons on the flyout
     editable: {
       type: Boolean,
@@ -132,10 +132,10 @@ export default {
           text: this.$t('bestPracticeOptions.yesText'),
           value: this.$t('bestPracticeOptions.yesKey')
         },
-        maybe: {
-          class: 'maybe',
-          text: this.$t('bestPracticeOptions.maybeText'),
-          value: this.$t('bestPracticeOptions.maybeKey')
+        partially: {
+          class: 'partially',
+          text: this.$t('bestPracticeOptions.partiallyText'),
+          value: this.$t('bestPracticeOptions.partiallyKey')
         },
         no: {
           class: 'no',
@@ -309,7 +309,7 @@ $icon-size: 2.25rem;
   }
 }
 
-@each $color in ['yes', 'maybe', 'no'] {
+@each $color in ['yes', 'partially', 'no'] {
   .#{$color}{
     &::before {
       @include border($w: 'thick', $color: $color);

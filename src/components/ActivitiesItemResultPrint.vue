@@ -210,7 +210,7 @@ export default {
   background-color: green;
 }
 
-.maybe {
+.partially {
   background-color: yellow;
 }
 
