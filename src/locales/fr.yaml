@@ -1145,7 +1145,7 @@ fr:
           # Do Not Translate
           title: '@:noRaw'
           description: "Ne s'aligne pas sur la pratique reposant sur des données probantes."
-        maybe:
+        partially:
           title: Peut-être
           description: Correspond en partie à la pratique fondée sur des données probantes.
     previousStep: Retourner aux activités
@@ -1282,13 +1282,13 @@ fr:
     yesText: '@:yesRaw'
     # Do Not Translate
     noText: '@:noRaw'
-    maybeText: Peut-être
+    partiallyText: Peut-être
     # Do Not Translate
     yesKey: 'yes'
     # Do Not Translate
     noKey: 'no'
     # Do Not Translate
-    maybeKey: 'maybe'
+    partiallyKey: 'partially'
   enterSuggestion: Saisissez une suggestion
   item: aucun article | article | articles
   successRemoved: Supprimée avec succès

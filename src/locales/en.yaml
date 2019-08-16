@@ -1213,8 +1213,8 @@ en:
           # Do Not Translate
           title: '@:noRaw'
           description: Does not align with the evidence-informed practice.
-        maybe:
-          title: Maybe
+        partially:
+          title: Partially
           description: Partially aligns with the evidence-informed practice.
     previousStep: Go back to activities
     nextStep: Your results
@@ -1344,13 +1344,13 @@ en:
     yesText: '@:yesRaw'
     # Do Not Translate
     noText: '@:noRaw'
-    maybeText: Maybe
+    partiallyText: Partially
     # Do Not Translate
     yesKey: 'yes'
     # Do Not Translate
     noKey: 'no'
     # Do Not Translate
-    maybeKey: 'maybe'
+    partiallyKey: 'partially'
   enterSuggestion: Enter a suggestion
   item: no items | item | items
   successRemoved: Successfully removed
