@@ -171,12 +171,12 @@ export default {
       type: String
     },
     text: {
-      type: String,
-      required: true
+      type: String
+      // required: true
     },
     id: {
-      type: Number,
-      required: true
+      type: Number
+      // required: true
     },
     budget: Number,
     youth: Boolean
@@ -263,6 +263,9 @@ export default {
       this.isOpen = false
       this.commentsOpen = false
     }
+  },
+  created: function () {
+    // console.log(this.bestPractices)
   }
 }
 </script>

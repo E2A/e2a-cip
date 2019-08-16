@@ -45,6 +45,7 @@
                 :key="`assess-${index}`"
                 :class="base.icon"
               >
+                <!-- error source -->
                 <BestPracticeIcon
                   :id="assessment.best_practice_id"
                   :activityID="assessment.activity_id"
@@ -87,6 +88,7 @@
             :key="`bp-${index}`"
             :class="base.icon"
           >
+            <!-- error source -->
             <BestPracticeIcon
               :id="bestPractice.id"
               :activityID="activityInstance.id"
@@ -109,6 +111,7 @@
           {{$t('suggestedImprovements')}}
         </BaseHeading>
         <ol :class="[base.recommendations, space.paddingVerticalNarrow]">
+          <!-- error source -->
           <!-- By default start showing a recommendation -->
           <ActivityRecommendationInput
             v-if="recommendationsNotPresent"
