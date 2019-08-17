@@ -75,12 +75,6 @@
         size="large"
         role="primary"
       />
-      <div>
-        <ClearItems
-          :clearType="['All']"
-          :class="space.marginTop"
-        />
-      </div>
     </BaseSectionWrapper>
 
     <!-- Offline versions -->
@@ -158,7 +152,6 @@ import BaseBodyText from '@/components/BaseBodyText.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import BaseStepList from '@/components/BaseStepList.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
-import ClearItems from '@/components/ClearItems.vue'
 import { dataMethods } from '@/components/mixins/dataMethods'
 import { initData } from '@/components/mixins/initData.js'
 
@@ -174,8 +167,7 @@ export default {
     BaseBodyText,
     BaseGutterWrapper,
     BaseStepList,
-    BaseButtonLink,
-    ClearItems
+    BaseButtonLink
   },
   computed: {
     steps () {
