@@ -124,16 +124,20 @@ export default {
         } else if (this.recommendationType === 'updateComment') {
           this.$store.dispatch('entities/comments/update', {
             id: this.recommendationId,
-            assessment_id: this.assessmentInstance.id,
-            text: this.recommendationText
+            text: this.recommendationText,
+            // Single variable connector to assessment
+            assessment_id: this.assessmentInstance.id
           })
         } else if (this.recommendationType === 'insertComment') {
           this.$store.dispatch('entities/comments/insert', {
             data: {
-              assessment_id: this.assessmentInstance.id,
-              text: this.recommendationText
+              text: this.recommendationText,
+              // Single variable connector to assessment
+              assessment_id: this.assessmentInstance.id
             }
           })
+          // Update parent so recommendationType become 'updateComment'
+          this.$emit('update-comments')
         }
       }
     },
@@ -145,6 +149,7 @@ export default {
         this.$store.dispatch('entities/recommendations/delete', this.recommendationId)
       } else {
         this.$store.dispatch('entities/comments/delete', this.recommendationId)
+        // Update parent to reflect the deleted info
         this.$emit('update-comments')
       }
     }

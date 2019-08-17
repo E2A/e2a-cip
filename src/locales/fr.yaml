@@ -1213,6 +1213,10 @@ fr:
         \ jeunes et les stratégies novatrices pour y répondre. Sensibiliser à l'importance\
         \ d'investir dans la santé reproductive des jeunes afin de tracer les bases\
         \ d'une meilleure santé pour les générations futures."
+    comments:
+      title: Vos commentaires
+      content: Entrez vos commentaires et préoccupations concernant vos évaluations en consultant les informations relatives aux pratiques fondées sur des preuves disponibles <a href="/evidence-informed-practices">ici</a>.
+
     print: Imprimez vos résultats pour les partager
     title: 'Aller de l''avant...'
     intro: |-

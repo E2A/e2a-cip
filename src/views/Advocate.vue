@@ -10,16 +10,16 @@
         :level="2"
         :class="space.paddingBottom"
       >
-        {{$t('advocate.globalRecommendations.title')}}
+        {{$t('advocate.comments.title')}}
       </BaseHeading>
       <BaseWidthWrapper>
-        <BaseBodyText :content="$t('advocate.globalRecommendations.content')" />
+        <BaseBodyText :content="$t('advocate.comments.content')" />
       </BaseWidthWrapper>
       <BaseWidthWrapper
         :class="[space.paddingTop, type.center]"
         width="wide"
       >
-        <GlobalRecommendation />
+        <AllComments />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
 
@@ -94,6 +94,7 @@ import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import FileExport from '@/components/FileExport.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import GlobalRecommendation from '@/components/GlobalRecommendation.vue'
+import AllComments from '@/components/AllComments.vue'
 
 export default {
   name: 'Advocate',
@@ -107,7 +108,8 @@ export default {
     BaseButtonLink,
     BaseWidthWrapper,
     FileExport,
-    GlobalRecommendation
+    GlobalRecommendation,
+    AllComments
   },
   computed: {
     steps: function () {
