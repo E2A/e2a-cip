@@ -12,7 +12,7 @@
       <ActivityRecommendationInput
         v-if="recommendationsNotPresent"
         :globalRecommendation="true"
-        recommendationType='insert'
+        recommendationType='insertRecommendation'
       />
       <!-- Then show all once its been added -->
       <ActivityRecommendationInput
@@ -21,7 +21,7 @@
         :key="recommendation.id"
         :globalRecommendation="true"
         :recommendationId="recommendation.id"
-        recommendationType='update'
+        recommendationType='updateRecommendation'
         :existingRecommendationText="recommendation.text"
       />
     </ol>

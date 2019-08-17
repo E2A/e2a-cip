@@ -47,6 +47,26 @@
           >
             {{option.text}}
           </button>
+          <!-- add comment button -->
+          <a
+            v-if="!!getSelectedAssessment()"
+            href="#"
+            @click="openComments"
+            :class="[
+              base.addComment
+            ]"
+          >
+            {{$t('bestPracticeIconComment')}}
+          </a>
+          <span
+            v-else
+            :class="[
+              base.addComment,
+              base.addCommentInactive
+            ]"
+          >
+            {{$t('bestPracticeIconComment')}}
+          </span>
         </div>
       </div>
 
@@ -188,6 +208,11 @@ export default {
         }
       })
     },
+    openComments: function (e) {
+      e.preventDefault()
+      this.toggleFlyout()
+      this.$emit('open-comments', this.id)
+    },
     toggleFlyout: function () {
       if (this.flyoutOpen) {
         // Tell the store this flyout is closed
@@ -217,6 +242,7 @@ export default {
 <style src="styles/color.scss" lang="scss" module="color"></style>
 
 <style lang="scss" module="base">
+@import '~styleConfig/color';
 $icon-size: 2.25rem;
 
 .wrapper {
@@ -239,6 +265,26 @@ $icon-size: 2.25rem;
   composes: scaleZeta from 'styles/type.scss';
   text-align: center;
   top: ($icon-size + 1rem);
+}
+
+.addComment {
+  display: inline-block;
+  border: none;
+  background: none;
+  margin-left: none;
+
+  &:hover {
+    cursor: pointer;
+    margin-bottom: -1px;
+  }
+
+  &Inactive {
+    color: color('midtone');
+
+    &:hover {
+      cursor: default;
+    }
+  }
 }
 
 .resourceLink {

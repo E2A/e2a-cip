@@ -4,6 +4,25 @@
       :title="$t('advocate.title')"
       :blurb="$t('advocate.intro')"
     />
+    <!-- Assessment Comments -->
+    <BaseSectionWrapper>
+      <BaseHeading
+        :level="2"
+        :class="space.paddingBottom"
+      >
+        {{$t('advocate.globalRecommendations.title')}}
+      </BaseHeading>
+      <BaseWidthWrapper>
+        <BaseBodyText :content="$t('advocate.globalRecommendations.content')" />
+      </BaseWidthWrapper>
+      <BaseWidthWrapper
+        :class="[space.paddingTop, type.center]"
+        width="wide"
+      >
+        <GlobalRecommendation />
+      </BaseWidthWrapper>
+    </BaseSectionWrapper>
+
     <!-- Global Recommendations -->
     <BaseSectionWrapper>
       <BaseHeading
