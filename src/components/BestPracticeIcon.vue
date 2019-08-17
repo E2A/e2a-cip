@@ -154,7 +154,7 @@ export default {
       const assessmentPresent = this.$store.getters['entities/activities/query']()
         .with('assessments', (query) => {
           query.where('best_practice_id', this.id)
-        }).find(this.activityID).assessments
+        }).whereId(this.activityID).get()[0].assessments
 
       if (assessmentPresent && assessmentPresent.length > 0) {
         return assessmentPresent[0]
@@ -165,7 +165,7 @@ export default {
       // Check if assessment for current activity is store
       const assessmentPresent = this.$store.getters['entities/activities/query']().with('assessments', (query) => {
         query.where('best_practice_id', bestPracticeID)
-      }).with('recommendations').find(this.activityID).assessments[0]
+      }).with('recommendations').whereId(this.activityID).get()[0].assessments[0]
 
       if (assessmentPresent) {
         // Update assessment value if it already exists
