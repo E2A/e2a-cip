@@ -54,7 +54,6 @@ import PrintPage from '@/components/PrintPage.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import { dataMethods } from '@/components/mixins/dataMethods.js'
-import i18n from '@/i18n.js'
 
 export default {
   name: 'NavFooter',
@@ -85,7 +84,7 @@ export default {
     },
     saveReminder: function () {
       this.notify(
-        i18n.t('saveRecommended', { exportLink: '#' }),
+        this.$root.$t('saveRecommended', { exportLink: '#' }),
         'warning',
         10000
       )
