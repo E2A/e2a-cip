@@ -29,6 +29,7 @@
             :error="errors.first('activityNumber')"
             name="activityNumber"
             :helpText="$t('supportText.activityNumber')"
+            @change="saveOnChange"
           />
           <!-- Activity Text -->
           <BaseFormInput
@@ -40,6 +41,7 @@
             el="textarea"
             name="activityText"
             :helpText="$t('supportText.activityText')"
+            @change="saveOnChange"
           />
           <!-- Activity Budget -->
           <BaseFormInput
@@ -50,6 +52,7 @@
             :error="errors.first('activityBudget')"
             name="activityBudget"
             :helpText="$t('supportText.activityBudget')"
+            @change="saveOnChange"
             :classItems="base.budgetInput"
             :prepend="`${this.getItemValue('setup', 'currencyCode')}`"
           >
@@ -61,6 +64,7 @@
                 :value="activityType.label"
                 name="activityBudgetScale"
                 :class="base.budgetSelect"
+                @input="saveOnChange"
                 noClear
               />
             </div>
@@ -74,6 +78,7 @@
             :tooltipText="$t('tooltipText.activityYouthCentric')"
             name="activityYouthCentric"
             type="checkbox"
+            @input="saveOnChange"
           />
           <!-- Activity Type -->
           <div :class="base.activityTypeWrapper">
@@ -98,6 +103,7 @@
               :searchable="false"
               :error="errors.first('activityType')"
               name="activityType"
+              @input="saveOnChange"
               noClear
             />
           </div>
@@ -106,9 +112,6 @@
         <!-- Save/delete buttons -->
         <div :class="[space.paddingTop, space.marginTop, border.top]">
           <BaseGutterWrapper gutterX="narrow" gutterY="narrow">
-            <li :class="base.buttonWrapper">
-              <BaseButton @click="addActivity" :label="$t('save')" size="small" role="primary" />
-            </li>
             <li :class="base.buttonWrapper">
               <BaseButton
                 v-if="getActivity()"
@@ -210,6 +213,16 @@ export default {
     }
   },
   methods: {
+    saveOnChange: function () {
+      if (this.activityType && this.activityText) {
+        this.addActivity()
+        this.informParent(true)
+      } else this.informParent(false)
+    },
+    informParent: function (bool) {
+      // Tells parent whether the form is complete or not.
+      this.$emit('changed', bool)
+    },
     getAllActivities: function () {
       return this.$store.getters['entities/activities/all']()
     },
@@ -256,6 +269,7 @@ export default {
         this.currentActivityID = this.activityId
         this.activityText = activityInstance.text
         this.activityNumber = activityInstance.activityNumber
+        this.informParent(true)
         return
       }
       this.currentActivityID = this.activityId
@@ -266,6 +280,7 @@ export default {
       this.activityType = ''
       this.activityText = ''
       this.activityNumber = ''
+      this.informParent(false)
     },
     getActivity: function (field = '') {
       const activityInstance = this.$store.getters['entities/activities/find'](
@@ -322,7 +337,6 @@ export default {
   },
   created () {
     this.updateData()
-    console.log(this.activityBudgetScale)
   }
 }
 </script>
