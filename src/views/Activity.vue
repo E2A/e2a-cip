@@ -14,7 +14,6 @@
 
 <script>
 import ActivityInput from '@/components/ActivityInput.vue'
-import ClearItems from '@/components/ClearItems.vue'
 import NavFooter from '@/components/NavFooter.vue'
 import { dataMethods } from '@/components/mixins/dataMethods'
 
@@ -23,7 +22,6 @@ export default {
   mixins: [dataMethods],
   components: {
     ActivityInput,
-    ClearItems,
     NavFooter
   },
   props: {

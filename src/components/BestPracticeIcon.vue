@@ -5,6 +5,7 @@
       :href="`#${flyoutID}`"
       @click.prevent.stop="toggleFlyout()"
     >
+      <!-- error source -->
       <BaseIcon
         :name="icon"
         :class="color[selectedAssessmentClass]"
@@ -171,10 +172,13 @@ export default {
     },
     getSelectedAssessment: function (bestPracticeText) {
       // Check if assessment is present, if so add 'assessment-selected' class to selection
+      // ERROR SOURCE
       const assessmentPresent = this.$store.getters['entities/activities/query']()
         .with('assessments', (query) => {
           query.where('best_practice_id', this.id)
         }).whereId(this.activityID).get()[0].assessments
+
+      console.log('assessmentPresent', assessmentPresent)
 
       if (assessmentPresent && assessmentPresent.length > 0) {
         return assessmentPresent[0]

@@ -121,19 +121,20 @@ export default {
   },
   computed: {
     groupedActivities: function () {
+      console.log(this.getGroupedActivites())
       return this.getGroupedActivites()
     },
     navButtons: function () {
       return {
         left: [
           {
-            to: {name: 'evidence-informed-practices'},
+            to: { name: 'evidence-informed-practices' },
             label: this.$t('analysis.previousStep')
           }
         ],
         right: [
           {
-            to: {name: 'results'},
+            to: { name: 'results' },
             label: this.$t('analysis.nextStep'),
             role: 'primary'
           }
@@ -148,7 +149,7 @@ export default {
   },
   created () {
     // Clear any open icons
-    this.$store.dispatch('entities/bestpracticeicons/deleteAll')
+    // this.$store.dispatch('entities/bestpracticeicons/deleteAll')
   }
 }
 </script>
