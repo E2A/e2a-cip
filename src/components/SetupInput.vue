@@ -7,11 +7,12 @@
 
     <!-- Title -->
     <BaseFormInput
+      v-model="setupTitle"
+      @input="addSetup"
       :label="$t('setup.CIPTitle')"
       name="cip-title"
-      @input="addSetup"
-      v-model="setupTitle"
       el="textarea"
+      :key="forceTitleUpdate"
     />
 
     <!-- Country -->
@@ -62,9 +63,13 @@ export default {
     BaseFormLabel,
     BaseFormSelect
   },
+  props: {
+    clear: Boolean
+  },
   data () {
     return {
       setupTitle: '',
+      forceTitleUpdate: 0,
       setupCountries: countryList,
       setupCurrencies: currencyList,
       setupCountry: null,
@@ -79,7 +84,22 @@ export default {
       })
     }
   },
+  watch: {
+    clear: function (newVal) {
+      if (newVal) this.clearData()
+    }
+  },
   methods: {
+    clearData: function () {
+      // Changing the key (forceTitleUpdate) forces the title's BaseFormInput to re-render
+      // https://michaelnthiessen.com/force-re-render
+      this.forceTitleUpdate++
+      this.setupTitle = ''
+      this.setupCountry = null
+      this.setupRole = null
+      this.setupCurrency = null
+      this.$emit('clear-success')
+    },
     updateData: function () {
       // Update data based on what is stored
       const setupData = this.getData()
@@ -87,11 +107,11 @@ export default {
       var setupCountryVal = null
 
       if (setupData && setupData.currencyCode) {
-        setupCurrencyVal = {value: setupData.currencyCode, label: setupData.currencyName}
+        setupCurrencyVal = { value: setupData.currencyCode, label: setupData.currencyName }
       }
 
       if (setupData && setupData.countryCode) {
-        setupCountryVal = {value: setupData.countryCode, label: setupData.countryName}
+        setupCountryVal = { value: setupData.countryCode, label: setupData.countryName }
       }
 
       if (setupData) {
