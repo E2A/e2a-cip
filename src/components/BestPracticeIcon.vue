@@ -47,6 +47,26 @@
           >
             {{option.text}}
           </button>
+          <!-- add comment button -->
+          <a
+            v-if="!!getSelectedAssessment()"
+            href="#"
+            @click="openComments"
+            :class="[
+              base.addComment
+            ]"
+          >
+            {{$t('bestPracticeIconComment')}}
+          </a>
+          <span
+            v-else
+            :class="[
+              base.addComment,
+              base.addCommentInactive
+            ]"
+          >
+            {{$t('bestPracticeIconComment')}}
+          </span>
         </div>
       </div>
 
@@ -154,7 +174,7 @@ export default {
       const assessmentPresent = this.$store.getters['entities/activities/query']()
         .with('assessments', (query) => {
           query.where('best_practice_id', this.id)
-        }).find(this.activityID).assessments
+        }).whereId(this.activityID).get()[0].assessments
 
       if (assessmentPresent && assessmentPresent.length > 0) {
         return assessmentPresent[0]
@@ -165,7 +185,7 @@ export default {
       // Check if assessment for current activity is store
       const assessmentPresent = this.$store.getters['entities/activities/query']().with('assessments', (query) => {
         query.where('best_practice_id', bestPracticeID)
-      }).with('recommendations').find(this.activityID).assessments[0]
+      }).with('recommendations').whereId(this.activityID).get()[0].assessments[0]
 
       if (assessmentPresent) {
         // Update assessment value if it already exists
@@ -187,6 +207,11 @@ export default {
           best_practice_id: bestPracticeID
         }
       })
+    },
+    openComments: function (e) {
+      e.preventDefault()
+      this.toggleFlyout()
+      this.$emit('open-comments', this.id)
     },
     toggleFlyout: function () {
       if (this.flyoutOpen) {
@@ -217,6 +242,7 @@ export default {
 <style src="styles/color.scss" lang="scss" module="color"></style>
 
 <style lang="scss" module="base">
+@import '~styleConfig/color';
 $icon-size: 2.25rem;
 
 .wrapper {
@@ -239,6 +265,26 @@ $icon-size: 2.25rem;
   composes: scaleZeta from 'styles/type.scss';
   text-align: center;
   top: ($icon-size + 1rem);
+}
+
+.addComment {
+  display: inline-block;
+  border: none;
+  background: none;
+  margin-left: none;
+
+  &:hover {
+    cursor: pointer;
+    margin-bottom: -1px;
+  }
+
+  &Inactive {
+    color: color('midtone');
+
+    &:hover {
+      cursor: default;
+    }
+  }
 }
 
 .resourceLink {

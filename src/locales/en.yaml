@@ -1275,6 +1275,9 @@ en:
     globalRecommendations:
       title: Add key recommendations
       content: Use the results to inform dialogue about youth needs and innovative strategies to meet those needs. Raise awareness about the importance of investing in the reproductive health of youth so as to lay the foundation for healthier future generations.
+    comments:
+      title: Your comments
+      content: Enter any comments and concerns you have on your assessments by looking over the information on Evidence-Informed Practices, available <a href="/evidence-informed-practices">here</a>.
     print: Print your results to share
     title: 'Moving forward…'
     intro: |-
@@ -1364,6 +1367,8 @@ en:
   delete: delete
   activities: activities
   activity: activity
+  bestPracticeIconComment: Add a comment
+  addAnotherComment: Add another comment
   bestPracticeIconData: Read more about this EIP
   # Country Indicator Data
   indicatorDataNotPresent: 'Your country does not have data for %{indicatorName}'

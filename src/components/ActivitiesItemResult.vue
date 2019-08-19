@@ -113,7 +113,7 @@
           <ActivityRecommendationInput
             v-if="recommendationsNotPresent"
             :activityInstance="activityInstance"
-            recommendationType='insert'
+            recommendationType='insertRecommendation'
           />
           <!-- Then show all once its been added -->
           <ActivityRecommendationInput
@@ -122,7 +122,7 @@
             :key="recommendation.id"
             :activityInstance="activityInstance"
             :recommendationId="recommendation.id"
-            recommendationType='update'
+            recommendationType='updateRecommendation'
             :existingRecommendationText="recommendation.text"
           />
         </ol>
@@ -184,7 +184,7 @@ export default {
     },
     activityRecommendations: function () {
       // Get current recommendations on a given activity.
-      return this.$store.getters['entities/activities/query']().with('recommendations').find(this.activityInstance.id).recommendations
+      return this.$store.getters['entities/activities/query']().with('recommendations').whereId(this.activityInstance.id).get()[0].recommendations
     },
     expandedData: function () {
       return {

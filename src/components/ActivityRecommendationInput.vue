@@ -54,7 +54,15 @@ export default {
       type: Object,
       required: false
     },
+    'assessmentInstance': {
+      type: Object,
+      required: false
+    },
     'recommendationId': {
+      type: Number,
+      required: false
+    },
+    'commentId': {
       type: Number,
       required: false
     },
@@ -63,7 +71,7 @@ export default {
       required: true,
       validator: function (value) {
         // The value must match one of these strings
-        return ['insert', 'update'].indexOf(value) !== -1
+        return ['insertRecommendation', 'updateRecommendation', 'insertComment', 'updateComment'].indexOf(value) !== -1
       }
     },
     'globalRecommendation': {
@@ -83,13 +91,13 @@ export default {
   methods: {
     updateRecommendation: function () {
       if (this.globalRecommendation) {
-        if (this.recommendationType === 'update') {
+        if (this.recommendationType === 'updateRecommendation') {
           // Update recommendation
           this.$store.dispatch('entities/globalrecommendations/update', {
             id: this.recommendationId,
             text: this.recommendationText
           })
-        } else if (this.recommendationType === 'insert') {
+        } else if (this.recommendationType === 'insertRecommendation') {
           // Add a new recommendation
           this.$store.dispatch('entities/globalrecommendations/insert', {
             data: {
@@ -98,14 +106,14 @@ export default {
           })
         }
       } else {
-        if (this.recommendationType === 'update') {
+        if (this.recommendationType === 'updateRecommendation') {
           // Update recommendation
           this.$store.dispatch('entities/recommendations/update', {
             id: this.recommendationId,
             activity_id: this.activityInstance.id,
             text: this.recommendationText
           })
-        } else if (this.recommendationType === 'insert') {
+        } else if (this.recommendationType === 'insertRecommendation') {
           // Add a new recommendation
           this.$store.dispatch('entities/recommendations/insert', {
             data: {
@@ -113,6 +121,23 @@ export default {
               text: this.recommendationText
             }
           })
+        } else if (this.recommendationType === 'updateComment') {
+          this.$store.dispatch('entities/comments/update', {
+            id: this.recommendationId,
+            text: this.recommendationText,
+            // Single variable connector to assessment
+            assessment_id: this.assessmentInstance.id
+          })
+        } else if (this.recommendationType === 'insertComment') {
+          this.$store.dispatch('entities/comments/insert', {
+            data: {
+              text: this.recommendationText,
+              // Single variable connector to assessment
+              assessment_id: this.assessmentInstance.id
+            }
+          })
+          // Update parent so recommendationType become 'updateComment'
+          this.$emit('update-comments')
         }
       }
     },
@@ -120,8 +145,12 @@ export default {
       // Remove recommendation
       if (this.globalRecommendation) {
         this.$store.dispatch('entities/globalrecommendations/delete', this.recommendationId)
-      } else {
+      } else if (this.recommendationType.toLowerCase().indexOf('recommendation') !== -1) {
         this.$store.dispatch('entities/recommendations/delete', this.recommendationId)
+      } else {
+        this.$store.dispatch('entities/comments/delete', this.recommendationId)
+        // Update parent to reflect the deleted info
+        this.$emit('update-comments')
       }
     }
   }
