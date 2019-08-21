@@ -54,6 +54,7 @@ export default {
           flyout: false
         }
       })
+      this.$store.commit('CLOSE_FLYOUTS')
     }
   },
   created () {

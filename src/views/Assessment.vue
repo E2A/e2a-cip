@@ -60,12 +60,9 @@
         </BaseHeading>
 
         <!-- table of activities -->
-        <ActivitiesList>
-          <template v-for="(activities, index) in groupedActivities">
-            <li
-              v-if="activities.activityObjects.length > 0"
-              :key="`gA-${index}`"
-            >
+        <ActivitiesList v-bind:groupedActivities="groupedActivities">
+          <template #activities="{ activities, setActivityId }">
+            <div v-if="activities.activityObjects.length > 0" >
               <ActivitiesTypeHeading>
                 {{activities.activityTypeName}}
               </ActivitiesTypeHeading>
@@ -77,8 +74,10 @@
                 :id="activity.id"
                 :budget="activity.budget"
                 :youth="activity.youthCentric"
+                @activitySelect="setActivityId"
+                :class="[mountedActivity === activity.id && instructions.itemSelected]"
               />
-            </li>
+            </div>
           </template>
         </ActivitiesList>
       </BaseWidthWrapper>
@@ -87,6 +86,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import NavFooter from '@/components/NavFooter.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
@@ -124,6 +124,9 @@ export default {
       console.log(this.getGroupedActivites())
       return this.getGroupedActivites()
     },
+    ...mapState({
+      mountedActivity: state => state.mountedActivity
+    }),
     navButtons: function () {
       return {
         left: [
@@ -144,7 +147,7 @@ export default {
   },
   data () {
     return {
-      cipTitle: this.getItemValue('setup', 'title')
+      cipTitle: this.getItemValue('setup', 'title'),
     }
   },
   created () {
@@ -161,6 +164,7 @@ export default {
 
 <style lang="scss" module="instructions">
 @import '~bourbon/core/bourbon';
+@import '~styleConfig/color';
 
 .wrapper {
   composes: paddingTop from 'styles/spacing.scss';
@@ -181,5 +185,9 @@ export default {
   @include size(4rem);
   display: inline-block;
   border-radius: 50%;
+}
+
+.itemSelected {
+  background-color: rgba(color('accent'), 0.20);
 }
 </style>

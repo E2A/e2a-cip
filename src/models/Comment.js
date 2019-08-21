@@ -1,5 +1,5 @@
 import { Model } from '@vuex-orm/core'
-import Assessment from './Assessment'
+import Activity from './Activity'
 
 export default class Comment extends Model {
   static entity = 'comments'
@@ -7,9 +7,9 @@ export default class Comment extends Model {
   static fields () {
     return {
       id: this.increment(),
-      assessment_id: this.number(0),
       text: this.string(''),
-      assessment: this.belongsTo(Assessment, 'assessment_id')
+      activity_id: this.number(0),
+      activity: this.belongsTo(Activity, 'activity_id')
     }
   }
 }

@@ -3,12 +3,12 @@
     el="dl"
     gutterX="narrow"
     gutterY="narrow"
-    :class="base.wrapper"
+    :class="[base.wrapper, condensed && base.condensed]"
   >
     <div
       v-for="(value, key, index) in data"
       :key="`data-grid-${index}`"
-      :class="base.item"
+      :class="[base.item, `dataItem`]"
     >
       <dt :class="base.dataTerm" v-html="key"></dt>
       <dd :class="base.dataValue" v-html="value"></dd>
@@ -29,6 +29,10 @@ export default {
     gutter: {
       type: [String, Object],
       default: 'narrow'
+    },
+    condensed: {
+      type: Boolean,
+      default: false,
     }
   },
   components: {
@@ -38,11 +42,18 @@ export default {
 </script>
 
 <style lang="scss" module="base">
+@import '~styleConfig/color';
+@import '~styleConfig/type';
+
 .wrapper {
   font-size: 0;
 }
 
 .data {
+  composes: scaleZeta from 'styles/type.scss';
+}
+
+.dataList {
   composes: scaleZeta from 'styles/type.scss';
 }
 
@@ -58,5 +69,12 @@ export default {
 
 .item {
   display: inline-block;
+}
+
+.condensed {
+  .dataTerm {
+    @include font();
+    color: color('midtone');
+  }
 }
 </style>

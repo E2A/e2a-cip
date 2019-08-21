@@ -10,6 +10,7 @@
 
 // standard spacing for margins and padding, etc.
 $spacing: (
+  'none': space-scale(0),
   'xxwide': space-scale(11),
   'xwide': space-scale(8),
   'wide': space-scale(4),

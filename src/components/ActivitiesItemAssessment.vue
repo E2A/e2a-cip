@@ -5,12 +5,8 @@
 -->
 
 <template>
-  <div :class="[base.wrapper]">
-    <BaseDetails
-      @open="handleOpen"
-      @close="handleClose"
-      :open="isOpen"
-    >
+  <div :class="[base.wrapper]" @click="emitClick">
+    <BaseDetails>
       <template slot="summaryLeft">
         <BaseHeading
           :level="6"
@@ -27,7 +23,6 @@
         <!-- list of best practice icons -->
         <BaseGutterWrapper
           v-if="youth"
-          v-show="!isOpen"
           :class="base.right"
           el="ul"
           gutterX="xnarrow"
@@ -38,115 +33,16 @@
             :key="index"
             :class="base.gutter"
           >
-            <BestPracticeIcon
+            <BestPracticeInfoIcon
               :id="bestPractice.id"
               :activityID="id"
-              @open-comments="openComments"
               :align="index > 4 ? 'right' : 'center'"
-              editable
             />
           </li>
         </BaseGutterWrapper>
-        <!-- edit button -->
-        <div
-          v-show="isOpen"
-          :class="base.right"
-        >
-          <BaseButtonLink
-            :to="{
-              name: 'activity',
-              params: {
-                activityId: String(id)
-              }
-            }"
-            :label="$t('edit')"
-            size="small"
-          />
-        </div>
+        
       </template>
 
-      <template>
-        <BaseGutterWrapper
-          :class="base.expandedWrapper"
-          gutterY="narrow"
-          gutterX="narrow"
-        >
-          <div :class="base.gutter">
-            <BaseDataGrid
-              :data="expandedData"
-              :class="base.data"
-            />
-          </div>
-          <!-- list of best practice icons -->
-          <div :class="base.gutter">
-            <BaseGutterWrapper
-              v-if="youth"
-              v-show="isOpen"
-              :class="base.icons"
-              el="ul"
-              gutterX="xnarrow"
-              gutterY="xnarrow"
-            >
-              <li
-                v-for="(bestPractice, index) of bestPractices"
-                :key="index"
-                :class="base.gutter"
-              >
-                <BestPracticeIcon
-                  :id="bestPractice.id"
-                  :activityID="id"
-                  @open-comments="openComments"
-                  :align="index > 5 ? 'right' : 'center'"
-                  editable
-                />
-              </li>
-            </BaseGutterWrapper>
-          </div>
-        </BaseGutterWrapper>
-        <!-- comments -->
-        <BaseGutterWrapper
-          v-if="commentsOpen"
-          :class="[space.paddingTopNarrow, space.paddingBottomWide]"
-        >
-          <BaseHeading
-            :level="5"
-            :centered="false"
-            :class="space.paddingBottomXnarrow"
-            scale="zeta"
-            weight="bold"
-            color="dark"
-          >
-            {{$t('suggestedImprovements')}}
-          </BaseHeading>
-          <ol :class="[space.paddingVerticalNarrow]">
-            <!-- By default start showing a recommendation -->
-            <ActivityRecommendationInput
-              v-if="commentsNotPresent"
-              :assessmentInstance="assessmentInstance"
-              recommendationType='insertComment'
-              @update-comments="getNewAssessment"
-            />
-            <!-- Then show all once its been added -->
-            <ActivityRecommendationInput
-              v-else
-              v-for="comment of assessmentComments"
-              :key="comment.id"
-              :assessmentInstance="assessmentInstance"
-              :recommendationId="comment.id"
-              recommendationType='updateComment'
-              :existingRecommendationText="comment.text"
-              @update-comments="getNewAssessment"
-            />
-          </ol>
-          <BaseButton
-            @click="addComment"
-            :class="space.marginLeft"
-            :label="$t('addAnotherComment')"
-            size="small"
-            role="primary"
-          />
-        </BaseGutterWrapper>
-      </template>
     </BaseDetails>
   </div>
 </template>
@@ -156,7 +52,7 @@ import BaseDetails from './BaseDetails'
 import BaseHeading from './BaseHeading'
 import BaseButtonLink from './BaseButtonLink'
 import BaseGutterWrapper from './BaseGutterWrapper'
-import BestPracticeIcon from './BestPracticeIcon'
+import BestPracticeInfoIcon from './BestPracticeInfoIcon'
 import BaseDataGrid from './BaseDataGrid'
 import ActivityRecommendationInput from '@/components/ActivityRecommendationInput.vue'
 import BaseButton from './BaseButton'
@@ -185,7 +81,7 @@ export default {
     BaseHeading,
     BaseDetails,
     BaseGutterWrapper,
-    BestPracticeIcon,
+    BestPracticeInfoIcon,
     BaseButtonLink,
     BaseDataGrid,
     ActivityRecommendationInput,
@@ -203,8 +99,6 @@ export default {
   data: function () {
     return {
       displayText: this.shortText || this.text,
-      isOpen: false,
-      commentsOpen: false,
       bestPracticeId: null,
       assessmentInstance: null,
       assessmentComments: null,
@@ -212,35 +106,18 @@ export default {
     }
   },
   methods: {
+    emitClick: function(event) {
+      this.$emit('activitySelect', event, this.id)
+    },
     getAssessmentInstance: function (bestPracticeId) {
       this.assessmentInstance = this.$store.getters['entities/assessments/query']()
         .with('comments')
         .where('activity_id', this.id)
         .where('best_practice_id', bestPracticeId)
-        .all()[0]
+        .first()
 
       this.assessmentComments = this.assessmentInstance.comments
       this.commentsNotPresent = this.assessmentInstance.comments.length === 0
-    },
-    openComments: function (bestPracticeId) {
-      this.bestPracticeId = bestPracticeId
-      if (this.commentsOpen) {
-        this.getNewAssessment()
-        return
-      }
-
-      this.handleOpen()
-      this.commentsOpen = true
-      this.getAssessmentInstance(bestPracticeId)
-    },
-    addComment: function () {
-      this.$store.dispatch('entities/comments/insert', {
-        data: {
-          assessment: this.assessmentInstance.id,
-          text: ''
-        }
-      })
-      this.getNewAssessment()
     },
     getNewAssessment: function () {
       this.getAssessmentInstance(this.bestPracticeId)

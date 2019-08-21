@@ -1224,6 +1224,7 @@ en:
   addAnotherRecommendation: Add another recommendation
   suggestedImprovements: Suggested improvements
   suggestImprovements: Suggest improvements
+  addComment: Add a comment
   done: Done
   results:
     analysis:
@@ -1368,7 +1369,7 @@ en:
   activities: activities
   activity: activity
   bestPracticeIconComment: Add a comment
-  addAnotherComment: Add another comment
+  addAnotherComment: Submit Comment
   bestPracticeIconData: Read more about this EIP
   # Country Indicator Data
   indicatorDataNotPresent: 'Your country does not have data for %{indicatorName}'
