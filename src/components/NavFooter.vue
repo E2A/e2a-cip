@@ -84,7 +84,7 @@ export default {
     },
     saveReminder: function () {
       this.notify(
-        this.$root.$t('saveRecommended', { exportLink: '#' }),
+        this.$root.$t('saveRecommended', {exportLink: '#'}),
         'warning',
         10000
       )

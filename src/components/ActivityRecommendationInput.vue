@@ -54,10 +54,6 @@ export default {
       type: Object,
       required: false
     },
-    'assessmentInstance': {
-      type: Object,
-      required: false
-    },
     'recommendationId': {
       type: Number,
       required: false
@@ -125,15 +121,13 @@ export default {
           this.$store.dispatch('entities/comments/update', {
             id: this.recommendationId,
             text: this.recommendationText,
-            // Single variable connector to assessment
-            assessment_id: this.assessmentInstance.id
+            activity_id: this.activityInstance.id,
           })
         } else if (this.recommendationType === 'insertComment') {
           this.$store.dispatch('entities/comments/insert', {
             data: {
               text: this.recommendationText,
-              // Single variable connector to assessment
-              assessment_id: this.assessmentInstance.id
+              activity_id: this.activityInstance.id,
             }
           })
           // Update parent so recommendationType become 'updateComment'

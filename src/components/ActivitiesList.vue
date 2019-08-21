@@ -1,26 +1,32 @@
 <template>
-  <div v-if="!table">
-    <div :class="base.header">
-      <BaseHeading
-        v-for="(heading, index) in headings"
-        :key="index"
-        :centered="false"
-        :class="base.heading"
-        scale="zeta"
-        color="dark"
-        sub
-      >
-        {{ translateHeadings ? $t(heading.title) : heading.title }}
-      </BaseHeading>
+  <div v-if="!table" :class="base.activitiesTableWrapper">
+    <div :class="base.activitiesTable">
+      <div :class="base.header">
+        <BaseHeading
+          v-for="(heading, index) in headings"
+          :key="index"
+          :centered="false"
+          :class="base.heading"
+          scale="zeta"
+          color="dark"
+          sub
+        >
+          {{ translateHeadings ? $t(heading.title) : heading.title }}
+        </BaseHeading>
+      </div>
+      <ul :class="base.list">
+        <li v-for="(activities, index) in groupedActivities" :key="`gA-${index}`">
+          <slot name="activities" :activities="activities" :setActivityId="setActivityId"></slot>
+        </li>
+      </ul>
     </div>
-    <ul :class="base.list">
-      <slot>Add activity items here</slot>
-    </ul>
+    <ActivityTray />
   </div>
 </template>
 
 <script>
 import BaseHeading from '@/components/BaseHeading.vue'
+import ActivityTray from '@/components/ActivityTray.vue'
 
 export default {
   name: 'ActivitiesList',
@@ -28,6 +34,12 @@ export default {
     table: {
       type: Boolean,
       default: false
+    },
+    groupedActivities: {
+      type: Array,
+    },
+    currentActivityId: {
+      type: String,
     },
     headings: {
       type: Array,
@@ -49,7 +61,15 @@ export default {
     }
   },
   components: {
-    BaseHeading
+    BaseHeading,
+    ActivityTray
+  },
+  methods: {
+    setActivityId: function(event, value) {
+      if (value > 0) {
+        this.$store.commit('SET_MOUNTED_ACTIVITY', value)
+      }
+    }
   }
 }
 </script>
@@ -75,5 +95,16 @@ export default {
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+
+  .activitiesTableWrapper {
+    display: flex;
+  }
+
+  .activitiesTable {
+    flex: 0 0 66%;
+    composes: default round from "styles/borders.scss";
+    composes: whiteBg shadow from "styles/color.scss";
+    padding: 1rem;
   }
 </style>
