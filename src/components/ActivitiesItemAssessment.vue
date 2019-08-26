@@ -40,7 +40,7 @@
             />
           </li>
         </BaseGutterWrapper>
-        
+
       </template>
 
     </BaseDetails>
@@ -54,7 +54,7 @@ import BaseButtonLink from './BaseButtonLink'
 import BaseGutterWrapper from './BaseGutterWrapper'
 import BestPracticeInfoIcon from './BestPracticeInfoIcon'
 import BaseDataGrid from './BaseDataGrid'
-import ActivityRecommendationInput from '@/components/ActivityRecommendationInput.vue'
+import ActivitiesItemInput from '@/components/ActivitiesItemInput.vue'
 import BaseButton from './BaseButton'
 import { bestPracticeData } from './mixins/bestPracticeData'
 import { dataMethods } from './mixins/dataMethods'
@@ -84,7 +84,7 @@ export default {
     BestPracticeInfoIcon,
     BaseButtonLink,
     BaseDataGrid,
-    ActivityRecommendationInput,
+    ActivitiesItemInput,
     BaseButton
   },
   computed: {
@@ -106,7 +106,7 @@ export default {
     }
   },
   methods: {
-    emitClick: function(event) {
+    emitClick: function (event) {
       this.$emit('activitySelect', event, this.id)
     },
     getAssessmentInstance: function (bestPracticeId) {

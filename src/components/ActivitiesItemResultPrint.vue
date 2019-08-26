@@ -90,7 +90,7 @@ import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import BaseDataGrid from '@/components/BaseDataGrid.vue'
 import { bestPracticeData } from './mixins/bestPracticeData'
 import { dataMethods } from './mixins/dataMethods'
-import ActivityRecommendationInput from '@/components/ActivityRecommendationInput.vue'
+import ActivitiesItemInput from '@/components/ActivitiesItemInput.vue'
 
 export default {
   name: 'ActivitiesItemResultPrint',
@@ -102,7 +102,7 @@ export default {
     BaseGutterWrapper,
     BaseDataGrid,
     BaseBodyText,
-    ActivityRecommendationInput
+    ActivitiesItemInput
   },
   props: {
     activityInstance: {

@@ -113,13 +113,13 @@
         <ol :class="[base.recommendations, space.paddingVerticalNarrow]">
           <!-- error source -->
           <!-- By default start showing a recommendation -->
-          <ActivityRecommendationInput
+          <ActivitiesItemInput
             v-if="recommendationsNotPresent"
             :activityInstance="activityInstance"
             recommendationType='insertRecommendation'
           />
           <!-- Then show all once its been added -->
-          <ActivityRecommendationInput
+          <ActivitiesItemInput
             v-else
             v-for="recommendation of activityRecommendations"
             :key="recommendation.id"
@@ -150,7 +150,7 @@ import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import BaseDataGrid from '@/components/BaseDataGrid.vue'
 import { bestPracticeData } from './mixins/bestPracticeData'
 import { dataMethods } from './mixins/dataMethods'
-import ActivityRecommendationInput from '@/components/ActivityRecommendationInput.vue'
+import ActivitiesItemInput from '@/components/ActivitiesItemInput.vue'
 
 export default {
   name: 'ActivitiesItemResult',
@@ -162,7 +162,7 @@ export default {
     BestPracticeIcon,
     BaseGutterWrapper,
     BaseDataGrid,
-    ActivityRecommendationInput
+    ActivitiesItemInput
   },
   props: {
     activityInstance: {
