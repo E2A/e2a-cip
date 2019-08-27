@@ -16,7 +16,7 @@
 
     <div :class="base.gutter">
       <BaseGutterWrapper
-        v-if="isYouthCentric"
+        v-if="isYouthCentric()"
         :class="base.icons"
         el="ul"
         gutterX="xnarrow"
@@ -53,9 +53,10 @@
             />
         </div>
           <!-- By default start showing a recommendation -->
-          <ActivityRecommendationInput 
+          <ActivitiesItemInput
             :activityInstance="activity"
-            recommendationType="insertComment"
+            action="insert"
+            inputType="comments"
           />
         <BaseButton
           @click="addComment"
@@ -70,21 +71,21 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import { dataMethods } from "@/components/mixins/dataMethods";
-import BaseHeading from "@/components/BaseHeading.vue";
-import BaseBodyText from "@/components/BaseBodyText.vue";
-import BaseDataGrid from "@/components/BaseDataGrid.vue";
-import { activityTypes } from "@/components/mixins/activityTypes";
-import BestPracticeIcon from "@/components/BestPracticeIcon.vue";
-import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
-import { bestPracticeData } from "@/components/mixins/bestPracticeData";
+import { mapState } from 'vuex'
+import { dataMethods } from '@/components/mixins/dataMethods'
+import BaseHeading from '@/components/BaseHeading.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
+import BaseDataGrid from '@/components/BaseDataGrid.vue'
+import { activityTypes } from '@/components/mixins/activityTypes'
+import BestPracticeIcon from '@/components/BestPracticeIcon.vue'
+import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
+import { bestPracticeData } from '@/components/mixins/bestPracticeData'
 import BaseButton from '@/components/BaseButton'
 import ActivityComment from '@/components/ActivityComment'
-import ActivityRecommendationInput from '@/components/ActivityRecommendationInput'
+import ActivitiesItemInput from '@/components/ActivitiesItemInput'
 
 export default {
-  name: "ActivityTray",
+  name: 'ActivityTray',
   mixins: [bestPracticeData, dataMethods, activityTypes],
   components: {
     BaseBodyText,
@@ -93,59 +94,58 @@ export default {
     BestPracticeIcon,
     BaseGutterWrapper,
     BaseButton,
-    ActivityRecommendationInput,
+    ActivitiesItemInput,
     ActivityComment
   },
   computed: {
     ...mapState({
       activityId: state => state.mountedActivity
     }),
-    activity: function() {
-      return this.$store.getters["entities/activities/query"]()
-      .with('comments')
-      .whereId(this.activityId)
-      .first()
+    activity: function () {
+      return this.$store.getters['entities/activities/query']()
+        .with('comments')
+        .whereId(this.activityId)
+        .first()
     },
-    comments: function() {
-      console.log('comments', this.activity.comments)
+    comments: function () {
       return this.activity.comments
     },
     commentsNotPresent: function () {
       return this.comments.length === 0
     },
-    expandedData: function() {
+    expandedData: function () {
       return {
-        [this.$t("activityTable.defaultID")]: this.activity.id,
-        [this.$t("activityTable.defaultBudget")]: `${
+        [this.$t('activityTable.defaultID')]: this.activity.id,
+        [this.$t('activityTable.defaultBudget')]: `${
           this.activity.budget
-        } <small>${this.getItemValue("setup", "currencyCode")}</small>`,
-        [this.$t("activityTable.defaultYouthCentered")]: this.activity
+        } <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
+        [this.$t('activityTable.defaultYouthCentered')]: this.activity
           .youthCentric
-          ? this.$t("yesRaw")
-          : this.$t("noRaw")
-      };
-    },
+          ? this.$t('yesRaw')
+          : this.$t('noRaw')
+      }
+    }
   },
   methods: {
-    deleteComment: function(event, commentId) {
+    deleteComment: function (event, commentId) {
       this.$store.dispatch('entities/comments/delete', commentId)
     },
-    getActivityType: function() {
+    getActivityType: function () {
       if (!this.activityId) {
-        return null;
+        return null
       }
-      const needle = this.activity.type;
+      const needle = this.activity.type
       const type = this.activityTypeDataset.find(item => {
-        return item.key == needle;
-      });
+        return item.key === needle
+      })
 
-      return type.title;
+      return type.title
     },
-    getActivityTitle: function() {
-      return this.activity.text;
+    getActivityTitle: function () {
+      return this.activity.text
     },
-    isYouthCentric: function() {
-      return this.activity.youthCentric;
+    isYouthCentric: function () {
+      return this.activity.youthCentric
     },
     addComment: function () {
       this.$store.dispatch('entities/comments/insert', {
@@ -154,9 +154,9 @@ export default {
           text: ''
         }
       })
-    },
+    }
   }
-};
+}
 </script>
 
 <style src="styles/type.scss" lang="scss" module="type"></style>

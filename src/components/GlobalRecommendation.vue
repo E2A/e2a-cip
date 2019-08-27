@@ -9,20 +9,20 @@
     <!-- recommendations -->
     <ol :class="[base.recommendations, space.paddingVerticalNarrow]">
       <!-- By default start showing a recommendation -->
-      <ActivityRecommendationInput
+      <ActivitiesItemInput
         v-if="recommendationsNotPresent"
-        :globalRecommendation="true"
-        recommendationType='insertRecommendation'
+        action='insert'
+        inputType="globalrecommendations"
       />
       <!-- Then show all once its been added -->
-      <ActivityRecommendationInput
+      <ActivitiesItemInput
         v-else
         v-for="recommendation of globalRecommendations"
         :key="recommendation.id"
-        :globalRecommendation="true"
-        :recommendationId="recommendation.id"
-        recommendationType='updateRecommendation'
-        :existingRecommendationText="recommendation.text"
+        :id="recommendation.id"
+        action='update'
+        inputType="globalrecommendations"
+        :existingText="recommendation.text"
       />
     </ol>
     <BaseButton
@@ -37,13 +37,13 @@
 
 <script>
 import BaseButton from '@/components/BaseButton.vue'
-import ActivityRecommendationInput from '@/components/ActivityRecommendationInput.vue'
+import ActivitiesItemInput from '@/components/ActivitiesItemInput.vue'
 
 export default {
   name: 'GlobalRecommendation',
   components: {
     BaseButton,
-    ActivityRecommendationInput
+    ActivitiesItemInput
   },
   computed: {
     recommendationsNotPresent: function () {

@@ -86,7 +86,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 import NavFooter from '@/components/NavFooter.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
@@ -121,7 +121,6 @@ export default {
   },
   computed: {
     groupedActivities: function () {
-      console.log(this.getGroupedActivites())
       return this.getGroupedActivites()
     },
     ...mapState({
@@ -147,7 +146,7 @@ export default {
   },
   data () {
     return {
-      cipTitle: this.getItemValue('setup', 'title'),
+      cipTitle: this.getItemValue('setup', 'title')
     }
   },
   created () {
