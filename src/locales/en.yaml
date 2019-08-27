@@ -1247,6 +1247,11 @@ en:
     percentActivitesWithBP: "Activites with an EIP"
     activityWithEIPbyType: Activity With EIP by Type
     exportChartSuccess: 'You successfully exported your chart data'
+  chartToolTips:
+    youthFocusBudget: ''
+    youthFocusCount: ''
+    activityTypeBudget: 'Percentage calculated using only youth centric activities.'
+    activityTypeCount: 'Percentage calculated using only youth centric activities.'
   chartTitles:
     defaultGroupHeading: 'Default Group heading'
     activityTypeCount: "% Activity count by type"

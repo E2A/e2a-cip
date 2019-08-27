@@ -27,6 +27,7 @@
             :seriesData="chartData.seriesData[chartName]"
             :labelData="chartData.labelData[chartName]"
             :isCurrency="chartData.isCurrency[chartName]"
+            :toolTip="$t(`chartToolTips.${chartName}`)"
           />
           <ResultsQuestions
             v-if="questions"
@@ -94,7 +95,7 @@ export default {
     },
     questions: {
       type: Array
-    }
+    },
   },
   computed: {
     currentLocale () {
