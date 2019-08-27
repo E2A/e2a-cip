@@ -73,6 +73,12 @@ export default {
         return ['globalrecommendations', 'recommendations', 'comments'].indexOf(value) !== -1
       }
     },
+    // true => this component controls communication with the store
+    'active': {
+      type: Boolean,
+      required: false,
+      default: true
+    },
     'existingText': {
       type: String,
       required: false
@@ -85,6 +91,13 @@ export default {
   },
   methods: {
     updateItem: function () {
+      if (!this.active) {
+        // Parent controls communication with the store
+        this.updateParent()
+        return
+      }
+
+      // This component controls communication with the store
       const data = {
         text: this.itemText,
         // Conditional properties
@@ -101,6 +114,9 @@ export default {
     },
     deleteItem: function () {
       this.$store.dispatch(`entities/${this.inputType}/delete`, this.id)
+    },
+    updateParent: function () {
+      this.$emit('change', this.itemText)
     }
   }
 }
