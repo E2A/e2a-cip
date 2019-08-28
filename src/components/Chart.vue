@@ -9,7 +9,7 @@
       weight="bold"
       color="dark"
     >
-      {{this.$t(`chartTitles.${chartName}`)}}
+      {{this.$t(`chartTitles.${chartName}`)}} <BaseTooltip v-if="toolTipPresent" :body="toolTip" />
     </BaseHeading>
 
     <BaseGutterWrapper
@@ -37,6 +37,7 @@
 import BaseHeading from './BaseHeading.vue'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
 import ChartLegend from './ChartLegend.vue'
+import BaseTooltip from './BaseTooltip.vue'
 import * as Chartist from 'chartist'
 import { dataMethods } from './mixins/dataMethods'
 import { parseIntWithSuffix, getCurrencySymbol } from './mixins/helpers'
@@ -60,6 +61,10 @@ export default {
     isCurrency: { 
       type: Boolean,
       required: false,
+    },
+    toolTip: {
+      type: String,
+      required: false,
     }
   },
   computed: {
@@ -69,11 +74,15 @@ export default {
     series: function() {
       return this.seriesData.map(data => data.value)
     },
+    toolTipPresent: function() {
+      return this.toolTip.length > 0
+    }
   },
   components: {
     BaseHeading,
     BaseGutterWrapper,
-    ChartLegend
+    ChartLegend,
+    BaseTooltip
   },
   methods: {
     chartLabels (context) {

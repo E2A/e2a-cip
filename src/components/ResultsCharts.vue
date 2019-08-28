@@ -87,11 +87,11 @@
         :questions="[
           {
             name: 'activityTypeBudget',
-            questions: findQuestions('activityTypeBudgetQuestions')
+            questions: findQuestions('activityTypeBudgetQuestions'),
           },
           {
             name: 'activityTypeCount',
-            questions: findQuestions('activityTypeCountQuestions')
+            questions: findQuestions('activityTypeCountQuestions'),
           }
         ]"
       />
