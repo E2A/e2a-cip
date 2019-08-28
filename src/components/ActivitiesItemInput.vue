@@ -5,20 +5,20 @@
 -->
 
 <template>
-  <li :class="base.wrapper">
-    <div :class="base.numberWrapper">
+  <li :class="[base.wrapper, base.unmarked]">
+    <div :class="{[base.numberWrapper]: isActive}">
       <BaseGutterWrapper
         :class="base.flex"
         gutterY="narrow"
-        gutterX="narrow"
+        :gutterX="isActive ? 'narrow' : 'None'"
       >
         <div :class="[base.gutter, base.fill]">
           <BaseFormInput
             v-model="itemText"
             @change="updateItem()"
             textSize="zeta"
-            labelTextSize="zeta"
             el="textarea"
+            :outline="isActive ? 'highlight' : 'midtone'"
           />
         </div>
         <div :class="base.gutter">
@@ -74,7 +74,7 @@ export default {
       }
     },
     // true => this component controls communication with the store
-    'active': {
+    'isActive': {
       type: Boolean,
       required: false,
       default: true
@@ -97,7 +97,7 @@ export default {
         return
       }
 
-      // This component controls communication with the store
+      // Component controls communication with the store
       const data = {
         text: this.itemText,
         // Conditional properties
@@ -165,7 +165,6 @@ export default {
   @supports (flex: 1) {
     flex: 1;
   }
-  width: 80%;
 }
 
 .gutter {

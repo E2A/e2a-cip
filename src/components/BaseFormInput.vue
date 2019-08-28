@@ -48,7 +48,7 @@
         :is="el"
         :id="name"
         :name="name"
-        :class="inputClasses"
+        :class="[classItems, inputClasses]"
         :rows="el === 'textarea' && height"
         :placeholder="placeholder"
         :value="value"
@@ -94,6 +94,10 @@ export default {
       type: String,
       default: 'epsilon'
     },
+    outline: {
+      type: String,
+      default: 'highlight'
+    },
     labelTextSize: String,
     // number of rows the textarea shows
     height: {
@@ -109,6 +113,7 @@ export default {
     inputClasses: function () {
       return [
         `${this.el}`,
+        `${this.el}-${this.outline}`,
         `scale-${this.textSize}`
       ]
     }
@@ -163,10 +168,20 @@ export default {
   padding: space('xnarrow');
   width: 100%;
 
-  &:focus,
-  &:active {
-    border-color: color('highlight');
-    background-color: color('white');
+  &-highlight {
+    &:focus,
+    &:active {
+      border-color: color('highlight');
+      background-color: color('white');
+    }
+  }
+
+  &-midtone {
+    &:focus,
+    &:active {
+      border-color: color('midtone');
+      background-color: color('white');
+    }
   }
 }
 

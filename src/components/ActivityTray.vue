@@ -57,7 +57,7 @@
             :activityInstance="activity"
             action="insert"
             inputType="comments"
-            :active="false"
+            :isActive="false"
             :key="inputKey"
             @change="updateInputText"
           />
