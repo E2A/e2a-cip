@@ -1,9 +1,9 @@
 <template>
   <svg
-    :class="base.icon"
+    :class="[base.icon, {[base.noMargin]: noMargin}]"
     :style="{
       width: size,
-      height: size
+      height: size,
     }"
     :role="role"
   >
@@ -30,6 +30,10 @@ export default {
     },
     alt: {
       type: String
+    },
+    noMargin: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -46,5 +50,9 @@ export default {
   position: relative;
   text-decoration: none;
   vertical-align: middle;
+}
+
+.noMargin {
+  margin-top: 0;
 }
 </style>

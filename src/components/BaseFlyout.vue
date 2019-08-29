@@ -1,9 +1,7 @@
 <template>
   <aside
     :class="[base.wrapper, base[align]]"
-    :style="{
-      width: size + 'rem'
-    }"
+    :style="width"
     @click.stop
   >
     <div :class="base.content">
@@ -30,6 +28,11 @@ export default {
     el: {
       type: String,
       default: 'aside'
+    }
+  },
+  computed: {
+    width: function () {
+      return this.size ? { width: this.size + 'rem' } : {}
     }
   }
 }

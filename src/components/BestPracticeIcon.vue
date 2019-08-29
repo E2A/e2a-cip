@@ -21,42 +21,34 @@
       :class="base.flyout"
       :id="flyoutID"
       :align="align"
+      :size="0"
     >
-      <div :class="space.paddingXnarrow">
-        <BaseHeading
-          :level="4"
-          scale="zeta"
-          color="dark"
-          weight="regular"
-        >
-          {{title}}
-        </BaseHeading>
+      <div v-if="editable" :class="[base.container, space.paddingNarrow, space.marginHorizontalBetweenXnarrow]">
 
-        <!-- dots -->
+        <!-- icon options -->
         <div
-          v-if="editable"
-          :class="[space.paddingTopNarrow, space.marginHorizontalBetweenXnarrow]"
+          v-for="(option, index) of bestPracticeOptions"
+          :key="index"
+          @click="updateAssessment(title, option.value, id)"
+          :class="[
+            dot.option,
+            dot[option.class],
+            {[dot.selected]: selectedAssessment.value.toLowerCase() === option.value}
+          ]"
         >
-          <button v-for="(option, index) of bestPracticeOptions"
-            :key="index"
-            @click="updateAssessment(title, option.value, id)"
-            :class="[
-              dot.option,
-              dot[option.class],
-              {[dot.selected]: selectedAssessment.value.toLowerCase() === option.value}
-            ]"
-          >
-            {{option.text}}
-          </button>
+          <BaseIcon
+            :name="icon"
+            :class="[color[option.class]]"
+            :alt="title"
+            role="img"
+            size="2rem"
+            :noMargin="true"
+          />
+          <span :class="dot.text">
+            {{option.value}}
+          </span>
         </div>
-      </div>
 
-      <!-- read more link -->
-      <div :class="base.resourceLink">
-
-        <router-link :to="{name: 'evidence-informed-practice', params: {id: id}}">
-          {{$t('bestPracticeIconData')}} &rsaquo;
-        </router-link>
       </div>
     </BaseFlyout>
   </div>
@@ -128,20 +120,20 @@ export default {
   data: function () {
     return {
       bestPracticeOptions: {
-        yes: {
-          class: 'yes',
-          text: this.$t('bestPracticeOptions.yesText'),
-          value: this.$t('bestPracticeOptions.yesKey')
+        no: {
+          class: 'no',
+          text: this.$t('bestPracticeOptions.noText'),
+          value: this.$t('bestPracticeOptions.noKey')
         },
         partially: {
           class: 'partially',
           text: this.$t('bestPracticeOptions.partiallyText'),
           value: this.$t('bestPracticeOptions.partiallyKey')
         },
-        no: {
-          class: 'no',
-          text: this.$t('bestPracticeOptions.noText'),
-          value: this.$t('bestPracticeOptions.noKey')
+        yes: {
+          class: 'yes',
+          text: this.$t('bestPracticeOptions.yesText'),
+          value: this.$t('bestPracticeOptions.yesKey')
         }
       }
     }
@@ -157,8 +149,6 @@ export default {
         .with('assessments', (query) => {
           query.where('best_practice_id', this.id)
         }).whereId(this.activityID).get()[0].assessments
-
-      console.log('assessmentPresent', assessmentPresent)
 
       if (assessmentPresent && assessmentPresent.length > 0) {
         return assessmentPresent[0]
@@ -180,17 +170,19 @@ export default {
           value: bestPracticeValue,
           best_practice_id: bestPracticeID
         })
-        return
+      } else {
+        // Add a new assessment
+        this.$store.dispatch('entities/assessments/insert', {
+          data: {
+            activity_id: this.activityID,
+            text: bestPracticeText,
+            value: bestPracticeValue,
+            best_practice_id: bestPracticeID
+          }
+        })
       }
-      // Add a new assessment
-      this.$store.dispatch('entities/assessments/insert', {
-        data: {
-          activity_id: this.activityID,
-          text: bestPracticeText,
-          value: bestPracticeValue,
-          best_practice_id: bestPracticeID
-        }
-      })
+
+      this.toggleFlyout()
     },
     toggleFlyout: function () {
       if (this.flyoutOpen) {
@@ -227,6 +219,11 @@ $icon-size: 2.25rem;
 .wrapper {
   display: block;
   position: relative;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
 }
 
 .iconLink {
@@ -276,37 +273,35 @@ $icon-size: 2.25rem;
 @import '~styleConfig/color';
 @import '~styleConfig/borders';
 
+$size: 2rem;
+$margin: 0.4rem;
+
 .option {
-  $size: 1.8rem;
-  $margin: 0.4rem;
-  composes: default from 'styles/animation.scss';
   composes: midtone from 'styles/color.scss';
-  background: transparent;
-  border: none;
   cursor: pointer;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   min-width: $size;
-  outline: none;
-  overflow: visible;
-  padding: ($size + $margin) 0 0 0;
   position: relative;
+  z-index: 100;
   text-align: center;
 
   &::before,
   &::after {
     border-radius: 50%;
-    content: ' ';
-    display: inline-block;
+    content: '';
+    display: inline-flex;
     height: $size;
-    left: 50%;
-    margin-left: -($size / 2);
     position: absolute;
+    z-index: 200;
     top: 0;
     width: $size;
   }
 
-  &::before {
-    background-color: color('no');
+  .text {
+    margin-top: $margin;
   }
 
   &:hover,
@@ -338,7 +333,6 @@ $icon-size: 2.25rem;
   .#{$color}{
     &::before {
       @include border($w: 'thick', $color: $color);
-      background-color: color($color);
     }
   }
 }
