@@ -5,20 +5,20 @@
 -->
 
 <template>
-  <li :class="base.wrapper">
-    <div :class="base.numberWrapper">
+  <li :class="[base.wrapper, base.unmarked]">
+    <div :class="{[base.numberWrapper]: isActive}">
       <BaseGutterWrapper
         :class="base.flex"
         gutterY="narrow"
-        gutterX="narrow"
+        :gutterX="isActive ? 'narrow' : 'None'"
       >
         <div :class="[base.gutter, base.fill]">
           <BaseFormInput
             v-model="itemText"
             @change="updateItem()"
             textSize="zeta"
-            labelTextSize="zeta"
             el="textarea"
+            :outline="isActive ? 'highlight' : 'midtone'"
           />
         </div>
         <div :class="base.gutter">
@@ -73,6 +73,12 @@ export default {
         return ['globalrecommendations', 'recommendations', 'comments'].indexOf(value) !== -1
       }
     },
+    // true => this component controls communication with the store
+    'isActive': {
+      type: Boolean,
+      required: false,
+      default: true
+    },
     'existingText': {
       type: String,
       required: false
@@ -85,6 +91,13 @@ export default {
   },
   methods: {
     updateItem: function () {
+      if (!this.active) {
+        // Parent controls communication with the store
+        this.updateParent()
+        return
+      }
+
+      // Component controls communication with the store
       const data = {
         text: this.itemText,
         // Conditional properties
@@ -101,6 +114,9 @@ export default {
     },
     deleteItem: function () {
       this.$store.dispatch(`entities/${this.inputType}/delete`, this.id)
+    },
+    updateParent: function () {
+      this.$emit('change', this.itemText)
     }
   }
 }
@@ -149,7 +165,6 @@ export default {
   @supports (flex: 1) {
     flex: 1;
   }
-  width: 80%;
 }
 
 .gutter {

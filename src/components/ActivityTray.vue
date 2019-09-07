@@ -57,6 +57,9 @@
             :activityInstance="activity"
             action="insert"
             inputType="comments"
+            :isActive="false"
+            :key="inputKey"
+            @change="updateInputText"
           />
         <BaseButton
           @click="addComment"
@@ -126,7 +129,21 @@ export default {
       }
     }
   },
+  data: function () {
+    return {
+      inputKey: 0,
+      inputText: ''
+    }
+  },
   methods: {
+    addComment: function () {
+      const data = {
+        activity_id: this.activityId,
+        text: this.inputText
+      }
+      this.$store.dispatch('entities/comments/insert', { data })
+      this.emptyInput()
+    },
     deleteComment: function (event, commentId) {
       this.$store.dispatch('entities/comments/delete', commentId)
     },
@@ -147,13 +164,12 @@ export default {
     isYouthCentric: function () {
       return this.activity.youthCentric
     },
-    addComment: function () {
-      this.$store.dispatch('entities/comments/insert', {
-        data: {
-          activity_id: this.activityId,
-          text: ''
-        }
-      })
+    updateInputText: function (newValue) {
+      this.inputText = newValue
+    },
+    emptyInput: function () {
+      this.inputKey++
+      this.inputText = ''
     }
   }
 }
