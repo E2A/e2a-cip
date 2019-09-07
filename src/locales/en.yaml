@@ -1322,17 +1322,21 @@ en:
     pdfFileName: e2a-report-%{timestamp}.pdf
     exportSuccessful: "%{filetype} Save Successful"
   nav:
+    plan: 'Plan'
     setup: 'Setup'
     activities: 'Activities'
     summary: 'Summary'
     bestPractices: 'Evidence-Informed Practices'
     assessment: 'Analysis'
+    analyze: 'Analyze'
     results: 'Results'
+    report: 'Report'
     advocate: 'Advocate'
     addAssessment: You must enter your analysis before you can move further.
     removeAssessment: You must remove all your analysis before you can edit activites.
     addSetup: You must add setup data before moving further
     addActivites: You must add activities before moving further
+    learnMore: Learn More About EIPs
   activityTable:
     defaultTitle: Activity text
     defaultID: Activity number
