@@ -23,12 +23,12 @@ export default new Router({
       component: Home
     },
     {
-      path: '/setup/',
+      path: '/plan/setup/',
       name: 'setup',
       component: Setup
     },
     {
-      path: '/activity/:activityId?',
+      path: '/plan/activity/:activityId?',
       name: 'activity',
       component: Activity,
       props: true
@@ -40,7 +40,7 @@ export default new Router({
       props: true
     },
     {
-      path: '/summary',
+      path: '/plan/summary',
       name: 'summary',
       component: Summary
     },
@@ -50,8 +50,14 @@ export default new Router({
       component: Assessment
     },
     {
-      path: '/evidence-informed-practices',
+      path: '/analysis/evidence-informed-practices',
       name: 'evidence-informed-practices',
+      component: BestPractices
+    },
+    // Using duplicate path so we have a stateless path
+    {
+      path: '/evidence-informed-practices',
+      name: 'eips',
       component: BestPractices
     },
     {

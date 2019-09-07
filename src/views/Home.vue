@@ -1,6 +1,6 @@
 <template>
   <article>
-
+    
     <aside
       :class="[space.paddingHorizontal, space.paddingVerticalNarrow, color.well, border.bottom, type.right]"
     >

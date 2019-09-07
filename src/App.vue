@@ -5,6 +5,7 @@
       v-if="showNav"
       :key="this.getItemCount('all')"
     />
+    <NavBreadcrumbs v-if="showNav" />
     <router-view :key="$route.fullPath"></router-view>
   </div>
 </template>
@@ -12,6 +13,7 @@
 <script>
 import 'normalize.css' // global reset styles - import here b/c sass doesn't like importing vanilla css
 import NavHeader from '@/components/NavHeader.vue'
+import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
 import BaseIconSpriteMap from '@/components/BaseIconSpriteMap.vue'
 import { dataMethods } from '@/components/mixins/dataMethods.js'
 import locale2 from 'locale2'
@@ -21,6 +23,7 @@ export default {
   mixins: [ dataMethods ],
   components: {
     NavHeader,
+    NavBreadcrumbs,
     BaseIconSpriteMap
   },
   computed: {
