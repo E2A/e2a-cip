@@ -29,10 +29,15 @@ export default {
     links: function() {
       return {
         plan: {
-          name: "setup",
+          name: "plan",
           text: this.$t("nav.plan"),
           active: true,
           steps: [
+            {
+              name: "plan",
+              text: this.$t("nav.plan"),
+              active: true,
+            },
             {
               name: "setup",
               text: this.$t("nav.setup"),
