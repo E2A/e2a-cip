@@ -1,6 +1,6 @@
 <template>
   <BaseGutterWrapper
-    el="ol"
+    el="ul"
     :class="[
       base.wrapper,
       size !== 'default' ? base[size] : ''
@@ -9,36 +9,35 @@
     <li
       v-for="(step, index) in steps"
       :key="index"
+      :class="[base.iconBox, base.iconBoxSequence, base.iconBoxFlex]"
     >
-      <div :class="base.step">
-        <slot :step="step">
+      <slot :step="step">
+        <div :class="[base.iconBoxIcon]">
+          <span :class="[base.iconBoxCircle]">{{index + 1}}</span>
+        </div>
+        <div :class="[base.iconBoxContent]">
           <BaseHeading
             :class="space.paddingBottomXxnarrow"
             :level="3"
             :centered="false"
-            scale="delta"
+            scale="epsilon"
             weight="bold"
             color="dark"
-          >
-            {{step.title}}
-          </BaseHeading>
-          <BaseBodyText
-            size="zeta"
-            :content="step.blurb"
-          />
-        </slot>
-      </div>
+          >{{step.title}}</BaseHeading>
+          <BaseBodyText size="zeta" :content="step.blurb" />
+        </div>
+      </slot>
     </li>
   </BaseGutterWrapper>
 </template>
 
 <script>
-import BaseGutterWrapper from './BaseGutterWrapper.vue'
-import BaseHeading from './BaseHeading.vue'
-import BaseBodyText from './BaseBodyText.vue'
+import BaseGutterWrapper from "./BaseGutterWrapper.vue";
+import BaseHeading from "./BaseHeading.vue";
+import BaseBodyText from "./BaseBodyText.vue";
 
 export default {
-  name: 'BaseStepList',
+  name: "BaseStepList",
   props: {
     steps: {
       type: Array,
@@ -46,9 +45,9 @@ export default {
     },
     size: {
       type: String,
-      default: 'default',
-      validator (value) {
-        return ['small', 'default'].indexOf(value) !== -1
+      default: "default",
+      validator(value) {
+        return ["small", "default"].indexOf(value) !== -1;
       }
     }
   },
@@ -57,60 +56,87 @@ export default {
     BaseHeading,
     BaseBodyText
   }
-}
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 
 <style lang="scss" module="base">
-@import '~styleConfig/scale';
-@import '~styleConfig/type';
-@import '~styleConfig/color';
+@import "~styleConfig/scale";
+@import "~styleConfig/type";
+@import "~styleConfig/color";
+@import "~styleConfig/spacing";
 
 .wrapper {
-  composes: centered from 'styles/type.scss';
-  counter-reset: steps;
-  font-size: 0;
+  list-style: none;
+  align-content: center;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
 
-  > li {
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
+.iconBox {
+  padding-left: space("narrow");
+  padding-right: space("narrow");
+  margin-bottom: space("xnarrow");
+  margin-top: space("xnarrow");
 
-    @include media('>small') {
-      width: 50%;
-    }
-
-    @include media('>medium') {
-      width: (100%/3);
+  &:hover {
+    .iconBoxIcon {
+      &:after {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   }
 }
 
-.small {
-  > li {
-    @include media('>xlarge') {
-      width: (100%/4);
-    }
-  }
+.iconBoxCircle {
+  color: color("white");
+  display: table-cell;
+  font-size: 0.85rem;
+  font-weight: 400;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  width: 50px;
 }
 
-.step {
-  composes: left from 'styles/type.scss';
-  composes: paddingLeftWide from 'styles/spacing.scss';
-  counter-increment: steps;
+.iconBoxFlex {
+  flex-basis: 100%;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.iconBoxContent {
+  margin-top: - space("narrow") * 1.5;
+  padding: space('wide') * 1.2 space("narrow");
+  padding-bottom: space("wide");
+  border-top: 2px dashed color("midtone");
+}
+
+.iconBoxIcon {
+  background-color: color("primary");
+  border-radius: 50%;
+  box-shadow: 0 0 0 12px color("white");
+  height: 50px;
+  margin: 0;
   position: relative;
-
-  &::before {
-    @include font();
-    color: color('midtone');
-    content: counter(steps);
-    display: block;
-    font-size: scale-type('beta');
-    left: 0.3em;
-    line-height: 1;
+  transition: background-color 0.2s;
+  width: 50px;
+  &:after {
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px color("primary");
+    content: "";
+    height: 120%;
+    left: -10%;
     position: absolute;
-    top: -0.05em;
+    opacity: 0;
+    top: -10%;
+    transform: scale(0.8);
+    transition: transform 0.2s, opacity 0.2s;
+    width: 120%;
   }
 }
 </style>

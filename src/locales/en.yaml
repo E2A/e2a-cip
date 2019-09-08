@@ -4,34 +4,35 @@ en:
     chooseLanguage: 'Choose your preferred language:'
     title: Not without us!
     subtitle: A tool for AYRH-responsive planning
+    introHeader: You can make reproductive health and family planning plans more responsive to the needs of young people.
     intro: |-
-      This tool is designed for use by governments, organizations, and individuals who seek to make family planning plans more responsive to the reproductive health needs of young people, ages 15-24. Through this tool, you will have the opportunity to:
-        * Discern the proportion of activities and budget allotted to activities that are “youth centric.”
-        * Discern the proportion of youth-centric activities and budget allotted to four different activity domains (demand generation, service delivery, enabling environment, and coordination) with a youth focus.
-        * Discern how your activities and budget compare with data about young people from your country.
-        * Assess the technical quality of activities included in your plan and revise them to better align with evidence-informed practices (EIPs).
-        \
-        We hope that the results you receive inform dialogue about  the needs of young people and innovative strategies to meet those needs. We encourage you to use the results to raise awareness about the importance of investing in the reproductive health of youth, laying the foundation for healthier future generations.
-         \
-        **Let’s get started!**
+      Use this tool to reflect on and discuss…
+        * One of your country’s plans—this can be local, district, regional, or national
+        * Activities planned for young people ages 15–24
+        * If enough budget is allocated for these youth-centric activities
+        * How to strengthen the plan to better meet the needs of youth
+        
+        **Get started!**
     stepsTitle: How it works
+    stepsIntro: 'Join 2-3 fellow youth advocates, set aside a few hours, and follow these steps to assess if your plan uses tailored, innovative strategies for meeting the needs of your country’s youth :'
     steps:
       step1:
-        title: Get to know your plan
+        title: Get to know your national, regional, district, or local plan
         blurb: |-
-          It is important to become familiar with the plan you will analyze. Locate the strategic priorities and objectives of your plan. The specific activities you will use in this exercise can usually be found in this section. How is the budget organized? Does each activity have a budget amount attached to it? Don’t forget to check the annexes. Sometimes activities and their specific budget amounts can be found in the annexes. If budget numbers are given for the broader strategic areas and not for specific activities, it will not be possible to analyze the budget. However, you can still analyze the specific activities!
+          Locate strategic priorities, objectives, activities, and budget amounts
       step2:
-        title: Enter your Activities
+        title: Enter planned activities. 
         blurb: |-
-          After entering the title of your plan, your country, and title/role, you will be asked to enter ALL of the activities contained in your plan (not just the ones focused on youth!). You will be asked to categorize the activities by four types, enter the budget amount allocated to each activity, and determine whether the activity is focused on youth. A summary page will appear that will allow you to edit any of the information you have provided.
+          You’ll enter and organize activities into four categories: demand generation, service delivery, enabling environment, and coordination. 
       step3:
-        title: Analyze your activities
+        title: Determine if activities align with the needs of youth.
         blurb: |-
-          Next, you will have the opportunity to learn about evidence-informed practices (EIPs), promising practices for improving AYRH. You will use what you have learned about EIPs to determine to what degree the youth-focused activities in your plan are aligned with the EIPs. Once you complete these two steps, you will get your results!
+          Use “evidence-informed practices,” as your guide. 
       step4:
-        title: Get your results
+        title: Get your results.
         blurb: |-
-          The results page will show you the proportion of activities and budget devoted to youth in your plan. Data generated through the tool about young people in your country will help you determine whether your proposed activities and budget are in line with youth needs. You will also be shown a graph which depicts the degree to which your plan’s activities align with EIPs. Finally, using the information on EIPs, you will be given the opportunity to revise and strengthen the activities.
+          Using data generated through this tool, determine if your country is making a big enough and smart investment in youth.
+    getStartedIntro: You can use your results to raise awareness about and advocate for the importance of investing in the reproductive health of young people. Thank you for paving the way to more comprehensive family planning for generations to come.       
     getStartedButton: Get started
     downloadTitle: Download offline versions
     downloadBlurb: |-
@@ -50,10 +51,10 @@ en:
     downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
     acknowldgementTitle: Acknowledgements
     acknowledgementText: |-
-      The Evidence to Action (E2A) Project gratefully acknowledges the generous support of the US Agency for International Development (USAID) in the creation of this Not Without Us! A Digital Tool for AYRH-Responsive Planning.
-
-      We acknowledge the support of colleagues who participated in a small expert consultation to provide an initial analysis of the tool and critical feedback, including Patricia MacDonald, Melissa Freeman, Teshome Woldemedhin, Zema Mirza, and Michal Avni from USAID; Emily Sullivan, Family Planning 2020; Amy Uccello, PSI; Adriana Martin Huber, STPH Institute; and Catherine Lane, Pathfinder International. We would like to thank Regina Benevides, Katie Chau, and Allison Gato, formerly of Pathfinder International, for their development of the first draft of this tool. Within E2A we would like to thank Rita Badiani, Eric Ramirez, Ginette Hounkanrin, Anjala Kanesathasan, Elizabeth Williams and Laurel Lundstrom of Pathfinder International for their work to finalize this tool. Finally, we wish to thank Bivee for helping us with the design and digitalization of the tool.
-
+      The Evidence to Action (E2A) Project gratefully acknowledges the generous support of the US Agency for International Development (USAID) in the creation of this Not Without Us! A Digital Tool for AYRH-Responsive Planning. Additionally, we would like to acknowledge the contributions of our colleagues at Pathfinder International, Family Planning 2020, Population Services International, and STPH Institute. Your insight, feedback, and user-testing were instrumental in the creation of this tool. 
+ 
+      Finally, we thank you—the TARP user. Your commitment to the reproductive health needs of young people inspires us, and we hope TARP supports you in advocating with your government for further investment in youth-responsive family planning. 
+ 
       This publication was made possible through support provided by the Office of Population and Reproductive Health, Bureau for Global Health, U.S. Agency for International Development, under the terms of Award No. AID-OAA-A-11-00024. The opinions expressed herein are those of the author(s) and do not necessarily reflect the views of the U.S. Agency for International Development.
   plan:
     title: Get to know your plan

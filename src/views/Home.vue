@@ -50,12 +50,16 @@
     <BasePageIntro
       :title="$t('home.title')"
       :subtitle="$t('home.subtitle')"
+      :introHeader="$t('home.introHeader')"
       :blurb="$t('home.intro')"
     />
 
     <!-- How it works -->
     <BaseSectionWrapper>
-      <BaseHeading :level="2" centered>{{$t('home.stepsTitle')}}</BaseHeading>
+      <BaseWidthWrapper>
+        <BaseHeading :level="2" centered>{{$t('home.stepsTitle')}}</BaseHeading>
+        <BaseHeading centered :level="5" color="dark">{{$t('home.stepsIntro')}}</BaseHeading>
+      </BaseWidthWrapper>
       <BaseWidthWrapper
         width="xwide"
         :class="space.paddingTop"
