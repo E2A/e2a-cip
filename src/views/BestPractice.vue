@@ -14,7 +14,7 @@
           color="midtone"
           :class="[space.paddingBottomNarrow, type.uppercase]"
         >
-          {{ $t('bestPracticeSubtitle') }}
+          {{ $t('bestPracticeCategoryTitle') }}
         </BaseHeading>
         <BaseHeading>{{ bestPractices[id - 1].title }}</BaseHeading>
       </header>

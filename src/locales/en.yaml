@@ -121,15 +121,15 @@ en:
   deleteSuccess: Deleted Activity
   deleteActivity: Delete
   supportText:
-    activityNumber: Please enter an activity number.
-    activityText: Please enter a description of the activity.
-    activityBudget: Please enter a budget for the activity, if applicable.
-    activityYouthCentric: Youth-centric should encompass activities targeting adolescents and young people aged 15-24 years.
-    selectActivityType: Select an activity domain.
+    activityNumber: Enter the activity number as it appears in the plan.
+    activityText: Enter a brief summary of activity (50 words max).
+    activityBudget: Enter amount budgeted for activity, if available.
+    activityYouthCentric: Is the activity youth-focused—specifically targeting young people ages 15-24?
+    selectActivityType: Pick a category for this activity. (Does your activity align with multiple categories? Just pick one).
   tooltipText:
-    activityText: This should be a summary of the activity. Maximum of 5000 characters.
+    activityText: This should be a summary of the activity. Maximum of 50 words.
     activityBudget: Use the dropdown on the right to easily set the budget.
-    activityYouthCentric: Youth-centric should encompass activities targeting adolescents and young people aged 15-24 years.
+    activityYouthCentric: 'Youth-centric should encompass activities targeting adolescents and young people aged 15-24 years. Note: an activity that will serve the general population is not youth-centric.'
   # Activity Budget Scales
   budgetScales:
     scale1:
@@ -221,26 +221,29 @@ en:
   summary:
     title: Well done!
     intro: |-
-      Below is a summary of the information you have provided about the activities in your plan. It includes the activities sorted by domain, the budget amount associated with each activity, and whether the activity was classified as youth centric. Please make sure that all of this information is correct. If it is not correct, please click the edit button to make changes.
+      Below, see all the information you’ve provided—sorted by category and budget. Make sure everything is accurate. If you need to make changes, click **Edit**.
+
+      Once everything looks correct, click **Keep Going**.
     previousStep: Go back to setup
-    nextStep: About EIPs
+    nextStep: Keep Going
   # Evidence-Informed Practices
   readMore: "Read More"
   checkListButtonText: "View checklist"
-  bestPracticeTitle: About Evidence-Informed Practices (EIP)
+  bestPracticeTitle: 'Now ask yourself, "Will these activities work?"'
+  bestPracticeSubtitle: Will they effectively respond to the reproductive needs and desires of youth in your country? 
   bestPracticeResourceSubtitle: Further reading
   backToBestPractices: Back to Evidence-Informed Practices (EIP)
   bestPracticeIntro: ""
-  bestPracticeSubtitle: "Evidence-Informed Practices"
+  bestPracticeCategoryTitle: "Evidence-Informed Practices"
   bestPractices:
     bestPractice1:
-      title: 'Providing age and developmentally appropriate health services'
+      title: 'Make Services Adolescent and Youth-Friendly'
       # Do Not Translate
       icon: eip-choice
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
-        Services that take into account young people’s life stage and particular needs are sometimes described as “adolescent- and youth-friendly.” These services commonly include safe and affordable contraceptive methods; prevention and treatment of HIV/AIDS and care for other STIs; the provision of accurate health information; and sensitive counselling and care for overall wellbeing. Services may also include youth-friendly obstetric and antenatal care for pregnant girls and women; post-abortion care services, prevention, detection, and counselling for gender-based violence; and the prevention, detection, and treatment cervical cancer.
+        Take young people’s specific needs into account, providing age and developmentally-appropriate health services. 
       body: |-
         **What is it?**
 
@@ -382,13 +385,13 @@ en:
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/handle/10665/183935/9789241549332_vol1_eng.pdf?sequence=1
     bestPractice2:
-      title: "Ensuring Access to the Full Range of Contraceptive Methods"
+      title: "Support Contraceptive Choice"
       # Do Not Translate
       icon: eip-contraceptives
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
-        Providing quality counseling along with a full range of contraceptives, including long-acting and reversible contraceptives (LARCs), to adolescents and young people facilitates their uptake of contraception  and enables them to make an informed choice about a method that is in line with their own preferences and goals. Quality counseling along with expanded method choice should also empower young people to switch methods should they experience undesirable side-effects.
+        Provide quality counseling and a full range of methods, including long-acting and reversible contraception, to ensure young people can choose a method that aligns with their preferences and goals.
       body: |-
         **What is it?**
         AYRH care related to contraceptive use has quality counseling as its centerpiece. The objective of this counseling is to ensure that young people are aware of the voluntary nature of contraceptive use and knowledgeable of the full range of contraceptive options available to them.  Providing quality counseling along with a full range of contraceptives, including long-acting and reversible contraceptives (LARCs), to adolescents and young people facilitates their uptake of contraception[^10] and enables them to make an informed choice about a method that is in line with their own preferences and goals. Quality counseling along with expanded method choice should also empower young people to switch methods should they experience undesirable side-effects. Expanding contraceptive choice is in alignment with the WHO’s third norm for improved quality of healthcare for adolescents (WHO, 2015). Any adolescent can use any contraceptive method according to the WHO’s Medical Eligibility Criteria for contraceptive use. Age alone does not constitute a contraindication to the use of contraceptive methods.
@@ -537,13 +540,13 @@ en:
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/handle/10665/183935/9789241549332_vol1_eng.pdf?sequence=1
     bestPractice3:
-      title: "Strong Coordination Across Sectors that Affect AYRH"
+      title: "Coordinate Across Sectors"
       # Do Not Translate
       icon: eip-coordination
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
-        Multi-sectoral coordination involves deliberate and planned collaboration among “various stakeholder groups (e.g., government, civil society, and private sector) and sectors (e.g., health, education, environment, economy) to jointly achieve a policy outcome.”  The advantages of such coordination, if thoughtfully and carefully done, can include an increase in the amount of resources brought to bear to address a health problem.
+        Make plans for collaboration among sectors (e.g. health, education, environment, economy) and with key stakeholders (e.g., government, civil society, and private sector) to improve AYRH.
       body: |-
         **What is it?**
 
@@ -620,13 +623,13 @@ en:
           # Do Not Translate
           url: https://static.globalinnovationexchange.org/s3fs-public/asset/document/Guide%20to%20Cross-Sectoral-%20Youth%20Assessments.pdf?cEzNMwlDyHmmAOdYf5PNlWGiCo617PLB
     bestPractice4:
-      title: "Youth participation in AYRH programs"
+      title: "Create Platforms and Processes for Meaningful Youth Participation"
       # Do Not Translate
       icon: eip-youth
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
-        In terms of AYRH, participation means youth having the capabilities and opportunities to seek information; be informed and consulted on decisions that pertain to youth; have the knowledge, skills, and desire to make an enact informed choices about one’s reproductive life; and have the knowledge and skills necessary to hold duty-bearers responsible. Youth participation is about nurturing all the skills that are vital for individuals to possess to promote a thriving civil society sector and functioning democratic institutions, including responsive health systems and services.
+        To ensure the relevance, responsiveness, and effectiveness of AYRH programming, it’s critical to meaningfully engage and build the capacity of youth advocates and leaders.
       body: |-
         **What is it?**
 
@@ -766,13 +769,13 @@ en:
           # Do Not Translate
           url: http://www.advocatesforyouth.org/storage/advfy/documents/advocating.pdf
     bestPractice5:
-      title: "Family Life Education (FLE)"
+      title: "Advance Family Life Education"
       # Do Not Translate
       icon: eip-education
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
-        Family life education is a curriculum-based process of teaching and learning about the cognitive, emotional, physical and social aspects of adolescence, growth and development, and relationships that will equip children and young people with knowledge, skills, attitudes and values that will enable them realize their health, well-being and dignity; develop respectful relationships; consider how their choices affect their own well-being and that of others; and understand and ensure the protection of their rights throughout their lives.
+        Ensure young people are equipped with skills, knowledge, and values that will help them make choices for their health and wellbeing—and show respect for others’ choices.
       body: "**What is it?**\nFamily life education (FLE) is a curriculum-based process\
         \ of teaching and learning about the cognitive, emotional, physical and social\
         \ aspects of adolescence, growth and development, and relationships that will\
@@ -876,13 +879,13 @@ en:
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/handle/10665/255415/9789241512343-eng.pdf?sequence=1
     bestPractice6:
-      title: "Fostering Family and Community Support for AYRH"
+      title: "Foster Family and Community Support"
       # Do Not Translate
       icon: eip-community
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
-        Community engagement means working collaboratively with groups of people who “are affiliated by geographic proximity, special interests, or similar situations with respect to issues affecting their well-being.”  For AYRH, this involves working with community groups  and gatekeepers – including parents and families - to challenge and change social norms and harness local systems and structure to provide a supportive environment for AYRH programs and young people to take action.
+        Collaborate with community groups and gatekeepers—e.g., young people’s parents and families—to address social norms and create a supportive environment to improve AYRH.
       body: |-
         **What is it?**
 
@@ -992,13 +995,13 @@ en:
           # Do Not Translate
           url: https://www.jahonline.org/article/S1054-139X(16)30879-5/pdf
     bestPractice7:
-      title: "Promoting Gender Equality for Improved FP/RH"
+      title: "Promote Gender Equality"
       # Do Not Translate
       icon: eip-equality
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       teaser: |-
-        Gender equality means that, regardless of sex, individuals have equal ease of access to resources and opportunities, including civic, religious, political, and economic participation and decision-making. It also means that the needs, aspirations, and behaviors or young men and women are equally valued. In terms of health, gender equality means that all young people should have access to quality FP/RH information and health care that is responsive to their specific needs, life stage or experience, and cultural and social context.
+        Address the factors that limit girls and young women from having options, encourage boys to take risks, and create barriers to family planning and reproductive health care for both sexes.
       body: "**What is it?**\n\nGender equality means that, regardless of sex, individuals\
         \ have equal ease of access to resources and opportunities, including civic,\
         \ religious, political, and economic participation and decision-making. It\

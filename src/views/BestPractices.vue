@@ -1,20 +1,11 @@
 <template>
-  <NavFooter
-    wrapperEl="article"
-    :leftButtons="navButtons.left"
-    :rightButtons="navButtons.right"
-  >
-    <BasePageIntro
-      :title="$t('bestPracticeTitle')"
-    />
+  <NavFooter wrapperEl="article" :leftButtons="navButtons.left" :rightButtons="navButtons.right">
+    <BasePageIntro :title="$t('bestPracticeTitle')" :subtitle="$t('bestPracticeSubtitle')" />
+
     <div :class="space.paddingWide">
-      <BaseWidthWrapper>
-        <BaseVerticalList :items="bestPractices" borders>
-          <BaseGutterWrapper
-            el="section"
-            :class="base.card"
-            slot-scope="{ item }"
-          >
+      <BaseWidthWrapper width="wide">
+        <BaseColumnLayout :items="bestPractices" borders>
+          <BaseGutterWrapper el="section" :class="base.card" slot-scope="{ item }">
             <div :class="base.iconWrapper">
               <router-link
                 :to="{
@@ -23,10 +14,7 @@
                 }"
                 :class="base.icon"
               >
-                <BaseIcon
-                  :name="item.icon"
-                  size="5rem"
-                />
+                <BaseIcon :name="item.icon" size="3rem" />
               </router-link>
             </div>
             <div :class="base.summary">
@@ -36,17 +24,14 @@
                 :centered="false"
                 scale="gamma"
               >
-                <router-link :to="{
+                <router-link
+                  :to="{
                   name: 'evidence-informed-practice',
                   params: {id: item.id}
-                }">
-                  {{ item.title }}
-                </router-link>
+                }"
+                >{{ item.title }}</router-link>
               </BaseHeading>
-              <BaseBodyText
-                :content="item.teaser"
-                size="epsilon"
-              />
+              <BaseBodyText :content="item.teaser" size="epsilon" />
               <BaseButtonLink
                 :to="{
                   name: 'evidence-informed-practice',
@@ -69,84 +54,113 @@
               />
             </div>
           </BaseGutterWrapper>
-        </BaseVerticalList>
+        </BaseColumnLayout>
       </BaseWidthWrapper>
     </div>
   </NavFooter>
 </template>
 
 <script>
-import { bestPracticeData } from '@/components/mixins/bestPracticeData.js'
-import BasePageIntro from '@/components/BasePageIntro.vue'
-import BaseHeading from '@/components/BaseHeading.vue'
-import BaseBodyText from '@/components/BaseBodyText.vue'
-import BaseIcon from '@/components/BaseIcon.vue'
-import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
-import BaseVerticalList from '@/components/BaseVerticalList.vue'
-import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
-import BaseButtonLink from '@/components/BaseButtonLink.vue'
-import NavFooter from '@/components/NavFooter.vue'
+import { bestPracticeData } from "@/components/mixins/bestPracticeData.js";
+import BasePageIntro from "@/components/BasePageIntro.vue";
+import BaseHeading from "@/components/BaseHeading.vue";
+import BaseBodyText from "@/components/BaseBodyText.vue";
+import BaseIcon from "@/components/BaseIcon.vue";
+import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
+import BaseColumnLayout from "@/components/BaseColumnLayout.vue";
+import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
+import BaseButtonLink from "@/components/BaseButtonLink.vue";
+import NavFooter from "@/components/NavFooter.vue";
 
 export default {
-  name: 'BestPractices',
-  mixins: [ bestPracticeData ],
+  name: "BestPractices",
+  mixins: [bestPracticeData],
   components: {
     BasePageIntro,
     BaseHeading,
     BaseBodyText,
     BaseIcon,
     BaseWidthWrapper,
-    BaseVerticalList,
+    BaseColumnLayout,
     BaseGutterWrapper,
     BaseButtonLink,
     NavFooter
   },
   computed: {
-    navButtons: function () {
+    navButtons: function() {
       return {
         left: [
           {
-            to: {name: 'summary'},
-            label: this.$t('goBack')
+            to: { name: "summary" },
+            label: this.$t("goBack")
           }
         ],
         right: [
           {
-            to: {name: 'assessment'},
-            label: this.$t('nav.assessment'),
-            role: 'primary'
+            to: { name: "assessment" },
+            label: this.$t("nav.assessment"),
+            role: "primary"
           }
         ]
-      }
+      };
     }
   }
-}
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
-  .card {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
 
-  .iconWrapper {
-    // flex: 1 0 4rem;
-    text-align: center;
-  }
+@import '~styleConfig/color';
 
-  .icon {
-    $size: 5rem;
-    composes: accent from 'styles/color.scss';
-    display: inline-block;
-    max-width: $size;
-    max-height: $size;
-  }
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 
-  .summary {
-    flex: 1 0 28rem;
+  &:hover {
+    .icon {
+      text-decoration: none;
+      &:after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
   }
+}
+
+.iconWrapper {
+  // flex: 1 0 4rem;
+  text-align: center;
+  position: relative;
+}
+
+.icon {
+  $size: 3rem;
+  composes: accent from "styles/color.scss";
+  display: inline-block;
+  max-width: $size;
+  max-height: $size;
+  position: relative;
+
+  &:after {
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px color("accent");
+    content: "";
+    height: 120%;
+    left: -10%;
+    position: absolute;
+    opacity: 0;
+    top: -12%;
+    transform: scale(0.75);
+    transition: transform 0.2s, opacity 0.2s;
+    width: 120%;
+  }
+}
+
+.summary {
+  flex: 1;
+}
 </style>
