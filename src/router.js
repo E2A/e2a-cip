@@ -12,6 +12,7 @@ import Results from './views/Results.vue'
 import Advocate from './views/Advocate.vue'
 import Print from './views/Print.vue'
 import Export from './views/Export.vue'
+import Plan from './views/Plan.vue'
 
 Vue.use(Router)
 
@@ -21,6 +22,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/plan',
+      name: 'plan',
+      component: Plan
     },
     {
       path: '/plan/setup/',

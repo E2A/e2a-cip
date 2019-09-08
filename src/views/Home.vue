@@ -70,7 +70,7 @@
     <!-- Get started! -->
     <BaseSectionWrapper el="div" :class="type.center" border>
       <BaseButtonLink
-        :to="{name: 'setup'}"
+        :to="{name: 'plan'}"
         :label="$t('home.getStartedButton')"
         size="large"
         role="primary"

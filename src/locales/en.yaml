@@ -55,11 +55,27 @@ en:
       We acknowledge the support of colleagues who participated in a small expert consultation to provide an initial analysis of the tool and critical feedback, including Patricia MacDonald, Melissa Freeman, Teshome Woldemedhin, Zema Mirza, and Michal Avni from USAID; Emily Sullivan, Family Planning 2020; Amy Uccello, PSI; Adriana Martin Huber, STPH Institute; and Catherine Lane, Pathfinder International. We would like to thank Regina Benevides, Katie Chau, and Allison Gato, formerly of Pathfinder International, for their development of the first draft of this tool. Within E2A we would like to thank Rita Badiani, Eric Ramirez, Ginette Hounkanrin, Anjala Kanesathasan, Elizabeth Williams and Laurel Lundstrom of Pathfinder International for their work to finalize this tool. Finally, we wish to thank Bivee for helping us with the design and digitalization of the tool.
 
       This publication was made possible through support provided by the Office of Population and Reproductive Health, Bureau for Global Health, U.S. Agency for International Development, under the terms of Award No. AID-OAA-A-11-00024. The opinions expressed herein are those of the author(s) and do not necessarily reflect the views of the U.S. Agency for International Development.
+  plan:
+    title: Get to know your plan
+    body: |-
+      You’ve selected a plan to analyze. Now take at least 10 minutes to familiarize yourself with it.
+
+      * Is this an AYRH plan or a general FP/RH plan? 
+      * Locate strategic priorities and objectives—you’ll spend most of your time here.
+      * Ask yourself, “How is the budget organized? Does each activity have a certain budget amount?”
+      * Can’t find activities and their budget amounts? Check your plan’s annex. 
+    note: 'Important: Unfortunately, you won’t be able to analyze your budget if…'
+    noteBody: |-
+      * Specific activities do not have budgeted amounts associated with them 
+      * you’re assessing an AYRH plan, not a general FP/RH plan
+
+      _But don’t worry. You can still analyze the quality of the activities._
+    getStartedButton: Begin Plan
   setup:
-    CIPTitle: Enter your plan title
-    configureCIP: "First, let's configure your plan"
-    selectCountry: Select your country
-    selectCurrency: Select the currency used in your plan
+    CIPTitle: Enter the plan title
+    configureCIP: "Let's get started!"
+    selectCountry: Select the country
+    selectCurrency: Select the currency used in the plan
     selectRole: Select your affiliation
     selectActivityType: Categorize your activity by type
     setupRequired: Please enter all setup fields before adding activities.
