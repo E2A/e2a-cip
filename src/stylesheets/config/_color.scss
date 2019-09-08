@@ -35,8 +35,9 @@ $colors: (
   'warning': $red,
   'success': $purple,
   'yes': $green,
-  'no': $gray,
-  'partially': $yellow
+  'no': $red,
+  'partially': $yellow,
+  'empty': $gray,
 );
 
 @function color($color, $grade: 0, $opacity: 1) {

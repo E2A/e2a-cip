@@ -1354,12 +1354,14 @@ en:
     # Do Not Translate
     noText: '@:noRaw'
     partiallyText: Partially
+    emptyText: Empty
     # Do Not Translate
     yesKey: 'yes'
     # Do Not Translate
     noKey: 'no'
     # Do Not Translate
     partiallyKey: 'partially'
+    emptyKey: 'empty'
   enterSuggestion: Enter a suggestion
   item: no items | item | items
   successRemoved: Successfully removed

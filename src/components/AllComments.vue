@@ -32,7 +32,7 @@
 <script>
 import BaseButton from '@/components/BaseButton.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
-import BestPracticeIcon from '@/components/BestPracticeIcon.vue'
+import BestPracticeIconSelect from '@/components/BestPracticeIconSelect.vue'
 import ActivityComment from '@/components/ActivityComment.vue'
 
 export default {
@@ -40,7 +40,7 @@ export default {
   components: {
     BaseButton,
     BaseHeading,
-    BestPracticeIcon,
+    BestPracticeIconSelect,
     ActivityComment
   },
   computed: {
@@ -48,7 +48,7 @@ export default {
       return this.$store.getters['entities/activities/query']()
         .with('comments')
         .all()
-        .filter(activity => activity.comments.length > 0);
+        .filter(activity => activity.comments.length > 0)
     }
   }
 }

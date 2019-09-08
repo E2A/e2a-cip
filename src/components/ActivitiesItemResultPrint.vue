@@ -35,7 +35,7 @@
             :key="`bp-${index}`"
             :class="base.icon"
           >
-            <BestPracticeIcon
+            <BestPracticeIconSelect
               :id="bestPractice.id"
               :activityID="activityInstance.id"
               :align="index > 4 ? 'right' : 'center'"
@@ -85,7 +85,7 @@
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseBodyText from '@/components/BaseBodyText.vue'
-import BestPracticeIcon from '@/components/BestPracticeIcon.vue'
+import BestPracticeIconSelect from '@/components/BestPracticeIconSelect.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import BaseDataGrid from '@/components/BaseDataGrid.vue'
 import { bestPracticeData } from './mixins/bestPracticeData'
@@ -98,7 +98,7 @@ export default {
   components: {
     BaseHeading,
     BaseButton,
-    BestPracticeIcon,
+    BestPracticeIconSelect,
     BaseGutterWrapper,
     BaseDataGrid,
     BaseBodyText,
