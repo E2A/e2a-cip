@@ -29,6 +29,16 @@
         >
           {{setupCountry}}
         </BaseHeading>
+
+        <BaseHeading
+          scale="zeta"
+          :class="base.byline"
+          weight="regular"
+          color="midtone"
+          sub
+        >
+          {{setupDate}}
+        </BaseHeading>
       </BaseGutterWrapper>
     </header>
 
@@ -133,7 +143,16 @@ export default {
     return {
       setupTitle: this.getItemValue('setup', 'title'),
       setupRole: this.getItemValue('setup', 'role'),
-      setupCountry: this.getItemValue('setup', 'countryName')
+      setupCountry: this.getItemValue('setup', 'countryName'),
+    }
+  },
+  computed: {
+    setupDate: function() {
+      const timestamp = this.getItemValue('setup', 'date');
+      const date = new Date(timestamp);
+
+      const formatted = date.toLocaleDateString(this.$i18n.locale, { year: 'numeric', month: 'short', day: 'numeric' });
+      return formatted;
     }
   },
   methods: {
