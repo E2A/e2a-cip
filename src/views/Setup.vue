@@ -1,5 +1,6 @@
 <template>
   <div>
+    <NavBreadcrumbs/>
     <BaseSectionWrapper>
       <BaseHeading :class="space.paddingBottomWide">{{$t('setup.configureCIP')}}</BaseHeading>
       <BaseWidthWrapper>
@@ -64,6 +65,7 @@ import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import { dataMethods } from '@/components/mixins/dataMethods'
 import FileUpload from '@/components/FileUpload.vue'
 import ClearItems from '@/components/ClearItems.vue'
+import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
 
 export default {
   name: 'Setup',
@@ -77,7 +79,8 @@ export default {
     SetupInput,
     BaseButtonLink,
     FileUpload,
-    ClearItems
+    ClearItems,
+    NavBreadcrumbs
   },
   data () {
     return {

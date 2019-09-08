@@ -4,6 +4,7 @@
     :leftButtons="navButtons.left"
     :rightButtons="navButtons.right"
   >
+    <NavBreadcrumbs/>
     <BasePageIntro
       :title="$t('summary.title')"
       :blurb="$t('summary.intro')"
@@ -62,6 +63,7 @@
 
 <script>
 import NavFooter from '@/components/NavFooter.vue'
+import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
@@ -75,6 +77,7 @@ export default {
   mixins: [ activityTypes, dataMethods ],
   components: {
     NavFooter,
+    NavBreadcrumbs,
     BaseWidthWrapper,
     BasePageIntro,
     BaseHeading,
@@ -89,13 +92,13 @@ export default {
       return {
         left: [
           {
-            to: {name: 'setup'},
+            to: { name: 'setup' },
             label: this.$t('summary.previousStep')
           }
         ],
         right: [
           {
-            to: {name: 'evidence-informed-practices'},
+            to: { name: 'evidence-informed-practices' },
             label: this.$t('summary.nextStep'),
             role: 'primary'
           }

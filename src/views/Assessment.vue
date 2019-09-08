@@ -5,6 +5,7 @@
     :rightButtons="navButtons.right"
   >
     <ActivitiesExportTray :clear="['Assessments']" />
+    <NavBreadcrumbs/>
     <BasePageIntro
       :title="$t('analysis.title')"
       :blurb="$t('analysis.intro')"
@@ -88,6 +89,7 @@
 <script>
 import { mapState } from 'vuex'
 import NavFooter from '@/components/NavFooter.vue'
+import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
@@ -107,6 +109,7 @@ export default {
   mixins: [activityTypes, dataMethods],
   components: {
     NavFooter,
+    NavBreadcrumbs,
     BaseSectionWrapper,
     BaseWidthWrapper,
     BaseGutterWrapper,
