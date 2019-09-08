@@ -73,10 +73,11 @@ en:
       _But don’t worry. You can still analyze the quality of the activities._
     getStartedButton: Begin Plan
   setup:
-    CIPTitle: Enter the plan title
-    configureCIP: "Let's get started!"
-    selectCountry: Select the country
-    selectCurrency: Select the currency used in the plan
+    CIPTitle: Enter your plan title
+    configureCIP: "First, let's configure your plan"
+    selectDate: Select your plan date
+    selectCountry: Select your country
+    selectCurrency: Select the currency used in your plan
     selectRole: Select your affiliation
     selectActivityType: Categorize your activity by type
     setupRequired: Please enter all setup fields before adding activities.

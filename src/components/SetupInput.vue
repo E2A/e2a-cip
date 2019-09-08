@@ -15,6 +15,13 @@
       :key="forceTitleUpdate"
     />
 
+    <BaseFormDate
+      v-model="setupDate"
+      @input="addSetup"
+      :label="$t('setup.selectDate')"
+      name="cip-date"
+    />
+
     <!-- Country -->
     <BaseFormSelect
       v-model="setupCountry"
@@ -52,6 +59,7 @@ import currencyList from '@/authorities/currency-data'
 import BaseFormInput from './BaseFormInput.vue'
 import BaseFormLabel from './BaseFormLabel.vue'
 import BaseFormSelect from './BaseFormSelect.vue'
+import BaseFormDate from './BaseFormDate.vue'
 import vSelect from 'vue-select'
 import i18n from '@/i18n.js'
 
@@ -61,7 +69,8 @@ export default {
     vSelect,
     BaseFormInput,
     BaseFormLabel,
-    BaseFormSelect
+    BaseFormSelect,
+    BaseFormDate
   },
   props: {
     clear: Boolean
@@ -74,7 +83,8 @@ export default {
       setupCurrencies: currencyList,
       setupCountry: null,
       setupRole: null,
-      setupCurrency: null
+      setupCurrency: null,
+      setupDate: new Date(),
     }
   },
   computed: {
@@ -98,11 +108,13 @@ export default {
       this.setupCountry = null
       this.setupRole = null
       this.setupCurrency = null
+      this.setupDate = new Date()
       this.$emit('clear-success')
     },
     updateData: function () {
       // Update data based on what is stored
       const setupData = this.getData()
+
       var setupCurrencyVal = null
       var setupCountryVal = null
 
@@ -119,18 +131,20 @@ export default {
         this.setupCountry = setupCountryVal
         this.setupRole = setupData.role
         this.setupCurrency = setupCurrencyVal
+        this.setupDate = setupData.date
       }
     },
     getData: function () {
       return this.$store.getters['entities/setup/query']().first()
     },
-    addSetup: function () {
+    addSetup: function (e) {
       const currencyData = this.setupCurrency
       const countryData = this.setupCountry
+      const planDate = this.setupDate
       var currencyCodeData = null
       var currencyNameData = null
       var countryCodeData = null
-      var countryNameData = null
+      var countryNameData = isNull
 
       if (currencyData) {
         currencyCodeData = currencyData.value
@@ -150,7 +164,8 @@ export default {
           countryCode: countryCodeData,
           role: this.setupRole,
           currencyCode: currencyCodeData,
-          currencyName: currencyNameData
+          currencyName: currencyNameData,
+          date: planDate,
         }
       })
     }

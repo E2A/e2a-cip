@@ -7,6 +7,7 @@ export default class Setup extends Model {
     return {
       id: this.increment(),
       title: this.string(''),
+      date: this.attr(null),
       countryName: this.attr(null),
       countryCode: this.attr(null),
       role: this.attr(null),
