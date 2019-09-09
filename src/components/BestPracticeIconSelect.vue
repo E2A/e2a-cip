@@ -7,6 +7,7 @@
     :searchable="false"
     :clearable="false"
     label="value"
+    class="best-practice-select-wrapper"
   >
     <!-- dropdown options -->
     <template slot="option" slot-scope="option" >
@@ -162,7 +163,7 @@ export default {
 @import '~styleConfig/color';
 @import '~styleConfig/borders';
 
-.v-select {
+.best-practice-select-wrapper {
   @include font();
   color: color('dark') !important;
 
@@ -170,12 +171,34 @@ export default {
     border: none !important;
   }
 
+  .vs__dropdown-toggle {
+    @include border();
+    padding: space('xxnarrow') 0 !important;
+    background-color: color('white') !important;
+    border-color: color('white');
+    max-width: 55px;
+    transition: all .25s .17s ease-out;
+
+    height: 60px;
+    overflow: hidden;
+  }
+
+  .vs__selected {
+    padding: 0;
+  }
+
+  .vs__actions {
+    opacity: 0;
+    transition: all .25s .17s ease-out;
+  }
+
   // When dropdown is open and/or when whole component is hovered
   &.vs--open, &:hover {
     .vs__dropdown-toggle {
-      transition: all .35s ease-in-out;
+      padding: space('xxnarrow') !important;
       background-color: color('light') !important;
       border-color: rgba(60, 60, 60, .26);
+      max-width: 88px; // >88px causes bug
     }
 
     .vs__actions {
@@ -183,25 +206,12 @@ export default {
     }
   }
 
-  .vs__dropdown-toggle {
-    @include border();
-    padding: space('xxnarrow') !important;
-    background-color: color('white') !important;
-    border-color: color('white');
-    transition: all .25s ease-in-out;
-  }
-
-  .vs__actions {
-    opacity: 0.4;
-    transition: all .25s ease-in-out;
-  }
-
   .vs__dropdown-menu {
     .highlight > a {
       background: color('accent');
       color: color('white');
     }
-    min-width: 80px;
+    min-width: 0px !important; // default is 120px
   }
 
   .vs__dropdown-option {
@@ -225,6 +235,7 @@ export default {
   .vs__search {
     margin: 0;
     padding: 0;
+    height: 0px !important;
   }
 
   // Prevents bug when opening dropdown

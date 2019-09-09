@@ -19,7 +19,7 @@
         v-if="isYouthCentric()"
         :class="base.icons"
         el="ul"
-        gutterX="xnarrow"
+        gutterX=""
         gutterY="xnarrow"
       >
         <li v-for="(bestPractice, index) of bestPractices" :key="index" :class="base.listIcon">
@@ -191,6 +191,10 @@ export default {
   margin-left: 1.5rem;
   padding: 1rem 1rem 0 1rem;
 
+}
+
+.icons {
+  padding-inline-start: 0px;
 }
 
 .listIcon {
