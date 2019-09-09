@@ -26,7 +26,7 @@ export default {
 $layout-widths: (
   'narrow': 22rem,
   'default': 42.5rem,
-  'wide': 64rem,
+  'wide': 54rem,
   'xwide': 75rem,
   'xxwide': 100rem
 );
