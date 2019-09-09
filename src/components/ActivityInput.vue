@@ -6,6 +6,7 @@
 <template>
   <section>
     <NavTimeline :class="border.bottom" :items="navItems" :current="activityId" />
+    <NavBreadcrumbs />
     <BaseSectionWrapper>
       <!--
        Activity Edit / Input Heading
@@ -129,6 +130,7 @@
 
 <script>
 import NavTimeline from './NavTimeline.vue'
+import NavBreadcrumbs from './NavBreadcrumbs.vue'
 import BaseHeading from './BaseHeading.vue'
 import BaseButton from './BaseButton.vue'
 import BaseCalloutBox from './BaseCalloutBox.vue'
@@ -156,6 +158,7 @@ export default {
   ],
   components: {
     NavTimeline,
+    NavBreadcrumbs,
     BaseHeading,
     BaseButton,
     BaseCalloutBox,

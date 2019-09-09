@@ -2,6 +2,7 @@
   <NavFooter
     :rightButtons="this.getNavButtons().right"
   >
+    <NavBreadcrumbs/>
     <BaseWidthWrapper>
       <BaseGutterWrapper>
         <BaseHeading :class="[space.paddingWide, base.title]" :level="2">{{this.$t('plan.title')}}</BaseHeading>
@@ -16,22 +17,24 @@
 </template>
 
 <script>
-import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
-import BaseSectionWrapper from "@/components/BaseSectionWrapper.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
-import BaseBodyText from "@/components/BaseBodyText.vue";
-import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
-import NavFooter from '@/components/NavFooter.vue';
+import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
+import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
+import BaseHeading from '@/components/BaseHeading.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
+import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
+import NavFooter from '@/components/NavFooter.vue'
+import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
 
 export default {
-  name: "Plan",
+  name: 'Plan',
   components: {
     BaseSectionWrapper,
     BaseWidthWrapper,
     BaseHeading,
     BaseBodyText,
     BaseGutterWrapper,
-    NavFooter
+    NavFooter,
+    NavBreadcrumbs
   },
   methods: {
     getNavButtons: function () {
@@ -48,7 +51,7 @@ export default {
       return navButtons
     }
   }
-};
+}
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>

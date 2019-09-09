@@ -1,5 +1,6 @@
 <template>
   <article>
+    <NavBreadcrumbs/>
     <BasePageIntro
       :title="$t('advocate.title')"
       :blurb="$t('advocate.intro')"
@@ -85,6 +86,7 @@
 <script>
 import i18n from '@/i18n.js'
 import NavFooter from '@/components/NavFooter.vue'
+import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
 import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseStepList from '@/components/BaseStepList.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
@@ -100,6 +102,7 @@ export default {
   name: 'Advocate',
   components: {
     NavFooter,
+    NavBreadcrumbs,
     BasePageIntro,
     BaseStepList,
     BaseHeading,
