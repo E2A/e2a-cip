@@ -1,6 +1,37 @@
 <template>
   <NavFooter wrapperEl="article" :leftButtons="navButtons.left" :rightButtons="navButtons.right">
-    <BasePageIntro :title="$t('bestPracticeTitle')" :subtitle="$t('bestPracticeSubtitle')" />
+    <BasePageIntro>
+      <BaseWidthWrapper :class="[base.wrapper, base.headlineWrapper]" width="wide">
+        <BaseGutterWrapper :class="base.col12">
+          <BaseHeading
+            :class="[space.paddingBottom, base.title]"
+          >{{ $t('bestPracticeTitle') }}</BaseHeading>
+        </BaseGutterWrapper>
+      </BaseWidthWrapper>
+
+      <BaseWidthWrapper :class="[base.wrapper]" width="wide">
+        <div :class="base.col6">
+          <BaseHeading
+            :class="space.paddingBottom"
+            scale="delta"
+            sub
+            :centered="false"
+          >{{ $t('bestPracticeSubtitle') }}</BaseHeading>
+          <BaseHeading
+            :class="space.paddingBottom"
+            scale="delta"
+            sub
+            :centered="false"
+          >{{ $t('home.introHeader') }}</BaseHeading>
+        </div>
+
+        <div :class="[base.col6, color.well]">
+          <BaseWidthWrapper>
+            <BaseBodyText :content="$t('bestPracticesContent')" />
+          </BaseWidthWrapper>
+        </div>
+      </BaseWidthWrapper>
+    </BasePageIntro>
 
     <div :class="space.paddingWide">
       <BaseWidthWrapper width="wide">
@@ -107,13 +138,13 @@ export default {
   }
 };
 </script>
-
+<style src="styles/color.scss" lang="scss" module="color"></style>
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
-
 @import '~styleConfig/color';
+@import "~styleConfig/spacing";
 
 .card {
   display: flex;
@@ -162,5 +193,24 @@ export default {
 
 .summary {
   flex: 1;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: space("medium") space("narrow");
+}
+
+.col6 {
+  flex: 1;
+  max-width: 50%;
+  flex-basis: 50%;
+  padding: space("medium") space("medium");
+}
+
+.col12 {
+  flex: 1;
+  max-width: 100%;
+  flex-basis: 100%;
 }
 </style>
