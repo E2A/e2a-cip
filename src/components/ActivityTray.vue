@@ -211,6 +211,8 @@ export default {
 
 .icons {
   padding-inline-start: 0px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .listIcon {
@@ -219,6 +221,10 @@ export default {
 }
 
 .dataList {
+  display: flex;
+  padding: space('narrow') space('xnarrow');
+  margin-bottom: space('narrow');
+  border-bottom: 1px solid color('midtone', $grade: 50);
   :global {
     .dataItem {
       width: 100%;
