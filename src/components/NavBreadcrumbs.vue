@@ -88,13 +88,13 @@ export default {
             {
               name: "results",
               text: this.$t("nav.results"),
-              active: false
+              active: true
             },
             {
               name: "advocate",
               childName: "print",
               text: this.$t("nav.advocate"),
-              active: false
+              active: true
             }
           ]
         }

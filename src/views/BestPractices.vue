@@ -1,5 +1,6 @@
 <template>
   <NavFooter wrapperEl="article" :leftButtons="navButtons.left" :rightButtons="navButtons.right">
+    <NavBreadcrumbs v-if="this.$route.name === 'evidence-informed-practices'"/>
     <BasePageIntro>
       <BaseWidthWrapper :class="[base.wrapper, base.headlineWrapper]" width="wide">
         <BaseGutterWrapper :class="base.col12">
@@ -102,6 +103,7 @@ import BaseColumnLayout from "@/components/BaseColumnLayout.vue";
 import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
 import BaseButtonLink from "@/components/BaseButtonLink.vue";
 import NavFooter from "@/components/NavFooter.vue";
+import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
 
 export default {
   name: "BestPractices",
@@ -115,7 +117,8 @@ export default {
     BaseColumnLayout,
     BaseGutterWrapper,
     BaseButtonLink,
-    NavFooter
+    NavFooter,
+    NavBreadcrumbs
   },
   computed: {
     navButtons: function() {
