@@ -1,17 +1,17 @@
 <template>
   <details :class="base.wrapper">
     <summary :class="base.summary" @click.prevent>
-      <BaseGutterWrapper :class="base.summaryContent" gutterY="narrow" gutterX="none">
+      <div :class="base.summaryContent">
         <div
           :tabindex="0"
-          :class="[base.item, base.click, twoColSummary]"
+          :class="[base.item, base.click, base.col5]"
         >
           <slot name="summaryLeft">Add summary here</slot>
         </div>
-        <div v-if="$slots.summaryRight" :class="[base.item, twoColSummary]">
+        <div v-if="$slots.summaryRight" :class="[base.item, base.col7]">
           <slot name="summaryRight"></slot>
         </div>
-      </BaseGutterWrapper>
+      </div>
     </summary>
   </details>
 </template>
@@ -36,6 +36,7 @@ export default {
 <style lang="scss" module="base">
 @import "~bourbon/core/bourbon";
 @import "~styleConfig/type";
+@import "~styleConfig/spacing";
 @import "~styleConfig/breakpoints";
 
 $icon-size: 1rem;
@@ -43,7 +44,7 @@ $icon-margin: 0.8rem;
 $breakpoint: "medium";
 
 .wrapper {
-  padding-left: ($icon-size) + $icon-margin;
+  padding-left: 0;
 }
 
 .summary {
@@ -74,6 +75,7 @@ $breakpoint: "medium";
 .summaryContent {
   display: block;
   position: relative;
+  padding: 0 space('xnarrow');
 
   @include media(">#{$breakpoint}") {
     @supports (display: flex) {
@@ -104,6 +106,33 @@ $breakpoint: "medium";
 
     @supports (flex: 1) {
       flex: 1;
+      flex-basis: 50%;
+    }
+  }
+}
+
+.col7 {
+width: 100%;
+
+  @include media(">#{$breakpoint}") {
+    width: 58.3333%;
+
+    @supports (flex: 1) {
+      flex: 1;
+      flex-basis: 58.3333%;
+    }
+  }
+}
+
+.col5 {
+width: 100%;
+
+  @include media(">#{$breakpoint}") {
+    width: 41.6666%;
+
+    @supports (flex: 1) {
+      flex: 1;
+      flex-basis: 41.6666%;
     }
   }
 }

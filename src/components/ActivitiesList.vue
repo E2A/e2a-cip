@@ -2,17 +2,15 @@
   <div v-if="!table" :class="base.activitiesTableWrapper">
     <div :class="base.activitiesTable">
       <div :class="base.header">
-        <BaseHeading
-          v-for="(heading, index) in headings"
-          :key="index"
-          :centered="false"
-          :class="base.heading"
-          scale="zeta"
-          color="dark"
-          sub
-        >
-          {{ translateHeadings ? $t(heading.title) : heading.title }}
-        </BaseHeading>
+        <div :class="base.headerRightPane">
+          <TableHeading
+            v-for="(heading, index) in headings"
+            :key="index"
+            :class="base.heading"
+          >
+            {{ translateHeadings ? $t(heading.title) : heading.title }}
+          </TableHeading>
+        </div>
       </div>
       <ul :class="base.list">
         <li v-for="(activities, index) in groupedActivities" :key="`gA-${index}`">
@@ -25,7 +23,7 @@
 </template>
 
 <script>
-import BaseHeading from '@/components/BaseHeading.vue'
+import TableHeading from '@/components/TableHeading.vue'
 import ActivityTray from '@/components/ActivityTray.vue'
 
 export default {
@@ -46,12 +44,26 @@ export default {
       default: function () {
         return [
           {
-            title: 'activityTable.defaultTitle'
+            title: 'bestPractices.bestPractice1.title',
           },
           {
-            title: 'activityTable.defaultEIP',
-            align: 'right'
-          }
+            title: 'bestPractices.bestPractice2.title',
+          },
+          {
+            title: 'bestPractices.bestPractice3.title',
+          },
+          {
+            title: 'bestPractices.bestPractice4.title',
+          },
+          {
+            title: 'bestPractices.bestPractice5.title',
+          },
+          {
+            title: 'bestPractices.bestPractice6.title',
+          },
+          {
+            title: 'bestPractices.bestPractice7.title',
+          },
         ]
       }
     },
@@ -61,7 +73,7 @@ export default {
     }
   },
   components: {
-    BaseHeading,
+    TableHeading,
     ActivityTray
   },
   methods: {
@@ -82,13 +94,22 @@ export default {
 
     @supports (display: flex) {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
+    }
+  }
+
+  .headerRightPane {
+    max-width: 58.3333%;
+
+    @supports (display: flex) {
+      display: flex;
+      justify-content: flex-end;
     }
   }
 
   .heading {
-    composes: bold from 'styles/type.scss';
     vertical-align: bottom;
+    padding: 0.5rem 0;
   }
 
   .list {
