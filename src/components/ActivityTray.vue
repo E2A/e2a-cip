@@ -19,11 +19,11 @@
         v-if="isYouthCentric()"
         :class="base.icons"
         el="ul"
-        gutterX="xnarrow"
+        gutterX=""
         gutterY="xnarrow"
       >
         <li v-for="(bestPractice, index) of bestPractices" :key="index" :class="base.listIcon">
-          <BestPracticeIcon
+          <BestPracticeIconSelect
             :id="bestPractice.id"
             :activityID="activity.id"
             :align="'center'"
@@ -80,7 +80,7 @@ import BaseHeading from '@/components/BaseHeading.vue'
 import BaseBodyText from '@/components/BaseBodyText.vue'
 import BaseDataGrid from '@/components/BaseDataGrid.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
-import BestPracticeIcon from '@/components/BestPracticeIcon.vue'
+import BestPracticeIconSelect from '@/components/BestPracticeIconSelect.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import { bestPracticeData } from '@/components/mixins/bestPracticeData'
 import BaseButton from '@/components/BaseButton'
@@ -94,7 +94,7 @@ export default {
     BaseBodyText,
     BaseHeading,
     BaseDataGrid,
-    BestPracticeIcon,
+    BestPracticeIconSelect,
     BaseGutterWrapper,
     BaseButton,
     ActivitiesItemInput,
@@ -207,6 +207,10 @@ export default {
   margin-left: 1.5rem;
   padding: 1rem 1rem 0 1rem;
 
+}
+
+.icons {
+  padding-inline-start: 0px;
 }
 
 .listIcon {

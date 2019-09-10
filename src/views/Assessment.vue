@@ -23,7 +23,7 @@
       <BaseWidthWrapper :class="space.paddingTop">
         <BaseGutterWrapper :class="instructions.wrapper">
           <div
-            v-for="(option, index) in ['yes', 'partially', 'no']"
+            v-for="(option, index) in ['no', 'partially', 'yes']"
             :class="instructions.item"
             :key="`color-${index}`"
           >

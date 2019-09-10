@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 import { bestPracticeData } from './mixins/bestPracticeData'
 import BaseHeading from './BaseHeading.vue'
 import BaseIcon from './BaseIcon.vue'
@@ -90,16 +90,16 @@ export default {
     flyoutOpen: function () {
       const flyoutPresent = this.flyout
       // check that a flyout exists, its an object, and it has the correct id
-      const isOpen = flyoutPresent && Object.keys(flyoutPresent).length !== 0 && flyoutPresent.flyout_id === this.flyoutID;
-      return isOpen;
+      const isOpen = flyoutPresent && Object.keys(flyoutPresent).length !== 0 && flyoutPresent.flyout_id === this.flyoutID
+      return isOpen
     },
     selectedAssessment: function () {
-      return this.getSelectedAssessment(this.title) || this.bestPracticeOptions.no
+      return this.getSelectedAssessment(this.title) || this.bestPracticeOptions.empty
     },
     selectedAssessmentClass: function () {
       const option = this.getSelectedAssessment(this.title)
         ? this.getSelectedAssessment(this.title).value.toLowerCase()
-        : this.bestPracticeOptions.no.class
+        : this.bestPracticeOptions.empty.class
       return this.bestPracticeOptions[option].class
     }
   },
@@ -111,17 +111,21 @@ export default {
   data: function () {
     return {
       bestPracticeOptions: {
-        yes: {
-          class: 'yes',
-          value: this.$t('bestPracticeOptions.yesKey')
+        empty: {
+          class: 'empty',
+          value: this.$t('bestPracticeOptions.emptyKey')
+        },
+        no: {
+          class: 'no',
+          value: this.$t('bestPracticeOptions.noKey')
         },
         partially: {
           class: 'partially',
           value: this.$t('bestPracticeOptions.partiallyKey')
         },
-        no: {
-          class: 'no',
-          value: this.$t('bestPracticeOptions.noKey')
+        yes: {
+          class: 'yes',
+          value: this.$t('bestPracticeOptions.yesKey')
         }
       }
     }
@@ -186,9 +190,9 @@ export default {
         // Tell the store this flyout is open
         console.log('flyout is open')
         this.$store.commit('SET_INFO_FLYOUT', {
-            activity_id: this.activityID,
-            best_practice_id: this.id,
-            flyout_id: this.flyoutID,
+          activity_id: this.activityID,
+          best_practice_id: this.id,
+          flyout_id: this.flyoutID
         })
         // this.$store.dispatch('entities/bestpracticeicons/create', {
         //   data: {

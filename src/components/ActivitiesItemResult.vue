@@ -45,8 +45,7 @@
                 :key="`assess-${index}`"
                 :class="base.icon"
               >
-                <!-- error source -->
-                <BestPracticeIcon
+                <BestPracticeIconSelect
                   :id="assessment.best_practice_id"
                   :activityID="assessment.activity_id"
                 />
@@ -88,8 +87,7 @@
             :key="`bp-${index}`"
             :class="base.icon"
           >
-            <!-- error source -->
-            <BestPracticeIcon
+            <BestPracticeIconSelect
               :id="bestPractice.id"
               :activityID="activityInstance.id"
               :align="index > 4 ? 'right' : 'center'"
@@ -145,7 +143,7 @@
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseDetails from '@/components/BaseDetails.vue'
-import BestPracticeIcon from '@/components/BestPracticeIcon.vue'
+import BestPracticeIconSelect from '@/components/BestPracticeIconSelect.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import BaseDataGrid from '@/components/BaseDataGrid.vue'
 import { bestPracticeData } from './mixins/bestPracticeData'
@@ -159,7 +157,7 @@ export default {
     BaseHeading,
     BaseButton,
     BaseDetails,
-    BestPracticeIcon,
+    BestPracticeIconSelect,
     BaseGutterWrapper,
     BaseDataGrid,
     ActivitiesItemInput

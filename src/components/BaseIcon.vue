@@ -1,12 +1,16 @@
 <template>
   <svg
-    :class="base.icon"
+    :class="[base.icon, {[base.noMargin]: noMargin}]"
     :style="{
       width: size,
-      height: size
+      height: size,
     }"
     :role="role"
   >
+    <circle
+      v-if="backdrop"
+      fill="white" :cx="circlePosition" :cy="circlePosition" :r="circleSize"
+    />
     <use :xlink:href="`#${name}`"></use>
     <desc v-if="alt">{{alt}}</desc>
   </svg>
@@ -30,6 +34,28 @@ export default {
     },
     alt: {
       type: String
+    },
+    noMargin: {
+      type: Boolean,
+      default: false
+    },
+    // For when the background is not already white
+    backdrop: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    circleSize: function () {
+      // Make it a little smaller to make sure the edge is hidden
+      return this.filteredSize[0] / 2.05 + this.filteredSize[1]
+    },
+    circlePosition: function () {
+      return this.filteredSize[0] / 2 + this.filteredSize[1]
+    },
+    filteredSize: function () {
+      // Split letters/numbers: [2, 'rem']
+      return this.size.match(/[a-z]+|[^a-z]+/gi)
     }
   }
 }
@@ -46,5 +72,9 @@ export default {
   position: relative;
   text-decoration: none;
   vertical-align: middle;
+}
+
+.noMargin {
+  margin-top: 0;
 }
 </style>
