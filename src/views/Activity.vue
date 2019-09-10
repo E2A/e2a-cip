@@ -7,7 +7,7 @@
       :activityId="currentActivity"
       ref="activityInput"
       :key="this.getLastItem()"
-      @changed="setFill"
+      @changed="trackValidation"
     />
   </NavFooter>
 </template>
@@ -37,12 +37,22 @@ export default {
   },
   data: function () {
     return {
-      formFilled: false
+      isFormFilled: false
     }
   },
   methods: {
-    setFill: function (value) {
-      this.formFilled = value
+    trackValidation: function (value) {
+      this.isFormFilled = value
+
+      // When on "/plan/activity" with no param, and form is filled out, go to the new activity
+      if (value && (typeof this.$router.history.current.params.activityId !== 'string')) {
+        this.travelToActivity()
+      }
+    },
+    travelToActivity: function () {
+      const yOffset = window.pageYOffset
+      this.$router.push({ name: 'activity', params: { activityId: this.getNextActivity() - 1 } })
+      window.scrollTo = yOffset // keep scroll position
     },
     getNavButtons: function () {
       var navButtons = {
@@ -66,7 +76,7 @@ export default {
           {
             to: { name: 'summary' },
             label: this.$t('activitiesDone'),
-            role: this.formFilled ? 'primary' : 'default'
+            role: this.isFormFilled ? 'primary' : 'default'
           }
         )
       }

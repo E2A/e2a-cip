@@ -219,7 +219,6 @@ export default {
     saveOnChange: function () {
       if (this.activityType && this.activityText) {
         this.addActivity()
-        this.informParent(true)
       } else this.informParent(false)
     },
     informParent: function (bool) {
@@ -317,8 +316,7 @@ export default {
             this.$store.dispatch('entities/activities/insert', {
               data: {
                 text: this.activityText,
-                budget:
-                  this.activityBudgetBase * this.activityBudgetScale.value,
+                budget: this.activityBudgetBase * this.activityBudgetScale.value,
                 youthCentric: this.activityYouthCentric,
                 type: this.activityType.value,
                 activityNumber: this.activityNumber
