@@ -12,6 +12,7 @@
       :label="$t('setup.CIPTitle')"
       name="cip-title"
       el="textarea"
+      :height="1"
       :key="forceTitleUpdate"
     />
 
@@ -84,7 +85,7 @@ export default {
       setupCountry: null,
       setupRole: null,
       setupCurrency: null,
-      setupDate: new Date(),
+      setupDate: new Date()
     }
   },
   computed: {
@@ -137,14 +138,14 @@ export default {
     getData: function () {
       return this.$store.getters['entities/setup/query']().first()
     },
-    addSetup: function (e) {
+    addSetup: function () {
       const currencyData = this.setupCurrency
       const countryData = this.setupCountry
       const planDate = this.setupDate
       var currencyCodeData = null
       var currencyNameData = null
       var countryCodeData = null
-      var countryNameData = isNull
+      var countryNameData = null
 
       if (currencyData) {
         currencyCodeData = currencyData.value
@@ -165,7 +166,7 @@ export default {
           role: this.setupRole,
           currencyCode: currencyCodeData,
           currencyName: currencyNameData,
-          date: planDate,
+          date: planDate
         }
       })
     }
