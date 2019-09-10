@@ -26,9 +26,19 @@
           :level="4"
           scale="zeta"
           color="dark"
-          weight="regular"
+          weight="bold"
         >
           {{title}}
+        </BaseHeading>
+
+        <BaseHeading
+          :level="4"
+          scale="zeta"
+          color="dark"
+          weight="light"
+          :class="space.paddingVerticalXnarrow"
+        >
+          {{teaser}}
         </BaseHeading>
 
         <!-- dots -->
