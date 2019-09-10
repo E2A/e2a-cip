@@ -20,42 +20,26 @@
           {{cipTitle}}
         </BaseHeading>
         <!-- table here -->
-        <ActivitiesTable>
-          <!-- real content -->
-          <template
-            v-for="(activities, index) in groupedActivities"
-          >
-            <template v-if="activities.activityObjects.length > 0">
-              <!-- category subheading -->
-              <tr :key="`gA-${index}`">
-                <td
-                  :class="[color.lightBg, border.top]"
-                  colspan="4"
-                >
-                  <BaseHeading
-                    :level="3"
-                    scale="zeta"
-                    weight="bold"
-                    color="midtone"
-                    :centered="false"
-                    :class="[space.paddingXxnarrow, type.uppercase]"
-                  >
-                    {{activities.activityTypeName}}
-                  </BaseHeading>
-                </td>
-              </tr>
-              <!-- activity row -->
-              <ActivitiesItemSummary
-                v-for="activity in activities.activityObjects"
-                :key="`activity-${activity.id}`"
+        <ActivitiesList v-bind:groupedActivities="groupedActivities">
+          <template #activities="{ activities, setActivityId }">
+            <div v-if="activities.activityObjects.length > 0" >
+              <ActivitiesTypeHeading>
+                {{activities.activityTypeName}}
+              </ActivitiesTypeHeading>
+              <ActivitiesItemAssessment
+                v-for="(activity, index) in activities.activityObjects"
+                :key="`activity-${index}`"
+                :shortText="activity.shortText"
                 :text="activity.text"
+                :id="activity.id"
                 :budget="activity.budget"
                 :youth="activity.youthCentric"
-                :id="activity.id"
+                @activitySelect="setActivityId"
+                :class="[mountedActivity === activity.id && instructions.itemSelected]"
               />
-            </template>
+            </div>
           </template>
-        </ActivitiesTable>
+        </ActivitiesList>
       </BaseWidthWrapper>
     </section>
   </NavFooter>
@@ -68,7 +52,10 @@ import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
 import ActivitiesTable from '@/components/ActivitiesTable.vue'
-import ActivitiesItemSummary from '@/components/ActivitiesItemSummary.vue'
+import ActivitiesList from '@/components/ActivitiesList.vue'
+import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
+import ActivitiesItemAssessment from '@/components/ActivitiesItemAssessment.vue'
+import ActivitiesExportTray from '@/components/ActivitiesExportTray.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { dataMethods } from '@/components/mixins/dataMethods'
 
@@ -81,8 +68,10 @@ export default {
     BaseWidthWrapper,
     BasePageIntro,
     BaseHeading,
-    ActivitiesTable,
-    ActivitiesItemSummary
+    ActivitiesList,
+    ActivitiesTypeHeading,
+    ActivitiesItemAssessment,
+    ActivitiesExportTray,
   },
   computed: {
     groupedActivities: function () {
