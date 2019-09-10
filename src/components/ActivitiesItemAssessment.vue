@@ -185,14 +185,15 @@ $breakpoint: medium;
 
 .right {
   list-style: none;
-
-  @include media('>#{$breakpoint}') {
-    text-align: right;
-  }
+  display: flex;
+  padding-right: 0;
+  justify-content: flex-end;
 }
 
 .gutter {
   display: inline-block;
   vertical-align: middle;
+  width: 45px;
+  margin: 0 15px;
 }
 </style>

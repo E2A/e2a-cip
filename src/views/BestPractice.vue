@@ -3,7 +3,6 @@
     <NavBackLink :url="{name: 'evidence-informed-practices'}" :label="$t('backToBestPractices')" />
     <BaseSectionWrapper :class="[base.headerSection]">
       <!-- title -->
-
       <header :class="space.paddingBottomNarrow">
         <BaseWidthWrapper width="default" :class="base.headerContent">
           <BaseHeading
