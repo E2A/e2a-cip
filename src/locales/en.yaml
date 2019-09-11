@@ -4,8 +4,10 @@ en:
     chooseLanguage: 'Choose your preferred language:'
     title: NOT WITHOUT US!
     subtitle: A Tool for AYRH-Responsive Planning
-    introHeader: You can make reproductive health and family planning plans more responsive to the needs of young people.
     intro: |-
+      You can make reproductive health and family planning plans more responsive to the needs of young people.
+      
+      \
       Use this tool to reflect on and discuss...
         * One of your country’s plans—this can be local, district, regional, or national.
         * Activities planned for young people ages 15–24.
@@ -16,7 +18,7 @@ en:
     stepsIntro: 'Join 2-3 fellow youth advocates, set aside a few hours, and follow these steps to assess if your plan uses tailored, innovative strategies for meeting the needs of your country’s youth:'
     steps:
       step1:
-        title: Get to know your national, regional, district, or local plan
+        title: Get to know your national, regional, district, or local plan.
         blurb: |-
           Locate strategic priorities, objectives, activities, and budget amounts.
       step2:
