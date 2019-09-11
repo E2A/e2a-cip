@@ -224,11 +224,13 @@ export default {
       if (this.activityType && this.activityText) {
         this.addActivity()
         this.informParent(true)
-      } else this.informParent(false)
+      } else {
+        this.informParent(false)
+      }
     },
     informParent: function (bool) {
       // Tells parent whether the form is complete or not.
-      this.$emit('changed', bool)
+      this.$emit('changed', bool, this.activityId)
     },
     getAllActivities: function () {
       return this.$store.getters['entities/activities/all']()
