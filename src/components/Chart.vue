@@ -58,24 +58,31 @@ export default {
       type: Array,
       required: true
     },
-    isCurrency: { 
+    isCurrency: {
       type: Boolean,
-      required: false,
+      required: false
     },
     toolTip: {
       type: String,
-      required: false,
+      required: false
     }
   },
   computed: {
     activitiesPresent: function () {
       return this.getItemCount('activities') > 0
     },
-    series: function() {
+    series: function () {
       return this.seriesData.map(data => data.value)
     },
-    toolTipPresent: function() {
+    toolTipPresent: function () {
       return this.toolTip.length > 0
+    },
+    isSeriesEmpty: function () {
+      return this.series.every(val => val === 0)
+    },
+    total: function () {
+      if (this.isSeriesEmpty) return this.series.length
+      return this.series.reduce((total, value) => total + value, 0)
     }
   },
   components: {
@@ -84,47 +91,79 @@ export default {
     ChartLegend,
     BaseTooltip
   },
+  data: function () {
+    return {
+      filteredSeries: null,
+      // Threshold for piece of pie
+      // 2x is threshold for label
+      minimumPercent: 0.03
+    }
+  },
   methods: {
+    filterSeries () {
+      if (this.isSeriesEmpty) {
+        // If everything is empty, give everything an equal share
+        // Later, just make the labels 0
+        this.filteredSeries = this.seriesData.map(obj => {
+          return {
+            ...obj,
+            value: 1
+          }
+        })
+        return
+      }
+      // Filters series below a certain percentage of total
+      this.filteredSeries = this.seriesData.filter(obj => (obj.value / this.total) > this.minimumPercent)
+    },
     chartLabels (context) {
       if (context.type === 'label') {
+        // Just leave text black since label will be in donut hole
+        if (this.filteredSeries.length === 1) return
         // get the classname from the corresponding data series
-        const labelClass = this.seriesData[context.index].className;
+        const labelClass = this.filteredSeries[context.index].className
         // append `label-` to the classname and add it to the node's classlist
         context.element._node.classList.add(`label-${labelClass}`)
       }
     }
   },
   mounted () {
+    this.filterSeries()
     const element = `#${this.chartName}`
     const data = {
-      series: this.seriesData
+      series: this.filteredSeries
     }
-    const isCurrency = this.isCurrency;
+    const isCurrency = this.isCurrency
     const setup = this.getItemValue('setup')
 
-    new Chartist.Pie(`#${this.chartName}`, data, {
+    new Chartist.Pie(element, data, {
       donut: true,
       donutWidth: 80,
       donutSolid: true,
       startAngle: 270,
       showLabel: true,
-      labelInterpolationFnc: function(value, index, labels) {
-        // Don't render a label if the value is 0
-        if (value <= 0) {
-          return null;
-        }
-        // Format the value with metric suffix (1000 => 1k)
-        let parsedValue = parseIntWithSuffix(value);
-        
-        let symbol = '';
-        // If the chart represents a currency, add the currency symbol
-        if (isCurrency) {
-          symbol = ` ${getCurrencySymbol(setup.countryCode, setup.currencyCode)}`;
+      labelInterpolationFnc: (value, index, labels) => {
+        // Don't render label below 6%
+        if (value / this.total <= this.minimumPercent * 2) {
+          return null
         }
 
-        return `${parsedValue}${symbol}`;
+        // If everything is empty, everything is 0
+        if (this.isSeriesEmpty) {
+          return 0
+        }
+
+        // Format the value with metric suffix (1000 => 1k)
+        let parsedValue = parseIntWithSuffix(value)
+
+        let symbol = ''
+        // If the chart represents a currency, add the currency symbol
+        if (isCurrency) {
+          symbol = ` ${getCurrencySymbol(setup.countryCode, setup.currencyCode)}`
+        }
+
+        return `${parsedValue}${symbol}`
       }
-    }).on('draw', (context) => this.chartLabels(context));
+    }).on('draw', (context) => this.chartLabels(context))
   }
 }
 </script>
