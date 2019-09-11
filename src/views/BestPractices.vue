@@ -1,42 +1,15 @@
 <template>
   <NavFooter wrapperEl="article" :leftButtons="navButtons.left" :rightButtons="navButtons.right">
     <NavBreadcrumbs v-if="this.$route.name === 'evidence-informed-practices'"/>
-    <BasePageIntro>
-      <BaseWidthWrapper :class="[base.wrapper, base.headlineWrapper]" width="wide">
-        <BaseGutterWrapper :class="base.col12">
-          <BaseHeading
-            :class="[space.paddingBottom, base.title]"
-          >{{ $t('bestPracticeTitle') }}</BaseHeading>
-        </BaseGutterWrapper>
-      </BaseWidthWrapper>
-
-      <BaseWidthWrapper :class="[base.wrapper]" width="wide">
-        <div :class="base.col6">
-          <BaseHeading
-            :class="space.paddingBottom"
-            scale="delta"
-            sub
-            :centered="false"
-          >{{ $t('bestPracticeSubtitle') }}</BaseHeading>
-          <BaseHeading
-            :class="space.paddingBottom"
-            scale="delta"
-            sub
-            :centered="false"
-          >{{ $t('home.introHeader') }}</BaseHeading>
-        </div>
-
-        <div :class="[base.col6, color.well]">
-          <BaseWidthWrapper>
-            <BaseBodyText :content="$t('bestPracticesContent')" />
-          </BaseWidthWrapper>
-        </div>
-      </BaseWidthWrapper>
-    </BasePageIntro>
+    <BasePageIntro
+      :title="$t('bestPracticeTitle')"
+      :subtitle="$t('bestPracticeSubtitle')"
+      :blurb="$t('bestPracticesContent')"
+    />
 
     <div :class="space.paddingWide">
       <BaseWidthWrapper width="wide">
-        <BaseColumnLayout :items="bestPractices" borders>
+        <BaseColumnLayout :items="bestPractices" :borders="false">
           <BaseGutterWrapper el="section" :class="base.card" slot-scope="{ item }">
             <div :class="base.iconWrapper">
               <router-link
@@ -196,24 +169,5 @@ export default {
 
 .summary {
   flex: 1;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  padding: space("medium") space("narrow");
-}
-
-.col6 {
-  flex: 1;
-  max-width: 50%;
-  flex-basis: 50%;
-  padding: space("medium") space("medium");
-}
-
-.col12 {
-  flex: 1;
-  max-width: 100%;
-  flex-basis: 100%;
 }
 </style>

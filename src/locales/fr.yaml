@@ -2,37 +2,39 @@ fr:
   mainTitle: Outil pour une planification adaptée à  la santé reproductive des adolescents et des jeunes (AYRH)
   home:
     chooseLanguage: 'Choisissez votre langue préférée:'
-    title: Pas sans nous !
-    subtitle: Un outil pour une planification adaptée à la santé reproductive  des adolescents et des jeunes (AYRH)
+    title: Pas sans nous!
+    subtitle: Outil de planification adaptée à la santé reproductive des adolescents et des jeunes (TARP)
+    introHeader: Vous pouvez rendre les plans de santé reproductive et de planification familiale plus adaptés aux besoins des jeunes.
     intro: |-
-      Cet outil est conçu pour les gouvernements, les organisations et les individus qui cherchent à rendre les plans de planification familiale plus sensibles aux besoins de santé reproductive des jeunes de 15 à 24 ans. Grâce à cet outil, vous aurez l'occasion de :
+      Utilisez cet outil pour réfléchir et discuter...
         Discerner la proportion d'activités et le budget alloué aux activités "centrées sur les jeunes".
-        * Discernez la proportion d'activités centrées sur les jeunes et le budget alloué à quatre domaines d'activité différents (génération de la demande, prestation de services, environnement favorable et coordination) avec un accent sur les jeunes.
-        * Discernez comment vos activités et votre budget se comparent aux données sur les jeunes de votre pays.
-        * Évaluez la qualité technique des activités incluses dans votre plan et révisez-les pour mieux les harmoniser avec les pratiques fondées sur des données probantes (EIP).
-        \
-        Nous espérons que les résultats que vous recevrez feront avancer le dialogue sur les besoins des jeunes et les stratégies novatrices pour y répondre. Nous vous encourageons à utiliser les résultats pour sensibiliser les gens à l'importance d'investir dans la santé génésique des jeunes et poser les bases d'une meilleure santé pour les générations futures.
+        - L’un des plans de votre pays, qu’il soit un plan local, de district, régional ou national
+        - Activités prévues pour les jeunes âgés de 15 à 24 ans
+        - Si un budget suffisant est alloué à ces activités axées sur les jeunes
+        - Comment renforcer le plan pour mieux répondre aux besoins des jeunes
          \
-        **Commençons !**
-    stepsTitle: Comment ça marche ?
+        **[Démarrez!](/plan)**
+    stepsTitle: Comment ça marche?
+    stepsIntro: 'Joignez-vous à 2 ou 3 collègues défenseurs de la jeunesse, rendez-vous disponibles pour quelques heures puis suivez les étapes ci-dessous pour déterminer si votre plan utilise des stratégies innovatrices et sur mesure pour répondre aux besoins des jeunes de votre pays:'
     steps:
       step1:
-        title: Apprenez à connaître votre plan
+        title: Connaître votre plan national, régional, de district ou local
         blurb: |-
-          Il est important de se familiariser avec le plan que vous allez analyser. Localisez les priorités stratégiques et les objectifs de votre plan. Les activités spécifiques que vous utiliserez dans cet exercice se trouvent généralement dans cette section. Comment le budget est-il organisé ? Chaque activité a-t-elle un montant budgétaire ? N'oubliez pas de consulter les annexes. Parfois, les activités et leurs montants budgétaires spécifiques figurent dans les annexes. Si les chiffres du budget sont donnés pour les domaines stratégiques plus larges et non pour des activités spécifiques, il ne sera pas possible d'analyser le budget. Cependant, vous pouvez toujours analyser les activités spécifiques !
+          Repérer les priorités stratégiques, les objectifs, les activités et les budgets.
       step2:
-        title: Entrez vos activités
+        title: Saisir les activités planifiées.
         blurb: |-
-          Après avoir entré le titre de votre plan, votre pays et votre titre/rôle, il vous sera demandé de saisir TOUTES les activités contenues dans votre plan (pas uniquement celles qui concernent les jeunes !). Il vous sera demandé de classer les activités en quatre catégories, d'entrer le montant du budget alloué à chaque activité et de déterminer si l'activité est axée sur les jeunes. Une page de résumé apparaîtra, elle vous permettra de modifier les informations que fournies.
+          Vous allez saisir et organiser les activités en quatre catégories: génération de la demande, prestation de services, environnement favorable et coordination.
       step3:
-        title: Analyser vos activités
+        title: Déterminer si les activités correspondent aux besoins des jeunes.
         blurb: |-
-          Ensuite, vous pourrez en apprendre davantage sur les pratiques éclairées (PE), pratiques prometteuses pour améliorer l’AYRH. Vous utiliserez ce que vous avez appris sur les PE pour déterminer dans quelle mesure les activités de votre plan axées sur les jeunes sont alignées sur les PE. Vous obtiendrez vos résultats une fois ces deux étapes terminées !
+          Utilisez des "pratiques fondées sur des données probantes" comme guide.
       step4:
-        title: Obtenez vos résultats
+        title: Obtenir vos résultats.
         blurb: |-
-          Ensuite, vous pourrez en apprendre davantage sur les pratiques éclairées (PE), pratiques prometteuses pour améliorer l’AYRH. Vous utiliserez ce que vous avez appris sur les PE pour déterminer dans quelle mesure les activités de votre plan axées sur les jeunes sont alignées sur les PE. Vous verrez également un graphique illustrant le degré d'alignement des activités de votre plan aux PE. Enfin, en utilisant les informations sur les PE, vous aurez l’occasion de réviser et de renforcer les activités.
-    getStartedButton: Commencer
+          En utilisant les données générées par cet outil, déterminez si votre pays investit suffisamment et intelligemment dans la jeunesse.
+    getStartedIntro: Vous pouvez utiliser vos résultats pour sensibiliser et défendre l'importance d'investir dans la santé reproductive des jeunes. Merci d'avoir ouvert la voie à une planification familiale plus complète pour les générations futures.     
+    getStartedButton: Démarrez
     downloadTitle: Télécharger les versions hors ligne
     downloadBlurb: |-
       Si vous rencontrez des problèmes avec votre navigateur, si vous souhaitez accéder à l'application en mode hors connexion ou si vous souhaitez simplement utiliser l'application sur votre bureau sans utiliser de navigateur, vous pouvez télécharger l'une des versions suivantes selon vos besoins.
@@ -55,12 +57,29 @@ fr:
       Nous exprimons notre reconnaissance pour le soutien de collègues ayant participé à une petite consultation d'experts pour apporter leur analyse initiale de l'outil et leurs retours critiques, parmi lesquels Patricia MacDonald, Melissa Freeman, Teshome Woldemedhin, Zema Mirza et Michal Avni d’USAID ; Emily Sullivan, Family Planning 2020 ; Amy Uccello, PSI ; Adriana Martin Huber, STPH Institute ; et Catherine Lane, Pathfinder International. Nous voudrions remercier Regina Benevides, Katie Chau et Allison Gato, anciennement de Pathfinder International, pour l’élaboration de la première version de cet outil. Au sein de E2A, nous voudrions remercier Rita Badiani, Eric Ramirez, Ginette Hounkanrin, Anjala Kanesathasan, Elizabeth Williams et Laurel Lundstrom de Pathfinder International pour le travail fourni pour la finalisation de cet outil. Enfin, nous souhaitons remercier Bivee pour son aide dans la conception et la numérisation de l’outil.
 
       Cette publication a été rendue possible par le biais du soutien de l’Office de Population et de Santé Reproductive, Bureau de Santé Globale, Agence des États-Unis pour le Développement International, aux termes de l’accord Numéro AID-OAA-A-11-00024. Les opinions exprimées ici incombent aux auteurs et ne reflètent pas forcément les vues de l’Agence des États-Unis pour le Développement International
+  plan:
+    title: CONNAÎTRE VOTRE PLAN
+    body: |-
+      Vous avez choisi un plan à analyser. Maintenant, prenez au moins 10 minutes pour vous familiariser avec ce plan.
+
+      * S'agit-il d'un plan de SRAJ ou d'un plan général de PF/SR ?
+      * Repérer les priorités et les objectifs stratégiques - vous passerez la majeure partie de votre temps ici.
+      * Demandez-vous, "Comment est-ce que le budget est organisé ? Est-ce que chaque activité a été budgétisée ? 
+      * Vous ne trouvez pas les activités et les montants budgétaires correspondants ? Alors consultez l’annexe de votre plan. 
+    note: 'Important : Malheureusement, vous ne pourrez pas analyser votre budget si...'
+    noteBody: |-
+      * Les activités spécifiques n'ont pas de montants budgétisés correspondants 
+      * Vous évaluez un plan de SRAJ, pas un plan général de PF/SR
+
+      _Mais ne vous inquiétez pas. Vous pouvez encore analyser la qualité des activités._
+    getStartedButton: Démarrez
   setup:
-    CIPTitle: Entrez le titre de votre plan
+    CIPTitle: Saisissez le titre du plan
     configureCIP: "Tout d'abord, configurons votre plan"
+    selectDate: Sélectionnez la date de votre plan
     selectCountry: Sélectionnez votre pays
-    selectCurrency: Sélectionnez la devise utilisée dans votre plan
-    selectRole: Sélectionnez votre affiliation
+    selectCurrency: Sélectionner la devise utilisée dans le plan
+    selectRole: Sélectionner votre affiliation
     selectActivityType: Catégorisez votre activité par type
     setupRequired: Remplissez tous les champs, s'il vous plaît.
     restoreActivities: Restaurer vos activités
@@ -97,18 +116,22 @@ fr:
   activityBudget: "Budget de l'activité"
   activityType: Catégorisez votre activité par type
   activityYouthCentric: Cette activité est-elle axée sur les jeunes ?
-  inputNextActivity: Entrer une autre activité
-  activitiesDone: "J'ai fini !"
+  inputNextActivity: Ajouter une autre activité
+  activitiesDone: "TERMINE. SUIVANT"
   save: "Sauvegarder l'activité"
-  saveSuccess: Activité sauvegardée
+  saveSuccess: Enregistrer l'activité
   deleteSuccess: "Supprimer l'activité"
   deleteActivity: Supprimer
   supportText:
-    activityNumber: "Veuillez entrer un numéro d'activité"
-    activityText: "Veuillez entrer la description de l'activité"
-    activityBudget: "Veuillez préciser un budget pour l'activité, si applicable"
-    activityYouthCentric: Les activités axées sur les jeunes doivent cibler des adolescents et des jeunes âgés de 15 à 24 ans.
-    selectActivityType: "Sélectionner un domaine d'activité"
+    activityNumber: "Saisissez le numéro de l'activité tel qu'il apparaît dans le plan"
+    activityText: "Saisissez un bref résumé de l'activité (50 mots maximum)"
+    activityBudget: "Saisissez le montant budgétisé pour l'activité, si disponible"
+    activityYouthCentric: Est-ce que l’activité est axée sur les jeunes, en particulier ceux âgés de 15 à 24 ans?
+    selectActivityType: "Choisissez une catégorie pour cette activité. (Votre activité est-elle alignée sur plusieurs catégories ? Choisir une seule)"
+  tooltipText:
+    activityText: Cela devrait être un résumé de l'activité. Maximum de 50 mots.
+    activityBudget: Utilisez le menu déroulant à droite pour définir facilement le budget.
+    activityYouthCentric: 'Note : une activité qui servira la population en général n’est pas axée sur les jeunes. '
   # Activity Budget Scales
   budgetScales:
     scale1:
@@ -198,29 +221,39 @@ fr:
         - Appui aux processus de coordination, y compris les réunions, le partage de l'information, l'élaboration de plans de travail, etc.
         - Mettre en place des systèmes de suivi et d'évaluation transparents et conviviaux
   summary:
-    title: Beau travail !
+    title: Bien joué !
+    subtitle: Vous avez ajouté toutes les activités. Il est maintenant temps de creuser un peu plus.
     intro: |-
-      Vous trouverez ci-dessous un résumé des renseignements que vous avez fournis au sujet des activités prévues dans votre plan. Cela inclut les activités triées par domaine, le montant du budget associé à chaque activité et si l'activité a été classée comme étant axée sur les jeunes. Veuillez vous assurer que toutes ces informations sont correctes. Si ce n'est pas le cas, veuillez cliquer sur le bouton Modifier pour apporter des modifications.
-    previousStep: Retour à la configuration
-    nextStep: À propos des EIP
+      Vous trouverez ci-dessous tous les renseignements que vous avez fournis, classés par catégorie et par budget. Assurez-vous que tout est exact. Si vous devez apporter des modifications, cliquez sur **MODIFIER**.
+
+      Une fois que tout a l'air correct, cliquez sur **CONTINUER**
+
+    previousStep: RETOUR
+    nextStep: CONTINUER
   # Evidence-Informed Practices
-  readMore: "En savoir plus"
+  readMore: "Voir les exemples d'activités"
   checkListButtonText: "Voir la liste de contrôle"
-  bestPracticeTitle: À propos des pratiques fondées sur des données probantes (EIP)
-  bestPracticeResourceSubtitle: Lecture(s) complémentaire(s)
+  bestPracticeTitle: Maintenant, demandez-vous, "Ces activités fonctionneront-elles ?"
+  bestPracticeResourceSubtitle: Répondront-elles efficacement aux besoins et aux désirs en matière de reproduction des jeunes dans votre pays ?
+  bestPracticesContent: |-
+    Pour répondre, referez-vous aux données probantes. Commencez par examiner les pratiques fondées sur des données probantes (EIPs) ci-dessous. Chaque EIP a donné des résultats positifs notables dans la programmation de la santé reproductive des adolescents et des jeunes. 
+    
+    Lorsque vous avez terminé, cliquez sur **SUIVANT** en bas à droite.
   backToBestPractices: Retourner aux Pratiques fondées sur des données probantes (EIP)
   bestPracticeIntro: ""
+  bestPracticeCategoryTitle: "Pratiques fondées sur des données probantes"
   bestPracticeSubtitle: "Pratiques fondées sur des données probantes (EIP)"
   bestPractices:
     bestPractice1:
-      title: 'Fournir des services de santé adaptés à l''âge et au développement des
-        jeunes'
+      title: Rendre les services aux adolescents et aux jeunes accueillants
       # Do Not Translate
       icon: eip-choice
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
+      practice: |-
+        Tenir compte des besoins spécifiques des jeunes en leur fournissant des services de santé adaptés à leur âge et à leur développement.
       teaser: |-
-        Les services qui tiennent compte du stade de la vie et des besoins particuliers des jeunes sont parfois décrits comme « adaptés aux adolescents et aux jeunes ». Ces services incluent généralement des méthodes contraceptives sûres et abordables ; la prévention et le traitement du VIH/SIDA et la prise en charge d'autres IST ; la fourniture d'informations de santé précises et des conseils et soins sensibles pour le bien-être général. Les services peuvent également inclure des soins obstétricaux et prénatals adaptés aux jeunes pour les femmes et jeunes femmes enceintes ; des services de soins post-avortement, la prévention, le dépistage et le conseil en matière de violence sexiste ; ainsi que la prévention, le dépistage et le traitement du cancer du col utérin.
+        Tenir compte des besoins spécifiques des jeunes en leur fournissant des services de santé adaptés à leur âge et à leur développement.
       body: |-
         **De quoi s'agit-il ?**
 
@@ -363,13 +396,15 @@ fr:
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/handle/10665/183935/9789241549332_vol1_eng.pdf?sequence=1
     bestPractice2:
-      title: "Garantir l'accès à la gamme complète des méthodes contraceptives"
+      title: "Soutenir le choix en matière de contraception"
       # Do Not Translate
       icon: eip-contraceptives
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
+      practice: |-
+        Fournir des conseils de qualité et une gamme complète de méthodes, y compris la contraception à long terme et réversible, afin que les jeunes puissent choisir une méthode qui corresponde à leurs préférences et à leurs objectifs.
       teaser: |-
-        Fournir aux adolescents et aux jeunes une gamme complète de contraceptifs, y compris des contraceptifs à action prolongée et réversibles (LARC), facilite leur utilisation de la contraception et leur permet de choisir en toute connaissance de cause une méthode compatible avec leurs préférences et objectifs. Un conseil de qualité et un large choix de méthodes devrait également permettre aux jeunes de changer de méthodes en cas d'effets secondaires indésirables.
+        Fournir des conseils de qualité et une gamme complète de méthodes, y compris la contraception à long terme et réversible, afin que les jeunes puissent choisir une méthode qui corresponde à leurs préférences et à leurs objectifs.
       body: |-
         **De quoi s'agit-il ?**
         Les soins de l’AYRH liés à l’utilisation de la contraception ont pour pilier des conseils de qualité. L'objectif de ce conseil est de s'assurer que les jeunes soient conscients de la nature volontaire de l'utilisation de la contraception et qu'ils connaissent l'ensemble d'options de contraception à leur disposition.  Fournir aux adolescents et aux jeunes une gamme complète de contraceptifs, y compris des contraceptifs à action prolongée et réversibles (LARC), facilite leur utilisation de la contraception[^10] et leur permet de choisir en toute connaissance de cause une méthode compatible avec leurs préférences et objectifs. Un conseil de qualité et un large choix de méthodes devrait également permettre aux jeunes de changer de méthodes en cas d'effets secondaires indésirables. L'élargissement du choix en matière de contraception est conforme à la troisième norme de l'OMS pour l'amélioration de la qualité des soins de santé pour les adolescents (OMS, 2015). Tout adolescent peut utiliser n'importe quelle méthode contraceptive selon les critères d'éligibilité médicale de l'OMS pour l'utilisation de la contraception. L’âge seul ne constitue pas une contre-indication à l’utilisation des méthodes contraceptives.
@@ -519,13 +554,15 @@ fr:
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/handle/10665/183935/9789241549332_vol1_eng.pdf?sequence=1
     bestPractice3:
-      title: "Une forte coordination entre les secteurs qui affectent l'AYRH"
+      title: "Coordination entre les secteurs"
       # Do Not Translate
       icon: eip-couple
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
+      practice: |-
+        Élaborer des plans de collaboration entre les secteurs (p. ex. santé, éducation, environnement, économie) et avec les principaux intervenants (p. ex. le gouvernement, la société civile et le secteur privé) pour améliorer la SRAJ.
       teaser: |-
-        La coordination multisectorielle implique une collaboration délibérée et planifiée entre « divers groupes de parties prenantes (par exemple, le gouvernement, la société civile et le secteur privé) et différents secteurs (par exemple, la santé, l’éducation, l’environnement et l’économie) afin de parvenir conjointement à un résultat politique ». Les avantages d'une telle coordination, s'ils sont soigneusement réalisés, peuvent inclure une augmentation de la quantité de ressources affectées à la résolution d'un problème de santé.
+        Élaborer des plans de collaboration entre les secteurs (p. ex. santé, éducation, environnement, économie) et avec les principaux intervenants (p. ex. le gouvernement, la société civile et le secteur privé) pour améliorer la SRAJ.
       body: |-
         **De quoi s'agit-il ?**
 
@@ -602,14 +639,15 @@ fr:
           # Do Not Translate
           url: https://static.globalinnovationexchange.org/s3fs-public/asset/document/Guide%20to%20Cross-Sectoral-%20Youth%20Assessments.pdf?cEzNMwlDyHmmAOdYf5PNlWGiCo617PLB
     bestPractice4:
-      title: "Participation des jeunes aux programmes de santé reproductive des adolescents\
-        \ et des jeunes (AYRH)"
+      title: "Créer des plateformes et des processus pour une participation significative des jeunes"
       # Do Not Translate
       icon: eip-youth
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
+      practice: |-
+        Afin d’assurer la pertinence, la réceptivité et l’efficacité des programmes de SRAJ, il est essentiel d’engager et de renforcer de façon significative la capacité des défenseurs de la jeunesse et des leaders.
       teaser: |-
-        En termes d'AYRH, la participation signifie que les jeunes ont les capacités et les possibilités de rechercher des informations ; d'être informés et consultés sur les décisions concernant les jeunes ; d'avoir les connaissances, les compétences et le désir de faire des choix éclairés concernant leur vie reproductive ; et qu'ils possèdent les connaissances et les compétences nécessaires pour responsabiliser les détenteurs d'obligations. La participation des jeunes a pour but de nourrir toutes les compétences nécessaires pour que les individus façonnent un secteur de la société civile fort et des institutions démocratiques qui fonctionnent, avec notamment des systèmes et services de santé réactifs.
+        Afin d’assurer la pertinence, la réceptivité et l’efficacité des programmes de SRAJ, il est essentiel d’engager et de renforcer de façon significative la capacité des défenseurs de la jeunesse et des leaders.
       body: |-
         **De quoi s'agit-il ?**
 
@@ -749,13 +787,15 @@ fr:
           # Do Not Translate
           url: http://www.advocatesforyouth.org/storage/advfy/documents/advocating.pdf
     bestPractice5:
-      title: "Éducation à la vie familiale (EVF)"
+      title: "Promouvoir l’éducation à la vie familiale"
       # Do Not Translate
       icon: eip-coordination
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
+      practice: |-
+        Veiller à ce que les jeunes soient dotés de compétences, de connaissances et de valeurs qui les aideront à faire des choix pour leur santé et leur bien-être, et à faire preuve de respect à l’égard des choix des autres.
       teaser: |-
-        L'éducation à la vie de famille est un processus d'enseignement et d'apprentissage des aspects cognitifs, affectifs, physiques et sociaux de l'adolescence, de la croissance et du développement, et des relations qui permettront aux enfants et aux jeunes d'acquérir les connaissances, les compétences, les attitudes et les valeurs qui leur permettront de prendre conscience de leur santé, leur bien-être et leur dignité ; de développer des relations fondées sur le respect ; d'examiner l'incidence de leurs choix sur leur bien-être et celui des autres ; de comprendre et de protéger leurs droits tout au long de leur vie.
+        Veiller à ce que les jeunes soient dotés de compétences, de connaissances et de valeurs qui les aideront à faire des choix pour leur santé et leur bien-être, et à faire preuve de respect à l’égard des choix des autres.
       body: "**De quoi s'agit-il ?**\nL'éducation à la vie familiale (EVF) est un\
         \ processus d'enseignement et d'apprentissage basé sur le curriculum, portant\
         \ sur les aspects cognitifs, émotionnels, physiques et sociaux de l'adolescence,\
@@ -876,14 +916,15 @@ fr:
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/handle/10665/255415/9789241512343-eng.pdf?sequence=1
     bestPractice6:
-      title: "Favoriser le soutien familial et communautaire en faveur de la santé\
-        \ reproductive des adolescents et des jeunes (AYRH)"
+      title: "Favoriser le soutien familial et communautaire"
       # Do Not Translate
       icon: eip-book
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
+      practice: |-
+        Collaborer avec les groupes communautaires et les autorités parentales (p. ex., les parents et les familles des jeunes) pour s’attaquer aux normes sociales et créer un environnement propice à l’amélioration de la SRAJ.
       teaser: |-
-        L'engagement communautaire signifie travailler en collaboration avec des groupes de personnes qui « sont affiliées par leur proximité géographique, leurs intérêts particuliers ou des situations similaires en ce qui concerne des questions qui affectent leur bien-être ». Pour l'AYRH, cela implique de travailler avec les groupes communautaires et les gardiens - y compris les parents et les familles - pour remettre en question et modifier les normes sociales et exploiter les systèmes et la structure en place afin de fournir un environnement favorable aux programmes de l’AYRH et aux jeunes.
+        Collaborer avec les groupes communautaires et les autorités parentales (p. ex., les parents et les familles des jeunes) pour s’attaquer aux normes sociales et créer un environnement propice à l’amélioration de la SRAJ.
       body: |-
         **De quoi s'agit-il ?**
 
@@ -994,13 +1035,15 @@ fr:
           # Do Not Translate
           url: https://www.jahonline.org/article/S1054-139X(16)30879-5/pdf
     bestPractice7:
-      title: "Promoting Gender Equality for Improved FP/RH"
+      title: "Promouvoir l'égalité des sexes"
       # Do Not Translate
       icon: eip-community
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
+      practice: |-
+        S'attaquer aux facteurs qui empêchent les filles et les jeunes femmes d'avoir des options, qui encouragent les garçons à prendre des risques et créer des obstacles à la planification familiale et aux soins de santé reproductive pour les deux sexes.
       teaser: |-
-        L'égalité des sexes signifie que, quel que soit leur genre, les individus ont une même facilité d'accès aux ressources et aux opportunités, y compris la participation civique, religieuse, politique et économique et la prise de décision. Cela signifie également que les besoins, aspirations et comportements des jeunes hommes et des jeunes femmes sont considérés de la même manière. En termes de santé, l'égalité des sexes signifie que tous les jeunes doivent avoir accès à une information relative à la planification familiale et à la santé reproductive, et que les soins de santé sont réactifs en fonction de leurs besoins spécifiques, le stade de leur vie ou leur expérience, ainsi que le contexte culturel et social.
+        S'attaquer aux facteurs qui empêchent les filles et les jeunes femmes d'avoir des options, qui encouragent les garçons à prendre des risques et créer des obstacles à la planification familiale et aux soins de santé reproductive pour les deux sexes.
       body: |-
         **De quoi s'agit-il ?**
         L'égalité des sexes signifie que, quel que soit leur genre, les individus ont une même facilité d'accès aux ressources et aux opportunités, y compris la participation civique, religieuse, politique et économique et la prise de décision. Cela signifie également que les besoins, aspirations et comportements des jeunes hommes et des jeunes femmes sont considérés de la même manière. En termes de santé, l'égalité des sexes signifie que tous les jeunes doivent avoir accès à une information relative à la planification familiale et à la santé reproductive, et que les soins de santé sont réactifs en fonction de leurs besoins spécifiques, le stade de leur vie ou leur expérience, ainsi que le contexte culturel et social.
@@ -1132,7 +1175,12 @@ fr:
   analysis:
     title: Analyser vos activités
     intro: |-
-      Voici les activités de votre plan. Veuillez utiliser ce que vous avez appris sur les pratiques fondées sur des données probantes (EIP) pour déterminer si chaque activité correspond à une ou plusieurs de ces pratiques. Si l'activité **s'aligne complètement** sur une ou plusieurs IEP, veuillez surligner en vert le(s) symbole(s) correspondant(s) à cette pratique. Si l'activité **s'aligne en partie** sur une ou plusieurs EIP, veuillez surligner en jaune le(s) symbole(s) correspondant(s) à cette pratique. Si l'activité ne s'aligne pas sur une ou plusieurs EIP, le(s) symbole(s) correspondant(s) à cette pratique doit/doivent être laissé(s) en gris par défaut. Pour accéder facilement aux informations sur les EIP, veuillez cliquer sur le symbole de la pratique que vous voulez consulter. Une fois que vous avez fini d'analyser vos activités, obtenez vos résultats en cliquant sur le bouton 'résultats' au bas de la page.
+      1. Ci-dessous, prenez en compte chaque activité. Utilisez ce que vous avez appris sur les pratiques fondées sur des données probantes pour vous demander : Cette activité correspond-t-elle à un ou plusieurs EIPs ?
+      2. Pour répondre, cliquez sur une icône à droite de l'activité. Si l'activité correspond entièrement à cet EIP, sélectionnez vert. Si les correspondances sont partielles, sélectionnez jaune. Si elle ne correspond pas, sélectionnez gris.
+      3. Remplir pour tous les EIPs. Terminez ensuite toutes les activités et assurez-vous de discuter de vos décisions avec votre équipe.
+
+      \
+      Une fois que vous avez terminé, cliquez sur **OBTENIR MES RÉSULTATS** en bas à droite.
     instructions:
       heading: Cliquez sur les icônes indiquant les pratiques fondées sur des données probantes (EIP) auxquelles votre activité répond
       options:
@@ -1148,7 +1196,7 @@ fr:
           title: Peut-être
           description: Correspond en partie à la pratique fondée sur des données probantes.
     previousStep: Retourner aux activités
-    nextStep: Vos résultats
+    nextStep: OBTENIR MES RÉSULTATS
   # Results Page
   resultsSubhead: "Voici comment vos activités sont évaluées :"
   addRecommendation: Ajouter une recommandation
@@ -1254,17 +1302,21 @@ fr:
     pdfFileName: e2a-report-%{timestamp}.pdf
     exportSuccessful: "%{filetype} Exportation réussie"
   nav:
+    plan: 'Plan'
     setup: 'Configuration'
     activities: 'Activités'
     summary: 'Récapitulatif'
     bestPractices: 'Pratiques fondées sur des données probantes (EIP)'
     assessment: 'Analyse'
+    analyze: 'Analyser'
     results: 'Résultats'
+    report: 'Report'
     advocate: 'Défenseur'
     addAssessment: Vous devez saisir votre analyse avant de pouvoir aller plus loin.
     removeAssessment: Vous devez supprimer toutes vos analyses avant de pouvoir modifier les activités.
     addSetup: Vous devez ajouter des données de configuration avant de continuer.
     addActivites: "Vous devez ajouter des activités avant d'aller plus loin"
+    learnMore: En savoir plus sur les EIP
   activityTable:
     defaultTitle: "Texte de l'activité"
     defaultID: "Numéro d'activité"
