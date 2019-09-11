@@ -1,9 +1,7 @@
 <template>
   <article>
-    <aside
-      :class="[space.paddingHorizontal, space.paddingVerticalNarrow, color.well, border.bottom, type.right]"
-    >
-      <BaseGutterWrapper gutterY="xnarrow" gutterX="xnarrow">
+    <header :class="[space.paddingHorizontal, space.paddingVerticalNarrow, color.well, border.bottom, base.header]">
+      <BaseGutterWrapper :class="base.leftPane" gutterY="xnarrow" gutterX="xnarrow">
         <BaseHeading
           :class="display.inlineBlock"
           :centered="false"
@@ -15,7 +13,11 @@
         <!-- Language selector -->
         <LanguageSwitcher />
       </BaseGutterWrapper>
-    </aside>
+      <!-- EIPs -->
+      <BaseGutterWrapper :class="base.rightPane" gutterY="xnarrow" gutterX="xnarrow">
+        <BaseButtonLink :to="{name: 'eips'}" role="default" :label="this.$t('nav.learnMore')" size="small"></BaseButtonLink>
+      </BaseGutterWrapper>
+    </header>
 
     <BaseWidthWrapper :class="[space.paddingVerticalWide, space.paddingHorizontal, border.bottom]">
       <BaseGutterWrapper :class="base.logoGrid">
@@ -165,6 +167,25 @@ export default {
 @import "~styleConfig/scale";
 @import "~styleConfig/type";
 @import "~styleConfig/spacing";
+
+.header {
+  display: flex;
+}
+
+.leftPane {
+  width: 50%;
+}
+
+.rightPane {
+  width: 50%;
+
+  @supports (flex: 1) {
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    display: inline-flex;
+  }
+}
 
 .logoGrid {
   text-align: center;
