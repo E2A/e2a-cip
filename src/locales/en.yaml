@@ -2,7 +2,7 @@ en:
   mainTitle: Tool for AYRH-Responsive Planning
   home:
     chooseLanguage: 'Choose your preferred language:'
-    title: Not without us!
+    title: NOT WITHOUT US!
     subtitle: A Tool for AYRH-Responsive Planning
     introHeader: You can make reproductive health and family planning plans more responsive to the needs of young people.
     intro: |-
@@ -12,7 +12,6 @@ en:
         * If enough budget is allocated for these youth-centric activities.
         * How to strengthen the plan to better meet the needs of youth.
         
-        **[GET STARTED!](/plan)**
     stepsTitle: How it works
     stepsIntro: 'Join 2-3 fellow youth advocates, set aside a few hours, and follow these steps to assess if your plan uses tailored, innovative strategies for meeting the needs of your country’s youth:'
     steps:
@@ -60,7 +59,8 @@ en:
     title: Get to know your plan
     body: |-
       You’ve selected a plan to analyze. Now take at least 10 minutes to familiarize yourself with it.
-
+      
+      
       * Is this an AYRH plan or a general FP/RH plan? 
       * Locate strategic priorities and objectives—you’ll spend most of your time here.
       * Ask yourself, “How is the budget organized? Does each activity have a certain budget amount?”
@@ -71,7 +71,7 @@ en:
       * you’re assessing an AYRH plan, not a general FP/RH plan.
       
       \
-    **But don’t worry. You can still analyze the quality of the activities.**
+      **But don’t worry. You can still analyze the quality of the activities.**
     getStartedButton: Get Started
   setup:
     CIPTitle: Enter the plan title
