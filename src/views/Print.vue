@@ -6,81 +6,6 @@
   >
     <!-- header and charts -->
     <ResultsCharts />
-
-    <!-- Global Recommendations -->
-    <BaseSectionWrapper border>
-      <BaseHeading
-        :level="2"
-        :class="space.paddingBottom"
-        scale="gamma"
-      >
-        {{$t('print.globalRecommendations.title')}}
-      </BaseHeading>
-      <BaseWidthWrapper
-        :class="space.paddingBottom"
-      >
-        <BaseBodyText :content="$t('print.globalRecommendations.content')" />
-
-        <BaseVerticalList
-          :items="globalRecommendations"
-          :class="[space.paddingTop, space.marginTop, border.top, border.secondary]"
-        >
-          <template slot-scope="{ item, index }">
-            <template v-if="item.text">
-              <BaseHeading
-                :level="2"
-                :centered="false"
-                :class="space.paddingBottomXnarrow"
-                weight="bold"
-                color="midtone"
-                scale="epsilon"
-              >
-               {{ $t('print.globalRecommendations.recommendation', { count: index+1 }) }}
-              </BaseHeading>
-              <BaseBodyText :content="item.text" />
-            </template>
-          </template>
-        </BaseVerticalList>
-      </BaseWidthWrapper>
-
-    </BaseSectionWrapper>
-
-    <!-- Activities list -->
-    <BaseSectionWrapper
-      :class="space.paddingTop"
-      border
-    >
-      <BaseWidthWrapper width="xxwide">
-
-        <!-- Count & export tools -->
-        <ActivitiesListHeader />
-
-        <!-- Table -->
-        <ActivitiesList ref="activityList">
-          <div
-            v-for="(activities, index) in groupedActivities"
-            :key="`gA-${index}`"
-          >
-            <template v-if="activities.activityObjects.length > 0">
-              <!-- activity type heading with stats -->
-              <ActivitiesTypeHeading>
-                {{activities.activityTypeName}}
-                <template slot="stats">
-                  <BaseProgressBar
-                    :label="$t('results.activityWithEIPbyType')"
-                    :percentage="percentBPActivitesByType(activities.activityTypeKey)" />
-                </template>
-              </ActivitiesTypeHeading>
-              <ActivitiesItemResultPrint
-                v-for="(activity, index) in activities.activityObjects"
-                :key="`activity-${index}`"
-                :activityInstance="activity"
-              />
-            </template>
-          </div>
-        </ActivitiesList>
-      </BaseWidthWrapper>
-    </BaseSectionWrapper>
   </NavFooter>
 </template>
 
@@ -136,7 +61,7 @@ export default {
       return {
         left: [
           {
-            to: {name: 'advocate'},
+            to: { name: 'advocate' },
             label: this.$t('print.previousStep')
           }
         ],

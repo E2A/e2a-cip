@@ -2,45 +2,10 @@
   <NavFooter wrapperEl="article" :leftButtons="navButtons.left" :rightButtons="navButtons.right">
     <!-- Export tool tray -->
     <ActivitiesExportTray charts />
+    <!-- Nav -->
     <NavBreadcrumbs/>
     <!-- header & charts -->
     <ResultsCharts />
-
-    <!-- Activities list -->
-    <BaseSectionWrapper :class="space.paddingTop" border>
-      <BaseWidthWrapper width="xxwide">
-        <!-- Count & export tools -->
-        <ActivitiesListHeader clearRecommendations />
-
-        <!-- Table -->
-        <ActivitiesList ref="activityList" v-bind:groupedActivities="groupedActivities">
-          <template #activities="{ activities, setActivityId }">
-            <div v-if="activities.activityObjects.length > 0">
-              <ActivitiesTypeHeading>
-                {{activities.activityTypeName}}
-                <template slot="stats">
-                  <BaseProgressBar
-                    :label="$t('results.activityWithEIPbyType')"
-                    :percentage="percentBPActivitesByType(activities.activityTypeKey)"
-                  />
-                </template>
-              </ActivitiesTypeHeading>
-              <ul :class="base.activityTypeList">
-                <ActivitiesItemAssessment
-                  v-for="(activity, index) in activities.activityObjects"
-                  :key="`activity-${index}`"
-                  :shortText="activity.shortText"
-                  :text="activity.text"
-                  :id="activity.id"
-                  @activitySelect="setActivityId"
-                  :class="[mountedActivity === activity.id && base.itemSelected]"
-                />
-              </ul>
-            </div>
-          </template>
-        </ActivitiesList>
-      </BaseWidthWrapper>
-    </BaseSectionWrapper>
   </NavFooter>
 </template>
 
