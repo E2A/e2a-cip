@@ -163,6 +163,25 @@ export default {
     }
   }
 }
+
+// Fixes bugs introduced by vue-select's searchable option.
+// When search is off, these bugs appear when the component is too small.
+// When search is on, these bugs don't appear because the component is usually large enough.
+.vs--unsearchable {
+  // Normally, the selected option is absolutely positioned and grayed, mimicing a placeholder.
+  // The search input is placed over it.
+  &.vs--single.vs--open .vs__selected {
+    position: static !important;
+  }
+
+  // The search input field can cause problems due to its size.
+  .vs__search {
+    padding: 0;
+    margin: 0;
+    height: 0;
+    width: 0;
+  }
+}
 </style>
 
 <style lang="scss" module="base">
