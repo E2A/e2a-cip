@@ -62,8 +62,7 @@ fr:
     selectCurrency: Sélectionnez la devise utilisée dans votre plan
     selectRole: Sélectionnez votre affiliation
     selectActivityType: Catégorisez votre activité par type
-    setupRequired: "Veuillez saisir tous les champs de configuration avant d'ajouter\
-      \ des activités."
+    setupRequired: Remplissez tous les champs, s'il vous plaît.
     restoreActivities: Restaurer vos activités
     addActivities: Ajoutez vos activités
     editActivities: Modifier vos activités

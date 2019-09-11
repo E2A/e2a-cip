@@ -178,8 +178,6 @@ export default {
   .vs__search {
     padding: 0;
     margin: 0;
-    height: 0;
-    width: 0;
   }
 }
 </style>

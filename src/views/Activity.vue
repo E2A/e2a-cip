@@ -45,7 +45,7 @@ export default {
       this.isFormFilled = value
 
       // When on "/plan/activity" with no param, and form is filled out, go to the new activity
-      if (value && (typeof this.$router.history.current.params.activityId !== 'string')) {
+      if (value && this.$router.history.current.params.activityId === undefined) {
         this.travelToActivity()
       }
     },
