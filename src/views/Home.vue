@@ -80,7 +80,7 @@
     <BaseSectionWrapper el="div" :class="type.center" border>
       <BaseButtonLink
         :to="{name: 'plan'}"
-        :label="$t('home.getStartedButton')"
+        :label="$t('home.getStartedButton').toUpperCase()"
         size="large"
         role="primary"
       />
@@ -132,22 +132,22 @@
 </template>
 
 <script>
-import i18n from "@/i18n.js";
-import LanguageSwitcher from "@/components/LanguageSwitcher.vue";
-import BasePageIntro from "@/components/BasePageIntro.vue";
-import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
-import BaseSectionWrapper from "@/components/BaseSectionWrapper.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
-import BaseBodyText from "@/components/BaseBodyText.vue";
-import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
-import BaseStepList from "@/components/BaseStepList.vue";
-import BaseButtonLink from "@/components/BaseButtonLink.vue";
-import ClearItems from "@/components/ClearItems.vue";
-import { dataMethods } from "@/components/mixins/dataMethods";
-import { initData } from "@/components/mixins/initData.js";
+import i18n from '@/i18n.js'
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+import BasePageIntro from '@/components/BasePageIntro.vue'
+import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
+import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
+import BaseHeading from '@/components/BaseHeading.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
+import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
+import BaseStepList from '@/components/BaseStepList.vue'
+import BaseButtonLink from '@/components/BaseButtonLink.vue'
+import ClearItems from '@/components/ClearItems.vue'
+import { dataMethods } from '@/components/mixins/dataMethods'
+import { initData } from '@/components/mixins/initData.js'
 
 export default {
-  name: "Home",
+  name: 'Home',
   mixins: [dataMethods, initData],
   components: {
     LanguageSwitcher,
@@ -162,23 +162,23 @@ export default {
     ClearItems
   },
   computed: {
-    steps() {
+    steps () {
       return Object.values(i18n.messages[i18n.locale].home.steps).map(
         (step, index) => {
           return {
             title: this.$t(`home.steps.step${index + 1}.title`),
             blurb: this.$t(`home.steps.step${index + 1}.blurb`)
-          };
+          }
         }
-      );
+      )
     }
   },
-  data() {
+  data () {
     return {
       electron: this.checkElectron()
-    };
+    }
   }
-};
+}
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>

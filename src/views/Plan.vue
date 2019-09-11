@@ -43,7 +43,7 @@ export default {
         right: [
           {
             to: { name: 'setup' },
-            label: this.$t('plan.getStartedButton')
+            label: this.$t('plan.getStartedButton').toUpperCase()
           }
         ]
       }

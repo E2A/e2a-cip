@@ -71,7 +71,7 @@ en:
       * you’re assessing an AYRH plan, not a general FP/RH plan
       
       _But don’t worry. You can still analyze the quality of the activities._
-    getStartedButton: Begin Plan
+    getStartedButton: Get Started
   setup:
     CIPTitle: Enter your plan title
     configureCIP: "First, let's configure your plan"
