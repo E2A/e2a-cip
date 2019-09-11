@@ -126,6 +126,7 @@ width: 100%;
 
 .col5 {
 width: 100%;
+display: flex;
 
   @include media(">#{$breakpoint}") {
     width: 41.6666%;

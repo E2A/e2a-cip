@@ -11,6 +11,16 @@
         <BaseHeading
           :level="6"
           :centered="false"
+          :class="[type.leadingDefault, base.tableIndex]"
+          weight="regular"
+          :color="'midtone'"
+          sub
+        >
+          {{activityId}}
+        </BaseHeading>
+        <BaseHeading
+          :level="6"
+          :centered="false"
           :class="type.leadingDefault"
           weight="regular"
           :color="youth ? 'dark' : 'midtone'"
@@ -97,6 +107,7 @@ export default {
   },
   data: function () {
     return {
+      activityId: this.id,
       displayText: this.shortText || this.text,
       bestPracticeId: null,
       assessmentInstance: null,
@@ -151,6 +162,7 @@ export default {
 
 <style lang="scss" module="base">
 @import '~styleConfig/breakpoints';
+@import '~styleConfig/spacing';
 
 $breakpoint: medium;
 
@@ -194,5 +206,10 @@ $breakpoint: medium;
   vertical-align: middle;
   width: 45px;
   margin: 0 15px;
+}
+
+.tableIndex {
+  margin-right: space('xnarrow');
+  color: color('midtone');
 }
 </style>
