@@ -84,7 +84,7 @@ export default {
     },
     saveReminder: function () {
       this.notify(
-        this.$root.$t('saveRecommended', {exportLink: '#'}),
+        this.$root.$t('saveRecommended', { exportLink: '#' }),
         'warning',
         10000
       )
@@ -113,6 +113,7 @@ export default {
   composes: paddingHorizontal paddingVerticalNarrow from 'styles/spacing.scss';
   display: block;
   position: fixed;
+  z-index: 1000; // Breakpoint for content you want above/below footer
   left: 0;
   right: 0;
   bottom: 0;

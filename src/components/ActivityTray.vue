@@ -1,9 +1,10 @@
 <template>
   <div :class="base.activityTray" v-if="activityId">
+    <div :class="base.closeButton" @click="closeActivityId"/>
     <BaseHeading
       :level="6"
       :centered="false"
-      :class="type.leadingDefault"
+      :class="[type.leadingDefault, base.typeHeading]"
       weight="regular"
       sub
     >{{getActivityType()}}</BaseHeading>
@@ -170,6 +171,9 @@ export default {
     emptyInput: function () {
       this.inputKey++
       this.inputText = ''
+    },
+    closeActivityId: function () {
+      this.$store.commit('SET_MOUNTED_ACTIVITY', 0)
     }
   }
 }
@@ -206,7 +210,23 @@ export default {
   flex: 0 0 calc(33% - 1.5rem);
   margin-left: 1.5rem;
   padding: 1rem 1rem 0 1rem;
+  position: relative;
+}
 
+.closeButton {
+  $size: 0.9em;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTggNi4xNDRsNC43Ni00Ljc2YTEuMzEzIDEuMzEzIDAgMCAxIDEuODU2IDEuODU3TDkuODU2IDhsNC43NiA0Ljc2YTEuMzEzIDEuMzEzIDAgMCAxLTEuODU3IDEuODU2TDggOS44NTZsLTQuNzYgNC43NmExLjMxMyAxLjMxMyAwIDAgMS0xLjg1Ni0xLjg1N0w2LjE0NCA4bC00Ljc2LTQuNzZhMS4zMTIgMS4zMTIgMCAxIDEgMS44NTctMS44NTZMOCA2LjE0NHoiIGZpbGw9IiM4REEzQzAiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==) !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+
+  position: absolute;
+  z-index: 1; // Subheading blocks pointer events
+  top: 1.3rem;
+  right: 1.3rem;
+  height: $size;
+  width: $size;
+  cursor: pointer;
 }
 
 .icons {
