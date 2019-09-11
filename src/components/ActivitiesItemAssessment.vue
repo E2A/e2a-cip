@@ -22,7 +22,6 @@
       <template slot="summaryRight">
         <!-- list of best practice icons -->
         <BaseGutterWrapper
-          v-if="youth"
           :class="base.right"
           el="ul"
           gutterX="xnarrow"
