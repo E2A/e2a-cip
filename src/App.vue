@@ -58,6 +58,9 @@ export default {
     }
   },
   created () {
+    if (this.checkElectron()) {
+      this.$router.push('/').catch(err => {})
+    }
 
     this.detectLanguage()
 

@@ -24,9 +24,5 @@ new Vue({
   router,
   store,
   i18n,
-  created() {
-    // Prevent blank screen in Electron builds
-    this.$router.push('/').catch(err => {})
-  },
   render: h => h(App)
 }).$mount('#app')
