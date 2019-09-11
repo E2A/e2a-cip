@@ -1,21 +1,23 @@
 {
   "name": "E2A-Analysis",
+  "version": "0.1.0",
+  "private": true,
   "description": "A tool to analyze CIP and other AYSHR resources. Developed by Bivee Inc for Pathfinder & E2A.",
   "author": "Bivee Inc <getstarted@bivee.co> (http://bivee.co)",
-  "version": "0.1.0",
-  "license": "SEE LICENSE IN LICENSE and CONTENT_LICENSE.MD",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit",
-    "build:electron": "vue-cli-service build:electron",
-    "serve:electron": "vue-cli-service serve:electron",
-    "svgo": "svgo -f './src/assets/images/icons/' --disable removeViewBox --enable removeDimensions",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "icons": "svgstore -o './src/assets/images/spritemap.svg' --inline './src/assets/images/icons/**/*.svg'",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
     "preicons": "yarn run svgo",
-    "icons": "svgstore -o './src/assets/images/spritemap.svg' --inline './src/assets/images/icons/**/*.svg'"
+    "svgo": "svgo -f './src/assets/images/icons/' --disable removeViewBox --enable removeDimensions",
+    "test:unit": "vue-cli-service test:unit"
   },
+  "main": "background.js",
   "dependencies": {
     "@vuex-orm/core": "^0.32.0",
     "blob": "^0.0.5",
@@ -55,14 +57,14 @@
     "@vue/test-utils": "^1.0.0-beta.16",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^24.0.0",
-    "electron": "^5.0.0",
+    "electron": "^6.0.0",
     "lint-staged": "^9.2.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "svg-inline-loader": "^0.8.0",
     "svgo": "^1.0.5",
     "svgstore-cli": "^1.3.1",
-    "vue-cli-plugin-electron-builder": "^1.0.0-beta.6",
+    "vue-cli-plugin-electron-builder": "^1.4.0",
     "vue-cli-plugin-i18n": "^0.6.0",
     "vue-template-compiler": "^2.5.16"
   },
@@ -116,6 +118,7 @@
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
+  "license": "SEE LICENSE IN LICENSE and CONTENT_LICENSE.MD",
   "lint-staged": {
     "*.js": [
       "vue-cli-service lint",
@@ -125,6 +128,5 @@
       "vue-cli-service lint",
       "git add"
     ]
-  },
-  "main": "dist_electron/bundled/background.js"
+  }
 }
