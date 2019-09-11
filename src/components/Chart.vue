@@ -117,6 +117,8 @@ export default {
     },
     chartLabels (context) {
       if (context.type === 'label') {
+        // Just leave text black since label will be in donut hole
+        if (this.filteredSeries.length === 1) return
         // get the classname from the corresponding data series
         const labelClass = this.filteredSeries[context.index].className
         // append `label-` to the classname and add it to the node's classlist
