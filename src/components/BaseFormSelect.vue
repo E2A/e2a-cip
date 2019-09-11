@@ -175,10 +175,10 @@ export default {
   }
 
   // The search input field can cause problems due to its size.
-  .vs__search {
-    padding: 0;
-    margin: 0;
-  }
+  // .vs__search {
+  //   padding: 0;
+  //   margin: 0;
+  // }
 }
 </style>
 
