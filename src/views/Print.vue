@@ -5,7 +5,7 @@
     :rightButtons="navButtons.right"
   >
     <!-- header and charts -->
-    <ResultsCharts />
+    <ResultsCharts :displayQuestions="false" />
   </NavFooter>
 </template>
 

@@ -57,6 +57,7 @@
         {{$t('results.analysis.country')}}
       </BaseHeading>
       <ChartItems
+        :displayQuestions="displayQuestions"
         :chartNames="['youthFocusCount', 'youthFocusBudget']"
       />
 
@@ -93,6 +94,7 @@
         {{$t('results.analysis.activity')}}
       </BaseHeading>
       <ChartItems
+        :displayQuestions="displayQuestions"
         :chartNames="['activityTypeBudget', 'activityTypeCount']"
         :questions="[
           {
@@ -128,6 +130,10 @@ export default {
     wrapperEl: {
       type: String,
       default: 'div'
+    },
+    displayQuestions: {
+      type: Boolean,
+      default: false,
     }
   },
   components: {
