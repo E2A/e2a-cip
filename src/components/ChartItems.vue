@@ -30,7 +30,7 @@
             :toolTip="$t(`chartToolTips.${chartName}`)"
           />
           <ResultsQuestions
-            v-if="questions"
+            v-if="questions && displayQuestions"
             :class="space.paddingTop"
             :questions="questions.find(question => question.name === chartName).questions"
           />
@@ -61,6 +61,10 @@ export default {
     ResultsQuestions
   },
   props: {
+    displayQuestions: {
+      type: [Boolean],
+      default: true,
+    },
     viewType: {
       type: [String],
       required: false,
