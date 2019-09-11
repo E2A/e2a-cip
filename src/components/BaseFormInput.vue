@@ -27,15 +27,14 @@
         >{{contentValue}}</component>
 
         <slot></slot>
-
-        <BaseCalloutBox
-          :key="error"
-          v-if="error"
-          :message="error"
-          class="callout"
-          role="warning"
-        />
       </div>
+      <BaseCalloutBox
+        :key="error"
+        v-if="error"
+        :message="error"
+        class="callout"
+        role="warning"
+      />
     </BaseFormLabel>
     <!-- if there's no label prop, just show the input -->
     <div :class="`inputGroup`" v-else>
