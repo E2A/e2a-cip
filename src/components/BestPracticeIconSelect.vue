@@ -244,5 +244,10 @@ export default {
       }
     }
   }
+
+  .vs__search {
+    height: 0;
+    width: 0;
+  }
 }
 </style>
