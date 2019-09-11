@@ -58,10 +58,6 @@ export default {
     }
   },
   created () {
-    // Force redirect to home if electron
-    if (this.checkElectron()) {
-      this.$router.replace('/')
-    }
 
     this.detectLanguage()
 
