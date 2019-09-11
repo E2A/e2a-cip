@@ -41,18 +41,19 @@ export default {
     }
   },
   methods: {
-    trackValidation: function (value) {
+    trackValidation: function (value, activityId) {
       this.isFormFilled = value
-
-      // When on "/plan/activity" with no param, and form is filled out, go to the new activity
-      if (value && this.$router.history.current.params.activityId === undefined) {
-        this.travelToActivity()
+      // Go to completed activity on save
+      if (value && activityId) {
+        this.travelToActivity(activityId)
       }
     },
-    travelToActivity: function () {
+    travelToActivity: function (activityId) {
       const yOffset = window.pageYOffset
-      // this.$router.push({ name: 'activity', params: { activityId: this.getNextActivity() } })
-      window.scroll(0, 0) // keep scroll position
+      if (this.$router.history.current.params.activityId !== activityId) {
+        this.$router.push({ name: 'activity', params: { activityId: activityId } })
+      }
+      window.scroll(0, yOffset) // keep scroll position
     },
     getNavButtons: function () {
       var navButtons = {
@@ -68,7 +69,7 @@ export default {
       if (this.getItemCount('activities') > 0) {
         navButtons.right.push(
           {
-            to: { name: 'activity', params: { activityId: this.getNextActivity() } },
+            to: { name: 'activity' },
             label: this.$t('inputNextActivity'),
             iconLeft: 'add',
             iconRight: 'none'

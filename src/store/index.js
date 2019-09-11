@@ -36,6 +36,4 @@ const store = new Vuex.Store({
   plugins: [VuexORM.install(database), createPersistedState()]
 })
 
-console.log(store)
-
 export default store

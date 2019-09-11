@@ -117,8 +117,8 @@ en:
   activityBudget: Activity budget
   activityType: Categorize your activity by type
   activityYouthCentric: Is this activity youth-centric?
-  inputNextActivity: Add Another Activity
-  activitiesDone: "I'm done!"
+  inputNextActivity: Save & Add New Activity
+  activitiesDone: "Save & Finish"
   save: Save Activity
   saveSuccess: Saved Activity
   deleteSuccess: Deleted Activity
