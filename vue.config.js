@@ -56,7 +56,7 @@ module.exports = {
     electronBuilder: {
       builderOptions: {
         'appId': 'com.electron.karaw',
-        'productName': 'E2A-Analysis',
+        'productName': 'TARP',
         'win': {
           'target': [
             {

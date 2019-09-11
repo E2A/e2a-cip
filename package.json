@@ -1,5 +1,5 @@
 {
-  "name": "E2A-Analysis",
+  "name": "TARP",
   "version": "0.1.0",
   "private": true,
   "description": "A tool to analyze CIP and other AYSHR resources. Developed by Bivee Inc for Pathfinder & E2A.",
@@ -22,7 +22,7 @@
     "@vuex-orm/core": "^0.32.0",
     "blob": "^0.0.5",
     "bourbon": "^6.0.0",
-    "chartist": "^0.11.0",
+    "chartist": "0.10.1",
     "country-list": "^2.1.0",
     "currencies-symbol": "^1.0.1",
     "file-saver": "^2.0.2",
