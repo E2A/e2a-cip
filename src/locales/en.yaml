@@ -3,23 +3,23 @@ en:
   home:
     chooseLanguage: 'Choose your preferred language:'
     title: Not without us!
-    subtitle: A tool for AYRH-responsive planning
+    subtitle: A Tool for AYRH-Responsive Planning
     introHeader: You can make reproductive health and family planning plans more responsive to the needs of young people.
     intro: |-
-      Use this tool to reflect on and discuss…
-        * One of your country’s plans—this can be local, district, regional, or national
-        * Activities planned for young people ages 15–24
-        * If enough budget is allocated for these youth-centric activities
-        * How to strengthen the plan to better meet the needs of youth
+      Use this tool to reflect on and discuss...
+        * One of your country’s plans—this can be local, district, regional, or national.
+        * Activities planned for young people ages 15–24.
+        * If enough budget is allocated for these youth-centric activities.
+        * How to strengthen the plan to better meet the needs of youth.
         
-        **Get started!**
+        **[GET STARTED!](/plan)**
     stepsTitle: How it works
-    stepsIntro: 'Join 2-3 fellow youth advocates, set aside a few hours, and follow these steps to assess if your plan uses tailored, innovative strategies for meeting the needs of your country’s youth :'
+    stepsIntro: 'Join 2-3 fellow youth advocates, set aside a few hours, and follow these steps to assess if your plan uses tailored, innovative strategies for meeting the needs of your country’s youth:'
     steps:
       step1:
         title: Get to know your national, regional, district, or local plan
         blurb: |-
-          Locate strategic priorities, objectives, activities, and budget amounts
+          Locate strategic priorities, objectives, activities, and budget amounts.
       step2:
         title: Enter planned activities. 
         blurb: |-
@@ -67,13 +67,14 @@ en:
       * Can’t find activities and their budget amounts? Check your plan’s annex. 
     note: 'Important: Unfortunately, you won’t be able to analyze your budget if…'
     noteBody: |-
-      * Specific activities do not have budgeted amounts associated with them 
-      * you’re assessing an AYRH plan, not a general FP/RH plan
+      * Specific activities do not have budgeted amounts associated with them .
+      * you’re assessing an AYRH plan, not a general FP/RH plan.
       
+      \
       _But don’t worry. You can still analyze the quality of the activities._
     getStartedButton: Get Started
   setup:
-    CIPTitle: Enter your plan title
+    CIPTitle: Enter the plan title
     configureCIP: "First, let's configure your plan"
     selectDate: Select your plan date
     selectCountry: Select your country
@@ -114,7 +115,7 @@ en:
   activityBudget: Activity budget
   activityType: Categorize your activity by type
   activityYouthCentric: Is this activity youth-centric?
-  inputNextActivity: Input Another Activity
+  inputNextActivity: Add Another Activity
   activitiesDone: "I'm done!"
   save: Save Activity
   saveSuccess: Saved Activity
@@ -220,6 +221,7 @@ en:
         - Establishing transparent, user-friendly monitoring and evaluation systems
   summary:
     title: Well done!
+    subtitle: You’ve added all activities. Now it’s time to dig a little deeper.
     intro: |-
       Below, see all the information you’ve provided—sorted by category and budget. Make sure everything is accurate. If you need to make changes, click **Edit**.
 
@@ -227,14 +229,14 @@ en:
     previousStep: Go back to setup
     nextStep: Keep Going
   # Evidence-Informed Practices
-  readMore: "Read More"
+  readMore: "See sample activities"
   checkListButtonText: "View checklist"
   bestPracticeTitle: 'Now ask yourself, "Will these activities work?"'
   bestPracticeSubtitle: Will they effectively respond to the reproductive needs and desires of youth in your country? 
   bestPracticesContent: |-
     To answer, follow the evidence. Start by reviewing the Evidence-Informed Practices (EIPs) below. Each EIP has shown significantly positive results in programming for adolescent and youth reproductive health. 
     
-    When you’re done, click **Next**  at the bottom right.
+    When you’re done, click **Analysis** at the bottom right.
   bestPracticeResourceSubtitle: Further reading
   backToBestPractices: Back to Evidence-Informed Practices (EIP)
   bestPracticeIntro: ""
@@ -1070,7 +1072,12 @@ en:
   analysis:
     title: Analyze your activities
     intro: |-
-      Here are the activities from your plan. Please use what you have learned about EIPs to determine whether each activity aligns with one or more of the EIPs. If the activity **fully aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in green. If the activity **partially aligns** with one or more EIPs, please highlight the corresponding symbol(s) for that practice in yellow. If the activity does not align with one or more EIPs, the symbol(s) should be left the default gray. For easy access to the information about the EIPs, please click on the symbol of the practice you want to review. Once you are finished analyzing your activities, get your results by clicking on the ‘results’ button at the bottom of the page.
+      1. Below, consider each activity. Use what you’ve learned about evidence-based practices to ask yourself: Does this activity align with one or more EIPs?
+      2. To answer, click an icon to the right of the activity. If the activity fully aligns with this EIP, select green. If partially aligns, select yellow. If it does not align, select gray.
+      3. Complete for all EIPs. Then complete for all activities—and be sure to discuss your decisions with your team.
+
+      \
+      Once you’re done, click **GET MY RESULTS** at bottom right.
     instructions:
       heading: Click on the icons indicating the EIPs which your activity meets
       options:
@@ -1086,7 +1093,7 @@ en:
           title: Partially
           description: Partially aligns with the evidence-informed practice.
     previousStep: Go back to activities
-    nextStep: Your results
+    nextStep: GET MY RESULTS
   # Results Page
   resultsSubhead: "Here's how your activities rate:"
   addRecommendation: Add recommendation

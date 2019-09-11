@@ -32,38 +32,11 @@
     </BaseWidthWrapper>
 
     <!-- Intro -->
-    <BasePageIntro>
-      <BaseWidthWrapper :class="[base.wrapper, base.headlineWrapper]" width="wide">
-        <BaseGutterWrapper :class="base.col12">
-          <BaseHeading
-            :class="[space.paddingBottom, base.title]"
-          >{{ $t('home.title') }}</BaseHeading>
-        </BaseGutterWrapper>
-      </BaseWidthWrapper>
-
-      <BaseWidthWrapper :class="[base.wrapper]" width="wide">
-        <div :class="base.col6">
-          <BaseHeading
-            :class="space.paddingBottom"
-            scale="delta"
-            sub
-            :centered="false"
-          >{{ $t('home.subtitle') }}</BaseHeading>
-          <BaseHeading
-            :class="space.paddingBottom"
-            scale="delta"
-            sub
-            :centered="false"
-          >{{ $t('home.introHeader') }}</BaseHeading>
-        </div>
-
-        <div :class="[base.col6, color.well]">
-          <BaseWidthWrapper>
-            <BaseBodyText :content="$t('home.intro')" />
-          </BaseWidthWrapper>
-        </div>
-      </BaseWidthWrapper>
-    </BasePageIntro>
+    <BasePageIntro
+      :title="$t('home.title')"
+      :subtitle="$t('home.subtitle')"
+      :blurb="$t('home.intro')"
+    />
 
     <!-- How it works -->
     <BaseSectionWrapper>
@@ -238,22 +211,4 @@ export default {
   display: inline-block;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  padding: space("medium") space("narrow");
-}
-
-.col6 {
-  flex: 1;
-  max-width: 50%;
-  flex-basis: 50%;
-  padding: space("medium") space("medium");
-}
-
-.col12 {
-  flex: 1;
-  max-width: 100%;
-  flex-basis: 100%;
-}
 </style>

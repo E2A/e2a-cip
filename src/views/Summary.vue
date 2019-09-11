@@ -7,6 +7,7 @@
     <NavBreadcrumbs/>
     <BasePageIntro
       :title="$t('summary.title')"
+      :subtitle="$t('summary.subtitle')"
       :blurb="$t('summary.intro')"
     />
     <section :class="space.paddingWide">

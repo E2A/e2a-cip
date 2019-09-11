@@ -1,5 +1,5 @@
 <template>
-  <header :class="[space.paddingWide, border.bottom]">
+  <header :class="[space.paddingWide]">
     <slot>
       <BaseHeading
         :class="[subtitle ? space.paddingBottomXnarrow : space.paddingBottom, base.title]"
