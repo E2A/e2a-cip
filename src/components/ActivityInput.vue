@@ -85,10 +85,7 @@
           <div :class="base.activityTypeWrapper">
             <div :class="base.infoBox">
               <BaseCalloutBox
-                @click="$router.push({
-                  name: 'activity-type-info',
-                  params: { backToActivityId: activityId }
-                })"
+                @click="clickLearnMore(activityId)"
                 :message="$t('activityTypeLink')"
                 clickable
               />
@@ -216,6 +213,13 @@ export default {
     }
   },
   methods: {
+    clickLearnMore: function(activityId) {
+      let routeData = this.$router.resolve({
+        name: 'activity-type-info',
+        params: { backToActivityId: activityId }
+      });
+      window.open(routeData.href, '_blank');
+    },
     saveOnChange: function () {
       if (this.activityType && this.activityText) {
         this.addActivity()
