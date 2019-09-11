@@ -1,5 +1,5 @@
 <template>
-  <div :class="base.wrapper">
+  <div :class="base.wrapper" id="base-button-flyout">
     <BaseButton
       @click="toggleFlyout"
       :label="label"
@@ -63,6 +63,11 @@ export default {
     toggleFlyout () {
       this.isOpen = !this.isOpen
       this.isOpen ? this.$emit('open') : this.$emit('close')
+    },
+    closeFlyout (e) {
+      if (!e.target.closest('#base-button-flyout')) {
+        this.isOpen = false
+      }
     }
   },
   watch: {
@@ -71,6 +76,12 @@ export default {
     open () {
       this.isOpen = this.open
     }
+  },
+  mounted: function () {
+    document.addEventListener('click', this.closeFlyout)
+  },
+  beforeDestroy: function () {
+    document.removeEventListener('click', this.closeFlyout)
   }
 }
 </script>
@@ -84,6 +95,7 @@ export default {
 
 .flyout {
   position: absolute;
+  z-index: 100;
   margin-top: 0.35rem;
 }
 </style>

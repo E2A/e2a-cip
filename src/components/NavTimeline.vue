@@ -5,7 +5,7 @@
     >
       <BaseFlyout
         v-show="openFlyout === flyoutID(item.id)"
-        :class="base.flyout"
+        :class="[base.flyout, 'activity-flyout']"
         :id="flyoutID(item.id)"
         :style="{
           left: activeDotXPosition + 10 + 'px'
@@ -44,7 +44,7 @@
           >
             <a
               @click.prevent="toggleFlyout(flyoutID(item.id), $event)"
-              :class="[base.dot, String(item.id) === current ? color.darkBg : color.lightBg]"
+              :class="[base.dot, String(item.id) === current ? color.darkBg : color.lightBg, 'activity-button']"
               :id="`activity-${item.id}`"
               href="`#${flyoutID}`"
             ></a>
@@ -86,12 +86,6 @@ export default {
     items: {
       type: Array,
       required: true
-      // validator: function (values) {
-      //   // must be an array of objects: [ { label: 'whatever', url: '/activity/3'} ]
-      //   return values.reduce((verdict, item) {
-      //     return item.label
-      //   })
-      // }
     },
     current: {
       type: [String, Number],
@@ -149,7 +143,18 @@ export default {
     },
     handleScroll: function () {
       this.updateActiveDotPosition()
+    },
+    closeFlyout: function (event) {
+      if (!event.target.closest('.activity-flyout') && !event.target.closest('.activity-button')) {
+        this.toggleFlyout(this.openFlyout, event)
+      }
     }
+  },
+  mounted: function () {
+    document.addEventListener('click', this.closeFlyout)
+  },
+  destroyed: function () {
+    document.removeEventListener('click', this.closeFlyout)
   }
 }
 </script>
