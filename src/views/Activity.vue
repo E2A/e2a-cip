@@ -51,8 +51,8 @@ export default {
     },
     travelToActivity: function () {
       const yOffset = window.pageYOffset
-      this.$router.push({ name: 'activity', params: { activityId: this.getNextActivity() } })
-      window.scrollTo = yOffset // keep scroll position
+      // this.$router.push({ name: 'activity', params: { activityId: this.getNextActivity() } })
+      window.scroll(0, 0) // keep scroll position
     },
     getNavButtons: function () {
       var navButtons = {
