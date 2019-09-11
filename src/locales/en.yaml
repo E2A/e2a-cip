@@ -80,7 +80,7 @@ en:
     selectCurrency: Select the currency used in your plan
     selectRole: Select your affiliation
     selectActivityType: Categorize your activity by type
-    setupRequired: Please enter all setup fields before adding activities.
+    setupRequired: Please complete all fields.
     restoreActivities: Restore your activities
     addActivities: Add your activities
     editActivities: Edit your activities

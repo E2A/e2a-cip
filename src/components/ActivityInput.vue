@@ -219,6 +219,7 @@ export default {
     saveOnChange: function () {
       if (this.activityType && this.activityText) {
         this.addActivity()
+        this.informParent(true)
       } else this.informParent(false)
     },
     informParent: function (bool) {
