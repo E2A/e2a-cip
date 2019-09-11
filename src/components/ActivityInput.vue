@@ -389,7 +389,7 @@ $budgetSelectWidth: 160px;
       height: 2.9rem;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-
+      border-bottom: none;
     }
   }
 }

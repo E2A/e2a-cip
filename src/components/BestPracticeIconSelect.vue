@@ -38,13 +38,13 @@
 </template>
 
 <script>
-import { bestPracticeData } from "./mixins/bestPracticeData";
-import BaseHeading from "./BaseHeading.vue";
-import BaseIcon from "./BaseIcon.vue";
-import vSelect from "vue-select";
+import { bestPracticeData } from './mixins/bestPracticeData'
+import BaseHeading from './BaseHeading.vue'
+import BaseIcon from './BaseIcon.vue'
+import vSelect from 'vue-select'
 
 export default {
-  name: "BestPracticeIconSelect",
+  name: 'BestPracticeIconSelect',
   mixins: [bestPracticeData],
   props: {
     id: {
@@ -57,26 +57,26 @@ export default {
     }
   },
   computed: {
-    icon: function() {
-      return this.findBestPracticeByID().icon;
+    icon: function () {
+      return this.findBestPracticeByID().icon
     },
-    title: function() {
-      return this.findBestPracticeByID().title;
+    title: function () {
+      return this.findBestPracticeByID().title
     },
-    selectedAssessment: function() {
+    selectedAssessment: function () {
       return (
         this.getSelectedAssessment(this.title) || this.bestPracticeOptions.empty
-      );
+      )
     },
-    selectedAssessmentClass: function() {
+    selectedAssessmentClass: function () {
       const option = this.getSelectedAssessment(this.title)
         ? this.getSelectedAssessment(this.title).value.toLowerCase()
-        : this.bestPracticeOptions.empty.class;
-      return this.bestPracticeOptions[option].class;
+        : this.bestPracticeOptions.empty.class
+      return this.bestPracticeOptions[option].class
     },
-    bestPracticeOptionsArray: function() {
-      const options = Object.values(this.bestPracticeOptions);
-      return options;
+    bestPracticeOptionsArray: function () {
+      const options = Object.values(this.bestPracticeOptions)
+      return options
     }
   },
   components: {
@@ -84,76 +84,74 @@ export default {
     BaseIcon,
     vSelect
   },
-  data: function() {
+  data: function () {
     return {
       bestPracticeOptions: {
         empty: {
-          class: "empty",
-          text: this.$t("bestPracticeOptions.emptyText"),
-          value: this.$t("bestPracticeOptions.emptyKey")
+          class: 'empty',
+          text: this.$t('bestPracticeOptions.emptyText'),
+          value: this.$t('bestPracticeOptions.emptyKey')
         },
         no: {
-          class: "no",
-          text: this.$t("bestPracticeOptions.noText"),
-          value: this.$t("bestPracticeOptions.noKey")
+          class: 'no',
+          text: this.$t('bestPracticeOptions.noText'),
+          value: this.$t('bestPracticeOptions.noKey')
         },
         partially: {
-          class: "partially",
-          text: this.$t("bestPracticeOptions.partiallyText"),
-          value: this.$t("bestPracticeOptions.partiallyKey")
+          class: 'partially',
+          text: this.$t('bestPracticeOptions.partiallyText'),
+          value: this.$t('bestPracticeOptions.partiallyKey')
         },
         yes: {
-          class: "yes",
-          text: this.$t("bestPracticeOptions.yesText"),
-          value: this.$t("bestPracticeOptions.yesKey")
+          class: 'yes',
+          text: this.$t('bestPracticeOptions.yesText'),
+          value: this.$t('bestPracticeOptions.yesKey')
         }
       }
-    };
+    }
   },
   methods: {
-    findBestPracticeByID: function() {
-      return this.bestPractices.find(bp => bp.id === this.id);
+    findBestPracticeByID: function () {
+      return this.bestPractices.find(bp => bp.id === this.id)
     },
-    getSelectedAssessment: function() {
+    getSelectedAssessment: function () {
       // Check if assessment is present, if so add 'assessment-selected' class to selection
-      const assessmentPresent = this.$store.getters[
-        "entities/activities/query"
-      ]()
-        .with("assessments", query => {
-          query.where("best_practice_id", this.id);
+      const assessmentPresent = this.$store.getters['entities/activities/query']()
+        .with('assessments', query => {
+          query.where('best_practice_id', this.id)
         })
         .whereId(this.activityID)
-        .first().assessments;
+        .first().assessments
 
       if (assessmentPresent && assessmentPresent.length > 0) {
-        return assessmentPresent[0];
+        return assessmentPresent[0]
       }
-      return false;
+      return false
     },
-    updateAssessment: function(selectedObject) {
+    updateAssessment: function (selectedObject) {
       // Check if assessment for current activity is store
-      const assessmentPresent = this.getSelectedAssessment();
+      const assessmentPresent = this.getSelectedAssessment()
 
       const data = {
         activity_id: this.activityID,
         text: this.title,
         value: selectedObject.value,
         best_practice_id: this.id
-      };
+      }
 
       if (assessmentPresent) {
         // Update assessment value if it already exists
-        this.$store.dispatch("entities/assessments/update", {
+        this.$store.dispatch('entities/assessments/update', {
           ...data,
           id: assessmentPresent.id
-        });
+        })
       } else {
         // Add a new assessment
-        this.$store.dispatch("entities/assessments/insert", { data });
+        this.$store.dispatch('entities/assessments/insert', { data })
       }
     }
   }
-};
+}
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
@@ -245,19 +243,6 @@ export default {
         color: color("white");
       }
     }
-  }
-
-  // Shrinks buggy input element
-  .vs__search {
-    margin: 0;
-    padding: 0;
-    height: 0px !important;
-  }
-
-  // Prevents bug when opening dropdown
-  // Position normally changes to absolute and collapses component
-  .vs__selected {
-    position: static !important;
   }
 }
 </style>
