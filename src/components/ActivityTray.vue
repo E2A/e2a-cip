@@ -17,7 +17,6 @@
 
     <div :class="base.gutter">
       <BaseGutterWrapper
-        v-if="isYouthCentric()"
         :class="base.icons"
         el="ul"
         gutterX=""
