@@ -31,16 +31,16 @@
 </template>
 
 <script>
-import { dataMethods } from "./mixins/dataMethods";
-import BaseGutterWrapper from "./BaseGutterWrapper.vue";
-import BaseIcon from "./BaseIcon.vue";
-import LanguageSwitcher from "@/components/LanguageSwitcher.vue";
-import BaseCalloutBox from "@/components/BaseCalloutBox.vue";
-import BaseButtonFlyout from "@/components/BaseButtonFlyout.vue";
+import { dataMethods } from './mixins/dataMethods'
+import BaseGutterWrapper from './BaseGutterWrapper.vue'
+import BaseIcon from './BaseIcon.vue'
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+import BaseCalloutBox from '@/components/BaseCalloutBox.vue'
+import BaseButtonFlyout from '@/components/BaseButtonFlyout.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 
 export default {
-  name: "NavHeader",
+  name: 'NavHeader',
   mixins: [dataMethods],
   components: {
     BaseGutterWrapper,
@@ -48,135 +48,133 @@ export default {
     LanguageSwitcher,
     BaseCalloutBox,
     BaseButtonFlyout,
-    BaseButtonLink,
+    BaseButtonLink
   },
-  data: function() {
+  data: function () {
     return {
-      notificationMessage: "",
+      notificationMessage: '',
       flyoutOpen: false
-    };
+    }
   },
   computed: {
-    links: function() {
+    links: function () {
       return {
         setup: {
-          name: "setup",
-          text: this.$t("nav.setup"),
+          name: 'setup',
+          text: this.$t('nav.setup'),
           active: true
         },
         activities: {
-          name: "activity",
+          name: 'activity',
           params: {
-            activityId: "1"
+            activityId: '1'
           },
-          text: this.$t("nav.activities"),
+          text: this.$t('nav.activities'),
           active: true
         },
         summary: {
-          name: "summary",
-          text: this.$t("nav.summary"),
+          name: 'summary',
+          text: this.$t('nav.summary'),
           active: true
         },
         bestPractices: {
-          name: "evidence-informed-practices",
-          childName: "evidence-informed-practice",
-          text: this.$t("nav.bestPractices"),
+          name: 'evidence-informed-practices',
+          childName: 'evidence-informed-practice',
+          text: this.$t('nav.bestPractices'),
           active: true
         },
         assessment: {
-          name: "assessment",
-          text: this.$t("nav.assessment"),
+          name: 'assessment',
+          text: this.$t('nav.assessment'),
           active: true
         },
         results: {
-          name: "results",
-          text: this.$t("nav.results"),
+          name: 'results',
+          text: this.$t('nav.results'),
           active: false
         },
         advocate: {
-          name: "advocate",
-          childName: "print",
-          text: this.$t("nav.advocate"),
+          name: 'advocate',
+          childName: 'print',
+          text: this.$t('nav.advocate'),
           active: false
         }
-      };
+      }
     }
   },
   methods: {
-    getCurrentRoute: function() {
+    getCurrentRoute: function () {
       // get the (translated) name of the current route
       return Object.values(this.links).find(link => {
         return (
           link.name === this.$route.name || link.childName === this.$route.name
-        );
-      }).text;
+        )
+      }).text
     },
-    globalNotification: function(value) {
-      const notification = this.$store.getters[
-        "entities/globalnotifications/query"
-      ]().first();
-      return notification ? notification[value] : false;
+    globalNotification: function (value) {
+      const notification = this.$store.getters['entities/globalnotifications/query']().first()
+      return notification ? notification[value] : false
     },
-    getLinks: function() {
-      this.updateActiveLinks();
-      return this.links;
+    getLinks: function () {
+      this.updateActiveLinks()
+      return this.links
     },
-    closeNavFlyout: function(event) {
-      this.flyoutOpen = false;
+    closeNavFlyout: function (event) {
+      this.flyoutOpen = false
     },
-    openNavFlyout: function(event) {
-      this.flyoutOpen = true;
+    openNavFlyout: function (event) {
+      this.flyoutOpen = true
     },
-    notificationTrigger: function() {
-      this.notify(this.notificationMessage, "info", 3000);
+    notificationTrigger: function () {
+      this.notify(this.notificationMessage, 'info', 3000)
     },
-    updateActiveLinks: function() {
-      if (this.getItemCount("assessments") > 0) {
-        this.notificationMessage = this.$t("nav.removeAssessment");
-        this.links.activities.active = false;
-        this.links.summary.active = false;
-        this.links.results.active = true;
-        this.links.advocate.active = true;
+    updateActiveLinks: function () {
+      if (this.getItemCount('assessments') > 0) {
+        this.notificationMessage = this.$t('nav.removeAssessment')
+        this.links.activities.active = false
+        this.links.summary.active = false
+        this.links.results.active = true
+        this.links.advocate.active = true
       }
 
       if (
-        this.getItemCount("activities") === 0 &&
-        (this.getItemCount("setup") === 0 || !this.setupPresent())
+        this.getItemCount('activities') === 0 &&
+        (this.getItemCount('setup') === 0 || !this.setupPresent())
       ) {
-        this.notificationMessage = this.$t("nav.addSetup");
-        this.links.activities.active = false;
-        this.links.summary.active = false;
-        this.links.results.active = false;
-        this.links.advocate.active = false;
-        this.links.bestPractices.active = false;
-        this.links.assessment.active = false;
+        this.notificationMessage = this.$t('nav.addSetup')
+        this.links.activities.active = false
+        this.links.summary.active = false
+        this.links.results.active = false
+        this.links.advocate.active = false
+        this.links.bestPractices.active = false
+        this.links.assessment.active = false
       }
 
-      if (this.getItemCount("activities") === 0 && this.setupPresent()) {
-        this.notificationMessage = this.$t("nav.addActivites");
-        this.links.activities.active = true;
-        this.links.summary.active = false;
-        this.links.results.active = false;
-        this.links.advocate.active = false;
-        this.links.bestPractices.active = false;
-        this.links.assessment.active = false;
+      if (this.getItemCount('activities') === 0 && this.setupPresent()) {
+        this.notificationMessage = this.$t('nav.addActivites')
+        this.links.activities.active = true
+        this.links.summary.active = false
+        this.links.results.active = false
+        this.links.advocate.active = false
+        this.links.bestPractices.active = false
+        this.links.assessment.active = false
       }
 
       if (
-        this.getItemCount("activities") > 0 &&
-        this.getItemCount("assessments") === 0
+        this.getItemCount('activities') > 0 &&
+        this.getItemCount('assessments') === 0
       ) {
-        this.notificationMessage = this.$t("nav.addAssessment");
-        this.links.activities.active = true;
-        this.links.summary.active = true;
-        this.links.assessment.active = true;
-        this.links.bestPractices.active = true;
-        this.links.results.active = false;
-        this.links.advocate.active = false;
+        this.notificationMessage = this.$t('nav.addAssessment')
+        this.links.activities.active = true
+        this.links.summary.active = true
+        this.links.assessment.active = true
+        this.links.bestPractices.active = true
+        this.links.results.active = false
+        this.links.advocate.active = false
       }
     }
   }
-};
+}
 </script>
 
 <style lang="scss" module="base">
@@ -192,11 +190,9 @@ $nav-breakpoint: 81em; // ~1400px
   composes: primaryBg white from "styles/color.scss";
   @include border("bottom", $w: "medium", $color: "primary");
 
-  @supports (display: flex) {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
 
   @media print {
     display: none;
@@ -206,23 +202,16 @@ $nav-breakpoint: 81em; // ~1400px
 .leftPane {
   composes: inlineBlock from "styles/display.scss";
   width: 50%;
-
-  @supports (flex: 1) {
-    flex: 1;
-    width: auto;
-  }
+  flex: 1;
 }
 
 .rightPane {
   width: 50%;
+  flex: 1;
 
-  @supports (flex: 1) {
-    flex: 1;
-    width: auto;
-    align-items: center;
-    justify-content: flex-end;
-    display: inline-flex;
-  }
+  align-items: center;
+  justify-content: flex-end;
+  display: inline-flex;
 }
 
 .logo {

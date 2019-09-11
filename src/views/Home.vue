@@ -174,17 +174,16 @@ export default {
 
 .leftPane {
   width: 50%;
+  flex: 1;
 }
 
 .rightPane {
   width: 50%;
+  flex: 1;
 
-  @supports (flex: 1) {
-    flex: 1;
-    align-items: center;
-    justify-content: flex-end;
-    display: inline-flex;
-  }
+  align-items: center;
+  justify-content: flex-end;
+  display: inline-flex;
 }
 
 .logoGrid {
