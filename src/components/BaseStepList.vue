@@ -125,18 +125,6 @@ export default {
   position: relative;
   transition: background-color 0.2s;
   width: 50px;
-  &:after {
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px color("primary");
-    content: "";
-    height: 120%;
-    left: -10%;
-    position: absolute;
-    opacity: 0;
-    top: -10%;
-    transform: scale(0.8);
-    transition: transform 0.2s, opacity 0.2s;
-    width: 120%;
-  }
+  
 }
 </style>
