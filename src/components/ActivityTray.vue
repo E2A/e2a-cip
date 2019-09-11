@@ -1,6 +1,6 @@
 <template>
   <div :class="base.activityTray" v-if="activityId">
-    <div :class="base.closeButton" @click="closeActivityId"/>
+    <div :class="base.closeButton" @click="close"/>
     <BaseHeading
       :level="6"
       :centered="false"
@@ -75,7 +75,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import { dataMethods } from '@/components/mixins/dataMethods'
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseBodyText from '@/components/BaseBodyText.vue'
@@ -101,10 +100,10 @@ export default {
     ActivitiesItemInput,
     ActivityComment
   },
+  props: {
+    activityId: [String, Number]
+  },
   computed: {
-    ...mapState({
-      activityId: state => state.mountedActivity
-    }),
     activity: function () {
       return this.$store.getters['entities/activities/query']()
         .with('comments')
@@ -172,7 +171,7 @@ export default {
       this.inputKey++
       this.inputText = ''
     },
-    closeActivityId: function () {
+    close: function () {
       this.$store.commit('SET_MOUNTED_ACTIVITY', 0)
     }
   }

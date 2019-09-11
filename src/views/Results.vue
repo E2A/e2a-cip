@@ -32,6 +32,7 @@
                   :shortText="activity.shortText"
                   :text="activity.text"
                   :id="activity.id"
+                  :youth="activity.youthCentric"
                   @activitySelect="setActivityId"
                   :class="[mountedActivity === activity.id && base.itemSelected]"
                 />

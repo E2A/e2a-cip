@@ -61,7 +61,7 @@
         </BaseHeading>
 
         <!-- table of activities -->
-        <ActivitiesList v-bind:groupedActivities="groupedActivities">
+        <ActivitiesList v-bind:groupedActivities="groupedActivities" :showTray="true">
           <template #activities="{ activities, setActivityId }">
             <div v-if="activities.activityObjects.length > 0" >
               <ActivitiesTypeHeading>

@@ -1,8 +1,8 @@
 <template>
-  <div v-if="!table" :class="base.activitiesTableWrapper">
+  <div v-if="!table" :class="[base.activitiesTableWrapper, (!showTray || !activityId) && base.noTray]">
     <div :class="base.activitiesTable">
       <div :class="base.header">
-        <div :class="base.headerRightPane">
+        <div v-if="showTray" :class="base.headerRightPane">
           <TableHeading
             v-for="(heading, index) in headings"
             :key="index"
@@ -18,11 +18,12 @@
         </li>
       </ul>
     </div>
-    <ActivityTray />
+    <ActivityTray v-if="showTray" :activityId="activityId" />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import TableHeading from '@/components/TableHeading.vue'
 import ActivityTray from '@/components/ActivityTray.vue'
 
@@ -33,37 +34,41 @@ export default {
       type: Boolean,
       default: false
     },
+    showTray: {
+      type: Boolean,
+      default: false
+    },
     groupedActivities: {
-      type: Array,
+      type: Array
     },
     currentActivityId: {
-      type: String,
+      type: String
     },
     headings: {
       type: Array,
       default: function () {
         return [
           {
-            title: 'bestPractices.bestPractice1.title',
+            title: 'bestPractices.bestPractice1.title'
           },
           {
-            title: 'bestPractices.bestPractice2.title',
+            title: 'bestPractices.bestPractice2.title'
           },
           {
-            title: 'bestPractices.bestPractice3.title',
+            title: 'bestPractices.bestPractice3.title'
           },
           {
-            title: 'bestPractices.bestPractice4.title',
+            title: 'bestPractices.bestPractice4.title'
           },
           {
-            title: 'bestPractices.bestPractice5.title',
+            title: 'bestPractices.bestPractice5.title'
           },
           {
-            title: 'bestPractices.bestPractice6.title',
+            title: 'bestPractices.bestPractice6.title'
           },
           {
-            title: 'bestPractices.bestPractice7.title',
-          },
+            title: 'bestPractices.bestPractice7.title'
+          }
         ]
       }
     },
@@ -72,12 +77,17 @@ export default {
       default: true
     }
   },
+  computed: {
+    ...mapState({
+      activityId: state => state.mountedActivity
+    })
+  },
   components: {
     TableHeading,
     ActivityTray
   },
   methods: {
-    setActivityId: function(event, value) {
+    setActivityId: function (event, value) {
       if (value > 0) {
         this.$store.commit('SET_MOUNTED_ACTIVITY', value)
       }
@@ -127,5 +137,14 @@ export default {
     composes: default round from "styles/borders.scss";
     composes: whiteBg shadow from "styles/color.scss";
     padding: 1rem;
+  }
+
+  .noTray {
+  justify-content: center;
+
+    .activitiesTable {
+      flex: 0 0 100%;
+      max-width: 1150px;
+    }
   }
 </style>
