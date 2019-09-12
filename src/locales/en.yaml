@@ -120,6 +120,7 @@ en:
   inputNextActivity: Save & Add New Activity
   activitiesDone: "Save & Finish"
   saveAndContinue: Save and Continue
+  continue: Continue
   save: Save Activity
   saveSuccess: Saved Activity
   deleteSuccess: Deleted Activity
@@ -234,7 +235,7 @@ en:
   # Evidence-Informed Practices
   readMore: "See sample activities"
   checkListButtonText: "View checklist"
-  bestPracticeTitle: 'Now ask yourself, "Will these activities work?"'
+  bestPracticeTitle: 'Will these activities work?'
   bestPracticeSubtitle: Will they effectively respond to the reproductive needs and desires of youth in your country? 
   bestPracticesContent: |-
     To answer, follow the evidence. Start by reviewing the Evidence-Informed Practices (EIPs) below. Each EIP has shown significantly positive results in programming for adolescent and youth reproductive health. 

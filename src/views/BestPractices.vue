@@ -25,12 +25,11 @@
             <div :class="base.summary">
               <BaseHeading
                 :level="2"
-                :class="[space.paddingBottomNarrow]"
+                :class="[space.paddingBottomNarrow, base.title]"
                 :centered="false"
                 scale="gamma"
               >
                 <router-link
-                  :class="base.title"
                   :to="{
                   name: 'evidence-informed-practice',
                   params: {id: item.id}
@@ -106,7 +105,7 @@ export default {
         right: [
           {
             to: { name: "assessment" },
-            label: this.$t("nav.assessment"),
+            label: this.$t("continue"),
             role: "primary"
           }
         ]
@@ -165,6 +164,10 @@ export default {
     transform: scale(0.75);
     transition: transform 0.2s, opacity 0.2s;
     width: 120%;
+  }
+
+  &:hover {
+    border-bottom: 0;
   }
 }
 
