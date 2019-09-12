@@ -121,7 +121,8 @@ fr:
   inputNextActivity: Ajouter une autre activité
   activitiesDone: "TERMINE. SUIVANT"
   save: "Sauvegarder l'activité"
-  saveAndContinue: Sauvegarde et Continue
+  saveAndContinue: Sauvegarde et Continuer
+  continue:
   saveSuccess: Enregistrer l'activité
   deleteSuccess: "Supprimer l'activité"
   deleteActivity: Supprimer
@@ -236,7 +237,7 @@ fr:
   # Evidence-Informed Practices
   readMore: "Voir les exemples d'activités"
   checkListButtonText: "Voir la liste de contrôle"
-  bestPracticeTitle: Maintenant, demandez-vous, "Ces activités fonctionneront-elles ?"
+  bestPracticeTitle: Ces activités fonctionneront-elles?
   bestPracticeResourceSubtitle: Répondront-elles efficacement aux besoins et aux désirs en matière de reproduction des jeunes dans votre pays ?
   bestPracticesContent: |-
     Pour répondre, referez-vous aux données probantes. Commencez par examiner les pratiques fondées sur des données probantes (EIPs) ci-dessous. Chaque EIP a donné des résultats positifs notables dans la programmation de la santé reproductive des adolescents et des jeunes. 
