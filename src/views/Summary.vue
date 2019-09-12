@@ -10,7 +10,7 @@
       :subtitle="$t('summary.subtitle')"
       :blurb="$t('summary.intro')"
     />
-    <section :class="space.paddingWide">
+    <section :class="[space.paddingHorizontalWide, space.paddingVerticalNarrow]">
       <BaseWidthWrapper width="xxwide">
         <BaseHeading
           :level="2"

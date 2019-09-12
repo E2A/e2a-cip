@@ -58,7 +58,7 @@ en:
  
       This publication was made possible through support provided by the Office of Population and Reproductive Health, Bureau for Global Health, U.S. Agency for International Development, under the terms of Award No. AID-OAA-A-11-00024. The opinions expressed herein are those of the author(s) and do not necessarily reflect the views of the U.S. Agency for International Development.
   plan:
-    title: Get to know your plan
+    title: Get To Know Your Plan
     body: |-
       You’ve selected a plan to analyze. Now take at least 10 minutes to familiarize yourself with it.
       
@@ -69,15 +69,15 @@ en:
       * Can’t find activities and their budget amounts? Check your plan’s annex. 
     note: 'Important: Unfortunately, you won’t be able to analyze your budget if…'
     noteBody: |-
-      * Specific activities do not have budgeted amounts associated with them .
-      * you’re assessing an AYRH plan, not a general FP/RH plan.
+      * Specific activities do not have budgeted amounts associated with them.
+      * You’re assessing an AYRH plan, not a general FP/RH plan.
       
       \
       **But don’t worry. You can still analyze the quality of the activities.**
     getStartedButton: Get Started
   setup:
     CIPTitle: Enter the plan title
-    configureCIP: "First, let's configure your plan"
+    configureCIP: "First, Let's Configure Your Plan"
     selectDate: Select your plan date
     selectCountry: Select your country
     selectCurrency: Select the currency used in your plan
@@ -105,7 +105,7 @@ en:
     role10: Youth volunteer or activist
     role11: Other international organization
   # Activity Input
-  addActivity: Add a new activity
+  addActivity: Add a New Activity
   editActivity: Edit activity
   enterActivity: Enter an activity
   for: for
@@ -223,7 +223,7 @@ en:
         - Support for the processes of coordination, including meetings, information-sharing, the development of work plans, etc.
         - Establishing transparent, user-friendly monitoring and evaluation systems
   summary:
-    title: Well done!
+    title: Well Done!
     subtitle: You’ve added all activities. Now it’s time to dig a little deeper.
     intro: |-
       Below, see all the information you’ve provided—sorted by category and budget. Make sure everything is accurate. If you need to make changes, click **Edit**.
@@ -1121,8 +1121,8 @@ en:
     printPage: Print Page
     previousStep: Go back to analysis
     nextStep: Add Key Recommendations
-    youthCenteredActivity: youth-centered activity
-    youthCenteredActivities: youth-centered activities
+    youthCenteredActivity: Youth-Centered Activity
+    youthCenteredActivities: Youth-Centered Activities
     percentActivitesWithBP: "Activites with an EIP"
     activityWithEIPbyType: Activity With EIP by Type
     exportChartSuccess: 'You successfully exported your chart data'

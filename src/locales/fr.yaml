@@ -70,8 +70,8 @@ fr:
       * Vous ne trouvez pas les activités et les montants budgétaires correspondants ? Alors consultez l’annexe de votre plan. 
     note: 'Important : Malheureusement, vous ne pourrez pas analyser votre budget si...'
     noteBody: |-
-      * Les activités spécifiques n'ont pas de montants budgétisés correspondants 
-      * Vous évaluez un plan de SRAJ, pas un plan général de PF/SR
+      * Les activités spécifiques n'ont pas de montants budgétisés correspondants.
+      * Vous évaluez un plan de SRAJ, pas un plan général de PF/SR.
 
       _Mais ne vous inquiétez pas. Vous pouvez encore analyser la qualité des activités._
     getStartedButton: Démarrez
@@ -1251,7 +1251,7 @@ fr:
     youthCentricLabel: "Centré sur les jeunes"
     notYouthCentricLabel: "Pas axé sur les jeunes"
   print:
-    previousStep: "Retourner à l'action sociale"
+    previousStep: "RETOUR A LA PAGE DE PLAIDOYER"
     globalRecommendations:
       title: "Recommandations clef d'action"
       content: Vous trouverez ci-dessous des informations clef suggérées pour une action ciblée.
@@ -1314,7 +1314,7 @@ fr:
     analyze: 'Analyser'
     results: 'Résultats'
     report: 'Report'
-    advocate: 'Défenseur'
+    advocate: 'Plaidoyer'
     addAssessment: Vous devez saisir votre analyse avant de pouvoir aller plus loin.
     removeAssessment: Vous devez supprimer toutes vos analyses avant de pouvoir modifier les activités.
     addSetup: Vous devez ajouter des données de configuration avant de continuer.

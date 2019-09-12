@@ -30,6 +30,7 @@
                 scale="gamma"
               >
                 <router-link
+                  :class="base.title"
                   :to="{
                   name: 'evidence-informed-practice',
                   params: {id: item.id}
@@ -169,5 +170,11 @@ export default {
 
 .summary {
   flex: 1;
+}
+
+.title {
+  :hover {
+    border-bottom: 0;
+  }
 }
 </style>

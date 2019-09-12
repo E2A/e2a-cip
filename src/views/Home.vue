@@ -42,9 +42,11 @@
 
     <!-- How it works -->
     <BaseSectionWrapper>
-      <BaseWidthWrapper>
-        <BaseHeading :level="2" centered>{{$t('home.stepsTitle')}}</BaseHeading>
-        <BaseHeading centered :level="5" color="dark">{{$t('home.stepsIntro')}}</BaseHeading>
+      <BaseWidthWrapper width="wide">
+       <BasePageIntro
+          :title="$t('home.stepsTitle')"
+          :subtitle="$t('home.stepsIntro')"
+        />
       </BaseWidthWrapper>
       <BaseWidthWrapper width="xwide" :class="space.paddingTop">
         <BaseStepList :steps="steps" size="small" />

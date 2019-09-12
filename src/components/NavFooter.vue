@@ -127,6 +127,7 @@ export default {
 .buttonGroup {
   display: inline-block;
   width: 50%;
+  text-transform: uppercase;
 }
 
 .buttonWrapper {
