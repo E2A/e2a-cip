@@ -15,12 +15,30 @@
       :key="forceTitleUpdate"
     />
 
-    <BaseFormDate
-      v-model="setupDate"
-      @input="addSetup"
+    <BaseFormLabel
+      :id="'cip-date'"
       :label="$t('setup.selectDate')"
-      name="cip-date"
-    />
+    >
+      <div :class="base.wrapper">
+        <BaseFormSelect
+          v-model="setupDateStart"
+          @input="addSetup('start')"
+          :options="yearsArray"
+          name="cip-date-1"
+          :class="base.date"
+          searchable
+        />
+        <div :class="base.divider" />
+        <BaseFormSelect
+          v-model="setupDateEnd"
+          @input="addSetup('end')"
+          :options="yearsArray"
+          name="cip-date-2"
+          :class="base.date"
+          searchable
+        />
+      </div>
+    </BaseFormLabel>
 
     <!-- Country -->
     <BaseFormSelect
@@ -59,7 +77,6 @@ import currencyList from '@/authorities/currency-data'
 import BaseFormInput from './BaseFormInput.vue'
 import BaseFormLabel from './BaseFormLabel.vue'
 import BaseFormSelect from './BaseFormSelect.vue'
-import BaseFormDate from './BaseFormDate.vue'
 import vSelect from 'vue-select'
 import i18n from '@/i18n.js'
 
@@ -69,8 +86,7 @@ export default {
     vSelect,
     BaseFormInput,
     BaseFormLabel,
-    BaseFormSelect,
-    BaseFormDate
+    BaseFormSelect
   },
   props: {
     clear: Boolean
@@ -84,7 +100,8 @@ export default {
       setupCountry: null,
       setupRole: null,
       setupCurrency: null,
-      setupDate: new Date()
+      setupDateStart: new Date(),
+      setupDateEnd: new Date()
     }
   },
   computed: {
@@ -92,6 +109,16 @@ export default {
       return Object.values(i18n.messages[i18n.locale].userRoles).map((userRole, index) => {
         return this.$t(`userRoles.role${index + 1}`)
       })
+    },
+    yearsArray: function () {
+      const currentYear = new Date().getFullYear()
+
+      let array = []
+      for (let i = currentYear - 9; i <= currentYear + 10; i++) {
+        array.push(i)
+      }
+
+      return array
     }
   },
   watch: {
@@ -108,7 +135,8 @@ export default {
       this.setupCountry = null
       this.setupRole = null
       this.setupCurrency = null
-      this.setupDate = new Date()
+      this.setupDateStart = new Date()
+      this.setupDateEnd = new Date()
       this.$emit('clear-success')
     },
     updateData: function () {
@@ -131,16 +159,29 @@ export default {
         this.setupCountry = setupCountryVal
         this.setupRole = setupData.role
         this.setupCurrency = setupCurrencyVal
-        this.setupDate = setupData.date
+        this.setupDateStart = setupData.dateStart
+        this.setupDateEnd = setupData.dateEnd
       }
     },
     getData: function () {
       return this.$store.getters['entities/setup/query']().first()
     },
-    addSetup: function () {
+    validateDates (dateChanged) {
+      if (this.setupDateStart > this.setupDateEnd) {
+        if (dateChanged === 'start') {
+          this.setupDateEnd = null
+        } else {
+          this.setupDateStart = null
+        }
+      }
+    },
+    addSetup: function (dateChanged) {
+      this.validateDates(dateChanged)
+
       const currencyData = this.setupCurrency
       const countryData = this.setupCountry
-      const planDate = this.setupDate
+      const planDateStart = this.setupDateStart
+      const planDateEnd = this.setupDateEnd
       var currencyCodeData = null
       var currencyNameData = null
       var countryCodeData = null
@@ -165,7 +206,8 @@ export default {
           role: this.setupRole,
           currencyCode: currencyCodeData,
           currencyName: currencyNameData,
-          date: planDate
+          dateStart: planDateStart,
+          dateEnd: planDateEnd
         }
       })
     }
@@ -177,3 +219,31 @@ export default {
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
+
+<style lang="scss" module="base">
+  @import '~styleConfig/color';
+  @import '~styleConfig/spacing';
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .date {
+    width: 140px;
+    display: inline-block;
+
+    .vs__selected {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .divider {
+    display: inline-block;
+    height: 2px;
+    width: 10px;
+    background-color: color('dark');
+    margin: space('narrow');
+  }
+</style>
