@@ -98,7 +98,7 @@ export default {
           },
           {
             to: { name: 'summary' },
-            label: this.$t('activitiesDone'),
+            label: this.$t('saveAndContinue'),
             role: this.isFormFilled ? 'primary' : 'default'
           }
         )
