@@ -54,11 +54,11 @@ fr:
     downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
     acknowldgementTitle: Remerciements
     acknowledgementText: |-
-      Le Projet Evidence to Action (E2A) tient à exprimer sa reconnaissance à l’Agence des États-Unis pour le développement international (USAID) pour la création de ce Not Without Us! Un outil numérique pour une planification adaptée à l'AYRH.
+      Le projet Evidence to Action (E2A) remercie l'Agence des États-Unis pour le Développement International (USAID) pour son généreux soutien dans le développement de ‘’ Pas sans nous’’ ! Un outil numérique pour une planification adaptée  à la SRAJ. En outre, nous aimerions remercier nos collègues de Pathfinder International, Family Planning 2020, Population Services International et STPH Institute pour leur contribution. Votre point de vue, vos commentaires et vos essais en tant qu’utilisateurs ont joué un rôle déterminant dans la création de cet outil.
 
-      Nous exprimons notre reconnaissance pour le soutien de collègues ayant participé à une petite consultation d'experts pour apporter leur analyse initiale de l'outil et leurs retours critiques, parmi lesquels Patricia MacDonald, Melissa Freeman, Teshome Woldemedhin, Zema Mirza et Michal Avni d’USAID ; Emily Sullivan, Family Planning 2020 ; Amy Uccello, PSI ; Adriana Martin Huber, STPH Institute ; et Catherine Lane, Pathfinder International. Nous voudrions remercier Regina Benevides, Katie Chau et Allison Gato, anciennement de Pathfinder International, pour l’élaboration de la première version de cet outil. Au sein de E2A, nous voudrions remercier Rita Badiani, Eric Ramirez, Ginette Hounkanrin, Anjala Kanesathasan, Elizabeth Williams et Laurel Lundstrom de Pathfinder International pour le travail fourni pour la finalisation de cet outil. Enfin, nous souhaitons remercier Bivee pour son aide dans la conception et la numérisation de l’outil.
+      Enfin, nous vous remercions, vous, utilisateur du TARP. Votre engagement pour les besoins des jeunes en matière de santé reproductive nous inspire, et nous espérons que le TARP vous aidera à convaincre votre gouvernement d'investir davantage dans la planification familiale adaptée aux jeunes.
 
-      Cette publication a été rendue possible par le biais du soutien de l’Office de Population et de Santé Reproductive, Bureau de Santé Globale, Agence des États-Unis pour le Développement International, aux termes de l’accord Numéro AID-OAA-A-11-00024. Les opinions exprimées ici incombent aux auteurs et ne reflètent pas forcément les vues de l’Agence des États-Unis pour le Développement International
+      La présente publication a bénéficié d’un soutien de l’Office de Population et de Santé reproductive, Bureau pour la Santé globale, Agence des Etats-Unis pour le Développement international, aux termes de l’Accord No. AID-OAA-A-11-00024. Les opinions exprimées ici incombent à l’auteur ou aux auteurs et ne représentent pas forcément les vues de l’Agence des Etats Unis pour le Développement international.
   plan:
     title: CONNAÎTRE VOTRE PLAN
     body: |-
@@ -1179,13 +1179,14 @@ fr:
     title: Analyser vos activités
     intro: |-
       1. Ci-dessous, prenez en compte chaque activité. Utilisez ce que vous avez appris sur les pratiques fondées sur des données probantes pour vous demander : Cette activité correspond-t-elle à un ou plusieurs EIPs ?
-      2. Pour répondre, cliquez sur une icône à droite de l'activité. Si l'activité correspond entièrement à cet EIP, sélectionnez vert. Si les correspondances sont partielles, sélectionnez jaune. Si elle ne correspond pas, sélectionnez gris.
+      2. Pour répondre, sélectionnez une activité. Puis, dans la nouvelle fenêtre à droite, cliquez sur chaque icône EIP. Si l’activité s’aligne complètement avec cet EIP, sélectionnez le vert. Si elle s’aligne partiellement, sélectionnez le jaune. Si elle ne s’aligne pas du tout , sélectionnez le rouge.
       3. Remplir pour tous les EIPs. Terminez ensuite toutes les activités et assurez-vous de discuter de vos décisions avec votre équipe.
 
       \
-      Une fois que vous avez terminé, cliquez sur **OBTENIR MES RÉSULTATS** en bas à droite.
+      Quand vous avez fini, cliquez sur SAUVEGARDER ET CONTINUER, en bas à droite.
     instructions:
-      heading: Cliquez sur les icônes indiquant les pratiques fondées sur des données probantes (EIP) auxquelles votre activité répond
+      heading: Est-ce que votre activité s’aligne-t-elle sur les pratiques fondées sur des données probantes (EIPs) ? Cliquez sur chacune des icônes EIP ci-dessous et sélectionnez votre réponse.
+      eipHeading: 
       options:
         'yes':
           # Do Not Translate
