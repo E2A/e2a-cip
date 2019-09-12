@@ -1076,13 +1076,14 @@ en:
     title: Analyze your activities
     intro: |-
       1. Below, consider each activity. Use what you’ve learned about evidence-based practices to ask yourself: Does this activity align with one or more EIPs?
-      2. To answer, click an icon to the right of the activity. If the activity fully aligns with this EIP, select green. If partially aligns, select yellow. If it does not align, select gray.
+      2. To answer, select an activity. Then, in the pop-out window on the right, click each EIP icon. If the activity fully aligns with this EIP, select green. If it partially aligns, select yellow. If it does not align, select red.
       3. Complete for all EIPs. Then complete for all activities—and be sure to discuss your decisions with your team.
 
       \
-      Once you’re done, click **GET MY RESULTS** at bottom right.
+      Once you’re done, click SAVE AND CONTINUE at bottom right.
     instructions:
       heading: Click on the icons indicating the EIPs which your activity meets
+      eipHeading: Does your activity align with evidence-informed practices? Click each EIP icon below and select your answer.
       options:
         'yes':
           # Do Not Translate
