@@ -11,7 +11,6 @@
       @input="addSetup"
       :label="$t('setup.CIPTitle')"
       name="cip-title"
-      el="textarea"
       :height="1"
       :key="forceTitleUpdate"
     />
