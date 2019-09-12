@@ -1216,6 +1216,7 @@ en:
     addSetup: You must add setup data before moving further
     addActivites: You must add activities before moving further
     learnMore: Learn More About EIPs
+    eipPdf: '/uploads/EIP-English-Full.pdf'
   activityTable:
     defaultTitle: Activity text
     defaultID: Activity number
