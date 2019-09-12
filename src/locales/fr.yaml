@@ -1320,6 +1320,7 @@ fr:
     addSetup: Vous devez ajouter des données de configuration avant de continuer.
     addActivites: "Vous devez ajouter des activités avant d'aller plus loin"
     learnMore: En savoir plus sur les EIP
+    eipPdf: '/uploads/EIP-FR-Full.pdf'
   activityTable:
     defaultTitle: "Texte de l'activité"
     defaultID: "Numéro d'activité"

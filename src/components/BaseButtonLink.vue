@@ -24,7 +24,7 @@
   </router-link>
   <a
     :href="to"
-    :class="[button.default, sizeClass, roleClass, weightClass, iconClass]"
+    :class="defaultClassList"
     :target="target"
     v-else
   >

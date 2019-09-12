@@ -60,12 +60,6 @@ export default new Router({
       name: 'evidence-informed-practices',
       component: BestPractices
     },
-    // Using duplicate path so we have a stateless path
-    {
-      path: '/evidence-informed-practices',
-      name: 'eips',
-      component: BestPractices
-    },
     {
       path: '/evidence-informed-practice/:id',
       name: 'evidence-informed-practice',
