@@ -119,6 +119,7 @@ en:
   activityYouthCentric: Is this activity youth-centric?
   inputNextActivity: Save & Add New Activity
   activitiesDone: "Save & Finish"
+  saveAndContinue: Save and Continue
   save: Save Activity
   saveSuccess: Saved Activity
   deleteSuccess: Deleted Activity

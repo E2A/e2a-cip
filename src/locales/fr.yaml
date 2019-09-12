@@ -121,6 +121,7 @@ fr:
   inputNextActivity: Ajouter une autre activité
   activitiesDone: "TERMINE. SUIVANT"
   save: "Sauvegarder l'activité"
+  saveAndContinue: Sauvegarde et Continue
   saveSuccess: Enregistrer l'activité
   deleteSuccess: "Supprimer l'activité"
   deleteActivity: Supprimer

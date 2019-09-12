@@ -140,7 +140,7 @@ export default {
         right: [
           {
             to: { name: 'results' },
-            label: this.$t('analysis.nextStep'),
+            label: this.$t('saveAndContinue'),
             role: 'primary'
           }
         ]
