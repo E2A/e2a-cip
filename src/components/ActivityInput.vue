@@ -229,6 +229,7 @@ export default {
       }
     },
     informParent: function (bool) {
+      console.log('testing', this.activityId)
       // Tells parent whether the form is complete or not.
       this.$emit('changed', bool, this.activityId)
     },
