@@ -38,6 +38,7 @@
             :align="'center'"
             editable
           />
+          <!-- <span :class="base.listIconTitle">{{bestPractice.title}}</span> -->
         </li>
       </BaseGutterWrapper>
     </div>
@@ -54,7 +55,7 @@
           weight="bold"
           color="dark"
         >{{$t('addComment')}}</BaseHeading>
-        <div :class="[space.paddingVerticalNarrow]">
+        <div :class="[base.commentsContainer]">
           <!-- Show comments first -->
           <ActivityComment
             v-for="comment of comments"
@@ -214,6 +215,7 @@ export default {
 <style lang="scss" module="base">
 @import "~styleConfig/color";
 @import "~styleConfig/spacing";
+@import '~styleConfig/scale';
 
 .paddingHorizontalNone {
   padding-left: 0;
@@ -231,6 +233,10 @@ export default {
 
 .gutter {
   width: 100%;
+}
+
+.commentsContainer {
+  padding: 0 1rem;
 }
 
 .activityTray {
@@ -261,13 +267,19 @@ export default {
 .icons {
   padding-inline-start: 0px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   margin-left: -(space('xxnarrow'));
 }
 
 .listIcon {
   display: inline-block;
   position: relative;
+  flex: 1 100%;
+  padding: 0;
+}
+
+.listIconTitle {
+  font-size:  0.65rem;
 }
 
 .dataList {

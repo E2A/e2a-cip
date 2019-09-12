@@ -26,13 +26,14 @@
     </template>
     <!-- selected option -->
     <template slot="selected-option">
-      <BaseIcon
-        :name="icon"
-        :class="color[selectedAssessmentClass]"
-        :alt="title"
-        role="img"
-        size="1.3rem"
-      />
+        <BaseIcon
+          :name="icon"
+          :class="[color[selectedAssessmentClass], base.iconPadding]"
+          :alt="title"
+          role="img"
+          size="1.3rem"
+        />
+        {{title}}
     </template>
   </vSelect>
 </template>
@@ -131,7 +132,6 @@ export default {
     updateAssessment: function (selectedObject) {
       // Check if assessment for current activity is store
       const assessmentPresent = this.getSelectedAssessment()
-
       const data = {
         activity_id: this.activityID,
         text: this.title,
@@ -162,6 +162,10 @@ export default {
   font-size: 0.5rem;
   margin-left: 5px;
 }
+
+.iconPadding {
+  padding-right: 5px;
+}
 </style>
 
 <!-- global: override the classes used on vue-select with our own styles -->
@@ -177,6 +181,7 @@ export default {
 .best-practice-select-wrapper {
   @include font();
   color: color("dark") !important;
+  display: inline-flex;
 
   a {
     border: none !important;
@@ -196,6 +201,9 @@ export default {
 
   .vs__selected {
     padding: 0;
+    font-size: 0.6rem;
+    text-align: left;
+    @include font('display', $weight: light, $style: normal);
   }
 
   .vs__actions {
@@ -204,19 +212,23 @@ export default {
   }
 
   // When dropdown is open and/or when whole component is hovered
-  &.vs--open,
-  &:hover {
-    .vs__dropdown-toggle {
-      padding: 5px !important;
-      background-color: color("light") !important;
-      border-color: rgba(60, 60, 60, 0.26);
-      max-width: 88px; // >88px causes bug
-    }
-
-    .vs__actions {
-      opacity: 1;
+  &.vs--open {
+    .vs__dropdown-menu {
+      border-top-style: inherit;
     }
   }
+  // &:hover {
+  //   .vs__dropdown-toggle {
+  //     padding: 5px !important;
+  //     background-color: color("light") !important;
+  //     border-color: rgba(60, 60, 60, 0.26);
+  //     max-width: 88px; // >88px causes bug
+  //   }
+
+  //   .vs__actions {
+  //     opacity: 1;
+  //   }
+  // }
 
   .vs__dropdown-menu {
     .highlight > a {
