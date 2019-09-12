@@ -11,12 +11,23 @@
         <BaseHeading
           :level="6"
           :centered="false"
-          :class="[type.leadingDefault, base.tableIndex, numberIndex && base.numberIndex]"
+          :class="[type.leadingDefault, space.marginRightNarrow, base.tableIndex]"
           weight="regular"
           :color="'midtone'"
           sub
         >
-          {{numberIndex ? displayNumber : id}}
+          {{id}}
+        </BaseHeading>
+        <BaseHeading
+          v-if="numberIndex"
+          :level="6"
+          :centered="false"
+          :class="[type.leadingDefault, base.tableIndex, space.marginRightNarrow, type.center, numberIndex && base.numberIndex]"
+          weight="regular"
+          :color="'dark'"
+          sub
+        >
+          {{displayNumber}}
         </BaseHeading>
         <BaseHeading
           :level="6"
@@ -215,13 +226,8 @@ $breakpoint: medium;
   margin: 0 15px;
 }
 
-.tableIndex {
-  margin-right: space('xnarrow');
-  color: color('midtone');
-}
-
 .numberIndex {
-  min-width: 95px;
-  width: 95px;
+  min-width: 90px;
+  width: 90px;
 }
 </style>
