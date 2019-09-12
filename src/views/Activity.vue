@@ -32,6 +32,8 @@ export default {
       return this.getNextActivity
     },
     currentActivity: function () {
+      console.log('next', this.nextActivity())
+      console.log('initial', 1)
       return this.$props.activityId || this.nextActivity()
     }
   },
@@ -50,9 +52,15 @@ export default {
     },
     travelToActivity: function (activityId) {
       const yOffset = window.pageYOffset
+      // If first activity
+      if (!this.$router.history.current.params.activityId) {
+        activityId = activityId - 1;
+      } 
+
       if (this.$router.history.current.params.activityId !== activityId) {
         this.$router.push({ name: 'activity', params: { activityId: activityId } })
       }
+      
       window.scroll(0, yOffset) // keep scroll position
     },
     getNavButtons: function () {
