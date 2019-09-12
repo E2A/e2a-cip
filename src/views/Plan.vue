@@ -4,9 +4,7 @@
   >
     <NavBreadcrumbs/>
     <BaseWidthWrapper>
-      <BaseGutterWrapper>
-        <BaseHeading :class="[space.paddingWide, base.title]" :level="2">{{this.$t('plan.title')}}</BaseHeading>
-      </BaseGutterWrapper>
+      <BasePageIntro :title="$t('plan.title')"/>
       <BaseGutterWrapper>
         <BaseBodyText :content="this.$t('plan.body')" />
         <BaseHeading :class="[space.padding]" :level="4" :centered="false">{{this.$t('plan.note')}}</BaseHeading>
@@ -24,6 +22,7 @@ import BaseBodyText from '@/components/BaseBodyText.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import NavFooter from '@/components/NavFooter.vue'
 import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
+import BasePageIntro from '@/components/BasePageIntro.vue'
 
 export default {
   name: 'Plan',
@@ -34,7 +33,8 @@ export default {
     BaseBodyText,
     BaseGutterWrapper,
     NavFooter,
-    NavBreadcrumbs
+    NavBreadcrumbs,
+    BasePageIntro
   },
   methods: {
     getNavButtons: function () {
