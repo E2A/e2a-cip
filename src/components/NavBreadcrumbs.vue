@@ -3,7 +3,7 @@
     <nav :class="base.breadcrumbNav">
       <BaseWidthWrapper width="wide">
         <BaseGutterWrapper :class="base.breadcrumbNavList" el="ul" gutterY="xnarrow" gutterX="medium">
-          <NavItem v-for="(link, key, index) in this.getLinks()" :key="`link-${index}`" :link="link" :objectIndex="index" @dispatchNotifications="notificationTrigger">
+          <NavItem v-for="(link, key, index) in this.getLinks()" :key="`link-${index}`" :link="link" :objectIndex="index" @dispatchNotifications="notificationTrigger" :enableSubnav="false">
           </NavItem>
         </BaseGutterWrapper>
       </BaseWidthWrapper>

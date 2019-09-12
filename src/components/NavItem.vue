@@ -1,6 +1,6 @@
 <template>
   <li
-    :class="[this.parentIsActive && base.parentActive, this.isCurrentRoute && base.currentRoute, base.navItem]"
+    :class="[this.parentIsActive && base.parentActive, this.isCurrentRoute && base.currentRoute, base.navItem, !link.active && base.navItemDisabled]"
   >
     <router-link
       v-if="link.active"
@@ -19,7 +19,7 @@
     <span v-if="!hideStep" :class="base.icon">{{stepIndex}}</span>
     {{link.text}}</span>
 
-    <ul v-if="link.steps && link.active" :class="base.subNavList">
+    <ul v-if="link.steps && link.active && enableSubnav" :class="base.subNavList">
       <NavItem
         v-for="(subnav, index) in link.steps"
         :key="`subnav-${index}`"
@@ -43,7 +43,8 @@ export default {
   props: {
     link: [Object],
     objectIndex: [Number, String],
-    hideStep: [Boolean]
+    hideStep: [Boolean],
+    enableSubnav: [Boolean]
   },
   computed: {
     stepIndex: function() {
@@ -99,12 +100,12 @@ $nav-breakpoint: 81em; // ~1400px
   &:after {
     content: "";
     transition: 0.2s all ease-in-out;
-    background-color: transparent;
+    background-color: color("primary", $grade: 50);
     position: absolute;
     left: 0;
     right: 0;
     bottom: -7px; // height of bottom border on nav wrapper
-    height: 6px;
+    height: border-w('thick');
     z-index: 2;
   }
 
@@ -120,6 +121,12 @@ $nav-breakpoint: 81em; // ~1400px
     &:after {
       background-color: color("primary");
     }
+  }
+}
+
+.navItemDisabled {
+  &:after {
+    background-color: color("midtone", $grade: 70);
   }
 }
 
@@ -143,6 +150,12 @@ $nav-breakpoint: 81em; // ~1400px
   .icon {
     background-color: color("midtone", $grade: 70);
   }
+
+  .navItem {
+    &:after {
+      background-color: color("midtone", $grade: 70);
+    }
+  }
 }
 
 .parentActive {
@@ -160,6 +173,7 @@ $nav-breakpoint: 81em; // ~1400px
 
   &:after {
     background-color: color("primary");
+    height: 6px;
   }
 }
 
