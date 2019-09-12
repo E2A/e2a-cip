@@ -23,7 +23,7 @@
       <div :class="base.wrapper">
         <BaseFormSelect
           v-model="setupDateStart"
-          @input="addSetup"
+          @input="addSetup('start')"
           :options="yearsArray"
           name="cip-date-1"
           :class="base.date"
@@ -32,7 +32,7 @@
         <div :class="base.divider" />
         <BaseFormSelect
           v-model="setupDateEnd"
-          @input="addSetup"
+          @input="addSetup('end')"
           :options="yearsArray"
           name="cip-date-2"
           :class="base.date"
@@ -167,7 +167,18 @@ export default {
     getData: function () {
       return this.$store.getters['entities/setup/query']().first()
     },
-    addSetup: function () {
+    validateDates (dateChanged) {
+      if (this.setupDateStart > this.setupDateEnd) {
+        if (dateChanged === 'start') {
+          this.setupDateEnd = null
+        } else {
+          this.setupDateStart = null
+        }
+      }
+    },
+    addSetup: function (dateChanged) {
+      this.validateDates(dateChanged)
+
       const currencyData = this.setupCurrency
       const countryData = this.setupCountry
       const planDateStart = this.setupDateStart
