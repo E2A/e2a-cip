@@ -9,6 +9,9 @@
             :class="base.heading"
           >
             {{ translateHeadings ? $t(heading.title) : heading.title }}
+            <template slot="tooltip">
+              {{ translateHeadings ? $t(heading.title) : heading.title }}
+            </template>
           </TableHeading>
         </div>
       </div>
