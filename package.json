@@ -22,7 +22,7 @@
     "@vuex-orm/core": "^0.32.0",
     "blob": "^0.0.5",
     "bourbon": "^6.0.0",
-    "chartist": "0.10.1",
+    "chartist": "^0.11.4",
     "country-list": "^2.1.0",
     "currencies-symbol": "^1.0.1",
     "file-saver": "^2.0.2",
