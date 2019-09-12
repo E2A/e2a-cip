@@ -559,7 +559,7 @@ fr:
     bestPractice3:
       title: "Coordination entre les secteurs"
       # Do Not Translate
-      icon: eip-couple
+      icon: eip-coordination
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       practice: |-
@@ -921,7 +921,7 @@ fr:
     bestPractice6:
       title: "Favoriser le soutien familial et communautaire"
       # Do Not Translate
-      icon: eip-book
+      icon: eip-community
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       practice: |-
