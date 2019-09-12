@@ -63,7 +63,7 @@ export default {
   props: {
     displayQuestions: {
       type: [Boolean],
-      default: true,
+      default: true
     },
     viewType: {
       type: [String],
@@ -99,7 +99,7 @@ export default {
     },
     questions: {
       type: Array
-    },
+    }
   },
   computed: {
     currentLocale () {
@@ -279,7 +279,7 @@ export default {
           'youthFocusBudget': true,
           'youthFocusCount': false,
           'activityTypeBudget': true,
-          'activityTypeCount': false,
+          'activityTypeCount': false
         },
         'seriesData': {
           'youthFocusBudget': youthFocusedBudgetSeries,
@@ -340,6 +340,7 @@ export default {
   .ct-label {
     display: block;
     font-size: 14px;
+    transform: translateY(0.5em);
   }
 }
 </style>

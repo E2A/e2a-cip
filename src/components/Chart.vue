@@ -96,7 +96,7 @@ export default {
       filteredSeries: null,
       // Threshold for piece of pie
       // 2x is threshold for label
-      minimumPercent: 0.03
+      minimumPercent: 0.015
     }
   },
   methods: {
@@ -142,8 +142,8 @@ export default {
       startAngle: 270,
       showLabel: true,
       labelInterpolationFnc: (value, index, labels) => {
-        // Don't render label below 6%
-        if (value / this.total <= this.minimumPercent * 2) {
+        // Don't render label below %
+        if (value / this.total <= this.minimumPercent * 3) {
           return null
         }
 
