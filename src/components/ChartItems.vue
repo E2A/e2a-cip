@@ -342,5 +342,10 @@ export default {
     font-size: 14px;
     transform: translateY(0.5em);
   }
+
+  // hide donut hole
+  .ct-series .ct-slice-donut {
+    fill: transparent;
+  }
 }
 </style>
