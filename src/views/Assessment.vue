@@ -70,10 +70,7 @@
               <ActivitiesItemAssessment
                 v-for="(activity, index) in activities.activityObjects"
                 :key="`activity-${index}`"
-                :shortText="activity.shortText"
-                :text="activity.text"
-                :id="activity.id"
-                :budget="activity.budget"
+                :activity="activity"
                 :youth="activity.youthCentric"
                 @activitySelect="setActivityId"
                 :class="[mountedActivity === activity.id && instructions.itemSelected]"

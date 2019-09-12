@@ -4,11 +4,11 @@
       <div :class="base.summaryContent">
         <div
           :tabindex="0"
-          :class="[base.item, base.click, base.col5]"
+          :class="[base.item, base.click, !reverseSpacing ? base.col5 : base.col7, base.flex]"
         >
           <slot name="summaryLeft">Add summary here</slot>
         </div>
-        <div v-if="$slots.summaryRight" :class="[base.item, base.col7]">
+        <div v-if="$slots.summaryRight" :class="[base.item, !reverseSpacing ? base.col7 : base.col5]">
           <slot name="summaryRight"></slot>
         </div>
       </div>
@@ -17,20 +17,23 @@
 </template>
 
 <script>
-import BaseGutterWrapper from "./BaseGutterWrapper.vue";
+import BaseGutterWrapper from './BaseGutterWrapper.vue'
 
 export default {
-  name: "BaseDetails",
+  name: 'BaseDetails',
   components: {
     BaseGutterWrapper
   },
+  props: {
+    reverseSpacing: Boolean
+  },
   computed: {
-    twoColSummary: function() {
+    twoColSummary: function () {
       // https://stackoverflow.com/questions/47432702/determining-if-slot-content-is-null-or-empty
-      return this.$slots.summaryRight && this.base.split;
+      return this.$slots.summaryRight && this.base.split
     }
   }
-};
+}
 </script>
 
 <style lang="scss" module="base">
@@ -126,7 +129,6 @@ width: 100%;
 
 .col5 {
 width: 100%;
-display: flex;
 
   @include media(">#{$breakpoint}") {
     width: 41.6666%;
@@ -136,6 +138,10 @@ display: flex;
       flex-basis: 41.6666%;
     }
   }
+}
+
+.flex {
+  display: flex;
 }
 
 .click {

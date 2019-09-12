@@ -30,13 +30,11 @@
               <ActivitiesItemAssessment
                 v-for="(activity, index) in activities.activityObjects"
                 :key="`activity-${index}`"
-                :shortText="activity.shortText"
-                :text="activity.text"
-                :id="activity.id"
-                :budget="activity.budget"
-                :youth="activity.youthCentric"
+                :activity="activity"
                 @activitySelect="setActivityId"
                 :class="[mountedActivity === activity.id && instructions.itemSelected]"
+                numberIndex
+                editable
               />
             </div>
           </template>
@@ -52,7 +50,6 @@ import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
-import ActivitiesTable from '@/components/ActivitiesTable.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
 import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
 import ActivitiesItemAssessment from '@/components/ActivitiesItemAssessment.vue'
@@ -72,7 +69,7 @@ export default {
     ActivitiesList,
     ActivitiesTypeHeading,
     ActivitiesItemAssessment,
-    ActivitiesExportTray,
+    ActivitiesExportTray
   },
   computed: {
     groupedActivities: function () {

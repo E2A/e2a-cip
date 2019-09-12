@@ -6,24 +6,24 @@
 
 <template>
   <div :class="[base.wrapper]" @click="emitClick">
-    <BaseDetails>
+    <BaseDetails :reverseSpacing="numberIndex">
       <template slot="summaryLeft">
         <BaseHeading
           :level="6"
           :centered="false"
-          :class="[type.leadingDefault, base.tableIndex]"
+          :class="[type.leadingDefault, base.tableIndex, numberIndex && base.numberIndex]"
           weight="regular"
           :color="'midtone'"
           sub
         >
-          {{activityId}}
+          {{numberIndex ? displayNumber : id}}
         </BaseHeading>
         <BaseHeading
           :level="6"
           :centered="false"
           :class="type.leadingDefault"
           weight="regular"
-          :color="youth ? 'dark' : 'midtone'"
+          :color="youth || numberIndex ? 'dark' : 'midtone'"
           sub
         >
           {{displayText}}
@@ -32,6 +32,7 @@
       <template slot="summaryRight">
         <!-- list of best practice icons -->
         <BaseGutterWrapper
+          v-if="youth"
           :class="base.right"
           el="ul"
           gutterX="xnarrow"
@@ -48,6 +49,15 @@
               :align="index > 4 ? 'right' : 'center'"
             />
           </li>
+        </BaseGutterWrapper>
+        <!-- Edit -->
+        <BaseGutterWrapper v-else-if="editable" :class="base.right" gutterY="xnarrow" gutterX="xnarrow">
+          <BaseButtonLink
+            :to="{ name: 'activity', params: { activityId: id } }"
+            :label="this.$t('edit')"
+            target="_blank"
+            size="small"
+          />
         </BaseGutterWrapper>
 
       </template>
@@ -72,19 +82,13 @@ export default {
   name: 'ActivityItemAssessment',
   mixins: [bestPracticeData, dataMethods],
   props: {
-    shortText: {
-      type: String
+    activity: {
+      type: Object,
+      required: true
     },
-    text: {
-      type: String
-      // required: true
-    },
-    id: {
-      type: Number
-      // required: true
-    },
-    budget: Number,
-    youth: Boolean
+    youth: Boolean,
+    editable: Boolean,
+    numberIndex: Boolean
   },
   components: {
     BaseHeading,
@@ -103,12 +107,17 @@ export default {
         [this.$t('activityTable.defaultBudget')]: `${this.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
         [this.$t('activityTable.defaultYouthCentered')]: this.youth ? this.$t('yesRaw') : this.$t('noRaw')
       }
+    },
+    url: function () {
+      return { name: 'activity', params: { activityId: this.id } }
     }
   },
   data: function () {
     return {
-      activityId: this.id,
-      displayText: this.shortText || this.text,
+      id: this.activity.id,
+      number: this.activity.activityNumber,
+      displayText: this.activity.shortText || this.activity.text,
+      displayNumber: this.activity.shortNumber || this.activity.number,
       bestPracticeId: null,
       assessmentInstance: null,
       assessmentComments: null,
@@ -150,9 +159,6 @@ export default {
       this.isOpen = false
       this.commentsOpen = false
     }
-  },
-  created: function () {
-    // console.log(this.bestPractices)
   }
 }
 </script>
@@ -162,6 +168,7 @@ export default {
 
 <style lang="scss" module="base">
 @import '~styleConfig/breakpoints';
+@import '~styleConfig/color';
 @import '~styleConfig/spacing';
 
 $breakpoint: medium;
@@ -211,5 +218,10 @@ $breakpoint: medium;
 .tableIndex {
   margin-right: space('xnarrow');
   color: color('midtone');
+}
+
+.numberIndex {
+  min-width: 95px;
+  width: 95px;
 }
 </style>
