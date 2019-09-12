@@ -39,8 +39,14 @@ export default {
   },
   data: function () {
     return {
-      isFormFilled: false
+      isFormFilled: false,
+      previousRoute: null,
     }
+  },
+  beforeRouteEnter: function(to, from, next) {
+    next(vm => {
+      vm.previousRoute = from
+    })
   },
   methods: {
     trackValidation: function (value, activityId) {
@@ -63,11 +69,19 @@ export default {
       
       window.scroll(0, yOffset) // keep scroll position
     },
+    goBack: function() {
+      if (this.previousRoute) {
+        return this.previousRoute
+      }
+
+      return { 'name': 'setup' }
+    },
     getNavButtons: function () {
       var navButtons = {
         left: [
           {
-            to: { name: 'setup' },
+            // to: { name: 'setup' },
+            to: this.goBack(),
             label: this.$t('goBack')
           }
         ],
