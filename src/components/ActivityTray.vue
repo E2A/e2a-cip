@@ -1,6 +1,6 @@
 <template>
   <div :class="base.activityTray" v-if="activityId">
-    <div :class="base.closeButton" @click="close"/>
+    <div :class="base.closeButton" @click="close" />
     <BaseHeading
       :level="6"
       :centered="false"
@@ -9,19 +9,28 @@
       sub
     >{{getActivityType()}}</BaseHeading>
 
-    <BaseHeading color="dark" :level="4" :centered="false" weight="bold" :class="type.leadingDefault">{{getActivityTitle()}}</BaseHeading>
+    <BaseHeading
+      color="dark"
+      :level="4"
+      :centered="false"
+      weight="bold"
+      :class="type.leadingDefault"
+    >{{getActivityTitle()}}</BaseHeading>
 
-    <div :class="base.gutter">
+    <div :class="[base.gutter, space.paddingTopNarrow]">
       <BaseDataGrid :data="expandedData" :class="base.dataList" :condensed="true" />
     </div>
 
-    <div :class="base.gutter">
-      <BaseGutterWrapper
-        :class="base.icons"
-        el="ul"
-        gutterX=""
-        gutterY="xnarrow"
-      >
+    <div :class="[base.gutter, space.paddingVerticalNarrow, space.paddingBottomXnarrow]">
+      <BaseHeading
+        :level="5"
+        :centered="false"
+        :class="space.paddingBottomNarrow"
+        scale="zeta"
+        weight="light"
+        color="dark"
+      >{{$t('analysis.instructions.heading')}}:</BaseHeading>
+      <BaseGutterWrapper :class="base.icons" el="ul" gutterX gutterY="xnarrow">
         <li v-for="(bestPractice, index) of bestPractices" :key="index" :class="base.listIcon">
           <BestPracticeIconSelect
             :id="bestPractice.id"
@@ -33,7 +42,10 @@
       </BaseGutterWrapper>
     </div>
     <div :class="[base.gutter]">
-      <BaseGutterWrapper :class="[base.commentSection, base.paddingHorizontalNone, base.paddingTopNone, base.flushHorizontalNarrow]" :flush="false">
+      <BaseGutterWrapper
+        :class="[base.commentSection, base.paddingHorizontalNone, space.paddingTopXnarrow, base.flushHorizontalNarrow]"
+        :flush="false"
+      >
         <BaseHeading
           :level="5"
           :centered="false"
@@ -45,22 +57,34 @@
         <div :class="[space.paddingVerticalNarrow]">
           <!-- Show comments first -->
           <ActivityComment
-              v-for="comment of comments"
-              :key="comment.id"
-              :comment="comment"
-              :activityId="activity.id"
-              @click="deleteComment"
-            />
-        </div>
-          <!-- By default start showing a recommendation -->
-          <ActivitiesItemInput
-            :activityInstance="activity"
-            action="insert"
-            inputType="comments"
-            :isActive="false"
-            :key="inputKey"
-            @change="updateInputText"
+            v-for="comment of comments"
+            :key="comment.id"
+            :comment="comment"
+            :activityId="activity.id"
+            @click="deleteComment"
           />
+        </div>
+        <!-- By default start showing a recommendation -->
+        <ActivitiesItemInput
+          :activityInstance="activity"
+          action="insert"
+          inputType="comments"
+          :isActive="false"
+          :key="inputKey"
+          @change="updateInputText"
+        />
+      </BaseGutterWrapper>
+
+      <div
+        :class="[space.paddingVerticalNarrow, space.paddingHorizontalNarrow, base.activtyFooter, base.flushHorizontalNarrow]"
+      >
+        <BaseButton
+          @click="editActivity"
+          :class="space.marginLeft"
+          :label="$t('editActivity')"
+          size="small"
+          role="default"
+        />
         <BaseButton
           @click="addComment"
           :class="space.marginLeft"
@@ -68,26 +92,26 @@
           size="small"
           role="primary"
         />
-      </BaseGutterWrapper>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { dataMethods } from '@/components/mixins/dataMethods'
-import BaseHeading from '@/components/BaseHeading.vue'
-import BaseBodyText from '@/components/BaseBodyText.vue'
-import BaseDataGrid from '@/components/BaseDataGrid.vue'
-import { activityTypes } from '@/components/mixins/activityTypes'
-import BestPracticeIconSelect from '@/components/BestPracticeIconSelect.vue'
-import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
-import { bestPracticeData } from '@/components/mixins/bestPracticeData'
-import BaseButton from '@/components/BaseButton'
-import ActivityComment from '@/components/ActivityComment'
-import ActivitiesItemInput from '@/components/ActivitiesItemInput'
+import { dataMethods } from "@/components/mixins/dataMethods";
+import BaseHeading from "@/components/BaseHeading.vue";
+import BaseBodyText from "@/components/BaseBodyText.vue";
+import BaseDataGrid from "@/components/BaseDataGrid.vue";
+import { activityTypes } from "@/components/mixins/activityTypes";
+import BestPracticeIconSelect from "@/components/BestPracticeIconSelect.vue";
+import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
+import { bestPracticeData } from "@/components/mixins/bestPracticeData";
+import BaseButton from "@/components/BaseButton";
+import ActivityComment from "@/components/ActivityComment";
+import ActivitiesItemInput from "@/components/ActivitiesItemInput";
 
 export default {
-  name: 'ActivityTray',
+  name: "ActivityTray",
   mixins: [bestPracticeData, dataMethods, activityTypes],
   components: {
     BaseBodyText,
@@ -103,81 +127,88 @@ export default {
     activityId: [String, Number]
   },
   computed: {
-    activity: function () {
-      return this.$store.getters['entities/activities/query']()
-        .with('comments')
+    activity: function() {
+      return this.$store.getters["entities/activities/query"]()
+        .with("comments")
         .whereId(this.activityId)
-        .first()
+        .first();
     },
-    comments: function () {
-      return this.activity.comments
+    comments: function() {
+      return this.activity.comments;
     },
-    commentsNotPresent: function () {
-      return this.comments.length === 0
+    commentsNotPresent: function() {
+      return this.comments.length === 0;
     },
-    expandedData: function () {
+    expandedData: function() {
       return {
-        [this.$t('activityTable.defaultID')]: this.activity.id,
-        [this.$t('activityTable.defaultBudget')]: `${
+        [this.$t("activityTable.defaultID")]: this.activity.id,
+        [this.$t("activityTable.defaultBudget")]: `${
           this.activity.budget
-        } <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
-        [this.$t('activityTable.defaultYouthCentered')]: this.activity
+        } <small>${this.getItemValue("setup", "currencyCode")}</small>`,
+        [this.$t("activityTable.defaultYouthCentered")]: this.activity
           .youthCentric
-          ? this.$t('yesRaw')
-          : this.$t('noRaw')
-      }
+          ? this.$t("yesRaw")
+          : this.$t("noRaw")
+      };
     }
   },
-  data: function () {
+  data: function() {
     return {
       inputKey: 0,
-      inputText: ''
-    }
+      inputText: ""
+    };
   },
   methods: {
-    addComment: function () {
+    editActivity: function() {
+      this.$router.push({
+        name: "activity",
+        params: { activityId: this.activityId }
+      });
+    },
+    addComment: function() {
       const data = {
         activity_id: this.activityId,
         text: this.inputText
-      }
-      this.$store.dispatch('entities/comments/insert', { data })
-      this.emptyInput()
+      };
+      this.$store.dispatch("entities/comments/insert", { data });
+      this.emptyInput();
     },
-    deleteComment: function (event, commentId) {
-      this.$store.dispatch('entities/comments/delete', commentId)
+    deleteComment: function(event, commentId) {
+      this.$store.dispatch("entities/comments/delete", commentId);
     },
-    getActivityType: function () {
+    getActivityType: function() {
       if (!this.activityId) {
-        return null
+        return null;
       }
-      const needle = this.activity.type
+      const needle = this.activity.type;
       const type = this.activityTypeDataset.find(item => {
-        return item.key === needle
-      })
+        return item.key === needle;
+      });
 
-      return type.title
+      return type.title;
     },
-    getActivityTitle: function () {
-      return this.activity.text
+    getActivityTitle: function() {
+      return this.activity.text;
     },
-    isYouthCentric: function () {
-      return this.activity.youthCentric
+    isYouthCentric: function() {
+      return this.activity.youthCentric;
     },
-    updateInputText: function (newValue) {
-      this.inputText = newValue
+    updateInputText: function(newValue) {
+      this.inputText = newValue;
     },
-    emptyInput: function () {
-      this.inputKey++
-      this.inputText = ''
+    emptyInput: function() {
+      this.inputKey++;
+      this.inputText = "";
     },
-    close: function () {
-      this.$store.commit('SET_MOUNTED_ACTIVITY', 0)
+    close: function() {
+      this.$store.commit("SET_MOUNTED_ACTIVITY", 0);
     }
   }
-}
+};
 </script>
 
 <style src="styles/type.scss" lang="scss" module="type"></style>
+<style src="styles/color.scss" lang="scss" module="color"></style>
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 
 <style lang="scss" module="base">
@@ -231,6 +262,7 @@ export default {
   padding-inline-start: 0px;
   display: flex;
   justify-content: space-between;
+  margin-left: -(space('xxnarrow'));
 }
 
 .listIcon {
@@ -240,9 +272,9 @@ export default {
 
 .dataList {
   display: flex;
-  padding: space('narrow') space('xnarrow');
-  margin-bottom: space('narrow');
-  border-bottom: 1px solid color('midtone', $grade: 50);
+  padding: space("narrow") space("xnarrow");
+  margin-bottom: space("narrow");
+  border-bottom: 1px solid color("midtone", $grade: 50);
   :global {
     .dataItem {
       width: 100%;
@@ -255,5 +287,10 @@ export default {
   composes: top from "styles/borders.scss";
   margin-top: space("medium");
   background-color: color("light");
+}
+
+.activtyFooter {
+  background-color: color("light");
+  text-align: right;
 }
 </style>
