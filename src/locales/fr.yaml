@@ -60,7 +60,7 @@ fr:
 
       La présente publication a bénéficié d’un soutien de l’Office de Population et de Santé reproductive, Bureau pour la Santé globale, Agence des Etats-Unis pour le Développement international, aux termes de l’Accord No. AID-OAA-A-11-00024. Les opinions exprimées ici incombent à l’auteur ou aux auteurs et ne représentent pas forcément les vues de l’Agence des Etats Unis pour le Développement international.
   plan:
-    title: CONNAÎTRE VOTRE PLAN
+    title: Connaître Votre Plan
     body: |-
       Vous avez choisi un plan à analyser. Maintenant, prenez au moins 10 minutes pour vous familiariser avec ce plan.
 
@@ -72,8 +72,9 @@ fr:
     noteBody: |-
       * Les activités spécifiques n'ont pas de montants budgétisés correspondants.
       * Vous évaluez un plan de SRAJ, pas un plan général de PF/SR.
-
-      _Mais ne vous inquiétez pas. Vous pouvez encore analyser la qualité des activités._
+      
+      \
+      **Mais ne vous inquiétez pas. Vous pouvez encore analyser la qualité des activités.**
     getStartedButton: Démarrez
   setup:
     CIPTitle: Saisissez le titre du plan
@@ -122,7 +123,7 @@ fr:
   activitiesDone: "TERMINE. SUIVANT"
   save: "Sauvegarder l'activité"
   saveAndContinue: Sauvegarde et Continuer
-  continue:
+  continue: Continuer
   saveSuccess: Enregistrer l'activité
   deleteSuccess: "Supprimer l'activité"
   deleteActivity: Supprimer
@@ -163,7 +164,7 @@ fr:
     La version E2A comprend un domaine supplémentaire, la coordination, qu'elle considère comme essentiel pour maximiser la synergie et assurer la synchronisation entre les différentes composantes qui contribuent à l'amélioration de la planification familiale et des résultats en matière de santé reproductive. Chacun de ces quatre domaines est expliqué plus en détail ci-dessous.
   activityTypes:
     type1:
-      title: Approvisionnement
+      title: Offre
       # do not translate
       key: supply
       body: |-
@@ -242,7 +243,7 @@ fr:
   bestPracticesContent: |-
     Pour répondre, referez-vous aux données probantes. Commencez par examiner les pratiques fondées sur des données probantes (EIPs) ci-dessous. Chaque EIP a donné des résultats positifs notables dans la programmation de la santé reproductive des adolescents et des jeunes. 
     
-    Lorsque vous avez terminé, cliquez sur **SUIVANT** en bas à droite.
+    Lorsque vous avez terminé, cliquez sur **CONTINUER** en bas à droite.
   backToBestPractices: Retourner aux Pratiques fondées sur des données probantes (EIP)
   bestPracticeIntro: ""
   bestPracticeCategoryTitle: "Pratiques fondées sur des données probantes"
@@ -1177,10 +1178,10 @@ fr:
           # Do Not Translate
           url: http://www.youthpower.org/positive-youth-development-toolkit
   analysis:
-    title: Analyser vos Activités
+    title: Analyser vos activités
     intro: |-
       1. Ci-dessous, prenez en compte chaque activité. Utilisez ce que vous avez appris sur les pratiques fondées sur des données probantes pour vous demander : Cette activité correspond-t-elle à un ou plusieurs EIPs ?
-      2. Pour répondre, sélectionnez une activité. Puis, dans la nouvelle fenêtre à droite, cliquez sur chaque icône EIP. Si l’activité s’aligne complètement avec cet EIP, sélectionnez le vert. Si elle s’aligne partiellement, sélectionnez le jaune. Si elle ne s’aligne pas du tout , sélectionnez le rouge.
+      2. Pour répondre, sélectionnez une activité. Puis, dans la nouvelle fenêtre à droite, cliquez sur chaque icône EIP. Si l’activité s’aligne complètement avec cet EIP, sélectionnez le vert. Si elle s’aligne partiellement, sélectionnez le jaune. Si elle ne s’aligne pas du tout, sélectionnez le rouge.
       3. Remplir pour tous les EIPs. Terminez ensuite toutes les activités et assurez-vous de discuter de vos décisions avec votre équipe.
 
       \
@@ -1262,13 +1263,13 @@ fr:
     globalRecommendations:
       title: Ajouter les Recommandations Clef
       content: |-
-        Vous avez vos résultats. Que devez-vous faire maintenant?
+        Vous avez vos résultats. Que devez-vous faire maintenant ?
         \
-        Dans la boîte ci-dessous, écrivez toute autre recommandation ou question que vous avez pour les décideurs et les dirigeants politiques. Par exemple:
+        Dans la boîte ci-dessous, écrivez toute autre recommandation ou question que vous avez pour les décideurs et les dirigeants politiques. Par exemple :
         
-        1. Est-ce que votre plan prend assez en compte la participation des jeunes de façon significative?
-        2. Est-ce que votre plan prend assez en compte promotion l’égalité des sexes?
-        3. Est-ce que votre plan prend assez en compte les besoins des jeunes marginalisés?
+        1. Est-ce que votre plan prend assez en compte la participation des jeunes de façon significative ?
+        2. Est-ce que votre plan prend assez en compte promotion l’égalité des sexes ?
+        3. Est-ce que votre plan prend assez en compte les besoins des jeunes marginalisés ?
     comments:
       title: Vos commentaires
       content: Entrez vos commentaires et préoccupations concernant vos évaluations en consultant les informations relatives aux pratiques fondées sur des preuves disponibles <a href="/evidence-informed-practices">ici</a>.
@@ -1319,7 +1320,7 @@ fr:
     assessment: 'Analyse'
     analyze: 'Analyser'
     results: 'Résultats'
-    report: 'Report'
+    report: 'Résultats'
     advocate: 'Plaidoyer'
     addAssessment: Vous devez saisir votre analyse avant de pouvoir aller plus loin.
     removeAssessment: Vous devez supprimer toutes vos analyses avant de pouvoir modifier les activités.

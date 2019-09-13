@@ -240,7 +240,7 @@ en:
   bestPracticesContent: |-
     To answer, follow the evidence. Start by reviewing the Evidence-Informed Practices (EIPs) below. Each EIP has shown significantly positive results in programming for adolescent and youth reproductive health. 
     
-    When you’re done, click **Analysis** at the bottom right.
+    When you’re done, click **CONTINUE** at the bottom right.
   bestPracticeResourceSubtitle: Further reading
   backToBestPractices: Back to Evidence-Informed Practices (EIP)
   bestPracticeIntro: ""
@@ -1153,7 +1153,7 @@ en:
     youthCentricLabel: "Youth Centric"
     notYouthCentricLabel: "Not Youth Centric"
   print:
-    previousStep: Go back to advocate
+    previousStep: Go back
     globalRecommendations:
       title: Key Recommendations for Action
       content: The following are key insights that is suggested for focused action.
@@ -1174,7 +1174,7 @@ en:
       title: Your comments
       content: Enter any comments and concerns you have on your assessments by looking over the information on Evidence-Informed Practices, available <a href="/evidence-informed-practices">here</a>.
     print: PRINT YOUR RESULTS
-    title: 'Add key recommendations…'
+    title: 'Add Key Recommendations…'
     intro: |-
       Now that you have the results of your plan, what should you do now?
 
@@ -1219,7 +1219,7 @@ en:
     assessment: 'Analysis'
     analyze: 'Analyze'
     results: 'Results'
-    report: 'Report'
+    report: 'Results'
     advocate: 'Advocate'
     addAssessment: You must enter your analysis before you can move further.
     removeAssessment: You must remove all your analysis before you can edit activites.
