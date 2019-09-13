@@ -191,9 +191,6 @@ $breakpoint: medium;
 
   &:hover {
     background-color: rgba(color('accent'), 0.20);
-    .rowAction {
-      display: inline-block;
-    }
   }
 }
 
@@ -219,7 +216,6 @@ $breakpoint: medium;
 }
 
 .rowAction {
-  display: none;
   font-size: 0.75rem;
   @include font('display', $weight: light, $style: normal);
 }
