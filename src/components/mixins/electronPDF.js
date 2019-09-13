@@ -11,13 +11,13 @@ export const electronPDF = {
 
       // Create temp path
       const timestamp = Date.now()
-      const pdfPath = path.join(os.tmpdir(), this.$t('fileUpload.pdfFileName', {timestamp: timestamp}))
+      const pdfPath = path.join(os.tmpdir(), this.$t('fileUpload.pdfFileName', { timestamp: timestamp }))
 
       const currentWindow = remote.getCurrentWindow()
-      const pdfViewWindow = new remote.BrowserWindow({width: 1500, height: 1500, webPreferences: { plugins: true }})
+      const pdfViewWindow = new remote.BrowserWindow({ width: 1500, height: 1500, webPreferences: { plugins: true } })
 
       // Use default printing options
-      currentWindow.webContents.printToPDF({paperSize: 'A4', marginsType: 1, landscape: false}, (error, data) => {
+      currentWindow.webContents.printToPDF({ paperSize: 'A4', marginsType: 1, landscape: false }, (error, data) => {
         if (error) throw error
 
         fs.writeFile(pdfPath, data, error => {

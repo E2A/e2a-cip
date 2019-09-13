@@ -14,6 +14,7 @@ $black-print: #000;
 
 // highlights
 $purple: #702082;
+$dark-purple: #531461;
 $light-blue: #a7c6ed;
 $blue: #307fe2;
 $green: #A8AD00;
@@ -30,13 +31,15 @@ $colors: (
   'light': $light-gray,
   'white': $white,
   'primary': $purple,
+  'primary-dark': $dark-purple,
   'highlight': $blue,
   'accent': $light-blue,
   'warning': $red,
   'success': $purple,
   'yes': $green,
-  'no': $gray,
-  'maybe': $yellow
+  'no': $red,
+  'partially': $yellow,
+  'empty': $gray,
 );
 
 @function color($color, $grade: 0, $opacity: 1) {

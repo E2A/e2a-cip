@@ -3,9 +3,10 @@
     :id="name"
     :label="$t('activityYouthCentric')"
     :helpText="$t('supportText.activityYouthCentric')"
+    :tooltipText="tooltipText"
   >
     <input
-      @change="emitChange($event)"
+      @input="emitInput($event)"
       :class="[
         base.switch,
         {[base.enhanced]: supportStyledCheckbox}
@@ -45,7 +46,8 @@ export default {
     // -> default translations are above in the template
     labelOn: String,
     labelOff: String,
-    error: String
+    error: String,
+    tooltipText: String
   },
   data () {
     return {
@@ -57,7 +59,7 @@ export default {
     BaseCalloutBox
   },
   methods: {
-    emitChange: function (event) {
+    emitInput: function (event) {
       // use event.target.checked instead of value for checkboxes
       // https://medium.com/@relt24/dedicated-vue-js-checkbox-component-360a330a3eb
       this.$emit('input', event.target.checked)

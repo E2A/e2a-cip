@@ -56,7 +56,7 @@ export default {
 
       if (deleteType === 'all') {
         // Delete all items
-        this.runExportData('json') // Force export as a backup.
+        // this.runExportData('json') // Force export as a backup.
         this.$store.dispatch('entities/deleteAll')
       } else {
         // Delete specific entity type

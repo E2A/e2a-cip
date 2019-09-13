@@ -1,16 +1,17 @@
 <template>
   <div>
+    <NavBreadcrumbs/>
     <BaseSectionWrapper>
       <BaseHeading :class="space.paddingBottomWide">{{$t('setup.configureCIP')}}</BaseHeading>
       <BaseWidthWrapper>
-        <SetupInput :key="inputKey"/>
+        <SetupInput :key="inputKey" :clear="clearSetup" @clear-success="toggleClearSetup" />
         <div
           v-if="!this.setupPresent()"
           :class="space.paddingTop"
         >
           <BaseCalloutBox
             :message="$t('setup.setupRequired')"
-            role="info"
+            role="warning"
           />
         </div>
         <div
@@ -18,17 +19,24 @@
           :class="[type.center, space.paddingTopWide]"
         >
           <BaseButtonLink
-            :to="{name: 'activity', params: {activityId: 1}}"
+            :to="{name: 'activity'}"
             :label="activityText"
             size="large"
             role="primary"
             iconRight="arrow-right"
           />
+          <div>
+            <ClearItems
+              :clearType="['All']"
+              :class="space.marginTop"
+              @delete-success="toggleClearSetup"
+            />
+          </div>
         </div>
-         <BaseBodyText
-         :class="space.paddingTop"
+        <BaseBodyText
+          :class="space.paddingTop"
           :content="$t('setup.saveDataReminder', {exportLink: '#'})"
-         />
+        />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
 
@@ -56,6 +64,8 @@ import SetupInput from '@/components/SetupInput.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
 import { dataMethods } from '@/components/mixins/dataMethods'
 import FileUpload from '@/components/FileUpload.vue'
+import ClearItems from '@/components/ClearItems.vue'
+import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
 
 export default {
   name: 'Setup',
@@ -68,11 +78,14 @@ export default {
     BaseCalloutBox,
     SetupInput,
     BaseButtonLink,
-    FileUpload
+    FileUpload,
+    ClearItems,
+    NavBreadcrumbs
   },
   data () {
     return {
-      inputKey: null
+      inputKey: null,
+      clearSetup: false
     }
   },
   computed: {
@@ -90,6 +103,9 @@ export default {
   methods: {
     updateInput: function () {
       this.inputKey = this.getItemCount('all')
+    },
+    toggleClearSetup: function () {
+      this.clearSetup = !this.clearSetup
     }
   }
 }

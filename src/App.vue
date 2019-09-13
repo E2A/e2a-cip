@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" @click="closeFlyouts()">
     <BaseIconSpriteMap />
     <NavHeader
       v-if="showNav"
@@ -47,12 +47,19 @@ export default {
         locale = locale.split('-')[0]
         this.$i18n.locale = locale
       }
+    },
+    closeFlyouts: function () {
+      this.$store.dispatch('entities/bestpracticeicons/create', {
+        data: {
+          flyout: false
+        }
+      })
+      this.$store.commit('CLOSE_FLYOUTS')
     }
   },
   created () {
-    // Force redirect to home if electron
     if (this.checkElectron()) {
-      this.$router.replace('/')
+      this.$router.push('/').catch(err => {})
     }
 
     this.detectLanguage()
@@ -66,7 +73,7 @@ export default {
       event.preventDefault()
 
       // Log the clicked element in the console
-      this.$router.push({name: 'export', params: {redirect: this.$route.name}})
+      this.$router.push({ name: 'export', params: { redirect: this.$route.name } })
     }, false)
   }
 }

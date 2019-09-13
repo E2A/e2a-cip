@@ -5,27 +5,15 @@
 
 <template>
   <section>
-    <NavTimeline
-      :class="border.bottom"
-      :items="navItems"
-      :current="activityId"
-    />
+    <NavTimeline :class="border.bottom" :items="navItems" :current="activityId" />
+    <NavBreadcrumbs />
     <BaseSectionWrapper>
       <!--
        Activity Edit / Input Heading
       -->
       <header :class="space.paddingBottomWide">
-        <BaseHeading
-          :level="1"
-          :class="space.paddingBottomXnarrow">
-          {{getActivityTitle()}}
-        </BaseHeading>
-        <BaseHeading
-          :level="5"
-          sub
-        >
-          {{`${capitalize($t('for'))}: ${setupTitle}`}}
-        </BaseHeading>
+        <BaseHeading :level="1" :class="space.paddingBottomXnarrow">{{getActivityTitle()}}</BaseHeading>
+        <BaseHeading :level="5" sub>{{`${capitalize($t('for'))}: ${setupTitle}`}}</BaseHeading>
       </header>
 
       <BaseWidthWrapper>
@@ -33,17 +21,20 @@
          Input fields
         -->
         <form :class="space.paddingVerticalBetween">
+          <!-- Activity Number -->
           <BaseFormInput
             v-validate="`uniqueness:activityNumber,activities,${this.activityId}`"
-            v-model='activityNumber'
+            v-model="activityNumber"
             :label="`${$t('enterActivity')} ${$t('number')}`"
             :data-vv-as="`${$t('activityNumber')}`"
             :error="errors.first('activityNumber')"
             name="activityNumber"
             :helpText="$t('supportText.activityNumber')"
+            @change="saveOnChange"
           />
+          <!-- Activity Text -->
           <BaseFormInput
-            v-validate="`required|uniqueness:text,activities,${this.activityId}`"
+            v-validate="`required|uniqueness:text,activities,${this.activityId}|max:5000`"
             v-model="activityText"
             :label="$t('enterActivity')"
             :data-vv-as="`${$t('activityText')}`"
@@ -51,32 +42,50 @@
             el="textarea"
             name="activityText"
             :helpText="$t('supportText.activityText')"
+            @change="saveOnChange"
           />
+          <!-- Activity Budget -->
           <BaseFormInput
-            v-model="activityBudget"
-            v-validate="'numeric'"
+            v-model="activityBudgetBase"
+            v-validate="'decimal'"
             :label="`${$t('enterActivity')} ${$t('budget')}`"
             :data-vv-as="`${$t('activityBudget')}`"
             :error="errors.first('activityBudget')"
             name="activityBudget"
             :helpText="$t('supportText.activityBudget')"
-          />
+            @change="saveOnChange"
+            :classItems="base.budgetInput"
+            :prepend="`${this.getItemValue('setup', 'currencyCode')}`"
+          >
+            <div :class="base.budgetSelectWrapper">
+              <BaseFormSelect
+                v-model="activityBudgetScale"
+                v-validate="'required'"
+                :options="budgetScaleOptions"
+                :value="activityType.label"
+                name="activityBudgetScale"
+                :class="base.budgetSelect"
+                @input="saveOnChange"
+                noClear
+              />
+            </div>
+          </BaseFormInput>
 
+          <!-- Youth Centric -->
           <BaseFormSwitch
             v-model="activityYouthCentric"
             :label="$t('activityYouthCentric')"
             :helpText="$t('supportText.activityYouthCentric')"
+            :tooltipText="$t('tooltipText.activityYouthCentric')"
             name="activityYouthCentric"
             type="checkbox"
+            @input="saveOnChange"
           />
-
+          <!-- Activity Type -->
           <div :class="base.activityTypeWrapper">
             <div :class="base.infoBox">
               <BaseCalloutBox
-                @click="$router.push({
-                  name: 'activity-type-info',
-                  params: { backToActivityId: activityId }
-                })"
+                @click="clickLearnMore(activityId)"
                 :message="$t('activityTypeLink')"
                 clickable
               />
@@ -92,6 +101,7 @@
               :searchable="false"
               :error="errors.first('activityType')"
               name="activityType"
+              @input="saveOnChange"
               noClear
             />
           </div>
@@ -99,18 +109,7 @@
 
         <!-- Save/delete buttons -->
         <div :class="[space.paddingTop, space.marginTop, border.top]">
-          <BaseGutterWrapper
-            gutterX="narrow"
-            gutterY="narrow"
-          >
-            <li :class="base.buttonWrapper">
-              <BaseButton
-                @click="addActivity"
-                :label="$t('save')"
-                size="small"
-                role="primary"
-              />
-            </li>
+          <BaseGutterWrapper gutterX="narrow" gutterY="narrow">
             <li :class="base.buttonWrapper">
               <BaseButton
                 v-if="getActivity()"
@@ -128,6 +127,7 @@
 
 <script>
 import NavTimeline from './NavTimeline.vue'
+import NavBreadcrumbs from './NavBreadcrumbs.vue'
 import BaseHeading from './BaseHeading.vue'
 import BaseButton from './BaseButton.vue'
 import BaseCalloutBox from './BaseCalloutBox.vue'
@@ -139,15 +139,23 @@ import BaseFormInput from './BaseFormInput.vue'
 import BaseFormSwitch from './BaseFormSwitch.vue'
 import BaseFormSelect from './BaseFormSelect.vue'
 import { activityTypes } from './mixins/activityTypes'
+import { activityBudget } from './mixins/activityBudget'
 import { customValidation } from './mixins/customValidation'
 import { dataMethods } from './mixins/dataMethods'
 import { stringHelpers } from './mixins/helpers'
 
 export default {
   name: 'ActivityInput',
-  mixins: [activityTypes, customValidation, dataMethods, stringHelpers],
+  mixins: [
+    activityBudget,
+    activityTypes,
+    customValidation,
+    dataMethods,
+    stringHelpers
+  ],
   components: {
     NavTimeline,
+    NavBreadcrumbs,
     BaseHeading,
     BaseButton,
     BaseCalloutBox,
@@ -161,8 +169,7 @@ export default {
   },
   props: {
     activityId: {
-      type: [String, Number],
-      required: true
+      type: [String, Number]
     }
   },
   computed: {
@@ -174,12 +181,20 @@ export default {
         }
       })
     },
+    budgetScaleOptions: function () {
+      return this.getBudgetScales().map(budgetScale => {
+        return {
+          label: budgetScale.title,
+          value: budgetScale.key
+        }
+      })
+    },
     navItems: function () {
       return this.getAllActivities().map(activity => {
         return {
           id: activity.id,
           label: activity.shortText,
-          url: {name: 'activity', params: {activityId: activity.id}}
+          url: { name: 'activity', params: { activityId: activity.id } }
         }
       })
     }
@@ -187,9 +202,10 @@ export default {
   data () {
     return {
       currentActivityID: this.activityId,
-      activityNumber: this.activityId,
+      activityNumber: this.activityNumber,
       existingActivity: {},
-      activityBudget: 0,
+      activityBudgetBase: 0,
+      activityBudgetScale: '',
       activityYouthCentric: false,
       setupTitle: this.getItemValue('setup', 'title'),
       activityType: '',
@@ -197,6 +213,26 @@ export default {
     }
   },
   methods: {
+    clickLearnMore: function(activityId) {
+      let routeData = this.$router.resolve({
+        name: 'activity-type-info',
+        params: { backToActivityId: activityId }
+      });
+      window.open(routeData.href, '_blank');
+    },
+    saveOnChange: function () {
+      if (this.activityType && this.activityText) {
+        this.addActivity()
+        this.informParent(true)
+      } else {
+        this.informParent(false)
+      }
+    },
+    informParent: function (bool) {
+      console.log('testing', this.activityId)
+      // Tells parent whether the form is complete or not.
+      this.$emit('changed', bool, this.activityId)
+    },
     getAllActivities: function () {
       return this.$store.getters['entities/activities/all']()
     },
@@ -208,12 +244,31 @@ export default {
         return this.$t('addActivity')
       }
     },
+    getBudgetScale: function (budget) {
+      const magnitude =
+        budget >= 1e9
+          ? 1e9 // billion
+          : budget >= 1e6
+            ? 1e6 // million
+            : 1e3 // thousand
+
+      return {
+        label: this.budgetScaleOptions.find(scale => {
+          return scale.value === magnitude
+        }).label,
+        value: magnitude
+      }
+    },
     updateData: function () {
       // Update component data
       const activityInstance = this.getActivity()
       if (activityInstance) {
         this.existingActivity = activityInstance
-        this.activityBudget = activityInstance.budget
+        this.activityBudgetScale =
+          this.activityBudgetScale ||
+          this.getBudgetScale(activityInstance.budget)
+        this.activityBudgetBase =
+          activityInstance.budget / this.activityBudgetScale.value
         this.activityYouthCentric = activityInstance.youthCentric
         this.activityType = {
           label: this.activityTypeOptions.find(option => {
@@ -224,18 +279,23 @@ export default {
         this.currentActivityID = this.activityId
         this.activityText = activityInstance.text
         this.activityNumber = activityInstance.activityNumber
+        this.informParent(true)
         return
       }
       this.currentActivityID = this.activityId
       this.existingActivity = {}
-      this.activityBudget = 0
+      this.activityBudgetBase = null
+      this.activityBudgetScale = this.budgetScaleOptions[0]
       this.activityYouthCentric = false
       this.activityType = ''
       this.activityText = ''
-      this.activityNumber = this.activityId
+      this.activityNumber = ''
+      this.informParent(false)
     },
     getActivity: function (field = '') {
-      const activityInstance = this.$store.getters['entities/activities/find'](this.activityId)
+      const activityInstance = this.$store.getters['entities/activities/find'](
+        this.activityId
+      )
       if (activityInstance && field) {
         return activityInstance[`${field}`]
       } else if (activityInstance) {
@@ -255,7 +315,7 @@ export default {
             this.$store.dispatch('entities/activities/update', {
               id: Number(this.activityId),
               text: this.activityText,
-              budget: this.activityBudget,
+              budget: this.activityBudgetBase * this.activityBudgetScale.value,
               youthCentric: this.activityYouthCentric,
               type: this.activityType.value,
               activityNumber: this.activityNumber
@@ -264,7 +324,7 @@ export default {
             this.$store.dispatch('entities/activities/insert', {
               data: {
                 text: this.activityText,
-                budget: this.activityBudget,
+                budget: this.activityBudgetBase * this.activityBudgetScale.value,
                 youthCentric: this.activityYouthCentric,
                 type: this.activityType.value,
                 activityNumber: this.activityNumber
@@ -277,7 +337,10 @@ export default {
       })
     },
     deleteActivity: function () {
-      this.$store.dispatch('entities/activities/delete', Number(this.activityId))
+      this.$store.dispatch(
+        'entities/activities/delete',
+        Number(this.activityId)
+      )
       this.notify(this.$t('deleteSuccess'), 'success')
     }
   },
@@ -291,9 +354,12 @@ export default {
 <style src="styles/borders.scss" lang="scss" module="border"></style>
 
 <style lang="scss" module="base">
-@import '~bourbon/core/bourbon';
-@import '~styleConfig/breakpoints';
-@import '~styleConfig/spacing';
+@import "~bourbon/core/bourbon";
+@import "~styleConfig/breakpoints";
+@import "~styleConfig/spacing";
+@import "~styleConfig/color";
+
+$budgetSelectWidth: 160px;
 
 .buttonWrapper {
   display: inline-block;
@@ -305,12 +371,32 @@ export default {
 
 .infoBox {
   display: block;
-  padding-bottom: space('narrow');
+  padding-bottom: space("narrow");
 
-  @include media('>small') {
+  @include media(">small") {
     float: right;
     max-width: 25rem;
     padding-bottom: 0;
+  }
+}
+
+.budgetSelectWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+}
+
+.budgetSelect {
+  height: 2.9rem;
+
+  :global {
+    .vs__dropdown-toggle {
+      height: 2.9rem;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom: none;
+    }
   }
 }
 </style>

@@ -2,6 +2,7 @@ import { Model } from '@vuex-orm/core'
 import Assessment from './Assessment'
 import Recommendation from './Recommendation'
 import BestPracticeIcon from './BestPracticeIcon'
+import Comment from './Comment'
 
 export default class Activity extends Model {
   static entity = 'activities'
@@ -16,7 +17,8 @@ export default class Activity extends Model {
       type: this.string(''),
       assessments: this.hasMany(Assessment, 'activity_id'),
       recommendations: this.hasMany(Recommendation, 'activity_id'),
-      icons: this.hasMany(BestPracticeIcon, 'activity_id')
+      icons: this.hasMany(BestPracticeIcon, 'activity_id'),
+      comments: this.hasMany(Comment, 'activity_id')
     }
   }
 
@@ -24,14 +26,24 @@ export default class Activity extends Model {
   * Get a shortened activity text
   */
   get shortText () {
-    const length = 75 // character limit
-    const ending = '...' // delimiter
-    var str = this.text // init text
+    return truncateStr(this.text, 75)
+  }
 
-    if (str.length > length) {
-      return str.substring(0, length - ending.length) + ending
-    } else {
-      return str
-    }
+  /**
+  * Get a shortened activity number
+  */
+  get shortNumber () {
+    return truncateStr(this.activityNumber, 10)
+  }
+}
+
+/**
+* Helper function
+*/
+function truncateStr (str, length, ending = '...') {
+  if (str.length > length) {
+    return str.substring(0, length - ending.length) + ending
+  } else {
+    return str
   }
 }

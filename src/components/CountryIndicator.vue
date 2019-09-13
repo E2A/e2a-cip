@@ -32,7 +32,7 @@
         sub
       >
         <!-- round to one decimal place, and put a unit after it -->
-        {{Math.round(countryIndicator.value * 10) / 10}} <small>{{countryIndicator.unit}}</small>
+        {{roundedValue}} <small>{{countryIndicator.unit}}</small>
       </BaseHeading>
       <div :class="base.citation">
         <a
@@ -68,6 +68,13 @@ export default {
       type: Object,
       required: true
     }
+  },
+  computed: {
+    roundedValue: function () {
+      const parsedValue = this.countryIndicator.value.match(/^\d*\.?\d*/)[0]
+      return Math.round(parsedValue * 10) / 10
+    }
+
   },
   components: {
     BaseHeading,

@@ -29,6 +29,16 @@
         >
           {{setupCountry}}
         </BaseHeading>
+
+        <BaseHeading
+          scale="zeta"
+          :class="base.byline"
+          weight="regular"
+          color="midtone"
+          sub
+        >
+          {{setupDate}}
+        </BaseHeading>
       </BaseGutterWrapper>
     </header>
 
@@ -47,6 +57,7 @@
         {{$t('results.analysis.country')}}
       </BaseHeading>
       <ChartItems
+        :displayQuestions="displayQuestions"
         :chartNames="['youthFocusCount', 'youthFocusBudget']"
       />
 
@@ -83,15 +94,16 @@
         {{$t('results.analysis.activity')}}
       </BaseHeading>
       <ChartItems
+        :displayQuestions="displayQuestions"
         :chartNames="['activityTypeBudget', 'activityTypeCount']"
         :questions="[
           {
             name: 'activityTypeBudget',
-            questions: findQuestions('activityTypeBudgetQuestions')
+            questions: findQuestions('activityTypeBudgetQuestions'),
           },
           {
             name: 'activityTypeCount',
-            questions: findQuestions('activityTypeCountQuestions')
+            questions: findQuestions('activityTypeCountQuestions'),
           }
         ]"
       />
@@ -118,6 +130,10 @@ export default {
     wrapperEl: {
       type: String,
       default: 'div'
+    },
+    displayQuestions: {
+      type: Boolean,
+      default: false,
     }
   },
   components: {
@@ -133,7 +149,15 @@ export default {
     return {
       setupTitle: this.getItemValue('setup', 'title'),
       setupRole: this.getItemValue('setup', 'role'),
-      setupCountry: this.getItemValue('setup', 'countryName')
+      setupCountry: this.getItemValue('setup', 'countryName'),
+    }
+  },
+  computed: {
+    setupDate: function() {
+      const startTime = this.getItemValue('setup', 'dateStart');
+      const endTime = this.getItemValue('setup', 'dateEnd');
+
+      return `${startTime} - ${endTime}`;
     }
   },
   methods: {

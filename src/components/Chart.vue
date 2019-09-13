@@ -9,7 +9,7 @@
       weight="bold"
       color="dark"
     >
-      {{this.$t(`chartTitles.${chartName}`)}}
+      {{this.$t(`chartTitles.${chartName}`)}} <BaseTooltip v-if="toolTipPresent" :body="toolTip" />
     </BaseHeading>
 
     <BaseGutterWrapper
@@ -37,8 +37,10 @@
 import BaseHeading from './BaseHeading.vue'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
 import ChartLegend from './ChartLegend.vue'
+import BaseTooltip from './BaseTooltip.vue'
 import * as Chartist from 'chartist'
 import { dataMethods } from './mixins/dataMethods'
+import { parseIntWithSuffix, getCurrencySymbol } from './mixins/helpers'
 
 export default {
   name: 'Chart',
@@ -55,25 +57,113 @@ export default {
     labelData: {
       type: Array,
       required: true
+    },
+    isCurrency: {
+      type: Boolean,
+      required: false
+    },
+    toolTip: {
+      type: String,
+      required: false
     }
   },
   computed: {
     activitiesPresent: function () {
       return this.getItemCount('activities') > 0
+    },
+    series: function () {
+      return this.seriesData.map(data => data.value)
+    },
+    toolTipPresent: function () {
+      return this.toolTip.length > 0
+    },
+    isSeriesEmpty: function () {
+      return this.series.every(val => val === 0)
+    },
+    total: function () {
+      if (this.isSeriesEmpty) return this.series.length
+      return this.series.reduce((total, value) => total + value, 0)
     }
   },
   components: {
     BaseHeading,
     BaseGutterWrapper,
-    ChartLegend
+    ChartLegend,
+    BaseTooltip
+  },
+  data: function () {
+    return {
+      filteredSeries: null,
+      // Threshold for piece of pie
+      // 2x is threshold for label
+      minimumPercent: 0.015
+    }
+  },
+  methods: {
+    filterSeries () {
+      if (this.isSeriesEmpty) {
+        // If everything is empty, give everything an equal share
+        // Later, just make the labels 0
+        this.filteredSeries = this.seriesData.map(obj => {
+          return {
+            ...obj,
+            value: 1
+          }
+        })
+        return
+      }
+      // Filters series below a certain percentage of total
+      this.filteredSeries = this.seriesData.filter(obj => (obj.value / this.total) > this.minimumPercent)
+    },
+    chartLabels (context) {
+      if (context.type === 'label') {
+        // Just leave text black since label will be in donut hole
+        if (this.filteredSeries.length === 1) return
+        // get the classname from the corresponding data series
+        const labelClass = this.filteredSeries[context.index].className
+        // append `label-` to the classname and add it to the node's classlist
+        context.element._node.classList.add(`label-${labelClass}`)
+      }
+    }
   },
   mounted () {
-    // eslint-disable-next-line
-    new Chartist['Pie'](`#${this.chartName}`, {
-      series: this.seriesData,
-      width: '100%',
-      height: '100%'
-    })
+    this.filterSeries()
+    const element = `#${this.chartName}`
+    const data = {
+      series: this.filteredSeries
+    }
+    const isCurrency = this.isCurrency
+    const setup = this.getItemValue('setup')
+
+    new Chartist.Pie(element, data, {
+      donut: true,
+      donutWidth: 80,
+      donutSolid: true,
+      startAngle: 270,
+      showLabel: true,
+      labelInterpolationFnc: (value, index, labels) => {
+        // Don't render label below %
+        if (value / this.total <= this.minimumPercent * 3) {
+          return null
+        }
+
+        // If everything is empty, everything is 0
+        if (this.isSeriesEmpty) {
+          return 0
+        }
+
+        // Format the value with metric suffix (1000 => 1k)
+        let parsedValue = parseIntWithSuffix(value)
+
+        let symbol = ''
+        // If the chart represents a currency, add the currency symbol
+        if (isCurrency) {
+          symbol = ` ${getCurrencySymbol(setup.countryCode, setup.currencyCode)}`
+        }
+
+        return `${parsedValue}${symbol}`
+      }
+    }).on('draw', (context) => this.chartLabels(context))
   }
 }
 </script>

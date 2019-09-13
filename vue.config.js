@@ -41,7 +41,8 @@ module.exports = {
     loaderOptions: {
       css: {
         localIdentName: '[name]-[local]-[hash:base64:10]',
-        camelCase: 'only'
+        camelCase: 'only',
+        importLoaders: 3
       }
     }
   },
@@ -55,7 +56,7 @@ module.exports = {
     electronBuilder: {
       builderOptions: {
         'appId': 'com.electron.karaw',
-        'productName': 'E2A-Analysis',
+        'productName': 'TARP',
         'win': {
           'target': [
             {

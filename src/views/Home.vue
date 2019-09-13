@@ -1,13 +1,7 @@
 <template>
   <article>
-
-    <aside
-      :class="[space.paddingHorizontal, space.paddingVerticalNarrow, color.well, border.bottom, type.right]"
-    >
-      <BaseGutterWrapper
-        gutterY="xnarrow"
-        gutterX="xnarrow"
-      >
+    <header :class="[space.paddingHorizontal, space.paddingVerticalNarrow, color.well, border.bottom, base.header]">
+      <BaseGutterWrapper :class="base.leftPane" gutterY="xnarrow" gutterX="xnarrow">
         <BaseHeading
           :class="display.inlineBlock"
           :centered="false"
@@ -15,33 +9,32 @@
           color="dark"
           weight="regular"
           sub
-        >
-          {{$t('home.chooseLanguage')}}
-        </BaseHeading>
+        >{{$t('home.chooseLanguage')}}</BaseHeading>
         <!-- Language selector -->
         <LanguageSwitcher />
       </BaseGutterWrapper>
-    </aside>
+      <!-- EIPs -->
+      <BaseGutterWrapper :class="base.rightPane" gutterY="xnarrow" gutterX="xnarrow">
+        <BaseButtonLink 
+          :to="this.$t('nav.eipPdf')" 
+          :router="false" role="default" 
+          :label="this.$t('nav.learnMore')" 
+          size="small" 
+          target="_blank"
+        />
+      </BaseGutterWrapper>
+    </header>
 
     <BaseWidthWrapper :class="[space.paddingVerticalWide, space.paddingHorizontal, border.bottom]">
       <BaseGutterWrapper :class="base.logoGrid">
         <div :class="base.logo">
-          <img
-            src="@/assets/images/logos/usaid-lockup.svg"
-            alt="USAID and E2A"
-          />
+          <img src="@/assets/images/logos/usaid-lockup.svg" alt="USAID and E2A" />
         </div>
         <div :class="base.logoSmall">
-          <img
-            src="@/assets/images/logos/pathfinder.png"
-            alt="Pathfinder"
-          />
+          <img src="@/assets/images/logos/pathfinder.png" alt="Pathfinder" />
         </div>
         <div :class="base.logoSmall">
-          <img
-            src="@/assets/images/logos/ouaga.png"
-            alt="OP"
-          />
+          <img src="@/assets/images/logos/ouaga.png" alt="OP" />
         </div>
       </BaseGutterWrapper>
     </BaseWidthWrapper>
@@ -55,54 +48,35 @@
 
     <!-- How it works -->
     <BaseSectionWrapper>
-      <BaseHeading :level="2" centered>{{$t('home.stepsTitle')}}</BaseHeading>
-      <BaseWidthWrapper
-        width="xwide"
-        :class="space.paddingTop"
-      >
-        <BaseStepList
-          :steps="steps"
-          size="small"
+      <BaseWidthWrapper width="wide">
+       <BasePageIntro
+          :title="$t('home.stepsTitle')"
+          :subtitle="$t('home.stepsIntro')"
         />
+      </BaseWidthWrapper>
+      <BaseWidthWrapper width="xwide" :class="space.paddingTop">
+        <BaseStepList :steps="steps" size="small" />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
 
     <!-- Get started! -->
     <BaseSectionWrapper el="div" :class="type.center" border>
       <BaseButtonLink
-        :to="{name: 'setup'}"
-        :label="$t('home.getStartedButton')"
+        :to="{name: 'plan'}"
+        :label="$t('home.getStartedButton').toUpperCase()"
         size="large"
         role="primary"
       />
       <div>
-        <ClearItems
-          :clearType="['All']"
-          :class="space.marginTop"
-        />
+        <ClearItems :clearType="['All']" :class="space.marginTop" />
       </div>
     </BaseSectionWrapper>
 
     <!-- Offline versions -->
-    <BaseSectionWrapper
-      v-if="!electron"
-      :class="color.well"
-      el="div"
-      border
-    >
-      <BaseHeading
-        :level="2"
-        centered
-      >
-        {{$t('home.downloadTitle')}}
-      </BaseHeading>
-      <BaseWidthWrapper
-        :class="space.paddingTop"
-      >
-        <BaseBodyText
-          :content="$t('home.downloadBlurb')"
-          :class="base.centeredSubheads"
-        />
+    <BaseSectionWrapper v-if="!electron" :class="color.well" el="div" border>
+      <BaseHeading :level="2" centered>{{$t('home.downloadTitle')}}</BaseHeading>
+      <BaseWidthWrapper :class="space.paddingTop">
+        <BaseBodyText :content="$t('home.downloadBlurb')" :class="base.centeredSubheads" />
         <BaseGutterWrapper
           :class="[space.paddingTop, type.center]"
           gutterX="xnarrow"
@@ -128,15 +102,8 @@
 
     <!-- Acknowledgements -->
     <BaseSectionWrapper border>
-      <BaseHeading
-        :level="2"
-        scale="gamma"
-      >
-        {{$t('home.acknowldgementTitle')}}
-      </BaseHeading>
-      <BaseWidthWrapper
-        :class="space.paddingTop"
-      >
+      <BaseHeading :level="2" scale="gamma">{{$t('home.acknowldgementTitle')}}</BaseHeading>
+      <BaseWidthWrapper :class="space.paddingTop">
         <BaseBodyText
           :content="$t('home.acknowledgementText')"
           :class="base.centeredSubheads"
@@ -179,12 +146,14 @@ export default {
   },
   computed: {
     steps () {
-      return Object.values(i18n.messages[i18n.locale].home.steps).map((step, index) => {
-        return {
-          title: this.$t(`home.steps.step${index + 1}.title`),
-          blurb: this.$t(`home.steps.step${index + 1}.blurb`)
+      return Object.values(i18n.messages[i18n.locale].home.steps).map(
+        (step, index) => {
+          return {
+            title: this.$t(`home.steps.step${index + 1}.title`),
+            blurb: this.$t(`home.steps.step${index + 1}.blurb`)
+          }
         }
-      })
+      )
     }
   },
   data () {
@@ -202,9 +171,28 @@ export default {
 <style src="styles/display.scss" lang="scss" module="display"></style>
 
 <style lang="scss" module="base">
-@import '~styleConfig/breakpoints';
-@import '~styleConfig/scale';
-@import '~styleConfig/type';
+@import "~styleConfig/breakpoints";
+@import "~styleConfig/scale";
+@import "~styleConfig/type";
+@import "~styleConfig/spacing";
+
+.header {
+  display: flex;
+}
+
+.leftPane {
+  width: 50%;
+  flex: 1;
+}
+
+.rightPane {
+  width: 50%;
+  flex: 1;
+
+  align-items: center;
+  justify-content: flex-end;
+  display: inline-flex;
+}
 
 .logoGrid {
   text-align: center;
@@ -215,7 +203,7 @@ export default {
   max-width: 36rem;
   vertical-align: middle;
 
-  @include media('>small') {
+  @include media(">small") {
     min-width: 30rem;
   }
 
@@ -230,7 +218,7 @@ export default {
   composes: logo;
   max-width: 16em;
 
-  @include media('>small') {
+  @include media(">small") {
     min-width: 13rem;
   }
 }
@@ -239,7 +227,7 @@ export default {
   // center all heading elements
   $list: ();
   @each $i in [1, 2, 3, 4, 5, 6] {
-    $list: append($list, unquote('h#{$i}'), 'comma');
+    $list: append($list, unquote("h#{$i}"), "comma");
   }
 
   #{$list} {
@@ -250,4 +238,5 @@ export default {
 .gutterItem {
   display: inline-block;
 }
+
 </style>

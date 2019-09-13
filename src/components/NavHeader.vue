@@ -1,106 +1,28 @@
 <template>
   <div v-if="this.$route.name !== 'export'">
     <header :class="base.wrapper">
-      <BaseGutterWrapper
-        :class="base.leftPane"
-        gutterY="xnarrow"
-        gutterX="xnarrow"
-      >
-        <router-link
-          :to="{name: 'home'}"
-          :class="base.logo"
-          exact
-        >
-          <img src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg" alt="E2A and Pathfinder" />
+      <BaseGutterWrapper :class="base.leftPane" gutterY="xnarrow" gutterX="xnarrow">
+        <router-link :to="{name: 'home'}" :class="base.logo" exact>
+          <img src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg" alt="E2A and Pathfinder"/>
+          <BaseHeading :level="5" :centered="false" weight="bold" :color="'light'">TARP</BaseHeading>
         </router-link>
-        <!-- Language selector -->
-        <LanguageSwitcher />
       </BaseGutterWrapper>
 
-      <!-- nav for small screens -->
-      <nav :class="base.smallNav">
-        <BaseButtonFlyout
-          @open="openNavFlyout"
-          @close="closeNavFlyout"
-          :label="getCurrentRoute() || 'Menu'"
-          :open="flyoutOpen"
-          size="small"
+      <BaseGutterWrapper :class="base.rightPane" gutterY="xnarrow" gutterX="xnarrow">
+        <!-- Language selector -->
+        <LanguageSwitcher :class="space.marginRightXnarrow"/>
+        <BaseButtonLink 
+          :to="this.$t('nav.eipPdf')" 
+          :router="false" role="default" 
+          :label="this.$t('nav.learnMore')" 
+          size="small" 
+          target="_blank"
           reverseColors
-        >
-          <ul :class="base.smallNavList">
-            <li
-              v-for="(link, key, index) in this.getLinks()"
-              :key="`link-${index}`"
-            >
-              <router-link
-                v-if="link.active"
-                @click.native="closeNavFlyout"
-                :to="{
-                  name: link.name,
-                  params: link.params
-                }"
-                :class="base.smallNavItem"
-                exact
-              >
-                {{link.text}}
-              </router-link>
-              <span
-                v-if="!link.active"
-                :class="base.smallNavDisabled"
-                @click="notificationTrigger"
-              >
-                {{link.text}}
-              </span>
-            </li>
-          </ul>
-        </BaseButtonFlyout>
-      </nav>
-
-      <!-- nav for large screens -->
-      <nav :class="base.largeNav">
-        <BaseGutterWrapper
-          :class="base.largeNavList"
-          el="ul"
-          gutterY="xnarrow"
-          gutterX="medium"
-        >
-          <li
-            v-for="(link, key, index) in this.getLinks()"
-            :key="`link-${index}`"
-          >
-            <router-link
-              v-if="link.active"
-              :to="{
-                name: link.name,
-                params: link.params
-              }"
-              :class="base.largeNavItem"
-              exact
-            >
-              {{link.text}}
-            </router-link>
-            <span
-              v-if="!link.active"
-              :class="base.largeNavDisabled"
-              @click="notificationTrigger"
-            >
-              {{link.text}}
-            </span>
-            <BaseIcon
-              v-if="index !== 0"
-              :class="base.largeNavArrow"
-              name="arrow-right"
-              size="0.6em"
-            />
-          </li>
-        </BaseGutterWrapper>
-      </nav>
+        />
+      </BaseGutterWrapper>
     </header>
 
-    <div
-      v-if="globalNotification('visible')"
-      :class="base.notificationWrapper"
-    >
+    <div v-if="globalNotification('visible')" :class="base.notificationWrapper">
       <BaseCalloutBox
         :key="this.getItemCount('globalnotifications')"
         :message="globalNotification('message')"
@@ -120,6 +42,7 @@ import BaseIcon from './BaseIcon.vue'
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 import BaseCalloutBox from '@/components/BaseCalloutBox.vue'
 import BaseButtonFlyout from '@/components/BaseButtonFlyout.vue'
+import BaseButtonLink from '@/components/BaseButtonLink.vue'
 
 export default {
   name: 'NavHeader',
@@ -129,7 +52,8 @@ export default {
     BaseIcon,
     LanguageSwitcher,
     BaseCalloutBox,
-    BaseButtonFlyout
+    BaseButtonFlyout,
+    BaseButtonLink
   },
   data: function () {
     return {
@@ -187,7 +111,9 @@ export default {
     getCurrentRoute: function () {
       // get the (translated) name of the current route
       return Object.values(this.links).find(link => {
-        return link.name === this.$route.name || link.childName === this.$route.name
+        return (
+          link.name === this.$route.name || link.childName === this.$route.name
+        )
       }).text
     },
     globalNotification: function (value) {
@@ -216,7 +142,10 @@ export default {
         this.links.advocate.active = true
       }
 
-      if (this.getItemCount('activities') === 0 && (this.getItemCount('setup') === 0 || !this.setupPresent())) {
+      if (
+        this.getItemCount('activities') === 0 &&
+        (this.getItemCount('setup') === 0 || !this.setupPresent())
+      ) {
         this.notificationMessage = this.$t('nav.addSetup')
         this.links.activities.active = false
         this.links.summary.active = false
@@ -236,7 +165,10 @@ export default {
         this.links.assessment.active = false
       }
 
-      if (this.getItemCount('activities') > 0 && this.getItemCount('assessments') === 0) {
+      if (
+        this.getItemCount('activities') > 0 &&
+        this.getItemCount('assessments') === 0
+      ) {
         this.notificationMessage = this.$t('nav.addAssessment')
         this.links.activities.active = true
         this.links.summary.active = true
@@ -249,25 +181,24 @@ export default {
   }
 }
 </script>
-
+<style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style lang="scss" module="base">
-@import '~styleConfig/spacing';
-@import '~styleConfig/color';
-@import '~styleConfig/borders';
-@import '~styleConfig/breakpoints';
+@import "~styleConfig/spacing";
+@import "~styleConfig/color";
+@import "~styleConfig/borders";
+@import "~styleConfig/breakpoints";
 
 $nav-breakpoint: 81em; // ~1400px
 
 .wrapper {
-  composes: paddingHorizontal from 'styles/spacing.scss';
-  composes: primaryBg white from 'styles/color.scss';
-  @include border('bottom', $w: 'medium', $color: 'primary');
+  composes: paddingHorizontal from "styles/spacing.scss";
+  composes: primaryBg white from "styles/color.scss";
+  @include border("bottom", $w: "medium", $color: "primary");
 
-  @supports (display: flex) {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 69px;
 
   @media print {
     display: none;
@@ -275,20 +206,26 @@ $nav-breakpoint: 81em; // ~1400px
 }
 
 .leftPane {
-  composes: inlineBlock from 'styles/display.scss';
+  composes: inlineBlock from "styles/display.scss";
   width: 50%;
+  flex: 1;
+}
 
-  @supports (flex: 1) {
-    flex: 1;
-    width: auto;
-  }
+.rightPane {
+  width: 50%;
+  flex: 1;
+
+  align-items: center;
+  justify-content: flex-end;
+  display: inline-flex;
 }
 
 .logo {
-  composes: paddingRightNarrow paddingVerticalNarrow from 'styles/spacing.scss';
+  composes: paddingRightNarrow paddingVerticalNarrow from "styles/spacing.scss";
   border: none !important; // override default anchor underlines
   display: inline-block;
   max-width: 11rem;
+  color: color('white');
 
   &:after {
     content: none !important; // never show active styles
@@ -296,8 +233,8 @@ $nav-breakpoint: 81em; // ~1400px
 
   // for IE
   > img[src$=".svg"] {
-    width: 100%;
-    height: 100%;
+    width: 55px;
+   height: 37px;
   }
 }
 
@@ -315,37 +252,37 @@ $nav-breakpoint: 81em; // ~1400px
     width: auto;
   }
 
-  @include media('>#{$nav-breakpoint}') {
+  @include media(">#{$nav-breakpoint}") {
     display: none;
   }
 
   // use global style for vue router active class
   :global {
     .router-link-exact-active {
-      color: color('primary');
+      color: color("primary");
 
       &:before {
-        content: '';
-        background-color: color('accent');
+        content: "";
+        background-color: color("accent");
         position: absolute;
         left: 0;
         top: 0;
         bottom: 0;
-        width: border-w('thick');
+        width: border-w("thick");
       }
     }
   }
 }
 
 .smallNavList {
-  composes: paddingVerticalXnarrow from 'styles/spacing.scss';
+  composes: paddingVerticalXnarrow from "styles/spacing.scss";
   padding-left: 0;
 }
 
 .smallNavItem {
-  composes: leadingTight from 'styles/type.scss';
-  padding: space('xnarrow', $split: true) space('narrow');
-  color: color('primary');
+  composes: leadingTight from "styles/type.scss";
+  padding: space("xnarrow", $split: true) space("narrow");
+  color: color("primary");
   display: block;
   text-decoration: none;
   position: relative;
@@ -359,7 +296,7 @@ $nav-breakpoint: 81em; // ~1400px
 
 .smallNavDisabled {
   composes: smallNavItem;
-  color: color('primary', $grade: 70);
+  color: color("primary", $grade: 70);
 }
 
 .largeNav {
@@ -367,34 +304,33 @@ $nav-breakpoint: 81em; // ~1400px
   text-align: right;
   vertical-align: middle;
 
-  @include media('>#{$nav-breakpoint}') {
+  @include media(">#{$nav-breakpoint}") {
     display: inline-block;
 
     @supports (display: flex) {
       display: flex;
       flex-direction: column;
-      flex: 1;
     }
   }
 
   // use global style for vue router active class
   :global {
     .router-link-exact-active {
-      color: color('accent'); // for non-flexbox browsers
+      color: color("accent"); // for non-flexbox browsers
 
       // if flexbox is supported, add a faux-border to the bottom
       // b/c we can reliably stretch menu items to be full height
       @supports (display: flex) {
-        color: color('white');
+        color: color("white");
 
         &:after {
-          content: '';
-          background-color: color('accent');
+          content: "";
+          background-color: color("accent");
           position: absolute;
           left: 0;
           right: 0;
-          bottom: -(border-w('medium')); // height of bottom border on nav wrapper
-          height: border-w('thick');
+          bottom: -(border-w("medium")); // height of bottom border on nav wrapper
+          height: border-w("thick");
         }
       }
     }
@@ -424,8 +360,8 @@ $nav-breakpoint: 81em; // ~1400px
 }
 
 .largeNavItem {
-  composes: scaleZeta from 'styles/type.scss';
-  color: color('white');
+  composes: scaleZeta from "styles/type.scss";
+  color: color("white");
   display: inline-block;
   position: relative;
   text-decoration: none;
@@ -445,11 +381,11 @@ $nav-breakpoint: 81em; // ~1400px
 
 .largeNavDisabled {
   composes: largeNavItem;
-  color: color('primary', $grade: 60);
+  color: color("primary", $grade: 60);
 }
 
 .largeNavArrow {
-  color: color('primary', $grade: 40);
+  color: color("primary", $grade: 40);
   display: block;
   left: -0.25em; // 0.6em/2, subtract a little to optically align
   margin-top: -0.25em; // 0.6em/2, subtract a little to optically align
@@ -458,8 +394,8 @@ $nav-breakpoint: 81em; // ~1400px
 }
 
 .notificationWrapper {
-  composes: lightBg from 'styles/color.scss';
-  composes: bottom from 'styles/borders.scss';
-  composes: paddingVerticalXnarrow paddingHorizontalNarrow from 'styles/spacing.scss';
+  composes: lightBg from "styles/color.scss";
+  composes: bottom from "styles/borders.scss";
+  composes: paddingVerticalXnarrow paddingHorizontalNarrow from "styles/spacing.scss";
 }
 </style>

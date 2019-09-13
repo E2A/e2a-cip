@@ -13,36 +13,42 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 let mainWindow
 
 // Standard scheme must be registered before the app is ready
-protocol.registerStandardSchemes(['app'], { secure: true })
+protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { standard: true, secure: true } }])
 
-function createMainWindow (language) {
-  const window = new BrowserWindow({width: 1500, height: 1500})
+function createMainWindow(language) {
+  const win = new BrowserWindow({
+    width: 1500,
+    height: 1500,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
 
   if (isDevelopment) {
     // Load the url of the dev server if in development mode
-    window.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
-    if (!process.env.IS_TEST) window.webContents.openDevTools()
+    win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
+    if (!process.env.IS_TEST) win.webContents.openDevTools()
   } else {
     createProtocol('app')
     //   Load the index.html when not in development
     // Pass language of OS as query string
-    window.loadURL(
-      formatUrl({
-        pathname: path.join(__dirname, 'index.html'),
-        protocol: 'file',
-        slashes: true,
-        query: {
-          lang: language
-        }
-      })
-    )
+    win.loadURL(`app://./index.html?lang=${language}`)
+    //   formatUrl({
+    //     pathname: path.join(__dirname, 'index.html'),
+    //     protocol: 'file',
+    //     slashes: true,
+    //     query: {
+    //       lang: language
+    //     }
+    //   })
+    // )
   }
 
-  window.on('closed', () => {
+  win.on('closed', () => {
     mainWindow = null
   })
 
-  window.webContents.on('devtools-opened', () => {
+  win.webContents.on('devtools-opened', () => {
     window.focus()
     setImmediate(() => {
       window.focus()
@@ -76,5 +82,5 @@ app.on('ready', async () => {
   mainWindow = createMainWindow(app.getLocale())
 
   // Uncomment this to show console.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 })

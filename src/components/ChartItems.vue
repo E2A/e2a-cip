@@ -26,9 +26,11 @@
             :chartName="chartName"
             :seriesData="chartData.seriesData[chartName]"
             :labelData="chartData.labelData[chartName]"
+            :isCurrency="chartData.isCurrency[chartName]"
+            :toolTip="$t(`chartToolTips.${chartName}`)"
           />
           <ResultsQuestions
-            v-if="questions"
+            v-if="questions && displayQuestions"
             :class="space.paddingTop"
             :questions="questions.find(question => question.name === chartName).questions"
           />
@@ -59,6 +61,10 @@ export default {
     ResultsQuestions
   },
   props: {
+    displayQuestions: {
+      type: [Boolean],
+      default: true
+    },
     viewType: {
       type: [String],
       required: false,
@@ -269,6 +275,12 @@ export default {
 
       // Build object
       return {
+        'isCurrency': {
+          'youthFocusBudget': true,
+          'youthFocusCount': false,
+          'activityTypeBudget': true,
+          'activityTypeCount': false
+        },
         'seriesData': {
           'youthFocusBudget': youthFocusedBudgetSeries,
           'youthFocusCount': youthFocusedCountSeries,
@@ -326,7 +338,14 @@ export default {
 // hide default chartist labels
 :global {
   .ct-label {
-    display: none;
+    display: block;
+    font-size: 14px;
+    transform: translateY(0.5em);
+  }
+
+  // hide donut hole
+  .ct-series .ct-slice-donut {
+    fill: transparent;
   }
 }
 </style>

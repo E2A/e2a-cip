@@ -4,11 +4,13 @@
     :leftButtons="navButtons.left"
     :rightButtons="navButtons.right"
   >
+    <NavBreadcrumbs/>
     <BasePageIntro
       :title="$t('summary.title')"
+      :subtitle="$t('summary.subtitle')"
       :blurb="$t('summary.intro')"
     />
-    <section :class="space.paddingWide">
+    <section :class="[space.paddingHorizontalWide, space.paddingVerticalNarrow]">
       <BaseWidthWrapper width="xxwide">
         <BaseHeading
           :level="2"
@@ -19,42 +21,24 @@
           {{cipTitle}}
         </BaseHeading>
         <!-- table here -->
-        <ActivitiesTable>
-          <!-- real content -->
-          <template
-            v-for="(activities, index) in groupedActivities"
-          >
-            <template v-if="activities.activityObjects.length > 0">
-              <!-- category subheading -->
-              <tr :key="`gA-${index}`">
-                <td
-                  :class="[color.lightBg, border.top]"
-                  colspan="4"
-                >
-                  <BaseHeading
-                    :level="3"
-                    scale="zeta"
-                    weight="bold"
-                    color="midtone"
-                    :centered="false"
-                    :class="[space.paddingXxnarrow, type.uppercase]"
-                  >
-                    {{activities.activityTypeName}}
-                  </BaseHeading>
-                </td>
-              </tr>
-              <!-- activity row -->
-              <ActivitiesItemSummary
-                v-for="activity in activities.activityObjects"
-                :key="`activity-${activity.id}`"
-                :text="activity.text"
-                :budget="activity.budget"
-                :youth="activity.youthCentric"
-                :id="activity.id"
+        <ActivitiesList v-bind:groupedActivities="groupedActivities">
+          <template #activities="{ activities, setActivityId }">
+            <div v-if="activities.activityObjects.length > 0" >
+              <ActivitiesTypeHeading>
+                {{activities.activityTypeName}}
+              </ActivitiesTypeHeading>
+              <ActivitiesItemAssessment
+                v-for="(activity, index) in activities.activityObjects"
+                :key="`activity-${index}`"
+                :activity="activity"
+                @activitySelect="setActivityId"
+                :class="[mountedActivity === activity.id && instructions.itemSelected]"
+                numberIndex
+                editable
               />
-            </template>
+            </div>
           </template>
-        </ActivitiesTable>
+        </ActivitiesList>
       </BaseWidthWrapper>
     </section>
   </NavFooter>
@@ -62,11 +46,14 @@
 
 <script>
 import NavFooter from '@/components/NavFooter.vue'
+import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BasePageIntro from '@/components/BasePageIntro.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
-import ActivitiesTable from '@/components/ActivitiesTable.vue'
-import ActivitiesItemSummary from '@/components/ActivitiesItemSummary.vue'
+import ActivitiesList from '@/components/ActivitiesList.vue'
+import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
+import ActivitiesItemAssessment from '@/components/ActivitiesItemAssessment.vue'
+import ActivitiesExportTray from '@/components/ActivitiesExportTray.vue'
 import { activityTypes } from '@/components/mixins/activityTypes'
 import { dataMethods } from '@/components/mixins/dataMethods'
 
@@ -75,11 +62,14 @@ export default {
   mixins: [ activityTypes, dataMethods ],
   components: {
     NavFooter,
+    NavBreadcrumbs,
     BaseWidthWrapper,
     BasePageIntro,
     BaseHeading,
-    ActivitiesTable,
-    ActivitiesItemSummary
+    ActivitiesList,
+    ActivitiesTypeHeading,
+    ActivitiesItemAssessment,
+    ActivitiesExportTray
   },
   computed: {
     groupedActivities: function () {
@@ -89,14 +79,14 @@ export default {
       return {
         left: [
           {
-            to: {name: 'setup'},
+            to: { name: 'setup' },
             label: this.$t('summary.previousStep')
           }
         ],
         right: [
           {
-            to: {name: 'evidence-informed-practices'},
-            label: this.$t('summary.nextStep'),
+            to: { name: 'evidence-informed-practices' },
+            label: this.$t('saveAndContinue'),
             role: 'primary'
           }
         ]

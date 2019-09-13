@@ -45,7 +45,7 @@
                 :key="`assess-${index}`"
                 :class="base.icon"
               >
-                <BestPracticeIcon
+                <BestPracticeIconSelect
                   :id="assessment.best_practice_id"
                   :activityID="assessment.activity_id"
                 />
@@ -87,7 +87,7 @@
             :key="`bp-${index}`"
             :class="base.icon"
           >
-            <BestPracticeIcon
+            <BestPracticeIconSelect
               :id="bestPractice.id"
               :activityID="activityInstance.id"
               :align="index > 4 ? 'right' : 'center'"
@@ -109,20 +109,21 @@
           {{$t('suggestedImprovements')}}
         </BaseHeading>
         <ol :class="[base.recommendations, space.paddingVerticalNarrow]">
+          <!-- error source -->
           <!-- By default start showing a recommendation -->
-          <ActivityRecommendationInput
+          <ActivitiesItemInput
             v-if="recommendationsNotPresent"
             :activityInstance="activityInstance"
-            recommendationType='insert'
+            recommendationType='insertRecommendation'
           />
           <!-- Then show all once its been added -->
-          <ActivityRecommendationInput
+          <ActivitiesItemInput
             v-else
             v-for="recommendation of activityRecommendations"
             :key="recommendation.id"
             :activityInstance="activityInstance"
             :recommendationId="recommendation.id"
-            recommendationType='update'
+            recommendationType='updateRecommendation'
             :existingRecommendationText="recommendation.text"
           />
         </ol>
@@ -142,12 +143,12 @@
 import BaseHeading from '@/components/BaseHeading.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseDetails from '@/components/BaseDetails.vue'
-import BestPracticeIcon from '@/components/BestPracticeIcon.vue'
+import BestPracticeIconSelect from '@/components/BestPracticeIconSelect.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import BaseDataGrid from '@/components/BaseDataGrid.vue'
 import { bestPracticeData } from './mixins/bestPracticeData'
 import { dataMethods } from './mixins/dataMethods'
-import ActivityRecommendationInput from '@/components/ActivityRecommendationInput.vue'
+import ActivitiesItemInput from '@/components/ActivitiesItemInput.vue'
 
 export default {
   name: 'ActivitiesItemResult',
@@ -156,10 +157,10 @@ export default {
     BaseHeading,
     BaseButton,
     BaseDetails,
-    BestPracticeIcon,
+    BestPracticeIconSelect,
     BaseGutterWrapper,
     BaseDataGrid,
-    ActivityRecommendationInput
+    ActivitiesItemInput
   },
   props: {
     activityInstance: {
@@ -184,7 +185,7 @@ export default {
     },
     activityRecommendations: function () {
       // Get current recommendations on a given activity.
-      return this.$store.getters['entities/activities/query']().with('recommendations').find(this.activityInstance.id).recommendations
+      return this.$store.getters['entities/activities/query']().with('recommendations').whereId(this.activityInstance.id).get()[0].recommendations
     },
     expandedData: function () {
       return {
@@ -284,7 +285,7 @@ export default {
   background-color: green;
 }
 
-.maybe {
+.partially {
   background-color: yellow;
 }
 

@@ -5,6 +5,7 @@
     :rightButtons="navButtons.right"
   >
     <ActivitiesExportTray :clear="['Assessments']" />
+    <NavBreadcrumbs/>
     <BasePageIntro
       :title="$t('analysis.title')"
       :blurb="$t('analysis.intro')"
@@ -22,7 +23,7 @@
       <BaseWidthWrapper :class="space.paddingTop">
         <BaseGutterWrapper :class="instructions.wrapper">
           <div
-            v-for="(option, index) in ['yes', 'maybe', 'no']"
+            v-for="(option, index) in ['no', 'partially', 'yes']"
             :class="instructions.item"
             :key="`color-${index}`"
           >
@@ -60,25 +61,21 @@
         </BaseHeading>
 
         <!-- table of activities -->
-        <ActivitiesList>
-          <template v-for="(activities, index) in groupedActivities">
-            <li
-              v-if="activities.activityObjects.length > 0"
-              :key="`gA-${index}`"
-            >
+        <ActivitiesList v-bind:groupedActivities="groupedActivities" :showTray="true">
+          <template #activities="{ activities, setActivityId }">
+            <div v-if="activities.activityObjects.length > 0" >
               <ActivitiesTypeHeading>
                 {{activities.activityTypeName}}
               </ActivitiesTypeHeading>
               <ActivitiesItemAssessment
                 v-for="(activity, index) in activities.activityObjects"
                 :key="`activity-${index}`"
-                :shortText="activity.shortText"
-                :text="activity.text"
-                :id="activity.id"
-                :budget="activity.budget"
+                :activity="activity"
                 :youth="activity.youthCentric"
+                @activitySelect="setActivityId"
+                :class="[mountedActivity === activity.id && instructions.itemSelected]"
               />
-            </li>
+            </div>
           </template>
         </ActivitiesList>
       </BaseWidthWrapper>
@@ -87,7 +84,9 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import NavFooter from '@/components/NavFooter.vue'
+import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
 import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
 import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
 import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
@@ -107,6 +106,7 @@ export default {
   mixins: [activityTypes, dataMethods],
   components: {
     NavFooter,
+    NavBreadcrumbs,
     BaseSectionWrapper,
     BaseWidthWrapper,
     BaseGutterWrapper,
@@ -123,18 +123,21 @@ export default {
     groupedActivities: function () {
       return this.getGroupedActivites()
     },
+    ...mapState({
+      mountedActivity: state => state.mountedActivity
+    }),
     navButtons: function () {
       return {
         left: [
           {
-            to: {name: 'evidence-informed-practices'},
+            to: { name: 'evidence-informed-practices' },
             label: this.$t('analysis.previousStep')
           }
         ],
         right: [
           {
-            to: {name: 'results'},
-            label: this.$t('analysis.nextStep'),
+            to: { name: 'results' },
+            label: this.$t('saveAndContinue'),
             role: 'primary'
           }
         ]
@@ -148,7 +151,7 @@ export default {
   },
   created () {
     // Clear any open icons
-    this.$store.dispatch('entities/bestpracticeicons/deleteAll')
+    // this.$store.dispatch('entities/bestpracticeicons/deleteAll')
   }
 }
 </script>
@@ -160,6 +163,7 @@ export default {
 
 <style lang="scss" module="instructions">
 @import '~bourbon/core/bourbon';
+@import '~styleConfig/color';
 
 .wrapper {
   composes: paddingTop from 'styles/spacing.scss';
@@ -180,5 +184,9 @@ export default {
   @include size(4rem);
   display: inline-block;
   border-radius: 50%;
+}
+
+.itemSelected {
+  background-color: rgba(color('accent'), 0.20);
 }
 </style>

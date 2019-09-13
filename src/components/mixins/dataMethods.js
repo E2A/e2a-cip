@@ -71,13 +71,16 @@ export const dataMethods = {
       if (countryIndicator) {
         return countryIndicator
       } else {
-        return {error: this.$t('indicatorDataNotPresent', {indicatorName: indicatorName})}
+        return { error: this.$t('indicatorDataNotPresent', { indicatorName: indicatorName }) }
       }
     },
     getBudgetTotal: function (queryObject) {
       return queryObject.reduce((budgetTotal, entity) => {
         return budgetTotal + entity.budget
       }, 0)
+    },
+    getYouthCentricActivities: function () {
+      return this.$store.getters['entities/activities/query']().where('youthCentric', true).count()
     },
     getYouthCentricBudget: function () {
       return this.getBudgetTotal(this.$store.getters['entities/activities/query']().where('youthCentric', true).get())
@@ -91,12 +94,12 @@ export const dataMethods = {
       var youthCentricBudgetData = []
       var youthCentricAcitivtyData = []
       // only count youth-centric activities for Budget counts
-      const totalYouthActivities = this.$store.getters['entities/activities/query']().where('youthCentric', true).count()
-      const totalYouthBudget = this.getBudgetTotal(this.$store.getters['entities/activities/query']().where('youthCentric', true).get())
+      const totalYouthActivities = this.getYouthCentricActivities() // can be 0
+      const totalYouthBudget = this.getYouthCentricBudget() // can be 0
 
       // actual totals (all activities regardless of youth centricity)
       const totalActivities = this.$store.getters['entities/activities/query']().count()
-      const totalBudget = this.getBudgetTotal(this.$store.getters['entities/activities/all']())
+      const totalBudget = this.getBudgetTotal(this.$store.getters['entities/activities/all']()) // can be 0
 
       // Get counts, budget and percents for each activityType
       for (const activityType of activityTypes) {
@@ -105,9 +108,9 @@ export const dataMethods = {
         activityTypeData.push({
           type: activityType.title,
           count: activityCount,
-          countPercent: (activityCount / totalYouthActivities).toFixed(3),
+          countPercent: totalYouthActivities ? (activityCount / totalYouthActivities).toFixed(3) : 0.25,
           budgetAmount: this.getBudgetTotal(activityTypesObjects),
-          budgetPercent: (this.getBudgetTotal(activityTypesObjects) / totalYouthBudget).toFixed(3),
+          budgetPercent: totalYouthBudget ? (this.getBudgetTotal(activityTypesObjects) / totalYouthBudget).toFixed(3) : 0.25,
           class: activityType.key
         })
       }
@@ -120,8 +123,8 @@ export const dataMethods = {
       youthCentricBudgetData.push({
         youthCentricBudget: youthCentricBudget,
         notYouthCentricBudget: totalBudget - youthCentricBudget,
-        youthCentricPercent: (youthCentricBudget / totalBudget).toFixed(3),
-        notYouthCentricPercent: (1 - (youthCentricBudget / totalBudget)).toFixed(3)
+        youthCentricPercent: totalBudget ? (youthCentricBudget / totalBudget).toFixed(3) : 0.5,
+        notYouthCentricPercent: totalBudget ? (1 - (youthCentricBudget / totalBudget)).toFixed(3) : 0.5
       })
 
       chartDataObject['youthCentricBudgetData'] = youthCentricBudgetData

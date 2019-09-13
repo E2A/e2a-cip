@@ -1,9 +1,8 @@
 <template>
   <aside
     :class="[base.wrapper, base[align]]"
-    :style="{
-      width: size + 'rem'
-    }"
+    :style="width"
+    @click.stop
   >
     <div :class="base.content">
       <slot>Add flyout content here</slot>
@@ -29,6 +28,11 @@ export default {
     el: {
       type: String,
       default: 'aside'
+    }
+  },
+  computed: {
+    width: function () {
+      return this.size ? { width: this.size + 'rem' } : {}
     }
   }
 }
@@ -91,6 +95,6 @@ $size-pointer-h: 0.6rem;
 
 .content {
   max-height: 16rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 </style>

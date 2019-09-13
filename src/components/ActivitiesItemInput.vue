@@ -5,26 +5,26 @@
 -->
 
 <template>
-  <li :class="base.wrapper">
-    <div :class="base.numberWrapper">
+  <li :class="[base.wrapper, base.unmarked]">
+    <div :class="{[base.numberWrapper]: isActive}">
       <BaseGutterWrapper
         :class="base.flex"
         gutterY="narrow"
-        gutterX="narrow"
+        :gutterX="isActive ? 'narrow' : 'None'"
       >
         <div :class="[base.gutter, base.fill]">
           <BaseFormInput
-            v-model="recommendationText"
-            @change="updateRecommendation()"
+            v-model="itemText"
+            @change="updateItem()"
             textSize="zeta"
-            labelTextSize="zeta"
             el="textarea"
+            :outline="isActive ? 'highlight' : 'midtone'"
           />
         </div>
         <div :class="base.gutter">
           <BaseButton
-            v-if="this.recommendationId"
-            @click="deleteRecommendation()"
+            v-if="this.id"
+            @click="deleteItem()"
             :label="$t('delete')"
             size="small"
           />
@@ -35,14 +35,13 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import BaseHeading from './BaseHeading.vue'
 import BaseButton from './BaseButton.vue'
 import BaseFormInput from './BaseFormInput.vue'
 import BaseGutterWrapper from './BaseGutterWrapper.vue'
 
 export default {
-  name: 'ActivityRecommendationInput',
+  name: 'ActivitiesItemInput',
   components: {
     BaseHeading,
     BaseButton,
@@ -54,11 +53,11 @@ export default {
       type: Object,
       required: false
     },
-    'recommendationId': {
+    'id': {
       type: Number,
       required: false
     },
-    'recommendationType': {
+    'action': {
       type: String,
       required: true,
       validator: function (value) {
@@ -66,63 +65,58 @@ export default {
         return ['insert', 'update'].indexOf(value) !== -1
       }
     },
-    'globalRecommendation': {
-      type: Boolean,
-      required: false
+    'inputType': {
+      type: String,
+      required: true,
+      validator: function (value) {
+        // The value must match one of these strings
+        return ['globalrecommendations', 'recommendations', 'comments'].indexOf(value) !== -1
+      }
     },
-    'existingRecommendationText': {
+    // true => this component controls communication with the store
+    'isActive': {
+      type: Boolean,
+      required: false,
+      default: true
+    },
+    'existingText': {
       type: String,
       required: false
     }
   },
   data () {
     return {
-      recommendationText: this.existingRecommendationText
+      itemText: this.existingText
     }
   },
   methods: {
-    updateRecommendation: function () {
-      if (this.globalRecommendation) {
-        if (this.recommendationType === 'update') {
-          // Update recommendation
-          this.$store.dispatch('entities/globalrecommendations/update', {
-            id: this.recommendationId,
-            text: this.recommendationText
-          })
-        } else if (this.recommendationType === 'insert') {
-          // Add a new recommendation
-          this.$store.dispatch('entities/globalrecommendations/insert', {
-            data: {
-              text: this.recommendationText
-            }
-          })
-        }
+    updateItem: function () {
+      if (!this.active) {
+        // Parent controls communication with the store
+        this.updateParent()
+        return
+      }
+
+      // Component controls communication with the store
+      const data = {
+        text: this.itemText,
+        // Conditional properties
+        // https://medium.com/@mikeh91/conditionally-adding-keys-to-javascript-objects-using-spread-operators-and-short-circuit-evaluation-acf157488ede
+        ...(this.action === 'update') && { id: this.id },
+        ...(this.inputType !== 'globalrecommendations') && { activity_id: this.activityInstance.id }
+      }
+
+      if (this.action === 'update') {
+        this.$store.dispatch(`entities/${this.inputType}/update`, data)
       } else {
-        if (this.recommendationType === 'update') {
-          // Update recommendation
-          this.$store.dispatch('entities/recommendations/update', {
-            id: this.recommendationId,
-            activity_id: this.activityInstance.id,
-            text: this.recommendationText
-          })
-        } else if (this.recommendationType === 'insert') {
-          // Add a new recommendation
-          this.$store.dispatch('entities/recommendations/insert', {
-            data: {
-              activity_id: this.activityInstance.id,
-              text: this.recommendationText
-            }
-          })
-        }
+        this.$store.dispatch(`entities/${this.inputType}/insert`, { data })
       }
     },
-    deleteRecommendation: function () {
-      // Remove recommendation
-      if (this.globalRecommendation) {
-        this.$store.dispatch('entities/globalrecommendations/delete', this.recommendationId)
-      } else {
-        this.$store.dispatch('entities/recommendations/delete', this.recommendationId)
-      }
+    deleteItem: function () {
+      this.$store.dispatch(`entities/${this.inputType}/delete`, this.id)
+    },
+    updateParent: function () {
+      this.$emit('change', this.itemText)
     }
   }
 }
