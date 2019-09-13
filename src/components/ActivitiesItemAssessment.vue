@@ -6,24 +6,35 @@
 
 <template>
   <div :class="[base.wrapper]" @click="emitClick">
-    <BaseDetails>
+    <BaseDetails :reverseSpacing="numberIndex">
       <template slot="summaryLeft">
         <BaseHeading
           :level="6"
           :centered="false"
-          :class="[type.leadingDefault, base.tableIndex]"
+          :class="[type.leadingDefault, space.marginRightNarrow, base.tableIndex]"
           weight="regular"
           :color="'midtone'"
           sub
         >
-          {{activityId}}
+          {{id}}
+        </BaseHeading>
+        <BaseHeading
+          v-if="numberIndex"
+          :level="6"
+          :centered="false"
+          :class="[type.leadingDefault, base.tableIndex, space.marginRightNarrow, numberIndex && base.numberIndex]"
+          weight="regular"
+          :color="'dark'"
+          sub
+        >
+          {{displayNumber}}
         </BaseHeading>
         <BaseHeading
           :level="6"
           :centered="false"
           :class="type.leadingDefault"
           weight="regular"
-          :color="youth ? 'dark' : 'midtone'"
+          :color="youth || numberIndex ? 'dark' : 'midtone'"
           sub
         >
           {{displayText}}
@@ -32,6 +43,7 @@
       <template slot="summaryRight">
         <!-- list of best practice icons -->
         <BaseGutterWrapper
+          v-if="youth"
           :class="base.right"
           el="ul"
           gutterX="xnarrow"
@@ -48,6 +60,13 @@
               :align="index > 4 ? 'right' : 'center'"
             />
           </li>
+        </BaseGutterWrapper>
+        <!-- Edit -->
+        <BaseGutterWrapper v-else-if="editable" :class="[base.right, space.paddingHorizontalNone]" gutterY="xnarrow" gutterX="xnarrow">
+          <router-link
+            :to="{ name: 'activity', params: { activityId: id } }"
+            :class="base.rowAction"
+          >{{this.$t('edit')}}</router-link>
         </BaseGutterWrapper>
 
       </template>
@@ -72,19 +91,13 @@ export default {
   name: 'ActivityItemAssessment',
   mixins: [bestPracticeData, dataMethods],
   props: {
-    shortText: {
-      type: String
+    activity: {
+      type: Object,
+      required: true
     },
-    text: {
-      type: String
-      // required: true
-    },
-    id: {
-      type: Number
-      // required: true
-    },
-    budget: Number,
-    youth: Boolean
+    youth: Boolean,
+    editable: Boolean,
+    numberIndex: Boolean
   },
   components: {
     BaseHeading,
@@ -103,12 +116,17 @@ export default {
         [this.$t('activityTable.defaultBudget')]: `${this.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
         [this.$t('activityTable.defaultYouthCentered')]: this.youth ? this.$t('yesRaw') : this.$t('noRaw')
       }
+    },
+    url: function () {
+      return { name: 'activity', params: { activityId: this.id } }
     }
   },
   data: function () {
     return {
-      activityId: this.id,
-      displayText: this.shortText || this.text,
+      id: this.activity.id,
+      number: this.activity.activityNumber,
+      displayText: this.activity.shortText || this.activity.text,
+      displayNumber: this.activity.shortNumber || this.activity.number,
       bestPracticeId: null,
       assessmentInstance: null,
       assessmentComments: null,
@@ -150,9 +168,6 @@ export default {
       this.isOpen = false
       this.commentsOpen = false
     }
-  },
-  created: function () {
-    // console.log(this.bestPractices)
   }
 }
 </script>
@@ -162,7 +177,9 @@ export default {
 
 <style lang="scss" module="base">
 @import '~styleConfig/breakpoints';
+@import '~styleConfig/color';
 @import '~styleConfig/spacing';
+@import '~styleConfig/type';
 
 $breakpoint: medium;
 
@@ -171,6 +188,13 @@ $breakpoint: medium;
   composes: paddingVerticalNarrow from 'styles/spacing.scss';
   display: block;
   position: relative;
+
+  &:hover {
+    background-color: rgba(color('accent'), 0.20);
+    .rowAction {
+      display: inline-block;
+    }
+  }
 }
 
 .expandedWrapper {
@@ -194,6 +218,12 @@ $breakpoint: medium;
   }
 }
 
+.rowAction {
+  display: none;
+  font-size: 0.75rem;
+  @include font('display', $weight: light, $style: normal);
+}
+
 .right {
   list-style: none;
   display: flex;
@@ -208,8 +238,8 @@ $breakpoint: medium;
   margin: 0 15px;
 }
 
-.tableIndex {
-  margin-right: space('xnarrow');
-  color: color('midtone');
+.numberIndex {
+  min-width: 90px;
+  width: 90px;
 }
 </style>

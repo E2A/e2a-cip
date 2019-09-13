@@ -26,14 +26,24 @@ export default class Activity extends Model {
   * Get a shortened activity text
   */
   get shortText () {
-    const length = 75 // character limit
-    const ending = '...' // delimiter
-    var str = this.text // init text
+    return truncateStr(this.text, 75)
+  }
 
-    if (str.length > length) {
-      return str.substring(0, length - ending.length) + ending
-    } else {
-      return str
-    }
+  /**
+  * Get a shortened activity number
+  */
+  get shortNumber () {
+    return truncateStr(this.activityNumber, 10)
+  }
+}
+
+/**
+* Helper function
+*/
+function truncateStr (str, length, ending = '...') {
+  if (str.length > length) {
+    return str.substring(0, length - ending.length) + ending
+  } else {
+    return str
   }
 }
