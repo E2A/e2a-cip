@@ -298,11 +298,11 @@ export default {
 .commentSection {
   composes: top from "styles/borders.scss";
   margin-top: space("medium");
-  background-color: color("light");
+  background-color: color("light", $grade: 50);
 }
 
 .activtyFooter {
-  background-color: color("light");
+  background-color: color("light", $grade: 50);
   text-align: right;
 }
 </style>
