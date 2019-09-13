@@ -22,7 +22,7 @@
           v-if="numberIndex"
           :level="6"
           :centered="false"
-          :class="[type.leadingDefault, base.tableIndex, space.marginRightNarrow, type.center, numberIndex && base.numberIndex]"
+          :class="[type.leadingDefault, base.tableIndex, space.marginRightNarrow, numberIndex && base.numberIndex]"
           weight="regular"
           :color="'dark'"
           sub
@@ -62,13 +62,11 @@
           </li>
         </BaseGutterWrapper>
         <!-- Edit -->
-        <BaseGutterWrapper v-else-if="editable" :class="base.right" gutterY="xnarrow" gutterX="xnarrow">
-          <BaseButtonLink
+        <BaseGutterWrapper v-else-if="editable" :class="[base.right, space.paddingHorizontalNone]" gutterY="xnarrow" gutterX="xnarrow">
+          <router-link
             :to="{ name: 'activity', params: { activityId: id } }"
-            :label="this.$t('edit')"
-            target="_blank"
-            size="small"
-          />
+            :class="base.rowAction"
+          >{{this.$t('edit')}}</router-link>
         </BaseGutterWrapper>
 
       </template>
@@ -181,6 +179,7 @@ export default {
 @import '~styleConfig/breakpoints';
 @import '~styleConfig/color';
 @import '~styleConfig/spacing';
+@import '~styleConfig/type';
 
 $breakpoint: medium;
 
@@ -189,6 +188,13 @@ $breakpoint: medium;
   composes: paddingVerticalNarrow from 'styles/spacing.scss';
   display: block;
   position: relative;
+
+  &:hover {
+    background-color: rgba(color('accent'), 0.20);
+    .rowAction {
+      display: inline-block;
+    }
+  }
 }
 
 .expandedWrapper {
@@ -210,6 +216,12 @@ $breakpoint: medium;
   @supports (flex: 1) {
     flex: 1;
   }
+}
+
+.rowAction {
+  display: none;
+  font-size: 0.75rem;
+  @include font('display', $weight: light, $style: normal);
 }
 
 .right {
