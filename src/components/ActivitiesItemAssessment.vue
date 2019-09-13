@@ -9,16 +9,6 @@
     <BaseDetails :reverseSpacing="numberIndex">
       <template slot="summaryLeft">
         <BaseHeading
-          :level="6"
-          :centered="false"
-          :class="[type.leadingDefault, space.marginRightNarrow, base.tableIndex]"
-          weight="regular"
-          :color="'midtone'"
-          sub
-        >
-          {{id}}
-        </BaseHeading>
-        <BaseHeading
           v-if="numberIndex"
           :level="6"
           :centered="false"
