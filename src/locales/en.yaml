@@ -1161,7 +1161,15 @@ en:
   advocate:
     globalRecommendations:
       title: Add key recommendations
-      content: In this space, please provide any other general recommendations for the consideration of policy/decision makers that were not addressed in your previous suggestions. These can be more general questions, for example "does your plan pay enough attention to meaningful youth engagement?", "does your plan pay enough attention to gender equality?", or "does your plan consider needs for youth with disabilities?"
+      content: |-
+        You have your results. What should you do now?
+        
+        \
+        In the space below, write any additional recommendations or questions you have for policymakers and decision makers. For example: 
+        
+        1. “Does your plan pay enough attention to meaningful youth engagement?” 
+        2. “Does your plan pay enough attention to gender equality?” 
+        3. “Does your plan consider needs for youth with disabilities?”
     comments:
       title: Your comments
       content: Enter any comments and concerns you have on your assessments by looking over the information on Evidence-Informed Practices, available <a href="/evidence-informed-practices">here</a>.
@@ -1174,15 +1182,15 @@ en:
     stepsTitle: Ways to Advocate
     steps:
       step1:
-        title: Share the results of this exercise
+        title: Share the results of this exercise.
         blurb: |-
           One purposes of this exercise is to give you a sense of the extent to which your plan addresses the needs of youth in your country and the extent to which your plan is using EIPs. Share the results of what you have learned. Use the results page to prepare a presentation or report for the rest of your planning group, the Ministry of Health or your local NGO. Use the graphs that depict the proportions of activities and budget devoted to youth and compare them with your country data on youth population and contraceptive prevalence rates. Use the EIPs to suggest strategies for strengthening  your plan.
       step2:
-        title: Start a conversation
+        title: Start a conversation.
         blurb: |-
           Another purpose of the tool is to help you start conversations with each other: young people, health care providers, education officials, community leaders, and  policymakers. Are the reproductive health needs of young people in your community or country being adequately addressed? What share of the reproductive healthcare burden is borne by youth? Does your current plan reflect a proportional concern about this burden? If not, see below!
       step3:
-        title: Advocate
+        title: Advocate!
         blurb: |-
           A message that emerges clearly from the EIPs is that AYRH thrives in settings where where unbiased services are provided in a welcoming environment, where there is multi-sectoral and community support, and where youth understand their reproductive health needs and have the skills to hold duty-bearers to account. A variety of resources exist to help youth and their adult allies plan effective advocacy campaigns.
   fileUpload:
