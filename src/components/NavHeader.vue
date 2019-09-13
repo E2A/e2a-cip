@@ -3,16 +3,14 @@
     <header :class="base.wrapper">
       <BaseGutterWrapper :class="base.leftPane" gutterY="xnarrow" gutterX="xnarrow">
         <router-link :to="{name: 'home'}" :class="base.logo" exact>
-          <img
-            src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg"
-            alt="E2A and Pathfinder"
-          />
+          <img src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg" alt="E2A and Pathfinder"/>
+          <BaseHeading :level="5" :centered="false" weight="bold" :color="'light'">TARP</BaseHeading>
         </router-link>
-        <!-- Language selector -->
-        <LanguageSwitcher />
       </BaseGutterWrapper>
 
       <BaseGutterWrapper :class="base.rightPane" gutterY="xnarrow" gutterX="xnarrow">
+        <!-- Language selector -->
+        <LanguageSwitcher :class="space.marginRightXnarrow"/>
         <BaseButtonLink 
           :to="this.$t('nav.eipPdf')" 
           :router="false" role="default" 
@@ -183,7 +181,7 @@ export default {
   }
 }
 </script>
-
+<style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style lang="scss" module="base">
 @import "~styleConfig/spacing";
 @import "~styleConfig/color";
@@ -200,6 +198,7 @@ $nav-breakpoint: 81em; // ~1400px
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  height: 69px;
 
   @media print {
     display: none;
@@ -226,6 +225,7 @@ $nav-breakpoint: 81em; // ~1400px
   border: none !important; // override default anchor underlines
   display: inline-block;
   max-width: 11rem;
+  color: color('white');
 
   &:after {
     content: none !important; // never show active styles
@@ -233,8 +233,8 @@ $nav-breakpoint: 81em; // ~1400px
 
   // for IE
   > img[src$=".svg"] {
-    width: 100%;
-    height: 100%;
+    width: 55px;
+   height: 37px;
   }
 }
 
