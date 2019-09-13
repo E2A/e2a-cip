@@ -11,7 +11,7 @@
         >
           <BaseCalloutBox
             :message="$t('setup.setupRequired')"
-            role="info"
+            role="warning"
           />
         </div>
         <div
