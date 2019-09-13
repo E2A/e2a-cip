@@ -14,7 +14,7 @@ en:
         * If enough budget is allocated for these youth-centric activities.
         * How to strengthen the plan to better meet the needs of youth.
         
-    stepsTitle: How it works
+    stepsTitle: How It Works
     stepsIntro: 'Join 2-3 fellow youth advocates, set aside a few hours, and follow these steps to assess if your plan uses tailored, innovative strategies for meeting the needs of your country’s youth:'
     steps:
       step1:
@@ -35,7 +35,7 @@ en:
           Using data generated through this tool, determine if your country is making a big enough and smart investment in youth.
     getStartedIntro: You can use your results to raise awareness about and advocate for the importance of investing in the reproductive health of young people. Thank you for paving the way to more comprehensive family planning for generations to come.       
     getStartedButton: Get started
-    downloadTitle: Download offline versions
+    downloadTitle: Download Offline Versions
     downloadBlurb: |-
       If you are having issues with your browser, want to access the application offline, or you just want to use the application on your desktop without using a browser, you can download any of the following versions for your needs.
 
@@ -85,8 +85,8 @@ en:
     selectActivityType: Categorize your activity by type
     setupRequired: Please complete all fields.
     restoreActivities: Restore your activities
-    addActivities: Add your activities
-    editActivities: Edit your activities
+    addActivities: ADD ACTIVITIES
+    editActivities: EDIT ACTIVITIES
     saveDataReminder: "Your web browser will automatically keep your data present.\
       \ However, **this is not a gurantee that your data will always be saved.** We\
       \ recommend you save your data manually on a regular basis to make sure you\
@@ -97,13 +97,13 @@ en:
     role2: Youth Advocate
     role3: Ministry of Health Staff
     role4: UN Staff
-    role5: Donor organization
+    role5: Donor Organization
     role6: Consultant
-    role7: Policy maker
-    role8: Government worker
+    role7: Policy Maker
+    role8: Government Worker
     role9: Foundation
-    role10: Youth volunteer or activist
-    role11: Other international organization
+    role10: Youth Volunteer or Activist
+    role11: Other International Organization
   # Activity Input
   addActivity: Add a New Activity
   editActivity: Edit activity
@@ -195,7 +195,7 @@ en:
         - The use of mass media to convey messages about the health benefits of family planning or to influence social norms
         - Efforts to promote family communication about family planning and reproductive health
     type3:
-      title: Enabling environment
+      title: Enabling Environment
       # do not translate
       key: enablingEnvironment
       body: |-
@@ -229,8 +229,8 @@ en:
     intro: |-
       Below, see all the information you’ve provided—sorted by category and budget. Make sure everything is accurate. If you need to make changes, click **Edit**.
 
-      Once everything looks correct, click **Keep Going**.
-    previousStep: Go back to setup
+      Once everything looks correct, click **SAVE AND CONTINUE**.
+    previousStep: Go Back
     nextStep: Keep Going
   # Evidence-Informed Practices
   readMore: "See sample activities"
@@ -1074,9 +1074,9 @@ en:
           # Do Not Translate
           url: http://www.youthpower.org/positive-youth-development-toolkit
   analysis:
-    title: Analyze your activities
+    title: Analyze Your Activities
     intro: |-
-      1. Below, consider each activity. Use what you’ve learned about evidence-based practices to ask yourself: Does this activity align with one or more EIPs?
+      1. Below, consider each activity. Use what you’ve learned about evidence-informed practices to ask yourself: Does this activity align with one or more EIPs?
       2. To answer, select an activity. Then, in the pop-out window on the right, click each EIP icon. If the activity fully aligns with this EIP, select green. If it partially aligns, select yellow. If it does not align, select red.
       3. Complete for all EIPs. Then complete for all activities—and be sure to discuss your decisions with your team.
 
@@ -1097,7 +1097,7 @@ en:
         partially:
           title: Partially
           description: Partially aligns with the evidence-informed practice.
-    previousStep: Go back to activities
+    previousStep: Go Back
     nextStep: GET MY RESULTS
   # Results Page
   resultsSubhead: "Here's how your activities rate:"
@@ -1109,8 +1109,8 @@ en:
   done: Done
   results:
     analysis:
-      country: "Country analysis"
-      activity: "Activity analysis"
+      country: "Country Analysis"
+      activity: "Activity Analysis"
     value: "Value:"
     text: "Text:"
     budget: "Budget:"
@@ -1121,7 +1121,7 @@ en:
     exportPDF: 'Export PDF'
     exportCharts: 'Export your chart data'
     printPage: Print Page
-    previousStep: Go back to analysis
+    previousStep: Go Back
     nextStep: Add Key Recommendations
     youthCenteredActivity: Youth-Centered Activity
     youthCenteredActivities: Youth-Centered Activities
@@ -1135,21 +1135,21 @@ en:
     activityTypeCount: 'Percentage calculated using only youth centric activities.'
   chartTitles:
     defaultGroupHeading: 'Default Group heading'
-    activityTypeCount: "% Activity count by type"
+    activityTypeCount: "Percent Activity Count by Type"
     activityTypeCountQuestions:
       1: 'Personal biases of both health care providers and the public affect the
         utilization of family planning methods by young people. Does the distribution
         of activities by domain reflect a concern about helping to address these biases
         in community and health settings?'
-    activityTypeBudget: "Budget % of total by activity types"
+    activityTypeBudget: "Budget Percent of Total by Activity Types"
     activityTypeBudgetQuestions:
       1: 'Government policies and strategies that are developed through a well-coordinated
         process of stakeholder involvement are the foundation for acceptance of youth
         family planning utilization in communities. Does the distribution of activities
         by domain in your plan reflect a sufficient concern with coordination and
         creating an enabling environment?'
-    youthFocusBudget: "Budget % youth focused"
-    youthFocusCount: "% activity count by youth focused"
+    youthFocusBudget: "Budget Percent Youth-Focused"
+    youthFocusCount: "Percent Activity Count by Youth-Focused"
     youthCentricLabel: "Youth Centric"
     notYouthCentricLabel: "Not Youth Centric"
   print:
@@ -1160,7 +1160,7 @@ en:
       recommendation: Recommendation %{count}
   advocate:
     globalRecommendations:
-      title: Add key recommendations
+      title: Add Key Recommendations
       content: |-
         You have your results. What should you do now?
         
@@ -1173,7 +1173,7 @@ en:
     comments:
       title: Your comments
       content: Enter any comments and concerns you have on your assessments by looking over the information on Evidence-Informed Practices, available <a href="/evidence-informed-practices">here</a>.
-    print: Print your results to share
+    print: PRINT YOUR RESULTS
     title: 'Add key recommendations…'
     intro: |-
       Now that you have the results of your plan, what should you do now?

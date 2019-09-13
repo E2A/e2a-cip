@@ -16,7 +16,7 @@ fr:
         - Si un budget suffisant est alloué à ces activités axées sur les jeunes
         - Comment renforcer le plan pour mieux répondre aux besoins des jeunes
         
-    stepsTitle: Comment ça marche?
+    stepsTitle: Comment Ça Marche?
     stepsIntro: 'Joignez-vous à 2 ou 3 collègues défenseurs de la jeunesse, rendez-vous disponibles pour quelques heures puis suivez les étapes ci-dessous pour déterminer si votre plan utilise des stratégies innovatrices et sur mesure pour répondre aux besoins des jeunes de votre pays:'
     steps:
       step1:
@@ -37,7 +37,7 @@ fr:
           En utilisant les données générées par cet outil, déterminez si votre pays investit suffisamment et intelligemment dans la jeunesse.
     getStartedIntro: Vous pouvez utiliser vos résultats pour sensibiliser et défendre l'importance d'investir dans la santé reproductive des jeunes. Merci d'avoir ouvert la voie à une planification familiale plus complète pour les générations futures.     
     getStartedButton: Démarrez
-    downloadTitle: Télécharger les versions hors ligne
+    downloadTitle: Télécharger les Versions Hors Ligne
     downloadBlurb: |-
       Si vous rencontrez des problèmes avec votre navigateur, si vous souhaitez accéder à l'application en mode hors connexion ou si vous souhaitez simplement utiliser l'application sur votre bureau sans utiliser de navigateur, vous pouvez télécharger l'une des versions suivantes selon vos besoins.
 
@@ -85,8 +85,8 @@ fr:
     selectActivityType: Catégorisez votre activité par type
     setupRequired: Remplissez tous les champs, s'il vous plaît.
     restoreActivities: Restaurer vos activités
-    addActivities: Ajoutez vos activités
-    editActivities: Modifier vos activités
+    addActivities: AJOUTEZ VOS ACTIVITÉS 
+    editActivities: MODIFIER VOS ACTIVITÉS
     saveDataReminder: "Votre navigateur web conservera automatiquement vos données\
       \ présentes. Cependant, **cela ne garantit pas que vos données seront enregistré\
       es.** Nous vous recommandons d'enregistrer vos données manuellement réguliè\
@@ -95,16 +95,16 @@ fr:
       \ enregistrer vos données."
   userRoles:
     role1: ONG
-    role2: Défenseur de la jeunesse
-    role3: Personnel du ministère de la Santé
+    role2: Défenseur de la Jeunesse
+    role3: Personnel du Ministère de la Santé
     role4: "Personnel de l'ONU"
-    role5: Organisation donatrice
+    role5: Organisation Donatrice
     role6: Consultant
-    role7: Décideur politique
-    role8: Employé du secteur public
+    role7: Décideur Politique
+    role8: Employé du Secteur Public
     role9: Fondation
-    role10: Jeune bénévole ou militant
-    role11: Autre organisation internationale
+    role10: Jeune Bénévole ou Militant
+    role11: Autre Organisation Internationale
   # Activity Input
   addActivity: Ajouter une nouvelle activité
   editActivity: Modifier votre activité
@@ -196,7 +196,7 @@ fr:
         - L'utilisation des médias pour faire passer des messages sur les avantages de la planification familiale pour la santé ou pour influencer les normes sociales.
         - Efforts visant à promouvoir la communication au sein des familles en matière de planification familiale et de santé reproductive
     type3:
-      title: Environnement favorable
+      title: Environnement Favorable
       # do not translate
       key: enablingEnvironment
       body: |-
@@ -230,7 +230,7 @@ fr:
     intro: |-
       Vous trouverez ci-dessous tous les renseignements que vous avez fournis, classés par catégorie et par budget. Assurez-vous que tout est exact. Si vous devez apporter des modifications, cliquez sur **MODIFIER**.
 
-      Une fois que tout a l'air correct, cliquez sur **CONTINUER**
+      Une fois que tout a l'air correct, cliquez sur **SAUVEGARDER ET CONTINUER**
 
     previousStep: RETOUR
     nextStep: CONTINUER
@@ -1177,7 +1177,7 @@ fr:
           # Do Not Translate
           url: http://www.youthpower.org/positive-youth-development-toolkit
   analysis:
-    title: Analyser vos activités
+    title: Analyser vos Activités
     intro: |-
       1. Ci-dessous, prenez en compte chaque activité. Utilisez ce que vous avez appris sur les pratiques fondées sur des données probantes pour vous demander : Cette activité correspond-t-elle à un ou plusieurs EIPs ?
       2. Pour répondre, sélectionnez une activité. Puis, dans la nouvelle fenêtre à droite, cliquez sur chaque icône EIP. Si l’activité s’aligne complètement avec cet EIP, sélectionnez le vert. Si elle s’aligne partiellement, sélectionnez le jaune. Si elle ne s’aligne pas du tout , sélectionnez le rouge.
@@ -1200,7 +1200,7 @@ fr:
         partially:
           title: Peut-être
           description: Correspond en partie à la pratique fondée sur des données probantes.
-    previousStep: Retourner aux activités
+    previousStep: Retourner
     nextStep: OBTENIR MES RÉSULTATS
   # Results Page
   resultsSubhead: "Voici comment vos activités sont évaluées :"
@@ -1211,8 +1211,8 @@ fr:
   done: Terminé
   results:
     analysis:
-      country: "Analyse par pays"
-      activity: "Analyse d'activité"
+      country: "Analyse par Pays"
+      activity: "Analyse d'Activité"
     value: "Valeur :"
     text: "Texte :"
     budget: "Budget :"
@@ -1223,7 +1223,7 @@ fr:
     exportPDF: 'Exporter le PDF'
     exportCharts: 'Exporter les données de votre graphique'
     printPage: Imprimer la page
-    previousStep: "Retour à l'analyse"
+    previousStep: "Retour"
     nextStep: Imprimer les résultats et Plaidoyer
     youthCenteredActivity: activité centré sur la jeunesse
     youthCenteredActivities: activités centrées sur les jeunes
@@ -1233,14 +1233,14 @@ fr:
     exportChartSuccess: 'Vous avez exporté avec succès les données de votre graphique'
   chartTitles:
     defaultGroupHeading: 'Intitulé du groupe par défaut'
-    activityTypeCount: "% nombre d'activités par type"
+    activityTypeCount: "Pourcentage Nombre d'Activités par Type"
     activityTypeCountQuestions:
       1: 'Les préjugés personnels des prestataires de soins de santé et du public
         affectent l''utilisation des méthodes de planification familiale par les jeunes.
         La répartition des activités par domaine reflète-t-elle une préoccupation
         quant à la nécessité de remédier à ces préjugés dans les milieux communautaires
         et de santé ?'
-    activityTypeBudget: "Budget % du total par type d'activité"
+    activityTypeBudget: "Budget Pourcentage du Total par Type d'Activité"
     activityTypeBudgetQuestions:
       1: 'Les politiques et stratégies gouvernementales élaborées dans le cadre d''un
         processus bien coordonné de participation des parties prenantes constituent
@@ -1248,19 +1248,19 @@ fr:
         par les jeunes dans les communautés. La répartition des activités par domaine
         dans votre plan reflète-t-elle un souci suffisant de la coordination et de
         la création d''un environnement favorable ?'
-    youthFocusBudget: "Budget % axé sur les jeunes"
-    youthFocusCount: "Pourcentage d'activités axées sur les jeunes"
+    youthFocusBudget: "Budget Pourcentage axé sur les Jeunes"
+    youthFocusCount: "Pourcentage d'Activités Axées sur les Jeunes"
     youthCentricLabel: "Centré sur les jeunes"
     notYouthCentricLabel: "Pas axé sur les jeunes"
   print:
     previousStep: "RETOUR A LA PAGE DE PLAIDOYER"
     globalRecommendations:
-      title: "Recommandations clef d'action"
+      title: "Recommandations Clef d'Action"
       content: Vous trouverez ci-dessous des informations clef suggérées pour une action ciblée.
       recommendation: Recommendation %{count}
   advocate:
     globalRecommendations:
-      title: Ajouter les recommandations clef
+      title: Ajouter les Recommandations Clef
       content: |-
         Vous avez vos résultats. Que devez-vous faire maintenant?
         \
@@ -1273,13 +1273,13 @@ fr:
       title: Vos commentaires
       content: Entrez vos commentaires et préoccupations concernant vos évaluations en consultant les informations relatives aux pratiques fondées sur des preuves disponibles <a href="/evidence-informed-practices">ici</a>.
 
-    print: Imprimez vos résultats pour les partager
+    print: IMPRIMEZ VOS RÉSULTATS
     title: 'Aller de l''avant...'
     intro: |-
       Maintenant que vous avez les résultats de votre plan, que devriez-vous faire ?
 
       Utilisez ces résultats pour faire avancer le dialogue sur les besoins des jeunes et les stratégies novatrices pour répondre à ces besoins. Sensibilisez le public à l'importance d'investir dans la santé reproductive des jeunes afin d'établir les bases menant à une meilleure santé pour les générations futures.
-    stepsTitle: Méthodes de sensibilisation
+    stepsTitle: Méthodes de Sensibilisation
     steps:
       step1:
         title: Partager les résultats de cet exercice.
