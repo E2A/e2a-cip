@@ -1261,10 +1261,14 @@ fr:
   advocate:
     globalRecommendations:
       title: Ajouter les recommandations clef
-      content: "Utilisez les résultats pour informer le dialogue sur les besoins des\
-        \ jeunes et les stratégies novatrices pour y répondre. Sensibiliser à l'importance\
-        \ d'investir dans la santé reproductive des jeunes afin de tracer les bases\
-        \ d'une meilleure santé pour les générations futures."
+      content: |-
+        Vous avez vos résultats. Que devez-vous faire maintenant?
+        \
+        Dans la boîte ci-dessous, écrivez toute autre recommandation ou question que vous avez pour les décideurs et les dirigeants politiques. Par exemple:
+        
+        1. Est-ce que votre plan prend assez en compte la participation des jeunes de façon significative?
+        2. Est-ce que votre plan prend assez en compte promotion l’égalité des sexes?
+        3. Est-ce que votre plan prend assez en compte les besoins des jeunes marginalisés?
     comments:
       title: Vos commentaires
       content: Entrez vos commentaires et préoccupations concernant vos évaluations en consultant les informations relatives aux pratiques fondées sur des preuves disponibles <a href="/evidence-informed-practices">ici</a>.
@@ -1278,15 +1282,15 @@ fr:
     stepsTitle: Méthodes de sensibilisation
     steps:
       step1:
-        title: Partager les résultats de cet exercice
+        title: Partager les résultats de cet exercice.
         blurb: |-
           Un des buts de cet exercice est de vous donner une idée de la mesure dans laquelle votre plan répond aux besoins des jeunes dans votre pays et de la mesure dans laquelle votre plan utilise les pratiques fondées sur des données probantes (EIP). Partagez les résultats de ce que vous avez appris. Utilisez la page des résultats pour préparer une présentation ou un rapport pour le reste de votre groupe de planification, le ministère de la Santé ou votre ONG locale. Utilisez les graphiques qui illustrent les proportions d'activités et le budget consacrés à la jeunesse et comparez-les aux données de votre pays sur la population des jeunes et les taux de prévalence de la contraception. Utilisez les pratiques fondées sur des données probantes (EIP)pour suggérer des stratégies visant à renforcer votre plan.
       step2:
-        title: Démarrer une conversation
+        title: Démarrer une conversation.
         blurb: |-
           Un autre objectif de l'outil est de vous aider à entamer des conversations entre vous tous : les jeunes, les fournisseurs de soins de santé, les responsables de l'éducation, les dirigeants communautaires et les responsables politiques. Les besoins des jeunes de votre communauté ou de votre pays en matière de santé reproductive sont-ils pris en compte de manière adéquate ? Quelle part du fardeau des soins de santé reproductive est supportée par les jeunes ? Votre plan actuel reflète-t-il une préoccupation proportionnelle à l'ampleur de ce fardeau ? Si ce n'est pas le cas, voir ci-dessous !
       step3:
-        title: Défenseur
+        title: Défenseur!
         blurb: |-
           Un message qui ressort clairement des EIP est que la santé reproductive des adolescents et des jeunes (AYRH) s'épanouit dans des environnements où des services impartiaux sont fournis dans un environnement accueillant, où il existe un soutien multisectoriel et communautaire et où les jeunes comprennent leurs besoins en matière de santé reproductive et ont les compétences nécessaires pour demander des comptes aux responsables. Il existe une variété de ressources pour aider les jeunes et leurs alliés adultes à planifier des campagnes de sensibilisation efficaces.
   fileUpload:

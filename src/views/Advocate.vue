@@ -1,69 +1,27 @@
 <template>
   <article>
-    <NavBreadcrumbs/>
+    <NavBreadcrumbs />
     <BasePageIntro
       :title="$t('advocate.title')"
-      :blurb="$t('advocate.intro')"
+      :blurb="$t('advocate.globalRecommendations.content')"
+      :class="space.paddingBottomNone"
     />
-    <!-- Assessment Comments -->
-    <BaseSectionWrapper>
-      <BaseHeading
-        :level="2"
-        :class="space.paddingBottom"
-      >
-        {{$t('advocate.comments.title')}}
-      </BaseHeading>
-      <BaseWidthWrapper>
-        <BaseBodyText :content="$t('advocate.comments.content')" />
-      </BaseWidthWrapper>
-      <BaseWidthWrapper
-        :class="[space.paddingTop, type.center]"
-        width="wide"
-      >
-        <AllComments />
-      </BaseWidthWrapper>
-    </BaseSectionWrapper>
 
     <!-- Global Recommendations -->
-    <BaseSectionWrapper>
-      <BaseHeading
-        :level="2"
-        :class="space.paddingBottom"
-      >
-        {{$t('advocate.globalRecommendations.title')}}
-      </BaseHeading>
-      <BaseWidthWrapper>
-        <BaseBodyText :content="$t('advocate.globalRecommendations.content')" />
-      </BaseWidthWrapper>
-      <BaseWidthWrapper
-        :class="[space.paddingTop, type.center]"
-        width="wide"
-      >
+    <BaseSectionWrapper :class="space.paddingTopNone">
+      <BaseWidthWrapper :class="[type.center]" width="wide">
         <GlobalRecommendation />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
 
     <!-- Advocate Steps -->
-    <BaseSectionWrapper
-      border
-    >
-      <BaseHeading
-        :level="2"
-        centered
-      >
-        {{$t('advocate.stepsTitle')}}
-      </BaseHeading>
-      <BaseWidthWrapper
-        :class="space.paddingTop"
-        width="wide"
-      >
+    <BaseSectionWrapper border>
+      <BaseHeading :level="2" centered>{{$t('advocate.stepsTitle')}}</BaseHeading>
+      <BaseWidthWrapper :class="space.paddingTop" width="wide">
         <BaseStepList :steps="steps" />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
-    <BaseSectionWrapper
-      :class="type.center"
-      border
-    >
+    <BaseSectionWrapper :class="type.center" border>
       <div :class="space.paddingBottom">
         <BaseButtonLink
           :to="{name: 'print'}"
@@ -84,22 +42,21 @@
 </template>
 
 <script>
-import i18n from '@/i18n.js'
-import NavFooter from '@/components/NavFooter.vue'
-import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
-import BasePageIntro from '@/components/BasePageIntro.vue'
-import BaseStepList from '@/components/BaseStepList.vue'
-import BaseHeading from '@/components/BaseHeading.vue'
-import BaseBodyText from '@/components/BaseBodyText.vue'
-import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
-import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
-import FileExport from '@/components/FileExport.vue'
-import BaseButtonLink from '@/components/BaseButtonLink.vue'
-import GlobalRecommendation from '@/components/GlobalRecommendation.vue'
-import AllComments from '@/components/AllComments.vue'
+import i18n from "@/i18n.js";
+import NavFooter from "@/components/NavFooter.vue";
+import NavBreadcrumbs from "@/components/NavBreadcrumbs.vue";
+import BasePageIntro from "@/components/BasePageIntro.vue";
+import BaseStepList from "@/components/BaseStepList.vue";
+import BaseHeading from "@/components/BaseHeading.vue";
+import BaseBodyText from "@/components/BaseBodyText.vue";
+import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
+import BaseSectionWrapper from "@/components/BaseSectionWrapper.vue";
+import FileExport from "@/components/FileExport.vue";
+import BaseButtonLink from "@/components/BaseButtonLink.vue";
+import GlobalRecommendation from "@/components/GlobalRecommendation.vue";
 
 export default {
-  name: 'Advocate',
+  name: "Advocate",
   components: {
     NavFooter,
     NavBreadcrumbs,
@@ -111,20 +68,21 @@ export default {
     BaseButtonLink,
     BaseWidthWrapper,
     FileExport,
-    GlobalRecommendation,
-    AllComments
+    GlobalRecommendation
   },
   computed: {
-    steps: function () {
-      return Object.values(i18n.messages[i18n.locale].advocate.steps).map((step, index) => {
-        return {
-          title: this.$t(`advocate.steps.step${index + 1}.title`),
-          blurb: this.$t(`advocate.steps.step${index + 1}.blurb`)
+    steps: function() {
+      return Object.values(i18n.messages[i18n.locale].advocate.steps).map(
+        (step, index) => {
+          return {
+            title: this.$t(`advocate.steps.step${index + 1}.title`),
+            blurb: this.$t(`advocate.steps.step${index + 1}.blurb`)
+          };
         }
-      })
+      );
     }
   }
-}
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
