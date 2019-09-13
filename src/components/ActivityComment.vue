@@ -1,6 +1,6 @@
 <template>
   <div v-show="body" :class="base.activityComment">
-    <BaseHeading :centered="false" :level="4" scale="eta" color="dark" :class="base.commentBody">{{body}}</BaseHeading>
+    <BaseHeading :centered="false" :level="4" scale="eta" color="dark" weight="regular" :class="base.commentBody">{{body}}</BaseHeading>
     <span :class="base.deleteIcon" @click="emitDeleteClick">
       <BaseIcon :class="base.icon" name="close" alt="X" />
     </span>
@@ -72,6 +72,6 @@ $size-icons: scale-type("eta");
 }
 
 .commentBody {
-  padding-bottom: space("xnarrow")
+  padding-bottom: space("xnarrow");
 }
 </style>
