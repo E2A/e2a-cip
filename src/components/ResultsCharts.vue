@@ -154,11 +154,10 @@ export default {
   },
   computed: {
     setupDate: function() {
-      const timestamp = this.getItemValue('setup', 'date');
-      const date = new Date(timestamp);
+      const startTime = this.getItemValue('setup', 'dateStart');
+      const endTime = this.getItemValue('setup', 'dateEnd');
 
-      const formatted = date.toLocaleDateString(this.$i18n.locale, { year: 'numeric', month: 'short', day: 'numeric' });
-      return formatted;
+      return `${startTime} - ${endTime}`;
     }
   },
   methods: {
