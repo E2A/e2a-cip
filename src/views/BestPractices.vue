@@ -93,6 +93,9 @@ export default {
     NavFooter,
     NavBreadcrumbs
   },
+  created: function() {
+    this.$store.commit('SET_PROGRESS', {analyze: true})
+  },
   computed: {
     navButtons: function() {
       return {
