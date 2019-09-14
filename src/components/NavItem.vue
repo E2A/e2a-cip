@@ -1,11 +1,11 @@
 <template>
   <li
-    :class="[this.parentIsActive && base.parentActive, this.isCurrentRoute && base.currentRoute, base.navItem, !link.active && base.navItemDisabled]"
+    :class="[this.parentIsActive && base.parentActive, this.isCurrentRoute && base.currentRoute, base.navItem, !link.active && base.navItemDisabled, base[getStepProgress]]"
   >
     <router-link
       v-if="link.active"
       :to="{ name: link.name, params: link.params }"
-      :class="base.breadcrumbAnchor"
+      :class="[base.breadcrumbAnchor]"
       exact
     >
       <span v-if="!hideStep" :class="base.icon">{{stepIndex}}</span>
@@ -18,17 +18,6 @@
     >
     <span v-if="!hideStep" :class="base.icon">{{stepIndex}}</span>
     {{link.text}}</span>
-
-    <ul v-if="link.steps && link.active && enableSubnav" :class="base.subNavList">
-      <NavItem
-        v-for="(subnav, index) in link.steps"
-        :key="`subnav-${index}`"
-        :link="subnav"
-        :objectIndex="index"
-        :class="base.subNavItem"
-        hideStep
-      />
-    </ul>
   </li>
 </template>
 
@@ -44,7 +33,6 @@ export default {
     link: [Object],
     objectIndex: [Number, String],
     hideStep: [Boolean],
-    enableSubnav: [Boolean]
   },
   computed: {
     stepIndex: function() {
@@ -57,7 +45,6 @@ export default {
     },
     parentIsActive: function() {
       // make sure there are children
-      // debugger;
       const fullPath = this.$route.fullPath.substring(1);
       if (this.link.steps) {
         if (this.link.name === this.$route.fullPath) {
@@ -68,6 +55,27 @@ export default {
           return this.link.steps.find(link => link.name === this.$route.name);
         }
       }
+    },
+    getStepProgress: function() {
+      const percentMap = {
+        50: 'half',
+        33: 'third',
+        25: 'fourth',
+        75: 'threeFourth',
+        100: 'whole',
+      }
+
+      // get the index of the route in the steps array
+      const inArray = this.$props.link.steps.filter(item => item.name === this.$route.name)
+      const indexOfStep = this.$props.link.steps.findIndex(item => item.name === this.$route.name)
+      
+      if (indexOfStep >= 0) {
+      // divide the index by the length
+        const per = ((indexOfStep + 1) / this.$props.link.steps.length) * 100;
+      // return percentage
+        return percentMap[per];
+      }
+      return percentMap[100];
     }
   }
 };
@@ -80,17 +88,6 @@ export default {
 @import "~styleConfig/breakpoints";
 
 $nav-breakpoint: 81em; // ~1400px
-
-.subNavList {
-  list-style: none;
-  display: none;
-  flex: 1;
-  align-items: center;
-
-  .navItem {
-    font-size: 0.75rem;
-  }
-}
 
 .navItem {
   display: inline-flex;
@@ -167,13 +164,21 @@ $nav-breakpoint: 81em; // ~1400px
     color: color("primary");
   }
 
-  .subNavList {
-    display: inline-flex;
-  }
-
   &:after {
     background-color: color("primary");
     height: 6px;
+  }
+
+  &.whole {
+    &:after {
+      width: 100%;
+    }
+  }
+
+  &.half {
+    &:after {
+      width: 50%;
+    }
   }
 }
 
@@ -186,20 +191,5 @@ $nav-breakpoint: 81em; // ~1400px
   margin-top: -0.2rem;
   color: color("white");
   transition: 0.2s ease-in-out;
-}
-
-.subNavItem {
-  &:hover {
-    &:after {
-      background-color: transparent;
-    }
-  }
-
-  // use global style for vue router active class
-  :global {
-    .router-link-exact-active {
-      color: color('accent');
-    }
-  }
 }
 </style>

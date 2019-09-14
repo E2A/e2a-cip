@@ -65,7 +65,7 @@ export default {
         analyze: {
           name: "evidence-informed-practices",
           text: this.$t("nav.analyze"),
-          active: true,
+          active: false,
           steps: [
             {
               name: "evidence-informed-practices",
@@ -82,7 +82,7 @@ export default {
         },
         results: {
           name: "results",
-          text: this.$t("nav.report"),
+          text: this.$t("nav.results"),
           active: true,
           steps: [
             {
@@ -135,14 +135,15 @@ export default {
       this.notify(this.notificationMessage, "info", 3000);
     },
     updateActiveLinks: function() {
+      const currentProgress = this.$store.getters.currentProgress;
+
+      this.links.activities.active = currentProgress.activities;
+      this.links.plan.active = currentProgress.plan;
+      this.links.results.active = currentProgress.results;
+      this.links.analyze.active = currentProgress.analyze;
+
       if (this.getItemCount("assessments") > 0) {
         this.notificationMessage = this.$t("nav.removeAssessment");
-        this.links.activities.active = false;
-        this.links.analyze.active = true;
-        this.links.results.active = true;
-        // this.links.summary.active = false;
-        //   this.links.results.active = true;
-        //   this.links.advocate.active = true;
       }
 
       if (
@@ -150,24 +151,11 @@ export default {
         (this.getItemCount("setup") === 0 || !this.setupPresent())
       ) {
         this.notificationMessage = this.$t("nav.addSetup");
-          this.links.activities.active = false;
-        //   this.links.summary.active = false;
-          this.links.results.active = false;
-        //   this.links.advocate.active = false;
-        //   this.links.bestPractices.active = false;
-        //   this.links.assessment.active = false;
-        this.links.analyze.active = false;
+          
       }
 
       if (this.getItemCount("activities") === 0 && this.setupPresent()) {
         this.notificationMessage = this.$t("nav.addActivites");
-          this.links.activities.active = true;
-        //   this.links.summary.active = false;
-          this.links.results.active = false;
-        //   this.links.advocate.active = false;
-        //   this.links.bestPractices.active = false;
-        //   this.links.assessment.active = false;
-        this.links.analyze.active = false;
       }
 
       if (
@@ -175,13 +163,6 @@ export default {
         this.getItemCount("assessments") === 0
       ) {
         this.notificationMessage = this.$t("nav.addAssessment");
-          this.links.activities.active = true;
-        //   this.links.summary.active = true;
-        //   this.links.assessment.active = true;
-        //   this.links.bestPractices.active = true;
-          this.links.results.active = false;
-        //   this.links.advocate.active = false;
-        this.links.analyze.active = true;
       }
     }
   }
@@ -208,7 +189,7 @@ export default {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: -(border-w('medium')); // height of bottom border on nav wrapper
+      bottom: -1px; // height of bottom border on nav wrapper
       height: border-w('thick');
     }
   }

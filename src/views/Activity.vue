@@ -47,6 +47,9 @@ export default {
       vm.previousRoute = from
     })
   },
+  created: function() {
+    this.$store.commit('SET_PROGRESS', {activities: true})
+  },
   methods: {
     trackValidation: function (value, activityId) {
       // Go to completed activity on save

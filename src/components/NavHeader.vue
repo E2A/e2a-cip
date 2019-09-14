@@ -43,6 +43,7 @@ import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 import BaseCalloutBox from '@/components/BaseCalloutBox.vue'
 import BaseButtonFlyout from '@/components/BaseButtonFlyout.vue'
 import BaseButtonLink from '@/components/BaseButtonLink.vue'
+import BaseHeading from '@/components/BaseHeading.vue'
 
 export default {
   name: 'NavHeader',
@@ -53,7 +54,8 @@ export default {
     LanguageSwitcher,
     BaseCalloutBox,
     BaseButtonFlyout,
-    BaseButtonLink
+    BaseButtonLink,
+    BaseHeading
   },
   data: function () {
     return {

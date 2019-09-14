@@ -9,7 +9,13 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     mountedActivity: null,
-    infoFlyout: {}
+    infoFlyout: {},
+    progress: {
+      plan: false,
+      activities: false,
+      analyze: false,
+      results: false
+    }
   },
   getters: {
     mountedActivity: state => {
@@ -17,11 +23,17 @@ const store = new Vuex.Store({
     },
     infoFlyout: state => {
       return state.infoFlyout
+    },
+    currentProgress: state => {
+      return state.progress
     }
   },
   mutations: {
     SET_MOUNTED_ACTIVITY (state, activityId) {
       state.mountedActivity = activityId
+    },
+    SET_PROGRESS (state, progress) {
+      state.progress = { ...state.progress, ...progress }
     },
     SET_INFO_FLYOUT (state, flyoutData) {
       state.infoFlyout = flyoutData

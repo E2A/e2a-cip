@@ -36,6 +36,9 @@ export default {
     NavBreadcrumbs,
     BasePageIntro
   },
+  created: function() {
+    this.$store.commit('SET_PROGRESS', {plan: true})
+  },
   methods: {
     getNavButtons: function () {
       var navButtons = {
