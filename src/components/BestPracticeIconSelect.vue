@@ -195,7 +195,7 @@ export default {
     // max-width: 55px;
     transition: all 0.25s 0.17s ease-out;
 
-    height: 40px;
+    height: 45px;
     overflow: hidden;
   }
 
