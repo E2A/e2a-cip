@@ -7,7 +7,7 @@
       <BasePageIntro :title="$t('plan.title')"/>
       <BaseGutterWrapper>
         <BaseBodyText :content="this.$t('plan.body')" />
-        <BaseHeading :class="[space.padding]" :level="4" :centered="false">{{this.$t('plan.note')}}</BaseHeading>
+        <BaseHeading :class="[base.note]" :level="4" :centered="false">{{this.$t('plan.note')}}</BaseHeading>
         <BaseBodyText :content="this.$t('plan.noteBody')" :class="[space.paddingBottomWide]" />
       </BaseGutterWrapper>
     </BaseWidthWrapper>
@@ -67,4 +67,8 @@ export default {
 @import "~styleConfig/breakpoints";
 @import "~styleConfig/scale";
 @import "~styleConfig/type";
+
+.note {
+  padding-bottom: 0;
+}
 </style>
