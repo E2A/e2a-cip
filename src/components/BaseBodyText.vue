@@ -1,7 +1,7 @@
 <template>
   <VueMarkdown
     :source="content"
-    :class="[base.content, type[font], type[typeScaleClass(size)]]"
+    :class="[base.content, type[font], type[weight], type[typeScaleClass(size)]]"
   ></VueMarkdown>
 </template>
 
@@ -29,6 +29,13 @@ export default {
       default: 'body',
       validator: function (value) {
         return ['body', 'display'].indexOf(value) !== -1
+      }
+    },
+    weight: {
+      type: String,
+      default: '',
+      validator: function (value) {
+        return ['bold', 'light'].indexOf(value) !== -1
       }
     }
   }
