@@ -184,9 +184,7 @@ export default {
       })
     },
     toggleFlyout: function () {
-      console.log('toggle flyout')
       if (this.flyoutOpen) {
-        console.log('flyout is closed')
         // Tell the store this flyout is closed
         this.$store.commit('SET_INFO_FLYOUT', {})
         // this.$store.dispatch('entities/bestpracticeicons/create', {
@@ -198,7 +196,6 @@ export default {
         // })
       } else {
         // Tell the store this flyout is open
-        console.log('flyout is open')
         this.$store.commit('SET_INFO_FLYOUT', {
           activity_id: this.activityID,
           best_practice_id: this.id,

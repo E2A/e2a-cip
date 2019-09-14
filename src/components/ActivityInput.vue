@@ -108,8 +108,24 @@
         </form>
 
         <!-- Save/delete buttons -->
-        <div :class="[space.paddingTop, space.marginTop, border.top]">
+        <div :class="[space.paddingTop, space.marginTop, border.top, base.buttonContainer]">
           <BaseGutterWrapper gutterX="narrow" gutterY="narrow">
+            <li :class="base.buttonWrapper" v-if="getActivity()">
+              <BaseButton
+                @click="addActivity"
+                :label="$t('save')"
+                size="small"
+                :role="'primary'"
+              />
+            </li>
+            <li :class="base.buttonWrapper" v-if="!getActivity()">
+              <BaseButton
+                @click="addActivity"
+                :label="$t('save')"
+                size="small"
+                :role="'primary'"
+              />
+            </li>
             <li :class="base.buttonWrapper">
               <BaseButton
                 v-if="getActivity()"
@@ -173,6 +189,11 @@ export default {
     }
   },
   computed: {
+    canSubmit: function() {
+      const activityInstance = this.getActivity();
+
+      return !! activityInstance;
+    },
     activityTypeOptions: function () {
       return this.getActvityData().map(activityType => {
         return {
@@ -221,15 +242,13 @@ export default {
       window.open(routeData.href, '_blank');
     },
     saveOnChange: function () {
-      if (this.activityType && this.activityText) {
-        this.addActivity()
-        this.informParent(true)
+      if (this.canSubmit) {
+        this.addActivity(false)
       } else {
         this.informParent(false)
       }
     },
     informParent: function (bool) {
-      console.log('testing', this.activityId)
       // Tells parent whether the form is complete or not.
       this.$emit('changed', bool, this.activityId)
     },
@@ -279,7 +298,7 @@ export default {
         this.currentActivityID = this.activityId
         this.activityText = activityInstance.text
         this.activityNumber = activityInstance.activityNumber
-        this.informParent(true)
+        this.informParent(false)
         return
       }
       this.currentActivityID = this.activityId
@@ -291,6 +310,16 @@ export default {
       this.activityText = ''
       this.activityNumber = ''
       this.informParent(false)
+    },
+    clearForm: function() {
+      this.currentActivityID = this.activityId
+      this.existingActivity = {}
+      this.activityBudgetBase = null
+      this.activityBudgetScale = this.budgetScaleOptions[0]
+      this.activityYouthCentric = false
+      this.activityType = ''
+      this.activityText = ''
+      this.activityNumber = ''
     },
     getActivity: function (field = '') {
       const activityInstance = this.$store.getters['entities/activities/find'](
@@ -304,10 +333,10 @@ export default {
         return null
       }
     },
-    addActivity: function () {
+    addActivity: function (informParent = true) {
       // Add or update activity
       const activityInstance = this.getActivity()
-
+      
       this.$validator.validate().then(result => {
         // If valid, add or update activity, else show errors.
         if (result) {
@@ -331,6 +360,7 @@ export default {
               }
             })
           }
+          this.informParent(informParent);
           this.notify(this.$t('saveSuccess'), 'success')
           this.updateData()
         }
@@ -342,6 +372,7 @@ export default {
         Number(this.activityId)
       )
       this.notify(this.$t('deleteSuccess'), 'success')
+      // todo go to new activity page
     }
   },
   created () {
@@ -367,6 +398,10 @@ $budgetSelectWidth: 160px;
 
 .activityTypeWrapper {
   @include clearfix;
+}
+
+.buttonContainer {
+  text-align: right;
 }
 
 .infoBox {

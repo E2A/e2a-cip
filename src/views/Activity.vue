@@ -8,6 +8,7 @@
       ref="activityInput"
       :key="this.getLastItem()"
       @changed="trackValidation"
+      :canSubmit="isFormFilled"
     />
   </NavFooter>
 </template>
@@ -32,8 +33,6 @@ export default {
       return this.getNextActivity
     },
     currentActivity: function () {
-      console.log('next', this.nextActivity())
-      console.log('initial', 1)
       return this.$props.activityId || this.nextActivity()
     }
   },
@@ -50,24 +49,15 @@ export default {
   },
   methods: {
     trackValidation: function (value, activityId) {
-      this.isFormFilled = value
       // Go to completed activity on save
       if (value && activityId) {
+        // this.isFormFilled = value
         this.travelToActivity(activityId)
       }
     },
     travelToActivity: function (activityId) {
       const yOffset = window.pageYOffset
-      // If first activity
-      if (!this.$router.history.current.params.activityId) {
-        activityId = activityId - 1;
-      } 
-
-      if (this.$router.history.current.params.activityId !== activityId) {
-        this.$router.push({ name: 'activity', params: { activityId: activityId } })
-      }
-      
-      window.scroll(0, yOffset) // keep scroll position
+      window.scroll(0, 0) // move to top of form
     },
     goBack: function() {
       if (this.previousRoute) {
@@ -88,7 +78,7 @@ export default {
         right: []
       }
 
-      if (this.getItemCount('activities') > 0) {
+      if (this.$props.activityId) {
         navButtons.right.push(
           {
             to: { name: 'activity' },
@@ -96,13 +86,16 @@ export default {
             iconLeft: 'add',
             iconRight: 'none'
           },
-          {
+        )
+      }
+
+      navButtons.right.push(
+        {
             to: { name: 'summary' },
             label: this.$t('saveAndContinue'),
             role: this.isFormFilled ? 'primary' : 'default'
           }
-        )
-      }
+      )
 
       return navButtons
     }
