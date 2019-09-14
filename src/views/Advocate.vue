@@ -1,5 +1,9 @@
 <template>
-  <article>
+  <NavFooter
+    wrapperEl="article"
+    :leftButtons="this.getNavButtons().left"
+    :rightButtons="this.getNavButtons().right"
+  >
     <NavBreadcrumbs />
     <BasePageIntro
       :title="$t('advocate.title')"
@@ -38,7 +42,7 @@
         :selectLabel="$t('fileUpload.exportSelectFormat')"
       />
     </BaseSectionWrapper>
-  </article>
+  </NavFooter>
 </template>
 
 <script>
@@ -70,6 +74,33 @@ export default {
     FileExport,
     GlobalRecommendation
   },
+  beforeRouteEnter: function(to, from, next) {
+    next(vm => {
+      vm.previousRoute = from
+    })
+  },
+  methods: {
+    goBack: function() {
+      if (this.previousRoute) {
+        return this.previousRoute
+      }
+
+      return { 'name': 'results' }
+    },
+    getNavButtons: function () {
+      var navButtons = {
+        left: [
+          {
+            to: this.goBack(),
+            label: this.$t('goBack')
+          }
+        ],
+        right: []
+      }
+
+      return navButtons
+    }
+  },
   computed: {
     steps: function() {
       return Object.values(i18n.messages[i18n.locale].advocate.steps).map(
@@ -80,7 +111,7 @@ export default {
           };
         }
       );
-    }
+    },
   }
 };
 </script>
