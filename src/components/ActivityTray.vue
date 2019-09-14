@@ -17,6 +17,14 @@
       :class="type.leadingDefault"
     >{{getActivityTitle()}}</BaseHeading>
 
+    <BaseBodyText
+      :class="base.activityText"
+      :content="getActivityText()"
+      size="zeta"
+      font="display"
+      weight="light"
+      />
+
     <div :class="[base.gutter, space.paddingTopNarrow]">
       <BaseDataGrid :data="expandedData" :class="base.dataList" :condensed="true" />
     </div>
@@ -189,6 +197,9 @@ export default {
       return type.title;
     },
     getActivityTitle: function() {
+      return this.activity.activityNumber;
+    },
+    getActivityText: function() {
       return this.activity.text;
     },
     isYouthCentric: function() {
@@ -216,6 +227,7 @@ export default {
 @import "~styleConfig/color";
 @import "~styleConfig/spacing";
 @import '~styleConfig/scale';
+@import '~styleConfig/type';
 
 .paddingHorizontalNone {
   padding-left: 0;
