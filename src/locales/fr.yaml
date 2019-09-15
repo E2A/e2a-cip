@@ -1187,7 +1187,7 @@ fr:
       \
       Quand vous avez fini, cliquez sur SAUVEGARDER ET CONTINUER, en bas à droite.
     instructions:
-      heading: Est-ce que votre activité s’aligne-t-elle sur les pratiques fondées sur des données probantes (EIPs) ? Cliquez sur chacune des icônes EIP ci-dessous et sélectionnez votre réponse.
+      heading: Est-ce que votre activité s’aligne-t-elle sur les pratiques fondées sur des données probantes (EIPs) ? Cliquez sur chacune des icônes EIP ci-dessous et sélectionnez votre réponse
       eipHeading: 
       options:
         'yes':
@@ -1369,6 +1369,8 @@ fr:
   delete: supprimer
   activities: activités
   activity: activité
+  bestPracticeIconComment: Ajouter un Commentaire
+  addAnotherComment: Envoyer un Commentaire
   bestPracticeIconData: En savoir plus sur cette pratique fondée sur des données probantes (EIP)
   # Country Indicator Data
   indicatorDataNotPresent: 'Votre pays ne dispose pas de données pour l''élément %{indicatorName}'

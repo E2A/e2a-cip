@@ -106,7 +106,7 @@ en:
     role11: Other International Organization
   # Activity Input
   addActivity: Add a New Activity
-  editActivity: Edit activity
+  editActivity: Edit Activity
   enterActivity: Enter an activity
   for: for
   number: number
@@ -235,7 +235,7 @@ en:
   # Evidence-Informed Practices
   readMore: "See sample activities"
   checkListButtonText: "View checklist"
-  bestPracticeTitle: 'Will these activities work?'
+  bestPracticeTitle: 'Will These Activities Work?'
   bestPracticeSubtitle: Will they effectively respond to the reproductive needs and desires of youth in your country? 
   bestPracticesContent: |-
     To answer, follow the evidence. Start by reviewing the Evidence-Informed Practices (EIPs) below. Each EIP has shown significantly positive results in programming for adolescent and youth reproductive health. 
@@ -1269,7 +1269,7 @@ en:
   delete: delete
   activities: activities
   activity: activity
-  bestPracticeIconComment: Add a comment
+  bestPracticeIconComment: Add a Comment
   addAnotherComment: Submit Comment
   bestPracticeIconData: Read more about this EIP
   # Country Indicator Data
