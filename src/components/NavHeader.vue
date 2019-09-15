@@ -225,7 +225,8 @@ $nav-breakpoint: 81em; // ~1400px
 .logo {
   composes: paddingRightNarrow paddingVerticalNarrow from "styles/spacing.scss";
   border: none !important; // override default anchor underlines
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   max-width: 11rem;
   color: color('white');
 
