@@ -129,7 +129,7 @@ en:
     activityNumber: Enter the activity number as it appears in the plan.
     activityText: Enter a brief summary of activity (50 words max).
     activityBudget: Enter amount budgeted for activity, if available.
-    activityYouthCentric: Is the activity youth-focused—specifically targeting young people ages 15-24?
+    activityYouthCentric: Check if the activity is youth-focused—specifically targeting young people ages 15-24
     selectActivityType: Pick a category for this activity. (Does your activity align with multiple categories? Just pick one).
   tooltipText:
     activityText: This should be a summary of the activity. Maximum of 50 words.
