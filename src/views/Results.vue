@@ -8,7 +8,7 @@
 
     <!-- Activities list -->
     <BaseSectionWrapper :class="space.paddingTop" border>
-      <BaseWidthWrapper width="xxwide">
+      <BaseWidthWrapper width="wide">
         <!-- Count & export tools -->
         <ActivitiesListHeader clearRecommendations />
 
