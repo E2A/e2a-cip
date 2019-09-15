@@ -171,5 +171,6 @@ export default {
 .gutter {
   display: inline-block;
   vertical-align: top;
+  width: 100%;
 }
 </style>
