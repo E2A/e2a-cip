@@ -8,15 +8,8 @@
   <div>
     <!-- recommendations -->
     <ol :class="[base.recommendations, space.paddingVerticalNarrow]">
-      <!-- By default start showing a recommendation -->
-      <ActivitiesItemInput
-        v-if="recommendationsNotPresent"
-        action='insert'
-        inputType="globalrecommendations"
-      />
       <!-- Then show all once its been added -->
       <ActivitiesItemInput
-        v-else
         v-for="recommendation of globalRecommendations"
         :key="recommendation.id"
         :id="recommendation.id"
@@ -24,6 +17,14 @@
         inputType="globalrecommendations"
         :existingText="recommendation.text"
       />
+      <!-- By default start showing a recommendation -->
+      <ActivitiesItemInput
+        action='insert'
+        inputType="globalrecommendations"
+        @change="insertRecommendation"
+        :key="inputKey"
+      />
+      
     </ol>
     <BaseButton
       @click="addRecommendation"
@@ -45,6 +46,17 @@ export default {
     BaseButton,
     ActivitiesItemInput
   },
+  props: {
+    'insertText': {
+      type: String,
+    }
+  },
+  data: function() {
+    return {
+      inputKey: 1000,
+      itemText: this.insertText,
+    }
+  },
   computed: {
     recommendationsNotPresent: function () {
       return this.globalRecommendations.length === 0
@@ -55,13 +67,22 @@ export default {
     }
   },
   methods: {
+    insertRecommendation: function(text) {
+      this.itemText = text;
+    },
     addRecommendation: function () {
       // Add a new recommendation
       this.$store.dispatch('entities/globalrecommendations/insert', {
         data: {
-          text: ''
+          text: this.itemText
         }
       })
+
+      this.clearText()
+    },
+    clearText: function() {
+      this.inputKey++;
+      this.itemText = '';
     }
   }
 }
