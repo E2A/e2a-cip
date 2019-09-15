@@ -10,7 +10,7 @@
       <div
         v-for="(group, index) in ['left', 'right']"
         :key="`navFooter-${index}`"
-        :class="base.buttonGroup"
+        :class="[base.buttonGroup, base[`buttonGroup${group}`]]"
       >
         <BaseGutterWrapper
           v-if="getGroupProp(group)"
@@ -128,6 +128,14 @@ export default {
   display: inline-block;
   width: 50%;
   text-transform: uppercase;
+}
+
+.buttonGroupleft {
+  width: 40%;
+}
+
+.buttonGroupright {
+  width: 60%;
 }
 
 .buttonWrapper {
