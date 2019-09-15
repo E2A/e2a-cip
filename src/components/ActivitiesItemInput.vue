@@ -164,7 +164,7 @@ export default {
 
 .fill {
   @supports (flex: 1) {
-    flex: 1;
+    flex: 1 0 80%;
   }
 }
 
