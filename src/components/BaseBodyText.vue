@@ -33,7 +33,6 @@ export default {
     },
     weight: {
       type: String,
-      default: '',
       validator: function (value) {
         return ['bold', 'light'].indexOf(value) !== -1
       }
