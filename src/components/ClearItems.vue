@@ -58,6 +58,12 @@ export default {
         // Delete all items
         // this.runExportData('json') // Force export as a backup.
         this.$store.dispatch('entities/deleteAll')
+        this.$store.commit('SET_PROGRESS', {
+          plan: true,
+          activities: false,
+          analyze: false,
+          results: false
+        })
       } else {
         // Delete specific entity type
         this.$store.dispatch(`entities/${deleteType}/deleteAll`)
