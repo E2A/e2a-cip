@@ -1,10 +1,9 @@
 <template>
   <BaseGutterWrapper
-    v-if="!countryIndicator.error"
     :class="base.wrapper"
     el="section"
   >
-    <div :class="base.stats">
+    <div :class="base.stats" v-if="!countryIndicator.error">
       <BaseHeading
         :centered="false"
         :level="3"
@@ -44,10 +43,33 @@
       </div>
     </div>
     <ResultsQuestions
-      v-if="countryIndicator.questions"
+      v-if="countryIndicator.questions && !countryIndicator.error"
       :questions="countryIndicator.questions"
       :class="base.questions"
     />
+
+    <div :class="base.stats" v-else>
+      <BaseHeading
+        :centered="false"
+        :level="3"
+        scale="delta"
+        color="dark"
+        weight="bold"
+      >
+        {{countryIndicator.name}}
+      </BaseHeading>
+      <BaseHeading
+        :centered="false"
+        :level="5"
+        scale="zeta"
+        color="dark"
+        weight="light"
+        :class="space.paddingTopNarrow"
+      >
+        {{countryIndicator.error}}
+      </BaseHeading>
+    </div>
+
   </BaseGutterWrapper>
 </template>
 

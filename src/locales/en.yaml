@@ -1273,7 +1273,7 @@ en:
   addAnotherComment: Submit Comment
   bestPracticeIconData: Read more about this EIP
   # Country Indicator Data
-  indicatorDataNotPresent: 'Your country does not have data for %{indicatorName}'
+  indicatorDataNotPresent: 'This DHS info not available for %{countryName}'
   indicatorNotPresent: 'The indicator you have selected is not present'
   countryIndicators:
     indicator1:

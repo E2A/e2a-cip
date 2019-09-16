@@ -1373,7 +1373,7 @@ fr:
   addAnotherComment: Envoyer un Commentaire
   bestPracticeIconData: En savoir plus sur cette pratique fondée sur des données probantes (EIP)
   # Country Indicator Data
-  indicatorDataNotPresent: 'Votre pays ne dispose pas de données pour l''élément %{indicatorName}'
+  indicatorDataNotPresent: 'Votre pays ne dispose pas de données pour l''élément %{countryName}'
   indicatorNotPresent: 'L''indicateur que vous avez sélectionné n''est pas présent.'
   countryIndicators:
     indicator1:
