@@ -58,12 +58,13 @@ export const dataMethods = {
       const indicator = this.$store.getters['entities/countryindicators/query']().where('indicatorId', indicatorId).first()
       var indicatorName = ''
       if (indicator) {
-        indicatorName = indicator.indicatorName
+        indicatorName = indicator.name
       } else {
         return { error: this.$t('indicatorNotPresent') }
       }
 
       // return country indicator
+      var countryName = this.getItemValue('setup', 'countryName')
       const countryIndicator = this.$store.getters['entities/countryindicators/query']()
         .where('indicatorId', indicatorId)
         .where('countryCode', this.getItemValue('setup', 'countryCode'))
@@ -71,7 +72,7 @@ export const dataMethods = {
       if (countryIndicator) {
         return countryIndicator
       } else {
-        return { error: this.$t('indicatorDataNotPresent', { indicatorName: indicatorName }) }
+        return { name: indicatorName, error: this.$t('indicatorDataNotPresent', { countryName: countryName }) }
       }
     },
     getBudgetTotal: function (queryObject) {

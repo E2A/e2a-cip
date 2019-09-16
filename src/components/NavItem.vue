@@ -45,7 +45,6 @@ export default {
     },
     parentIsActive: function () {
       // make sure there are children
-      const fullPath = this.$route.fullPath.substring(1)
       if (this.link.steps) {
         if (this.link.name === this.$route.fullPath) {
           return true
@@ -66,7 +65,6 @@ export default {
       }
 
       // get the index of the route in the steps array
-      const inArray = this.$props.link.steps.filter(item => item.name === this.$route.name)
       const indexOfStep = this.$props.link.steps.findIndex(item => item.name === this.$route.name)
 
       if (indexOfStep >= 0) {
