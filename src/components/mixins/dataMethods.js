@@ -109,9 +109,9 @@ export const dataMethods = {
         activityTypeData.push({
           type: activityType.title,
           count: activityCount,
-          countPercent: totalYouthActivities ? (activityCount / totalYouthActivities).toFixed(3) : 0.25,
+          countPercent: totalYouthActivities ? (activityCount / totalYouthActivities).toFixed(3) : 0,
           budgetAmount: this.getBudgetTotal(activityTypesObjects),
-          budgetPercent: totalYouthBudget ? (this.getBudgetTotal(activityTypesObjects) / totalYouthBudget).toFixed(3) : 0.25,
+          budgetPercent: totalYouthBudget ? (this.getBudgetTotal(activityTypesObjects) / totalYouthBudget).toFixed(3) : 0,
           class: activityType.key
         })
       }

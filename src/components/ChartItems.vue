@@ -264,7 +264,6 @@ export default {
       })
 
       const activtyTypeCountRoundedPercentages = this.getRoundedPercentages(chartData.activityTypeData.map((item) => item.countPercent * 100))
-
       const activtyTypeCountLabel = chartData.activityTypeData.map((item, index) => {
         return {
           value: activtyTypeCountRoundedPercentages[index],
