@@ -33,6 +33,7 @@
       <template slot="summaryRight">
         <!-- list of best practice icons -->
         <BaseGutterWrapper
+          v-if="!editable"
           :class="base.right"
           el="ul"
           gutterX="xnarrow"
