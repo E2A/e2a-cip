@@ -17,7 +17,7 @@ protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { standard: t
 
 function createMainWindow (language) {
   const win = new BrowserWindow({
-    width: 1500,
+    width: 1600,
     height: 1500,
     webPreferences: {
       nodeIntegration: true
@@ -33,15 +33,6 @@ function createMainWindow (language) {
     //   Load the index.html when not in development
     // Pass language of OS as query string
     win.loadURL(`app://./index.html?lang=${language}`)
-    //   formatUrl({
-    //     pathname: path.join(__dirname, 'index.html'),
-    //     protocol: 'file',
-    //     slashes: true,
-    //     query: {
-    //       lang: language
-    //     }
-    //   })
-    // )
   }
 
   win.on('closed', () => {

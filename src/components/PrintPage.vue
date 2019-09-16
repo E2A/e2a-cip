@@ -14,6 +14,7 @@
       :size="size"
       :role="role"
       iconLeft="print"
+      :class="space.marginLeft"
     />
     <p v-if="pdfPrintError">{{$t('results.pdfPrintError')}}</p>
   </div>

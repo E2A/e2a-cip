@@ -21,9 +21,8 @@
             :outline="isActive ? 'highlight' : 'midtone'"
           />
         </div>
-        <div :class="base.gutter">
+        <div :class="base.gutter" v-if="this.id">
           <BaseButton
-            v-if="this.id"
             @click="deleteItem()"
             :label="$t('delete')"
             size="small"
@@ -164,7 +163,7 @@ export default {
 
 .fill {
   @supports (flex: 1) {
-    flex: 1 0 80%;
+    flex: 1 0 100%;
   }
 }
 

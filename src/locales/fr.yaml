@@ -60,7 +60,7 @@ fr:
 
       La présente publication a bénéficié d’un soutien de l’Office de Population et de Santé reproductive, Bureau pour la Santé globale, Agence des Etats-Unis pour le Développement international, aux termes de l’Accord No. AID-OAA-A-11-00024. Les opinions exprimées ici incombent à l’auteur ou aux auteurs et ne représentent pas forcément les vues de l’Agence des Etats Unis pour le Développement international.
   plan:
-    title: Connaître Votre Plan
+    title: Connaître votre plan
     body: |-
       Vous avez choisi un plan à analyser. Maintenant, prenez au moins 10 minutes pour vous familiariser avec ce plan.
 
@@ -1234,14 +1234,14 @@ fr:
     exportChartSuccess: 'Vous avez exporté avec succès les données de votre graphique'
   chartTitles:
     defaultGroupHeading: 'Intitulé du groupe par défaut'
-    activityTypeCount: "Pourcentage Nombre d'Activités par Type"
+    activityTypeCount: "Pourcentage nombre d'activités par type"
     activityTypeCountQuestions:
       1: 'Les préjugés personnels des prestataires de soins de santé et du public
         affectent l''utilisation des méthodes de planification familiale par les jeunes.
         La répartition des activités par domaine reflète-t-elle une préoccupation
         quant à la nécessité de remédier à ces préjugés dans les milieux communautaires
         et de santé ?'
-    activityTypeBudget: "Budget Pourcentage du Total par Type d'Activité"
+    activityTypeBudget: "Budget pourcentage du total par type d'activité"
     activityTypeBudgetQuestions:
       1: 'Les politiques et stratégies gouvernementales élaborées dans le cadre d''un
         processus bien coordonné de participation des parties prenantes constituent
@@ -1249,8 +1249,8 @@ fr:
         par les jeunes dans les communautés. La répartition des activités par domaine
         dans votre plan reflète-t-elle un souci suffisant de la coordination et de
         la création d''un environnement favorable ?'
-    youthFocusBudget: "Budget Pourcentage axé sur les Jeunes"
-    youthFocusCount: "Pourcentage d'Activités Axées sur les Jeunes"
+    youthFocusBudget: "Budget pourcentage axé sur les jeunes"
+    youthFocusCount: "Pourcentage d'activités axées sur les jeunes"
     youthCentricLabel: "Centré sur les jeunes"
     notYouthCentricLabel: "Pas axé sur les jeunes"
   print:

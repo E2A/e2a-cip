@@ -89,7 +89,6 @@
       >
         <BaseButton
           @click="editActivity"
-          :class="space.marginLeft"
           :label="$t('editActivity')"
           size="small"
           role="default"
@@ -316,5 +315,7 @@ export default {
 .activtyFooter {
   background-color: color("light", $grade: 50);
   text-align: right;
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
