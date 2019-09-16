@@ -16,7 +16,7 @@
           :router="false" role="default"
           :label="this.$t('nav.learnMore')"
           size="small"
-          target="_blank"
+          :target="electron ? '_self' : '_blank'"
           reverseColors
         />
       </BaseGutterWrapper>
@@ -60,7 +60,8 @@ export default {
   data: function () {
     return {
       notificationMessage: '',
-      flyoutOpen: false
+      flyoutOpen: false,
+      electron: this.checkElectron()
     }
   },
   computed: {

@@ -57,3 +57,5 @@ export default {
   }
 }
 </script>
+
+<style src="styles/spacing.scss" lang="scss" module="space"></style>
