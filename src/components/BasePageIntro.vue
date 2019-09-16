@@ -22,13 +22,13 @@
 </template>
 
 <script>
-import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
-import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
-import BaseBodyText from "@/components/BaseBodyText.vue";
+import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
+import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
+import BaseHeading from '@/components/BaseHeading.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
 
 export default {
-  name: "BasePageIntro",
+  name: 'BasePageIntro',
   props: {
     title: {
       type: String,
@@ -42,7 +42,7 @@ export default {
     },
     blurb: {
       type: String,
-      default: ""
+      default: ''
     }
   },
   components: {
@@ -51,7 +51,7 @@ export default {
     BaseHeading,
     BaseBodyText
   }
-};
+}
 </script>
 
 <style src="styles/borders.scss" lang="scss" module="border"></style>

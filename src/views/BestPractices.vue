@@ -66,20 +66,20 @@
 </template>
 
 <script>
-import { bestPracticeData } from "@/components/mixins/bestPracticeData.js";
-import BasePageIntro from "@/components/BasePageIntro.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
-import BaseBodyText from "@/components/BaseBodyText.vue";
-import BaseIcon from "@/components/BaseIcon.vue";
-import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
-import BaseColumnLayout from "@/components/BaseColumnLayout.vue";
-import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
-import BaseButtonLink from "@/components/BaseButtonLink.vue";
-import NavFooter from "@/components/NavFooter.vue";
+import { bestPracticeData } from '@/components/mixins/bestPracticeData.js'
+import BasePageIntro from '@/components/BasePageIntro.vue'
+import BaseHeading from '@/components/BaseHeading.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
+import BaseIcon from '@/components/BaseIcon.vue'
+import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
+import BaseColumnLayout from '@/components/BaseColumnLayout.vue'
+import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
+import BaseButtonLink from '@/components/BaseButtonLink.vue'
+import NavFooter from '@/components/NavFooter.vue'
 import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
 
 export default {
-  name: "BestPractices",
+  name: 'BestPractices',
   mixins: [bestPracticeData],
   components: {
     BasePageIntro,
@@ -93,29 +93,29 @@ export default {
     NavFooter,
     NavBreadcrumbs
   },
-  created: function() {
-    this.$store.commit('SET_PROGRESS', {analyze: true})
+  created: function () {
+    this.$store.commit('SET_PROGRESS', { analyze: true })
   },
   computed: {
-    navButtons: function() {
+    navButtons: function () {
       return {
         left: [
           {
-            to: { name: "summary" },
-            label: this.$t("goBack")
+            to: { name: 'summary' },
+            label: this.$t('goBack')
           }
         ],
         right: [
           {
-            to: { name: "assessment" },
-            label: this.$t("continue"),
-            role: "primary"
+            to: { name: 'assessment' },
+            label: this.$t('continue'),
+            role: 'primary'
           }
         ]
-      };
+      }
     }
   }
-};
+}
 </script>
 <style src="styles/color.scss" lang="scss" module="color"></style>
 <style src="styles/spacing.scss" lang="scss" module="space"></style>

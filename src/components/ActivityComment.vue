@@ -8,24 +8,24 @@
 </template>
 
 <script>
-import BaseIcon from "@/components/BaseIcon.vue";
+import BaseIcon from '@/components/BaseIcon.vue'
 import BaseHeading from '@/components/BaseHeading.vue'
 
 export default {
-  name: "ActivityComment",
+  name: 'ActivityComment',
   mixins: [],
   components: {
     BaseIcon,
-    BaseHeading,
+    BaseHeading
   },
   methods: {
-    emitDeleteClick: function(event) {
-      this.$emit("click", event, this.comment.id);
+    emitDeleteClick: function (event) {
+      this.$emit('click', event, this.comment.id)
     }
   },
   computed: {
-    body: function() {
-      return this.comment.text;
+    body: function () {
+      return this.comment.text
     }
   },
   props: {
@@ -36,7 +36,7 @@ export default {
       type: Number
     }
   }
-};
+}
 </script>
 
 <style lang="scss" module="base">

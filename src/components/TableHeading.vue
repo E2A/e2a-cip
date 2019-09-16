@@ -16,7 +16,7 @@ export default {
   name: 'TableHeading',
   mixins: [styleHelpers],
   props: {
-  },
+  }
 }
 </script>
 

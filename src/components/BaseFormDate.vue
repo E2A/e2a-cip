@@ -19,13 +19,13 @@
 </template>
 
 <script>
-import { styleHelpers } from "./mixins/helpers";
-import Datepicker from "vuejs-datepicker";
+import { styleHelpers } from './mixins/helpers'
+import Datepicker from 'vuejs-datepicker'
 import BaseFormLabel from './BaseFormLabel.vue'
 import BaseCalloutBox from './BaseCalloutBox.vue'
 
 export default {
-  name: "BaseFormDate",
+  name: 'BaseFormDate',
   mixins: [styleHelpers],
   components: {
     BaseFormLabel,
@@ -53,9 +53,9 @@ export default {
     emitChange: function (e) {
       // debugger;
       this.$emit('input', e)
-    },
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -82,8 +82,8 @@ export default {
   color: color('white');
 }
 
-.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover, 
-.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover, 
+.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover,
+.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover,
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover {
   border: 1px solid color('primary') !important;
 }

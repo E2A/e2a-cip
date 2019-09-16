@@ -100,7 +100,7 @@ export default {
   methods: {
     exportData: function (option) {
       if (this.runExportData(option)) {
-        this.notify(this.$t('fileUpload.exportSuccessful', {filetype: option.toUpperCase()}), 'success')
+        this.notify(this.$t('fileUpload.exportSuccessful', { filetype: option.toUpperCase() }), 'success')
       }
     }
   }

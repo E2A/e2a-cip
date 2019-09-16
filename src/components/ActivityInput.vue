@@ -189,10 +189,10 @@ export default {
     }
   },
   computed: {
-    canSubmit: function() {
-      const activityInstance = this.getActivity();
+    canSubmit: function () {
+      const activityInstance = this.getActivity()
 
-      return !! activityInstance;
+      return !!activityInstance
     },
     activityTypeOptions: function () {
       return this.getActvityData().map(activityType => {
@@ -234,12 +234,12 @@ export default {
     }
   },
   methods: {
-    clickLearnMore: function(activityId) {
+    clickLearnMore: function (activityId) {
       let routeData = this.$router.resolve({
         name: 'activity-type-info',
         params: { backToActivityId: activityId }
-      });
-      window.open(routeData.href, '_blank');
+      })
+      window.open(routeData.href, '_blank')
     },
     saveOnChange: function () {
       if (this.canSubmit) {
@@ -311,7 +311,7 @@ export default {
       this.activityNumber = ''
       this.informParent(false)
     },
-    clearForm: function() {
+    clearForm: function () {
       this.currentActivityID = this.activityId
       this.existingActivity = {}
       this.activityBudgetBase = null
@@ -336,7 +336,7 @@ export default {
     addActivity: function (informParent = true) {
       // Add or update activity
       const activityInstance = this.getActivity()
-      
+
       this.$validator.validate().then(result => {
         // If valid, add or update activity, else show errors.
         if (result) {
@@ -360,7 +360,7 @@ export default {
               }
             })
           }
-          this.informParent(informParent);
+          this.informParent(informParent)
           this.notify(this.$t('saveSuccess'), 'success')
           this.updateData()
         }

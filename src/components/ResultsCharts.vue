@@ -133,7 +133,7 @@ export default {
     },
     displayQuestions: {
       type: Boolean,
-      default: false,
+      default: false
     }
   },
   components: {
@@ -149,15 +149,15 @@ export default {
     return {
       setupTitle: this.getItemValue('setup', 'title'),
       setupRole: this.getItemValue('setup', 'role'),
-      setupCountry: this.getItemValue('setup', 'countryName'),
+      setupCountry: this.getItemValue('setup', 'countryName')
     }
   },
   computed: {
-    setupDate: function() {
-      const startTime = this.getItemValue('setup', 'dateStart');
-      const endTime = this.getItemValue('setup', 'dateEnd');
+    setupDate: function () {
+      const startTime = this.getItemValue('setup', 'dateStart')
+      const endTime = this.getItemValue('setup', 'dateEnd')
 
-      return `${startTime} - ${endTime}`;
+      return `${startTime} - ${endTime}`
     }
   },
   methods: {

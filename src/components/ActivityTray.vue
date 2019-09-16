@@ -107,20 +107,20 @@
 </template>
 
 <script>
-import { dataMethods } from "@/components/mixins/dataMethods";
-import BaseHeading from "@/components/BaseHeading.vue";
-import BaseBodyText from "@/components/BaseBodyText.vue";
-import BaseDataGrid from "@/components/BaseDataGrid.vue";
-import { activityTypes } from "@/components/mixins/activityTypes";
-import BestPracticeIconSelect from "@/components/BestPracticeIconSelect.vue";
-import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
-import { bestPracticeData } from "@/components/mixins/bestPracticeData";
-import BaseButton from "@/components/BaseButton";
-import ActivityComment from "@/components/ActivityComment";
-import ActivitiesItemInput from "@/components/ActivitiesItemInput";
+import { dataMethods } from '@/components/mixins/dataMethods'
+import BaseHeading from '@/components/BaseHeading.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
+import BaseDataGrid from '@/components/BaseDataGrid.vue'
+import { activityTypes } from '@/components/mixins/activityTypes'
+import BestPracticeIconSelect from '@/components/BestPracticeIconSelect.vue'
+import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
+import { bestPracticeData } from '@/components/mixins/bestPracticeData'
+import BaseButton from '@/components/BaseButton'
+import ActivityComment from '@/components/ActivityComment'
+import ActivitiesItemInput from '@/components/ActivitiesItemInput'
 
 export default {
-  name: "ActivityTray",
+  name: 'ActivityTray',
   mixins: [bestPracticeData, dataMethods, activityTypes],
   components: {
     BaseBodyText,
@@ -136,87 +136,87 @@ export default {
     activityId: [String, Number]
   },
   computed: {
-    activity: function() {
-      return this.$store.getters["entities/activities/query"]()
-        .with("comments")
+    activity: function () {
+      return this.$store.getters['entities/activities/query']()
+        .with('comments')
         .whereId(this.activityId)
-        .first();
+        .first()
     },
-    comments: function() {
-      return this.activity.comments;
+    comments: function () {
+      return this.activity.comments
     },
-    commentsNotPresent: function() {
-      return this.comments.length === 0;
+    commentsNotPresent: function () {
+      return this.comments.length === 0
     },
-    expandedData: function() {
+    expandedData: function () {
       return {
-        [this.$t("activityTable.defaultID")]: this.activity.id,
-        [this.$t("activityTable.defaultBudget")]: `${
+        [this.$t('activityTable.defaultID')]: this.activity.id,
+        [this.$t('activityTable.defaultBudget')]: `${
           this.activity.budget
-        } <small>${this.getItemValue("setup", "currencyCode")}</small>`,
-        [this.$t("activityTable.defaultYouthCentered")]: this.activity
+        } <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
+        [this.$t('activityTable.defaultYouthCentered')]: this.activity
           .youthCentric
-          ? this.$t("yesRaw")
-          : this.$t("noRaw")
-      };
+          ? this.$t('yesRaw')
+          : this.$t('noRaw')
+      }
     }
   },
-  data: function() {
+  data: function () {
     return {
       inputKey: 0,
-      inputText: ""
-    };
+      inputText: ''
+    }
   },
   methods: {
-    editActivity: function() {
+    editActivity: function () {
       this.$router.push({
-        name: "activity",
+        name: 'activity',
         params: { activityId: this.activityId }
-      });
+      })
     },
-    addComment: function() {
+    addComment: function () {
       const data = {
         activity_id: this.activityId,
         text: this.inputText
-      };
-      this.$store.dispatch("entities/comments/insert", { data });
-      this.emptyInput();
-    },
-    deleteComment: function(event, commentId) {
-      this.$store.dispatch("entities/comments/delete", commentId);
-    },
-    getActivityType: function() {
-      if (!this.activityId) {
-        return null;
       }
-      const needle = this.activity.type;
+      this.$store.dispatch('entities/comments/insert', { data })
+      this.emptyInput()
+    },
+    deleteComment: function (event, commentId) {
+      this.$store.dispatch('entities/comments/delete', commentId)
+    },
+    getActivityType: function () {
+      if (!this.activityId) {
+        return null
+      }
+      const needle = this.activity.type
       const type = this.activityTypeDataset.find(item => {
-        return item.key === needle;
-      });
+        return item.key === needle
+      })
 
-      return type.title;
+      return type.title
     },
-    getActivityTitle: function() {
-      return this.activity.activityNumber;
+    getActivityTitle: function () {
+      return this.activity.activityNumber
     },
-    getActivityText: function() {
-      return this.activity.text;
+    getActivityText: function () {
+      return this.activity.text
     },
-    isYouthCentric: function() {
-      return this.activity.youthCentric;
+    isYouthCentric: function () {
+      return this.activity.youthCentric
     },
-    updateInputText: function(newValue) {
-      this.inputText = newValue;
+    updateInputText: function (newValue) {
+      this.inputText = newValue
     },
-    emptyInput: function() {
-      this.inputKey++;
-      this.inputText = "";
+    emptyInput: function () {
+      this.inputKey++
+      this.inputText = ''
     },
-    close: function() {
-      this.$store.commit("SET_MOUNTED_ACTIVITY", 0);
+    close: function () {
+      this.$store.commit('SET_MOUNTED_ACTIVITY', 0)
     }
   }
-};
+}
 </script>
 
 <style src="styles/type.scss" lang="scss" module="type"></style>

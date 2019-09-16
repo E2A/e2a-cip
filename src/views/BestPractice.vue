@@ -35,18 +35,18 @@
 </template>
 
 <script>
-import { bestPracticeData } from "@/components/mixins/bestPracticeData.js";
-import NavBackLink from "@/components/NavBackLink.vue";
-import BasePageIntro from "@/components/BasePageIntro.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
-import BaseButtonLink from "@/components/BaseButtonLink.vue";
-import BaseBodyText from "@/components/BaseBodyText.vue";
-import BaseSectionWrapper from "@/components/BaseSectionWrapper.vue";
-import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
-import BaseGallery from "@/components/BaseGallery.vue";
+import { bestPracticeData } from '@/components/mixins/bestPracticeData.js'
+import NavBackLink from '@/components/NavBackLink.vue'
+import BasePageIntro from '@/components/BasePageIntro.vue'
+import BaseHeading from '@/components/BaseHeading.vue'
+import BaseButtonLink from '@/components/BaseButtonLink.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
+import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
+import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
+import BaseGallery from '@/components/BaseGallery.vue'
 
 export default {
-  name: "BestPractice",
+  name: 'BestPractice',
   mixins: [bestPracticeData],
   components: {
     NavBackLink,
@@ -62,7 +62,7 @@ export default {
     id: [String, Number]
   },
   computed: {
-    resources: function() {
+    resources: function () {
       return (
         this.bestPractices[this.id - 1].resources &&
         Object.values(this.bestPractices[this.id - 1].resources).map(item => {
@@ -70,12 +70,12 @@ export default {
             title: item.title,
             teaser: item.teaser,
             url: item.url
-          };
+          }
         })
-      );
+      )
     }
   }
-};
+}
 </script>
 
 <style src="styles/type.scss" lang="scss" module="type"></style>

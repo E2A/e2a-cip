@@ -39,16 +39,16 @@ export default {
   data: function () {
     return {
       isFormFilled: false,
-      previousRoute: null,
+      previousRoute: null
     }
   },
-  beforeRouteEnter: function(to, from, next) {
+  beforeRouteEnter: function (to, from, next) {
     next(vm => {
       vm.previousRoute = from
     })
   },
-  created: function() {
-    this.$store.commit('SET_PROGRESS', {activities: true})
+  created: function () {
+    this.$store.commit('SET_PROGRESS', { activities: true })
   },
   methods: {
     trackValidation: function (value, activityId) {
@@ -62,7 +62,7 @@ export default {
       const yOffset = window.pageYOffset
       window.scroll(0, 0) // move to top of form
     },
-    goBack: function() {
+    goBack: function () {
       if (this.previousRoute) {
         return this.previousRoute
       }
@@ -88,16 +88,16 @@ export default {
             label: this.$t('inputNextActivity'),
             iconLeft: 'add',
             iconRight: 'none'
-          },
+          }
         )
       }
 
       navButtons.right.push(
         {
-            to: { name: 'summary' },
-            label: this.$t('saveAndContinue'),
-            role: this.isFormFilled ? 'primary' : 'default'
-          }
+          to: { name: 'summary' },
+          label: this.$t('saveAndContinue'),
+          role: this.isFormFilled ? 'primary' : 'default'
+        }
       )
 
       return navButtons
