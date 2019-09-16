@@ -20,7 +20,7 @@
           :router="false" role="default"
           :label="this.$t('nav.learnMore')"
           size="small"
-          target="_blank"
+          :target="electron ? '_self' : '_blank'"
         />
       </BaseGutterWrapper>
     </header>
