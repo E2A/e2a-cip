@@ -90,7 +90,6 @@ export default {
   },
   methods: {
     updateItem: function () {
-      // debugger;
       if (!this.active) {
         // Parent controls communication with the store
         this.updateParent()
