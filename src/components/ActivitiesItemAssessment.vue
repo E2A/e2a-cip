@@ -33,7 +33,6 @@
       <template slot="summaryRight">
         <!-- list of best practice icons -->
         <BaseGutterWrapper
-          v-if="youth"
           :class="base.right"
           el="ul"
           gutterX="xnarrow"
@@ -52,7 +51,7 @@
           </li>
         </BaseGutterWrapper>
         <!-- Edit -->
-        <BaseGutterWrapper v-else-if="editable" :class="[base.right, space.paddingHorizontalNone]" gutterY="xnarrow" gutterX="xnarrow">
+        <BaseGutterWrapper v-if="editable" :class="[base.right, space.paddingHorizontalNone]" gutterY="xnarrow" gutterX="xnarrow">
           <router-link
             :to="{ name: 'activity', params: { activityId: id } }"
             :class="base.rowAction"

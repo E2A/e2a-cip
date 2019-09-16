@@ -1,6 +1,13 @@
 <template>
   <li
-    :class="[this.parentIsActive && base.parentActive, this.isCurrentRoute && base.currentRoute, base.navItem, !link.active && base.navItemDisabled, base[getStepProgress]]"
+    :class="[
+      this.parentIsActive && base.parentActive, 
+      this.isCurrentRoute && base.currentRoute, 
+      base.navItem, 
+      !link.active && base.navItemDisabled, 
+      base[getStepProgress],
+      this.isFurthestStep && base.furthestStep
+      ]"
   >
     <router-link
       v-if="link.active"
@@ -42,6 +49,26 @@ export default {
     },
     isCurrentRoute: function () {
       return this.link.name === this.$route.name
+    },
+    isFurthestStep: function() {
+      const currentProgress = this.$store.getters.currentProgress
+      const progArray = Object.keys(currentProgress).map(step => {
+        return {name: step, active: currentProgress[step]}
+      });
+
+      const currentStep = progArray[this.objectIndex]
+      const nextStep = progArray[this.objectIndex + 1]
+
+      if (nextStep === undefined) {
+        return true;
+      }
+
+      if (nextStep && !nextStep.active) {
+        return true;
+      }
+
+      return false;
+      
     },
     parentIsActive: function () {
       // make sure there are children
@@ -165,13 +192,13 @@ $nav-breakpoint: 81em; // ~1400px
     color: color("primary");
   }
 
+  &:before {
+    background-color: color("primary");
+  }
+
   &:after {
     background-color: color("primary");
     height: 7px;
-  }
-
-  &:before {
-    background-color: color("primary");
   }
 
   &.whole {
@@ -184,6 +211,12 @@ $nav-breakpoint: 81em; // ~1400px
     &:after {
       width: 50%;
     }
+  }
+}
+
+.parentActive.furthestStep {
+  &:before {
+    background-color: color("midtone", $grade: 70);
   }
 }
 
