@@ -11,11 +11,11 @@
       <BaseGutterWrapper :class="base.rightPane" gutterY="xnarrow" gutterX="xnarrow">
         <!-- Language selector -->
         <LanguageSwitcher :class="space.marginRightXnarrow"/>
-        <BaseButtonLink 
-          :to="this.$t('nav.eipPdf')" 
-          :router="false" role="default" 
-          :label="this.$t('nav.learnMore')" 
-          size="small" 
+        <BaseButtonLink
+          :to="this.$t('nav.eipPdf')"
+          :router="false" role="default"
+          :label="this.$t('nav.learnMore')"
+          size="small"
           target="_blank"
           reverseColors
         />

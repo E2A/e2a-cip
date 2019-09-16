@@ -32,12 +32,12 @@
 </template>
 
 <script>
-import BaseGutterWrapper from "./BaseGutterWrapper.vue";
-import BaseHeading from "./BaseHeading.vue";
-import BaseBodyText from "./BaseBodyText.vue";
+import BaseGutterWrapper from './BaseGutterWrapper.vue'
+import BaseHeading from './BaseHeading.vue'
+import BaseBodyText from './BaseBodyText.vue'
 
 export default {
-  name: "BaseStepList",
+  name: 'BaseStepList',
   props: {
     steps: {
       type: Array,
@@ -45,9 +45,9 @@ export default {
     },
     size: {
       type: String,
-      default: "default",
-      validator(value) {
-        return ["small", "default"].indexOf(value) !== -1;
+      default: 'default',
+      validator (value) {
+        return ['small', 'default'].indexOf(value) !== -1
       }
     }
   },
@@ -56,7 +56,7 @@ export default {
     BaseHeading,
     BaseBodyText
   }
-};
+}
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
@@ -125,6 +125,6 @@ export default {
   position: relative;
   transition: background-color 0.2s;
   width: 50px;
-  
+
 }
 </style>

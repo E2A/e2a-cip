@@ -116,7 +116,7 @@ export default {
   created () {
     // Clear any open icons
     this.$store.dispatch('entities/bestpracticeicons/deleteAll')
-    this.$store.commit('SET_PROGRESS', {results: true})
+    this.$store.commit('SET_PROGRESS', { results: true })
   }
 }
 </script>

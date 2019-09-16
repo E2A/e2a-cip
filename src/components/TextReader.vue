@@ -11,7 +11,7 @@ export default {
     loadTextFromFile: function (ev) {
       const file = ev.target.files[0]
       const reader = new FileReader()
-      reader.onload = e => this.$emit('file-read-successful', {text: e.target.result, fileObject: file})
+      reader.onload = e => this.$emit('file-read-successful', { text: e.target.result, fileObject: file })
       reader.readAsText(file)
     }
   }

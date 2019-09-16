@@ -46,21 +46,21 @@
 </template>
 
 <script>
-import i18n from "@/i18n.js";
-import NavFooter from "@/components/NavFooter.vue";
-import NavBreadcrumbs from "@/components/NavBreadcrumbs.vue";
-import BasePageIntro from "@/components/BasePageIntro.vue";
-import BaseStepList from "@/components/BaseStepList.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
-import BaseBodyText from "@/components/BaseBodyText.vue";
-import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
-import BaseSectionWrapper from "@/components/BaseSectionWrapper.vue";
-import FileExport from "@/components/FileExport.vue";
-import BaseButtonLink from "@/components/BaseButtonLink.vue";
-import GlobalRecommendation from "@/components/GlobalRecommendation.vue";
+import i18n from '@/i18n.js'
+import NavFooter from '@/components/NavFooter.vue'
+import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
+import BasePageIntro from '@/components/BasePageIntro.vue'
+import BaseStepList from '@/components/BaseStepList.vue'
+import BaseHeading from '@/components/BaseHeading.vue'
+import BaseBodyText from '@/components/BaseBodyText.vue'
+import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
+import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
+import FileExport from '@/components/FileExport.vue'
+import BaseButtonLink from '@/components/BaseButtonLink.vue'
+import GlobalRecommendation from '@/components/GlobalRecommendation.vue'
 
 export default {
-  name: "Advocate",
+  name: 'Advocate',
   components: {
     NavFooter,
     NavBreadcrumbs,
@@ -74,13 +74,13 @@ export default {
     FileExport,
     GlobalRecommendation
   },
-  beforeRouteEnter: function(to, from, next) {
+  beforeRouteEnter: function (to, from, next) {
     next(vm => {
       vm.previousRoute = from
     })
   },
   methods: {
-    goBack: function() {
+    goBack: function () {
       if (this.previousRoute) {
         return this.previousRoute
       }
@@ -102,18 +102,18 @@ export default {
     }
   },
   computed: {
-    steps: function() {
+    steps: function () {
       return Object.values(i18n.messages[i18n.locale].advocate.steps).map(
         (step, index) => {
           return {
             title: this.$t(`advocate.steps.step${index + 1}.title`),
             blurb: this.$t(`advocate.steps.step${index + 1}.blurb`)
-          };
+          }
         }
-      );
-    },
+      )
+    }
   }
-};
+}
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>

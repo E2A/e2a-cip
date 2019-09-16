@@ -24,8 +24,8 @@ export default {
   created () {
     // Export data and redirect back to where you came from
     this.runExportData('json')
-    this.$router.push({name: this.redirect})
-    this.notify(this.$t('fileUpload.exportSuccessful', {filetype: 'JSON'}), 'success')
+    this.$router.push({ name: this.redirect })
+    this.notify(this.$t('fileUpload.exportSuccessful', { filetype: 'JSON' }), 'success')
   }
 }
 </script>

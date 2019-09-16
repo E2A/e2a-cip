@@ -51,7 +51,7 @@ export default {
     exportPDF: function () {
       // Electron printing - show error if electron PDF is false (ie could not open)
       this.pdfPrintError = !this.printElectronPDF()
-      this.$router.push({name: 'print'})
+      this.$router.push({ name: 'print' })
     }
   }
 }

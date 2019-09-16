@@ -32,7 +32,7 @@ export default {
     },
     condensed: {
       type: Boolean,
-      default: false,
+      default: false
     }
   },
   components: {

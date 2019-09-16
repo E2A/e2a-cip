@@ -22,63 +22,63 @@
 </template>
 
 <script>
-import BaseIcon from "./BaseIcon.vue";
+import BaseIcon from './BaseIcon.vue'
 
 export default {
-  name: "NavItem",
+  name: 'NavItem',
   components: {
     BaseIcon
   },
   props: {
     link: [Object],
     objectIndex: [Number, String],
-    hideStep: [Boolean],
+    hideStep: [Boolean]
   },
   computed: {
-    stepIndex: function() {
+    stepIndex: function () {
       if (this.link.steps) {
-        return (this.objectIndex + 1).toString();
+        return (this.objectIndex + 1).toString()
       }
     },
-    isCurrentRoute: function() {
-      return this.link.name === this.$route.name;
+    isCurrentRoute: function () {
+      return this.link.name === this.$route.name
     },
-    parentIsActive: function() {
+    parentIsActive: function () {
       // make sure there are children
-      const fullPath = this.$route.fullPath.substring(1);
+      const fullPath = this.$route.fullPath.substring(1)
       if (this.link.steps) {
         if (this.link.name === this.$route.fullPath) {
-          return true;
+          return true
         }
 
         if (this.link.steps) {
-          return this.link.steps.find(link => link.name === this.$route.name);
+          return this.link.steps.find(link => link.name === this.$route.name)
         }
       }
     },
-    getStepProgress: function() {
+    getStepProgress: function () {
       const percentMap = {
         50: 'half',
         33: 'third',
         25: 'fourth',
         75: 'threeFourth',
-        100: 'whole',
+        100: 'whole'
       }
 
       // get the index of the route in the steps array
       const inArray = this.$props.link.steps.filter(item => item.name === this.$route.name)
       const indexOfStep = this.$props.link.steps.findIndex(item => item.name === this.$route.name)
-      
+
       if (indexOfStep >= 0) {
       // divide the index by the length
-        const per = ((indexOfStep + 1) / this.$props.link.steps.length) * 100;
-      // return percentage
-        return percentMap[per];
+        const per = ((indexOfStep + 1) / this.$props.link.steps.length) * 100
+        // return percentage
+        return percentMap[per]
       }
-      return percentMap[100];
+      return percentMap[100]
     }
   }
-};
+}
 </script>
 
 <style lang="scss" module="base">
@@ -94,7 +94,8 @@ $nav-breakpoint: 81em; // ~1400px
   position: relative;
   flex-grow: 1;
 
-  &:after {
+  &:after,
+  &:before {
     content: "";
     transition: 0.2s all ease-in-out;
     background-color: color("primary", $grade: 50);
@@ -166,7 +167,11 @@ $nav-breakpoint: 81em; // ~1400px
 
   &:after {
     background-color: color("primary");
-    height: 6px;
+    height: 7px;
+  }
+
+  &:before {
+    background-color: color("primary");
   }
 
   &.whole {

@@ -15,7 +15,7 @@ let mainWindow
 // Standard scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { standard: true, secure: true } }])
 
-function createMainWindow(language) {
+function createMainWindow (language) {
   const win = new BrowserWindow({
     width: 1500,
     height: 1500,

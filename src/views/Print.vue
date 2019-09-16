@@ -79,7 +79,7 @@
         </ActivitiesList>
       </BaseWidthWrapper>
     </BaseSectionWrapper>
-    
+
   </NavFooter>
 </template>
 
@@ -137,7 +137,7 @@ export default {
       return {
         left: [
           {
-            to: {name: 'advocate'},
+            to: { name: 'advocate' },
             label: this.$t('print.previousStep')
           }
         ],

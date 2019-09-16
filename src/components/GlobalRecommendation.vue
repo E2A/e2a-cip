@@ -24,7 +24,7 @@
         @change="insertRecommendation"
         :key="inputKey"
       />
-      
+
     </ol>
     <BaseButton
       @click="addRecommendation"
@@ -48,13 +48,13 @@ export default {
   },
   props: {
     'insertText': {
-      type: String,
+      type: String
     }
   },
-  data: function() {
+  data: function () {
     return {
       inputKey: 1000,
-      itemText: this.insertText,
+      itemText: this.insertText
     }
   },
   computed: {
@@ -67,8 +67,8 @@ export default {
     }
   },
   methods: {
-    insertRecommendation: function(text) {
-      this.itemText = text;
+    insertRecommendation: function (text) {
+      this.itemText = text
     },
     addRecommendation: function () {
       // Add a new recommendation
@@ -80,9 +80,9 @@ export default {
 
       this.clearText()
     },
-    clearText: function() {
-      this.inputKey++;
-      this.itemText = '';
+    clearText: function () {
+      this.inputKey++
+      this.itemText = ''
     }
   }
 }
