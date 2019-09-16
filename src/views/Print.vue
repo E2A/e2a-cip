@@ -5,7 +5,7 @@
     :rightButtons="navButtons.right"
   >
     <!-- header and charts -->
-    <ResultsCharts />
+    <ResultsCharts :displayQuestions="false" />
 
     <!-- Global Recommendations -->
     <BaseSectionWrapper border>

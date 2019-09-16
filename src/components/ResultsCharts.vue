@@ -72,7 +72,7 @@
             :class="[border.top, border.secondary, space.paddingTop]"
             slot-scope="{item}"
           >
-            <CountryIndicator :countryIndicator="getCountryIndicator(item.id)"
+            <CountryIndicator :countryIndicator="getCountryIndicator(item.id)" :displayQuestions="displayQuestions"
             />
           </div>
         </BaseGallery>

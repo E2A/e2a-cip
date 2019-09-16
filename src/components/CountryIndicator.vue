@@ -43,12 +43,12 @@
       </div>
     </div>
     <ResultsQuestions
-      v-if="countryIndicator.questions && !countryIndicator.error"
+      v-if="countryIndicator.questions && !countryIndicator.error && displayQuestions"
       :questions="countryIndicator.questions"
       :class="base.questions"
     />
 
-    <div :class="base.stats" v-else>
+    <div :class="base.stats" v-if="countryIndicator.error">
       <BaseHeading
         :centered="false"
         :level="3"
@@ -89,6 +89,10 @@ export default {
     countryIndicator: {
       type: Object,
       required: true
+    },
+    displayQuestions: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
