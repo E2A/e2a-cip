@@ -2,7 +2,7 @@ fr:
   mainTitle: Outil pour une planification adaptée à  la santé reproductive des adolescents et des jeunes (AYRH)
   home:
     chooseLanguage: 'Choisissez votre langue préférée:'
-    title: PAS SANS NOUS!
+    title: PAS SANS NOUS !
     subtitle: Outil de planification adaptée à la santé reproductive des adolescents et des jeunes (TARP)
     introHeader: 
     intro: |-
@@ -10,14 +10,14 @@ fr:
       
       \
       Utilisez cet outil pour réfléchir et discuter... 
-        - Discerner la proportion d'activités et le budget alloué aux activités "centrées sur les jeunes".
+        - Discerner la proportion d'activités et le budget alloué aux activités "centrées sur les jeunes"
         - L’un des plans de votre pays, qu’il soit un plan local, de district, régional ou national
         - Activités prévues pour les jeunes âgés de 15 à 24 ans
         - Si un budget suffisant est alloué à ces activités axées sur les jeunes
         - Comment renforcer le plan pour mieux répondre aux besoins des jeunes
         
     stepsTitle: Comment Ça Marche?
-    stepsIntro: 'Joignez-vous à 2 ou 3 collègues défenseurs de la jeunesse, rendez-vous disponibles pour quelques heures puis suivez les étapes ci-dessous pour déterminer si votre plan utilise des stratégies innovatrices et sur mesure pour répondre aux besoins des jeunes de votre pays:'
+    stepsIntro: 'Joignez-vous à 2 ou 3 collègues défenseurs de la jeunesse, rendez-vous disponibles pour quelques heures puis suivez les étapes ci-dessous pour déterminer si votre plan utilise des stratégies innovatrices et sur mesure pour répondre aux besoins des jeunes de votre pays :'
     steps:
       step1:
         title: Connaître votre plan national, régional, de district ou local
@@ -1369,8 +1369,8 @@ fr:
   delete: supprimer
   activities: activités
   activity: activité
-  bestPracticeIconComment: Ajouter un Commentaire
-  addAnotherComment: Envoyer un Commentaire
+  bestPracticeIconComment: Ajouter un commentaire
+  addAnotherComment: Envoyer un commentaire
   bestPracticeIconData: En savoir plus sur cette pratique fondée sur des données probantes (EIP)
   # Country Indicator Data
   indicatorDataNotPresent: 'Votre pays ne dispose pas de données pour l''élément %{countryName}'
