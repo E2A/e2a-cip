@@ -33,6 +33,7 @@
                   :youth="activity.youthCentric"
                   @activitySelect="setActivityId"
                   :class="[mountedActivity === activity.id && base.itemSelected]"
+                  numberIndex
                 />
               </ul>
             </div>

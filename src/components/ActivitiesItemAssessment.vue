@@ -27,7 +27,7 @@
           :color="youth || numberIndex ? 'dark' : 'midtone'"
           sub
         >
-          {{displayNumber}}
+          {{displayText}}
         </BaseHeading>
       </template>
       <template slot="summaryRight">
