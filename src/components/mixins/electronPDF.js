@@ -10,8 +10,16 @@ export const electronPDF = {
       var pdfSuccess = false
 
       // Create temp path
-      const timestamp = Date.now()
-      const pdfPath = path.join(os.tmpdir(), this.$t('fileUpload.pdfFileName', { timestamp: timestamp }))
+      const formatDate = () => {
+        const stamp = new Date()
+        const month = stamp.getMonth()
+        const day = stamp.getDate()
+        const year = stamp.getYear()
+
+        return `${day}-${month}-${year}`
+      }
+
+      const pdfPath = path.join(os.tmpdir(), this.$t('fileUpload.pdfFileName', { timestamp: formatDate() }))
 
       const currentWindow = remote.getCurrentWindow()
       const pdfViewWindow = new remote.BrowserWindow({ show: false, width: 1500, height: 1500, webPreferences: { plugins: true } })
