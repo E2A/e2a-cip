@@ -20,6 +20,9 @@ Vue.use(VueAnalytics, {
   router
 })
 
+// Add an event hub
+Vue.prototype.$eventHub = new Vue()
+
 new Vue({
   router,
   store,

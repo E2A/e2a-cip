@@ -25,7 +25,7 @@
           >
             <BaseButton
               v-if="button.type === 'button'"
-              v-on:click.native="saveReminder"
+              v-on:click.native="emitAction(button.action)"
               :label="button.label"
               :role="button.role || 'default'"
               :iconLeft="button.iconLeft || getDefaultIcon(group, 'left')"
@@ -35,7 +35,7 @@
             <BaseButtonLink
               v-else
               :to="button.to"
-              v-on:click.native="saveReminder"
+              v-on:click.native="emitAction(button.action)"
               :label="button.label"
               :role="button.role || 'default'"
               :iconLeft="button.iconLeft || getDefaultIcon(group, 'left')"
@@ -64,7 +64,7 @@ export default {
       default: 'div'
     },
     leftButtons: Array,
-    rightButtons: Array
+    rightButtons: Array,
   },
   components: {
     BaseGutterWrapper,
@@ -73,6 +73,12 @@ export default {
     PrintPage
   },
   methods: {
+    emitAction: function(action) {
+      if (action) {
+        this.$eventHub.$emit(action);
+      }
+      this.saveReminder();
+    },
     getGroupProp: function (group) {
       return group === 'left' ? this.leftButtons : this.rightButtons
     },

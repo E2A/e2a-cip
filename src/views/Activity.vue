@@ -51,16 +51,9 @@ export default {
     this.$store.commit('SET_PROGRESS', { activities: true })
   },
   methods: {
-    trackValidation: function (value, activityId) {
-      // Go to completed activity on save
-      if (value && activityId) {
-        // this.isFormFilled = value
-        this.travelToActivity(activityId)
-      }
-    },
-    travelToActivity: function (activityId) {
-      const yOffset = window.pageYOffset
-      window.scroll(0, 0) // move to top of form
+    trackValidation: function (isFormFilled) {
+      // toggle form is filled
+      this.isFormFilled = isFormFilled;
     },
     goBack: function () {
       if (this.previousRoute) {
@@ -81,22 +74,19 @@ export default {
         right: []
       }
 
-      if (this.$props.activityId) {
-        navButtons.right.push(
-          {
-            to: { name: 'activity' },
-            label: this.$t('inputNextActivity'),
-            iconLeft: 'add',
-            iconRight: 'none'
-          }
-        )
-      }
-
       navButtons.right.push(
+        {
+          to: { name: 'activity' },
+          label: this.$t('inputNextActivity'),
+          iconLeft: 'add',
+          iconRight: 'none',
+          role: this.isFormFilled ? 'primary' : 'default',
+          action: 'addActivity'
+        },
         {
           to: { name: 'summary' },
           label: this.$t('saveAndContinue'),
-          role: this.isFormFilled ? 'primary' : 'default'
+          action: 'addActivity'
         }
       )
 

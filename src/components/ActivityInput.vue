@@ -30,7 +30,7 @@
             :error="errors.first('activityNumber')"
             name="activityNumber"
             :helpText="$t('supportText.activityNumber')"
-            @change="saveOnChange"
+            @change="maybeSaveOnChange"
           />
           <!-- Activity Text -->
           <BaseFormInput
@@ -42,7 +42,7 @@
             el="textarea"
             name="activityText"
             :helpText="$t('supportText.activityText')"
-            @change="saveOnChange"
+            @change="maybeSaveOnChange"
           />
           <!-- Activity Budget -->
           <BaseFormInput
@@ -53,7 +53,7 @@
             :error="errors.first('activityBudget')"
             name="activityBudget"
             :helpText="$t('supportText.activityBudget')"
-            @change="saveOnChange"
+            @change="maybeSaveOnChange"
             :classItems="base.budgetInput"
             :prepend="`${this.getItemValue('setup', 'currencyCode')}`"
           >
@@ -65,7 +65,7 @@
                 :value="activityType.label"
                 name="activityBudgetScale"
                 :class="base.budgetSelect"
-                @input="saveOnChange"
+                @input="maybeSaveOnChange"
                 noClear
               />
             </div>
@@ -79,7 +79,7 @@
             :tooltipText="$t('tooltipText.activityYouthCentric')"
             name="activityYouthCentric"
             type="checkbox"
-            @input="saveOnChange"
+            @input="maybeSaveOnChange"
           />
           <!-- Activity Type -->
           <div :class="base.activityTypeWrapper">
@@ -101,7 +101,7 @@
               :searchable="false"
               :error="errors.first('activityType')"
               name="activityType"
-              @input="saveOnChange"
+              @input="maybeSaveOnChange"
               noClear
             />
           </div>
@@ -110,22 +110,6 @@
         <!-- Save/delete buttons -->
         <div :class="[space.paddingTop, space.marginTop, border.top, base.buttonContainer]">
           <BaseGutterWrapper gutterX="narrow" gutterY="narrow">
-            <li :class="base.buttonWrapper" v-if="getActivity()">
-              <BaseButton
-                @click="addActivity"
-                :label="$t('save')"
-                size="small"
-                :role="'primary'"
-              />
-            </li>
-            <li :class="base.buttonWrapper" v-if="!getActivity()">
-              <BaseButton
-                @click="addActivity"
-                :label="$t('save')"
-                size="small"
-                :role="'primary'"
-              />
-            </li>
             <li :class="base.buttonWrapper">
               <BaseButton
                 v-if="getActivity()"
@@ -191,7 +175,7 @@ export default {
   computed: {
     canSubmit: function () {
       const activityInstance = this.getActivity()
-
+      
       return !!activityInstance
     },
     activityTypeOptions: function () {
@@ -241,16 +225,19 @@ export default {
       })
       window.open(routeData.href, '_blank')
     },
-    saveOnChange: function () {
+    maybeSaveOnChange: function () {
+      // only submit if an activity is already present
       if (this.canSubmit) {
-        this.addActivity(false)
-      } else {
-        this.informParent(false)
+        this.addActivity()
+      }
+      
+      if (this.activityType.value && this.activityNumber) {
+        this.informParent(true);
       }
     },
     informParent: function (bool) {
       // Tells parent whether the form is complete or not.
-      this.$emit('changed', bool, this.activityId)
+      this.$emit('changed', bool)
     },
     getAllActivities: function () {
       return this.$store.getters['entities/activities/all']()
@@ -298,7 +285,7 @@ export default {
         this.currentActivityID = this.activityId
         this.activityText = activityInstance.text
         this.activityNumber = activityInstance.activityNumber
-        this.informParent(false)
+        this.informParent(true)
         return
       }
       this.currentActivityID = this.activityId
@@ -333,10 +320,9 @@ export default {
         return null
       }
     },
-    addActivity: function (informParent = true) {
+    addActivity: function () {
       // Add or update activity
       const activityInstance = this.getActivity()
-
       this.$validator.validate().then(result => {
         // If valid, add or update activity, else show errors.
         if (result) {
@@ -360,7 +346,6 @@ export default {
               }
             })
           }
-          this.informParent(informParent)
           this.notify(this.$t('saveSuccess'), 'success')
           this.updateData()
         }
@@ -376,7 +361,11 @@ export default {
     }
   },
   created () {
+    this.$eventHub.$on('addActivity', this.addActivity);
     this.updateData()
+  },
+  beforeDestroy () {
+    // this.$eventHub.$off('addActivity');
   }
 }
 </script>
