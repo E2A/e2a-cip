@@ -204,21 +204,22 @@ export default {
       currentActivityID: this.activityId,
       activityNumber: this.activityNumber,
       existingActivity: {},
-      activityBudgetBase: 0,
+      activityBudgetBase: '0',
       activityBudgetScale: '',
       activityYouthCentric: false,
       setupTitle: this.getItemValue('setup', 'title'),
       activityType: '',
-      activityText: ''
+      activityText: '',
+      currentLocale: this.$i18n.locale
     }
   },
   methods: {
-    clickLearnMore: function(activityId) {
+    clickLearnMore: function (activityId) {
       let routeData = this.$router.resolve({
         name: 'activity-type-info',
         params: { backToActivityId: activityId }
-      });
-      window.open(routeData.href, '_blank');
+      })
+      window.open(routeData.href, '_blank')
     },
     saveOnChange: function () {
       if (this.activityType && this.activityText) {
@@ -229,7 +230,6 @@ export default {
       }
     },
     informParent: function (bool) {
-      console.log('testing', this.activityId)
       // Tells parent whether the form is complete or not.
       this.$emit('changed', bool, this.activityId)
     },
@@ -250,7 +250,9 @@ export default {
           ? 1e9 // billion
           : budget >= 1e6
             ? 1e6 // million
-            : 1e3 // thousand
+            : budget >= 1e3
+              ? 1e3 // thousand
+              : 1 // one
 
       return {
         label: this.budgetScaleOptions.find(scale => {
@@ -268,7 +270,7 @@ export default {
           this.activityBudgetScale ||
           this.getBudgetScale(activityInstance.budget)
         this.activityBudgetBase =
-          activityInstance.budget / this.activityBudgetScale.value
+          this.getLocalizedBudget(activityInstance.budget / this.activityBudgetScale.value)
         this.activityYouthCentric = activityInstance.youthCentric
         this.activityType = {
           label: this.activityTypeOptions.find(option => {
@@ -315,7 +317,7 @@ export default {
             this.$store.dispatch('entities/activities/update', {
               id: Number(this.activityId),
               text: this.activityText,
-              budget: this.activityBudgetBase * this.activityBudgetScale.value,
+              budget: +this.getLocalizedBudget(this.activityBudgetBase, 'en') * this.activityBudgetScale.value,
               youthCentric: this.activityYouthCentric,
               type: this.activityType.value,
               activityNumber: this.activityNumber
@@ -324,7 +326,7 @@ export default {
             this.$store.dispatch('entities/activities/insert', {
               data: {
                 text: this.activityText,
-                budget: this.activityBudgetBase * this.activityBudgetScale.value,
+                budget: +this.getLocalizedBudget(this.activityBudgetBase, 'en') * this.activityBudgetScale.value,
                 youthCentric: this.activityYouthCentric,
                 type: this.activityType.value,
                 activityNumber: this.activityNumber
@@ -346,6 +348,15 @@ export default {
   },
   created () {
     this.updateData()
+  },
+  updated () {
+    if (this.currentLocale !== this.$i18n.locale) {
+      this.currentLocale = this.$i18n.locale
+
+      // update budget and change BaseFormInput's value
+      this.activityBudgetBase = this.getLocalizedBudget(this.activityBudgetBase)
+      document.getElementById('activityBudget').value = this.activityBudgetBase
+    }
   }
 }
 </script>
@@ -395,7 +406,6 @@ $budgetSelectWidth: 160px;
       height: 2.9rem;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      border-bottom: none;
     }
   }
 }

@@ -138,12 +138,15 @@ en:
   # Activity Budget Scales
   budgetScales:
     scale1:
+      title: --
+      key: "1"
+    scale2:
       title: Thousand
       key: "1000"
-    scale2:
+    scale3:
       title: Million
       key: "1000000"
-    scale3:
+    scale4:
       title: Billion
       key: "1000000000"
   # Activity Type Content
