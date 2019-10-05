@@ -46,10 +46,9 @@ export const customValidation = {
         const hasCorrectDecimal = decimal => {
           const valueString = String(value)
           const excludedDecimal = decimal === '.' ? ',' : '.'
-          console.log('validation', valueString, valueString.indexOf(excludedDecimal) === -1 && !valueString.match(/[a-z]/i))
 
           const hasWrongDecimal = valueString.indexOf(excludedDecimal) !== -1
-          const hasLetters = valueString.match(/[a-z]/i)
+          const hasLetters = !valueString.match(/^[0-9.,]+$/)
           const hasMultipleDecimals = valueString.indexOf(decimal) !== valueString.lastIndexOf(decimal)
 
           return (!hasWrongDecimal && !hasLetters && !hasMultipleDecimals)
