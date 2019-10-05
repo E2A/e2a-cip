@@ -40,5 +40,24 @@ export const customValidation = {
         return (existingEntity === 0)
       }
     })
+
+    Validator.extend('decimal', {
+      validate: value => {
+        const hasCorrectDecimal = decimal => {
+          const valueString = String(value)
+          const excludedDecimal = decimal === '.' ? ',' : '.'
+
+          const hasWrongDecimal = valueString.indexOf(excludedDecimal) !== -1
+          const hasLetters = !valueString.match(/^[0-9.,]+$/)
+          const hasMultipleDecimals = valueString.indexOf(decimal) !== valueString.lastIndexOf(decimal)
+
+          return (!hasWrongDecimal && !hasLetters && !hasMultipleDecimals)
+        }
+
+        // Check if decimal is correct
+        if (this.$i18n.locale === 'en') return hasCorrectDecimal('.')
+        else if (this.$i18n.locale === 'fr') return hasCorrectDecimal(',')
+      }
+    })
   }
 }
