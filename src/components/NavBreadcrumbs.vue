@@ -116,9 +116,7 @@ export default {
         }).text
     },
     globalNotification: function (value) {
-      const notification = this.$store.getters[
-        'entities/globalnotifications/query'
-      ]().first()
+      const notification = this.$store.getters['entities/globalnotifications/query']().first()
       return notification ? notification[value] : false
     },
     getLinks: function () {

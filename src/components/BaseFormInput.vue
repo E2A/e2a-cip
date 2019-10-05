@@ -105,18 +105,17 @@ export default {
     },
     classItems: String
   },
-  data: function() {
+  data: function () {
     return {
       intialText: this.value
     }
   },
   computed: {
     contentValue: function () {
-      
-      if (this.el === 'textarea') { 
+      if (this.el === 'textarea') {
         const text = this.intialText
-        return text;
-       }
+        return text
+      }
     },
     inputClasses: function () {
       return [

@@ -175,7 +175,7 @@ export default {
   computed: {
     canSubmit: function () {
       const activityInstance = this.getActivity()
-      
+
       return !!activityInstance
     },
     activityTypeOptions: function () {
@@ -230,9 +230,9 @@ export default {
       if (this.canSubmit) {
         this.addActivity()
       }
-      
+
       if (this.activityType.value && this.activityNumber) {
-        this.informParent(true);
+        this.informParent(true)
       }
     },
     informParent: function (bool) {
@@ -361,7 +361,7 @@ export default {
     }
   },
   created () {
-    this.$eventHub.$on('addActivity', this.addActivity);
+    this.$eventHub.$on('addActivity', this.addActivity)
     this.updateData()
   },
   beforeDestroy () {
