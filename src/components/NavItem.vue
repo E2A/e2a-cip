@@ -1,10 +1,10 @@
 <template>
   <li
     :class="[
-      this.parentIsActive && base.parentActive, 
-      this.isCurrentRoute && base.currentRoute, 
-      base.navItem, 
-      !link.active && base.navItemDisabled, 
+      this.parentIsActive && base.parentActive,
+      this.isCurrentRoute && base.currentRoute,
+      base.navItem,
+      !link.active && base.navItemDisabled,
       base[getStepProgress],
       this.isFurthestStep && base.furthestStep
       ]"
@@ -50,25 +50,24 @@ export default {
     isCurrentRoute: function () {
       return this.link.name === this.$route.name
     },
-    isFurthestStep: function() {
+    isFurthestStep: function () {
       const currentProgress = this.$store.getters.currentProgress
       const progArray = Object.keys(currentProgress).map(step => {
-        return {name: step, active: currentProgress[step]}
-      });
+        return { name: step, active: currentProgress[step] }
+      })
 
       const currentStep = progArray[this.objectIndex]
       const nextStep = progArray[this.objectIndex + 1]
 
       if (nextStep === undefined) {
-        return true;
+        return true
       }
 
       if (nextStep && !nextStep.active) {
-        return true;
+        return true
       }
 
-      return false;
-      
+      return false
     },
     parentIsActive: function () {
       // make sure there are children

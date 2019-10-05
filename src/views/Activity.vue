@@ -53,7 +53,7 @@ export default {
   methods: {
     trackValidation: function (isFormFilled) {
       // toggle form is filled
-      this.isFormFilled = isFormFilled;
+      this.isFormFilled = isFormFilled
     },
     goBack: function () {
       if (this.previousRoute) {
