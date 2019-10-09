@@ -46,7 +46,7 @@ export default {
     label: String,
     labelTextSize: String,
     helpText: String,
-    value: [String, Number, Object],
+    value: [String, Number, Object, Date],
     name: {
       type: String,
       required: true

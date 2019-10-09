@@ -1210,7 +1210,7 @@ en:
     successImport: Successfully imported
     textReaderImport: Import Data
     jsonFileName: e2a-export-%{timestamp}.json
-    csvFileName: e2a-%{exportName}-export-%{timestamp}.csv
+    csvFileName: e2a-export-%{timestamp}.csv
     pdfFileName: e2a-report-%{timestamp}.pdf
     exportSuccessful: "%{filetype} Save Successful"
   nav:
