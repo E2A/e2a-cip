@@ -16,10 +16,8 @@
       >
         {{$t('print.globalRecommendations.title')}}
       </BaseHeading>
-      <BaseWidthWrapper
-        :class="space.paddingBottom"
-      >
-        <BaseBodyText :content="$t('print.globalRecommendations.content')" />
+      <BaseWidthWrapper :class="space.paddingBottom">
+        <BaseBodyText :content="$t('print.globalRecommendations.content')"/>
 
         <BaseVerticalList
           :items="globalRecommendations"
@@ -72,7 +70,6 @@
                   :youth="activity.youthCentric"
                   @activitySelect="setActivityId"
                   numberIndex
-                  :class="[mountedActivity === activity.id && base.itemSelected]"
                 />
               </ul>
             </div>
@@ -80,6 +77,9 @@
         </ActivitiesList>
       </BaseWidthWrapper>
     </BaseSectionWrapper>
+
+    <!-- Activity Comments -->
+    <ActivitiesComments />
 
   </NavFooter>
 </template>
@@ -98,6 +98,7 @@ import BaseVerticalList from '@/components/BaseVerticalList.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
 import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
 import ActivitiesItemResultPrint from '@/components/ActivitiesItemResultPrint.vue'
+import ActivitiesComments from '@/components/ActivitiesComments.vue'
 import ClearItems from '@/components/ClearItems.vue'
 import ChartItems from '@/components/ChartItems.vue'
 import NavFooter from '@/components/NavFooter.vue'
@@ -125,6 +126,7 @@ export default {
     ActivitiesList,
     ActivitiesTypeHeading,
     ActivitiesItemResultPrint,
+    ActivitiesComments,
     ClearItems,
     ChartItems,
     ActivitiesItemAssessment,
