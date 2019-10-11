@@ -25,7 +25,7 @@
         <BaseStepList :steps="steps" />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
-    <BaseSectionWrapper :class="type.center" border>
+    <BaseSectionWrapper :class="[type.center, space.marginBottomXwide]" border>
       <div :class="space.paddingBottom">
         <BaseButtonLink
           :to="{name: 'print'}"
