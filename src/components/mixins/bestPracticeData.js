@@ -38,16 +38,29 @@ export const bestPracticeData = {
     },
     percentBPActivitesByType: function (activityType) {
       // count activities in type that are youth-centric
-      const activitiesInType = this.$store.getters['entities/activities/query']().where('type', activityType).where('youthCentric', true).count()
+      // include assessments with a value of 'yes'
+      const activitiesInType = this.$store.getters['entities/activities/query']()
+        .where('type', activityType)
+        .where('youthCentric', true)
+        .with('assessments', (query) => {
+          query.where('value', [this.$t('bestPracticeOptions.yesKey')])
+        })
+        .all()
 
-      // count activities in type with assessments
-      // -> if they have an assessment, they must be youth-centric, so do not need additional where() clause
-      const activitiesWithBP = this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
-        query.where('value', [this.$t('bestPracticeOptions.yesKey')])
-      }).where('type', activityType).count()
+      const activitiesWithBP = activitiesInType.filter(activity => activity.assessments.length > 0)
 
       // make sure activitiesInType is not zero to avoid dividing by it and returning NaN - if so just return 0
-      return activitiesInType > 0 ? (activitiesWithBP / activitiesInType).toFixed(2) * 100 : 0
+      return activitiesInType.length > 0 ? (activitiesWithBP.length / activitiesInType.length).toFixed(2) * 100 : 0
+    },
+    getActivitiesWithBP () {
+      // get activities and include assessments with a value of 'yes'
+      const activities = this.$store.getters['entities/activities/query']()
+        .where('youthCentric', true)
+        .with('assessments', (query) => {
+          query.where('value', [this.$t('bestPracticeOptions.yesKey')])
+        }).all()
+
+      return activities.filter(activity => activity.assessments.length > 0)
     }
   }
 }

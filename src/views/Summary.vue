@@ -32,7 +32,6 @@
                 :key="`activity-${index}`"
                 :activity="activity"
                 @activitySelect="setActivityId"
-                :class="[mountedActivity === activity.id && instructions.itemSelected]"
                 numberIndex
                 editable
               />

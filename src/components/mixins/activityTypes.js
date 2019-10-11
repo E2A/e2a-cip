@@ -27,6 +27,26 @@ export const activityTypes = {
       }
       return groupedActivities
     },
+    getGroupedYouthActivities: function () {
+      const activityTypeList = this.getActvityData()
+      var groupedActivities = []
+
+      // Build array of activities by type
+      // We only get activity assessments that are yes / partially (no can be ignored given it is the default)
+      for (const activityType of activityTypeList) {
+        groupedActivities.push({
+          activityTypeName: activityType.title,
+          activityTypeKey: activityType.key,
+          activityObjects: this.$store.getters['entities/activities/query']().with('assessments', (query) => {
+            query.where('value', [
+              this.$t('bestPracticeOptions.yesKey'),
+              this.$t('bestPracticeOptions.partiallyKey')
+            ])
+          }).where('type', activityType.key).where('youthCentric', true).get()
+        })
+      }
+      return groupedActivities
+    },
     getActvityData: function () {
       return Object.values(i18n.messages[i18n.locale].activityTypes).map((activityType, index) => {
         return {

@@ -95,7 +95,7 @@ export default {
   },
   computed: {
     groupedActivities: function () {
-      return this.getGroupedActivites()
+      return this.getGroupedYouthActivities()
     },
     ...mapState({
       mountedActivity: state => state.mountedActivity
