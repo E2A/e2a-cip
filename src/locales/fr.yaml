@@ -797,7 +797,7 @@ fr:
     bestPractice5:
       title: "Promouvoir l’éducation à la vie familiale"
       # Do Not Translate
-      icon: eip-coordination
+      icon: eip-education
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       practice: |-
@@ -1045,7 +1045,7 @@ fr:
     bestPractice7:
       title: "Promouvoir l'égalité des sexes"
       # Do Not Translate
-      icon: eip-community
+      icon: eip-equality
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
       practice: |-
