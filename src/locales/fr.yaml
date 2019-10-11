@@ -122,7 +122,7 @@ fr:
   inputNextActivity: Ajouter une autre activité
   activitiesDone: "TERMINE. SUIVANT"
   save: "Sauvegarder l'activité"
-  saveAndContinue: Sauvegarde et Continuer
+  saveAndContinue: Sauvegarder et Continuer
   continue: Continuer
   saveSuccess: Enregistrer l'activité
   deleteSuccess: "Supprimer l'activité"
@@ -1212,6 +1212,7 @@ fr:
   addAnotherRecommendation: Ajouter une autre recommandation
   suggestedImprovements: Améliorations suggérées
   suggestImprovements: Suggérer des améliorations
+  addComment: Ajouter un commentaire
   done: Terminé
   results:
     analysis:
@@ -1228,7 +1229,7 @@ fr:
     exportCharts: 'Exporter les données de votre graphique'
     printPage: Imprimer la page
     previousStep: "Retour"
-    nextStep: Imprimer les résultats et Plaidoyer
+    nextStep: Sauvegarder et continuer
     youthCenteredActivity: activité centré sur la jeunesse
     youthCenteredActivities: activités centrées sur les jeunes
     percentActivitesWithBP: "les activités avec pratiques fondées sur des données\
