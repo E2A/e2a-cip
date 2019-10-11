@@ -1131,6 +1131,10 @@ en:
     percentActivitesWithBP: "Activites with an EIP"
     activityWithEIPbyType: Activity With EIP by Type
     exportChartSuccess: 'You successfully exported your chart data'
+    comments:
+      title: Your comments
+      content: Enter any comments and concerns you have on your assessments by looking over the information on Evidence-Informed Practices, available <a href="/evidence-informed-practices">here</a>.
+      review: The following are comments related to the activities you entered.
   chartToolTips:
     youthFocusBudget: ''
     youthFocusCount: ''
@@ -1176,6 +1180,7 @@ en:
     comments:
       title: Your comments
       content: Enter any comments and concerns you have on your assessments by looking over the information on Evidence-Informed Practices, available <a href="/evidence-informed-practices">here</a>.
+      review: The following are comments related to the activities you entered.
     print: PRINT YOUR RESULTS
     title: 'Add Key Recommendations…'
     intro: |-
@@ -1272,6 +1277,7 @@ en:
   delete: delete
   activities: activities
   activity: activity
+  Activity: Activity
   bestPracticeIconComment: Add a Comment
   addAnotherComment: Submit Comment
   bestPracticeIconData: Read more about this EIP

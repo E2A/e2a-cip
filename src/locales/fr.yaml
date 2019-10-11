@@ -1235,6 +1235,10 @@ fr:
       \ probantes (EIP)"
     activityWithEIPbyType: Activité avec pratique fondée sur des données probantes (EIP) par type
     exportChartSuccess: 'Vous avez exporté avec succès les données de votre graphique'
+    comments:
+      title: Vos commentaires
+      content: Entrez vos commentaires et préoccupations concernant vos évaluations en consultant les informations relatives aux pratiques fondées sur des preuves disponibles <a href="/evidence-informed-practices">ici</a>.
+      review: Les commentaires suivants concernent les activités que vous avez entrées.
   chartTitles:
     defaultGroupHeading: 'Intitulé du groupe par défaut'
     activityTypeCount: "Pourcentage nombre d'activités par type"
@@ -1276,7 +1280,7 @@ fr:
     comments:
       title: Vos commentaires
       content: Entrez vos commentaires et préoccupations concernant vos évaluations en consultant les informations relatives aux pratiques fondées sur des preuves disponibles <a href="/evidence-informed-practices">ici</a>.
-
+      review: Les commentaires suivants concernent les activités que vous avez entrées.
     print: IMPRIMEZ VOS RÉSULTATS
     title: 'Aller de l''avant...'
     intro: |-
@@ -1372,6 +1376,7 @@ fr:
   delete: supprimer
   activities: activités
   activity: activité
+  Activity: Activité
   bestPracticeIconComment: Ajouter un commentaire
   addAnotherComment: Envoyer un commentaire
   bestPracticeIconData: En savoir plus sur cette pratique fondée sur des données probantes (EIP)

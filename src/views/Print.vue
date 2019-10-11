@@ -16,10 +16,8 @@
       >
         {{$t('print.globalRecommendations.title')}}
       </BaseHeading>
-      <BaseWidthWrapper
-        :class="space.paddingBottom"
-      >
-        <BaseBodyText :content="$t('print.globalRecommendations.content')" />
+      <BaseWidthWrapper :class="space.paddingBottom">
+        <BaseBodyText :content="$t('print.globalRecommendations.content')"/>
 
         <BaseVerticalList
           :items="globalRecommendations"
