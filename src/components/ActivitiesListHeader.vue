@@ -58,7 +58,7 @@ export default {
   },
   computed: {
     percentBPActivites: function () {
-      return (this.getActivitiesWithBP() / this.getYouthCenteredActivitiesCount()).toFixed(2) * 100
+      return (this.getActivitiesWithBP().length / this.getYouthCenteredActivitiesCount()).toFixed(2) * 100
     }
   },
   components: {
@@ -71,11 +71,6 @@ export default {
     getYouthCenteredActivitiesCount () {
       return this.$store.getters['entities/activities/query']()
         .where('youthCentric', true).count()
-    },
-    getActivitiesWithBP () {
-      return this.$store.getters['entities/activities/query']().whereHas('assessments', (query) => {
-        query.where('value', [this.$t('bestPracticeOptions.yesKey')])
-      }).count()
     }
   }
 }

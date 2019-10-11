@@ -95,7 +95,7 @@ export default {
 
 .flyout {
   position: absolute;
-  z-index: 100;
+  z-index: 4000;
   margin-top: 0.35rem;
 }
 </style>

@@ -23,16 +23,9 @@ export default {
   methods: {
     runImportData: function (fileData) {
       // Parse file data and import, return import type
-      const importType = this.parseFileData(fileData)
-      const count = this.getItemCount(importType)
+      const successful = this.parseFileData(fileData)
 
-      if (importType === 'all' && count > 0) {
-        this.importText = `${count} ${this.$tc('item', count)}`
-      } else {
-        this.importText = `${count} ${importType} ${this.$tc('item', count)}`
-      }
-
-      if (count > 0) {
+      if (successful) {
         this.notify(`${this.$t('fileUpload.successImport')} ${this.importText}`, 'success')
         this.$emit('import-success')
       }

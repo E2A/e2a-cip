@@ -64,7 +64,7 @@ export default {
       default: 'div'
     },
     leftButtons: Array,
-    rightButtons: Array,
+    rightButtons: Array
   },
   components: {
     BaseGutterWrapper,
@@ -73,11 +73,11 @@ export default {
     PrintPage
   },
   methods: {
-    emitAction: function(action) {
+    emitAction: function (action) {
       if (action) {
-        this.$eventHub.$emit(action);
+        this.$eventHub.$emit(action)
       }
-      this.saveReminder();
+      this.saveReminder()
     },
     getGroupProp: function (group) {
       return group === 'left' ? this.leftButtons : this.rightButtons

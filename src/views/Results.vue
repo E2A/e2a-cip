@@ -41,6 +41,8 @@
         </ActivitiesList>
       </BaseWidthWrapper>
     </BaseSectionWrapper>
+    <!-- Activity Comments -->
+    <ActivitiesComments />
   </NavFooter>
 </template>
 
@@ -56,6 +58,7 @@ import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
 import ActivitiesList from '@/components/ActivitiesList.vue'
 import ActivitiesListHeader from '@/components/ActivitiesListHeader.vue'
 import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
+import ActivitiesComments from '@/components/ActivitiesComments.vue'
 import BaseProgressBar from '@/components/BaseProgressBar.vue'
 import ActivitiesItemResult from '@/components/ActivitiesItemResult.vue'
 import ClearItems from '@/components/ClearItems.vue'
@@ -82,6 +85,7 @@ export default {
     ActivitiesList,
     ActivitiesListHeader,
     ActivitiesTypeHeading,
+    ActivitiesComments,
     BaseProgressBar,
     ActivitiesItemResult,
     ClearItems,
@@ -91,7 +95,7 @@ export default {
   },
   computed: {
     groupedActivities: function () {
-      return this.getGroupedActivites()
+      return this.getGroupedYouthActivities()
     },
     ...mapState({
       mountedActivity: state => state.mountedActivity

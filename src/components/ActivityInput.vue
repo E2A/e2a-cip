@@ -175,7 +175,7 @@ export default {
   computed: {
     canSubmit: function () {
       const activityInstance = this.getActivity()
-      
+
       return !!activityInstance
     },
     activityTypeOptions: function () {
@@ -209,12 +209,13 @@ export default {
       currentActivityID: this.activityId,
       activityNumber: this.activityNumber,
       existingActivity: {},
-      activityBudgetBase: 0,
+      activityBudgetBase: '0',
       activityBudgetScale: '',
       activityYouthCentric: false,
       setupTitle: this.getItemValue('setup', 'title'),
       activityType: '',
-      activityText: ''
+      activityText: '',
+      currentLocale: this.$i18n.locale
     }
   },
   methods: {
@@ -230,9 +231,9 @@ export default {
       if (this.canSubmit) {
         this.addActivity()
       }
-      
+
       if (this.activityType.value && this.activityNumber) {
-        this.informParent(true);
+        this.informParent(true)
       }
     },
     informParent: function (bool) {
@@ -256,7 +257,9 @@ export default {
           ? 1e9 // billion
           : budget >= 1e6
             ? 1e6 // million
-            : 1e3 // thousand
+            : budget >= 1e3
+              ? 1e3 // thousand
+              : 1 // one
 
       return {
         label: this.budgetScaleOptions.find(scale => {
@@ -274,7 +277,7 @@ export default {
           this.activityBudgetScale ||
           this.getBudgetScale(activityInstance.budget)
         this.activityBudgetBase =
-          activityInstance.budget / this.activityBudgetScale.value
+          this.getLocalizedBudget(activityInstance.budget / this.activityBudgetScale.value)
         this.activityYouthCentric = activityInstance.youthCentric
         this.activityType = {
           label: this.activityTypeOptions.find(option => {
@@ -330,7 +333,7 @@ export default {
             this.$store.dispatch('entities/activities/update', {
               id: Number(this.activityId),
               text: this.activityText,
-              budget: this.activityBudgetBase * this.activityBudgetScale.value,
+              budget: +this.getLocalizedBudget(this.activityBudgetBase, 'en') * this.activityBudgetScale.value,
               youthCentric: this.activityYouthCentric,
               type: this.activityType.value,
               activityNumber: this.activityNumber
@@ -339,7 +342,7 @@ export default {
             this.$store.dispatch('entities/activities/insert', {
               data: {
                 text: this.activityText,
-                budget: this.activityBudgetBase * this.activityBudgetScale.value,
+                budget: +this.getLocalizedBudget(this.activityBudgetBase, 'en') * this.activityBudgetScale.value,
                 youthCentric: this.activityYouthCentric,
                 type: this.activityType.value,
                 activityNumber: this.activityNumber
@@ -361,11 +364,17 @@ export default {
     }
   },
   created () {
-    this.$eventHub.$on('addActivity', this.addActivity);
+    this.$eventHub.$on('addActivity', this.addActivity)
     this.updateData()
   },
-  beforeDestroy () {
-    // this.$eventHub.$off('addActivity');
+  updated () {
+    if (this.currentLocale !== this.$i18n.locale) {
+      this.currentLocale = this.$i18n.locale
+
+      // update budget and change BaseFormInput's value
+      this.activityBudgetBase = this.getLocalizedBudget(this.activityBudgetBase)
+      document.getElementById('activityBudget').value = this.activityBudgetBase
+    }
   }
 }
 </script>
@@ -419,7 +428,6 @@ $budgetSelectWidth: 160px;
       height: 2.9rem;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      border-bottom: none;
     }
   }
 }
