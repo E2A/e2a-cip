@@ -8,6 +8,7 @@
     :clearable="false"
     label="value"
     class="best-practice-select-wrapper"
+    :id="name"
   >
     <!-- dropdown options -->
     <template slot="option" slot-scope="option">
@@ -43,6 +44,7 @@ import { bestPracticeData } from './mixins/bestPracticeData'
 import BaseHeading from './BaseHeading.vue'
 import BaseIcon from './BaseIcon.vue'
 import vSelect from 'vue-select'
+import $ from 'jquery'
 
 export default {
   name: 'BestPracticeIconSelect',
@@ -55,6 +57,10 @@ export default {
     activityID: {
       type: [String, Number],
       required: true
+    },
+    name: {
+      type: String,
+      require: true
     }
   },
   computed: {
@@ -108,7 +114,12 @@ export default {
           text: this.$t('bestPracticeOptions.yesText'),
           value: this.$t('bestPracticeOptions.yesKey')
         }
-      }
+      },
+      vSelectElement: null,
+      dropdownToggle: null,
+      selectedOptions: null,
+      actions: null,
+      search: null
     }
   },
   methods: {
@@ -149,7 +160,43 @@ export default {
         // Add a new assessment
         this.$store.dispatch('entities/assessments/insert', { data })
       }
+    },
+    handlePaddingClick: function (event) {
+      // v-select rejects events that occur in an element's padding
+      // this fnc runs these events anyways
+      const clickedPadding = (element, className) => {
+        const childOf = element.has(event.target).length
+        return !childOf && event.target.classList.contains(className)
+      }
+
+      const isOpen = this.vSelectElement.hasClass('vs--open')
+
+      const isDropdownTogglePadding = clickedPadding(this.dropdownToggle, 'vs__dropdown-toggle')
+      const isSelectedOptionsPadding = clickedPadding(this.selectedOptions, 'vs__selected-options')
+      const isActionPadding = clickedPadding(this.actions, 'vs__actions')
+
+      const isPadding = isDropdownTogglePadding || isSelectedOptionsPadding || isActionPadding
+
+      if (!isOpen && isPadding) {
+        this.search.focus()
+      } else if (isOpen && isPadding) {
+        this.search.blur()
+      }
+    },
+    addElements: function () {
+      this.vSelectElement = $(`#${this.name}`)
+      this.dropdownToggle = this.vSelectElement.find('.vs__dropdown-toggle')
+      this.selectedOptions = this.dropdownToggle.find('.vs__selected-options')
+      this.actions = this.dropdownToggle.find('.vs__actions')
+      this.search = this.selectedOptions.find('.vs__search')
     }
+  },
+  mounted () {
+    this.addElements()
+    this.dropdownToggle.mousedown(this.handlePaddingClick)
+  },
+  beforeDestroy () {
+    this.dropdownToggle.unbind()
   }
 }
 </script>

@@ -13,6 +13,7 @@
       :value="value"
       :class="[classItems, noClear && base.noClear]"
       :placeholder="placeholder"
+      :id="name"
     />
     <BaseCalloutBox
       :key="error"
@@ -30,6 +31,7 @@
     :value="value"
     :class="[classItems, noClear && base.noClear]"
     :placeholder="placeholder"
+    :id="name"
   />
 </template>
 
@@ -38,6 +40,7 @@ import { styleHelpers } from './mixins/helpers.js'
 import BaseFormLabel from './BaseFormLabel.vue'
 import BaseCalloutBox from './BaseCalloutBox.vue'
 import vSelect from 'vue-select'
+import $ from 'jquery'
 
 export default {
   name: 'BaseFormSelect',
@@ -77,9 +80,47 @@ export default {
     BaseCalloutBox,
     vSelect
   },
+  data () {
+    return {
+      vSelectElement: null,
+      dropdownToggle: null,
+      selectedOptions: null,
+      actions: null,
+      search: null
+    }
+  },
   methods: {
     emitInput: function (e) {
       this.$emit('input', e)
+    },
+    handlePaddingClick: function (event) {
+      // v-select rejects events that occur in an element's padding
+      // this fnc runs these events anyways
+      const clickedPadding = (element, className) => {
+        const childOf = element.has(event.target).length
+        return !childOf && event.target.classList.contains(className)
+      }
+
+      const isOpen = this.vSelectElement.hasClass('vs--open')
+
+      const isDropdownTogglePadding = clickedPadding(this.dropdownToggle, 'vs__dropdown-toggle')
+      const isSelectedOptionsPadding = clickedPadding(this.selectedOptions, 'vs__selected-options')
+      const isActionPadding = clickedPadding(this.actions, 'vs__actions')
+
+      const isPadding = isDropdownTogglePadding || isSelectedOptionsPadding || isActionPadding
+
+      if (!isOpen && isPadding) {
+        this.search.focus()
+      } else if (isOpen && isPadding) {
+        this.search.blur()
+      }
+    },
+    addElements: function () {
+      this.vSelectElement = $(`#${this.name}`)
+      this.dropdownToggle = this.vSelectElement.find('.vs__dropdown-toggle')
+      this.selectedOptions = this.dropdownToggle.find('.vs__selected-options')
+      this.actions = this.dropdownToggle.find('.vs__actions')
+      this.search = this.selectedOptions.find('.vs__search')
     }
   },
   $_veeValidate: {
@@ -89,6 +130,13 @@ export default {
     value () {
       return this.value
     }
+  },
+  mounted () {
+    this.addElements()
+    this.dropdownToggle.mousedown(this.handlePaddingClick)
+  },
+  beforeDestroy () {
+    this.dropdownToggle.unbind()
   }
 }
 </script>
