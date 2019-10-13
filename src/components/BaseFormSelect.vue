@@ -37,14 +37,17 @@
 
 <script>
 import { styleHelpers } from './mixins/helpers.js'
+import { paddingFix } from './mixins/vueSelectPadding.js'
 import BaseFormLabel from './BaseFormLabel.vue'
 import BaseCalloutBox from './BaseCalloutBox.vue'
 import vSelect from 'vue-select'
-import $ from 'jquery'
 
 export default {
   name: 'BaseFormSelect',
-  mixins: [styleHelpers],
+  mixins: [
+    styleHelpers,
+    paddingFix
+  ],
   props: {
     label: String,
     labelTextSize: String,
@@ -80,40 +83,9 @@ export default {
     BaseCalloutBox,
     vSelect
   },
-  data () {
-    return {
-      vSelectElement: null,
-      dropdownToggle: null,
-      search: null
-    }
-  },
   methods: {
     emitInput: function (e) {
       this.$emit('input', e)
-    },
-    handlePaddingClick: function (event) {
-      // v-select rejects events that occur in an element's padding
-      // this fnc runs these events anyways
-      const clickedPadding = className => event.target.classList.contains(className)
-
-      const isOpen = this.vSelectElement.hasClass('vs--open')
-
-      const isDropdownTogglePadding = clickedPadding('vs__dropdown-toggle')
-      const isSelectedOptionsPadding = clickedPadding('vs__selected-options')
-      const isActionPadding = clickedPadding('vs__actions')
-
-      const isPadding = isDropdownTogglePadding || isSelectedOptionsPadding || isActionPadding
-
-      if (!isOpen && isPadding) {
-        this.search.focus()
-      } else if (isOpen && isPadding) {
-        this.search.blur()
-      }
-    },
-    addElements: function () {
-      this.vSelectElement = $(`#${this.name}`)
-      this.dropdownToggle = this.vSelectElement.find('.vs__dropdown-toggle')
-      this.search = this.dropdownToggle.find('.vs__selected-options').find('.vs__search')
     }
   },
   $_veeValidate: {
@@ -123,13 +95,6 @@ export default {
     value () {
       return this.value
     }
-  },
-  mounted () {
-    this.addElements()
-    this.dropdownToggle.mousedown(this.handlePaddingClick)
-  },
-  beforeDestroy () {
-    this.dropdownToggle.unbind()
   }
 }
 </script>
