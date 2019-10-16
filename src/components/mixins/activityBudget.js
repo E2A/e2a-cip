@@ -14,8 +14,9 @@ export const activityBudget = {
       // Replace comma(fr)/period(en)
       // toLocale is the language you're changing to
       const baseString = String(base)
-      const toLocale = locale || this.$i18n.locale
+      const toLocale = locale || this.$root.$i18n.locale
 
+      if (base === null) return 0
       return toLocale === 'en' ? baseString.replace(',', '.') : baseString.replace('.', ',')
     }
   }

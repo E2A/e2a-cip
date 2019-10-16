@@ -4,7 +4,7 @@
     :flyoutSize="18"
     :role="role"
     :align="align"
-    :label="label"
+    :label="label || $t('fileUpload.label')"
   >
     <div :class="[space.paddingNarrow, type.left]">
       <BaseHeading
@@ -12,7 +12,7 @@
         scale="epsilon"
         sub
       >
-        {{selectLabel}}
+        {{selectLabel || $t('fileUpload.selectFormat')}}
       </BaseHeading>
       <BaseBodyText
         :content="$t('fileUpload.directions')"
@@ -73,16 +73,10 @@ export default {
     },
     align: String,
     label: {
-      type: String,
-      default: function () {
-        return this.$t('fileUpload.label')
-      }
+      type: String
     },
     selectLabel: {
-      type: String,
-      default: function () {
-        return this.$t('fileUpload.selectFormat')
-      }
+      type: String
     }
   },
   components: {
