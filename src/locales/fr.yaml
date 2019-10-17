@@ -1302,6 +1302,11 @@ fr:
         title: Défenseur!
         blurb: |-
           Un message qui ressort clairement des EIP est que la santé reproductive des adolescents et des jeunes (AYRH) s'épanouit dans des environnements où des services impartiaux sont fournis dans un environnement accueillant, où il existe un soutien multisectoriel et communautaire et où les jeunes comprennent leurs besoins en matière de santé reproductive et ont les compétences nécessaires pour demander des comptes aux responsables. Il existe une variété de ressources pour aider les jeunes et leurs alliés adultes à planifier des campagnes de sensibilisation efficaces.
+      done: Vous avez fini !
+      feedback: |-
+        Merci d'avoir utilisé le TARP. Votre engagement pour les besoins des jeunes en matière de santé reproductive nous inspire, et nous espérons que le TARP vous aidera à convaincre votre gouvernement d’investir davantage dans la planification familiale adaptée aux jeunes.
+
+        Nous aimerions connaître votre expérience ! Veuillez envoyer vos questions, commentaires ou réactions à [info@e2aproject.org](mail:info@e2aproject.org). 
   fileUpload:
     label: Exportez vos données
     exportLabel: Exporter vos données

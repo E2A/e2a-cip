@@ -25,7 +25,13 @@
         <BaseStepList :steps="steps" />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
+
+    <!-- Feedback -->
     <BaseSectionWrapper :class="[type.center, space.marginBottomXwide]" border>
+      <BaseWidthWrapper width="wide" :class="space.paddingBottom">
+        <BaseHeading :level="2" centered :class="space.paddingBottom">{{$t('advocate.done')}}</BaseHeading>
+        <BaseBodyText :content="$t('advocate.feedback')" :class="space.paddingBottom"/>
+      </BaseWidthWrapper>
       <div :class="space.paddingBottom">
         <BaseButtonLink
           :to="{name: 'print'}"
