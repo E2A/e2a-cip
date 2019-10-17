@@ -42,9 +42,8 @@
         <li v-for="(bestPractice, index) of bestPractices" :key="index" :class="base.listIcon">
           <BestPracticeIconSelect
             :id="bestPractice.id"
+            :name="`bestPracticeSelect-${bestPractice.id}`"
             :activityID="activity.id"
-            :align="'center'"
-            editable
           />
           <!-- <span :class="base.listIconTitle">{{bestPractice.title}}</span> -->
         </li>

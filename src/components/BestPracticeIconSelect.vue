@@ -8,6 +8,7 @@
     :clearable="false"
     label="value"
     class="best-practice-select-wrapper"
+    :id="name"
   >
     <!-- dropdown options -->
     <template slot="option" slot-scope="option">
@@ -40,13 +41,17 @@
 
 <script>
 import { bestPracticeData } from './mixins/bestPracticeData'
+import { paddingFix } from './mixins/vueSelectPadding.js'
 import BaseHeading from './BaseHeading.vue'
 import BaseIcon from './BaseIcon.vue'
 import vSelect from 'vue-select'
 
 export default {
   name: 'BestPracticeIconSelect',
-  mixins: [bestPracticeData],
+  mixins: [
+    bestPracticeData,
+    paddingFix
+  ],
   props: {
     id: {
       type: [String, Number],
@@ -55,6 +60,10 @@ export default {
     activityID: {
       type: [String, Number],
       required: true
+    },
+    name: {
+      type: String,
+      require: true
     }
   },
   computed: {
