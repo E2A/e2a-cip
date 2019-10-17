@@ -1181,11 +1181,12 @@ fr:
           # Do Not Translate
           url: http://www.youthpower.org/positive-youth-development-toolkit
   analysis:
-    title: Analyser vos activités
+    title: Analysez vos activités
     intro: |-
-      1. Ci-dessous, prenez en compte chaque activité. Utilisez ce que vous avez appris sur les pratiques fondées sur des données probantes pour vous demander : Cette activité correspond-t-elle à un ou plusieurs EIPs ?
-      2. Pour répondre, sélectionnez une activité. Puis, dans la nouvelle fenêtre à droite, cliquez sur chaque icône EIP. Si l’activité s’aligne complètement avec cet EIP, sélectionnez le vert. Si elle s’aligne partiellement, sélectionnez le jaune. Si elle ne s’aligne pas du tout, sélectionnez le rouge.
-      3. Remplir pour tous les EIPs. Terminez ensuite toutes les activités et assurez-vous de discuter de vos décisions avec votre équipe.
+      1. Examinez chacune des activités ci-dessous. Servez-vous de ce que vous avez appris sur les pratiques fondées sur des données probantes pour vous poser la question : Cette activité s’aligne-t-elle avec une ou plusieurs EPI ?
+      2. Pour répondre, sélectionnez une activité. Ensuite, dans la fenêtre à droite, cliquez sur chacune des icônes EIP les plus pertinentes pour votre activité. Si l'activité s'aligne entièrement sur cette EIP, sélectionnez vert. Si elle s'aligne partiellement, sélectionnez le jaune. Si elle n'est pas alignée, sélectionnez rouge.
+      3. Notez que vous n'avez pas besoin de cliquer sur toutes les icônes EIP ! Si une EIP n'est pas du tout pertinente pour l'activité à évaluer, laissez l'icône grise et passez à l'activité suivante.
+      4. Répétez ce processus pour toutes les activités et assurez-vous de discuter de vos décisions avec votre équipe.
 
       \
       Quand vous avez fini, cliquez sur SAUVEGARDER ET CONTINUER, en bas à droite.
