@@ -271,7 +271,7 @@ export default {
     updateData: function () {
       // Update component data
       const activityInstance = this.getActivity()
-      if (activityInstance) {
+      if (activityInstance && activityInstance.type) {
         this.existingActivity = activityInstance
         this.activityBudgetScale =
           this.activityBudgetScale ||
@@ -311,6 +311,9 @@ export default {
       this.activityText = ''
       this.activityNumber = ''
     },
+    isFilled: function () {
+      if (this.activityType.value && this.activityNumber && this.activityText) return true
+    },
     getActivity: function (field = '') {
       const activityInstance = this.$store.getters['entities/activities/find'](
         this.activityId
@@ -338,7 +341,7 @@ export default {
               type: this.activityType.value,
               activityNumber: this.activityNumber
             })
-          } else {
+          } else if (this.isFilled()) {
             this.$store.dispatch('entities/activities/insert', {
               data: {
                 text: this.activityText,
@@ -349,7 +352,7 @@ export default {
               }
             })
           }
-          this.notify(this.$t('saveSuccess'), 'success')
+          this.notify(this.$root.$t('saveSuccess'), 'success')
           this.updateData()
         }
       })
