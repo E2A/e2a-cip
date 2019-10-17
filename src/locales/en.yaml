@@ -1080,8 +1080,9 @@ en:
     title: Analyze Your Activities
     intro: |-
       1. Below, consider each activity. Use what you’ve learned about evidence-informed practices to ask yourself: Does this activity align with one or more EIPs?
-      2. To answer, select an activity. Then, in the pop-out window on the right, click each EIP icon. If the activity fully aligns with this EIP, select green. If it partially aligns, select yellow. If it does not align, select red.
-      3. Complete for all EIPs. Then complete for all activities—and be sure to discuss your decisions with your team.
+      2. To answer, select an activity. Then, in the pop-out window on the right, click each of the most relevant EIP icons for your activity. If the activity fully aligns with this EIP, select green. If it partially aligns, select yellow. If it does not align, select red.
+      3. You do not have to click on each and every EIP icon! If an EIP is not at all relevant to the activity, leave the icon gray and proceed to the next activity.
+      4. Repeat this process for all activities—and be sure to discuss your decisions with your team.
 
       \
       Once you’re done, click SAVE AND CONTINUE at bottom right.
@@ -1201,6 +1202,11 @@ en:
         title: Advocate!
         blurb: |-
           A message that emerges clearly from the EIPs is that AYRH thrives in settings where where unbiased services are provided in a welcoming environment, where there is multi-sectoral and community support, and where youth understand their reproductive health needs and have the skills to hold duty-bearers to account. A variety of resources exist to help youth and their adult allies plan effective advocacy campaigns.
+    done: "You're Done!"
+    feedback: |-
+      Thank you for using TARP. Your commitment to the reproductive health needs of young people inspires us, and we hope TARP supports you in advocating with your government for further investment in youth-responsive family planning.
+
+      We’d love to hear about your experience! Please send any questions, comments, or feedback to [info@e2aproject.org](email:info@e2aproject.org).
   fileUpload:
     label: Save your data
     exportLabel: Export your data
