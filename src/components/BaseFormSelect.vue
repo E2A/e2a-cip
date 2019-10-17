@@ -13,6 +13,7 @@
       :value="value"
       :class="[classItems, noClear && base.noClear]"
       :placeholder="placeholder"
+      :id="name"
     />
     <BaseCalloutBox
       :key="error"
@@ -30,18 +31,23 @@
     :value="value"
     :class="[classItems, noClear && base.noClear]"
     :placeholder="placeholder"
+    :id="name"
   />
 </template>
 
 <script>
 import { styleHelpers } from './mixins/helpers.js'
+import { paddingFix } from './mixins/vueSelectPadding.js'
 import BaseFormLabel from './BaseFormLabel.vue'
 import BaseCalloutBox from './BaseCalloutBox.vue'
 import vSelect from 'vue-select'
 
 export default {
   name: 'BaseFormSelect',
-  mixins: [styleHelpers],
+  mixins: [
+    styleHelpers,
+    paddingFix
+  ],
   props: {
     label: String,
     labelTextSize: String,

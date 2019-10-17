@@ -27,6 +27,7 @@
     "currencies-symbol": "^1.0.1",
     "file-saver": "^2.0.2",
     "include-media": "^1.4.9",
+    "jquery": "^3.4.1",
     "json-loader": "^0.5.7",
     "locale2": "^2.3.1",
     "marked": "^0.7.0",
