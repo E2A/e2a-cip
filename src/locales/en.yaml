@@ -1201,6 +1201,11 @@ en:
         title: Advocate!
         blurb: |-
           A message that emerges clearly from the EIPs is that AYRH thrives in settings where where unbiased services are provided in a welcoming environment, where there is multi-sectoral and community support, and where youth understand their reproductive health needs and have the skills to hold duty-bearers to account. A variety of resources exist to help youth and their adult allies plan effective advocacy campaigns.
+    done: "You're Done!"
+    feedback: |-
+      Thank you for using TARP. Your commitment to the reproductive health needs of young people inspires us, and we hope TARP supports you in advocating with your government for further investment in youth-responsive family planning.
+
+      We’d love to hear about your experience! Please send any questions, comments, or feedback to [info@e2aproject.org](email:info@e2aproject.org).
   fileUpload:
     label: Save your data
     exportLabel: Export your data
