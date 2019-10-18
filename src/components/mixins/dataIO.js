@@ -73,7 +73,7 @@ export const dataIO = {
 
         const options = {
           defaultPath: name,
-          filter: type === 'csv'
+          filters: type === 'csv'
             ? [{ name: 'CSV files', extensions: ['csv'] }]
             : [{ name: 'JSON files', extensions: ['json'] }]
         }
