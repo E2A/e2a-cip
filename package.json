@@ -26,6 +26,7 @@
     "country-list": "^2.1.0",
     "currencies-symbol": "^1.0.1",
     "file-saver": "^2.0.2",
+    "fs": "^0.0.1-security",
     "include-media": "^1.4.9",
     "jquery": "^3.4.1",
     "json-loader": "^0.5.7",
