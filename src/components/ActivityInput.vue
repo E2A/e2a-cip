@@ -224,7 +224,16 @@ export default {
         name: 'activity-type-info',
         params: { backToActivityId: activityId }
       })
-      window.open(routeData.href, '_blank')
+
+      if (this.checkElectron()) {
+        this.$router.push({
+          name: 'activity-type-info',
+          params: { backToActivityId: activityId }
+        });
+      } else {
+        window.open(routeData.href, '_blank')
+      }
+      
     },
     maybeSaveOnChange: function () {
       // only submit if an activity is already present

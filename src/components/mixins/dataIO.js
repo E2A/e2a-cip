@@ -77,7 +77,6 @@ export const dataIO = {
             ? [{ name: 'CSV files', extensions: ['csv'] }]
             : [{ name: 'JSON files', extensions: ['json'] }]
         }
-
         // open file - callback runs when user clicks save
         // https://electronjs.org/docs/api/dialog#dialogshowsavedialogbrowserwindow-options
         dialog.showSaveDialog(options, filename => {
