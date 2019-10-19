@@ -28,12 +28,22 @@ export const electronPDF = {
       currentWindow.webContents.printToPDF({ paperSize: 'A4', marginsType: 1, landscape: false }, (error, data) => {
         if (error) throw error
 
-        fs.writeFile(pdfPath, data, error => {
-          if (error) throw error
+        // fs.writeFile(pdfPath, data, error => {
+        //   if (error) throw error
+        //   pdfViewWindow.loadURL('file://' + pdfPath)
+        //   pdfSuccess = true
+        // })
+
+        remote.dialog.showSaveDialog({
+          defaultPath: this.$t('fileUpload.pdfFileName', { timestamp: formatDate() }),
+          filters: [{ name: 'PDF files', extensions: ['pdf'] }]
+        }, filename => {
+          fs.writeFileSync(filename, data, 'utf-8')
           pdfViewWindow.loadURL('file://' + pdfPath)
           pdfSuccess = true
         })
       })
+
       // Return outcome based on if file was open.
       return pdfSuccess
     }
