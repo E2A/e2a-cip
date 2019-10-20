@@ -5,7 +5,7 @@
 
 <template>
   <section>
-    <NavTimeline :class="border.bottom" :items="navItems" :current="activityId" />
+    <NavTimeline :class="border.bottom" :items="navItems" />
     <NavBreadcrumbs />
     <BaseSectionWrapper>
       <!--
