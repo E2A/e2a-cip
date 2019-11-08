@@ -4,7 +4,7 @@
     <ActivitiesExportTray charts />
     <NavBreadcrumbs/>
     <!-- header & charts -->
-    <ResultsCharts />
+    <ResultsCharts :displayQuestions="true" />
 
     <!-- Activities list -->
     <BaseSectionWrapper :class="space.paddingTop" border>
