@@ -44,7 +44,7 @@
           >
             <a
               @click.prevent="toggleFlyout(flyoutID(item.id), $event)"
-              :class="[base.dot, String(item.id) === current ? color.darkBg : color.lightBg, 'activity-button']"
+              :class="[base.dot, item.id === currentActivityID() ? color.darkBg : color.lightBg, 'activity-button']"
               :id="`activity-${item.id}`"
               href="`#${flyoutID}`"
             ></a>
@@ -87,10 +87,6 @@ export default {
       type: Array,
       required: true
     },
-    current: {
-      type: [String, Number],
-      required: true
-    },
     countLabel: String,
     borders: {
       type: [String, Array],
@@ -122,6 +118,9 @@ export default {
   methods: {
     flyoutID: function (id) {
       return `activity-flyout-${id}`
+    },
+    currentActivityID: function (id) {
+      return +this.$router.history.current.params.activityId
     },
     updateActiveDotPosition: function () {
       if (this.activeDot) {
@@ -306,5 +305,6 @@ $dot-size: scale-type('epsilon');
 .flyout {
   composes: paddingNarrow from 'styles/spacing.scss';
   top: 3.4rem;
+  z-index: 900;
 }
 </style>
