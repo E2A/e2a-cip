@@ -6,14 +6,14 @@ en:
     subtitle: A Tool for AYRH-Responsive Planning
     intro: |-
       You can make reproductive health and family planning plans more responsive to the needs of young people.
-      
+
       \
       Use this tool to reflect on and discuss...
         * One of your country’s plans—this can be local, district, regional, or national.
         * Activities planned for young people ages 15–24.
         * If enough budget is allocated for these youth-centric activities.
         * How to strengthen the plan to better meet the needs of youth.
-        
+
     stepsTitle: How It Works
     stepsIntro: 'Join 2-3 fellow youth advocates, set aside a few hours, and follow these steps to assess if your plan uses tailored, innovative strategies for meeting the needs of your country’s youth:'
     steps:
@@ -22,18 +22,18 @@ en:
         blurb: |-
           Locate strategic priorities, objectives, activities, and budget amounts.
       step2:
-        title: Enter planned activities. 
+        title: Enter planned activities.
         blurb: |-
-          You’ll enter and organize activities into four categories: demand generation, service delivery, enabling environment, and coordination. 
+          You’ll enter and organize activities into four categories: demand generation, service delivery, enabling environment, and coordination.
       step3:
         title: Determine if activities align with the needs of youth.
         blurb: |-
-          Use “evidence-informed practices,” as your guide. 
+          Use “evidence-informed practices,” as your guide.
       step4:
         title: Get your results.
         blurb: |-
           Using data generated through this tool, determine if your country is making a big enough and smart investment in youth.
-    getStartedIntro: You can use your results to raise awareness about and advocate for the importance of investing in the reproductive health of young people. Thank you for paving the way to more comprehensive family planning for generations to come.       
+    getStartedIntro: You can use your results to raise awareness about and advocate for the importance of investing in the reproductive health of young people. Thank you for paving the way to more comprehensive family planning for generations to come.
     getStartedButton: Get started
     downloadTitle: Download Offline Versions
     downloadBlurb: |-
@@ -52,26 +52,26 @@ en:
     downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
     acknowldgementTitle: Acknowledgements
     acknowledgementText: |-
-      The Evidence to Action (E2A) Project gratefully acknowledges the generous support of the US Agency for International Development (USAID) in the creation of this Not Without Us! A Digital Tool for AYRH-Responsive Planning. Additionally, we would like to acknowledge the contributions of our colleagues at Pathfinder International, Family Planning 2020, Population Services International, and STPH Institute. Your insight, feedback, and user-testing were instrumental in the creation of this tool. 
- 
-      Finally, we thank you—the TARP user. Your commitment to the reproductive health needs of young people inspires us, and we hope TARP supports you in advocating with your government for further investment in youth-responsive family planning. 
- 
+      The Evidence to Action (E2A) Project gratefully acknowledges the generous support of the US Agency for International Development (USAID) in the creation of this Not Without Us! A Digital Tool for AYRH-Responsive Planning. Additionally, we would like to acknowledge the contributions of our colleagues at Pathfinder International, Family Planning 2020, Population Services International, and STPH Institute. Your insight, feedback, and user-testing were instrumental in the creation of this tool.
+
+      Finally, we thank you—the TARP user. Your commitment to the reproductive health needs of young people inspires us, and we hope TARP supports you in advocating with your government for further investment in youth-responsive family planning.
+
       This publication was made possible through support provided by the Office of Population and Reproductive Health, Bureau for Global Health, U.S. Agency for International Development, under the terms of Award No. AID-OAA-A-11-00024. The opinions expressed herein are those of the author(s) and do not necessarily reflect the views of the U.S. Agency for International Development.
   plan:
     title: Get To Know Your Plan
     body: |-
       You’ve selected a plan to analyze. Now take at least 10 minutes to familiarize yourself with it.
-      
-      
-      * Is this an AYRH plan or a general FP/RH plan? 
+
+
+      * Is this an AYRH plan or a general FP/RH plan?
       * Locate strategic priorities and objectives—you’ll spend most of your time here.
       * Ask yourself, “How is the budget organized? Does each activity have a certain budget amount?”
-      * Can’t find activities and their budget amounts? Check your plan’s annex. 
+      * Can’t find activities and their budget amounts? Check your plan’s annex.
     note: 'Important: Unfortunately, you won’t be able to analyze your budget if…'
     noteBody: |-
       * Specific activities do not have budgeted amounts associated with them.
       * You’re assessing an AYRH plan, not a general FP/RH plan.
-      
+
       \
       **But don’t worry. You can still analyze the quality of the activities.**
     getStartedButton: Get Started
@@ -239,10 +239,10 @@ en:
   readMore: "See sample activities"
   checkListButtonText: "View checklist"
   bestPracticeTitle: 'Will These Activities Work?'
-  bestPracticeSubtitle: Will they effectively respond to the reproductive needs and desires of youth in your country? 
+  bestPracticeSubtitle: Will they effectively respond to the reproductive needs and desires of youth in your country?
   bestPracticesContent: |-
-    To answer, follow the evidence. Start by reviewing the Evidence-Informed Practices (EIPs) below. Each EIP has shown significantly positive results in programming for adolescent and youth reproductive health. 
-    
+    To answer, follow the evidence. Start by reviewing the Evidence-Informed Practices (EIPs) below. Each EIP has shown significantly positive results in programming for adolescent and youth reproductive health.
+
     When you’re done, click **CONTINUE** at the bottom right.
   bestPracticeResourceSubtitle: Further reading
   backToBestPractices: Back to Evidence-Informed Practices (EIP)
@@ -258,7 +258,7 @@ en:
       practice: |-
         Take young people’s specific needs into account, providing age and developmentally-appropriate family planning and reproductive health services.
       teaser: |-
-        Take young people’s specific needs into account, providing age and developmentally-appropriate health services. 
+        Take young people’s specific needs into account, providing age and developmentally-appropriate health services.
       body: |-
         **Why It Matters**
         One size does not fit all. Young people can vary substantially in their life experiences. The term “adolescents and youth” encompasses young people, ages 15–24, who may be...
@@ -269,11 +269,11 @@ en:
         * first-time parents
         * have multiple children
 
-        The term also includes young people who may be living with HIV, have access to health information and supportive parents, or struggle to make sense of their feelings with little information or support. 
+        The term also includes young people who may be living with HIV, have access to health information and supportive parents, or struggle to make sense of their feelings with little information or support.
 
         \
         **Adolescent- and youth-friendly services for both young men and women commonly includes:**
-        * safe and affordable contraceptive methods 
+        * safe and affordable contraceptive methods
         * prevention and treatment of HIV/AIDS and care for other STIs
         * the provision of accurate health information
         * sensitive counselling and care for overall well-being
@@ -297,7 +297,7 @@ en:
         **Suggested Activities**
         Based on WHO’s global standards for youth-friendly services, health facilities should strive to:[^7]
 
-        
+
         1. Have systems in place to **ensure adolescents are knowledgeable about their own health—and where and when to obtain health services.**
         2. Implement strategies to **ensure community support**. Parents, guardians and other community members and community organizations should recognize the value of providing health services to adolescents and support such provision and the utilization of services by adolescents.
         3. **Provide an appropriate package of services.** The health facility provides a package of information, counselling, diagnostic, treatment and care services that fulfils the needs of all adolescents. Services are provided in the facility and through referral linkages and community-based outreach.
@@ -414,11 +414,11 @@ en:
       body: |-
         **Why It Matters**
         Sixteen million adolescents (ages 15-19) give birth each year. Most live in low- and middle-income countries. Many of these pregnancies are intended. Others are mistimed. Twenty-three million adolescents would like to use contraception but currently do not. Early and mistimed pregnancies may result in maternal morbidities and death, and lead to social consequences that limit the potential of young women.
-        
+
         Many barriers exist for adolescents who may want to use contraception to delay a first pregnancy or space subsequent pregnancies—restrictive laws limiting contraceptive choice, poorly implemented policies, and social norms, including beliefs held by providers and communities about what kinds of contraception, if any, are appropriate for young people. Compounding these issues, young people may not know where to get affordable contraception, may feel stigmatized due to their own sexual behavior, may not have a choice, or, in the case of marriage, may feel pressure to demonstrate their fertility.[^1]
-        
+
         Adolescent and youth reproductive health (AYRH) services related to contraception have quality counseling as their centerpiece. The objective of this counseling is to ensure that young people are aware of the voluntary nature of contraceptive use and knowledgeable of the full range of contraceptive options available to them.
-          
+
         Quality counseling, including expanded method choice, should empower young people to choose their preferred method and switch methods should they experience undesirable side-effects. Expanding contraceptive choice aligns with the World Health Organization’s third norm for improved quality of healthcare for adolescents (WHO, 2015). Any adolescent can use any contraceptive method according to the WHO’s Medical Eligibility Criteria for contraceptive use. Age alone does not constitute a contraindication to the use of contraceptive methods.
 
         \
@@ -560,7 +560,7 @@ en:
         Make plans for collaboration among sectors (e.g. health, education, environment, economy) and with key stakeholders (e.g., government, civil society, and private sector) to improve AYRH.
       body: |-
         **Why It Matters**
-        The advantages of multi-sectoral coordination, if thoughtfully and carefully done, can achieve a policy outcome, such as increasing resources brought to bear to address a health problem. These resources can include: 
+        The advantages of multi-sectoral coordination, if thoughtfully and carefully done, can achieve a policy outcome, such as increasing resources brought to bear to address a health problem. These resources can include:
         - Expertise
         - human resources
         - material and financial resources
@@ -574,13 +574,13 @@ en:
         \
         **Keys to Planning Successful Multi-Sectoral Collaboration**
 
-        - A comprehensive, contextual understanding of the problem 
+        - A comprehensive, contextual understanding of the problem
         - Recognition of the value of engaging diverse stakeholders from various sectors in the policy process and capitalizing on the particular strengths of individual stakeholders
-        - Buy-in and commitment from all stakeholders 
+        - Buy-in and commitment from all stakeholders
         - Strong leadership—to set the agenda, manage relationships, and mobilize stakeholder action
         - The ability to effectively tailor messages and approaches to each stakeholder to increase influence
         - Communication of the benefits of collaboration to each sector and partner to jointly achieve the priority AYRH goal
-        - Commitment of adequate resources to ensure capacity building, effective cross-sectoral linkages, and coordination between sectors at every level of implementation. 
+        - Commitment of adequate resources to ensure capacity building, effective cross-sectoral linkages, and coordination between sectors at every level of implementation.
 
         \
         The probability of the success of multi-sectoral collaborations increases substantially when it is supported, highly incentivized, or mandated.
@@ -593,7 +593,7 @@ en:
         - **Involve multiple sectors in steering and technical committees that serve youth in the development of national youth policies and strategies, including AYRH.** National strategies are more likely to be effectively implemented if all relevant sectors have participated in developing them and negotiating for their adoption. WAHO recommends that the process of developing a national adolescent and youth health strategy should start with identifying, mapping, and coordinating with all adolescent actors, including AYRH, in the country.[^8]
         - **Build the capacity of key AYRH actors to ensure that multi- and inter-sectoral interventions are efficient and effective.** Inter- and cross-sectoral programs and interventions are complex and require that each sector be technically competent and able to manage and coordinate their programs and investments.[^9]
         - **Establish transparent, user-friendly monitoring and evaluation systems and clear accountability mechanisms.** The Global strategy for women’s children’s and adolescents’ health highlights the importance of transparent and accessible data to ensure effective inclusion of stakeholders beyond health care providers.[^10] Effective inter-sectoral coordination for AYRH requires easy access to quality data. Transparent access to data will ensure all stakeholders, including young people, are able to monitor progress and hold decision-makers to account.
-        
+
         [^17]: The Health Policy Project. Resource Guide to Multi-Sectoral Coordination. 2014.
 
         [^18]: Viner RM, Ozer EM, Denny S, et al. Adolescence and the social determinants of health. Lancet 2012; 379: 1641–52.
@@ -651,11 +651,11 @@ en:
         To ensure the relevance, responsiveness, and effectiveness of AYRH programming, it’s critical to meaningfully engage and build the capacity of youth advocates and leaders.
       body: |-
         **Why It Matters**
-        Through active participation, young people are empowered to play a vital role in their own development as well as in that of their communities, helping them to learn critical life-skills, develop knowledge on human rights and citizenship, and to promote positive civic action. Adolescent participation is one of WHO’s eight standards that must be attained to improve the quality of health services for adolescents. Young people’s participation must be understood as an essential component to be monitored and evaluated.[^1] 
+        Through active participation, young people are empowered to play a vital role in their own development as well as in that of their communities, helping them to learn critical life-skills, develop knowledge on human rights and citizenship, and to promote positive civic action. Adolescent participation is one of WHO’s eight standards that must be attained to improve the quality of health services for adolescents. Young people’s participation must be understood as an essential component to be monitored and evaluated.[^1]
 
         \
         **Key Elements of Youth Participation to Advance AYRH**
-        - Youth with capabilities and opportunities to seek information 
+        - Youth with capabilities and opportunities to seek information
         - Youth who are able to express their opinions, ideas, and decisions
         - Youth informed and consulted on decisions that pertain to youth (programs and policies)
         - Youth who take an active role in the various steps of designing, implementing, and monitoring a health service or policy
@@ -789,8 +789,8 @@ en:
         Family Life Education is an effective, evidence-informed approach with the potential to:
         - empower adolescents and youth
         - Improve and protect young people’s health, well-being, and dignity
-        - support young people to develop critical thinking and decision-making skills 
-        - promote citizenship 
+        - support young people to develop critical thinking and decision-making skills
+        - promote citizenship
         - fosters equal, healthy and positive relationships
 
         \
@@ -824,7 +824,7 @@ en:
           Sometimes a national curriculum is not sufficiently responsive to local needs, especially in areas where there are considerable socio-demographic differences. Using a broad coalition of stakeholders in the planning and implementation processes will help to ensure the curriculum is responsive to local health priorities and in alignment with progressive social norms.
         5. **Ensure adequate monitoring and evaluation systems are in place**
           Mechanisms for evaluating the effectiveness of teachers and assessing the impact of the program on students are important in the success of Family LIfe Education programs.
-        
+
 
       resources:
         resource1:
@@ -860,7 +860,7 @@ en:
 
         There are a variety of useful community engagement approaches. Typically, they involve engaging groups in assessing the identifying pressing AYRH problems in their own communities, prioritizing those problems, developing strategies to address those problems, implementing solutions, monitoring progress, and engaging in advocacy activities to promote AYRH. Like youth participation, community engagement is a process that both utilizes and fosters skills (and systems/structures) that are central to the development of a strong and vibrant civil society sector. This includes:
         - promoting awareness of young people’s opportunities to access knowledge and services
-        - engaging communities as partners in ensuring supportive AYRH policies and programs 
+        - engaging communities as partners in ensuring supportive AYRH policies and programs
         - holding family and community leaders accountable for addressing young people’s needs
 
         \
@@ -869,9 +869,9 @@ en:
         1. **Promote the participation of parents and parent-child communication.** There is often limited communication between adolescents and their parents about issues related to RH/FP, teenage pregnancy, and HIV and AIDS.[^4] Several studies suggest that if parents develop increased receptiveness and skills to communicate with their children about these topics, they will increase communication. It is possible to improve the contents of parent-child conversations by raising awareness of parents and supporting them to challenge the social and cultural norms that restrict communication.[^5][^6]
         2. **Mobilize community leaders.** Involving key community leaders, including religious leaders, can generate stronger community support. More evaluations—of community sensitization programs, especially concerning their impact on RH/FP service uptake by adolescents and youth or in changes in the opinions of community members with regard to AYRH—are needed.[^7]
         3. **Collaborate with community groups.** Community group participation is a promising, high-impact practice influencing individual behaviors and social norms on RH/FP.[^8] It is important that community reflection and dialogue on RH/FP issues be led by individuals from within the community as well as community groups that work with young people. As combined interventions report stronger results on contraceptive knowledge, awareness, and use, community engagement should be:
-            - Combined with other social and behavioral change strategies (e.g. engaging the media, interpersonal communication, or counselling), 
+            - Combined with other social and behavioral change strategies (e.g. engaging the media, interpersonal communication, or counselling),
             - Combined with investments in improving service provision, or
-            - Embedded within larger programs that involve a range of interventions and stakeholders. 
+            - Embedded within larger programs that involve a range of interventions and stakeholders.
         4. Advocate for the development and implementation of supportive laws and policies. Many governments have made strides in institutionalizing the ability of adolescents and youth to access RH/FP services. However, weak legal and policy frameworks or uneven implementation of these laws hinder young people’s access to these services.[^9] Advocacy is needed to encourage and support governments, implementing partners, and young people themselves to combat legal and policy barriers, including:
             - Policies related to consent, age, and marital status
             - The ability of young people to access the full range of FP methods
@@ -880,7 +880,7 @@ en:
           Even when enabling laws and policies are in place, governments must be encouraged to exert political will, allocate adequate resources, build capacity to implement those enabling laws and policies, and establish accountability mechanisms.
         5. **Use media campaigns and other forms of social and behavior change communication.** “Edutainment” (entertainment-education programs) can encourage conversations about AYRH, although there have been very few evaluations of this approach’s effect beyond knowledge- building and awareness raising.[^10] Media campaigns alone are insufficient to increase community support for AYRH. They should be implemented as part of a broader strategy that includes other social and norm change interventions, such as engaging men and boys and community mobilization.
 
-        
+
         [^43]: Centers for Disease Control and Prevention. Principles of community engagement (2nd ed.). Atlanta (GA): CDC/ATSDR Committee on Community Engagement; 2011.
 
         [^44]: Marston C, Hinton R, Kean S, Baral S, Ahuja A, Portela A. Community participation for transformative action on women’s, children’s and adolescents’ health. 2016;94(5):376–82.
@@ -965,34 +965,34 @@ en:
       icon: eip-equality
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
       checkListName: ''
-      practice: |- 
+      practice: |-
         Address the factors that limit girls and young women from having options, encourage boys to take risks, and create barriers to family planning and reproductive health care for both sexes.
-        
+
         Gender equality means that, regardless of sex, individuals should have equal ease of access to resources and opportunities, including civic, religious, political, and economic participation, and decision-making. The needs, aspirations, and behaviors or young men and women are equally valued. In terms of health, gender equality means that all young people should have access to quality FP/RH information and health care that is responsive to their specific needs, lifestage or experience, and cultural and social context.
 
       teaser: |-
         Address the factors that limit girls and young women from having options, encourage boys to take risks, and create barriers to family planning and reproductive health care for both sexes.
       body: |-
         **Why It Matters**
-        It is well documented that gender inequality has a significant and negative impact on a range of reproductive health outcomes. Gender and age-related norms often limit girls’ decision-making ability and options, while increasing their risk for gender-based violence, HIV, and other adverse reproductive health outcomes. Early/child/forced marriage represents one of the greatest violations of human rights, fundamentally compromising girls’ futures and their health. Gender norms regarding masculinity may encourage young men and boys to take risks and discourage them from seeking health care, making them more vulnerable, for example, to HIV mortality. 
+        It is well documented that gender inequality has a significant and negative impact on a range of reproductive health outcomes. Gender and age-related norms often limit girls’ decision-making ability and options, while increasing their risk for gender-based violence, HIV, and other adverse reproductive health outcomes. Early/child/forced marriage represents one of the greatest violations of human rights, fundamentally compromising girls’ futures and their health. Gender norms regarding masculinity may encourage young men and boys to take risks and discourage them from seeking health care, making them more vulnerable, for example, to HIV mortality.
 
         \
-        Social and gender norms also support the notion that FP and RH are female spheres of responsibility—placing disproportionate burden on girls and young women for reproductive health action, while preventing boys and men from owning their own reproductive health. 
-        
+        Social and gender norms also support the notion that FP and RH are female spheres of responsibility—placing disproportionate burden on girls and young women for reproductive health action, while preventing boys and men from owning their own reproductive health.
+
         \
         **Suggested Activities**
         1. **Support programs that encourage young people to examine, discuss, and question gender norms and values.** Family Life Education programs that use curricula with an explicit focus on gender throughout are more effective than curricula that do not directly address gender norms. Creating a space for young people to engage with one another through structured and participatory educational sessions that systematically examine and question cultural norms about gender is an effective way to motivate young people to consider their behavior, responsibilities, relationships, and health.
-        2. **Improve adolescent girls’ access to school and support their retention.** Investments that enable girls to stay in school, especially secondary school, have wide, long- term benefits on the health and development of individuals, families, and communities. Evidence shows strong, positive linkages between girls’ education and healthier behaviors. [2] Strategies that improve girl’s participation in school include: 
-            - challenging social norms that undermine girls and their education 
-            - improving the quality and safety of the school environment 
+        2. **Improve adolescent girls’ access to school and support their retention.** Investments that enable girls to stay in school, especially secondary school, have wide, long- term benefits on the health and development of individuals, families, and communities. Evidence shows strong, positive linkages between girls’ education and healthier behaviors. [2] Strategies that improve girl’s participation in school include:
+            - challenging social norms that undermine girls and their education
+            - improving the quality and safety of the school environment
             - providing economic incentives for sending girls to school and keeping them there
             - promoting quality education, and linking health programs with schools.[^3]
         3. **Engage men and boys to promote gender equity.** An increasing number of FP/RH programs address inequities and negative gender norms and behaviors by engaging men and boys through a participatory group education and dialogue, media campaigns, and digital health applications, as well as activities to mobilize the community at large. Other strategies may include working through multiple non-clinic, informal settings, such as mobile outreach, community health workers, drug shops and pharmacies, and social marketing. Integrated interventions that combine community group engagement, media-focused activities, interpersonal education, and health care targeted to men and boys yield promising results for gender equity.[^4]
         4. **Building young people’s FP/RH-related capacities and assets.** Young people must be able to draw on their own knowledge, skills and assets to take timely and desired action about their health.[5] Working with girls to build these resources is a cornerstone of gender-based programming, including women’s empowerment and male involvement. Activities are often group-based and use participatory methodologies to create safe, shared spaces for youth to learn about RH/FP issues, develop life skills and form critical social networks. Many programs also strengthen young people’s economic resources, by including financial literacy, vocational training and savings mechanisms. While attention to girls’ and young women is essential, broader youth development and capacity building approaches, including those that work with both girls and boys together, can also support AYRH-related empowerment. For example, Positive Youth Development engages young people together with their families, communities and/or government build capacities, assets and competencies, foster healthy relationships, strengthen the environment, and transform systems benefits.[6]
-        5. **Eliminate gender-based violence (GBV) against girls and young women.** Violence and harmful practices, driven by underlying power and gender inequalities, affect girls and women throughout their lives and directly influence their reproductive health. GBV responses within FP/RH programs can include: 
+        5. **Eliminate gender-based violence (GBV) against girls and young women.** Violence and harmful practices, driven by underlying power and gender inequalities, affect girls and women throughout their lives and directly influence their reproductive health. GBV responses within FP/RH programs can include:
             - strengthening health providers’ capacity to screen for, and respond to, GBV—but only where services exist
-            - helping to build a services infrastructure for survivors, including health services, psycho-social support, and legal services 
-            - working with communities to challenge and change harmful gender norms and practices and lower their tolerance to violence 
+            - helping to build a services infrastructure for survivors, including health services, psycho-social support, and legal services
+            - working with communities to challenge and change harmful gender norms and practices and lower their tolerance to violence
             - engaging girls and boys to influence their attitudes about gender and nonviolence. In some countries and contexts, specific harmful practices, such as female genital cutting/mutilation and child marriage should also be addressed
         6. **Eliminate child/early/forced marriage.** In several countries, marrying before age 18 is allowed by law. Even in countries where early marriage is illegal, laws are poorly enforced. In some areas, girls are expected to marry and have children during adolescence, often before they are physically or mentally ready to do so. While establishment and enforcement of a legal minimum age of marriage is an important step to ending child marriage, it is just one part of a comprehensive child protection approach to ensuring the wellbeing of girls. Other necessary steps involve working with women and men,[7] community leaders, and other stakeholders to challenge and change social norms that encourage early marriage; engaging in girls’ empowerment activities; and disseminating information in all sectors of society about laws and policies supporting the rights of children.
       resources:
@@ -1171,12 +1171,12 @@ en:
       title: Add Key Recommendations
       content: |-
         **You have your results. What should you do now?**
-        
+
         \
-        In the space below, write any additional recommendations or questions you have for policymakers and decision makers. For example: 
-        
-        1. “Does your plan pay enough attention to meaningful youth engagement?” 
-        2. “Does your plan pay enough attention to gender equality?” 
+        In the space below, write any additional recommendations or questions you have for policymakers and decision makers. For example:
+
+        1. “Does your plan pay enough attention to meaningful youth engagement?”
+        2. “Does your plan pay enough attention to gender equality?”
         3. “Does your plan consider needs for youth with disabilities?”
     comments:
       title: Your comments
@@ -1293,12 +1293,12 @@ en:
   countryIndicators:
     indicator1:
       name: 'Percentage of youth in your country'
-      description: 'Population aged 15-24 / 15-49 as of 2015'
+      description: 'Population aged 15-24 / 15-49 as of 2019'
       # Do Not Translate
-      sourceUrl: 'https://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2017_POP_F15_1_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx'
+      sourceUrl: 'https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2019_POP_F15_1_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx'
       # Do Not Translate
       sourceCitation: 'United Nations, Department of Economic and Social Affairs,
-        Population Division (2017). World Population Prospects: The 2017 Revision,
+        Population Division (2019). World Population Prospects: The 2019 Revision,
         DVD Edition.'
       # Do Not Translate
       fileName: 'percentYouth.csv'

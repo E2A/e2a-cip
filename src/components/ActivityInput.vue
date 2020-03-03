@@ -47,7 +47,7 @@
           <!-- Activity Budget -->
           <BaseFormInput
             v-model="activityBudgetBase"
-            v-validate="'decimal'"
+            v-validate="{regex: this.currencyRegex}"
             :label="`${$t('enterActivity')} ${$t('budget')}`"
             :data-vv-as="`${$t('activityBudget')}`"
             :error="errors.first('activityBudget')"
@@ -57,18 +57,6 @@
             :classItems="base.budgetInput"
             :prepend="`${this.getItemValue('setup', 'currencyCode')}`"
           >
-            <div :class="base.budgetSelectWrapper">
-              <BaseFormSelect
-                v-model="activityBudgetScale"
-                v-validate="'required'"
-                :options="budgetScaleOptions"
-                :value="activityType.label"
-                name="activityBudgetScale"
-                :class="base.budgetSelect"
-                @input="maybeSaveOnChange"
-                noClear
-              />
-            </div>
           </BaseFormInput>
 
           <!-- Youth Centric -->
@@ -173,6 +161,10 @@ export default {
     }
   },
   computed: {
+    currencyRegex: function () {
+      const locale = this.$root.$i18n.locale
+      return locale === 'en' ? /(?=.*?\d)^\$?(([1-9]\d{0,2}(,\d{3})*)|\d+)?(\.\d{1,2})?$/ : /(?=.*?\d)^\$?(([1-9]\d{0,2}(\.\d{3})*)|\d+)?(,\d{1,2})?$/
+    },
     canSubmit: function () {
       const activityInstance = this.getActivity()
 
@@ -183,14 +175,6 @@ export default {
         return {
           label: activityType.title,
           value: activityType.key
-        }
-      })
-    },
-    budgetScaleOptions: function () {
-      return this.getBudgetScales().map(budgetScale => {
-        return {
-          label: budgetScale.title,
-          value: budgetScale.key
         }
       })
     },
@@ -210,7 +194,6 @@ export default {
       activityNumber: this.activityNumber,
       existingActivity: {},
       activityBudgetBase: '0',
-      activityBudgetScale: '',
       activityYouthCentric: false,
       setupTitle: this.getItemValue('setup', 'title'),
       activityType: '',
@@ -229,11 +212,10 @@ export default {
         this.$router.push({
           name: 'activity-type-info',
           params: { backToActivityId: activityId }
-        });
+        })
       } else {
         window.open(routeData.href, '_blank')
       }
-      
     },
     maybeSaveOnChange: function () {
       // only submit if an activity is already present
@@ -260,33 +242,13 @@ export default {
         return this.$t('addActivity')
       }
     },
-    getBudgetScale: function (budget) {
-      const magnitude =
-        budget >= 1e9
-          ? 1e9 // billion
-          : budget >= 1e6
-            ? 1e6 // million
-            : budget >= 1e3
-              ? 1e3 // thousand
-              : 1 // one
-
-      return {
-        label: this.budgetScaleOptions.find(scale => {
-          return scale.value === magnitude
-        }).label,
-        value: magnitude
-      }
-    },
     updateData: function () {
       // Update component data
       const activityInstance = this.getActivity()
       if (activityInstance && activityInstance.type) {
         this.existingActivity = activityInstance
-        this.activityBudgetScale =
-          this.activityBudgetScale ||
-          this.getBudgetScale(activityInstance.budget)
         this.activityBudgetBase =
-          this.getLocalizedBudget(activityInstance.budget / this.activityBudgetScale.value)
+          this.getLocalizedBudget(activityInstance.budget)
         this.activityYouthCentric = activityInstance.youthCentric
         this.activityType = {
           label: this.activityTypeOptions.find(option => {
@@ -303,7 +265,6 @@ export default {
       this.currentActivityID = this.activityId
       this.existingActivity = {}
       this.activityBudgetBase = null
-      this.activityBudgetScale = this.budgetScaleOptions[0]
       this.activityYouthCentric = false
       this.activityType = ''
       this.activityText = ''
@@ -314,7 +275,6 @@ export default {
       this.currentActivityID = this.activityId
       this.existingActivity = {}
       this.activityBudgetBase = null
-      this.activityBudgetScale = this.budgetScaleOptions[0]
       this.activityYouthCentric = false
       this.activityType = ''
       this.activityText = ''
@@ -345,7 +305,7 @@ export default {
             this.$store.dispatch('entities/activities/update', {
               id: Number(this.activityId),
               text: this.activityText,
-              budget: +this.getLocalizedBudget(this.activityBudgetBase, 'en') * this.activityBudgetScale.value,
+              budget: +this.getLocalizedBudget(this.activityBudgetBase),
               youthCentric: this.activityYouthCentric,
               type: this.activityType.value,
               activityNumber: this.activityNumber
@@ -354,7 +314,7 @@ export default {
             this.$store.dispatch('entities/activities/insert', {
               data: {
                 text: this.activityText,
-                budget: +this.getLocalizedBudget(this.activityBudgetBase, 'en') * this.activityBudgetScale.value,
+                budget: +this.getLocalizedBudget(this.activityBudgetBase),
                 youthCentric: this.activityYouthCentric,
                 type: this.activityType.value,
                 activityNumber: this.activityNumber

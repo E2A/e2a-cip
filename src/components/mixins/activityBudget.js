@@ -17,7 +17,13 @@ export const activityBudget = {
       const toLocale = locale || this.$root.$i18n.locale
 
       if (base === null) return 0
-      return toLocale === 'en' ? baseString.replace(',', '.') : baseString.replace('.', ',')
+      if (toLocale === 'en') {
+        // console.log('base string formatted', baseString.replace(',', ''))
+        return baseString.replace(',', '')
+      } else {
+        // console.log('base string formatted', baseString.replace('.', '').replace(',', '.'))
+        return baseString.replace('.', '').replace(',', '.')
+      }
     }
   }
 }
