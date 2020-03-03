@@ -4,18 +4,18 @@ fr:
     chooseLanguage: 'Choisissez votre langue préférée:'
     title: PAS SANS NOUS !
     subtitle: Outil de planification adaptée à la santé reproductive des adolescents et des jeunes (TARP)
-    introHeader: 
+    introHeader:
     intro: |-
       Vous pouvez rendre les plans de santé reproductive et de planification familiale plus adaptés aux besoins des jeunes.
-      
+
       \
-      Utilisez cet outil pour réfléchir et discuter... 
+      Utilisez cet outil pour réfléchir et discuter...
         - Discerner la proportion d'activités et le budget alloué aux activités "centrées sur les jeunes"
         - L’un des plans de votre pays, qu’il soit un plan local, de district, régional ou national
         - Activités prévues pour les jeunes âgés de 15 à 24 ans
         - Si un budget suffisant est alloué à ces activités axées sur les jeunes
         - Comment renforcer le plan pour mieux répondre aux besoins des jeunes
-        
+
     stepsTitle: Comment Ça Marche?
     stepsIntro: 'Joignez-vous à 2 ou 3 collègues défenseurs de la jeunesse, rendez-vous disponibles pour quelques heures puis suivez les étapes ci-dessous pour déterminer si votre plan utilise des stratégies innovatrices et sur mesure pour répondre aux besoins des jeunes de votre pays :'
     steps:
@@ -35,14 +35,14 @@ fr:
         title: Obtenir vos résultats.
         blurb: |-
           En utilisant les données générées par cet outil, déterminez si votre pays investit suffisamment et intelligemment dans la jeunesse.
-    getStartedIntro: Vous pouvez utiliser vos résultats pour sensibiliser et défendre l'importance d'investir dans la santé reproductive des jeunes. Merci d'avoir ouvert la voie à une planification familiale plus complète pour les générations futures.     
+    getStartedIntro: Vous pouvez utiliser vos résultats pour sensibiliser et défendre l'importance d'investir dans la santé reproductive des jeunes. Merci d'avoir ouvert la voie à une planification familiale plus complète pour les générations futures.
     getStartedButton: Démarrez
     downloadTitle: Télécharger les Versions Hors Ligne
     downloadBlurb: |-
       Si vous rencontrez des problèmes avec votre navigateur, si vous souhaitez accéder à l'application en mode hors connexion ou si vous souhaitez simplement utiliser l'application sur votre bureau sans utiliser de navigateur, vous pouvez télécharger l'une des versions suivantes selon vos besoins.
 
-      *Remarque* : l'application fonctionnera toujours dans le navigateur même si Internet est déconnecté. Une fois téléchargée, l'application sera automatiquement enregistrée dans le dossier Téléchargements de votre appareil. Pour vous assurer de ne pas perdre la trace de l'application, vous pouvez envisager de l'enregistrer dans un autre dossier de votre appareil.
-      ### Instructions d'installation :
+      *Remarque* : l'application fonctionnera toujours dans le navigateur même si Internet est déconnecté. Une fois téléchargée, l'application sera automatiquement enregistrée dans le dossier Téléchargements de votre appareil. Pour vous assurer de ne pas perdre la trace de l'application, vous pouvez envisager de l'enregistrer dans un autre dossier de votre appareil.
+      ### Instructions d'installation :
       - Pour **Macintosh**, décompressez le fichier et utilisez DMG pour installer l'application.
       - Pour **Windows**, décompressez le dossier et exécutez le fichier .exe dans le dossier.
     downloadMac: Macintosh (51MB)
@@ -66,13 +66,13 @@ fr:
 
       * S'agit-il d'un plan de SRAJ ou d'un plan général de PF/SR ?
       * Repérer les priorités et les objectifs stratégiques - vous passerez la majeure partie de votre temps ici.
-      * Demandez-vous, "Comment est-ce que le budget est organisé ? Est-ce que chaque activité a été budgétisée ? 
-      * Vous ne trouvez pas les activités et les montants budgétaires correspondants ? Alors consultez l’annexe de votre plan. 
+      * Demandez-vous, "Comment est-ce que le budget est organisé ? Est-ce que chaque activité a été budgétisée ?
+      * Vous ne trouvez pas les activités et les montants budgétaires correspondants ? Alors consultez l’annexe de votre plan.
     note: 'Important : Malheureusement, vous ne pourrez pas analyser votre budget si...'
     noteBody: |-
       * Les activités spécifiques n'ont pas de montants budgétisés correspondants.
       * Vous évaluez un plan de SRAJ, pas un plan général de PF/SR.
-      
+
       \
       **Mais ne vous inquiétez pas. Vous pouvez encore analyser la qualité des activités.**
     getStartedButton: Démarrez
@@ -86,7 +86,7 @@ fr:
     selectActivityType: Catégorisez votre activité par type
     setupRequired: Remplissez tous les champs, s'il vous plaît.
     restoreActivities: Restaurer vos activités
-    addActivities: AJOUTEZ VOS ACTIVITÉS 
+    addActivities: AJOUTEZ VOS ACTIVITÉS
     editActivities: MODIFIER VOS ACTIVITÉS
     saveDataReminder: "Votre navigateur web conservera automatiquement vos données\
       \ présentes. Cependant, **cela ne garantit pas que vos données seront enregistré\
@@ -204,7 +204,7 @@ fr:
       # do not translate
       key: enablingEnvironment
       body: |-
-        L'un des avantages du modèle SEED est qu'il prend en compte le contexte spécifique dans lequel les services de planification familiale sont demandés et fournis. Des facteurs culturels, politiques, économiques et religieux affectent le fonctionnement des services de santé et les normes sociales qui les régissent. Un environnement favorable à la santé nécessite « des politiques équitables ; des ressources adéquates ; une bonne gouvernance, gestion et responsabilité ; des normes sociales et culturelles favorables ; et l’égalité entre les sexes ».[^1] Toute activité visant à influer sur le contexte plus large des programmes de planification familiale relèverait de ce domaine. Ces activités peuvent inclure :
+        L'un des avantages du modèle SEED est qu'il prend en compte le contexte spécifique dans lequel les services de planification familiale sont demandés et fournis. Des facteurs culturels, politiques, économiques et religieux affectent le fonctionnement des services de santé et les normes sociales qui les régissent. Un environnement favorable à la santé nécessite « des politiques équitables ; des ressources adéquates ; une bonne gouvernance, gestion et responsabilité ; des normes sociales et culturelles favorables ; et l’égalité entre les sexes ».[^1] Toute activité visant à influer sur le contexte plus large des programmes de planification familiale relèverait de ce domaine. Ces activités peuvent inclure :
         - Plaidoyer pour la promotion de politiques et de directives favorables à l'AYRH
         - Facteurs réglementaires qui affectent la disponibilité de méthodes de planification familiale spécifiques à un pays
         - Efforts visant à promouvoir des politiques qui améliorent l'accès des jeunes à la planification familiale, à la fois dans les établissements et dans les communautés
@@ -244,8 +244,8 @@ fr:
   bestPracticeTitle: Ces activités fonctionneront-elles?
   bestPracticeResourceSubtitle: Répondront-elles efficacement aux besoins et aux désirs en matière de reproduction des jeunes dans votre pays ?
   bestPracticesContent: |-
-    Pour répondre, referez-vous aux données probantes. Commencez par examiner les pratiques fondées sur des données probantes (EIPs) ci-dessous. Chaque EIP a donné des résultats positifs notables dans la programmation de la santé reproductive des adolescents et des jeunes. 
-    
+    Pour répondre, referez-vous aux données probantes. Commencez par examiner les pratiques fondées sur des données probantes (EIPs) ci-dessous. Chaque EIP a donné des résultats positifs notables dans la programmation de la santé reproductive des adolescents et des jeunes.
+
     Lorsque vous avez terminé, cliquez sur **CONTINUER** en bas à droite.
   backToBestPractices: Retourner aux Pratiques fondées sur des données probantes (EIP)
   bestPracticeIntro: ""
@@ -265,17 +265,17 @@ fr:
       body: |-
         **De quoi s'agit-il ?**
 
-        Même si la période de 15 à 24 ans représente une période relativement courte, les expériences de vie des jeunes peuvent varier considérablement. Le terme englobe les jeunes qui commencent tout juste à découvrir et à explorer les relations ; des jeunes célibataires ou mariés, sans enfants, ou parents pour la première fois, ou parents de plusieurs enfants. Cela inclut également les jeunes qui peuvent être infectés par le VIH, les jeunes qui ont accès aux informations sur la santé et aux parents qui les soutiennent, ou les jeunes qui ont du mal à comprendre leurs sentiments avec peu d'informations ou de soutien. Les soins de santé qui tiennent compte du stade de la vie et des besoins particuliers des jeunes sont parfois décrits comme « adaptés aux adolescents et aux jeunes ». Les soins de santé procréative adaptés aux adolescents et aux jeunes (AYRH) sont conformes aux cinq normes établies par l'Organisation mondiale de la Santé ainsi qu'aux normes internationales visant à améliorer la qualité des soins de santé dispensés aux adolescents.  Ces soins pour hommes et femme s'incluent généralement des méthodes contraceptives sûres et abordables ; la prévention et le traitement du VIH/SIDA et la prise en charge d'autres IST ; la fourniture d'informations de santé précises et des conseils et soins sensibles pour le bien-être général. Les services peuvent également inclure des soins obstétricaux et prénatals adaptés aux jeunes pour les femmes et jeunes femmes enceintes ; des services de soins post-avortement, la prévention, le dépistage et le conseil en matière de violence sexiste ; ainsi que la prévention, le dépistage et le traitement du cancer du col utérin.[^2]
+        Même si la période de 15 à 24 ans représente une période relativement courte, les expériences de vie des jeunes peuvent varier considérablement. Le terme englobe les jeunes qui commencent tout juste à découvrir et à explorer les relations ; des jeunes célibataires ou mariés, sans enfants, ou parents pour la première fois, ou parents de plusieurs enfants. Cela inclut également les jeunes qui peuvent être infectés par le VIH, les jeunes qui ont accès aux informations sur la santé et aux parents qui les soutiennent, ou les jeunes qui ont du mal à comprendre leurs sentiments avec peu d'informations ou de soutien. Les soins de santé qui tiennent compte du stade de la vie et des besoins particuliers des jeunes sont parfois décrits comme « adaptés aux adolescents et aux jeunes ». Les soins de santé procréative adaptés aux adolescents et aux jeunes (AYRH) sont conformes aux cinq normes établies par l'Organisation mondiale de la Santé ainsi qu'aux normes internationales visant à améliorer la qualité des soins de santé dispensés aux adolescents.  Ces soins pour hommes et femme s'incluent généralement des méthodes contraceptives sûres et abordables ; la prévention et le traitement du VIH/SIDA et la prise en charge d'autres IST ; la fourniture d'informations de santé précises et des conseils et soins sensibles pour le bien-être général. Les services peuvent également inclure des soins obstétricaux et prénatals adaptés aux jeunes pour les femmes et jeunes femmes enceintes ; des services de soins post-avortement, la prévention, le dépistage et le conseil en matière de violence sexiste ; ainsi que la prévention, le dépistage et le traitement du cancer du col utérin.[^2]
 
         \
-        **Pourquoi cela est-il important ?**
+        **Pourquoi cela est-il important ?**
 
-        L'adolescence est une étape clef du cycle de vie et représente une opportunité stratégique « de mettre l'accent sur l'autonomisation et les approches préventives qui permettraient aux adolescents de survivre, de s'épanouir et de transformer leurs sociétés. » [^3] Les soins d’AYRH jouent un rôle crucial dans ce processus d’autonomisation en fournissant un canal important pour l’information et les services dont les jeunes ont besoin pour faire et adopter des choix éclairés et équitables en ce qui concerne leur propre vie reproductive.
+        L'adolescence est une étape clef du cycle de vie et représente une opportunité stratégique « de mettre l'accent sur l'autonomisation et les approches préventives qui permettraient aux adolescents de survivre, de s'épanouir et de transformer leurs sociétés. » [^3] Les soins d’AYRH jouent un rôle crucial dans ce processus d’autonomisation en fournissant un canal important pour l’information et les services dont les jeunes ont besoin pour faire et adopter des choix éclairés et équitables en ce qui concerne leur propre vie reproductive.
 
         \
         **Quelques considérations d'implémentation**
 
-        Les soins adaptés aux jeunes peuvent être dispensés à l'aide de plusieurs modèles de prestation de services : les soins peuvent être soit autonomes (tels qu'une clinique séparée ou un espace réservé aux jeunes), soit intégrés dans les soins primaires normalement dispensés par les établissements de santé ou intégrés aux services mobiles ou dans le cadre de soins communautaires, y compris les soins à domicile. _Penser en dehors de l'espace séparé : un outil d'aide à la prise de décision pour la conception de services adaptés aux jeunes [^ 4] _ fournit des conseils pour la sélection et l'adaptation de modèles de prise en charge adaptés aux jeunes, en fonction du contexte du pays, de la population cible et des résultats souhaités en matière de comportement ou de santé. Les centres de jeunesse (c.-à-d. établissements indépendants proposant une gamme de programmes et de services aux adolescents et aux jeunes, tels que des activités récréatives, professionnelles ou culturelles pouvant également abriter une salle réservée aux prestataires de soins de santé pouvant offrir des informations relatifs à la santé reproductive et à la planification familiale) s’est avéré efficace pour accroître l’adoption et l’utilisation des services de santé reproductive/planification familiale par les adolescents et les jeunes.[^5]
+        Les soins adaptés aux jeunes peuvent être dispensés à l'aide de plusieurs modèles de prestation de services : les soins peuvent être soit autonomes (tels qu'une clinique séparée ou un espace réservé aux jeunes), soit intégrés dans les soins primaires normalement dispensés par les établissements de santé ou intégrés aux services mobiles ou dans le cadre de soins communautaires, y compris les soins à domicile. _Penser en dehors de l'espace séparé : un outil d'aide à la prise de décision pour la conception de services adaptés aux jeunes [^ 4] _ fournit des conseils pour la sélection et l'adaptation de modèles de prise en charge adaptés aux jeunes, en fonction du contexte du pays, de la population cible et des résultats souhaités en matière de comportement ou de santé. Les centres de jeunesse (c.-à-d. établissements indépendants proposant une gamme de programmes et de services aux adolescents et aux jeunes, tels que des activités récréatives, professionnelles ou culturelles pouvant également abriter une salle réservée aux prestataires de soins de santé pouvant offrir des informations relatifs à la santé reproductive et à la planification familiale) s’est avéré efficace pour accroître l’adoption et l’utilisation des services de santé reproductive/planification familiale par les adolescents et les jeunes.[^5]
 
         La fourniture de services AYRH doit être fermement ancrée dans les principes d'équité, de non-discrimination et de volontariat, en insistant sur le fait que des informations et des services de qualité doivent être disponibles pour tous les adolescents et les jeunes. Des services équitables, adaptés aux adolescents et aux jeunes, garantissent qu'aucune politique ni procédure ne limite la fourniture de services de santé aux adolescents marginalisés ou vulnérables.[^6]
 
@@ -293,21 +293,21 @@ fr:
         \
         **Activités suggérées**
 
-        Conformément aux normes mondiales de l'OMS pour les services adaptés aux jeunes, les établissements de santé devraient s'efforcer de : [^9]
+        Conformément aux normes mondiales de l'OMS pour les services adaptés aux jeunes, les établissements de santé devraient s'efforcer de : [^9]
 
         1. **Mettre en place des systèmes pour que les adolescents soient informés** de leur propre santé et savoir où et quand obtenir des services de santé.
         1. **Mettre en œuvre des stratégies pour assurer le soutien de la communauté.** Les parents, les tuteurs, les autres membres de la communauté et les organisations communautaires devraient reconnaître l’importance de la fourniture de services de santé aux adolescents et soutenir cette prestation et leur utilisation par les adolescents.
         1. **Fournir un ensemble de services approprié.** Le centre de santé fournit un ensemble de services d’information, de conseil, de diagnostic, de traitement et de soins qui répondent aux besoins de tous les adolescents. Les services sont fournis dans l’établissement et par le biais de liens d’aiguillage et de relations communautaires.
         1. ** Promouvoir les compétences des prestataires de santé. ** Les prestataires de soins de santé devraient démontrer la compétence technique requise pour fournir aux adolescents des services de santé efficaces. Les prestataires de soins de santé et le personnel de soutien doivent respecter, protéger et garantir l'accès des adolescents à l'information, à la vie privée, à la confidentialité, à la non-discrimination, aux soins et au respect.
         1. **Promouvoir des établissements de santé accueillants.** L'établissement de santé doit avoir des horaires d'ouverture pratiques, un environnement accueillant et propre, et préserver la confidentialité et la confidentialité. Il devrait disposer du matériel, des médicaments, des fournitures et de la technologie nécessaires pour assurer des services efficaces aux adolescents.
-        1. **Garantir l'équité et la non-discrimination** : L'établissement de santé doit fournir des services de qualité à tous les adolescents, quels que soient leur capacité de paiement, leur âge, leur sexe, leur état matrimonial, leur niveau d'éducation, leur origine ethnique et autres caractéristiques.
+        1. **Garantir l'équité et la non-discrimination** : L'établissement de santé doit fournir des services de qualité à tous les adolescents, quels que soient leur capacité de paiement, leur âge, leur sexe, leur état matrimonial, leur niveau d'éducation, leur origine ethnique et autres caractéristiques.
         1. **Collecter des données pour améliorer la qualité.** L'établissement de santé devrait collecter, analyser et utiliser des données sur l'utilisation des services et la qualité des soins, ventilées par âge et par sexe, afin de soutenir l'amélioration de la qualité. Le personnel des établissements de santé doit être aidé à participer à l'amélioration continue de la qualité.
         1. **Permettre la participation des adolescents.** Les adolescents devraient être associés à la planification, au suivi et à l'évaluation des services de santé et aux décisions concernant leurs propres soins, ainsi qu'à certains aspects appropriés de la fourniture de services.
 
         \
         **Exemple programmatique**
 
-        Pour faire face aux défis auxquels font face les adolescentes et les jeunes femmes dans la recherche du VIH et de soins de santé en matière de reproduction, le projet Girl Power-Malawi a testé diverses approches intégrées pour faciliter l’utilisation des services. Le projet a comparé le niveau de soins actuel offert par les centres de santé du secteur public - comprenant le dépistage vertical du VIH, la planification familiale et la gestion des infections sexuellement transmissibles dans des espaces réservés aux adultes, par des prestataires ne disposant pas de formation supplémentaire - avec des installations du secteur public modèles de services de santé adaptés aux jeunes. Ceux-ci comprenaient 1) un ensemble de services « standard » adaptés aux jeunes, avec des prestataires formés, un espace dédié et une éducation de leurs pairs, 2) le package de services adaptés aux jeunes et une intervention comportementale (BI), qui consiste en un petit groupe de formation, et 3) le package de services adaptés aux jeunes plus l’intervention comportementale, et les transferts monétaires conditionnels. Les résultats de l'étude ont révélé que les jeunes des modèles de services adaptés aux jeunes, pris ensemble, avaient 23 % de chances supplémentaires de subir un test de dépistage du VIH, 57 % de chances de plus d'avoir accès à des préservatifs et 39 % de chances en plus de recevoir une contraception hormonale.[^9]
+        Pour faire face aux défis auxquels font face les adolescentes et les jeunes femmes dans la recherche du VIH et de soins de santé en matière de reproduction, le projet Girl Power-Malawi a testé diverses approches intégrées pour faciliter l’utilisation des services. Le projet a comparé le niveau de soins actuel offert par les centres de santé du secteur public - comprenant le dépistage vertical du VIH, la planification familiale et la gestion des infections sexuellement transmissibles dans des espaces réservés aux adultes, par des prestataires ne disposant pas de formation supplémentaire - avec des installations du secteur public modèles de services de santé adaptés aux jeunes. Ceux-ci comprenaient 1) un ensemble de services « standard » adaptés aux jeunes, avec des prestataires formés, un espace dédié et une éducation de leurs pairs, 2) le package de services adaptés aux jeunes et une intervention comportementale (BI), qui consiste en un petit groupe de formation, et 3) le package de services adaptés aux jeunes plus l’intervention comportementale, et les transferts monétaires conditionnels. Les résultats de l'étude ont révélé que les jeunes des modèles de services adaptés aux jeunes, pris ensemble, avaient 23 % de chances supplémentaires de subir un test de dépistage du VIH, 57 % de chances de plus d'avoir accès à des préservatifs et 39 % de chances en plus de recevoir une contraception hormonale.[^9]
 
         [^1]: Organisation mondiale de la Santé, Making health services adolescent friendly: Developing national quality standards for adolescent friendly health services. Genève : Organisation mondiale de la Santé, 2012.
 
@@ -315,9 +315,9 @@ fr:
 
         [^3]: Every Woman, Every Child. Technical Guidance for Prioritizing Adolescent Health. 2017. [https://www.unfpa.org/sites/default/files/pub-pdf/UNFPA_EWEC_Report_EN_WEB.pdf] Consulté le 6 août 2018.
 
-        [^4]: Simon C, Benevides R, Hainsworth G, Morgan G, and Chau K. Sortir des sentiers battus : un outil décisionnel pour concevoir des services adaptés aux jeunes. Washington, DC: Evidence to Action Project/Pathfinder International; 2015.
+        [^4]: Simon C, Benevides R, Hainsworth G, Morgan G, and Chau K. Sortir des sentiers battus : un outil décisionnel pour concevoir des services adaptés aux jeunes. Washington, DC: Evidence to Action Project/Pathfinder International; 2015.
 
-        [^5]: OMS/UNAIDS, Normes mondiales pour la qualité des services de santé destinés aux adolescents : guide pour la mise en œuvre d'une stratégie fondée sur des normes afin d'améliorer la qualité des services de santé pour les adolescents. Genève : Organisation Mondiale de la Santé, 2015.
+        [^5]: OMS/UNAIDS, Normes mondiales pour la qualité des services de santé destinés aux adolescents : guide pour la mise en œuvre d'une stratégie fondée sur des normes afin d'améliorer la qualité des services de santé pour les adolescents. Genève : Organisation Mondiale de la Santé, 2015.
 
         [^6]: OMS, Quality Assessment Guidebook. A guide to assessing health services for adolescent clients. Genève, Organisation Mondiale de la Santé, 2009.
 
@@ -330,7 +330,7 @@ fr:
         resource1:
           title: 'Titre de la ressource'
           teaser: |-
-            Callie Simon, Regina Benevides, Gwyn Hainsworth, Gwendolyn Morgan, and Katie Chau, Sortir des sentiers battus : un outil décisionnel pour concevoir des services adaptés aux jeunes. Washington, DC : projet Evidence to Action/Pathfinder International, mars 2015.
+            Callie Simon, Regina Benevides, Gwyn Hainsworth, Gwendolyn Morgan, and Katie Chau, Sortir des sentiers battus : un outil décisionnel pour concevoir des services adaptés aux jeunes. Washington, DC : projet Evidence to Action/Pathfinder International, mars 2015.
           # Do Not Translate
           url: /uploads/resources/bestpractice1.png
         resource2:
@@ -342,10 +342,10 @@ fr:
           url: http://www.ghspjournal.org/content/3/3/333.short
         resource3:
           title: 'Pratiques d''impact élevé dans la planification familiale (HIPS).
-            Services de contraception adaptés aux adolescents : Intégration d’éléments
+            Services de contraception adaptés aux adolescents : Intégration d’éléments
             adaptés aux adolescents aux services de contraception existants'
           teaser: |-
-            Pratiques d'impact élevé dans la planification familiale (HIPS). Services de contraception adaptés aux adolescents : Intégration d’éléments adaptés aux adolescents aux services de contraception existants Washington (DC): USAID; 2015.
+            Pratiques d'impact élevé dans la planification familiale (HIPS). Services de contraception adaptés aux adolescents : Intégration d’éléments adaptés aux adolescents aux services de contraception existants Washington (DC): USAID; 2015.
           # Do Not Translate
           url: https://www.fphighimpactpractices.org/afcs
         resource4:
@@ -364,10 +364,10 @@ fr:
           url: https://www.ncbi.nlm.nih.gov/pubmed/27562452
         resource6:
           title: 'Prévenir les grossesses précoces et leurs conséquences en matière
-            de santé reproductive chez les adolescentes dans les pays en développement :
+            de santé reproductive chez les adolescentes dans les pays en développement :
             les faits.'
           teaser: |-
-            Organisation mondiale de la Santé. (2011). Prévenir les grossesses précoces et leurs conséquences en matière de santé reproductive chez les adolescentes dans les pays en développement : les faits.
+            Organisation mondiale de la Santé. (2011). Prévenir les grossesses précoces et leurs conséquences en matière de santé reproductive chez les adolescentes dans les pays en développement : les faits.
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/10665/70813/1/WHO_FWC_MCA_12_02_eng.pdf
         resource7:
@@ -396,11 +396,11 @@ fr:
           url: http://apps.who.int/iris/bitstream/handle/10665/255415/9789241512343-eng.pdf?sequence=1
         resource11:
           title: 'Normes mondiales pour la qualité des services de santé destinés
-            aux adolescents : guide pour la mise en œuvre d''une stratégie fondée
+            aux adolescents : guide pour la mise en œuvre d''une stratégie fondée
             sur des normes afin d''améliorer la qualité des services de santé pour
             les adolescents.'
           teaser: |-
-            OMS/UNAIDS (2015). Normes mondiales pour la qualité des services de santé destinés aux adolescents : guide pour la mise en œuvre d'une stratégie fondée sur des normes afin d'améliorer la qualité des services de santé pour les adolescents.
+            OMS/UNAIDS (2015). Normes mondiales pour la qualité des services de santé destinés aux adolescents : guide pour la mise en œuvre d'une stratégie fondée sur des normes afin d'améliorer la qualité des services de santé pour les adolescents.
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/handle/10665/183935/9789241549332_vol1_eng.pdf?sequence=1
     bestPractice2:
@@ -417,7 +417,7 @@ fr:
         **De quoi s'agit-il ?**
         Les soins de l’AYRH liés à l’utilisation de la contraception ont pour pilier des conseils de qualité. L'objectif de ce conseil est de s'assurer que les jeunes soient conscients de la nature volontaire de l'utilisation de la contraception et qu'ils connaissent l'ensemble d'options de contraception à leur disposition.  Fournir aux adolescents et aux jeunes une gamme complète de contraceptifs, y compris des contraceptifs à action prolongée et réversibles (LARC), facilite leur utilisation de la contraception[^10] et leur permet de choisir en toute connaissance de cause une méthode compatible avec leurs préférences et objectifs. Un conseil de qualité et un large choix de méthodes devrait également permettre aux jeunes de changer de méthodes en cas d'effets secondaires indésirables. L'élargissement du choix en matière de contraception est conforme à la troisième norme de l'OMS pour l'amélioration de la qualité des soins de santé pour les adolescents (OMS, 2015). Tout adolescent peut utiliser n'importe quelle méthode contraceptive selon les critères d'éligibilité médicale de l'OMS pour l'utilisation de la contraception. L’âge seul ne constitue pas une contre-indication à l’utilisation des méthodes contraceptives.
         \
-        Une gamme complète de méthodes contraceptives comprend :
+        Une gamme complète de méthodes contraceptives comprend :
         - les méthodes LARC telles que les implants contraceptifs et les DIU
         - les contraceptifs à court terme tels que les injections, les pilules contraceptives orales combinées et les contraceptifs oraux à progestatif seul
         - les méthodes barrière telles que les préservatifs masculins et les préservatifs féminins
@@ -426,7 +426,7 @@ fr:
         - la sensibilisation à la fertilité
 
         \
-        **Pourquoi cela est-il important ?**
+        **Pourquoi cela est-il important ?**
         L'Organisation mondiale de la santé (OMS) indique que 16 millions d'adolescentes âgées de 15 à 19 ans donnent naissance chaque année, principalement dans des pays à revenu faible ou intermédiaire. Beaucoup de ces grossesses sont prévues tandis que d'autres n'arrivent pas au bon moment. Vingt-trois millions d'adolescentes souhaiteraient utiliser une contraception, mais ne le font pas pour le moment. Les grossesses précoces et mal planifiées peuvent entraîner une morbidité et une mortalité maternelles, ainsi que des conséquences sociales qui limitent le potentiel des jeunes femmes. Et pourtant, il existe de nombreux obstacles pour les adolescentes qui souhaitent utiliser une méthode de contraception pour retarder une première grossesse ou pour espacer des grossesses ultérieures. Les grossesses précoces et mal planifiées peuvent entraîner une morbidité et une mortalité maternelles, ainsi que des conséquences sociales qui limitent le potentiel des jeunes femmes. Celles-ci incluent des lois restrictives limitant le choix en matière de contraception, des politiques mal appliquées et des normes sociales imposées à la fois par les prestataires et les communautés sur les types de contraception appropriés, le cas échéant, pour les jeunes. En outre, les jeunes peuvent ne pas savoir où se procurer de contraception abordable, se sentir stigmatisés en raison de leur comportement sexuel, ne pas avoir le choix, ou, dans le cas d'un mariage, se sentir obligés de démontrer leur fertilité.[^11]
 
         \
@@ -441,22 +441,22 @@ fr:
         \
         **Activités suggérées**
 
-        Les composants suivants garantissent un choix élargi de contraceptifs pour les adolescents et les jeunes :
+        Les composants suivants garantissent un choix élargi de contraceptifs pour les adolescents et les jeunes :
          \
-         **Assurer qu'une gamme complète de méthodes contraceptives est disponible :**
+         **Assurer qu'une gamme complète de méthodes contraceptives est disponible :**
          - Mettre en place un système efficace pour fournir une gamme complète de produits de planification familiale afin de permettre aux adolescents et aux jeunes de choisir, d'obtenir et d'utiliser la meilleure méthode de contraception adaptée à leurs besoins, minimisant ainsi les arrêts de traitement et améliorant la satisfaction.
          - Veiller à ce que les prestataires soient informés et aptes à fournir la gamme complète de méthodes contraceptives aux adolescents et aux jeunes en corrigeant les idées fausses et les préjugés selon les besoins.
 
          \
-         **Assurer que les prestataires de services possèdent les compétences requises pour fournir des services de contraception adaptés aux jeunes :**
+         **Assurer que les prestataires de services possèdent les compétences requises pour fournir des services de contraception adaptés aux jeunes :**
          - Former les prestataires de soins de santé aux technologies contraceptives, y compris aux LARC, aux critères d'admissibilité médicaux de l'OMS pour l'utilisation de contraceptifs, ainsi qu'aux compétences adaptées aux adolescents et aux jeunes.
          - Mener des exercices de clarification des valeurs pour remédier aux préjugés des prestataires.
          - Offrir aux prestataires de soins de santé une formation initiale et continue sur les services adaptés aux adolescents et aux jeunes.
          - Apporter un soutien, des programmes de mentorat et des outils de travail pour encourager les prestataires à offrir des services adaptés aux jeunes.
 
          \
-         **Permettre aux adolescents et aux jeunes d’avoir accès à des informations et à des conseils sur toute la gamme de méthodes :**
-         - Pour garantir un choix éclairé, fournir des informations et des conseils complets qui :
+         **Permettre aux adolescents et aux jeunes d’avoir accès à des informations et à des conseils sur toute la gamme de méthodes :**
+         - Pour garantir un choix éclairé, fournir des informations et des conseils complets qui :
            - mettent l'accent sur les préoccupations et les besoins uniques des adolescents et des jeunes
            - prennent en considération leurs intentions de fécondité
            - abordent les mythes et les idées fausses
@@ -465,7 +465,7 @@ fr:
          - À l'aide des critères d'éligibilité médicaux de l'OMS, assurez-vous que l'adolescent ou le jeune client n'a aucun problème médical susceptible d'empêcher l'utilisation d'une méthode contraceptive donnée.
 
          \
-         **Créer un environnement favorable qui encourage les adolescents et les jeunes à faire leurs propres choix en matière de contraception :**
+         **Créer un environnement favorable qui encourage les adolescents et les jeunes à faire leurs propres choix en matière de contraception :**
          - Garantir le soutien de la communauté à la demande, à l'accès et à l'utilisation de la gamme complète de méthodes de contraception par les adolescents.
          - Soutenir les lois, politiques et directives garantissant à tous les adolescents et jeunes un accès aux informations, produits et services relatifs à la contraception.
          - Mettre en œuvre des interventions pour répondre aux normes de genre qui limitent l'utilisation de la contraception par les adolescents et les jeunes.
@@ -473,7 +473,7 @@ fr:
          \
          **Exemple programmatique**
 
-          Pour s'attaquer au problème de la faible utilisation des LARC par la jeunesse éthiopienne, le projet « LARCs and Youth » a été lancé pour promouvoir un ensemble de méthodes élargi pour toutes les jeunes femmes dans les unités YFS (Youth Friendly Service ou services adaptés aux jeunes) de certains centres de santé des régions d'Amhara et de Tigray. Le projet a utilisé une approche en deux volets : 1) prestation de services limitée à la formation des LARC pour les prestataires de services adaptés aux jeunes et mise en place d'une supervision formative ; et 2) activités de création de la demande et de sensibilisation dirigées par les pairs, axées sur les LARC, les mythes et les idées fausses. Cette intervention a été comparée au niveau de soins standard dans un échantillon de 20 unités de santé adaptées aux jeunes ; dix chacun dans les régions d'Amhara et de Tigray, en Éthiopie ; alloué au hasard aux tâches d'intervention (cinq) et de non-intervention (cinq). Les résultats ont révélé que la formation de prestataires de services conviviaux pour les jeunes à conseiller et à fournir toutes les méthodes de contraception, y compris les LARC, dans un lieu donné, a entraîné une augmentation significative de l’utilisation des LARC par les jeunes femmes ; y compris celles qui envisagent de retarder leur première grossesse.[^16]
+          Pour s'attaquer au problème de la faible utilisation des LARC par la jeunesse éthiopienne, le projet « LARCs and Youth » a été lancé pour promouvoir un ensemble de méthodes élargi pour toutes les jeunes femmes dans les unités YFS (Youth Friendly Service ou services adaptés aux jeunes) de certains centres de santé des régions d'Amhara et de Tigray. Le projet a utilisé une approche en deux volets : 1) prestation de services limitée à la formation des LARC pour les prestataires de services adaptés aux jeunes et mise en place d'une supervision formative ; et 2) activités de création de la demande et de sensibilisation dirigées par les pairs, axées sur les LARC, les mythes et les idées fausses. Cette intervention a été comparée au niveau de soins standard dans un échantillon de 20 unités de santé adaptées aux jeunes ; dix chacun dans les régions d'Amhara et de Tigray, en Éthiopie ; alloué au hasard aux tâches d'intervention (cinq) et de non-intervention (cinq). Les résultats ont révélé que la formation de prestataires de services conviviaux pour les jeunes à conseiller et à fournir toutes les méthodes de contraception, y compris les LARC, dans un lieu donné, a entraîné une augmentation significative de l’utilisation des LARC par les jeunes femmes ; y compris celles qui envisagent de retarder leur première grossesse.[^16]
 
           [^10]: Michelle J. Hindin et al., “Interventions to Prevent Unintended and Repeat Pregnancy Among Young People in Low-and Middle-Income Countries: A Systematic Review of the Published and Gray Literature,” Journal of Adolescent Health 59, no. 3 (2016): S8-S15. https://www.ncbi.nlm.nih.gov/pubmed/27562452
 
@@ -504,10 +504,10 @@ fr:
           url: http://www.healthpolicyplus.com/ns/pubs/7133-7240_PPathwaysofChangeBriefJan.pdf
         resource3:
           title: 'Pratiques d''impact élevé dans la planification familiale (HIPS).
-            Services de contraception adaptés aux adolescents : Intégration d’éléments
+            Services de contraception adaptés aux adolescents : Intégration d’éléments
             adaptés aux adolescents aux services de contraception existants'
           teaser: |-
-            Pratiques d'impact élevé dans la planification familiale (HIPS). Services de contraception adaptés aux adolescents : Intégration d’éléments adaptés aux adolescents aux services de contraception existants Washington (DC): USAID; 2015.
+            Pratiques d'impact élevé dans la planification familiale (HIPS). Services de contraception adaptés aux adolescents : Intégration d’éléments adaptés aux adolescents aux services de contraception existants Washington (DC): USAID; 2015.
           # Do Not Translate
           url: https://www.fphighimpactpractices.org/afcs
         resource4:
@@ -538,10 +538,10 @@ fr:
           # Do Not Translate
           url: https://www.k4health.org/sites/default/files/Balanced%20Counseling%20Strategy%20Plus%20Algorithm.pdf
         resource8:
-          title: 'Guide pratique pour les soins aux adolescents : un outil de référence
+          title: 'Guide pratique pour les soins aux adolescents : un outil de référence
             destiné aux agents de santé de premier niveau'
           teaser: |-
-            Organisation Mondiale de la Santé (2010). Guide pratique pour les soins aux adolescents : un outil de référence destiné aux agents de santé de premier niveau. Genève : Organisation mondiale de la Santé.
+            Organisation Mondiale de la Santé (2010). Guide pratique pour les soins aux adolescents : un outil de référence destiné aux agents de santé de premier niveau. Genève : Organisation mondiale de la Santé.
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/handle/10665/44387/9789241599962_eng.pdf?sequence=1
         resource9:
@@ -554,11 +554,11 @@ fr:
           url: http://apps.who.int/iris/bitstream/handle/10665/148354/9789241508315_eng.pdf?sequence=1
         resource10:
           title: 'Normes mondiales pour la qualité des services de santé destinés
-            aux adolescents : guide pour la mise en œuvre d''une stratégie fondée
+            aux adolescents : guide pour la mise en œuvre d''une stratégie fondée
             sur des normes afin d''améliorer la qualité des services de santé pour
             les adolescents'
           teaser: |-
-            OMS/UNAIDS (2015). Normes mondiales pour la qualité des services de santé destinés aux adolescents : guide pour la mise en œuvre d'une stratégie fondée sur des normes afin d'améliorer la qualité des services de santé pour les adolescents.
+            OMS/UNAIDS (2015). Normes mondiales pour la qualité des services de santé destinés aux adolescents : guide pour la mise en œuvre d'une stratégie fondée sur des normes afin d'améliorer la qualité des services de santé pour les adolescents.
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/handle/10665/183935/9789241549332_vol1_eng.pdf?sequence=1
     bestPractice3:
@@ -574,22 +574,22 @@ fr:
       body: |-
         **De quoi s'agit-il ?**
 
-        La coordination multisectorielle implique une collaboration délibérée et planifiée entre « divers groupes de parties prenantes (par exemple, le gouvernement, la société civile et le secteur privé) et différents secteurs (par exemple, la santé, l’éducation, l’environnement et l’économie) afin de parvenir conjointement à un résultat politique ».[^17] Les avantages d'une telle coordination, s'ils sont soigneusement réalisés, peuvent inclure une augmentation de la quantité de ressources affectées à la résolution d'un problème de santé. Ces ressources peuvent inclure : expertise et ressources humaines, ressources matérielles et financières, couverture plus étendue des programmes et soutien social et politique accru aux solutions. Les défis de l'AYRH sont complexes et impliquent des normes sociales, les disparités en matière d'éducation, et de nature économique, l'inégalité de genre et des facteurs environnementaux, entre autres.[^18] La réponse doit être tout aussi complète. Une coordination multisectorielle bien planifiée et réfléchie peut fournir une approche globale des problèmes AYRH et contribue à augmenter la probabilité de succès de la réponse.
+        La coordination multisectorielle implique une collaboration délibérée et planifiée entre « divers groupes de parties prenantes (par exemple, le gouvernement, la société civile et le secteur privé) et différents secteurs (par exemple, la santé, l’éducation, l’environnement et l’économie) afin de parvenir conjointement à un résultat politique ».[^17] Les avantages d'une telle coordination, s'ils sont soigneusement réalisés, peuvent inclure une augmentation de la quantité de ressources affectées à la résolution d'un problème de santé. Ces ressources peuvent inclure : expertise et ressources humaines, ressources matérielles et financières, couverture plus étendue des programmes et soutien social et politique accru aux solutions. Les défis de l'AYRH sont complexes et impliquent des normes sociales, les disparités en matière d'éducation, et de nature économique, l'inégalité de genre et des facteurs environnementaux, entre autres.[^18] La réponse doit être tout aussi complète. Une coordination multisectorielle bien planifiée et réfléchie peut fournir une approche globale des problèmes AYRH et contribue à augmenter la probabilité de succès de la réponse.
 
         \
         **Pourquoi cela est-il important ?**
 
-        Le « dividende démographique » fait référence au potentiel de croissance économique résultant de la baisse concomitante de la fécondité et de la croissance de la population en âge de travailler (de 15 à 64 ans) par rapport au nombre de personnes à charge. Les pays qui ont à la fois un nombre croissant de jeunes et une fécondité en baisse ont la possibilité de tirer parti de ce dividende démographique - avec le potentiel de sortir de nombreuses personnes de la pauvreté grâce à des opportunités économiques accrues. Les preuves suggèrent que les programmes mis en œuvre de manière coordonnée dans plusieurs secteurs sont plus efficaces non seulement pour assurer la santé et le bien-être des adolescents [^ 19], mais ils contribuent également à la réalisation des objectifs des secteurs économique et éducatif de la société.[^20] Pour tirer parti de ce dividende démographique, les programmes doivent sortir des sentiers battus : ils doivent placer les jeunes au centre de leurs objectifs et voir le monde à travers leurs yeux. Les jeunes (et tous) pensent de manière systémique. Seuls les spécialistes réduisent les programmes à des secteurs particuliers. Une revue systématique récente visant à identifier les connaissances et les lacunes dans les programmes centrés sur les filles suggère que les programmes multisectoriels ont tendance à avoir des résultats supérieurs aux attentes des programmes mono-sectoriels. [^21]
+        Le « dividende démographique » fait référence au potentiel de croissance économique résultant de la baisse concomitante de la fécondité et de la croissance de la population en âge de travailler (de 15 à 64 ans) par rapport au nombre de personnes à charge. Les pays qui ont à la fois un nombre croissant de jeunes et une fécondité en baisse ont la possibilité de tirer parti de ce dividende démographique - avec le potentiel de sortir de nombreuses personnes de la pauvreté grâce à des opportunités économiques accrues. Les preuves suggèrent que les programmes mis en œuvre de manière coordonnée dans plusieurs secteurs sont plus efficaces non seulement pour assurer la santé et le bien-être des adolescents [^ 19], mais ils contribuent également à la réalisation des objectifs des secteurs économique et éducatif de la société.[^20] Pour tirer parti de ce dividende démographique, les programmes doivent sortir des sentiers battus : ils doivent placer les jeunes au centre de leurs objectifs et voir le monde à travers leurs yeux. Les jeunes (et tous) pensent de manière systémique. Seuls les spécialistes réduisent les programmes à des secteurs particuliers. Une revue systématique récente visant à identifier les connaissances et les lacunes dans les programmes centrés sur les filles suggère que les programmes multisectoriels ont tendance à avoir des résultats supérieurs aux attentes des programmes mono-sectoriels. [^21]
 
         \
         **Considérations d'implémentation**
 
-        De nombreux facteurs doivent être pris en compte dans la planification d’une collaboration multisectorielle réussie. Une compréhension globale et contextuelle du problème est nécessaire. L'adhésion et l'engagement des parties prenantes sont essentiels. Un leadership fort est essentiel, pour définir le programme, gérer les relations et mobiliser les parties prenantes. De plus, les compétences suivantes sont essentielles à la réussite : 1) la capacité de reconnaître la valeur d'impliquer différentes parties prenantes issues de divers secteurs dans le processus politique et de tirer parti des forces particulières de chaque partie prenante, 2) la capacité d'adapter efficacement les messages et les approches à chaque partie prenante pour accroître l'influence, et (3) la capacité de communiquer les avantages de la collaboration à chaque secteur (santé, travail, économie, éducation, etc.) et à chaque partenaire (gouvernement, donateurs bilatéraux, organisations non gouvernementales et autres partenaires privés) à travailler ensemble pour atteindre conjointement l'objectif prioritaire AYRH.[^22] Une stratégie intersectorielle peut maximiser les opportunités et les forces organisationnelles, mais elle nécessite un engagement de ressources adéquat pour assurer le renforcement des capacités, des liens intersectoriels efficaces et la mise en place de processus permettant la coordination entre les secteurs à tous les niveaux de mise en œuvre. Bien que souvent négligée, la probabilité de succès des collaborations multisectorielles augmente considérablement lorsque celle-ci est soutenue, fortement incitée ou mandatée.
+        De nombreux facteurs doivent être pris en compte dans la planification d’une collaboration multisectorielle réussie. Une compréhension globale et contextuelle du problème est nécessaire. L'adhésion et l'engagement des parties prenantes sont essentiels. Un leadership fort est essentiel, pour définir le programme, gérer les relations et mobiliser les parties prenantes. De plus, les compétences suivantes sont essentielles à la réussite : 1) la capacité de reconnaître la valeur d'impliquer différentes parties prenantes issues de divers secteurs dans le processus politique et de tirer parti des forces particulières de chaque partie prenante, 2) la capacité d'adapter efficacement les messages et les approches à chaque partie prenante pour accroître l'influence, et (3) la capacité de communiquer les avantages de la collaboration à chaque secteur (santé, travail, économie, éducation, etc.) et à chaque partenaire (gouvernement, donateurs bilatéraux, organisations non gouvernementales et autres partenaires privés) à travailler ensemble pour atteindre conjointement l'objectif prioritaire AYRH.[^22] Une stratégie intersectorielle peut maximiser les opportunités et les forces organisationnelles, mais elle nécessite un engagement de ressources adéquat pour assurer le renforcement des capacités, des liens intersectoriels efficaces et la mise en place de processus permettant la coordination entre les secteurs à tous les niveaux de mise en œuvre. Bien que souvent négligée, la probabilité de succès des collaborations multisectorielles augmente considérablement lorsque celle-ci est soutenue, fortement incitée ou mandatée.
 
         \
         **Activités suggérées**
 
-        L'OMS, l'OOAS et la Commission Lancet sur la santé et le bien-être des adolescents recommandent les approches suivantes pour une coordination multisectorielle et intersectorielle efficace :
+        L'OMS, l'OOAS et la Commission Lancet sur la santé et le bien-être des adolescents recommandent les approches suivantes pour une coordination multisectorielle et intersectorielle efficace :
 
         - **Adopter des approches multidisciplinaires et multisectorielles fondées sur des preuves**[^23] qui associent les secteurs de l'éducation, de la jeunesse, des médias, de la finance, de la justice et de la protection sociale afin de créer un ensemble systématique de services complémentaires s'appuyant sur les forces de chacun et de renforcer les synergies
         - **Impliquer de multiples secteurs dans les comités directeurs et techniques qui aident les jeunes à élaborer des politiques et stratégies nationales pour la jeunesse, y compris l'AYRH.** Les stratégies nationales ont plus de chances d'être mises en œuvre efficacement si tous les secteurs concernés ont participé à leur élaboration et à la négociation de leur adoption. L'OOAS recommande que le processus d'élaboration d'une stratégie nationale de santé pour les adolescents et les jeunes commence par l'identification, la cartographie et la coordination avec tous les acteurs adolescents, y compris l'AYRH, dans le pays. [^24]
@@ -599,17 +599,17 @@ fr:
         \
         **Exemple programmatique**
 
-        Programa Geração Biz (PGB) est une collaboration multisectorielle qui vise à améliorer la santé reproductive des adolescents au Mozambique. Le programme vise à atteindre les jeunes avec des interventions relatives à la santé reproductive dans les cliniques, les écoles et la communauté. La composante clinique a intégré avec succès les services d’AYRH dans les établissements de santé existants du secteur public. Cela incluait un personnel qualifié, des heures de clinique étendues et/ou dédiées aux adolescents dans un espace dédié, du matériel attrayant pour l'IEC, des éducateurs dans les zones d'attente et la réduction des coûts. La composante en milieu scolaire impliquait à la fois des éducateurs formés et des enseignants sélectionnés pour dispenser un enseignement en matière de santé reproductive/planification familiale ainsi que pour des services de référence dans les écoles secondaires. Enfin, les jeunes non scolarisés ont été formés en tant qu'éducateurs au sein de la communauté pour atteindre les jeunes en dehors du système scolaire. Les responsabilités des différentes composantes du programme ont été soigneusement définies. La composante clinique a été mise en œuvre par le Ministère de la Santé. Les activités en milieu scolaire ont été mises en œuvre par le Ministère de l'Éducation. Le Ministère de la Jeunesse et des Sports a piloté des activités communautaires pour atteindre les jeunes déscolarisés. « Des liens solides d’aiguillage ont été établis entre ces trois types d’activités, assurant ainsi l’aiguillage des interventions menées en milieu scolaire et au sein de la communauté vers des services de santé adaptés aux adolescents et situés dans les établissements. »[^27]
+        Programa Geração Biz (PGB) est une collaboration multisectorielle qui vise à améliorer la santé reproductive des adolescents au Mozambique. Le programme vise à atteindre les jeunes avec des interventions relatives à la santé reproductive dans les cliniques, les écoles et la communauté. La composante clinique a intégré avec succès les services d’AYRH dans les établissements de santé existants du secteur public. Cela incluait un personnel qualifié, des heures de clinique étendues et/ou dédiées aux adolescents dans un espace dédié, du matériel attrayant pour l'IEC, des éducateurs dans les zones d'attente et la réduction des coûts. La composante en milieu scolaire impliquait à la fois des éducateurs formés et des enseignants sélectionnés pour dispenser un enseignement en matière de santé reproductive/planification familiale ainsi que pour des services de référence dans les écoles secondaires. Enfin, les jeunes non scolarisés ont été formés en tant qu'éducateurs au sein de la communauté pour atteindre les jeunes en dehors du système scolaire. Les responsabilités des différentes composantes du programme ont été soigneusement définies. La composante clinique a été mise en œuvre par le Ministère de la Santé. Les activités en milieu scolaire ont été mises en œuvre par le Ministère de l'Éducation. Le Ministère de la Jeunesse et des Sports a piloté des activités communautaires pour atteindre les jeunes déscolarisés. « Des liens solides d’aiguillage ont été établis entre ces trois types d’activités, assurant ainsi l’aiguillage des interventions menées en milieu scolaire et au sein de la communauté vers des services de santé adaptés aux adolescents et situés dans les établissements. »[^27]
 
         [^17]: The Health Policy Project. Resource Guide to Multi-Sectoral Coordination. 2014.
 
         [^18]: Viner RM, Ozer EM, Denny S, et al. Adolescence and the social determinants of health. Lancet 2012; 379: 1641–52.
 
-        [^19]: OMS. La santé pour les adolescents du monde : une deuxième chance pour la deuxième décennie. Genève : Organisation mondiale de la Santé ; 2014.  [http://www.who.int/maternal_child_adolescent/documents/second-decade/en/] Consulté le 4 mai 2017.
+        [^19]: OMS. La santé pour les adolescents du monde : une deuxième chance pour la deuxième décennie. Genève : Organisation mondiale de la Santé ; 2014.  [http://www.who.int/maternal_child_adolescent/documents/second-decade/en/] Consulté le 4 mai 2017.
 
         [^20] : Organisation Ouest Africaine de la Santé. Guide d'orientation pour l'élaboration des stratégies nationales de santé des adolescents et jeunes des pays de la CEDEAO ; 2015
 
-        [^21]: Haberland, Nicole A., Katharine J. McCarthy, et Martha Brady. Insights and Evidence Gaps in Girl-Centered Programming: A Systematic Review. GIRL Center Research Brief No. 3. New York : Population Council ; 2018.
+        [^21]: Haberland, Nicole A., Katharine J. McCarthy, et Martha Brady. Insights and Evidence Gaps in Girl-Centered Programming: A Systematic Review. GIRL Center Research Brief No. 3. New York : Population Council ; 2018.
 
         [^22]: The Health Policy Project. Resource Guide to Multi-Sectoral Coordination. 2014. [https://www.healthpolicyproject.com/pubs/272_MultisectoralCoordinationResourceGuide.pdf] Consulté 13 août 2018.
 
@@ -626,7 +626,7 @@ fr:
         resource1:
           title: 'Titre de la ressource'
           teaser: |-
-            Organisation mondiale de la Santé (2014). La santé pour les adolescents du monde : une deuxième chance pour la deuxième décennie
+            Organisation mondiale de la Santé (2014). La santé pour les adolescents du monde : une deuxième chance pour la deuxième décennie
           # Do Not Translate
           url: /uploads/resources/bestpractice1.png
         resource2:
@@ -659,34 +659,34 @@ fr:
       body: |-
         **De quoi s'agit-il ?**
 
-        En termes d'AYRH, la participation signifie que les jeunes ont les capacités et les possibilités de rechercher des informations ; d'exprimer leur opinion, leurs idées et leurs décisions ; d'être informés et consultés sur les décisions concernant les jeunes (programmes et politiques) ; de participer activement aux différentes étapes de la conception, de la mise en œuvre et du suivi d'un service ou d'une politique de santé ; d'avoir les connaissances, les compétences et le désir de faire des choix éclairés concernant leur vie reproductive ; et qu'ils possèdent les connaissances et les compétences nécessaires pour responsabiliser les détenteurs d'obligations. La participation des jeunes a pour but de nourrir toutes les compétences nécessaires pour que les individus façonnent un secteur de la société civile fort et des institutions démocratiques qui fonctionnent, avec notamment des systèmes et services de santé réactifs.
+        En termes d'AYRH, la participation signifie que les jeunes ont les capacités et les possibilités de rechercher des informations ; d'exprimer leur opinion, leurs idées et leurs décisions ; d'être informés et consultés sur les décisions concernant les jeunes (programmes et politiques) ; de participer activement aux différentes étapes de la conception, de la mise en œuvre et du suivi d'un service ou d'une politique de santé ; d'avoir les connaissances, les compétences et le désir de faire des choix éclairés concernant leur vie reproductive ; et qu'ils possèdent les connaissances et les compétences nécessaires pour responsabiliser les détenteurs d'obligations. La participation des jeunes a pour but de nourrir toutes les compétences nécessaires pour que les individus façonnent un secteur de la société civile fort et des institutions démocratiques qui fonctionnent, avec notamment des systèmes et services de santé réactifs.
 
         \
-        **Pourquoi cela est-il important ?**
+        **Pourquoi cela est-il important ?**
 
-        La participation des adolescents est l'une des huit normes de l'OMS à atteindre pour améliorer la qualité des services de santé destinés aux adolescents. La participation des jeunes est une stratégie cruciale dans la conception de la programmation de l'AYRH afin de garantir sa pertinence, sa réactivité et son efficacité. En outre, la participation doit également être comprise comme un élément « qui doit être surveillé et évalué à l'aide d'indicateurs de politique et de programmes spécifiques ».[^28] « Grâce à une participation active, les jeunes sont habilités à jouer un rôle vital dans leur développement et celui de leurs communautés, en les aidant à acquérir des compétences de vie essentielles, à acquérir des connaissances sur les droits de l'homme et la citoyenneté et à promouvoir une action civique positive. »[^29]
+        La participation des adolescents est l'une des huit normes de l'OMS à atteindre pour améliorer la qualité des services de santé destinés aux adolescents. La participation des jeunes est une stratégie cruciale dans la conception de la programmation de l'AYRH afin de garantir sa pertinence, sa réactivité et son efficacité. En outre, la participation doit également être comprise comme un élément « qui doit être surveillé et évalué à l'aide d'indicateurs de politique et de programmes spécifiques ».[^28] « Grâce à une participation active, les jeunes sont habilités à jouer un rôle vital dans leur développement et celui de leurs communautés, en les aidant à acquérir des compétences de vie essentielles, à acquérir des connaissances sur les droits de l'homme et la citoyenneté et à promouvoir une action civique positive. »[^29]
 
         \
         **Considérations d'implémentation**[^30]
 
         Cultiver et soutenir une participation significative des jeunes est un processus qui devrait commencer dès le début d'un programme d'AYRH.  Les jeunes doivent être partenaires de l'identification et de l'évaluation des problèmes, la conception, la mise en œuvre, le suivi et l'évaluation des programmes et le plaidoyer.
 
-        Il est important de garder à l’esprit plusieurs problèmes lorsqu’on s’interroge sur la meilleure façon d’assurer la participation et le leadership des jeunes à l'AYRH. Premièrement, la sélection, le recrutement et la rétention des jeunes devraient être pris en compte. Quels jeunes doivent être impliqués ? Pourquoi ? Comment ce choix reflète-t-il les objectifs du projet ? Rappelez-vous que les jeunes ont des besoins, des niveaux de compétences, des intérêts et des antécédents différents. Par exemple, faut-il garder à l’esprit les inégalités sociales ainsi que les inégalités en matière d’accès et d’utilisation des services de santé ? De plus, les jeunes marginalisés et stigmatisés peuvent être confrontés à des difficultés particulières pour recevoir des soins AYRH équitables et non discriminatoires et pour participer à des opportunités de leadership.
+        Il est important de garder à l’esprit plusieurs problèmes lorsqu’on s’interroge sur la meilleure façon d’assurer la participation et le leadership des jeunes à l'AYRH. Premièrement, la sélection, le recrutement et la rétention des jeunes devraient être pris en compte. Quels jeunes doivent être impliqués ? Pourquoi ? Comment ce choix reflète-t-il les objectifs du projet ? Rappelez-vous que les jeunes ont des besoins, des niveaux de compétences, des intérêts et des antécédents différents. Par exemple, faut-il garder à l’esprit les inégalités sociales ainsi que les inégalités en matière d’accès et d’utilisation des services de santé ? De plus, les jeunes marginalisés et stigmatisés peuvent être confrontés à des difficultés particulières pour recevoir des soins AYRH équitables et non discriminatoires et pour participer à des opportunités de leadership.
 
-        Deuxièmement, il faudrait réfléchir au niveau de participation des jeunes nécessaire pour développer les types de compétences critiques des citoyens décrites ci-dessus. Comment le programme impliquera-t-il les jeunes et dans quelles capacités ? Le programme travaillera-t-il avec une organisation de jeunesse déjà existante et l'aidera-t-elle à mettre en œuvre ses idées ? La participation des jeunes peut prendre de nombreuses formes, allant de l'action de la société civile dirigée par les jeunes au plaidoyer en passant par la garantie que les jeunes jouent un rôle dans la gouvernance, en passant par le contrôle des politiques et des programmes gouvernementaux.
+        Deuxièmement, il faudrait réfléchir au niveau de participation des jeunes nécessaire pour développer les types de compétences critiques des citoyens décrites ci-dessus. Comment le programme impliquera-t-il les jeunes et dans quelles capacités ? Le programme travaillera-t-il avec une organisation de jeunesse déjà existante et l'aidera-t-elle à mettre en œuvre ses idées ? La participation des jeunes peut prendre de nombreuses formes, allant de l'action de la société civile dirigée par les jeunes au plaidoyer en passant par la garantie que les jeunes jouent un rôle dans la gouvernance, en passant par le contrôle des politiques et des programmes gouvernementaux.
 
-        Troisièmement, il est important de réfléchir à la capacité de l'organisation ou du programme qui souhaite impliquer les jeunes. Sont-ils prêts pour ce type de collaboration ? Ont-ils les ressources humaines et matérielles nécessaires pour investir dans le développement des compétences des jeunes ? Existe-t-il des plateformes et des opportunités pour que les jeunes puissent apporter leur contribution et influencer la programmation ?  Sont-ils prêts à examiner les idées et les forums des jeunes et à adapter les programmes en conséquence ?   Pour participer efficacement, les jeunes doivent disposer des outils appropriés, tels que l'information, l'éducation et l'accès à leurs droits civils.[^31] Un engagement significatif des jeunes appelle à des partenariats entre les parties prenantes établies (par exemple, les gouvernements, les communautés, les institutions, les praticiens du développement) et les jeunes.  Cultiver de tels partenariats demande du temps, de l'engagement et des ressources.  Ces partenariats peuvent fournir aux jeunes la formation, les outils et les plateformes dont ils ont besoin pour être reconnus et entendus.
+        Troisièmement, il est important de réfléchir à la capacité de l'organisation ou du programme qui souhaite impliquer les jeunes. Sont-ils prêts pour ce type de collaboration ? Ont-ils les ressources humaines et matérielles nécessaires pour investir dans le développement des compétences des jeunes ? Existe-t-il des plateformes et des opportunités pour que les jeunes puissent apporter leur contribution et influencer la programmation ?  Sont-ils prêts à examiner les idées et les forums des jeunes et à adapter les programmes en conséquence ?   Pour participer efficacement, les jeunes doivent disposer des outils appropriés, tels que l'information, l'éducation et l'accès à leurs droits civils.[^31] Un engagement significatif des jeunes appelle à des partenariats entre les parties prenantes établies (par exemple, les gouvernements, les communautés, les institutions, les praticiens du développement) et les jeunes.  Cultiver de tels partenariats demande du temps, de l'engagement et des ressources.  Ces partenariats peuvent fournir aux jeunes la formation, les outils et les plateformes dont ils ont besoin pour être reconnus et entendus.
 
         Quatrièmement, il faut également réfléchir à la structure de l’initiative de participation des jeunes afin de maximiser une implication large et diversifiée et d’évoluer en permanence vers de nouvelles perspectives. Des mécanismes devraient être mis en place pour recruter de nouvelles cohortes de jeunes avec un engagement limité dans le temps, afin de garantir l'accès à la diversité des perspectives et d'éviter de faire appel aux mêmes jeunes encore et encore. Il faut également réfléchir à la question de la rémunération adéquate des jeunes impliqués dans le leadership, qu'ils soient volontaires ou rémunérés. Il est également important de mettre en place des mécanismes qui incitent continuellement les jeunes à se développer à mesure que leur expérience et leur professionnalisation augmentent afin de favoriser le leadership, les liens avec les opportunités de bénévolat et de carrière et d'accroître les réseaux sociaux et professionnels.
 
-        Enfin, une organisation devrait surveiller et évaluer les efforts de participation des jeunes. Vous trouverez des exemples d'indicateurs quantitatifs et qualitatifs pour ce suivi et cette évaluation dans la publication Youth Participation Guide : Assessment, Planning, and Implementation, une collaboration de FHI 360 et Advocates for Youth.
+        Enfin, une organisation devrait surveiller et évaluer les efforts de participation des jeunes. Vous trouverez des exemples d'indicateurs quantitatifs et qualitatifs pour ce suivi et cette évaluation dans la publication Youth Participation Guide : Assessment, Planning, and Implementation, une collaboration de FHI 360 et Advocates for Youth.
 
         \
         **Activités suggérées**
 
         Les activités qui renforcent efficacement les capacités des défenseurs et des leaders des jeunes et qui créent des processus et des plateformes inclusifs pour la participation des jeunes sont présentées ci-dessous.
-        '- **Établir des partenariats avec un large éventail de réseaux de jeunes, d’organisations et d’individus :** Le terme « jeunesse » masque le large éventail d'expériences, la diversité et les besoins des jeunes.  Les efforts d'engagement des jeunes doivent être inclusifs pour assurer une large représentation des perspectives.
-        '- **Investir dans le développement du leadership des jeunes :** Les efforts de formation, d'encadrement et de mentorat, ainsi que le renforcement des capacités en matière de processus politiques et de gestion, sont essentiels à la participation effective des jeunes.[^32]
+        '- **Établir des partenariats avec un large éventail de réseaux de jeunes, d’organisations et d’individus :** Le terme « jeunesse » masque le large éventail d'expériences, la diversité et les besoins des jeunes.  Les efforts d'engagement des jeunes doivent être inclusifs pour assurer une large représentation des perspectives.
+        '- **Investir dans le développement du leadership des jeunes :** Les efforts de formation, d'encadrement et de mentorat, ainsi que le renforcement des capacités en matière de processus politiques et de gestion, sont essentiels à la participation effective des jeunes.[^32]
         '- **Soutenir la participation des jeunes au plaidoyer auprès de l’AYRH.** Au cours des deux dernières décennies, les jeunes se sont davantage impliqués dans le plaidoyer en faveur de la santé aux niveaux mondial, national et communautaire.[^33] Et en Afrique de l’Ouest, les jeunes ambassadeurs de la planification familiale ont été créés pour veiller à ce que les politiques de l’AYRH répondent à leurs besoins et à leurs perspectives. Les jeunes ont besoin de plateformes leur permettant de faire entendre leur voix et de participer à l'élaboration, à la mise en œuvre et à l'évaluation des politiques.
         - **Collaborer avec les jeunes pour la planification, le suivi, l’évaluation et l’extension des services et des programmes de l’AYRH.** Impliquer les jeunes et les responsabiliser en tant que leaders, notamment dans le cadre des structures de gouvernance des établissements de santé ajoute de la valeur aux programmes et aux services et contribue à leur durabilité.[^34] L'OMS recommande aux établissements de santé de demander régulièrement aux adolescents des informations sur les services qu'ils fournissent.[^35]
         - **Offrir des possibilités de participation des jeunes à la fourniture de services et à la mise en œuvre de projets.** Les possibilités de participation comprennent la participation à des programmes d’éducation et/ou de conseil, à la formation préalable et en cours d’emploi des prestataires à la prestation des services de services adaptés aux jeunes, et à l’évaluation de la qualité des services disponibles, entre autres.  Les programmes des pairs sont probablement l'approche la plus populaire et la plus documentée.  Les évaluations des programmes avec les pairs montrent que les éducateurs eux-mêmes [^36] [^37] en tirent les plus grands avantages et constituent une excellente occasion de développer les compétences en leadership des jeunes, mais n'obtiennent que des résultats modestes dans l'amélioration de la santé des jeunes bénéficiaires.[^38][^39] Les programmes avec les pairs semblent plus efficaces lorsqu'ils mettent à profit la capacité des éducateurs à diffuser des informations et à orienter les jeunes vers des services de santé et lorsqu'ils sont combinés à d'autres pratiques éclairées.
@@ -732,7 +732,7 @@ fr:
           # Do Not Translate
           url: /uploads/resources/bestpractice1.png
         resource2:
-          title: 'La santé pour les adolescents du monde : une deuxième chance pour
+          title: 'La santé pour les adolescents du monde : une deuxième chance pour
             la deuxième décennie'
           teaser: |-
             Organisation mondiale de la Santé (2014). La santé pour les adolescents du monde : une deuxième chance pour la deuxième décennie.
@@ -740,9 +740,9 @@ fr:
           url: http://apps.who.int/adolescent/second-decade/
         resource3:
           title: 'Une approche fondée sur les normes pour améliorer la qualité des
-            services de santé destinés aux adolescents : note d''orientation.'
+            services de santé destinés aux adolescents : note d''orientation.'
           teaser: |-
-            Organisation Mondiale de la Santé (2015). Une approche fondée sur les normes pour améliorer la qualité des services de santé destinés aux adolescents : note d'orientation.
+            Organisation Mondiale de la Santé (2015). Une approche fondée sur les normes pour améliorer la qualité des services de santé destinés aux adolescents : note d'orientation.
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/10665/184035/1/WHO_FWC_MCA_15.06_eng.pd
         resource4:
@@ -918,7 +918,7 @@ fr:
           url: /uploads/resources/bestpractice1.png
         resource2:
           title: 'Action mondiale accélérée en faveur de la santé des adolescents
-            (AA-HA!)  : Orientations à l’appui de la mise en œuvre dans les pays'
+            (AA-HA!)  : Orientations à l’appui de la mise en œuvre dans les pays'
           teaser: |-
             OMS. (2017). Cadre pour une action mondiale accélérée en faveur de la santé des adolescents - orientations pour la mise en œuvre
           # Do Not Translate
@@ -936,10 +936,10 @@ fr:
       body: |-
         **De quoi s'agit-il ?**
 
-        Les communautés et les familles respectent, voire transforment, les normes et les ressources qui influent sur la santé et le bien-être des adolescents et des jeunes, et sont donc des partenaires essentiels pour les programmes AYRH.  L'engagement communautaire signifie travailler en collaboration avec des groupes de personnes qui « sont affiliées par leur proximité géographique, leurs intérêts particuliers ou des situations similaires en ce qui concerne des questions qui affectent leur bien-être ».[^43] Pour l'AYRH, cela implique de travailler avec les groupes communautaires et les gardiens - y compris les parents et les familles - pour remettre en question et modifier les normes sociales et exploiter les systèmes et la structure en place afin de fournir un environnement favorable aux programmes de l’AYRH et aux jeunes.
+        Les communautés et les familles respectent, voire transforment, les normes et les ressources qui influent sur la santé et le bien-être des adolescents et des jeunes, et sont donc des partenaires essentiels pour les programmes AYRH.  L'engagement communautaire signifie travailler en collaboration avec des groupes de personnes qui « sont affiliées par leur proximité géographique, leurs intérêts particuliers ou des situations similaires en ce qui concerne des questions qui affectent leur bien-être ».[^43] Pour l'AYRH, cela implique de travailler avec les groupes communautaires et les gardiens - y compris les parents et les familles - pour remettre en question et modifier les normes sociales et exploiter les systèmes et la structure en place afin de fournir un environnement favorable aux programmes de l’AYRH et aux jeunes.
 
         \
-        **Pourquoi cela est-il important ?**
+        **Pourquoi cela est-il important ?**
 
         Les communautés constituent un élément de base important des systèmes de santé car, à l'instar des établissements de santé, elles sont des lieux où la santé est produite et entretenue.[^44] Le soutien de la communauté peut promouvoir des changements dans les comportements individuels, y compris les comportements en matière de contraception, en créant des possibilités de réflexion personnelle et en modifiant activement les normes ou les connaissances et attitudes individuelles.[^45] Le soutien de la famille et de la communauté est particulièrement important pour créer un environnement favorable aux problèmes potentiellement délicats tels que la santé reproductive des adolescents et des jeunes. Des normes sociales restrictives concernant l’AYRH peuvent mettre les jeunes mal à l’aise ou les stigmatiser face à leur propre comportement, entravant ainsi l’accès aux connaissances, aux services et, en définitive, à une prise de décision saine. D'autre part, les familles et les communautés qui soutiennent l'AYRH deviennent des sources de soutien pour les jeunes et des ressources importantes pour leur croissance et leur développement continus.
 
@@ -955,19 +955,19 @@ fr:
         - **Promouvoir la participation des parents et la communication parent-enfant.** Il y a souvent une communication limitée entre les adolescents et leurs parents sur les problèmes liés à la santé reproductive/planification familiale, à la grossesse à l'adolescence et au VIH/SIDA.[^46] Plusieurs études suggèrent cependant que si les parents développent une réceptivité accrue et des compétences pour communiquer avec leurs enfants sur ces sujets, ils le feront. Il est possible d'améliorer le contenu des conversations parent-enfant en sensibilisant les parents et en les aidant à défier les normes sociales et culturelles qui restreignent la communication.[^47][^48]
         - **Mobiliser les leaders de la communauté.** L'implication de leaders communautaires clés, y compris les chefs religieux, peut générer un soutien plus fort de la part de la communauté. Il y a eu peu d'évaluations de l'impact des programmes de sensibilisation des communautés, en particulier en ce qui concerne leur impact sur l'utilisation des services de santé reproductive/planification familiale par les adolescents et les jeunes ou sur les changements d'opinions des membres de la communauté concernant l'AYRH.[^49]
         - **Travailler avec des groupes communautaires.** La participation à un groupe communautaire est une pratique de planification familiale prometteuse et à fort impact lorsqu'il s'agit d'influencer les comportements individuels et les normes sociales en matière de santé reproductive/planification familiale.[^50] Il est important que la réflexion et le dialogue au sein de la communauté sur les questions de santé reproductive/planification familiale soient menés par des membres de la communauté ainsi que par des groupes communautaires travaillant avec les jeunes. L'engagement communautaire devrait être associé à des stratégies de changement social et comportemental (par exemple, faire appel aux médias, à la communication interpersonnelle ou au conseil), à des investissements dans l'amélioration de la fourniture de services ou intégré à des programmes plus vastes impliquant un éventail d'interventions et de parties prenantes. Les interventions combinées rapportent des résultats plus solides sur la connaissance, la sensibilisation et l'utilisation de la contraception.
-        - **Plaider en faveur de l'élaboration et de la mise en œuvre de lois et de politiques favorables.** De nombreux gouvernements ont réussi à institutionnaliser la capacité des adolescents et des jeunes à accéder aux services de santé reproductive/planification familiale, mais des cadres juridiques et politiques médiocres ou une mise en œuvre inégale de ces lois empêchent les adolescents et les jeunes d'accéder à ces services. [^51] Un plaidoyer est nécessaire pour encourager et aider les gouvernements, les partenaires d'exécution et les jeunes eux-mêmes à lutter contre les obstacles juridiques et politiques, y compris les politiques relatives au consentement, à l'âge et à l'état matrimonial ; la capacité des jeunes à accéder à l'ensemble des méthodes de planification familiale ; la disponibilité et la mise en œuvre de l'EVF ; de services adaptés aux jeunes ; et de lois et de politiques favorables à l'AYRH. Même lorsque des lois et des politiques habilitantes sont en place, les gouvernements doivent être encouragés à faire preuve de volonté politique, à allouer les ressources adéquates, à renforcer les capacités et à mettre en place des mécanismes de responsabilisation.
-        - **Utiliser des campagnes médiatiques et autres formes de communication pour le changement social et comportemental.** L'« éducation ludique » ou « edutainment » (programmes d'éducation et de divertissement) peut encourager les conversations sur AYRH, bien qu'il y ait eu très peu d'évaluations de l'effet de cette approche au-delà du développement des connaissances et de la sensibilisation.[^52] Les campagnes médiatiques à elles seules ne suffisent pas à accroître le soutien de la communauté à l'AYRH. Elles devraient être mises en œuvre dans le cadre d'une stratégie plus large qui inclut d'autres interventions visant à modifier les normes sociales, telles que la participation des hommes et des garçons et la mobilisation de la communauté.
+        - **Plaider en faveur de l'élaboration et de la mise en œuvre de lois et de politiques favorables.** De nombreux gouvernements ont réussi à institutionnaliser la capacité des adolescents et des jeunes à accéder aux services de santé reproductive/planification familiale, mais des cadres juridiques et politiques médiocres ou une mise en œuvre inégale de ces lois empêchent les adolescents et les jeunes d'accéder à ces services. [^51] Un plaidoyer est nécessaire pour encourager et aider les gouvernements, les partenaires d'exécution et les jeunes eux-mêmes à lutter contre les obstacles juridiques et politiques, y compris les politiques relatives au consentement, à l'âge et à l'état matrimonial ; la capacité des jeunes à accéder à l'ensemble des méthodes de planification familiale ; la disponibilité et la mise en œuvre de l'EVF ; de services adaptés aux jeunes ; et de lois et de politiques favorables à l'AYRH. Même lorsque des lois et des politiques habilitantes sont en place, les gouvernements doivent être encouragés à faire preuve de volonté politique, à allouer les ressources adéquates, à renforcer les capacités et à mettre en place des mécanismes de responsabilisation.
+        - **Utiliser des campagnes médiatiques et autres formes de communication pour le changement social et comportemental.** L'« éducation ludique » ou « edutainment » (programmes d'éducation et de divertissement) peut encourager les conversations sur AYRH, bien qu'il y ait eu très peu d'évaluations de l'effet de cette approche au-delà du développement des connaissances et de la sensibilisation.[^52] Les campagnes médiatiques à elles seules ne suffisent pas à accroître le soutien de la communauté à l'AYRH. Elles devraient être mises en œuvre dans le cadre d'une stratégie plus large qui inclut d'autres interventions visant à modifier les normes sociales, telles que la participation des hommes et des garçons et la mobilisation de la communauté.
 
         \
         **Exemple programmatique**
 
-        Le projet Gender Roles, Equality and Transformation (GREAT) Project, développé par l'Institute of Reproductive Health (IRH) de l'Université de Georgetown, Save the Children et Pathfinder International « visait à promouvoir des attitudes et des comportements équitables parmi les adolescents (âgés de 10 à 19 ans) et leurs communautés dans le but de réduire la violence sexiste et d’améliorer les résultats en matière de santé sexuelle et reproductive dans les communautés suite au conflit dans le nord de l’Ouganda ». GREAT comprend un ensemble d’activités participatives visant à engager les adolescents et les adultes dans des discussions et des réflexions sur la promotion de communautés exemptes de violence et d’inégalité entre les sexes. GREAT a notamment réuni les communautés pour évaluer, planifier et agir afin d’améliorer le bien-être des adolescents ; un drame radiophonique sur les jeunes et leurs familles vivant dans le nord de l'Ouganda ; une orientation pour les équipes de santé dans les villages afin d'aider à offrir des services adaptés aux adolescents ; et une boîte à outils d'activités de réflexion pour les groupes communautaires et les clubs scolaires. Les résultats des évaluations ont révélé que GREAT avait conduit à des améliorations significatives des attitudes et des comportements équitables entre les hommes et les femmes par rapport à un groupe témoin combiné.[^53]
+        Le projet Gender Roles, Equality and Transformation (GREAT) Project, développé par l'Institute of Reproductive Health (IRH) de l'Université de Georgetown, Save the Children et Pathfinder International « visait à promouvoir des attitudes et des comportements équitables parmi les adolescents (âgés de 10 à 19 ans) et leurs communautés dans le but de réduire la violence sexiste et d’améliorer les résultats en matière de santé sexuelle et reproductive dans les communautés suite au conflit dans le nord de l’Ouganda ». GREAT comprend un ensemble d’activités participatives visant à engager les adolescents et les adultes dans des discussions et des réflexions sur la promotion de communautés exemptes de violence et d’inégalité entre les sexes. GREAT a notamment réuni les communautés pour évaluer, planifier et agir afin d’améliorer le bien-être des adolescents ; un drame radiophonique sur les jeunes et leurs familles vivant dans le nord de l'Ouganda ; une orientation pour les équipes de santé dans les villages afin d'aider à offrir des services adaptés aux adolescents ; et une boîte à outils d'activités de réflexion pour les groupes communautaires et les clubs scolaires. Les résultats des évaluations ont révélé que GREAT avait conduit à des améliorations significatives des attitudes et des comportements équitables entre les hommes et les femmes par rapport à un groupe témoin combiné.[^53]
 
         [^43]: Centers for Disease Control and Prevention. Principles of community engagement (2nd ed.). Atlanta (GA): CDC/ATSDR Committee on Community Engagement; 2011.
 
         [^44]: Marston C, Hinton R, Kean S, Baral S, Ahuja A, Portela A. Participation communautaire en vue d'une action transformatrice sur la santé de la femme, de l'enfant et de l'adolescent. 2016;94(5):376–82.
 
-        [^45]: Pratiques à haut impact (PHI) pour la planification familiale. Groupe d’engagement communautaire : Changer les normes en vue d'une amélioration de la santé sexuelle et reproductive des adolescents. Washington, DC: USAID; 2016. [https://www.fphighimpactpractices.org/briefs/community-group-engagement/] Consulté le 13 août 2018.
+        [^45]: Pratiques à haut impact (PHI) pour la planification familiale. Groupe d’engagement communautaire : Changer les normes en vue d'une amélioration de la santé sexuelle et reproductive des adolescents. Washington, DC: USAID; 2016. [https://www.fphighimpactpractices.org/briefs/community-group-engagement/] Consulté le 13 août 2018.
 
         [^46]: Biddlecom A, Awusabo-Asare K, Bankole A. Rôle des parents dans l’activité sexuelle et la pratique contraceptive des adolescents, dans quatre pays d’Afrique. Int Perspect Sex Reprod Health 2009;35:72e81.
 
@@ -977,7 +977,7 @@ fr:
 
         [^49]: Svanemyr, J. et al. Creating an Enabling Environment for Adolescent Sexual and Reproductive Health: A Framework and Promising Approaches. Journal of Adolescent Health. 2015; 56. S7-S14.
 
-        [^50]: Kate Plourde et al., Groupe d’engagement communautaire : Changer les normes en vue d'une amélioration de la santé sexuelle et reproductive des adolescents. Washington, DC: USAID; 2016. [www.fphighimpactpractices.org/sites/fphips/files/hip_cge_brief.pdf] Consulté le 10 décembre 2016.
+        [^50]: Kate Plourde et al., Groupe d’engagement communautaire : Changer les normes en vue d'une amélioration de la santé sexuelle et reproductive des adolescents. Washington, DC: USAID; 2016. [www.fphighimpactpractices.org/sites/fphips/files/hip_cge_brief.pdf] Consulté le 10 décembre 2016.
 
         [^51]: Harris, S, et al. Tableau de bord des politiques de planification familiale pour les jeunes. Avril 2017.[www.prb.org/Publications/Reports/2017/Global-Youth-Family-Planning-Index.aspx] Consulté le 3 août 2018.
 
@@ -996,7 +996,7 @@ fr:
           # Do Not Translate
           url: www.prb.org/Publications/Reports/2017/Global-Youth-Family-Planning-Index.aspx
         resource3:
-          title: 'Groupe d’engagement communautaire : Changer les normes en vue d''une
+          title: 'Groupe d’engagement communautaire : Changer les normes en vue d''une
             amélioration de la santé sexuelle et reproductive des adolescents'
           teaser: |-
             Plourde, K. et al., Groupe d’engagement communautaire: Changer les normes en vue d'une amélioration de la santé sexuelle et reproductive des adolescents (Washington, DC: USAID, 2016).
@@ -1015,17 +1015,17 @@ fr:
           # Do Not Translate
           url: http://evidenceproject.popcouncil.org/wp-content/uploads/2017/12/India-CSO_Research-Report.pdf
         resource6:
-          title: 'Impliquer les hommes et les garçons dans la planification familiale :
+          title: 'Impliquer les hommes et les garçons dans la planification familiale :
             Guide de planification stratégique'
           teaser: |-
-            Pratiques d'impact élevé dans la planification familiale (HIPS). Impliquer les hommes et les garçons dans la planification familiale : Guide de planification stratégique. Washington (DC): USAID; 2017.
+            Pratiques d'impact élevé dans la planification familiale (HIPS). Impliquer les hommes et les garçons dans la planification familiale : Guide de planification stratégique. Washington (DC): USAID; 2017.
           # Do Not Translate
           url: https://www.fphighimpactpractices.org/guides/engaging-men-and-boys-in-family-planning/
         resource7:
-          title: 'Groupe d’engagement communautaire : Changer les normes en vue d''une
+          title: 'Groupe d’engagement communautaire : Changer les normes en vue d''une
             amélioration de la santé sexuelle et reproductive des adolescents'
           teaser: |-
-            Pratiques d'impact élevé dans la planification familiale (HIPS). Groupe d’engagement communautaire : Changer les normes en vue d'une amélioration de la santé sexuelle et reproductive des adolescents. Washington (DC): USAID; 2016.
+            Pratiques d'impact élevé dans la planification familiale (HIPS). Groupe d’engagement communautaire : Changer les normes en vue d'une amélioration de la santé sexuelle et reproductive des adolescents. Washington (DC): USAID; 2016.
           # Do Not Translate
           url: https://www.fphighimpactpractices.org/briefs/community-group-engagement/
         resource8:
@@ -1171,7 +1171,7 @@ fr:
           title: 'L''éducation des filles: Création d''une base de comportements de
             santé sexuelle et reproductive positifs'
           teaser: |-
-            Pratiques à haut impact (PHI) pour le planning familial. Éduquer les filles : Créer les bases pour des comportements de santé sexuelle et reproductive positifs. Washington, DC. USAID, 2014.
+            Pratiques à haut impact (PHI) pour le planning familial. Éduquer les filles : Créer les bases pour des comportements de santé sexuelle et reproductive positifs. Washington, DC. USAID, 2014.
           # Do Not Translate
           url: https://www.fphighimpactpractices.org/briefs/educating-girls/
         resource13:
@@ -1192,7 +1192,7 @@ fr:
       Quand vous avez fini, cliquez sur SAUVEGARDER ET CONTINUER, en bas à droite.
     instructions:
       heading: Est-ce que votre activité s’aligne-t-elle sur les pratiques fondées sur des données probantes (EIPs) ? Cliquez sur chacune des icônes EIP ci-dessous et sélectionnez votre réponse
-      eipHeading: 
+      eipHeading:
       options:
         'yes':
           # Do Not Translate
@@ -1249,7 +1249,7 @@ fr:
         affectent l''utilisation des méthodes de planification familiale par les jeunes.
         La répartition des activités par domaine reflète-t-elle une préoccupation
         quant à la nécessité de remédier à ces préjugés dans les milieux communautaires
-        et de santé ?'
+        et de santé ?'
     activityTypeBudget: "Budget pourcentage du total par type d'activité"
     activityTypeBudgetQuestions:
       1: 'Les politiques et stratégies gouvernementales élaborées dans le cadre d''un
@@ -1257,7 +1257,7 @@ fr:
         le fondement de l''acceptation de l''utilisation de la planification familiale
         par les jeunes dans les communautés. La répartition des activités par domaine
         dans votre plan reflète-t-elle un souci suffisant de la coordination et de
-        la création d''un environnement favorable ?'
+        la création d''un environnement favorable ?'
     youthFocusBudget: "Budget pourcentage axé sur les jeunes"
     youthFocusCount: "Pourcentage d'activités axées sur les jeunes"
     youthCentricLabel: "Centré sur les jeunes"
@@ -1275,7 +1275,7 @@ fr:
         **Vous avez vos résultats. Que devez-vous faire maintenant ?**
         \
         Dans la boîte ci-dessous, écrivez toute autre recommandation ou question que vous avez pour les décideurs et les dirigeants politiques. Par exemple :
-        
+
         1. Est-ce que votre plan prend assez en compte la participation des jeunes de façon significative ?
         2. Est-ce que votre plan prend assez en compte promotion l’égalité des sexes ?
         3. Est-ce que votre plan prend assez en compte les besoins des jeunes marginalisés ?
@@ -1307,7 +1307,7 @@ fr:
     feedback: |-
       Merci d'avoir utilisé le TARP. Votre engagement pour les besoins des jeunes en matière de santé reproductive nous inspire, et nous espérons que le TARP vous aidera à convaincre votre gouvernement d’investir davantage dans la planification familiale adaptée aux jeunes.
 
-      Nous aimerions connaître votre expérience ! Veuillez envoyer vos questions, commentaires ou réactions à [info@e2aproject.org](mail:info@e2aproject.org). 
+      Nous aimerions connaître votre expérience ! Veuillez envoyer vos questions, commentaires ou réactions à [info@e2aproject.org](mail:info@e2aproject.org).
   fileUpload:
     label: Exportez vos données
     exportLabel: Exporter vos données
@@ -1393,13 +1393,13 @@ fr:
   countryIndicators:
     indicator1:
       name: 'Pourcentage de jeunes dans votre pays'
-      description: 'Population âgée de 15-24 ans / 15-49 ans en 2015'
+      description: 'Population âgée de 15-24 ans / 15-49 ans en 2019'
       # Do Not Translate
       sourceUrl: 'https://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2017_POP_F15_1_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx'
       # Do Not Translate
       sourceCitation: 'Nations unies, Département des affaires économiques et sociales,
-        Division de la population (2017). World Population Prospects (Perspectives
-        de la population mondiale) : révision 2017, édition DVD.'
+        Division de la population (2019). World Population Prospects (Perspectives
+        de la population mondiale) : révision 2019, édition DVD.'
       # Do Not Translate
       fileName: 'percentYouth.csv'
       # Do Not Translate - input the string of the heading that has the ISO2 code
