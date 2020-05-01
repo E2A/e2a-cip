@@ -1342,6 +1342,8 @@ fr:
     addActivites: "Vous devez ajouter des activités avant d'aller plus loin"
     learnMore: En savoir plus sur les EIP
     eipPdf: '/uploads/EIP-FR-Full.pdf'
+    userGuide: Conseils pratiques
+    userGuidePDF: '/uploads/Requirements-FR.pdf'
   activityTable:
     defaultTitle: "Texte de l'activité"
     defaultID: "Numéro d'activité"

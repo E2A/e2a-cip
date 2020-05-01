@@ -1241,6 +1241,8 @@ en:
     addActivites: You must add activities before moving further
     learnMore: Learn More About EIPs
     eipPdf: '/uploads/EIP-English-Full.pdf'
+    userGuide: Technical Tips
+    userGuidePDF: '/uploads/Requirements-ENG.pdf'
   activityTable:
     defaultTitle: Activity text
     defaultID: Activity number
