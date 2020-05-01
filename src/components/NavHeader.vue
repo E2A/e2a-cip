@@ -11,6 +11,17 @@
       <BaseGutterWrapper :class="base.rightPane" gutterY="xnarrow" gutterX="xnarrow">
         <!-- Language selector -->
         <LanguageSwitcher :class="space.marginRightXnarrow"/>
+        <BaseGutterWrapper gutterX="xnarrow">
+        <BaseButtonLink
+          :to="this.$t('nav.userGuidePDF')"
+          :router="false" role="default"
+          :label="this.$t('nav.userGuide')"
+          size="small"
+          :target="this.checkElectron() ? '_self' : '_blank'"
+          reverseColors
+        />
+        </BaseGutterWrapper>
+        <BaseGutterWrapper :class="[space.marginLeftNarrow]" gutterX="xnarrow" gutterY="xnarrow">
         <BaseButtonLink
           :to="this.$t('nav.eipPdf')"
           :router="false" role="default"
@@ -18,7 +29,7 @@
           size="small"
           :target="this.checkElectron() ? '_self' : '_blank'"
           reverseColors
-        />
+        /></BaseGutterWrapper>
       </BaseGutterWrapper>
     </header>
 

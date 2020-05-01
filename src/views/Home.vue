@@ -1,6 +1,8 @@
 <template>
   <article>
-    <header :class="[space.paddingHorizontal, space.paddingVerticalNarrow, color.well, border.bottom, base.header]">
+    <header
+      :class="[space.paddingHorizontal, space.paddingVerticalNarrow, color.well, border.bottom, base.header]"
+    >
       <BaseGutterWrapper :class="base.leftPane" gutterY="xnarrow" gutterX="xnarrow">
         <BaseHeading
           :class="display.inlineBlock"
@@ -15,13 +17,26 @@
       </BaseGutterWrapper>
       <!-- EIPs -->
       <BaseGutterWrapper :class="base.rightPane" gutterY="xnarrow" gutterX="xnarrow">
-        <BaseButtonLink
-          :to="this.$t('nav.eipPdf')"
-          :router="false" role="default"
-          :label="this.$t('nav.learnMore')"
-          size="small"
-          :target="this.checkElectron() ? '_self' : '_blank'"
-        />
+        <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
+          <BaseButtonLink
+            :to="this.$t('nav.userGuidePDF')"
+            :router="false"
+            role="default"
+            :label="this.$t('nav.userGuide')"
+            size="small"
+            :target="this.checkElectron() ? '_self' : '_blank'"
+          />
+        </BaseGutterWrapper>
+        <BaseGutterWrapper :class="[space.marginLeftNarrow]" gutterX="xnarrow" gutterY="xnarrow">
+          <BaseButtonLink
+            :to="this.$t('nav.eipPdf')"
+            :router="false"
+            role="default"
+            :label="this.$t('nav.learnMore')"
+            size="small"
+            :target="this.checkElectron() ? '_self' : '_blank'"
+          />
+        </BaseGutterWrapper>
       </BaseGutterWrapper>
     </header>
 
@@ -49,10 +64,7 @@
     <!-- How it works -->
     <BaseSectionWrapper>
       <BaseWidthWrapper width="wide">
-       <BasePageIntro
-          :title="$t('home.stepsTitle')"
-          :subtitle="$t('home.stepsIntro')"
-        />
+        <BasePageIntro :title="$t('home.stepsTitle')" :subtitle="$t('home.stepsIntro')" />
       </BaseWidthWrapper>
       <BaseWidthWrapper width="xwide" :class="space.paddingTop">
         <BaseStepList :steps="steps" size="small" />
@@ -115,22 +127,22 @@
 </template>
 
 <script>
-import i18n from '@/i18n.js'
-import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
-import BasePageIntro from '@/components/BasePageIntro.vue'
-import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
-import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
-import BaseHeading from '@/components/BaseHeading.vue'
-import BaseBodyText from '@/components/BaseBodyText.vue'
-import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
-import BaseStepList from '@/components/BaseStepList.vue'
-import BaseButtonLink from '@/components/BaseButtonLink.vue'
-import ClearItems from '@/components/ClearItems.vue'
-import { dataMethods } from '@/components/mixins/dataMethods'
-import { initData } from '@/components/mixins/initData.js'
+import i18n from "@/i18n.js";
+import LanguageSwitcher from "@/components/LanguageSwitcher.vue";
+import BasePageIntro from "@/components/BasePageIntro.vue";
+import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
+import BaseSectionWrapper from "@/components/BaseSectionWrapper.vue";
+import BaseHeading from "@/components/BaseHeading.vue";
+import BaseBodyText from "@/components/BaseBodyText.vue";
+import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
+import BaseStepList from "@/components/BaseStepList.vue";
+import BaseButtonLink from "@/components/BaseButtonLink.vue";
+import ClearItems from "@/components/ClearItems.vue";
+import { dataMethods } from "@/components/mixins/dataMethods";
+import { initData } from "@/components/mixins/initData.js";
 
 export default {
-  name: 'Home',
+  name: "Home",
   mixins: [dataMethods, initData],
   components: {
     LanguageSwitcher,
@@ -145,23 +157,23 @@ export default {
     ClearItems
   },
   computed: {
-    steps () {
+    steps() {
       return Object.values(i18n.messages[i18n.locale].home.steps).map(
         (step, index) => {
           return {
             title: this.$t(`home.steps.step${index + 1}.title`),
             blurb: this.$t(`home.steps.step${index + 1}.blurb`)
-          }
+          };
         }
-      )
+      );
     }
   },
-  data () {
+  data() {
     return {
       electron: this.checkElectron()
-    }
+    };
   }
-}
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
@@ -238,5 +250,4 @@ export default {
 .gutterItem {
   display: inline-block;
 }
-
 </style>
