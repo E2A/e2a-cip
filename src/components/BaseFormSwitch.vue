@@ -2,22 +2,19 @@
   <BaseFormLabel
     :id="name"
     :label="$t('activityYouthCentric')"
-    :helpText="$t('supportText.activityYouthCentric')"
-    :tooltipText="tooltipText"
+    :help-text="$t('supportText.activityYouthCentric')"
+    :tooltip-text="tooltipText"
   >
     <input
-      @input="emitInput($event)"
-      :class="[
-        base.switch,
-        {[base.enhanced]: supportStyledCheckbox}
-      ]"
+      :class="[base.switch, { [base.enhanced]: supportStyledCheckbox }]"
       :name="name"
       :id="name"
       :value="value"
       :data-label-on="labelOn || $t('yesRaw')"
       :data-label-off="labelOff || $t('noRaw')"
       type="checkbox"
-    >
+      @input="emitInput($event)"
+    />
     <BaseCalloutBox
       v-if="error"
       :key="error"
@@ -29,51 +26,51 @@
 </template>
 
 <script>
-import BaseFormLabel from './BaseFormLabel'
-import BaseCalloutBox from './BaseCalloutBox'
+import BaseFormLabel from "./BaseFormLabel";
+import BaseCalloutBox from "./BaseCalloutBox";
 
 export default {
-  name: 'BaseFormSwitch',
+  name: "BaseFormSwitch",
+  components: {
+    BaseFormLabel,
+    BaseCalloutBox,
+  },
   props: {
     label: String,
     helpText: String,
     value: Boolean,
     name: {
       type: String,
-      required: true
+      required: true,
     },
     // 'yes' and 'no' labels on the switch
     // -> default translations are above in the template
     labelOn: String,
     labelOff: String,
     error: String,
-    tooltipText: String
+    tooltipText: String,
   },
-  data () {
+  data() {
     return {
-      supportStyledCheckbox: false
-    }
+      supportStyledCheckbox: false,
+    };
   },
-  components: {
-    BaseFormLabel,
-    BaseCalloutBox
+  created() {
+    this.checked = this.value;
+
+    // detect Edge
+    if (navigator.userAgent.indexOf("Edge") === -1) {
+      this.supportStyledCheckbox = true;
+    }
   },
   methods: {
     emitInput: function (event) {
       // use event.target.checked instead of value for checkboxes
       // https://medium.com/@relt24/dedicated-vue-js-checkbox-component-360a330a3eb
-      this.$emit('input', event.target.checked)
-    }
+      this.$emit("input", event.target.checked);
+    },
   },
-  created () {
-    this.checked = this.value
-
-    // detect Edge
-    if (navigator.userAgent.indexOf('Edge') === -1) {
-      this.supportStyledCheckbox = true
-    }
-  }
-}
+};
 </script>
 
 <style lang="scss" module="base">
@@ -82,13 +79,13 @@ export default {
 // https://thestizmedia.com/radio-buttons-as-toggle-buttons-with-css/
 // https://stackoverflow.com/questions/18449299/css-turn-2-radio-buttons-into-1-switch
 
-@import '~styleConfig/color';
-@import '~styleConfig/borders';
+@import "~styleConfig/color";
+@import "~styleConfig/borders";
 
 .switch {
-  composes: default from 'styles/animation.scss';
-  composes: scaleZeta display uppercase bold from 'styles/type.scss';
-  composes: default round from 'styles/borders.scss';
+  composes: default from "styles/animation.scss";
+  composes: scaleZeta display uppercase bold from "styles/type.scss";
+  composes: default round from "styles/borders.scss";
   display: inline-block;
   height: 2em;
   width: 2em;
@@ -103,9 +100,9 @@ export default {
   @supports (width: calc(50% - #{$gutter})) {
     border-radius: 6px;
     cursor: pointer;
-    color: color('midtone');
+    color: color("midtone");
     appearance: none;
-    background-color: color('light');
+    background-color: color("light");
     width: $width;
     height: $height;
 
@@ -117,7 +114,7 @@ export default {
     &::after {
       border-radius: $border-radius;
       display: inline-block;
-      line-height: calc(#{$height - ($gutter * 2)} - #{border-w('thin') * 2});
+      line-height: calc(#{$height - ($gutter * 2)} - #{border-w("thin") * 2});
       text-align: center;
       text-transform: uppercase;
       width: calc(50% - #{$gutter});
@@ -129,20 +126,20 @@ export default {
     }
 
     &::after {
-      background-color: color('warning');
-      color: color('white');
+      background-color: color("warning");
+      color: color("white");
       content: attr(data-label-off);
       margin: $gutter $gutter $gutter 0;
     }
 
     &[value="true"]::before {
-      background-color: color('success');
-      color: color('white');
+      background-color: color("success");
+      color: color("white");
     }
 
     &[value="true"]::after {
       background-color: transparent;
-      color: color('midtone');
+      color: color("midtone");
     }
   }
 }

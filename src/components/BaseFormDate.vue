@@ -3,35 +3,48 @@
     v-if="label"
     :id="name"
     :label="label"
-    :helpText="helpText"
-    :textSize="labelTextSize"
+    :help-text="helpText"
+    :text-size="labelTextSize"
   >
-    <datepicker :value="value" :class=[classItems] :name="name" :placeholder="placeholder" @input="emitChange" />
+    <datepicker
+      :value="value"
+      :class="[classItems]"
+      :name="name"
+      :placeholder="placeholder"
+      @input="emitChange"
+    />
     <BaseCalloutBox
-      :key="error"
       v-if="error"
+      :key="error"
       :message="error"
       :class="space.marginTopNarrow"
       role="warning"
     />
   </BaseFormLabel>
-  <datepicker v-else :value="value" :class=[classItems] :name="name" :placeholder="placeholder" @input="emitChange" />
+  <datepicker
+    v-else
+    :value="value"
+    :class="[classItems]"
+    :name="name"
+    :placeholder="placeholder"
+    @input="emitChange"
+  />
 </template>
 
 <script>
-import { styleHelpers } from './mixins/helpers'
-import Datepicker from 'vuejs-datepicker'
-import BaseFormLabel from './BaseFormLabel.vue'
-import BaseCalloutBox from './BaseCalloutBox.vue'
+import { styleHelpers } from "./mixins/helpers";
+import Datepicker from "vuejs-datepicker";
+import BaseFormLabel from "./BaseFormLabel.vue";
+import BaseCalloutBox from "./BaseCalloutBox.vue";
 
 export default {
-  name: 'BaseFormDate',
-  mixins: [styleHelpers],
+  name: "BaseFormDate",
   components: {
     BaseFormLabel,
     BaseCalloutBox,
-    Datepicker
+    Datepicker,
   },
+  mixins: [styleHelpers],
   props: {
     label: String,
     labelTextSize: String,
@@ -39,52 +52,52 @@ export default {
     value: [String, Number, Object, Date],
     name: {
       type: String,
-      required: true
+      required: true,
     },
     placeholder: String,
     validate: String,
     error: {
       type: String,
-      required: false
+      required: false,
     },
-    classItems: String
+    classItems: String,
   },
   methods: {
     emitChange: function (e) {
       // debugger;
-      this.$emit('input', e)
-    }
-  }
-}
+      this.$emit("input", e);
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-@import '~bourbon/core/bourbon';
-@import '~vue-select/dist/vue-select.css';
-@import '~styleConfig/type';
-@import '~styleConfig/spacing';
-@import '~styleConfig/color';
-@import '~styleConfig/borders';
+@import "~bourbon/core/bourbon";
+@import "~vue-select/dist/vue-select.css";
+@import "~styleConfig/type";
+@import "~styleConfig/spacing";
+@import "~styleConfig/color";
+@import "~styleConfig/borders";
 
 .vdp-datepicker {
-  color: color('dark') !important;
+  color: color("dark") !important;
   input {
     width: 100%;
     @include border();
-    background-color: color('light');
-    padding: space('xnarrow');
+    background-color: color("light");
+    padding: space("xnarrow");
     border-radius: 4px;
   }
 }
 
 .vdp-datepicker__calendar .cell.selected {
-  background: color('primary') !important;
-  color: color('white');
+  background: color("primary") !important;
+  color: color("white");
 }
 
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover,
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover,
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover {
-  border: 1px solid color('primary') !important;
+  border: 1px solid color("primary") !important;
 }
 </style>

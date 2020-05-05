@@ -1,12 +1,12 @@
 <template>
-  <div :class="base.wrapper" id="base-button-flyout">
+  <div id="base-button-flyout" :class="base.wrapper">
     <BaseButton
-      @click="toggleFlyout"
       :label="label"
       :role="role"
       :size="size"
-      :reverseColors="reverseColors"
-      iconRight="arrow-down"
+      :reverse-colors="reverseColors"
+      icon-right="arrow-down"
+      @click="toggleFlyout"
     />
     <BaseFlyout
       v-show="isOpen"
@@ -20,70 +20,70 @@
 </template>
 
 <script>
-import BaseButton from './BaseButton.vue'
-import BaseFlyout from './BaseFlyout.vue'
+import BaseButton from "./BaseButton.vue";
+import BaseFlyout from "./BaseFlyout.vue";
 
 export default {
-  name: 'BaseButtonFlyout',
+  name: "BaseButtonFlyout",
+  components: {
+    BaseButton,
+    BaseFlyout,
+  },
   props: {
     label: String,
     role: {
       type: String,
-      default: 'default'
+      default: "default",
     },
     size: {
-      type: String
+      type: String,
     },
     align: {
       type: String,
-      default: 'right'
+      default: "right",
     },
     flyoutSize: {
-      type: Number
+      type: Number,
     },
     reverseColors: {
       type: Boolean,
-      default: false
+      default: false,
     },
     open: {
       type: Boolean,
-      default: false
-    }
-  },
-  components: {
-    BaseButton,
-    BaseFlyout
-  },
-  data () {
-    return {
-      isOpen: this.open || false
-    }
-  },
-  methods: {
-    toggleFlyout () {
-      this.isOpen = !this.isOpen
-      this.isOpen ? this.$emit('open') : this.$emit('close')
+      default: false,
     },
-    closeFlyout (e) {
-      if (!e.target.closest('#base-button-flyout')) {
-        this.isOpen = false
-      }
-    }
+  },
+  data() {
+    return {
+      isOpen: this.open || false,
+    };
   },
   watch: {
     // watch the open prop and keep isOpen updated
     // -> so when its parent tells it to open, it's reflected in internal state
-    open () {
-      this.isOpen = this.open
-    }
+    open() {
+      this.isOpen = this.open;
+    },
   },
   mounted: function () {
-    document.addEventListener('click', this.closeFlyout)
+    document.addEventListener("click", this.closeFlyout);
   },
   beforeDestroy: function () {
-    document.removeEventListener('click', this.closeFlyout)
-  }
-}
+    document.removeEventListener("click", this.closeFlyout);
+  },
+  methods: {
+    toggleFlyout() {
+      this.isOpen = !this.isOpen;
+      this.isOpen ? this.$emit("open") : this.$emit("close");
+    },
+    closeFlyout(e) {
+      if (!e.target.closest("#base-button-flyout")) {
+        this.isOpen = false;
+      }
+    },
+  },
+};
 </script>
 
 <style lang="scss" module="base">

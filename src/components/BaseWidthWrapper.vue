@@ -11,24 +11,24 @@
 
 <script>
 export default {
-  name: 'BaseWidthWrapper',
+  name: "BaseWidthWrapper",
   props: {
     width: {
-      default: 'default',
-      type: String
-    }
-  }
-}
+      default: "default",
+      type: String,
+    },
+  },
+};
 </script>
 
 <style lang="scss" module="base">
 // available widths of main layout
 $layout-widths: (
-  'narrow': 22rem,
-  'default': 42.5rem,
-  'wide': 54rem,
-  'xwide': 75rem,
-  'xxwide': 100rem
+  "narrow": 22rem,
+  "default": 42.5rem,
+  "wide": 54rem,
+  "xwide": 75rem,
+  "xxwide": 100rem,
 );
 
 .wrapper {

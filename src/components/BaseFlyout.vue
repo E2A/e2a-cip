@@ -1,9 +1,5 @@
 <template>
-  <aside
-    :class="[base.wrapper, base[align]]"
-    :style="width"
-    @click.stop
-  >
+  <aside :class="[base.wrapper, base[align]]" :style="width" @click.stop>
     <div :class="base.content">
       <slot>Add flyout content here</slot>
     </div>
@@ -12,62 +8,62 @@
 
 <script>
 export default {
-  name: 'BaseFlyout',
+  name: "BaseFlyout",
   props: {
     align: {
       type: String,
-      default: 'center',
+      default: "center",
       validator: function (value) {
-        return ['left', 'center', 'align'].indexOf(value) !== 0
-      }
+        return ["left", "center", "align"].indexOf(value) !== 0;
+      },
     },
     size: {
       type: Number,
-      default: 12
+      default: 12,
     },
     el: {
       type: String,
-      default: 'aside'
-    }
+      default: "aside",
+    },
   },
   computed: {
     width: function () {
-      return this.size ? { width: this.size + 'rem' } : {}
-    }
-  }
-}
+      return this.size ? { width: this.size + "rem" } : {};
+    },
+  },
+};
 </script>
 
 <style lang="scss" module="base">
-@import '~bourbon/core/bourbon'; // for triangles
-@import '~styleConfig/zIndex';
-@import '~styleConfig/color';
-@import '~styleConfig/borders';
+@import "~bourbon/core/bourbon"; // for triangles
+@import "~styleConfig/zIndex";
+@import "~styleConfig/color";
+@import "~styleConfig/borders";
 
 $size-pointer-w: 1.2rem;
 $size-pointer-h: 0.6rem;
 
 .wrapper {
-  composes: whiteBg shadow from 'styles/color.scss';
-  composes: default round from 'styles/borders.scss';
+  composes: whiteBg shadow from "styles/color.scss";
+  composes: default round from "styles/borders.scss";
   display: block;
   position: absolute;
-  z-index: z('high');
+  z-index: z("high");
 
   &::before,
   &::after {
-    content: ' ';
+    content: " ";
     display: block;
     position: absolute;
   }
 
   &::before {
-    @include triangle('up', $size-pointer-w, $size-pointer-h, $border-color);
+    @include triangle("up", $size-pointer-w, $size-pointer-h, $border-color);
     top: -($size-pointer-h);
   }
 
   &::after {
-    @include triangle('up', $size-pointer-w, $size-pointer-h, color('white'));
+    @include triangle("up", $size-pointer-w, $size-pointer-h, color("white"));
     top: -($size-pointer-h - 0.1rem);
   }
 }

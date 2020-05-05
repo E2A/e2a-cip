@@ -1,5 +1,5 @@
 // Type & layout scale
-@import '~modularscale-sass';
+@import "~modularscale-sass";
 
 // modular scale config
 // -> for layout and spacing
@@ -13,13 +13,13 @@ $ms-ratio: 1.333;
 // -> we could compute this via the modular scale mixins,
 // -> but doing it by hand allows us to tweak certain sizes to suit the fonts we're using
 $scale-type: (
-  'alpha': 3.16rem,
-  'beta': 2.37rem,
-  'gamma': 1.78rem,
-  'delta': 1.33rem,
-  'epsilon': 1rem,
-  'zeta': 0.8rem,
-  'eta': 0.7rem
+  "alpha": 3.16rem,
+  "beta": 2.37rem,
+  "gamma": 1.78rem,
+  "delta": 1.33rem,
+  "epsilon": 1rem,
+  "zeta": 0.8rem,
+  "eta": 0.7rem,
 ) !default;
 
 @function scale-type($size) {

@@ -1,11 +1,13 @@
 <template>
   <tr :class="[type.scaleZeta, space.paddingHorizontalBetweenXnarrow]">
-    <td :class="[base.cell, base.text]">{{text}}</td>
-    <td :class="[base.cell, type.right]">{{budget}} {{getItemValue('setup', 'currencyCode')}}</td>
-    <td :class="[base.cell, type.center]">{{youthIcon}}</td>
+    <td :class="[base.cell, base.text]">{{ text }}</td>
+    <td :class="[base.cell, type.right]">
+      {{ budget }} {{ getItemValue("setup", "currencyCode") }}
+    </td>
+    <td :class="[base.cell, type.center]">{{ youthIcon }}</td>
     <td :class="[base.cell, type.right]">
       <BaseButtonLink
-        :to="{name: 'activity', params: { activityId: id }}"
+        :to="{ name: 'activity', params: { activityId: id } }"
         :label="$t('edit')"
         size="small"
         weight="regular"
@@ -15,39 +17,39 @@
 </template>
 
 <script>
-import { dataMethods } from './mixins/dataMethods'
-import BaseButtonLink from '@/components/BaseButtonLink'
+import { dataMethods } from "./mixins/dataMethods";
+import BaseButtonLink from "@/components/BaseButtonLink";
 
 export default {
-  name: 'ActivitiesItemSummary',
-  mixins: [dataMethods],
+  name: "ActivitiesItemSummary",
   components: {
-    BaseButtonLink
+    BaseButtonLink,
   },
+  mixins: [dataMethods],
   props: {
     text: {
       type: String,
-      required: true
+      required: true,
     },
     budget: {
       type: Number,
-      default: 0
+      default: 0,
     },
     youth: {
       type: Boolean,
-      default: false
+      default: false,
     },
     id: {
       type: Number,
-      default: 1
-    }
+      default: 1,
+    },
   },
   computed: {
     youthIcon: function () {
-      return this.youth ? 'Yes' : 'No'
-    }
-  }
-}
+      return this.youth ? "Yes" : "No";
+    },
+  },
+};
 </script>
 
 <style src="styles/type.scss" lang="scss" module="type"></style>
@@ -61,8 +63,8 @@ export default {
 }
 
 .cell {
-  composes: paddingVerticalXnarrow from 'styles/spacing.scss';
-  composes: top from 'styles/borders.scss';
+  composes: paddingVerticalXnarrow from "styles/spacing.scss";
+  composes: top from "styles/borders.scss";
   vertical-align: top;
 }
 

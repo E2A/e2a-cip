@@ -1,18 +1,14 @@
 <template>
   <BaseButtonFlyout
     :size="size"
-    :flyoutSize="18"
+    :flyout-size="18"
     :role="role"
     :align="align"
     :label="label || $t('fileUpload.label')"
   >
     <div :class="[space.paddingNarrow, type.left]">
-      <BaseHeading
-        :class="space.paddingBottomXnarrow"
-        scale="epsilon"
-        sub
-      >
-        {{selectLabel || $t('fileUpload.selectFormat')}}
+      <BaseHeading :class="space.paddingBottomXnarrow" scale="epsilon" sub>
+        {{ selectLabel || $t("fileUpload.selectFormat") }}
       </BaseHeading>
       <BaseBodyText
         :content="$t('fileUpload.directions')"
@@ -23,25 +19,25 @@
         <BaseGutterWrapper
           :class="base.buttonGroup"
           el="ul"
-          gutterX="xnarrow"
-          gutterY="xnarrow"
+          gutter-x="xnarrow"
+          gutter-y="xnarrow"
         >
           <li>
             <BaseButton
-              @click="exportData('json')"
               :label="$t('fileUpload.json')"
-              iconLeft="download"
+              icon-left="download"
               role="primary"
               size="small"
+              @click="exportData('json')"
             />
           </li>
           <li>
             <BaseButton
-              @click="exportData('csv')"
               :label="$t('fileUpload.csv')"
-              iconLeft="download"
+              icon-left="download"
               role="primary"
               size="small"
+              @click="exportData('csv')"
             />
           </li>
         </BaseGutterWrapper>
@@ -51,54 +47,59 @@
 </template>
 
 <script>
-import { dataIO } from './mixins/dataIO'
-import { dataMethods } from './mixins/dataMethods'
-import BaseButtonFlyout from './BaseButtonFlyout'
-import BaseButton from './BaseButton'
-import BaseHeading from './BaseHeading'
-import BaseBodyText from './BaseBodyText'
-import BaseGutterWrapper from './BaseGutterWrapper'
+import { dataIO } from "./mixins/dataIO";
+import { dataMethods } from "./mixins/dataMethods";
+import BaseButtonFlyout from "./BaseButtonFlyout";
+import BaseButton from "./BaseButton";
+import BaseHeading from "./BaseHeading";
+import BaseBodyText from "./BaseBodyText";
+import BaseGutterWrapper from "./BaseGutterWrapper";
 
 export default {
-  name: 'FileExport',
-  mixins: [dataIO, dataMethods],
-  props: {
-    size: {
-      type: String,
-      default: 'small'
-    },
-    role: {
-      type: String,
-      default: 'default'
-    },
-    align: String,
-    label: {
-      type: String
-    },
-    selectLabel: {
-      type: String
-    }
-  },
+  name: "FileExport",
   components: {
     BaseButtonFlyout,
     BaseHeading,
     BaseBodyText,
     BaseGutterWrapper,
-    BaseButton
+    BaseButton,
+  },
+  mixins: [dataIO, dataMethods],
+  props: {
+    size: {
+      type: String,
+      default: "small",
+    },
+    role: {
+      type: String,
+      default: "default",
+    },
+    align: String,
+    label: {
+      type: String,
+    },
+    selectLabel: {
+      type: String,
+    },
   },
   data: function () {
     return {
-      exportOption: ''
-    }
+      exportOption: "",
+    };
   },
   methods: {
     exportData: function (option) {
       if (this.runExportData(option)) {
-        this.notify(this.$t('fileUpload.exportSuccessful', { filetype: option.toUpperCase() }), 'success')
+        this.notify(
+          this.$t("fileUpload.exportSuccessful", {
+            filetype: option.toUpperCase(),
+          }),
+          "success"
+        );
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>

@@ -1,13 +1,13 @@
 // Global color utilities
-@import '../config/color';
-@import '../config/animation';
+@import "../config/color";
+@import "../config/animation";
 
 @each $name, $color in $colors {
   // foreground
   .#{$name} {
     color: $color;
 
-    @if ($name == 'dark') {
+    @if ($name == "dark") {
       @media print {
         color: $black-print;
       }
@@ -27,18 +27,18 @@
 
 // a default 'well' over a white bg
 .well {
-  background-color: color('light');
+  background-color: color("light");
 }
 
 // default drop shadow
 .shadow {
-  box-shadow: 0 1px 0.3rem shadow('white');
+  box-shadow: 0 1px 0.3rem shadow("white");
 }
 
 .shadowHover {
   @include transition;
 
   &:hover {
-    box-shadow: 0 1px 0.3rem shadow('white');
+    box-shadow: 0 1px 0.3rem shadow("white");
   }
 }

@@ -1,34 +1,57 @@
 <template>
   <div v-if="this.$route.name !== 'export'">
     <header :class="base.wrapper">
-      <BaseGutterWrapper :class="base.leftPane" gutterY="xnarrow" gutterX="xnarrow">
-        <router-link :to="{name: 'home'}" :class="base.logo" exact>
-          <img src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg" alt="E2A and Pathfinder"/>
-          <BaseHeading :level="5" :centered="false" weight="bold" :color="'light'">TARP</BaseHeading>
+      <BaseGutterWrapper
+        :class="base.leftPane"
+        gutter-y="xnarrow"
+        gutter-x="xnarrow"
+      >
+        <router-link :to="{ name: 'home' }" :class="base.logo" exact>
+          <img
+            src="@/assets/images/logos/e2a-pathfinder-lockup-reverse.svg"
+            alt="E2A and Pathfinder"
+          />
+          <BaseHeading
+            :level="5"
+            :centered="false"
+            :color="'light'"
+            weight="bold"
+            >TARP</BaseHeading
+          >
         </router-link>
       </BaseGutterWrapper>
 
-      <BaseGutterWrapper :class="base.rightPane" gutterY="xnarrow" gutterX="xnarrow">
+      <BaseGutterWrapper
+        :class="base.rightPane"
+        gutter-y="xnarrow"
+        gutter-x="xnarrow"
+      >
         <!-- Language selector -->
-        <LanguageSwitcher :class="space.marginRightXnarrow"/>
-        <BaseGutterWrapper gutterX="xnarrow">
-        <BaseButtonLink
-          :to="this.$t('nav.userGuidePDF')"
-          :router="false" role="default"
-          :label="this.$t('nav.userGuide')"
-          size="small"
-          :target="this.checkElectron() ? '_self' : '_blank'"
-          reverseColors
-        />
+        <LanguageSwitcher :class="space.marginRightXnarrow" />
+        <BaseGutterWrapper gutter-x="xnarrow">
+          <BaseButtonLink
+            :to="this.$t('nav.userGuidePDF')"
+            :router="false"
+            :label="this.$t('nav.userGuide')"
+            :target="this.checkElectron() ? '_self' : '_blank'"
+            role="default"
+            size="small"
+            reverse-colors
+          />
         </BaseGutterWrapper>
-        <BaseGutterWrapper :class="[space.marginLeftNarrow]" gutterX="xnarrow" gutterY="xnarrow">
-        <BaseButtonLink
-          :to="this.$t('nav.eipPdf')"
-          :router="false" role="default"
-          :label="this.$t('nav.learnMore')"
-          size="small"
-          :target="this.checkElectron() ? '_self' : '_blank'"
-          reverseColors
+        <BaseGutterWrapper
+          :class="[space.marginLeftNarrow]"
+          gutter-x="xnarrow"
+          gutter-y="xnarrow"
+        >
+          <BaseButtonLink
+            :to="this.$t('nav.eipPdf')"
+            :router="false"
+            :label="this.$t('nav.learnMore')"
+            :target="this.checkElectron() ? '_self' : '_blank'"
+            role="default"
+            size="small"
+            reverse-colors
         /></BaseGutterWrapper>
       </BaseGutterWrapper>
     </header>
@@ -47,18 +70,17 @@
 </template>
 
 <script>
-import { dataMethods } from './mixins/dataMethods'
-import BaseGutterWrapper from './BaseGutterWrapper.vue'
-import BaseIcon from './BaseIcon.vue'
-import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
-import BaseCalloutBox from '@/components/BaseCalloutBox.vue'
-import BaseButtonFlyout from '@/components/BaseButtonFlyout.vue'
-import BaseButtonLink from '@/components/BaseButtonLink.vue'
-import BaseHeading from '@/components/BaseHeading.vue'
+import { dataMethods } from "./mixins/dataMethods";
+import BaseGutterWrapper from "./BaseGutterWrapper.vue";
+import BaseIcon from "./BaseIcon.vue";
+import LanguageSwitcher from "@/components/LanguageSwitcher.vue";
+import BaseCalloutBox from "@/components/BaseCalloutBox.vue";
+import BaseButtonFlyout from "@/components/BaseButtonFlyout.vue";
+import BaseButtonLink from "@/components/BaseButtonLink.vue";
+import BaseHeading from "@/components/BaseHeading.vue";
 
 export default {
-  name: 'NavHeader',
-  mixins: [dataMethods],
+  name: "NavHeader",
   components: {
     BaseGutterWrapper,
     BaseIcon,
@@ -66,134 +88,137 @@ export default {
     BaseCalloutBox,
     BaseButtonFlyout,
     BaseButtonLink,
-    BaseHeading
+    BaseHeading,
   },
+  mixins: [dataMethods],
   data: function () {
     return {
-      notificationMessage: '',
+      notificationMessage: "",
       flyoutOpen: false,
-      electron: this.checkElectron()
-    }
+      electron: this.checkElectron(),
+    };
   },
   computed: {
     links: function () {
       return {
         setup: {
-          name: 'setup',
-          text: this.$t('nav.setup'),
-          active: true
+          name: "setup",
+          text: this.$t("nav.setup"),
+          active: true,
         },
         activities: {
-          name: 'activity',
+          name: "activity",
           params: {
-            activityId: '1'
+            activityId: "1",
           },
-          text: this.$t('nav.activities'),
-          active: true
+          text: this.$t("nav.activities"),
+          active: true,
         },
         summary: {
-          name: 'summary',
-          text: this.$t('nav.summary'),
-          active: true
+          name: "summary",
+          text: this.$t("nav.summary"),
+          active: true,
         },
         bestPractices: {
-          name: 'evidence-informed-practices',
-          childName: 'evidence-informed-practice',
-          text: this.$t('nav.bestPractices'),
-          active: true
+          name: "evidence-informed-practices",
+          childName: "evidence-informed-practice",
+          text: this.$t("nav.bestPractices"),
+          active: true,
         },
         assessment: {
-          name: 'assessment',
-          text: this.$t('nav.assessment'),
-          active: true
+          name: "assessment",
+          text: this.$t("nav.assessment"),
+          active: true,
         },
         results: {
-          name: 'results',
-          text: this.$t('nav.results'),
-          active: false
+          name: "results",
+          text: this.$t("nav.results"),
+          active: false,
         },
         advocate: {
-          name: 'advocate',
-          childName: 'print',
-          text: this.$t('nav.advocate'),
-          active: false
-        }
-      }
-    }
+          name: "advocate",
+          childName: "print",
+          text: this.$t("nav.advocate"),
+          active: false,
+        },
+      };
+    },
   },
   methods: {
     getCurrentRoute: function () {
       // get the (translated) name of the current route
-      return Object.values(this.links).find(link => {
+      return Object.values(this.links).find((link) => {
         return (
           link.name === this.$route.name || link.childName === this.$route.name
-        )
-      }).text
+        );
+      }).text;
     },
     globalNotification: function (value) {
-      const notification = this.$store.getters['entities/globalnotifications/query']().first()
-      return notification ? notification[value] : false
+      const notification = this.$store.getters[
+        "entities/globalnotifications/query"
+      ]().first();
+      return notification ? notification[value] : false;
     },
     getLinks: function () {
-      this.updateActiveLinks()
-      return this.links
+      this.updateActiveLinks();
+      return this.links;
     },
     closeNavFlyout: function (event) {
-      this.flyoutOpen = false
+      this.flyoutOpen = false;
     },
     openNavFlyout: function (event) {
-      this.flyoutOpen = true
+      this.flyoutOpen = true;
     },
     notificationTrigger: function () {
-      this.notify(this.notificationMessage, 'info', 3000)
+      this.notify(this.notificationMessage, "info", 3000);
     },
     updateActiveLinks: function () {
-      if (this.getItemCount('assessments') > 0) {
-        this.notificationMessage = this.$t('nav.removeAssessment')
-        this.links.activities.active = false
-        this.links.summary.active = false
-        this.links.results.active = true
-        this.links.advocate.active = true
+      if (this.getItemCount("assessments") > 0) {
+        this.notificationMessage = this.$t("nav.removeAssessment");
+        this.links.activities.active = false;
+        this.links.summary.active = false;
+        this.links.results.active = true;
+        this.links.advocate.active = true;
       }
 
       if (
-        this.getItemCount('activities') === 0 &&
-        (this.getItemCount('setup') === 0 || !this.setupPresent())
+        this.getItemCount("activities") === 0 &&
+        (this.getItemCount("setup") === 0 || !this.setupPresent())
       ) {
-        this.notificationMessage = this.$t('nav.addSetup')
-        this.links.activities.active = false
-        this.links.summary.active = false
-        this.links.results.active = false
-        this.links.advocate.active = false
-        this.links.bestPractices.active = false
-        this.links.assessment.active = false
+        this.notificationMessage = this.$t("nav.addSetup");
+        this.links.activities.active = false;
+        this.links.summary.active = false;
+        this.links.results.active = false;
+        this.links.advocate.active = false;
+        this.links.bestPractices.active = false;
+        this.links.assessment.active = false;
       }
 
-      if (this.getItemCount('activities') === 0 && this.setupPresent()) {
-        this.notificationMessage = this.$t('nav.addActivites')
-        this.links.activities.active = true
-        this.links.summary.active = false
-        this.links.results.active = false
-        this.links.advocate.active = false
-        this.links.bestPractices.active = false
-        this.links.assessment.active = false
+      if (this.getItemCount("activities") === 0 && this.setupPresent()) {
+        this.notificationMessage = this.$t("nav.addActivites");
+        this.links.activities.active = true;
+        this.links.summary.active = false;
+        this.links.results.active = false;
+        this.links.advocate.active = false;
+        this.links.bestPractices.active = false;
+        this.links.assessment.active = false;
       }
 
       if (
-        this.getItemCount('activities') > 0 &&
-        this.getItemCount('assessments') === 0
+        this.getItemCount("activities") > 0 &&
+        this.getItemCount("assessments") === 0
       ) {
-        this.notificationMessage = this.$t('nav.addAssessment')
-        this.links.activities.active = true
-        this.links.summary.active = true
-        this.links.assessment.active = true
-        this.links.bestPractices.active = true
-        this.links.results.active = false
-        this.links.advocate.active = false
+        this.notificationMessage = this.$t("nav.addAssessment");
+        this.links.activities.active = true;
+        this.links.summary.active = true;
+        this.links.assessment.active = true;
+        this.links.bestPractices.active = true;
+        this.links.results.active = false;
+        this.links.advocate.active = false;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style lang="scss" module="base">
@@ -240,7 +265,7 @@ $nav-breakpoint: 81em; // ~1400px
   display: inline-flex;
   align-items: center;
   max-width: 11rem;
-  color: color('white');
+  color: color("white");
 
   &:after {
     content: none !important; // never show active styles
@@ -249,7 +274,7 @@ $nav-breakpoint: 81em; // ~1400px
   // for IE
   > img[src$=".svg"] {
     width: 55px;
-   height: 37px;
+    height: 37px;
   }
 }
 

@@ -1,7 +1,7 @@
 en:
   mainTitle: Tool for AYRH-Responsive Planning
   home:
-    chooseLanguage: 'Choose your preferred language:'
+    chooseLanguage: "Choose your preferred language:"
     title: NOT WITHOUT US!
     subtitle: A Tool for AYRH-Responsive Planning
     intro: |-
@@ -15,7 +15,7 @@ en:
         * How to strengthen the plan to better meet the needs of youth.
 
     stepsTitle: How It Works
-    stepsIntro: 'Join 2-3 fellow youth advocates, set aside a few hours, and follow these steps to assess if your plan uses tailored, innovative strategies for meeting the needs of your country’s youth:'
+    stepsIntro: "Join 2-3 fellow youth advocates, set aside a few hours, and follow these steps to assess if your plan uses tailored, innovative strategies for meeting the needs of your country’s youth:"
     steps:
       step1:
         title: Get to know your national, regional, district, or local plan.
@@ -67,7 +67,7 @@ en:
       * Locate strategic priorities and objectives—you’ll spend most of your time here.
       * Ask yourself, “How is the budget organized? Does each activity have a certain budget amount?”
       * Can’t find activities and their budget amounts? Check your plan’s annex.
-    note: 'Important: Unfortunately, you won’t be able to analyze your budget if…'
+    note: "Important: Unfortunately, you won’t be able to analyze your budget if…"
     noteBody: |-
       * Specific activities do not have budgeted amounts associated with them.
       * You’re assessing an AYRH plan, not a general FP/RH plan.
@@ -87,7 +87,8 @@ en:
     restoreActivities: Restore your activities
     addActivities: ADD ACTIVITIES
     editActivities: EDIT ACTIVITIES
-    saveDataReminder: "Your web browser will automatically keep your data present.\
+    saveDataReminder:
+      "Your web browser will automatically keep your data present.\
       \ However, **this is not a gurantee that your data will always be saved.** We\
       \ recommend you save your data manually on a regular basis to make sure you\
       \ don't lose any data. There are many prompts to save your data and you can\
@@ -134,7 +135,7 @@ en:
   tooltipText:
     activityText: This should be a summary of the activity. Maximum of 50 words.
     activityBudget: Use the dropdown on the right to easily set the budget.
-    activityYouthCentric: 'Youth-centric should encompass activities targeting adolescents and young people aged 15-24 years. Note: an activity that will serve the general population is not youth-centric.'
+    activityYouthCentric: "Youth-centric should encompass activities targeting adolescents and young people aged 15-24 years. Note: an activity that will serve the general population is not youth-centric."
   # Activity Budget Scales
   budgetScales:
     scale1:
@@ -238,7 +239,7 @@ en:
   # Evidence-Informed Practices
   readMore: "See sample activities"
   checkListButtonText: "View checklist"
-  bestPracticeTitle: 'Will These Activities Work?'
+  bestPracticeTitle: "Will These Activities Work?"
   bestPracticeSubtitle: Will they effectively respond to the reproductive needs and desires of youth in your country?
   bestPracticesContent: |-
     To answer, follow the evidence. Start by reviewing the Evidence-Informed Practices (EIPs) below. Each EIP has shown significantly positive results in programming for adolescent and youth reproductive health.
@@ -250,11 +251,11 @@ en:
   bestPracticeCategoryTitle: "Evidence-Informed Practices"
   bestPractices:
     bestPractice1:
-      title: 'Make Services Adolescent and Youth-Friendly'
+      title: "Make Services Adolescent and Youth-Friendly"
       # Do Not Translate
       icon: eip-choice
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
-      checkListName: ''
+      checkListName: ""
       practice: |-
         Take young people’s specific needs into account, providing age and developmentally-appropriate family planning and reproductive health services.
       teaser: |-
@@ -327,23 +328,26 @@ en:
         [^9]: Rosenberg NE, Bhushan NL, Vansia D, et al. Comparing Youth Friendly Health Services to the Standard of Care through "Girl Power-Malawi": A Quasi-Experimental Cohort Study. J Acquir Immune Defic Syndr. 2018; Aug 1. doi: 10.1097/QAI.0000000000001830.
       resources:
         resource1:
-          title: 'Thinking outside the separate space: A decision-making tool for
-            designing youth-friendly services'
+          title:
+            "Thinking outside the separate space: A decision-making tool for
+            designing youth-friendly services"
           teaser: |-
             Callie Simon, Regina Benevides, Gwyn Hainsworth, Gwendolyn Morgan, and Katie Chau, Thinking outside the separate space: A decision-making tool for designing youth-friendly services. Washington, DC: Evidence to Action Project/Pathfinder International, March 2015.
           # Do Not Translate
           url: https://www.e2aproject.org/wp-content/uploads/thinking-outside-the-separate-space-yfs-tool.pdf
         resource2:
-          title: 'What does not work in adolescent sexual and reproductive health:
-            a review of evidence on interventions commonly accepted as best practices.'
+          title:
+            "What does not work in adolescent sexual and reproductive health:
+            a review of evidence on interventions commonly accepted as best practices."
           teaser: |-
             Chandra-Mouli, V., Lane, C., & Wong, S. (2015). What does not work in adolescent sexual and reproductive health: a review of evidence on interventions commonly accepted as best practices. Global Health: Science and Practice, 3(3), 333-340.
           # Do Not Translate
           url: http://www.ghspjournal.org/content/3/3/333.short
         resource3:
-          title: 'High-Impact Practices in Family Planning (HIPs). Adolescent-friendly
+          title:
+            "High-Impact Practices in Family Planning (HIPs). Adolescent-friendly
             contraceptive services: mainstreaming adolescent-friendly elements into
-            existing contraceptive services.'
+            existing contraceptive services."
           teaser: |-
             High-Impact Practices in Family Planning (HIPs). Adolescent-friendly contraceptive services: mainstreaming adolescent-friendly elements into existing contraceptive services. Washington (DC): USAID; 2015.
           # Do Not Translate
@@ -355,48 +359,53 @@ en:
           # Do Not Translate
           url: http://www.jahonline.org/issue/S1054-139X(14)X0004-2
         resource5:
-          title: 'Interventions to Prevent Unintended and Repeat Pregnancy Among Young
+          title:
+            "Interventions to Prevent Unintended and Repeat Pregnancy Among Young
             People in Low-and Middle-Income Countries: A Systematic Review of the
-            Published and Gray Literature'
+            Published and Gray Literature"
           teaser: |-
             Michelle J. Hindin et al., “Interventions to Prevent Unintended and Repeat Pregnancy Among Young People in Low-and Middle-Income Countries: A Systematic Review of the Published and Gray Literature,” Journal of Adolescent Health 59, no. 3 (2016): S8-S15.
           # Do Not Translate
           url: https://www.ncbi.nlm.nih.gov/pubmed/27562452
         resource6:
-          title: 'Preventing early pregnancy and poor reproductive outcomes among
-            adolescents in developing countries: what the evidence says.'
+          title:
+            "Preventing early pregnancy and poor reproductive outcomes among
+            adolescents in developing countries: what the evidence says."
           teaser: |-
             World Health Organization. (2011). Preventing early pregnancy and poor reproductive outcomes among adolescents in developing countries: what the evidence says.
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/10665/70813/1/WHO_FWC_MCA_12_02_eng.pdf
         resource7:
-          title: "Une approche fondée sur les normes pour améliorer la qualité des\
+          title:
+            "Une approche fondée sur les normes pour améliorer la qualité des\
             \ services de santé destinés aux adolescents : note d'orientation"
           teaser: |-
             Organisation mondiale de la Santé (2015). "Une approche fondée sur les normes pour améliorer la qualité des services de santé destinés aux adolescents : note d'orientation."
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/10665/246105/1/WHO-FWC-MCA-15.06-fre.pdf?ua=1
         resource8:
-          title: 'Our future: a Lancet commission on adolescent health and wellbeing'
+          title: "Our future: a Lancet commission on adolescent health and wellbeing"
           teaser: |-
             Patton, George C., et al. (2016). “Our future: a Lancet commission on adolescent health and wellbeing”. The Lancet 387.10036: 2423-2478.
         resource9:
-          title: 'Youth Contraceptive Use: Effective Interventions A Reference Guide.'
+          title: "Youth Contraceptive Use: Effective Interventions A Reference Guide."
           teaser: |-
             Population Reference Bureau (2017). Youth Contraceptive Use: Effective Interventions A Reference Guide.
           # Do Not Translate
           url: http://www.prb.org/pdf17/PRB%20Youth%20Policies%20Reference%20Guide.pdf
         resource10:
-          title: 'Global Accelerated Action for the Health of Adolescents (AA-HA!):
-            guidance to support country implementation.'
+          title:
+            "Global Accelerated Action for the Health of Adolescents (AA-HA!):
+            guidance to support country implementation."
           teaser: |-
             WHO. (2017). Global Accelerated Action for the Health of Adolescents (AA-HA!): guidance to support country implementation.
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/handle/10665/255415/9789241512343-eng.pdf?sequence=1
         resource11:
-          title: 'Global standards for quality health-care services for adolescents:
+          title:
+            "Global standards for quality health-care services for adolescents:
             a guide to implement a standards-driven approach to improve the quality
-            of health-care services for adolescents.'
+            of health-care services for adolescents."
           teaser: |-
             WHO/UNAIDS (2015). Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents.
           # Do Not Translate
@@ -406,7 +415,7 @@ en:
       # Do Not Translate
       icon: eip-contraceptives
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
-      checkListName: ''
+      checkListName: ""
       practice: |-
         Provide quality counseling and a full range of methods, including long-acting and reversible contraception, to ensure young people can choose a method that aligns with their preferences and goals.
       teaser: |-
@@ -484,31 +493,35 @@ en:
           # Do Not Translate
           url: http://www.familyplanning2020.org/youth-larc-statement
         resource2:
-          title: 'Pathways of Change: How DMPA-SC Introduction May Impact a National
-            Family Planning Program'
+          title:
+            "Pathways of Change: How DMPA-SC Introduction May Impact a National
+            Family Planning Program"
           teaser: |-
             Health Policy + (2017).  Pathways of Change: How DMPA-SC Introduction May Impact a National Family Planning Program
           # Do Not Translate
           url: http://www.healthpolicyplus.com/ns/pubs/7133-7240_PPathwaysofChangeBriefJan.pdf
         resource3:
-          title: 'High-Impact Practices in Family Planning (HIPs). Adolescent-friendly
+          title:
+            "High-Impact Practices in Family Planning (HIPs). Adolescent-friendly
             contraceptive services: mainstreaming adolescent-friendly elements into
-            existing contraceptive services.'
+            existing contraceptive services."
           teaser: |-
             High-Impact Practices in Family Planning (HIPs). Adolescent-friendly contraceptive services: mainstreaming adolescent-friendly elements into existing contraceptive services. Washington (DC): USAID; 2015.
           # Do Not Translate
           url: https://www.fphighimpactpractices.org/afcs
         resource4:
-          title: 'Interventions to Prevent Unintended and Repeat Pregnancy Among Young
+          title:
+            "Interventions to Prevent Unintended and Repeat Pregnancy Among Young
             People in Low-and Middle-Income Countries: A Systematic Review of the
-            Published and Gray Literature'
+            Published and Gray Literature"
           teaser: |-
             Michelle J. Hindin et al., “Interventions to Prevent Unintended and Repeat Pregnancy Among Young People in Low-and Middle-Income Countries: A Systematic Review of the Published and Gray Literature,” Journal of Adolescent Health 59, no. 3 (2016): S8-S15.
           # Do Not Translate
           url: https://www.ncbi.nlm.nih.gov/pubmed/27562452
         resource5:
-          title: 'Preventing unintended pregnancy among young women in Kenya: prospective
-            cohort study to offer contraceptive implants'
+          title:
+            "Preventing unintended pregnancy among young women in Kenya: prospective
+            cohort study to offer contraceptive implants"
           teaser: |-
             Hubacher, D., Olawo, A., Manduku, C., Kiarie, J., & Chen, P.L. “Preventing unintended pregnancy among young women in Kenya: prospective cohort study to offer contraceptive implants.”  Contraception 86 (2012): 511–517. DOI: 10.1016/j.contraception.2012.04.013
           # Do Not Translate
@@ -526,24 +539,27 @@ en:
           # Do Not Translate
           url: https://www.k4health.org/sites/default/files/Balanced%20Counseling%20Strategy%20Plus%20Algorithm.pdf
         resource8:
-          title: 'Adolescent job aid: a handy desk reference tool for primary level
-            health workers'
+          title:
+            "Adolescent job aid: a handy desk reference tool for primary level
+            health workers"
           teaser: |-
             World Health Organization (2010). Adolescent job aid: a handy desk reference tool for primary level health workers. Geneva: World Health Organization.
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/handle/10665/44387/9789241599962_eng.pdf?sequence=1
         resource9:
-          title: 'Core competencies in adolescent health and development for primary
+          title:
+            "Core competencies in adolescent health and development for primary
             care providers: including a tool to assess the adolescent health and development
-            component in pre-service education of health-care providers.'
+            component in pre-service education of health-care providers."
           teaser: |-
             WHO (2015). Core competencies in adolescent health and development for primary care providers: including a tool to assess the adolescent health and development component in pre-service education of health-care providers. Geneva: World Health Organization.
           # Do Not Translate
           url: http://apps.who.int/iris/bitstream/handle/10665/148354/9789241508315_eng.pdf?sequence=1
         resource10:
-          title: 'Global standards for quality health-care services for adolescents:
+          title:
+            "Global standards for quality health-care services for adolescents:
             a guide to implement a standards-driven approach to improve the quality
-            of health-care services for adolescents'
+            of health-care services for adolescents"
           teaser: |-
             WHO/UNAIDS (2015). Global standards for quality health-care services for adolescents: a guide to implement a standards-driven approach to improve the quality of health-care services for adolescents.
           # Do Not Translate
@@ -553,7 +569,7 @@ en:
       # Do Not Translate
       icon: eip-coordination
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
-      checkListName: ''
+      checkListName: ""
       practice: |-
         Make plans for collaboration among sectors (e.g. health, education, environment, economy) and with key stakeholders (e.g., government, civil society, and private sector) to improve adolescent and youth reproductive health (AYRH).
       teaser: |-
@@ -617,8 +633,9 @@ en:
         [^27]: Chandra-Mouli et al. Programa Geração Biz, Mozambique: how did this adolescent health initiative grow from a pilot to a national programme, and what did it achieve? Reproductive Health. 2015; 12:12.
       resources:
         resource1:
-          title: 'Health for the world’s adolescents: A second chance in the second
-            decade'
+          title:
+            "Health for the world’s adolescents: A second chance in the second
+            decade"
           teaser: |-
             World Health Organization (2014). Health for the world’s adolescents: A second chance in the second decade
           # Do Not Translate
@@ -628,7 +645,7 @@ en:
           teaser: |-
             West African Health Organization (2016). Orientation Manual for Development of National Strategies for Adolescent and Youth Health in ECOWAS Member States.
         resource3:
-          title: 'Our future: a Lancet commission on adolescent health and wellbeing'
+          title: "Our future: a Lancet commission on adolescent health and wellbeing"
           teaser: |-
             Patton, George C., et al. (2016). “Our future: a Lancet commission on adolescent health and wellbeing”. The Lancet 387.10036: 2423-2478.
           # Do Not Translate
@@ -644,7 +661,7 @@ en:
       # Do Not Translate
       icon: eip-youth
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
-      checkListName: ''
+      checkListName: ""
       practice: |-
         To ensure the relevance, responsiveness, and effectiveness of adolescent and youth reproductive health (AYRH) programming, it is critical to meaningfully engage and build the capacity of youth advocates and leaders.
       teaser: |-
@@ -706,22 +723,25 @@ en:
         [^40]: Babalola S, Ramirez-Ferrero E, Muya A. Survey on Sexual Attitudes and Behaviors among Tanzanian Youth: Baseline Assessment in Five Regions: Report of Findings. Dar es Salaam: HealthScope Tanzania and the Johns Hopkins Center for Communication Programs; 2005.
       resources:
         resource1:
-          title: 'What does not work in adolescent sexual and reproductive health:
-            a review of evidence on interventions commonly accepted as best practices.'
+          title:
+            "What does not work in adolescent sexual and reproductive health:
+            a review of evidence on interventions commonly accepted as best practices."
           teaser: |-
             Chandra-Mouli, V., Lane, C., & Wong, S. (2015). What does not work in adolescent sexual and reproductive health: a review of evidence on interventions commonly accepted as best practices. Global Health: Science and Practice, 3(3), 333-340.
           # Do Not Translate
           url: http://www.ghspjournal.org/content/3/3/333.short
         resource2:
-          title: 'Health for the world’s adolescents: A second chance in the second
-            decade'
+          title:
+            "Health for the world’s adolescents: A second chance in the second
+            decade"
           teaser: |-
             World Health Organization (2014). Health for the world’s adolescents: A second chance in thesecond decade.
           # Do Not Translate
           url: http://apps.who.int/adolescent/second-decade/
         resource3:
-          title: 'A standards-driven approach to improve the quality of health- care
-            services for adolescents: Policy Brief.'
+          title:
+            "A standards-driven approach to improve the quality of health- care
+            services for adolescents: Policy Brief."
           teaser: |-
             World Health Organization (2015). A standards-driven approach to improve the quality of health- care services for adolescents: Policy Brief.
           # Do Not Translate
@@ -731,7 +751,7 @@ en:
           teaser: |-
             West African Health Organization (2016). Orientation Manual for Development of National Strategies for Adolescent and Youth Health in ECOWAS Member States.
         resource5:
-          title: 'Our future: a Lancet commission on adolescent health and wellbeing'
+          title: "Our future: a Lancet commission on adolescent health and wellbeing"
           teaser: |-
             Patton, George C., et al. (2016). “Our future: a Lancet commission on adolescent health and wellbeing”. The Lancet 387.10036: 2423-2478.
           # Do Not Translate
@@ -755,15 +775,17 @@ en:
           # Do Not Translate
           url: http://www.youthpower.org/usaid-youth-engagement-training-dreams-countries
         resource9:
-          title: 'Power, Rights & Participation: A practical guide for youth action
-            in a post-2015 world'
+          title:
+            "Power, Rights & Participation: A practical guide for youth action
+            in a post-2015 world"
           teaser: |-
             Plan UK (2015). Power, Rights & Participation: A practical guide for youth action in a post-2015 world.
           # Do Not Translate
           url: http://restlessdevelopment.org/file/power-rights-andparticipation-pdf
         resource10:
-          title: 'Accountability in Action: A Practical Guide for Young People Tracking
-            the Sustainable Development Goals.'
+          title:
+            "Accountability in Action: A Practical Guide for Young People Tracking
+            the Sustainable Development Goals."
           teaser: |-
             Restless Development (2015). Accountability in Action: A Practical Guide for Young People Tracking the Sustainable Development Goals.
           # Do Not Translate
@@ -779,7 +801,7 @@ en:
       # Do Not Translate
       icon: eip-education
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
-      checkListName: ''
+      checkListName: ""
       practice: |-
         Utilize a curriculum-based process to ensure young people are equipped with skills, knowledge, and values that will help them make choices for their health and wellbeing—and show respect for others’ choices.
       teaser: |-
@@ -825,7 +847,6 @@ en:
         5. **Ensure adequate monitoring and evaluation systems are in place**
           Mechanisms for evaluating the effectiveness of teachers and assessing the impact of the program on students are important in the success of Family LIfe Education programs.
 
-
       resources:
         resource1:
           title: WHO guidelines on preventing early pregnancy and poor reproductive outcomes among adolescents in developing countries.
@@ -834,8 +855,9 @@ en:
           # Do Not Translate
           url: http://www.who.int/maternal_child_adolescent/documents/preventing_early_pregnancy/en/
         resource2:
-          title: 'Global Accelerated Action for the Health of Adolescents(AA-HA!):
-            guidance to support country implementation'
+          title:
+            "Global Accelerated Action for the Health of Adolescents(AA-HA!):
+            guidance to support country implementation"
           teaser: |-
             WHO. (2017). Global Accelerated Action for the Health of Adolescents (AA-HA!): guidance to support country implementation.
           # Do Not Translate
@@ -845,7 +867,7 @@ en:
       # Do Not Translate
       icon: eip-community
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
-      checkListName: ''
+      checkListName: ""
       practice: |-
         Collaborate with community groups and gatekeepers—e.g., young people’s parents and families—to address social norms and create a supportive environment to improve adolescent and youth reproductive health (AYRH).
       teaser: |-
@@ -914,47 +936,53 @@ en:
           # Do Not Translate
           url: www.prb.org/Publications/Reports/2017/Global-Youth-Family-Planning-Index.aspx
         resource3:
-          title: 'Community Group Engagement: Changing Norms to Improve Sexual and
-            Reproductive Health'
+          title:
+            "Community Group Engagement: Changing Norms to Improve Sexual and
+            Reproductive Health"
           teaser: |-
             Plourde, K. et al., Community Group Engagement: Changing Norms to Improve Sexual and Reproductive Health (Washington, DC: USAID, 2016).
           # Do Not Translate
           url: www.fphighimpactpractices.org/sites/fphips/files/hip_cge_brief.pdf
         resource4:
-          title: 'Creating an Enabling Environment for Adolescent Sexual and Reproductive
-            Health: A Framework and Promising Approaches'
+          title:
+            "Creating an Enabling Environment for Adolescent Sexual and Reproductive
+            Health: A Framework and Promising Approaches"
           teaser: |-
             Svanemyr, J. et al. 2015 “Creating an Enabling Environment for Adolescent Sexual and Reproductive Health: A Framework and Promising Approaches”. Journal of Adolescent Health 56. S7-S14.
         resource5:
-          title: 'Civil Society Involvement in Family Planning: A Review of Global
-            Programming and Evidence'
+          title:
+            "Civil Society Involvement in Family Planning: A Review of Global
+            Programming and Evidence"
           teaser: |-
             Boydell, Victoria, Robin Keeley, Kumudha Aruldas, and Karen Hardee. 2017. “Civil Society Involvement in Family Planning: A Review of Global Programming and Evidence,” Working Paper. Washington, DC: Population Council, The Evidence Project.
           # Do Not Translate
           url: http://evidenceproject.popcouncil.org/wp-content/uploads/2017/12/India-CSO_Research-Report.pdf
         resource6:
-          title: 'Engaging Men and Boys in Family Planning: A Strategic Planning Guide'
+          title: "Engaging Men and Boys in Family Planning: A Strategic Planning Guide"
           teaser: |-
             High-Impact Practices in Family Planning (HIPs). Engaging Men and Boys in Family Planning: A Strategic Planning Guide. Washington (DC): USAID; 2017.
           # Do Not Translate
           url: https://www.fphighimpactpractices.org/guides/engaging-men-and-boys-in-family-planning/
         resource7:
-          title: 'Community Group Engagement: Changing Norms to Improve Sexual and
-            Reproductive Health'
+          title:
+            "Community Group Engagement: Changing Norms to Improve Sexual and
+            Reproductive Health"
           teaser: |-
             High-Impact Practices in Family Planning (HIPs). Community Group Engagement: Changing Norms to Improve Sexual and Reproductive Health. Washington (DC): USAID; 2016.
           # Do Not Translate
           url: https://www.fphighimpactpractices.org/briefs/community-group-engagement/
         resource8:
-          title: 'Strengthening CSO-Government Partnerships to Scale Up Approaches
-            Engaging Men and Boys for Gender Equality and SRHR: A Tool for Action'
+          title:
+            "Strengthening CSO-Government Partnerships to Scale Up Approaches
+            Engaging Men and Boys for Gender Equality and SRHR: A Tool for Action"
           teaser: |-
             Promundo and UNFPA. (2016). Strengthening CSO-Government Partnerships to Scale Up Approaches Engaging Men and Boys for Gender Equality and SRHR: A Tool for Action. Washington, D.C.: Promundo-US and New York City, NY: UNFPA.
           # Do Not Translate
           url: https://promundoglobal.org/wp-content/uploads/2017/01/50694-Scaling-up-Men-and-Boys-web-postprint.pdf
         resource9:
-          title: 'Integrated Community Strategies for Linking Youth to Adolescent
-            Reproductive Health Services: A Case Study.'
+          title:
+            "Integrated Community Strategies for Linking Youth to Adolescent
+            Reproductive Health Services: A Case Study."
           teaser: |-
             Sotolongo J, House DL, Swanson S, et al. (2017). Integrated Community Strategies for Linking Youth to Adolescent Reproductive Health Services: A Case Study. Journal of Adolescent Health 60: S45-S50.
           # Do Not Translate
@@ -964,7 +992,7 @@ en:
       # Do Not Translate
       icon: eip-equality
       # You must upload each checklist in the public/uploads/checklists folder using the file name indicated below
-      checkListName: ''
+      checkListName: ""
       practice: |-
         Address the factors that limit girls and young women from having options, encourage boys to take risks, and create barriers to family planning and reproductive health care for both sexes.
 
@@ -1013,40 +1041,44 @@ en:
           # Do Not Translate
           url: https://www.girlsnotbrides.org/wp-content/uploads/2017/12/Why-a-minimum-age-of-marriage-of-18.pdf
         resource4:
-          title: 'Insights and Evidence Gaps in Girl-Centered Programming: A Systematic
-            Review'
+          title:
+            "Insights and Evidence Gaps in Girl-Centered Programming: A Systematic
+            Review"
           teaser: |-
             Haberland, Nicole A., Katharine J. McCarthy, and Martha Brady. 2018. “Insights and Evidence Gaps in Girl-Centered Programming: A Systematic Review,” GIRL Center Research Brief No. 3. New York: Population Council.
           # Do Not Translate
           url: http://www.popcouncil.org/uploads/pdfs/2018PGY_GIRLCenterResearchBrief_03.pdf
         resource5:
-          title: 'Addressing Gender-based Violence through USAID’s Health Programs:
-            A Guide for Health Sector Program Officers'
+          title:
+            "Addressing Gender-based Violence through USAID’s Health Programs:
+            A Guide for Health Sector Program Officers"
           teaser: |-
             Inter-Agency Gender Working Group of USAID. 2008. Addressing Gender-based Violence through USAID’s Health Programs: A Guide for Health Sector Program Offi cers. Second Edition. Washington, D.C.
         resource6:
-          title: 'Building Girls’ Protective Assets: A Collection of Tools for Program
-            Design'
+          title:
+            "Building Girls’ Protective Assets: A Collection of Tools for Program
+            Design"
           teaser: |-
             Population Council. 2016. Building Girls’ Protective Assets: A Collection of Tools for Program Design. New York: Population Council.
           # Do Not Translate
           url: http://www.popcouncil.org/uploads/pdfs/2016PGY_GirlsProtectiveAssetsTools.pdf
         resource7:
-          title: 'Interventions for Preventing Unintended, Rapid Repeat Pregnancy
+          title:
+            "Interventions for Preventing Unintended, Rapid Repeat Pregnancy
             Among Adolescents: A Review of the Evidence and Lessons From High-Quality
-            Evaluations'
+            Evaluations"
           teaser: |-
             Norton M, Chandra-Mouli V, and Lane C. (2017). Interventions for Preventing Unintended, Rapid Repeat Pregnancy Among Adolescents: A Review of the Evidence and Lessons From High-Quality Evaluations. GHSP 5:4.
           # Do Not Translate
           url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5752603/
         resource8:
-          title: 'Family Planning: The adolescent imperative'
+          title: "Family Planning: The adolescent imperative"
           teaser: |-
             Presler-Marshall E and Jones N (2017). Family Planning: The adolescent imperative. Overseas Development Institute.
           # Do Not Translate
           url: https://www.odi.org/sites/odi.org.uk/files/resource-documents/11646.pdf
         resource9:
-          title: 'Brief: Adolescent Girls Empowerment Program: Health'
+          title: "Brief: Adolescent Girls Empowerment Program: Health"
           teaser: |-
             Population Council (2017). Brief: Adolescent Girls Empowerment Program: Health.
           # Do Not Translate
@@ -1064,8 +1096,9 @@ en:
           # Do Not Translate
           url: http://apps.who.int/gb/ebwha/pdf_files/WHA69/A69_9-en.pdf
         resource12:
-          title: 'Educating Girls: Creating a foundation for positive sexual and reproductive
-            health behaviors'
+          title:
+            "Educating Girls: Creating a foundation for positive sexual and reproductive
+            health behaviors"
           teaser: |-
             High Impact Practices (HIPs) for Family Planning. Educating Girls: Creating a foundation for positive sexual and reproductive health behaviors. Washington, DC. USAID, 2014.
           # Do Not Translate
@@ -1090,13 +1123,13 @@ en:
       heading: Click on the icons indicating the EIPs which your activity meets
       eipHeading: Does your activity align with evidence-informed practices? Click each EIP icon below and select your answer.
       options:
-        'yes':
+        "yes":
           # Do Not Translate
-          title: '@:yesRaw'
+          title: "@:yesRaw"
           description: Fully aligns with the evidence-informed practice.
-        'no':
+        "no":
           # Do Not Translate
-          title: '@:noRaw'
+          title: "@:noRaw"
           description: Does not align with the evidence-informed practice.
         partially:
           title: Partially
@@ -1122,8 +1155,8 @@ en:
     allBestPractice: "Full best practice data:"
     indicatorQuestions: "Questions to consider"
     pdfPrintError: "There was an error with PDF printing."
-    exportPDF: 'Export PDF'
-    exportCharts: 'Export your chart data'
+    exportPDF: "Export PDF"
+    exportCharts: "Export your chart data"
     printPage: Print Page
     previousStep: Go Back
     nextStep: Add Key Recommendations
@@ -1131,31 +1164,33 @@ en:
     youthCenteredActivities: Youth-Centered Activities
     percentActivitesWithBP: "Activites with an EIP"
     activityWithEIPbyType: Activity With EIP by Type
-    exportChartSuccess: 'You successfully exported your chart data'
+    exportChartSuccess: "You successfully exported your chart data"
     comments:
       title: Your comments
       content: Enter any comments and concerns you have on your assessments by looking over the information on Evidence-Informed Practices, available <a href="/evidence-informed-practices">here</a>.
       review: The following are comments related to the activities you entered.
   chartToolTips:
-    youthFocusBudget: ''
-    youthFocusCount: ''
-    activityTypeBudget: 'Percentage calculated using only youth centric activities.'
-    activityTypeCount: 'Percentage calculated using only youth centric activities.'
+    youthFocusBudget: ""
+    youthFocusCount: ""
+    activityTypeBudget: "Percentage calculated using only youth centric activities."
+    activityTypeCount: "Percentage calculated using only youth centric activities."
   chartTitles:
-    defaultGroupHeading: 'Default Group heading'
+    defaultGroupHeading: "Default Group heading"
     activityTypeCount: "Percent Activity Count by Type"
     activityTypeCountQuestions:
-      1: 'Personal biases of both health care providers and the public affect the
+      1:
+        "Personal biases of both health care providers and the public affect the
         utilization of family planning methods by young people. Does the distribution
         of activities by domain reflect a concern about helping to address these biases
-        in community and health settings?'
+        in community and health settings?"
     activityTypeBudget: "Budget Percent of Total by Activity Types"
     activityTypeBudgetQuestions:
-      1: 'Government policies and strategies that are developed through a well-coordinated
+      1:
+        "Government policies and strategies that are developed through a well-coordinated
         process of stakeholder involvement are the foundation for acceptance of youth
         family planning utilization in communities. Does the distribution of activities
         by domain in your plan reflect a sufficient concern with coordination and
-        creating an enabling environment?'
+        creating an enabling environment?"
     youthFocusBudget: "Budget Percent Youth-Focused"
     youthFocusCount: "Percent Activity Count by Youth-Focused"
     youthCentricLabel: "Youth Centric"
@@ -1183,7 +1218,7 @@ en:
       content: Enter any comments and concerns you have on your assessments by looking over the information on Evidence-Informed Practices, available <a href="/evidence-informed-practices">here</a>.
       review: The following are comments related to the activities you entered.
     print: PRINT YOUR RESULTS
-    title: 'Add Key Recommendations…'
+    title: "Add Key Recommendations…"
     intro: |-
       Now that you have the results of your plan, what should you do now?
 
@@ -1225,32 +1260,33 @@ en:
     pdfFileName: e2a-report-%{timestamp}.pdf
     exportSuccessful: "%{filetype} Save Successful"
   nav:
-    plan: 'Plan'
-    setup: 'Setup'
-    activities: 'Activities'
-    summary: 'Summary'
-    bestPractices: 'Evidence-Informed Practices'
-    assessment: 'Analysis'
-    analyze: 'Analyze'
-    results: 'Results'
-    report: 'Results'
-    advocate: 'Advocate'
+    plan: "Plan"
+    setup: "Setup"
+    activities: "Activities"
+    summary: "Summary"
+    bestPractices: "Evidence-Informed Practices"
+    assessment: "Analysis"
+    analyze: "Analyze"
+    results: "Results"
+    report: "Results"
+    advocate: "Advocate"
     addAssessment: You must enter your analysis before you can move further.
     removeAssessment: You must remove all your analysis before you can edit activites.
     addSetup: You must add setup data before moving further
     addActivites: You must add activities before moving further
     learnMore: Learn More About EIPs
-    eipPdf: '/uploads/EIP-English-Full.pdf'
+    eipPdf: "/uploads/EIP-English-Full.pdf"
     userGuide: Technical Tips
-    userGuidePDF: '/uploads/Requirements-ENG.pdf'
+    userGuidePDF: "/uploads/Requirements-ENG.pdf"
   activityTable:
     defaultTitle: Activity text
     defaultID: Activity number
     defaultBudget: Budget
     defaultYouthCentered: Youth-centered?
-    defaultEIP: 'Evidence-Informed Practices'
+    defaultEIP: "Evidence-Informed Practices"
   # Misc Keys
-  saveRecommended: '**Remember to save your data!** Click <a href="%{exportLink}" class="electron-link">here</a> to
+  saveRecommended:
+    '**Remember to save your data!** Click <a href="%{exportLink}" class="electron-link">here</a> to
     save your data for offline use.'
   uniquenessError: The value entered in %{field} is not unique amoung %{entityType}
   edit: Edit
@@ -1260,18 +1296,18 @@ en:
   goBack: Go back
   bestPracticeOptions:
     # Do Not Translate
-    yesText: '@:yesRaw'
+    yesText: "@:yesRaw"
     # Do Not Translate
-    noText: '@:noRaw'
+    noText: "@:noRaw"
     partiallyText: Partially
     emptyText: Empty
     # Do Not Translate
-    yesKey: 'yes'
+    yesKey: "yes"
     # Do Not Translate
-    noKey: 'no'
+    noKey: "no"
     # Do Not Translate
-    partiallyKey: 'partially'
-    emptyKey: 'empty'
+    partiallyKey: "partially"
+    emptyKey: "empty"
   enterSuggestion: Enter a suggestion
   item: no items | item | items
   successRemoved: Successfully removed
@@ -1290,61 +1326,66 @@ en:
   addAnotherComment: Submit Comment
   bestPracticeIconData: Read more about this EIP
   # Country Indicator Data
-  indicatorDataNotPresent: 'This DHS info not available for %{countryName}'
-  indicatorNotPresent: 'The indicator you have selected is not present'
+  indicatorDataNotPresent: "This DHS info not available for %{countryName}"
+  indicatorNotPresent: "The indicator you have selected is not present"
   countryIndicators:
     indicator1:
-      name: 'Percentage of youth in your country'
-      description: 'Population aged 15-24 / 15-49 as of 2019'
+      name: "Percentage of youth in your country"
+      description: "Population aged 15-24 / 15-49 as of 2019"
       # Do Not Translate
-      sourceUrl: 'https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2019_POP_F15_1_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx'
+      sourceUrl: "https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2019_POP_F15_1_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx"
       # Do Not Translate
-      sourceCitation: 'United Nations, Department of Economic and Social Affairs,
+      sourceCitation:
+        "United Nations, Department of Economic and Social Affairs,
         Population Division (2019). World Population Prospects: The 2019 Revision,
-        DVD Edition.'
+        DVD Edition."
       # Do Not Translate
-      fileName: 'percentYouth.csv'
+      fileName: "percentYouth.csv"
       # Do Not Translate - input the string of the heading that has the ISO2 code
-      iso2codeHeader: 'ISO2'
+      iso2codeHeader: "ISO2"
       # Do Not Translate - input the string of the heading that has the indicator value
-      indicatorValueHeader: 'percentYouth'
-      indicatorValueUnit: '%'
+      indicatorValueHeader: "percentYouth"
+      indicatorValueUnit: "%"
       questions:
         1: How does your budget compare to the needs of your youth population?
         2: In what ways could your budget be better allocated to meet the diverse needs of your youth population?
     indicator2:
-      name: 'Percentage of women aged 15-19 using modern methods of contraception
-        in your country'
+      name:
+        "Percentage of women aged 15-19 using modern methods of contraception
+        in your country"
       # Do Not Translate
-      sourceUrl: 'https://statcompiler.com/en/'
+      sourceUrl: "https://statcompiler.com/en/"
       # Do Not Translate
-      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently
-        using any modern method of contraception.'
+      sourceCitation:
+        "USAID, The DHS Program (2018). STAT Compiler: Women currently
+        using any modern method of contraception."
       # Do Not Translate
-      fileName: 'contraceptionUse.csv'
+      fileName: "contraceptionUse.csv"
       # Do Not Translate - input the string of the heading that has the ISO2 code
-      iso2codeHeader: 'countryCode'
-      indicatorValueUnit: '%'
+      iso2codeHeader: "countryCode"
+      indicatorValueUnit: "%"
       # Do Not Translate - input the string of the heading that has the indicator value
-      indicatorValueHeader: '15-19'
+      indicatorValueHeader: "15-19"
       questions:
         1: How does your plan address reproductive healthcare and availability of contraceptive information and services?
         2: How does your plan, through contraceptive information and services, address unintended and early pregnancies among adolescents (15-19 years)
     indicator3:
-      name: 'Percentage of women aged 20-24 using modern methods of contraception
-        in your country'
+      name:
+        "Percentage of women aged 20-24 using modern methods of contraception
+        in your country"
       # Do Not Translate
-      sourceUrl: 'https://statcompiler.com/en/'
+      sourceUrl: "https://statcompiler.com/en/"
       # Do Not Translate
-      sourceCitation: 'USAID, The DHS Program (2018). STAT Compiler: Women currently
-        using any modern method of contraception.'
+      sourceCitation:
+        "USAID, The DHS Program (2018). STAT Compiler: Women currently
+        using any modern method of contraception."
       # Do Not Translate
-      fileName: 'contraceptionUse.csv'
+      fileName: "contraceptionUse.csv"
       # Do Not Translate - input the string of the heading that has the ISO2 code
-      iso2codeHeader: 'countryCode'
-      indicatorValueUnit: '%'
+      iso2codeHeader: "countryCode"
+      indicatorValueUnit: "%"
       # Do Not Translate - input the string of the heading that has the indicator value
-      indicatorValueHeader: '20-24'
+      indicatorValueHeader: "20-24"
       questions:
         1: How does your plan encourage healthy timing and spacing of pregnancies among youth?
         2: How does your plan, through contraceptive information and services, address unintended pregnancies among youth (20-24 years)

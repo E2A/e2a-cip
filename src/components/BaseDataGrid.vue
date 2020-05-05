@@ -1,65 +1,65 @@
 <template>
   <BaseGutterWrapper
-    el="dl"
-    gutterX="narrow"
-    gutterY="narrow"
     :class="[base.wrapper, condensed && base.condensed]"
+    el="dl"
+    gutter-x="narrow"
+    gutter-y="narrow"
   >
     <div
       v-for="(value, key, index) in data"
       :key="`data-grid-${index}`"
       :class="[base.item, `dataItem`]"
     >
-      <dt :class="base.dataTerm" v-html="key"></dt>
-      <dd :class="base.dataValue" v-html="value"></dd>
+      <dt :class="base.dataTerm" v-html="key" />
+      <dd :class="base.dataValue" v-html="value" />
     </div>
   </BaseGutterWrapper>
 </template>
 
 <script>
-import BaseGutterWrapper from './BaseGutterWrapper'
+import BaseGutterWrapper from "./BaseGutterWrapper";
 
 export default {
-  name: 'BaseDataGrid',
+  name: "BaseDataGrid",
+  components: {
+    BaseGutterWrapper,
+  },
   props: {
     data: {
       type: Object,
-      required: true
+      required: true,
     },
     gutter: {
       type: [String, Object],
-      default: 'narrow'
+      default: "narrow",
     },
     condensed: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
-  components: {
-    BaseGutterWrapper
-  }
-}
+};
 </script>
 
 <style lang="scss" module="base">
-@import '~styleConfig/color';
-@import '~styleConfig/type';
+@import "~styleConfig/color";
+@import "~styleConfig/type";
 
 .wrapper {
   font-size: 0;
 }
 
 .data {
-  composes: scaleZeta from 'styles/type.scss';
+  composes: scaleZeta from "styles/type.scss";
 }
 
 .dataList {
-  composes: scaleZeta from 'styles/type.scss';
+  composes: scaleZeta from "styles/type.scss";
 }
 
 .dataTerm {
   composes: data;
-  composes: bold from 'styles/type.scss';
+  composes: bold from "styles/type.scss";
 }
 
 .dataValue {
@@ -74,7 +74,7 @@ export default {
 .condensed {
   .dataTerm {
     @include font();
-    color: color('midtone');
+    color: color("midtone");
   }
 }
 </style>

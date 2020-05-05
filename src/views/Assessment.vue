@@ -1,11 +1,11 @@
 <template>
   <NavFooter
-    wrapperEl="article"
-    :leftButtons="navButtons.left"
-    :rightButtons="navButtons.right"
+    :left-buttons="navButtons.left"
+    :right-buttons="navButtons.right"
+    wrapper-el="article"
   >
     <ActivitiesExportTray :clear="['Assessments']" />
-    <NavBreadcrumbs/>
+    <NavBreadcrumbs />
     <BasePageIntro
       :title="$t('analysis.title')"
       :blurb="$t('analysis.intro')"
@@ -13,12 +13,8 @@
 
     <!-- Color key/guide -->
     <BaseSectionWrapper :class="color.lightBg">
-      <BaseHeading
-        :level="2"
-        scale="delta"
-        weight="bold"
-      >
-        {{$t('analysis.instructions.heading')}}
+      <BaseHeading :level="2" scale="delta" weight="bold">
+        {{ $t("analysis.instructions.heading") }}
       </BaseHeading>
       <BaseWidthWrapper :class="space.paddingTop">
         <BaseGutterWrapper :class="instructions.wrapper">
@@ -27,7 +23,7 @@
             :class="instructions.item"
             :key="`color-${index}`"
           >
-            <div :class="[instructions.swatch, color[`${option}Bg`]]"></div>
+            <div :class="[instructions.swatch, color[`${option}Bg`]]" />
             <BaseHeading
               :level="3"
               :class="space.paddingBottomXxnarrow"
@@ -35,10 +31,12 @@
               weight="bold"
               color="dark"
             >
-              {{$t(`analysis.instructions.options.${option}.title`)}}
+              {{ $t(`analysis.instructions.options.${option}.title`) }}
             </BaseHeading>
             <BaseBodyText
-              :content="$t(`analysis.instructions.options.${option}.description`)"
+              :content="
+                $t(`analysis.instructions.options.${option}.description`)
+              "
               :class="color.midtone"
               size="zeta"
               font="display"
@@ -57,23 +55,28 @@
           scale="delta"
           weight="bold"
         >
-          {{cipTitle}}
+          {{ cipTitle }}
         </BaseHeading>
 
         <!-- table of activities -->
-        <ActivitiesList v-bind:groupedActivities="groupedActivities" :showTray="true">
+        <ActivitiesList
+          :grouped-activities="groupedActivities"
+          :show-tray="true"
+        >
           <template #activities="{ activities, setActivityId }">
-            <div v-if="activities.activityObjects.length > 0" >
+            <div v-if="activities.activityObjects.length > 0">
               <ActivitiesTypeHeading>
-                {{activities.activityTypeName}}
+                {{ activities.activityTypeName }}
               </ActivitiesTypeHeading>
               <ActivitiesItemAssessment
                 v-for="(activity, index) in activities.activityObjects"
                 :key="`activity-${index}`"
                 :activity="activity"
                 :youth="activity.youthCentric"
+                :class="[
+                  mountedActivity === activity.id && instructions.itemSelected,
+                ]"
                 @activitySelect="setActivityId"
-                :class="[mountedActivity === activity.id && instructions.itemSelected]"
               />
             </div>
           </template>
@@ -84,26 +87,25 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import NavFooter from '@/components/NavFooter.vue'
-import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
-import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
-import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
-import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
-import BasePageIntro from '@/components/BasePageIntro.vue'
-import BaseHeading from '@/components/BaseHeading.vue'
-import BaseBodyText from '@/components/BaseBodyText.vue'
-import ActivitiesList from '@/components/ActivitiesList.vue'
-import ActivitiesTypeHeading from '@/components/ActivitiesTypeHeading.vue'
-import ActivitiesItemAssessment from '@/components/ActivitiesItemAssessment.vue'
-import ActivitiesExportTray from '@/components/ActivitiesExportTray.vue'
-import ClearItems from '@/components/ClearItems.vue'
-import { activityTypes } from '@/components/mixins/activityTypes'
-import { dataMethods } from '@/components/mixins/dataMethods'
+import { mapState } from "vuex";
+import NavFooter from "@/components/NavFooter.vue";
+import NavBreadcrumbs from "@/components/NavBreadcrumbs.vue";
+import BaseSectionWrapper from "@/components/BaseSectionWrapper.vue";
+import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
+import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
+import BasePageIntro from "@/components/BasePageIntro.vue";
+import BaseHeading from "@/components/BaseHeading.vue";
+import BaseBodyText from "@/components/BaseBodyText.vue";
+import ActivitiesList from "@/components/ActivitiesList.vue";
+import ActivitiesTypeHeading from "@/components/ActivitiesTypeHeading.vue";
+import ActivitiesItemAssessment from "@/components/ActivitiesItemAssessment.vue";
+import ActivitiesExportTray from "@/components/ActivitiesExportTray.vue";
+import ClearItems from "@/components/ClearItems.vue";
+import { activityTypes } from "@/components/mixins/activityTypes";
+import { dataMethods } from "@/components/mixins/dataMethods";
 
 export default {
-  name: 'Assessment',
-  mixins: [activityTypes, dataMethods],
+  name: "Assessment",
   components: {
     NavFooter,
     NavBreadcrumbs,
@@ -117,43 +119,44 @@ export default {
     ActivitiesTypeHeading,
     ActivitiesItemAssessment,
     ActivitiesExportTray,
-    ClearItems
+    ClearItems,
   },
+  mixins: [activityTypes, dataMethods],
   computed: {
     groupedActivities: function () {
-      return this.getGroupedYouthActivities()
+      return this.getGroupedYouthActivities();
     },
     ...mapState({
-      mountedActivity: state => state.mountedActivity
+      mountedActivity: (state) => state.mountedActivity,
     }),
     navButtons: function () {
       return {
         left: [
           {
-            to: { name: 'evidence-informed-practices' },
-            label: this.$t('analysis.previousStep')
-          }
+            to: { name: "evidence-informed-practices" },
+            label: this.$t("analysis.previousStep"),
+          },
         ],
         right: [
           {
-            to: { name: 'results' },
-            label: this.$t('saveAndContinue'),
-            role: 'primary'
-          }
-        ]
-      }
-    }
+            to: { name: "results" },
+            label: this.$t("saveAndContinue"),
+            role: "primary",
+          },
+        ],
+      };
+    },
   },
-  data () {
+  data() {
     return {
-      cipTitle: this.getItemValue('setup', 'title')
-    }
+      cipTitle: this.getItemValue("setup", "title"),
+    };
   },
-  created () {
+  created() {
     // Clear any open icons
     // this.$store.dispatch('entities/bestpracticeicons/deleteAll')
-  }
-}
+  },
+};
 </script>
 
 <style src="styles/borders.scss" lang="scss" module="border"></style>
@@ -162,11 +165,11 @@ export default {
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="instructions">
-@import '~bourbon/core/bourbon';
-@import '~styleConfig/color';
+@import "~bourbon/core/bourbon";
+@import "~styleConfig/color";
 
 .wrapper {
-  composes: paddingTop from 'styles/spacing.scss';
+  composes: paddingTop from "styles/spacing.scss";
   font-size: 0;
   text-align: center;
 }
@@ -178,15 +181,15 @@ export default {
 }
 
 .swatch {
-  composes: marginBottomNarrow from 'styles/spacing.scss';
-  composes: default from 'styles/borders.scss';
-  composes: whiteBorder shadow from 'styles/color.scss';
+  composes: marginBottomNarrow from "styles/spacing.scss";
+  composes: default from "styles/borders.scss";
+  composes: whiteBorder shadow from "styles/color.scss";
   @include size(4rem);
   display: inline-block;
   border-radius: 50%;
 }
 
 .itemSelected {
-  background-color: rgba(color('accent'), 0.20);
+  background-color: rgba(color("accent"), 0.2);
 }
 </style>

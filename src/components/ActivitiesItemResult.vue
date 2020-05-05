@@ -6,48 +6,41 @@
 
 <template>
   <li :class="base.wrapper">
-    <BaseDetails
-      @open="handleOpen"
-      @close="handleClose"
-      :open="isOpen"
-    >
+    <BaseDetails @open="handleOpen" @close="handleClose" :open="isOpen">
       <!-- summary -->
       <template slot="summaryLeft">
         <BaseHeading
           :centered="false"
           :class="type.leadingDefault"
+          :color="youth ? 'dark' : 'midtone'"
           scale="zeta"
           weight="regular"
-          :color="youth ? 'dark' : 'midtone'"
           sub
         >
-          {{displayText}}
+          {{ displayText }}
         </BaseHeading>
       </template>
       <template slot="summaryRight">
         <BaseGutterWrapper
-          gutterX="narrow"
-          gutterY="narrow"
           :class="type.right"
+          gutter-x="narrow"
+          gutter-y="narrow"
         >
-          <div
-            v-show="!isOpen"
-            :class="base.gutter"
-          >
+          <div v-show="!isOpen" :class="base.gutter">
             <BaseGutterWrapper
               :class="base.icons"
               el="ul"
-              gutterX="xnarrow"
-              gutterY="xnarrow"
+              gutter-x="xnarrow"
+              gutter-y="xnarrow"
             >
               <li
-                v-for="(assessment,index) of activeAssessments"
+                v-for="(assessment, index) of activeAssessments"
                 :key="`assess-${index}`"
                 :class="base.icon"
               >
                 <BestPracticeIconSelect
                   :id="assessment.best_practice_id"
-                  :activityID="assessment.activity_id"
+                  :activity-id="assessment.activity_id"
                 />
               </li>
             </BaseGutterWrapper>
@@ -55,16 +48,16 @@
           <div :class="base.gutter">
             <BaseButton
               v-show="!isOpen"
-              @click="handleOpen"
               :label="$t('suggestImprovements')"
               size="small"
+              @click="handleOpen"
             />
             <BaseButton
               v-show="isOpen"
-              @click="handleClose"
               :label="$t('done')"
               size="small"
               role="primary"
+              @click="handleClose"
             />
           </div>
         </BaseGutterWrapper>
@@ -72,15 +65,12 @@
 
       <!-- data -->
       <div :class="base.expandedWrapper">
-        <BaseDataGrid
-          :data="expandedData"
-          :class="base.data"
-        />
+        <BaseDataGrid :data="expandedData" :class="base.data" />
         <BaseGutterWrapper
           :class="base.icons"
           el="ul"
-          gutterX="xnarrow"
-          gutterY="xnarrow"
+          gutter-x="xnarrow"
+          gutter-y="xnarrow"
         >
           <li
             v-for="(bestPractice, index) of bestPractices"
@@ -89,7 +79,7 @@
           >
             <BestPracticeIconSelect
               :id="bestPractice.id"
-              :activityID="activityInstance.id"
+              :activity-id="activityInstance.id"
               :align="index > 4 ? 'right' : 'center'"
             />
           </li>
@@ -106,33 +96,33 @@
           weight="bold"
           color="dark"
         >
-          {{$t('suggestedImprovements')}}
+          {{ $t("suggestedImprovements") }}
         </BaseHeading>
         <ol :class="[base.recommendations, space.paddingVerticalNarrow]">
           <!-- error source -->
           <!-- By default start showing a recommendation -->
           <ActivitiesItemInput
             v-if="recommendationsNotPresent"
-            :activityInstance="activityInstance"
-            recommendationType='insertRecommendation'
+            :activity-instance="activityInstance"
+            recommendation-type="insertRecommendation"
           />
           <!-- Then show all once its been added -->
           <ActivitiesItemInput
-            v-else
             v-for="recommendation of activityRecommendations"
+            v-else
             :key="recommendation.id"
-            :activityInstance="activityInstance"
-            :recommendationId="recommendation.id"
-            recommendationType='updateRecommendation'
-            :existingRecommendationText="recommendation.text"
+            :activity-instance="activityInstance"
+            :recommendation-id="recommendation.id"
+            :existing-recommendation-text="recommendation.text"
+            recommendation-type="updateRecommendation"
           />
         </ol>
         <BaseButton
-          @click="addRecommendation"
           :class="space.marginLeft"
           :label="$t('addAnotherRecommendation')"
           size="small"
           role="primary"
+          @click="addRecommendation"
         />
       </div>
     </BaseDetails>
@@ -140,19 +130,18 @@
 </template>
 
 <script>
-import BaseHeading from '@/components/BaseHeading.vue'
-import BaseButton from '@/components/BaseButton.vue'
-import BaseDetails from '@/components/BaseDetails.vue'
-import BestPracticeIconSelect from '@/components/BestPracticeIconSelect.vue'
-import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
-import BaseDataGrid from '@/components/BaseDataGrid.vue'
-import { bestPracticeData } from './mixins/bestPracticeData'
-import { dataMethods } from './mixins/dataMethods'
-import ActivitiesItemInput from '@/components/ActivitiesItemInput.vue'
+import BaseHeading from "@/components/BaseHeading.vue";
+import BaseButton from "@/components/BaseButton.vue";
+import BaseDetails from "@/components/BaseDetails.vue";
+import BestPracticeIconSelect from "@/components/BestPracticeIconSelect.vue";
+import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
+import BaseDataGrid from "@/components/BaseDataGrid.vue";
+import { bestPracticeData } from "./mixins/bestPracticeData";
+import { dataMethods } from "./mixins/dataMethods";
+import ActivitiesItemInput from "@/components/ActivitiesItemInput.vue";
 
 export default {
-  name: 'ActivitiesItemResult',
-  mixins: [bestPracticeData, dataMethods],
+  name: "ActivitiesItemResult",
   components: {
     BaseHeading,
     BaseButton,
@@ -160,83 +149,99 @@ export default {
     BestPracticeIconSelect,
     BaseGutterWrapper,
     BaseDataGrid,
-    ActivitiesItemInput
+    ActivitiesItemInput,
   },
+  mixins: [bestPracticeData, dataMethods],
   props: {
     activityInstance: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
-  data () {
+  data() {
     return {
       isOpen: false,
       activeAssessments: this.activityInstance.assessments,
-      recommendationText: '',
-      displayText: this.activityInstance.shortText || this.activityInstance.text
-    }
+      recommendationText: "",
+      displayText:
+        this.activityInstance.shortText || this.activityInstance.text,
+    };
   },
   computed: {
     youth: function () {
-      return this.activityInstance.youthCentric
+      return this.activityInstance.youthCentric;
     },
     recommendationsNotPresent: function () {
-      return this.activityRecommendations.length === 0
+      return this.activityRecommendations.length === 0;
     },
     activityRecommendations: function () {
       // Get current recommendations on a given activity.
-      return this.$store.getters['entities/activities/query']().with('recommendations').whereId(this.activityInstance.id).get()[0].recommendations
+      return this.$store.getters["entities/activities/query"]()
+        .with("recommendations")
+        .whereId(this.activityInstance.id)
+        .get()[0].recommendations;
     },
     expandedData: function () {
       return {
-        [this.$t('activityTable.defaultID')]: this.activityInstance.id,
-        [this.$t('activityTable.defaultBudget')]: `${this.activityInstance.budget} <small>${this.getItemValue('setup', 'currencyCode')}</small>`,
-        [this.$t('activityTable.defaultYouthCentered')]: this.activityInstance.youthCentric ? this.$t('yesRaw') : this.$t('noRaw')
-      }
-    }
+        [this.$t("activityTable.defaultID")]: this.activityInstance.id,
+        [this.$t("activityTable.defaultBudget")]: `${
+          this.activityInstance.budget
+        } <small>${this.getItemValue("setup", "currencyCode")}</small>`,
+        [this.$t("activityTable.defaultYouthCentered")]: this.activityInstance
+          .youthCentric
+          ? this.$t("yesRaw")
+          : this.$t("noRaw"),
+      };
+    },
   },
   methods: {
     getActivityRecommendations: function () {
       // Get current recommendations on a given activity.
-      return this.$store.getters['entities/activities/query']().with('recommendations').find(this.activityInstance.id).recommendations
+      return this.$store.getters["entities/activities/query"]()
+        .with("recommendations")
+        .find(this.activityInstance.id).recommendations;
     },
     getBestPracticePresence: function (bestPracticeText) {
       // Checks for the value of a best practice and shows the result, it defaults to no.
-      const bestPracticeValue = this.$store.getters['entities/activities/query']().with('assessments', (query) => {
-        query.where('text', bestPracticeText)
-      }).find(this.activityInstance.id).assessments[0]
+      const bestPracticeValue = this.$store.getters[
+        "entities/activities/query"
+      ]()
+        .with("assessments", (query) => {
+          query.where("text", bestPracticeText);
+        })
+        .find(this.activityInstance.id).assessments[0];
 
       if (bestPracticeValue) {
-        return bestPracticeValue.value.toLowerCase()
+        return bestPracticeValue.value.toLowerCase();
       } else {
-        return 'no'
+        return "no";
       }
     },
     addRecommendation: function () {
       // Add a new recommendation
-      this.$store.dispatch('entities/recommendations/insert', {
+      this.$store.dispatch("entities/recommendations/insert", {
         data: {
           activity_id: this.activityInstance.id,
-          text: ''
-        }
-      })
+          text: "",
+        },
+      });
     },
     expandText: function () {
-      this.displayText = this.activityInstance.text
+      this.displayText = this.activityInstance.text;
     },
     truncateText: function () {
-      this.displayText = this.activityInstance.shortText
+      this.displayText = this.activityInstance.shortText;
     },
     handleOpen: function () {
-      this.expandText()
-      this.isOpen = true
+      this.expandText();
+      this.isOpen = true;
     },
     handleClose: function () {
-      this.truncateText()
-      this.isOpen = false
-    }
-  }
-}
+      this.truncateText();
+      this.isOpen = false;
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
@@ -244,14 +249,14 @@ export default {
 
 <style lang="scss" module="base">
 .wrapper {
-  composes: top from 'styles/borders.scss';
-  composes: paddingVerticalNarrow from 'styles/spacing.scss';
+  composes: top from "styles/borders.scss";
+  composes: paddingVerticalNarrow from "styles/spacing.scss";
   display: block;
   position: relative;
 }
 
 .expandedWrapper {
-  composes: paddingTopNarrow from 'styles/spacing.scss';
+  composes: paddingTopNarrow from "styles/spacing.scss";
   display: block;
 
   @supports (display: flex) {

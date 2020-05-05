@@ -1,9 +1,6 @@
 <template>
-  <BaseGutterWrapper
-    :class="base.wrapper"
-    el="section"
-  >
-    <div :class="base.stats" v-if="!countryIndicator.error">
+  <BaseGutterWrapper :class="base.wrapper" el="section">
+    <div v-if="!countryIndicator.error" :class="base.stats">
       <BaseHeading
         :centered="false"
         :level="3"
@@ -11,7 +8,7 @@
         color="dark"
         weight="bold"
       >
-        {{countryIndicator.name}}
+        {{ countryIndicator.name }}
       </BaseHeading>
       <BaseHeading
         v-if="countryIndicator.description !== ''"
@@ -22,33 +19,29 @@
         color="highlight"
         sub
       >
-        {{countryIndicator.description}}
+        {{ countryIndicator.description }}
       </BaseHeading>
-      <BaseHeading
-        :centered="false"
-        scale="alpha"
-        color="dark"
-        sub
-      >
+      <BaseHeading :centered="false" scale="alpha" color="dark" sub>
         <!-- round to one decimal place, and put a unit after it -->
-        {{roundedValue}} <small>{{countryIndicator.unit}}</small>
+        {{ roundedValue }} <small>{{ countryIndicator.unit }}</small>
       </BaseHeading>
       <div :class="base.citation">
-        <a
-          :class="base.citation"
-          :href="countryIndicator.sourceUrl"
-        >
-          <small>{{countryIndicator.citation}}</small>
+        <a :class="base.citation" :href="countryIndicator.sourceUrl">
+          <small>{{ countryIndicator.citation }}</small>
         </a>
       </div>
     </div>
     <ResultsQuestions
-      v-if="countryIndicator.questions && !countryIndicator.error && displayQuestions"
+      v-if="
+        countryIndicator.questions &&
+        !countryIndicator.error &&
+        displayQuestions
+      "
       :questions="countryIndicator.questions"
       :class="base.questions"
     />
 
-    <div :class="base.stats" v-if="countryIndicator.error">
+    <div v-if="countryIndicator.error" :class="base.stats">
       <BaseHeading
         :centered="false"
         :level="3"
@@ -56,60 +49,58 @@
         color="dark"
         weight="bold"
       >
-        {{countryIndicator.name}}
+        {{ countryIndicator.name }}
       </BaseHeading>
       <BaseHeading
         :centered="false"
         :level="5"
+        :class="space.paddingTopNarrow"
         scale="zeta"
         color="dark"
         weight="light"
-        :class="space.paddingTopNarrow"
       >
-        {{countryIndicator.error}}
+        {{ countryIndicator.error }}
       </BaseHeading>
     </div>
-
   </BaseGutterWrapper>
 </template>
 
 <script>
-import BaseHeading from './BaseHeading.vue'
-import BaseBodyText from './BaseBodyText.vue'
-import BaseGutterWrapper from './BaseGutterWrapper.vue'
-import BaseCalloutBox from './BaseCalloutBox.vue'
-import ResultsQuestions from './ResultsQuestions.vue'
-import { dataMethods } from './mixins/dataMethods'
-import { activityTypes } from './mixins/activityTypes'
+import BaseHeading from "./BaseHeading.vue";
+import BaseBodyText from "./BaseBodyText.vue";
+import BaseGutterWrapper from "./BaseGutterWrapper.vue";
+import BaseCalloutBox from "./BaseCalloutBox.vue";
+import ResultsQuestions from "./ResultsQuestions.vue";
+import { dataMethods } from "./mixins/dataMethods";
+import { activityTypes } from "./mixins/activityTypes";
 
 export default {
-  name: 'CountryIndicator',
-  mixins: [dataMethods, activityTypes],
-  props: {
-    countryIndicator: {
-      type: Object,
-      required: true
-    },
-    displayQuestions: {
-      type: Boolean,
-      default: false
-    }
-  },
-  computed: {
-    roundedValue: function () {
-      const parsedValue = this.countryIndicator.value.match(/^\d*\.?\d*/)[0]
-      return Math.round(parsedValue * 10) / 10
-    }
-
-  },
+  name: "CountryIndicator",
   components: {
     BaseHeading,
     BaseBodyText,
     BaseGutterWrapper,
     BaseCalloutBox,
-    ResultsQuestions
-  }
-}
+    ResultsQuestions,
+  },
+  mixins: [dataMethods, activityTypes],
+  props: {
+    countryIndicator: {
+      type: Object,
+      required: true,
+    },
+    displayQuestions: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    roundedValue: function () {
+      const parsedValue = this.countryIndicator.value.match(/^\d*\.?\d*/)[0];
+      return Math.round(parsedValue * 10) / 10;
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
@@ -117,8 +108,8 @@ export default {
 <style src="styles/color.scss" lang="scss" module="color"></style>
 
 <style lang="scss" module="base">
-@import '~bourbon/core/bourbon';
-@import '~styleConfig/breakpoints';
+@import "~bourbon/core/bourbon";
+@import "~styleConfig/breakpoints";
 
 .wrapper {
   display: block;
@@ -130,7 +121,7 @@ export default {
 }
 
 .stats {
-  composes: scaleDefault from 'styles/type.scss';
+  composes: scaleDefault from "styles/type.scss";
   display: block;
   min-width: 33%;
 }
@@ -149,7 +140,7 @@ export default {
 }
 
 .citation {
-  composes: leadingTight from 'styles/type.scss';
-  composes: midtone from 'styles/color.scss';
+  composes: leadingTight from "styles/type.scss";
+  composes: midtone from "styles/color.scss";
 }
 </style>

@@ -1,6 +1,6 @@
-@import '~styleConfig/color';
-@import '~styleConfig/scale';
-@import '~styleConfig/borders';
+@import "~styleConfig/color";
+@import "~styleConfig/scale";
+@import "~styleConfig/borders";
 
 @mixin icon-spacing($size) {
   &.hasIconLeft {
@@ -13,44 +13,44 @@
 }
 
 .default {
-  $c: 'primary';
-  composes: default from 'styles/animation.scss';
-  composes: bold from 'styles/type.scss';
-  @include border($w: 'medium', $color: $c);
+  $c: "primary";
+  composes: default from "styles/animation.scss";
+  composes: bold from "styles/type.scss";
+  @include border($w: "medium", $color: $c);
   @include icon-spacing(1.1em);
   background-color: transparent;
   border-radius: 0.3em;
-  color: color('primary');
+  color: color("primary");
   cursor: pointer;
   display: inline-block;
-  font-size: scale-type('epsilon');
+  font-size: scale-type("epsilon");
   line-height: 1;
   padding: 0.8em 1.6em;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    @include border($w: 'medium'); // override base anchor styles
+    @include border($w: "medium"); // override base anchor styles
     border-color: color($c, $grade: 20);
     color: color($c, $grade: 20);
   }
 
   &:active {
-    @include border($w: 'medium'); // override base anchor styles
+    @include border($w: "medium"); // override base anchor styles
     border-color: color($c, $grade: -10);
     color: color($c, $grade: -10);
   }
 
   // reversed colors for dark backgrounds
   &.reverse {
-    color: color('white');
-    border-color: color('white');
+    color: color("white");
+    border-color: color("white");
 
     &:hover,
     &:focus,
     &:active {
-      border-color: color('white');
-      color: color('white');
+      border-color: color("white");
+      color: color("white");
     }
   }
 
@@ -62,23 +62,23 @@
 
 .large {
   @include icon-spacing(1.8em);
-  font-size: scale-type('delta');
+  font-size: scale-type("delta");
   padding: 1em 2.4em;
 }
 
 .small {
   @include icon-spacing(0.9em);
-  font-size: scale-type('zeta');
+  font-size: scale-type("zeta");
   padding: 0.6em 1.2em;
 }
 
 .regular {
-  composes: regular from 'styles/type.scss';
+  composes: regular from "styles/type.scss";
 }
 
 .primary {
-  $bgcolor: 'primary';
-  $fgcolor: 'white';
+  $bgcolor: "primary";
+  $fgcolor: "white";
   background-color: color($bgcolor);
   border-color: color($bgcolor, $grade: -10);
   color: color($fgcolor);

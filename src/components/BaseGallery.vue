@@ -2,8 +2,8 @@
   <BaseGutterWrapper
     :class="[base.wrapper, sizeClass]"
     :el="el"
-    :gutterX="gutter"
-    :gutterY="gutter"
+    :gutter-x="gutter"
+    :gutter-y="gutter"
     :flush="flush"
   >
     <component
@@ -33,10 +33,10 @@
           <template slot="footer">
             <BaseButtonLink
               :to="item.url"
-              size="small"
-              role="primary"
               :label="$t('downloadResource')"
               :router="false"
+              size="small"
+              role="primary"
             />
           </template>
         </BaseCard>
@@ -46,60 +46,60 @@
 </template>
 
 <script>
-import BaseGutterWrapper from './BaseGutterWrapper.vue'
-import BaseHeading from './BaseHeading.vue'
-import BaseBodyText from './BaseBodyText.vue'
-import BaseButtonLink from './BaseButtonLink.vue'
-import BaseCard from './BaseCard.vue'
+import BaseGutterWrapper from "./BaseGutterWrapper.vue";
+import BaseHeading from "./BaseHeading.vue";
+import BaseBodyText from "./BaseBodyText.vue";
+import BaseButtonLink from "./BaseButtonLink.vue";
+import BaseCard from "./BaseCard.vue";
 
 export default {
-  name: 'BaseGallery',
-  props: {
-    items: {
-      type: Array,
-      required: true
-    },
-    el: {
-      type: String,
-      default: 'ul'
-    },
-    childEl: {
-      type: String,
-      default: 'li'
-    },
-    size: {
-      type: String,
-      default: 'default'
-    },
-    gutter: {
-      type: String,
-      default: 'medium'
-    },
-    flush: {
-      type: Boolean,
-      default: true
-    }
-  },
-  computed: {
-    sizeClass: function () {
-      return this.size !== 'default' && this.base[this.size]
-    }
-  },
+  name: "BaseGallery",
   components: {
     BaseGutterWrapper,
     BaseHeading,
     BaseBodyText,
     BaseButtonLink,
-    BaseCard
-  }
-}
+    BaseCard,
+  },
+  props: {
+    items: {
+      type: Array,
+      required: true,
+    },
+    el: {
+      type: String,
+      default: "ul",
+    },
+    childEl: {
+      type: String,
+      default: "li",
+    },
+    size: {
+      type: String,
+      default: "default",
+    },
+    gutter: {
+      type: String,
+      default: "medium",
+    },
+    flush: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  computed: {
+    sizeClass: function () {
+      return this.size !== "default" && this.base[this.size];
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 
 <style lang="scss" module="base">
-@import '~styleConfig/type';
-@import '~styleConfig/spacing';
+@import "~styleConfig/type";
+@import "~styleConfig/spacing";
 
 .wrapper {
   display: block;
@@ -111,8 +111,8 @@ export default {
   // use css grid if supported
   @supports (display: grid) {
     display: grid;
-    grid-column-gap: space('medium');
-    grid-row-gap: space('medium');
+    grid-column-gap: space("medium");
+    grid-row-gap: space("medium");
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     margin: 0;
   }

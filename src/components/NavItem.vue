@@ -6,8 +6,8 @@
       base.navItem,
       !link.active && base.navItemDisabled,
       base[getStepProgress],
-      this.isFurthestStep && base.furthestStep
-      ]"
+      this.isFurthestStep && base.furthestStep,
+    ]"
   >
     <router-link
       v-if="link.active"
@@ -15,94 +15,97 @@
       :class="[base.breadcrumbAnchor]"
       exact
     >
-      <span v-if="!hideStep" :class="base.icon">{{stepIndex}}</span>
-      {{link.text}}
+      <span v-if="!hideStep" :class="base.icon">{{ stepIndex }}</span>
+      {{ link.text }}
     </router-link>
     <span
       v-if="!link.active"
       :class="base.breadcrumbAnchorDisabled"
       @click="$emit('dispatchNotficiations')"
     >
-    <span v-if="!hideStep" :class="base.icon">{{stepIndex}}</span>
-    {{link.text}}</span>
+      <span v-if="!hideStep" :class="base.icon">{{ stepIndex }}</span>
+      {{ link.text }}</span
+    >
   </li>
 </template>
 
 <script>
-import BaseIcon from './BaseIcon.vue'
+import BaseIcon from "./BaseIcon.vue";
 
 export default {
-  name: 'NavItem',
+  name: "NavItem",
   components: {
-    BaseIcon
+    BaseIcon,
   },
   props: {
     link: [Object],
     objectIndex: [Number, String],
-    hideStep: [Boolean]
+    hideStep: [Boolean],
   },
   computed: {
     stepIndex: function () {
       if (this.link.steps) {
-        return (this.objectIndex + 1).toString()
+        return (this.objectIndex + 1).toString();
       }
     },
     isCurrentRoute: function () {
-      return this.link.name === this.$route.name
+      return this.link.name === this.$route.name;
     },
     isFurthestStep: function () {
-      const currentProgress = this.$store.getters.currentProgress
-      const progArray = Object.keys(currentProgress).map(step => {
-        return { name: step, active: currentProgress[step] }
-      })
+      const currentProgress = this.$store.getters.currentProgress;
+      const progArray = Object.keys(currentProgress).map((step) => {
+        return { name: step, active: currentProgress[step] };
+      });
 
-      const currentStep = progArray[this.objectIndex]
-      const nextStep = progArray[this.objectIndex + 1]
+      const currentStep = progArray[this.objectIndex];
+      const nextStep = progArray[this.objectIndex + 1];
 
       if (nextStep === undefined) {
-        return true
+        return true;
       }
 
       if (nextStep && !nextStep.active) {
-        return true
+        return true;
       }
 
-      return false
+      return false;
     },
     parentIsActive: function () {
       // make sure there are children
       if (this.link.steps) {
         if (this.link.name === this.$route.fullPath) {
-          return true
+          return true;
         }
 
         if (this.link.steps) {
-          return this.link.steps.find(link => link.name === this.$route.name)
+          return this.link.steps.find((link) => link.name === this.$route.name);
         }
       }
     },
     getStepProgress: function () {
       const percentMap = {
-        50: 'half',
-        33: 'third',
-        25: 'fourth',
-        75: 'threeFourth',
-        100: 'whole'
-      }
+        50: "half",
+        33: "third",
+        25: "fourth",
+        75: "threeFourth",
+        100: "whole",
+      };
 
       // get the index of the route in the steps array
-      const indexOfStep = this.$props.link.steps.findIndex(item => item.name === this.$route.name)
+      const indexOfStep = this.$props.link.steps.findIndex(
+        (item) => item.name === this.$route.name
+      );
 
       if (indexOfStep >= 0) {
-      // divide the index by the length
-        const per = ((indexOfStep + 1) / this.$props.link.steps.length) * 100
+        // divide the index by the length
+        const per = ((indexOfStep + 1) / this.$props.link.steps.length) * 100;
         // return percentage
-        return percentMap[per]
+        return percentMap[per];
       }
-      return percentMap[100]
-    }
-  }
-}
+      return percentMap[100];
+    },
+  },
+};
 </script>
 
 <style lang="scss" module="base">
@@ -127,7 +130,7 @@ $nav-breakpoint: 81em; // ~1400px
     left: 0;
     right: 0;
     bottom: -7px; // height of bottom border on nav wrapper
-    height: border-w('thick');
+    height: border-w("thick");
     z-index: 2;
   }
 

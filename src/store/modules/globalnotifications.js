@@ -1,3 +1,3 @@
 export default {
-  namespaced: true
-}
+  namespaced: true,
+};

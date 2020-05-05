@@ -2,7 +2,10 @@
   <header :class="[space.paddingWide]">
     <slot>
       <BaseHeading
-        :class="[subtitle ? space.paddingBottomXnarrow : space.paddingBottom, base.title]"
+        :class="[
+          subtitle ? space.paddingBottomXnarrow : space.paddingBottom,
+          base.title,
+        ]"
       >
         {{ title }}
       </BaseHeading>
@@ -22,36 +25,36 @@
 </template>
 
 <script>
-import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
-import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
-import BaseHeading from '@/components/BaseHeading.vue'
-import BaseBodyText from '@/components/BaseBodyText.vue'
+import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
+import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
+import BaseHeading from "@/components/BaseHeading.vue";
+import BaseBodyText from "@/components/BaseBodyText.vue";
 
 export default {
-  name: 'BasePageIntro',
-  props: {
-    title: {
-      type: String,
-      required: true
-    },
-    subtitle: {
-      type: String
-    },
-    introHeader: {
-      type: String
-    },
-    blurb: {
-      type: String,
-      default: ''
-    }
-  },
+  name: "BasePageIntro",
   components: {
     BaseWidthWrapper,
     BaseGutterWrapper,
     BaseHeading,
-    BaseBodyText
-  }
-}
+    BaseBodyText,
+  },
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    subtitle: {
+      type: String,
+    },
+    introHeader: {
+      type: String,
+    },
+    blurb: {
+      type: String,
+      default: "",
+    },
+  },
+};
 </script>
 
 <style src="styles/borders.scss" lang="scss" module="border"></style>
@@ -59,7 +62,7 @@ export default {
 <style src="styles/color.scss" lang="scss" module="color"></style>
 
 <style lang="scss" module="base">
-@import '~styleConfig/spacing';
+@import "~styleConfig/spacing";
 
 .title {
   margin: 0 auto;

@@ -1,10 +1,7 @@
 <template>
   <BaseGutterWrapper
+    :class="[base.wrapper, size !== 'default' ? base[size] : '']"
     el="ul"
-    :class="[
-      base.wrapper,
-      size !== 'default' ? base[size] : ''
-    ]"
   >
     <li
       v-for="(step, index) in steps"
@@ -13,7 +10,7 @@
     >
       <slot :step="step">
         <div :class="[base.iconBoxIcon]">
-          <span :class="[base.iconBoxCircle]">{{index + 1}}</span>
+          <span :class="[base.iconBoxCircle]">{{ index + 1 }}</span>
         </div>
         <div :class="[base.iconBoxContent]">
           <BaseHeading
@@ -23,8 +20,9 @@
             scale="epsilon"
             weight="bold"
             color="dark"
-          >{{step.title}}</BaseHeading>
-          <BaseBodyText size="zeta" :content="step.blurb" />
+            >{{ step.title }}</BaseHeading
+          >
+          <BaseBodyText :content="step.blurb" size="zeta" />
         </div>
       </slot>
     </li>
@@ -32,31 +30,31 @@
 </template>
 
 <script>
-import BaseGutterWrapper from './BaseGutterWrapper.vue'
-import BaseHeading from './BaseHeading.vue'
-import BaseBodyText from './BaseBodyText.vue'
+import BaseGutterWrapper from "./BaseGutterWrapper.vue";
+import BaseHeading from "./BaseHeading.vue";
+import BaseBodyText from "./BaseBodyText.vue";
 
 export default {
-  name: 'BaseStepList',
-  props: {
-    steps: {
-      type: Array,
-      required: true
-    },
-    size: {
-      type: String,
-      default: 'default',
-      validator (value) {
-        return ['small', 'default'].indexOf(value) !== -1
-      }
-    }
-  },
+  name: "BaseStepList",
   components: {
     BaseGutterWrapper,
     BaseHeading,
-    BaseBodyText
-  }
-}
+    BaseBodyText,
+  },
+  props: {
+    steps: {
+      type: Array,
+      required: true,
+    },
+    size: {
+      type: String,
+      default: "default",
+      validator(value) {
+        return ["small", "default"].indexOf(value) !== -1;
+      },
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
@@ -110,8 +108,8 @@ export default {
 }
 
 .iconBoxContent {
-  margin-top: - space("narrow") * 1.5;
-  padding: space('wide') * 1.2 space("narrow");
+  margin-top: -#{space("narrow") * 1.5};
+  padding: space("wide") * 1.2 space("narrow");
   padding-bottom: space("wide");
   border-top: 2px dashed color("midtone");
 }
@@ -125,6 +123,5 @@ export default {
   position: relative;
   transition: background-color 0.2s;
   width: 50px;
-
 }
 </style>

@@ -13,79 +13,78 @@
         v-for="recommendation of globalRecommendations"
         :key="recommendation.id"
         :id="recommendation.id"
-        action='update'
-        inputType="globalrecommendations"
-        :existingText="recommendation.text"
+        :existing-text="recommendation.text"
+        action="update"
+        input-type="globalrecommendations"
       />
       <!-- By default start showing a recommendation -->
       <ActivitiesItemInput
-        action='insert'
-        inputType="globalrecommendations"
-        @change="insertRecommendation"
         :key="inputKey"
+        action="insert"
+        input-type="globalrecommendations"
+        @change="insertRecommendation"
       />
-
     </ol>
     <BaseButton
-      @click="addRecommendation"
       :class="space.marginLeft"
       :label="$t('addAnotherRecommendation')"
       size="small"
       role="primary"
+      @click="addRecommendation"
     />
   </div>
 </template>
 
 <script>
-import BaseButton from '@/components/BaseButton.vue'
-import ActivitiesItemInput from '@/components/ActivitiesItemInput.vue'
+import BaseButton from "@/components/BaseButton.vue";
+import ActivitiesItemInput from "@/components/ActivitiesItemInput.vue";
 
 export default {
-  name: 'GlobalRecommendation',
+  name: "GlobalRecommendation",
   components: {
     BaseButton,
-    ActivitiesItemInput
+    ActivitiesItemInput,
   },
   props: {
-    'insertText': {
-      type: String
-    }
+    insertText: {
+      type: String,
+    },
   },
   data: function () {
     return {
       inputKey: 1000,
-      itemText: this.insertText
-    }
+      itemText: this.insertText,
+    };
   },
   computed: {
     recommendationsNotPresent: function () {
-      return this.globalRecommendations.length === 0
+      return this.globalRecommendations.length === 0;
     },
     globalRecommendations: function () {
       // Get all global recommendations
-      return this.$store.getters['entities/globalrecommendations/all']()
-    }
+      return this.$store.getters["entities/globalrecommendations/all"]();
+    },
   },
   methods: {
     insertRecommendation: function (text) {
-      this.itemText = text
+      this.itemText = text;
     },
     addRecommendation: function () {
       // Add a new recommendation
-      this.$store.dispatch('entities/globalrecommendations/insert', {
+      this.$store.dispatch("entities/globalrecommendations/insert", {
         data: {
-          text: this.itemText
-        }
-      })
+          text: this.itemText,
+        },
+      });
 
-      this.clearText()
+      this.clearText();
     },
     clearText: function () {
-      this.inputKey++
-      this.itemText = ''
-    }
-  }
-}
+      this.inputKey++;
+      this.itemText = "";
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
@@ -93,14 +92,14 @@ export default {
 
 <style lang="scss" module="base">
 .wrapper {
-  composes: top from 'styles/borders.scss';
-  composes: paddingVerticalNarrow from 'styles/spacing.scss';
+  composes: top from "styles/borders.scss";
+  composes: paddingVerticalNarrow from "styles/spacing.scss";
   display: block;
   position: relative;
 }
 
 .expandedWrapper {
-  composes: paddingTopNarrow from 'styles/spacing.scss';
+  composes: paddingTopNarrow from "styles/spacing.scss";
   display: block;
 
   @supports (display: flex) {

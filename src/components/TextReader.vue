@@ -1,7 +1,11 @@
 <template>
   <label :class="[button.default, base.wrapper]">
-    {{$t('fileUpload.textReaderImport')}}
-    <input type="file" @change="loadTextFromFile" accept=".csv,.json, text/csv, application/json">
+    {{ $t("fileUpload.textReaderImport") }}
+    <input
+      type="file"
+      accept=".csv,.json, text/csv, application/json"
+      @change="loadTextFromFile"
+    />
   </label>
 </template>
 
@@ -9,13 +13,17 @@
 export default {
   methods: {
     loadTextFromFile: function (ev) {
-      const file = ev.target.files[0]
-      const reader = new FileReader()
-      reader.onload = e => this.$emit('file-read-successful', { text: e.target.result, fileObject: file })
-      reader.readAsText(file)
-    }
-  }
-}
+      const file = ev.target.files[0];
+      const reader = new FileReader();
+      reader.onload = (e) =>
+        this.$emit("file-read-successful", {
+          text: e.target.result,
+          fileObject: file,
+        });
+      reader.readAsText(file);
+    },
+  },
+};
 </script>
 
 <style src="styleShared/button.scss" lang="scss" module="button"></style>

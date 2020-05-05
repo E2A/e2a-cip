@@ -2,8 +2,8 @@
   <div :class="base.wrapper">
     <BaseGutterWrapper
       :class="base.flexWrapper"
-      gutterY="xnarrow"
-      gutterX="xnarrow"
+      gutter-y="xnarrow"
+      gutter-x="xnarrow"
     >
       <BaseHeading
         :level="3"
@@ -15,35 +15,32 @@
       >
         <slot>Add a heading</slot>
       </BaseHeading>
-      <div
-        v-if="$slots.stats"
-        :class="base.stats"
-      >
-        <slot name="stats"></slot>
+      <div v-if="$slots.stats" :class="base.stats">
+        <slot name="stats" />
       </div>
     </BaseGutterWrapper>
   </div>
 </template>
 
 <script>
-import BaseHeading from './BaseHeading.vue'
-import BaseGutterWrapper from './BaseGutterWrapper.vue'
+import BaseHeading from "./BaseHeading.vue";
+import BaseGutterWrapper from "./BaseGutterWrapper.vue";
 
 export default {
-  name: 'ActivitiesTypeHeading',
+  name: "ActivitiesTypeHeading",
   components: {
     BaseHeading,
-    BaseGutterWrapper
-  }
-}
+    BaseGutterWrapper,
+  },
+};
 </script>
 
 <style lang="scss" module="base">
 // to add outside borders, colors, etc.
 .wrapper {
-  composes: paddingXnarrow from 'styles/spacing.scss';
-  composes: lightBg from 'styles/color.scss';
-  composes: top from 'styles/borders.scss';
+  composes: paddingXnarrow from "styles/spacing.scss";
+  composes: lightBg from "styles/color.scss";
+  composes: top from "styles/borders.scss";
 }
 
 // to apply flexbox to children
@@ -57,7 +54,7 @@ export default {
 }
 
 .heading {
-  composes: uppercase from 'styles/type.scss';
+  composes: uppercase from "styles/type.scss";
   display: inline-block;
   vertical-align: middle;
 }

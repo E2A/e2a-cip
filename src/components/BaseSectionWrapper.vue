@@ -4,34 +4,34 @@
 -->
 
 <template>
-  <component :is="el" :class="[marginClass, {[borders.top]: border}]">
+  <component :is="el" :class="[marginClass, { [borders.top]: border }]">
     <slot>Add stuff here!</slot>
   </component>
 </template>
 
 <script>
-import { styleHelpers } from './mixins/helpers'
+import { styleHelpers } from "./mixins/helpers";
 
 export default {
-  name: 'BaseSectionWrapper',
-  mixins: [ styleHelpers ],
+  name: "BaseSectionWrapper",
+  mixins: [styleHelpers],
   props: {
     margin: {
       type: String,
-      default: 'wide'
+      default: "wide",
     },
     el: {
       type: String,
-      default: 'section'
+      default: "section",
     },
-    border: Boolean
+    border: Boolean,
   },
   computed: {
     marginClass: function () {
-      return this.space[this.spaceClass({ size: this.margin })]
-    }
-  }
-}
+      return this.space[this.spaceClass({ size: this.margin })];
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>

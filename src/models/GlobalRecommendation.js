@@ -1,12 +1,12 @@
-import { Model } from '@vuex-orm/core'
+import { Model } from "@vuex-orm/core";
 
 export default class GlobalRecommendation extends Model {
-  static entity = 'globalrecommendations'
+  static entity = "globalrecommendations";
 
-  static fields () {
+  static fields() {
     return {
       id: this.increment(),
-      text: this.string('')
-    }
+      text: this.string(""),
+    };
   }
 }

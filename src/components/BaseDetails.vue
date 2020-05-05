@@ -4,12 +4,20 @@
       <div :class="base.summaryContent">
         <div
           :tabindex="0"
-          :class="[base.item, base.click, !reverseSpacing ? base.col5 : base.col7, base.flex]"
+          :class="[
+            base.item,
+            base.click,
+            !reverseSpacing ? base.col5 : base.col7,
+            base.flex,
+          ]"
         >
           <slot name="summaryLeft">Add summary here</slot>
         </div>
-        <div v-if="$slots.summaryRight" :class="[base.item, !reverseSpacing ? base.col7 : base.col5]">
-          <slot name="summaryRight"></slot>
+        <div
+          v-if="$slots.summaryRight"
+          :class="[base.item, !reverseSpacing ? base.col7 : base.col5]"
+        >
+          <slot name="summaryRight" />
         </div>
       </div>
     </summary>
@@ -17,23 +25,23 @@
 </template>
 
 <script>
-import BaseGutterWrapper from './BaseGutterWrapper.vue'
+import BaseGutterWrapper from "./BaseGutterWrapper.vue";
 
 export default {
-  name: 'BaseDetails',
+  name: "BaseDetails",
   components: {
-    BaseGutterWrapper
+    BaseGutterWrapper,
   },
   props: {
-    reverseSpacing: Boolean
+    reverseSpacing: Boolean,
   },
   computed: {
     twoColSummary: function () {
       // https://stackoverflow.com/questions/47432702/determining-if-slot-content-is-null-or-empty
-      return this.$slots.summaryRight && this.base.split
-    }
-  }
-}
+      return this.$slots.summaryRight && this.base.split;
+    },
+  },
+};
 </script>
 
 <style lang="scss" module="base">
@@ -78,7 +86,7 @@ $breakpoint: "medium";
 .summaryContent {
   display: block;
   position: relative;
-  padding: 0 space('xnarrow');
+  padding: 0 space("xnarrow");
 
   @include media(">#{$breakpoint}") {
     @supports (display: flex) {
@@ -115,7 +123,7 @@ $breakpoint: "medium";
 }
 
 .col7 {
-width: 100%;
+  width: 100%;
 
   @include media(">#{$breakpoint}") {
     width: 58.3333%;
@@ -128,7 +136,7 @@ width: 100%;
 }
 
 .col5 {
-width: 100%;
+  width: 100%;
 
   @include media(">#{$breakpoint}") {
     width: 41.6666%;

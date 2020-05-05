@@ -6,26 +6,26 @@
 
 <template>
   <li :class="[base.wrapper, base.unmarked]">
-    <div :class="{[base.numberWrapper]: isActive}">
+    <div :class="{ [base.numberWrapper]: isActive }">
       <BaseGutterWrapper
         :class="base.flex"
-        gutterY="narrow"
-        :gutterX="isActive ? 'narrow' : 'None'"
+        :gutter-x="isActive ? 'narrow' : 'None'"
+        gutter-y="narrow"
       >
         <div :class="[base.gutter, base.fill]">
           <BaseFormInput
             v-model="itemText"
-            @change="updateItem()"
-            textSize="zeta"
-            el="textarea"
             :outline="isActive ? 'highlight' : 'midtone'"
+            text-size="zeta"
+            el="textarea"
+            @change="updateItem()"
           />
         </div>
-        <div :class="base.gutter" v-if="this.id">
+        <div v-if="this.id" :class="base.gutter">
           <BaseButton
-            @click="deleteItem()"
             :label="$t('delete')"
             size="small"
+            @click="deleteItem()"
           />
         </div>
       </BaseGutterWrapper>
@@ -34,66 +34,70 @@
 </template>
 
 <script>
-import BaseHeading from './BaseHeading.vue'
-import BaseButton from './BaseButton.vue'
-import BaseFormInput from './BaseFormInput.vue'
-import BaseGutterWrapper from './BaseGutterWrapper.vue'
+import BaseHeading from "./BaseHeading.vue";
+import BaseButton from "./BaseButton.vue";
+import BaseFormInput from "./BaseFormInput.vue";
+import BaseGutterWrapper from "./BaseGutterWrapper.vue";
 
 export default {
-  name: 'ActivitiesItemInput',
+  name: "ActivitiesItemInput",
   components: {
     BaseHeading,
     BaseButton,
     BaseFormInput,
-    BaseGutterWrapper
+    BaseGutterWrapper,
   },
   props: {
-    'activityInstance': {
+    activityInstance: {
       type: Object,
-      required: false
+      required: false,
     },
-    'id': {
+    id: {
       type: Number,
-      required: false
+      required: false,
     },
-    'action': {
+    action: {
       type: String,
       required: true,
       validator: function (value) {
         // The value must match one of these strings
-        return ['insert', 'update'].indexOf(value) !== -1
-      }
+        return ["insert", "update"].indexOf(value) !== -1;
+      },
     },
-    'inputType': {
+    inputType: {
       type: String,
       required: true,
       validator: function (value) {
         // The value must match one of these strings
-        return ['globalrecommendations', 'recommendations', 'comments'].indexOf(value) !== -1
-      }
+        return (
+          ["globalrecommendations", "recommendations", "comments"].indexOf(
+            value
+          ) !== -1
+        );
+      },
     },
     // true => this component controls communication with the store
-    'isActive': {
+    isActive: {
       type: Boolean,
       required: false,
-      default: true
+      default: true,
     },
-    'existingText': {
+    existingText: {
       type: String,
-      required: false
-    }
+      required: false,
+    },
   },
-  data () {
+  data() {
     return {
-      itemText: this.existingText
-    }
+      itemText: this.existingText,
+    };
   },
   methods: {
     updateItem: function () {
       if (!this.active) {
         // Parent controls communication with the store
-        this.updateParent()
-        return
+        this.updateParent();
+        return;
       }
 
       // Component controls communication with the store
@@ -101,33 +105,35 @@ export default {
         text: this.itemText,
         // Conditional properties
         // https://medium.com/@mikeh91/conditionally-adding-keys-to-javascript-objects-using-spread-operators-and-short-circuit-evaluation-acf157488ede
-        ...(this.action === 'update') && { id: this.id },
-        ...(this.inputType !== 'globalrecommendations') && { activity_id: this.activityInstance.id }
-      }
+        ...(this.action === "update" && { id: this.id }),
+        ...(this.inputType !== "globalrecommendations" && {
+          activity_id: this.activityInstance.id,
+        }),
+      };
 
-      if (this.action === 'update') {
-        this.$store.dispatch(`entities/${this.inputType}/update`, data)
+      if (this.action === "update") {
+        this.$store.dispatch(`entities/${this.inputType}/update`, data);
       } else {
-        this.$store.dispatch(`entities/${this.inputType}/insert`, { data })
+        this.$store.dispatch(`entities/${this.inputType}/insert`, { data });
       }
     },
     deleteItem: function () {
-      this.$store.dispatch(`entities/${this.inputType}/delete`, this.id)
+      this.$store.dispatch(`entities/${this.inputType}/delete`, this.id);
     },
     updateParent: function () {
-      this.$emit('change', this.itemText)
-    }
-  }
-}
+      this.$emit("change", this.itemText);
+    },
+  },
+};
 </script>
 
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
-@import '~styleConfig/scale';
-@import '~styleConfig/type';
-@import '~styleConfig/color';
-@import '~styleConfig/spacing';
+@import "~styleConfig/scale";
+@import "~styleConfig/type";
+@import "~styleConfig/color";
+@import "~styleConfig/spacing";
 
 .wrapper {
   display: block;
@@ -135,21 +141,21 @@ export default {
 }
 
 .numberWrapper {
-  composes: paddingLeft from 'styles/spacing.scss';
+  composes: paddingLeft from "styles/spacing.scss";
   counter-increment: recommendations;
   display: block;
   position: relative;
 
   &::before {
     @include font();
-    color: color('midtone');
+    color: color("midtone");
     content: counter(recommendations);
     display: block;
-    font-size: scale-type('epsilon');
+    font-size: scale-type("epsilon");
     left: 0;
     line-height: 1;
     position: absolute;
-    top: (space('narrow') + 0.2rem); // matches gutterWrapper gutters
+    top: (space("narrow") + 0.2rem); // matches gutterWrapper gutters
   }
 }
 

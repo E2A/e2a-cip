@@ -12,7 +12,7 @@
       colorPalette[color],
       scaleClass,
       type[weight],
-      centered === true && type.centered
+      centered === true && type.centered,
     ]"
   >
     <slot>Add a heading!</slot>
@@ -20,82 +20,75 @@
 </template>
 
 <script>
-import { styleHelpers } from './mixins/helpers.js'
+import { styleHelpers } from "./mixins/helpers.js";
 
 export default {
-  name: 'BaseHeading',
+  name: "BaseHeading",
   mixins: [styleHelpers],
   props: {
     // heading level, 1-6
     level: {
       type: Number,
-      default: 1
+      default: 1,
     },
     // optional: use a different scale class from the actual heading level
     // -> e.g. <h1 class="scaleGamma">
     scale: String,
     weight: {
       type: String,
-      default: 'light',
+      default: "light",
       validator: function (value) {
-        return ['light', 'regular', 'bold'].indexOf(value) !== -1
-      }
+        return ["light", "regular", "bold"].indexOf(value) !== -1;
+      },
     },
     color: {
       type: String,
-      default: 'primary'
+      default: "primary",
     },
     centered: {
       type: Boolean,
-      default: true
+      default: true,
     },
     // is this a subheading?
     sub: {
       type: Boolean,
-      default: false
+      default: false,
     },
     // specify an html element, for special cases (e.g. td, dt, etc.)
     // -> will override level and sub props above
-    el: String
+    el: String,
   },
-  data () {
+  data() {
     return {
       // default type scale names used for h1 - h6 tags
       // e.g. h1 = 'alpha', or <h1 :class="type.scaleAlpha">
       // see stylesheets/config/_scale.scss
-      scaleNames: [
-        'alpha',
-        'beta',
-        'gamma',
-        'delta',
-        'epsilon',
-        'zeta'
-      ]
-    }
+      scaleNames: ["alpha", "beta", "gamma", "delta", "epsilon", "zeta"],
+    };
   },
   computed: {
     tag: function () {
       // -> if this is a subhead, render as a <p> instead of <h*>
-      return this.sub ? 'p' : `h${this.level}`
+      return this.sub ? "p" : `h${this.level}`;
     },
     scaleClass: function () {
       if (this.scale) {
-        return this.type[this.typeScaleClass(this.scale)]
+        return this.type[this.typeScaleClass(this.scale)];
       }
-      return this.type[this.typeScaleClass(this.scaleNames[this.level - 1])]
-    }
-  }
-}
+      return this.type[this.typeScaleClass(this.scaleNames[this.level - 1])];
+    },
+  },
+};
 </script>
 
 <style src="styles/type.scss" lang="scss" module="type"></style>
 <style src="styles/color.scss" lang="scss" module="colorPalette"></style>
 
 <style lang="scss" module="base">
-@import '~styleConfig/type';
+@import "~styleConfig/type";
 
 .heading {
-  composes: display leadingTight from 'styles/type.scss';
+  composes: display leadingTight from "styles/type.scss";
   margin: 0;
   position: relative;
 
@@ -105,11 +98,11 @@ export default {
   }
 
   > strong {
-    @include font($weight: 'bold');
+    @include font($weight: "bold");
   }
 
   > em {
-    @include font($style: 'italic');
+    @include font($style: "italic");
   }
 }
 </style>

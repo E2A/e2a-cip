@@ -4,18 +4,14 @@
       v-if="label"
       :id="name"
       :label="label"
-      :helpText="helpText"
-      :textSize="labelTextSize"
+      :help-text="helpText"
+      :text-size="labelTextSize"
     >
       <div :class="`inputGroup`">
-        <span v-if="prepend" :class="`inputPrepend`">{{prepend}}</span>
+        <span v-if="prepend" :class="`inputPrepend`">{{ prepend }}</span>
         <!-- make sure there's no whitespace around {{ contentValue }} or it will show up in the textarea -->
         <!-- https://stackoverflow.com/questions/2202999/why-is-textarea-filled-with-mysterious-white-spaces -->
         <component
-          @input="emitInput"
-          @change="emitChange"
-          @focus="emitFocus"
-          @blur="emitBlur"
           :is="el"
           :id="name"
           :name="name"
@@ -24,26 +20,27 @@
           :placeholder="placeholder"
           :value="value"
           :type="type"
-        >{{contentValue}}</component>
+          @input="emitInput"
+          @change="emitChange"
+          @focus="emitFocus"
+          @blur="emitBlur"
+          >{{ contentValue }}</component
+        >
 
-        <slot></slot>
+        <slot />
       </div>
       <BaseCalloutBox
-        :key="error"
         v-if="error"
+        :key="error"
         :message="error"
         class="callout"
         role="warning"
       />
     </BaseFormLabel>
     <!-- if there's no label prop, just show the input -->
-    <div :class="`inputGroup`" v-else>
-      <span v-if="prepend" :class="`inputPrepend`">{{prepend}}</span>
+    <div v-else :class="`inputGroup`">
+      <span v-if="prepend" :class="`inputPrepend`">{{ prepend }}</span>
       <component
-        @input="emitInput"
-        @change="emitChange"
-        @focus="emitFocus"
-        @blur="emitBlur"
         :is="el"
         :id="name"
         :name="name"
@@ -52,26 +49,35 @@
         :placeholder="placeholder"
         :value="value"
         :type="type"
-      >{{contentValue}}</component>
+        @input="emitInput"
+        @change="emitChange"
+        @focus="emitFocus"
+        @blur="emitBlur"
+        >{{ contentValue }}</component
+      >
     </div>
   </div>
 </template>
 
 <script>
-import { styleHelpers } from './mixins/helpers.js'
-import BaseFormLabel from './BaseFormLabel.vue'
-import BaseCalloutBox from './BaseCalloutBox.vue'
+import { styleHelpers } from "./mixins/helpers.js";
+import BaseFormLabel from "./BaseFormLabel.vue";
+import BaseCalloutBox from "./BaseCalloutBox.vue";
 
 export default {
-  name: 'BaseFormInput',
+  name: "BaseFormInput",
+  components: {
+    BaseFormLabel,
+    BaseCalloutBox,
+  },
   mixins: [styleHelpers],
   props: {
     el: {
       type: String,
-      default: 'input',
+      default: "input",
       validator: function (value) {
-        return ['input', 'textarea'].indexOf(value) !== -1
-      }
+        return ["input", "textarea"].indexOf(value) !== -1;
+      },
     },
     label: String,
     helpText: String,
@@ -83,111 +89,107 @@ export default {
     dataAs: String,
     type: {
       type: String,
-      default: 'text'
+      default: "text",
     },
     error: {
       type: String,
-      required: false
+      required: false,
     },
     textSize: {
       type: String,
-      default: 'epsilon'
+      default: "epsilon",
     },
     outline: {
       type: String,
-      default: 'highlight'
+      default: "highlight",
     },
     labelTextSize: String,
     // number of rows the textarea shows
     height: {
       type: Number,
-      default: 4
+      default: 4,
     },
-    classItems: String
+    classItems: String,
   },
   data: function () {
     return {
-      intialText: this.value
-    }
+      intialText: this.value,
+    };
   },
   computed: {
     contentValue: function () {
-      if (this.el === 'textarea') {
-        const text = this.intialText
-        return text
+      if (this.el === "textarea") {
+        const text = this.intialText;
+        return text;
       }
     },
     inputClasses: function () {
       return [
         `${this.el}`,
         `${this.el}-${this.outline}`,
-        `scale-${this.textSize}`
-      ]
-    }
-  },
-  components: {
-    BaseFormLabel,
-    BaseCalloutBox
+        `scale-${this.textSize}`,
+      ];
+    },
   },
   methods: {
     emitInput: function (e) {
-      this.$emit('input', e.target.value)
+      this.$emit("input", e.target.value);
     },
     emitChange: function (e) {
-      this.$emit('change', e.target.value)
+      this.$emit("change", e.target.value);
     },
     emitFocus: function (e) {
-      this.$emit('focus', e.target.value)
+      this.$emit("focus", e.target.value);
     },
     emitBlur: function (e) {
-      this.$emit('blur', e.target.value)
-    }
+      this.$emit("blur", e.target.value);
+    },
   },
   $_veeValidate: {
-    name () {
-      return this.name
+    name() {
+      return this.name;
     },
-    value () {
-      return this.value
-    }
-  }
-}
+    value() {
+      return this.value;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-@import '~styleConfig/color';
-@import '~styleConfig/animation';
-@import '~styleConfig/spacing';
-@import '~styleConfig/borders';
-@import '~styleConfig/type';
+@import "~styleConfig/color";
+@import "~styleConfig/animation";
+@import "~styleConfig/spacing";
+@import "~styleConfig/borders";
+@import "~styleConfig/type";
 
 .input,
 .textarea {
   @include transition;
   @include border;
-  background-color: color('light');
+  background-color: color("light");
   border-radius: $border-radius;
   box-shadow: none !important;
   display: block;
   line-height: leading();
   outline: 0;
   outline: thin dotted \9;
-  padding: space('xnarrow');
+  padding: space("xnarrow");
   width: 100%;
 
   &-highlight {
     &:focus,
     &:active {
-      border-color: color('highlight');
-      background-color: color('white');
+      border-color: color("highlight");
+      background-color: color("white");
     }
   }
 
   &-midtone {
     &:focus,
     &:active {
-      border-color: color('midtone');
-      background-color: color('white');
+      border-color: color("midtone");
+      background-color: color("white");
     }
   }
 }
@@ -198,19 +200,19 @@ export default {
 }
 
 .scale-epsilon {
-  font-size: scale-type('epsilon');
+  font-size: scale-type("epsilon");
 }
 
 .scale-zeta {
-  font-size: scale-type('zeta');
+  font-size: scale-type("zeta");
 }
 
 .scale-eta {
-  font-size: scale-type('eta');
+  font-size: scale-type("eta");
 }
 
 .callout {
-  margin-top: space('narrow');
+  margin-top: space("narrow");
 }
 
 .inputGroup {
@@ -220,11 +222,11 @@ export default {
 
 .inputPrepend {
   @include border;
-  background-color: color('light');
-  color: color('midtone');
+  background-color: color("light");
+  color: color("midtone");
   border-top-left-radius: $border-radius;
   border-bottom-left-radius: $border-radius;
-  padding: space('xnarrow');
+  padding: space("xnarrow");
 }
 
 .inputPrepend + .input {
@@ -232,5 +234,4 @@ export default {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-
 </style>

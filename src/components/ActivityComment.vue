@@ -1,6 +1,14 @@
 <template>
   <div v-show="body" :class="base.activityComment">
-    <BaseHeading :centered="false" :level="4" scale="eta" color="dark" weight="regular" :class="base.commentBody">{{body}}</BaseHeading>
+    <BaseHeading
+      :centered="false"
+      :level="4"
+      :class="base.commentBody"
+      scale="eta"
+      color="dark"
+      weight="regular"
+      >{{ body }}</BaseHeading
+    >
     <span :class="base.deleteIcon" @click="emitDeleteClick">
       <BaseIcon :class="base.icon" name="close" alt="X" />
     </span>
@@ -8,35 +16,35 @@
 </template>
 
 <script>
-import BaseIcon from '@/components/BaseIcon.vue'
-import BaseHeading from '@/components/BaseHeading.vue'
+import BaseIcon from "@/components/BaseIcon.vue";
+import BaseHeading from "@/components/BaseHeading.vue";
 
 export default {
-  name: 'ActivityComment',
-  mixins: [],
+  name: "ActivityComment",
   components: {
     BaseIcon,
-    BaseHeading
+    BaseHeading,
   },
-  methods: {
-    emitDeleteClick: function (event) {
-      this.$emit('click', event, this.comment.id)
-    }
+  mixins: [],
+  props: {
+    comment: {
+      type: Object,
+    },
+    activityId: {
+      type: Number,
+    },
   },
   computed: {
     body: function () {
-      return this.comment.text
-    }
-  },
-  props: {
-    comment: {
-      type: Object
+      return this.comment.text;
     },
-    activityId: {
-      type: Number
-    }
-  }
-}
+  },
+  methods: {
+    emitDeleteClick: function (event) {
+      this.$emit("click", event, this.comment.id);
+    },
+  },
+};
 </script>
 
 <style lang="scss" module="base">

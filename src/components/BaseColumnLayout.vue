@@ -4,10 +4,10 @@
 -->
 
 <template>
-  <div :class="[ base.wrapper, ...spacingClasses ]">
+  <div :class="[base.wrapper, ...spacingClasses]">
     <div
       v-for="(item, index) in items"
-      :class="[ base.item, base.col6 ]"
+      :class="[base.item, base.col6]"
       :key="item.id || `list-${index}`"
     >
       <slot :item="item" :index="index">{{ item }}</slot>
@@ -16,37 +16,37 @@
 </template>
 
 <script>
-import { styleHelpers } from './mixins/helpers.js'
+import { styleHelpers } from "./mixins/helpers.js";
 
 export default {
-  name: 'BaseColumnLayout',
+  name: "BaseColumnLayout",
   mixins: [styleHelpers],
   props: {
     items: {
-      type: Array
+      type: Array,
     },
     spacing: {
       type: String,
-      default: 'medium'
-    }
+      default: "medium",
+    },
   },
   computed: {
     spacingClasses: function () {
       const padding = this.spaceClass({
         size: this.spacing,
-        side: 'vertical',
-        between: true
-      })
+        side: "vertical",
+        between: true,
+      });
       const margin = this.spaceClass({
-        prop: 'margin',
+        prop: "margin",
         size: this.spacing,
-        side: 'vertical',
-        between: true
-      })
-      return [this.space[padding]]
-    }
-  }
-}
+        side: "vertical",
+        between: true,
+      });
+      return [this.space[padding]];
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
@@ -63,8 +63,8 @@ export default {
 .item {
   display: block;
   flex: 1;
-  padding: 0 space('medium');
-  margin: space('wide') 0;
+  padding: 0 space("medium");
+  margin: space("wide") 0;
 }
 
 .col6 {

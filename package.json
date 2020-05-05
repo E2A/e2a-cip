@@ -7,7 +7,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "lint": "eslint --ext .js,.vue src",
+    "lint:fix": "eslint --fix --ext .js,.vue src",
     "electron:build": "vue-cli-service electron:build",
     "electron:serve": "vue-cli-service electron:serve",
     "icons": "svgstore -o './src/assets/images/spritemap.svg' --inline './src/assets/images/icons/**/*.svg'",
@@ -25,6 +26,8 @@
     "chartist": "0.10.1",
     "country-list": "^2.1.0",
     "currencies-symbol": "^1.0.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
     "file-saver": "^2.0.2",
     "fs": "^0.0.1-security",
     "include-media": "^1.4.9",
@@ -35,6 +38,7 @@
     "modularscale-sass": "^3.0.5",
     "normalize.css": "^8.0.0",
     "papaparse": "^5.0.0",
+    "prettier": "^2.0.5",
     "register-service-worker": "^1.0.0",
     "vee-validate": "^2.1.0-beta.7",
     "vue": "^2.5.16",
@@ -76,8 +80,9 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
-      "@vue/standard"
+      "eslint:recommended",
+      "plugin:prettier/recommended",
+      "plugin:vue/recommended"
     ],
     "rules": {
       "no-unused-vars": "off"
