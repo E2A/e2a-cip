@@ -1,35 +1,45 @@
 # Technical setup
+
 ## Get started / installation
-1) Install [yarn](https://yarnpkg.com/lang/en/)
-2) In the root of this directory run `yarn install` to install dependencies
+
+1. Install [yarn](https://yarnpkg.com/lang/en/)
+2. In the root of this directory run `yarn install` to install dependencies
 
 ## To develop locally
-1) Run `yarn serve` in the root dir to run a server on localhost
-2) Go to `localhost:8080` to view the app
-3) To run / debug electron app on MacOS run: `./dist_electron/mac/E2A-Analysis.app/Contents/MacOS/E2A-Analysis` and any `console.log()` and other electron errors will display in terminal.
+
+1. Run `yarn serve` in the root dir to run a server on localhost
+2. Go to `localhost:8080` to view the app
+3. To run / debug electron app on MacOS run: `./dist_electron/mac/E2A-Analysis.app/Contents/MacOS/E2A-Analysis` and any `console.log()` and other electron errors will display in terminal.
 
 ## Package for distribution on your own server
-1) Install the application
-2) Package the app for hosting use run `yarn build` (the final files will be in the `/dist` folder)
+
+1. Install the application
+2. Package the app for hosting use run `yarn build` (the final files will be in the `/dist` folder)
+
 - [Vue CLI documentation for deployment](https://cli.vuejs.org/guide/deployment.html#general-guidelines)
 - [Article on deployment with NGINX as webserver on Digital Ocean](https://medium.com/@Web_Bailey/deploy-a-vuejs-app-with-digitalocean-fd6e7af07e40)
 
 ## Creating and distributing the desktop builds
+
 After having gone through the get started steps:
-1) Package the app for desktop use run `yarn build:electron --windows` or `yarn build:electron --macos` (the final files will be in the `/dist_electron` folder)
-2) Zip the `.dmg` file for mac and name the file `mac-installer.zip`
-3) Zip the `.exe` file for windows and name the file `windows-installer-portable.zip`
-4) Zip the folder named `win-ia32-unpacked` and name the file `windows-installer.zip`
-5) Clone the LFS respository `git lfs clone git@github.com:E2A/e2a-electron-builds.git`
-6) Copy the files you just zipped from steps 2-4, and replace the cloned files in the repository found in step 5
-7) If you prefer web-based uploading, go to the [git repository](https://github.com/E2A/e2a-electron-builds) and upload the files there.
-8) If there were major changes in the file sizes, update the MBs listed in the current site content [here](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml)
+
+1. Package the app for desktop use run `yarn build:electron --windows` or `yarn build:electron --macos` (the final files will be in the `/dist_electron` folder)
+2. Zip the `.dmg` file for mac and name the file `mac-installer.zip`
+3. Zip the `.exe` file for windows and name the file `windows-installer-portable.zip`
+4. Zip the folder named `win-ia32-unpacked` and name the file `windows-installer.zip`
+5. Clone the LFS repository `git lfs clone git@github.com:E2A/e2a-electron-builds.git`
+6. Copy the files you just zipped from steps 2-4, and replace the cloned files in the repository found in step 5
+7. If you prefer web-based uploading, go to the [git repository](https://github.com/E2A/e2a-electron-builds) and upload the files there.
+8. If there were major changes in the file sizes, update the MBs listed in the current site content [here](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml)
 
 # Adding and editing content
+
 ## How-to guide
+
 [Here](https://github.com/E2A/e2a-cip/blob/master/public/uploads/Github_LingoHub_How-to.pdf) is a how-to guide that provides info that this readme doesn't cover with regards to Github and Lingohub changes.
 
 ## A note on adding country indicators
+
 Country indicators need to be added to the [en.yaml file](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml) in the below format.
 
 ```
@@ -54,23 +64,25 @@ countryIndicators:
 ```
 
 #### Other considerations for country indicators
+
 You will also need to upload the file as a CSV with UTF-8 character encoding into `public > uploads > country_indicators` - the file name is then added below. Note you **cannot** use excel xlsx or xls files, you will need to open them in excel and convert them to a CSV. Google drive allows you do this well and typically does a better job of ensuring UTF-8 encoding, so where possible, we suggest using google drive over MS Office.
 
 For updating the UN Country population data you can use [this google sheet](https://docs.google.com/spreadsheets/d/1yN2Hig0MdTjzm5HyyYcJ6Nopc3X42qD8pNE0iXxAjVc/edit).
 
 If you need to convert from other ISO formats to ISO2, you can use this [JSON file](https://github.com/E2A/e2a-cip/blob/master/src/authorities/country-conversion-table.json).
 
-## Adding resources to a best practice 
-You can add resources to a best pracitce by adding the following to a Best Practice area on the site:
+## Adding resources to a best practice
+
+You can add resources to a best practice by adding the following to a Best Practice area on the site:
 
 ```
 resources:
-        resource1:
-          title: Resource Title
-          teaser: |-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
-          # Do Not Translate
-          url: /uploads/resources/bestpractice1.png
+  resource1:
+    title: Resource Title
+    teaser: |-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquid scire se gaudeant? Laelius clamores sofòw ille so lebat Edere compellans gumias ex ordine nostros. Faceres tu quidem, Torquate, haec omnia; Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Tu quidem reddes; Hoc sic expositum dissimile est superiori. Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;
+    # Do Not Translate
+    url: /uploads/resources/bestpractice1.png
 ```
 
 You can see example of placeholder resources in the yaml file [here](https://github.com/E2A/e2a-cip/blob/69981e8de7eab0dcbe39560029e555d7a650e0c8/src/locales/en.yaml#L250)
@@ -80,26 +92,48 @@ Note the file itself should be uploaded to `public/uploads/resources` you can fi
 You should add an integer infront of each resource you add, ie `resource1:`, `resource2:` etc
 
 ## A note on language
+
 We are using LingoHub for translation.
 You can also force an initial language to load by passing `?lang=en` or `fr` (for english and french respectively)
 It will also look at the browser / OS language and default to that.
 
-## Editing content
-To edit content you can click [here](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml)
+## Editing content via GitHub
 
-It uses Markdown - you can test your text [here](http://miaolz123.github.io/vue-markdown/)
+Non technical users are able to update copy and edit text using the GitHub editor. The application uses two translation files to control the English and French copy.
 
-To add resources and other files you can upload them to `public/uploads` you can access it [here](https://github.com/E2A/e2a-cip/tree/master/public/uploads)
+- [English Copy](https://github.com/E2A/e2a-cip/blob/master/src/locales/en.yaml)
+- [French Copy](https://github.com/E2A/e2a-cip/blob/master/src/locales/fr.yaml)
+
+Click either of these links will take you to the translation file. Editors can then us the Edit button (pencil icon in the top right of the page) to edit the opened
+translation file.
+
+Before saving changes to the translation files, please verify them using the [Markdown Testing Tool](http://miaolz123.github.io/vue-markdown/).
+
+Once you are satisfied with your changes, scroll down past the page editing field to the *Commit Changes* section. Here you should provide a title and brief description
+for the changes you have made:
+
+```
+Title: Fix typo in download title
+Description: This commit fixes a small typo found in the download title.
+```
+
+__Verbosity is not required, but is encouraged, as it helps other contributors understand what changes were made and why.__
+
+Click the `Commit Changes` button to save the changes you have just made. This will trigger an action workflow that will build the offline version of the application,
+using Electron, as well as publish the changes to Netlify, where the application is currently hosted. This entire process can take up to 10 minutes.
 
 ## Data structure / ERD
+
 We are using [Vuex ORM](https://vuex-orm.github.io/vuex-orm/) for data management.
 
 Edit ERD by going to [draw.io](https://draw.io) and upload the [E2A_ERD.xml](/docs/E2A_ERD.xml) file.
 
 #### ERD Diagram for Application
+
 ![ERD](docs/E2A_ERD.png)
 
 ## Editing and generating icons
+
 Icons are mainly handled through SVG sprites: they are compiled into `src/assets/images/spritemap.svg` and then placed in templates via the `BaseIcon` component. To edit or create new icons:
 
 1. Save your new icon files into `src/assets/images/icons`.

@@ -1,6 +1,6 @@
 {
   "name": "TARP",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "A tool to analyze CIP and other AYSHR resources. Developed by Bivee Inc for Pathfinder & E2A.",
   "author": "Bivee Inc <getstarted@bivee.co> (http://bivee.co)",
@@ -38,7 +38,6 @@
     "modularscale-sass": "^3.0.5",
     "normalize.css": "^8.0.0",
     "papaparse": "^5.0.0",
-    "prettier": "^2.0.5",
     "register-service-worker": "^1.0.0",
     "vee-validate": "^2.1.0-beta.7",
     "vue": "^2.5.16",

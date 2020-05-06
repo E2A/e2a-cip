@@ -45,11 +45,11 @@ en:
       - For **Windows** unzip the folder and run the .exe file in the folder.
     downloadMac: Macintosh (57MB)
     # Do Not Translate
-    downloadMacUrl: https://github.com/E2A/e2a-electron-builds/raw/master/mac-installer.zip
+    downloadMacUrl: https://github.com/E2A/e2a-cip/releases/download/v0.2.3/TARP-0.2.0.dmg
     # # Do Not Translate
     downloadWindowsPortable: Windows (72MB)
     # Do Not Translate
-    downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
+    downloadWindowsPortableUrl: https://github.com/E2A/e2a-cip/releases/download/v0.2.3/TARP.0.2.0.exe
     acknowldgementTitle: Acknowledgements
     acknowledgementText: |-
       The Evidence to Action (E2A) Project gratefully acknowledges the generous support of the US Agency for International Development (USAID) in the creation of this Not Without Us! A Digital Tool for AYRH-Responsive Planning. Additionally, we would like to acknowledge the contributions of our colleagues at Pathfinder International, Family Planning 2020, Population Services International, and STPH Institute. Your insight, feedback, and user-testing were instrumental in the creation of this tool.
