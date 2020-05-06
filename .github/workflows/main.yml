@@ -16,5 +16,9 @@ jobs:
       - run: yarn electron:build
       # - run: yarn electron:build --windows
       - run: ls
-      # - name: Build Electron
-        # uses: eliseoeric/e2a-build-tarp@v0.0.3
+      - name: Build Electron
+        uses: eliseoeric/e2a-build-tarp@v0.0.7
+        with:
+          GH_USERNAME: 'ewilliams3794'
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_REPO: 'E2A/e2a-cip'
