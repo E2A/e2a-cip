@@ -1,109 +1,112 @@
 <template>
   <div id="app" @click="closeFlyouts()">
     <BaseIconSpriteMap />
-    <NavHeader
-      v-if="showNav"
-      :key="this.getItemCount('all')"
-    />
-    <router-view :key="$route.fullPath"></router-view>
+    <NavHeader v-if="showNav" :key="this.getItemCount('all')" />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
 <script>
-import 'normalize.css' // global reset styles - import here b/c sass doesn't like importing vanilla css
-import NavHeader from '@/components/NavHeader.vue'
-import BaseIconSpriteMap from '@/components/BaseIconSpriteMap.vue'
-import { dataMethods } from '@/components/mixins/dataMethods.js'
-import locale2 from 'locale2'
+import "normalize.css"; // global reset styles - import here b/c sass doesn't like importing vanilla css
+import NavHeader from "@/components/NavHeader.vue";
+import BaseIconSpriteMap from "@/components/BaseIconSpriteMap.vue";
+import { dataMethods } from "@/components/mixins/dataMethods.js";
+import locale2 from "locale2";
 
 export default {
-  name: 'AppRoot',
-  mixins: [ dataMethods ],
+  name: "AppRoot",
   components: {
     NavHeader,
-    BaseIconSpriteMap
+    BaseIconSpriteMap,
   },
+  mixins: [dataMethods],
   computed: {
     // should be a better way to do this but router props don't work here
     showNav: function () {
-      return this.$route.name !== 'home'
+      return this.$route.name !== "home";
+    },
+  },
+  created() {
+    if (this.checkElectron()) {
+      this.$router.push("/").catch(() => {});
     }
+
+    this.detectLanguage();
+
+    // This uses vue router vs. normal clicks for electron
+    document.addEventListener(
+      "click",
+      (event) => {
+        // If the clicked element doesn't have the right selector, bail
+        if (!event.target.matches(".electron-link")) return;
+
+        // Don't follow the link
+        event.preventDefault();
+
+        // Log the clicked element in the console
+        this.$router.push({
+          name: "export",
+          params: { redirect: this.$route.name },
+        });
+      },
+      false
+    );
   },
   methods: {
     detectLanguage: function () {
-      let locale = ''
+      let locale = "";
 
       // Browser sniff
       if (locale2) {
-        locale = locale2
+        locale = locale2;
       }
 
       // Use URL Query for Native App and to allow forced language
       if (this.$route.query.lang) {
-        locale = this.$route.query.lang
+        locale = this.$route.query.lang;
       }
 
       if (locale) {
-        locale = locale.split('-')[0]
-        this.$i18n.locale = locale
+        locale = locale.split("-")[0];
+        this.$i18n.locale = locale;
       }
     },
     closeFlyouts: function () {
-      this.$store.dispatch('entities/bestpracticeicons/create', {
+      this.$store.dispatch("entities/bestpracticeicons/create", {
         data: {
-          flyout: false
-        }
-      })
-      this.$store.commit('CLOSE_FLYOUTS')
-    }
+          flyout: false,
+        },
+      });
+      this.$store.commit("CLOSE_FLYOUTS");
+    },
   },
-  created () {
-    if (this.checkElectron()) {
-      this.$router.push('/').catch(() => {})
-    }
-
-    this.detectLanguage()
-
-    // This uses vue router vs. normal clicks for electron
-    document.addEventListener('click', event => {
-      // If the clicked element doesn't have the right selector, bail
-      if (!event.target.matches('.electron-link')) return
-
-      // Don't follow the link
-      event.preventDefault()
-
-      // Log the clicked element in the console
-      this.$router.push({ name: 'export', params: { redirect: this.$route.name } })
-    }, false)
-  }
-}
-
+};
 </script>
 
 <style lang="scss">
 // Default box model, scaling, and type styles
 // --> note these styles are not scoped/modules, so they apply to the whole app
 
-@import './stylesheets/config/breakpoints';
-@import './stylesheets/config/type';
-@import './stylesheets/config/color';
-@import './stylesheets/config/borders';
+@import "./stylesheets/config/breakpoints";
+@import "./stylesheets/config/type";
+@import "./stylesheets/config/color";
+@import "./stylesheets/config/borders";
 
 $base-type-sizes: (
-  'default': 100%,
-  'xsmall': 105%,
-  'small': 115%,
-  'medium': 120%,
-  'large': 125%
+  "default": 100%,
+  "xsmall": 105%,
+  "small": 115%,
+  "medium": 120%,
+  "large": 125%,
 );
 
 @mixin font-face($name, $path, $weight: normal, $style: normal) {
-  $font-path: './assets/fonts';
+  $font-path: "./assets/fonts";
 
   @font-face {
     font-family: $name;
-    src: url('#{$font-path}/#{$path}.woff2') format('woff2'),
-         url('#{$font-path}/#{$path}.woff') format('woff');
+    src: url("#{$font-path}/#{$path}.woff2") format("woff2"),
+      url("#{$font-path}/#{$path}.woff") format("woff");
     font-weight: #{if(type-of($weight) != string, $weight, unquote($weight))};
     font-style: #{if(type-of($style) != string, $style, unquote($style))};
     font-stretch: normal;
@@ -112,18 +115,23 @@ $base-type-sizes: (
 }
 
 // Lato
-@include font-face('lato-light-normal', 'lato/lato-light', 300);
-@include font-face('lato-light-italic', 'lato/lato-light-italic', 300, 'italic');
-@include font-face('lato-regular-normal', 'lato/lato');
-@include font-face('lato-regular-italic', 'lato/lato-italic', $style: 'italic');
-@include font-face('lato-bold-normal', 'lato/lato-bold', 700);
-@include font-face('lato-bold-italic', 'lato/lato-bold-italic', 700, 'italic');
+@include font-face("lato-light-normal", "lato/lato-light", 300);
+@include font-face(
+  "lato-light-italic",
+  "lato/lato-light-italic",
+  300,
+  "italic"
+);
+@include font-face("lato-regular-normal", "lato/lato");
+@include font-face("lato-regular-italic", "lato/lato-italic", $style: "italic");
+@include font-face("lato-bold-normal", "lato/lato-bold", 700);
+@include font-face("lato-bold-italic", "lato/lato-bold-italic", 700, "italic");
 
 // Lora
-@include font-face('lora-regular-normal', 'lora/lora');
-@include font-face('lora-regular-italic', 'lora/lora-italic', $style: 'italic');
-@include font-face('lora-bold-normal', 'lora/lora-bold', 700);
-@include font-face('lora-bold-italic', 'lora/lora-bold-italic', 700, 'italic');
+@include font-face("lora-regular-normal", "lora/lora");
+@include font-face("lora-regular-italic", "lora/lora-italic", $style: "italic");
+@include font-face("lora-bold-normal", "lora/lora-bold", 700);
+@include font-face("lora-bold-italic", "lora/lora-bold-italic", 700, "italic");
 
 @media print {
   @page {
@@ -133,11 +141,11 @@ $base-type-sizes: (
 
 html {
   box-sizing: border-box;
-  font-size: map-get($base-type-sizes, 'default');
+  font-size: map-get($base-type-sizes, "default");
 
   @each $screen, $size in $base-type-sizes {
-    @if $screen != 'default' {
-      @include media('>#{$screen}') {
+    @if $screen != "default" {
+      @include media(">#{$screen}") {
         font-size: $size;
       }
     }
@@ -156,14 +164,14 @@ html {
 
 body {
   @include font;
-  background-color: color('white'); // set explicitly to override OS dark modes
-  color: color('dark');
+  background-color: color("white"); // set explicitly to override OS dark modes
+  color: color("dark");
   line-height: leading();
-  font-feature-settings: 'liga', 'kern';
+  font-feature-settings: "liga", "kern";
   text-rendering: geometricPrecision;
 
   @media print {
-     color: #000;
+    color: #000;
   }
 }
 
@@ -171,8 +179,8 @@ audio,
 canvas,
 img,
 video {
-    vertical-align: middle;
-    max-width: 100%;
+  vertical-align: middle;
+  max-width: 100%;
 }
 
 p,
@@ -183,12 +191,12 @@ ul {
 }
 
 a {
-  color: color('highlight');
+  color: color("highlight");
   text-decoration: none;
 
   &:hover,
   &:active {
-    border-bottom: border-w('thin') dashed;
+    border-bottom: border-w("thin") dashed;
   }
 }
 </style>

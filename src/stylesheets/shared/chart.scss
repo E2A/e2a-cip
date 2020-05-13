@@ -1,14 +1,14 @@
-@import '~styleConfig/color';
+@import "~styleConfig/color";
 
-$chart-light-gray: color('light', $grade: -10);
+$chart-light-gray: color("light", $grade: -10);
 
 $color-codes: (
-  'supply': $chart-light-gray,
-  'demand': color('accent'),
-  'enablingEnvironment': color('highlight'),
-  'coordination': color('primary'),
-  'youthCentric': color('primary'),
-  'notYouthCentric': $chart-light-gray
+  "supply": $chart-light-gray,
+  "demand": color("accent"),
+  "enablingEnvironment": color("highlight"),
+  "coordination": color("primary"),
+  "youthCentric": color("primary"),
+  "notYouthCentric": $chart-light-gray,
 );
 
 // getter helper for map above
@@ -22,7 +22,7 @@ $color-codes: (
     background-color: color-code($name);
     // adjust FG color based on bg lightness
     // -> http://www.thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass
-    color: if(lightness($color) > 70, color('dark'), color('white'));
+    color: if(lightness($color) > 70, color("dark"), color("white"));
   }
 }
 
@@ -36,8 +36,8 @@ $color-codes: (
     }
 
     .label-#{$name} {
-      display: block !important;  // overrides .ct-label
-      fill: if(lightness($color) > 70, color('dark'), $chart-light-gray);
+      display: block !important; // overrides .ct-label
+      fill: if(lightness($color) > 70, color("dark"), $chart-light-gray);
     }
   }
 }

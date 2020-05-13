@@ -1,5 +1,5 @@
 // Global color config and mixins
-@import '~bourbon/core/bourbon';
+@import "~bourbon/core/bourbon";
 
 // Base Palette
 // -----------------------------------------------------------------------------
@@ -17,7 +17,7 @@ $purple: #702082;
 $dark-purple: #531461;
 $light-blue: #a7c6ed;
 $blue: #307fe2;
-$green: #A8AD00;
+$green: #a8ad00;
 $yellow: #eaaa00;
 $red: #c2113a;
 
@@ -26,20 +26,20 @@ $red: #c2113a;
 // -> PUBLIC, use these for color references
 
 $colors: (
-  'dark': $black,
-  'midtone': $gray,
-  'light': $light-gray,
-  'white': $white,
-  'primary': $purple,
-  'primary-dark': $dark-purple,
-  'highlight': $blue,
-  'accent': $light-blue,
-  'warning': $red,
-  'success': $purple,
-  'yes': $green,
-  'no': $red,
-  'partially': $yellow,
-  'empty': $gray,
+  "dark": $black,
+  "midtone": $gray,
+  "light": $light-gray,
+  "white": $white,
+  "primary": $purple,
+  "primary-dark": $dark-purple,
+  "highlight": $blue,
+  "accent": $light-blue,
+  "warning": $red,
+  "success": $purple,
+  "yes": $green,
+  "no": $red,
+  "partially": $yellow,
+  "empty": $gray,
 );
 
 @function color($color, $grade: 0, $opacity: 1) {

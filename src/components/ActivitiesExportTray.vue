@@ -1,37 +1,26 @@
 <template>
   <!-- Export tool tray -->
-  <aside :class="[border.bottom, space.paddingVerticalNarrow, space.paddingHorizontal, color.lightBg]">
-    <BaseGutterWrapper
-      :class="base.flex"
-      gutterY="xnarrow"
-      gutterX="xnarrow"
-    >
-      <ClearItems
-        v-if="clear"
-        :clearType="clear"
-      />
+  <aside
+    :class="[
+      border.bottom,
+      space.paddingVerticalNarrow,
+      space.paddingHorizontal,
+      color.lightBg,
+    ]"
+  >
+    <BaseGutterWrapper :class="base.flex" gutterY="xnarrow" gutter-x="xnarrow">
+      <ClearItems v-if="clear" :clearType="clear" />
       <div :class="base.right">
-        <BaseGutterWrapper
-          gutterY="xnarrow"
-          gutterX="xnarrow"
-        >
-          <span
-            v-if="files"
-            :class="base.inlineBlock"
-          >
+        <BaseGutterWrapper gutter-y="xnarrow" gutterX="xnarrow">
+          <span v-if="files" :class="base.inlineBlock">
             <FileExport
               v-if="charts"
               :label="$t('fileUpload.exportLabel')"
-              :selectLabel="$t('fileUpload.exportSelectFormat')"
+              :select-label="$t('fileUpload.exportSelectFormat')"
             />
-            <FileExport
-              v-else
-            />
+            <FileExport v-else />
           </span>
-          <span
-            v-if="charts"
-            :class="base.inlineBlock"
-          >
+          <span v-if="charts" :class="base.inlineBlock">
             <ExportChartData />
           </span>
         </BaseGutterWrapper>
@@ -41,36 +30,36 @@
 </template>
 
 <script>
-import BaseGutterWrapper from './BaseGutterWrapper.vue'
-import FileExport from '@/components/FileExport.vue'
-import ExportChartData from '@/components/ExportChartData.vue'
-import ClearItems from '@/components/ClearItems.vue'
+import BaseGutterWrapper from "./BaseGutterWrapper.vue";
+import FileExport from "@/components/FileExport.vue";
+import ExportChartData from "@/components/ExportChartData.vue";
+import ClearItems from "@/components/ClearItems.vue";
 
 export default {
-  name: 'ActivitiesToolTray',
-  props: {
-    clear: {
-      type: Array,
-      validator: function (value) {
-        return ['Assessments'].indexOf !== -1
-      }
-    },
-    files: {
-      type: Boolean,
-      default: true
-    },
-    charts: {
-      type: Boolean,
-      default: false
-    }
-  },
+  name: "ActivitiesToolTray",
   components: {
     BaseGutterWrapper,
     FileExport,
     ExportChartData,
-    ClearItems
-  }
-}
+    ClearItems,
+  },
+  props: {
+    clear: {
+      type: Array,
+      validator: function (value) {
+        return ["Assessments"].indexOf !== -1;
+      },
+    },
+    files: {
+      type: Boolean,
+      default: true,
+    },
+    charts: {
+      type: Boolean,
+      default: false,
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>

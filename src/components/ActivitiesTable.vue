@@ -9,10 +9,9 @@
         >
           {{ translateHeadings ? $t(heading.title) : heading.title }}
         </th>
-        <th
-          v-if="actionColumn"
-          :class="base.heading"
-        ><!-- extra cell for edit button --></th>
+        <th v-if="actionColumn" :class="base.heading">
+          <!-- extra cell for edit button -->
+        </th>
       </tr>
     </thead>
     <slot>Add activity items here</slot>
@@ -21,34 +20,36 @@
 
 <script>
 export default {
-  name: 'ActivitiesList',
+  name: "ActivitiesList",
   props: {
     headings: {
       type: Array,
       default: function () {
         return [
           {
-            title: 'activityTable.defaultTitle'
-          }, {
-            title: 'activityTable.defaultBudget',
-            align: 'right'
-          }, {
-            title: 'activityTable.defaultYouthCentered',
-            align: 'center'
-          }
-        ]
-      }
+            title: "activityTable.defaultTitle",
+          },
+          {
+            title: "activityTable.defaultBudget",
+            align: "right",
+          },
+          {
+            title: "activityTable.defaultYouthCentered",
+            align: "center",
+          },
+        ];
+      },
     },
     actionColumn: {
       type: Boolean,
-      default: true
+      default: true,
     },
     translateHeadings: {
       type: Boolean,
-      default: true
-    }
-  }
-}
+      default: true,
+    },
+  },
+};
 </script>
 
 <style src="styles/type.scss" lang="scss" module="type"></style>
@@ -63,10 +64,10 @@ export default {
 }
 
 .heading {
-  composes: bottom thick from 'styles/borders.scss';
-  composes: darkBorder from 'styles/color.scss';
-  composes: scaleZeta bold from 'styles/type.scss';
-  composes: paddingVerticalXxnarrow from 'styles/spacing.scss';
+  composes: bottom thick from "styles/borders.scss";
+  composes: darkBorder from "styles/color.scss";
+  composes: scaleZeta bold from "styles/type.scss";
+  composes: paddingVerticalXxnarrow from "styles/spacing.scss";
   vertical-align: bottom;
 }
 </style>

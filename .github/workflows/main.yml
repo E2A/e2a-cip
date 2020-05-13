@@ -1,0 +1,53 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macOS-10.14, windows-2016, ubuntu-18.04]
+
+    name: Publish offline Electron build
+
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - run: yarn install
+      - run: yarn electron:build
+      - name: Cleanup artifacts (*nix)
+        if: matrix.os != 'windows-2016'
+        run: |
+          npx rimraf 'dist_electron/!(*.exe|*.deb|*.AppImage|*.dmg)'
+      - name: Cleanup artifacts (Windows)
+        if: matrix.os == 'windows-2016'
+        run: |
+          Get-ChildItem "dist_electron" -file -recurse | Remove-Item -Exclude *.exe
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: ${{ matrix.os }}
+          path: dist_electron
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: "e2a-release"
+          tag_name: "v0.2.3"
+          files: "dist_electron/**"
+        env:
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+      # - name: Build Electron
+      #   uses: eliseoeric/e2a-build-tarp@v0.0.7
+      #   with:
+      #     GH_USERNAME: 'ewilliams3794'
+      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      #     GH_REPO: 'E2A/e2a-cip'

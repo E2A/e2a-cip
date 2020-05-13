@@ -1,35 +1,38 @@
 <template>
   <div class="">
-    <TextReader @file-read-successful="runImportData($event)"></TextReader>
+    <TextReader @file-read-successful="runImportData($event)" />
   </div>
 </template>
 
 <script>
-import TextReader from './TextReader.vue'
-import { dataIO } from './mixins/dataIO'
-import { dataMethods } from './mixins/dataMethods'
+import TextReader from "./TextReader.vue";
+import { dataIO } from "./mixins/dataIO";
+import { dataMethods } from "./mixins/dataMethods";
 
 export default {
-  name: 'FileUpload',
-  mixins: [dataIO, dataMethods],
+  name: "FileUpload",
   components: {
-    TextReader
+    TextReader,
   },
-  data () {
+  mixins: [dataIO, dataMethods],
+  data() {
     return {
-      importText: ''
-    }
+      importText: "",
+    };
   },
   methods: {
     runImportData: function (fileData) {
       // Parse file data and import, return import type
-      const successful = this.parseFileData(fileData)
+      const successful = this.parseFileData(fileData);
 
       if (successful) {
-        this.notify(`${this.$t('fileUpload.successImport')} ${this.importText}`, 'success')
-        this.$emit('import-success')
+        this.notify(
+          `${this.$t("fileUpload.successImport")} ${this.importText}`,
+          "success"
+        );
+        this.$emit("import-success");
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>

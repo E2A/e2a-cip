@@ -18,7 +18,7 @@ module.exports = {
     'register-service-worker'
   ],
   chainWebpack: config => {
-    const svgRule = config.module.rule('svg')
+    const svgRule = config.module.rule('svg');
     svgRule.uses.clear()
     svgRule
       .oneOf('inline')
@@ -34,7 +34,7 @@ module.exports = {
         return {
           name: 'img/[name].[hash:8].[ext]'
         }
-      })
+      });
   },
   css: {
     modules: true,
@@ -55,23 +55,20 @@ module.exports = {
     },
     electronBuilder: {
       builderOptions: {
-        'appId': 'com.electron.karaw',
-        'productName': 'TARP',
-        'win': {
-          'target': [
+        appId: 'com.electron.karaw',
+        productName: 'TARP',
+        win: {
+          target: [
             {
-              'target': 'portable',
-              'arch': [
-                'x64',
-                'ia32'
-              ]
+              target: 'portable',
+              arch: ['x64', 'ia32']
             }
           ],
-          'icon': 'src/assets/electron/icon.ico'
+          icon: 'src/assets/electron/icon.ico'
         },
-        'mac': {
-          'target': 'dmg',
-          'icon': 'src/assets/electron/icon.png'
+        mac: {
+          target: 'dmg',
+          icon: 'src/assets/electron/icon.png'
         }
       }
     }

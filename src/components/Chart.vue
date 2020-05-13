@@ -9,24 +9,22 @@
       weight="bold"
       color="dark"
     >
-      {{this.$t(`chartTitles.${chartName}`)}} <BaseTooltip v-if="toolTipPresent" :body="toolTip" />
+      {{ this.$t(`chartTitles.${chartName}`) }}
+      <BaseTooltip v-if="toolTipPresent" :body="toolTip" />
     </BaseHeading>
 
     <BaseGutterWrapper
       :class="base.chartWrapper"
-      gutterY="narrow"
-      gutterX="narrow"
+      gutter-y="narrow"
+      gutter-x="narrow"
     >
       <!-- Chart -->
-      <div
-        :id="chartName"
-        :class="base.chart"
-      ></div>
+      <div :id="chartName" :class="base.chart" />
 
       <!-- Chart Labels -->
       <ChartLegend
-        :labelData="labelData"
-        :chartName="chartName"
+        :label-data="labelData"
+        :chart-name="chartName"
         :class="base.legend"
       />
     </BaseGutterWrapper>
@@ -34,106 +32,79 @@
 </template>
 
 <script>
-import BaseHeading from './BaseHeading.vue'
-import BaseGutterWrapper from './BaseGutterWrapper.vue'
-import ChartLegend from './ChartLegend.vue'
-import BaseTooltip from './BaseTooltip.vue'
-import * as Chartist from 'chartist'
-import { dataMethods } from './mixins/dataMethods'
-import { parseIntWithSuffix, getCurrencySymbol } from './mixins/helpers'
+import BaseHeading from "./BaseHeading.vue";
+import BaseGutterWrapper from "./BaseGutterWrapper.vue";
+import ChartLegend from "./ChartLegend.vue";
+import BaseTooltip from "./BaseTooltip.vue";
+import * as Chartist from "chartist";
+import { dataMethods } from "./mixins/dataMethods";
+import { parseIntWithSuffix, getCurrencySymbol } from "./mixins/helpers";
 
 export default {
-  name: 'Chart',
-  mixins: [dataMethods],
-  props: {
-    chartName: {
-      type: String,
-      required: true
-    },
-    seriesData: {
-      type: Array,
-      requred: true
-    },
-    labelData: {
-      type: Array,
-      required: true
-    },
-    isCurrency: {
-      type: Boolean,
-      required: false
-    },
-    toolTip: {
-      type: String,
-      required: false
-    }
-  },
-  computed: {
-    activitiesPresent: function () {
-      return this.getItemCount('activities') > 0
-    },
-    series: function () {
-      return this.seriesData.map(data => data.value)
-    },
-    toolTipPresent: function () {
-      return this.toolTip.length > 0
-    },
-    isSeriesEmpty: function () {
-      return this.series.every(val => val === 0)
-    },
-    total: function () {
-      if (this.isSeriesEmpty) return this.series.length
-      return this.series.reduce((total, value) => total + value, 0)
-    }
-  },
+  name: "Chart",
   components: {
     BaseHeading,
     BaseGutterWrapper,
     ChartLegend,
-    BaseTooltip
+    BaseTooltip,
+  },
+  mixins: [dataMethods],
+  props: {
+    chartName: {
+      type: String,
+      required: true,
+    },
+    seriesData: {
+      type: Array,
+      requred: true,
+    },
+    labelData: {
+      type: Array,
+      required: true,
+    },
+    isCurrency: {
+      type: Boolean,
+      required: false,
+    },
+    toolTip: {
+      type: String,
+      required: false,
+    },
   },
   data: function () {
     return {
       filteredSeries: null,
       // Threshold for piece of pie
       // 2x is threshold for label
-      minimumPercent: 0.015
-    }
+      minimumPercent: 0.015,
+    };
   },
-  methods: {
-    filterSeries () {
-      if (this.isSeriesEmpty) {
-        // If everything is empty, give everything an equal share
-        // Later, just make the labels 0
-        this.filteredSeries = this.seriesData.map(obj => {
-          return {
-            ...obj,
-            value: 1
-          }
-        })
-        return
-      }
-      // Filters series below a certain percentage of total
-      this.filteredSeries = this.seriesData.filter(obj => (obj.value / this.total) > this.minimumPercent)
+  computed: {
+    activitiesPresent: function () {
+      return this.getItemCount("activities") > 0;
     },
-    chartLabels (context) {
-      if (context.type === 'label') {
-        // Just leave text black since label will be in donut hole
-        if (this.filteredSeries.length === 1) return
-        // get the classname from the corresponding data series
-        const labelClass = this.filteredSeries[context.index].className
-        // append `label-` to the classname and add it to the node's classlist
-        context.element._node.classList.add(`label-${labelClass}`)
-      }
-    }
+    series: function () {
+      return this.seriesData.map((data) => data.value);
+    },
+    toolTipPresent: function () {
+      return this.toolTip.length > 0;
+    },
+    isSeriesEmpty: function () {
+      return this.series.every((val) => val === 0);
+    },
+    total: function () {
+      if (this.isSeriesEmpty) return this.series.length;
+      return this.series.reduce((total, value) => total + value, 0);
+    },
   },
-  mounted () {
-    this.filterSeries()
-    const element = `#${this.chartName}`
+  mounted() {
+    this.filterSeries();
+    const element = `#${this.chartName}`;
     const data = {
-      series: this.filteredSeries
-    }
-    const isCurrency = this.isCurrency
-    const setup = this.getItemValue('setup')
+      series: this.filteredSeries,
+    };
+    const isCurrency = this.isCurrency;
+    const setup = this.getItemValue("setup");
 
     new Chartist.Pie(element, data, {
       donut: true,
@@ -144,28 +115,60 @@ export default {
       labelInterpolationFnc: (value, index, labels) => {
         // Don't render label below %
         if (value / this.total <= this.minimumPercent * 3) {
-          return null
+          return null;
         }
 
         // If everything is empty, everything is 0
         if (this.isSeriesEmpty) {
-          return 0
+          return 0;
         }
 
         // Format the value with metric suffix (1000 => 1k)
-        let parsedValue = parseIntWithSuffix(value)
+        let parsedValue = parseIntWithSuffix(value);
 
-        let symbol = ''
+        let symbol = "";
         // If the chart represents a currency, add the currency symbol
         if (isCurrency) {
-          symbol = ` ${getCurrencySymbol(setup.countryCode, setup.currencyCode)}`
+          symbol = ` ${getCurrencySymbol(
+            setup.countryCode,
+            setup.currencyCode
+          )}`;
         }
 
-        return `${parsedValue}${symbol}`
+        return `${parsedValue}${symbol}`;
+      },
+    }).on("draw", (context) => this.chartLabels(context));
+  },
+  methods: {
+    filterSeries() {
+      if (this.isSeriesEmpty) {
+        // If everything is empty, give everything an equal share
+        // Later, just make the labels 0
+        this.filteredSeries = this.seriesData.map((obj) => {
+          return {
+            ...obj,
+            value: 1,
+          };
+        });
+        return;
       }
-    }).on('draw', (context) => this.chartLabels(context))
-  }
-}
+      // Filters series below a certain percentage of total
+      this.filteredSeries = this.seriesData.filter(
+        (obj) => obj.value / this.total > this.minimumPercent
+      );
+    },
+    chartLabels(context) {
+      if (context.type === "label") {
+        // Just leave text black since label will be in donut hole
+        if (this.filteredSeries.length === 1) return;
+        // get the classname from the corresponding data series
+        const labelClass = this.filteredSeries[context.index].className;
+        // append `label-` to the classname and add it to the node's classlist
+        context.element._node.classList.add(`label-${labelClass}`);
+      }
+    },
+  },
+};
 </script>
 
 <style src="styleShared/chart.scss" lang="scss" module="chart"></style>
@@ -174,7 +177,6 @@ export default {
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
-
 .chartWrapper {
   display: block;
 

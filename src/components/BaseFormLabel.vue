@@ -6,14 +6,12 @@
         :class="[
           base.label,
           type[typeScaleClass(textSize)],
-          !helpText && space.marginBottomNarrow
+          !helpText && space.marginBottomNarrow,
         ]"
       >
-        {{label}}
+        {{ label }}
       </label>
-      <BaseTooltip
-        :body="tooltipText"
-      />
+      <BaseTooltip :body="tooltipText" />
     </div>
     <label
       v-else
@@ -21,10 +19,10 @@
       :class="[
         base.label,
         type[typeScaleClass(textSize)],
-        !helpText && space.marginBottomNarrow
+        !helpText && space.marginBottomNarrow,
       ]"
     >
-      {{label}}
+      {{ label }}
     </label>
     <BaseBodyText
       v-if="helpText"
@@ -38,12 +36,16 @@
 </template>
 
 <script>
-import { styleHelpers } from './mixins/helpers.js'
-import BaseBodyText from './BaseBodyText.vue'
-import BaseTooltip from './BaseTooltip.vue'
+import { styleHelpers } from "./mixins/helpers.js";
+import BaseBodyText from "./BaseBodyText.vue";
+import BaseTooltip from "./BaseTooltip.vue";
 
 export default {
-  name: 'BaseFormLabel',
+  name: "BaseFormLabel",
+  components: {
+    BaseBodyText,
+    BaseTooltip,
+  },
   mixins: [styleHelpers],
   props: {
     label: String,
@@ -51,19 +53,15 @@ export default {
     helpText: String,
     textSize: {
       type: String,
-      default: 'epsilon'
+      default: "epsilon",
     },
     helpTextSize: {
       type: String,
-      default: 'zeta'
+      default: "zeta",
     },
-    tooltipText: String
+    tooltipText: String,
   },
-  components: {
-    BaseBodyText,
-    BaseTooltip
-  }
-}
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
@@ -71,12 +69,12 @@ export default {
 
 <style lang="scss" module="base">
 .label {
-  composes: bold leadingTight from 'styles/type.scss';
+  composes: bold leadingTight from "styles/type.scss";
 }
 
 .help {
-  composes: midtone from 'styles/color.scss';
-  composes: paddingBottomNarrow from 'styles/spacing.scss';
+  composes: midtone from "styles/color.scss";
+  composes: paddingBottomNarrow from "styles/spacing.scss";
   padding-top: 0.2rem;
 }
 </style>

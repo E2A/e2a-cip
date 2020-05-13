@@ -3,21 +3,21 @@
     v-if="label"
     :id="name"
     :label="label"
-    :helpText="helpText"
-    :textSize="labelTextSize"
+    :help-text="helpText"
+    :text-size="labelTextSize"
   >
     <vSelect
-      @input="emitInput"
       :options="options"
       :searchable="searchable"
       :value="value"
       :class="[classItems, noClear && base.noClear]"
       :placeholder="placeholder"
       :id="name"
+      @input="emitInput"
     />
     <BaseCalloutBox
-      :key="error"
       v-if="error"
+      :key="error"
       :message="error"
       :class="space.marginTopNarrow"
       role="warning"
@@ -25,29 +25,31 @@
   </BaseFormLabel>
   <vSelect
     v-else
-    @input="emitInput"
     :options="options"
     :searchable="searchable"
     :value="value"
     :class="[classItems, noClear && base.noClear]"
     :placeholder="placeholder"
     :id="name"
+    @input="emitInput"
   />
 </template>
 
 <script>
-import { styleHelpers } from './mixins/helpers.js'
-import { paddingFix } from './mixins/vueSelectPadding.js'
-import BaseFormLabel from './BaseFormLabel.vue'
-import BaseCalloutBox from './BaseCalloutBox.vue'
-import vSelect from 'vue-select'
+import { styleHelpers } from "./mixins/helpers.js";
+import { paddingFix } from "./mixins/vueSelectPadding.js";
+import BaseFormLabel from "./BaseFormLabel.vue";
+import BaseCalloutBox from "./BaseCalloutBox.vue";
+import vSelect from "vue-select";
 
 export default {
-  name: 'BaseFormSelect',
-  mixins: [
-    styleHelpers,
-    paddingFix
-  ],
+  name: "BaseFormSelect",
+  components: {
+    BaseFormLabel,
+    BaseCalloutBox,
+    vSelect,
+  },
+  mixins: [styleHelpers, paddingFix],
   props: {
     label: String,
     labelTextSize: String,
@@ -55,48 +57,43 @@ export default {
     value: [String, Number, Object, Date],
     name: {
       type: String,
-      required: true
+      required: true,
     },
     placeholder: String,
     validate: String,
     dataAs: String,
     error: {
       type: String,
-      required: false
+      required: false,
     },
     searchable: {
       type: Boolean,
-      default: false
+      default: false,
     },
     options: {
       type: [Array, Object],
-      required: true
+      required: true,
     },
     classItems: String,
     noClear: {
       type: Boolean,
-      default: false
-    }
-  },
-  components: {
-    BaseFormLabel,
-    BaseCalloutBox,
-    vSelect
+      default: false,
+    },
   },
   methods: {
     emitInput: function (e) {
-      this.$emit('input', e)
-    }
+      this.$emit("input", e);
+    },
   },
   $_veeValidate: {
-    name () {
-      return this.name
+    name() {
+      return this.name;
     },
-    value () {
-      return this.value
-    }
-  }
-}
+    value() {
+      return this.value;
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
@@ -104,16 +101,16 @@ export default {
 <!-- global: override the classes used on vue-select with our own styles -->
 <!-- using !important everywhere to make sure we override vendor styles -->
 <style lang="scss">
-@import '~bourbon/core/bourbon';
-@import '~vue-select/dist/vue-select.css';
-@import '~styleConfig/type';
-@import '~styleConfig/spacing';
-@import '~styleConfig/color';
-@import '~styleConfig/borders';
+@import "~bourbon/core/bourbon";
+@import "~vue-select/dist/vue-select.css";
+@import "~styleConfig/type";
+@import "~styleConfig/spacing";
+@import "~styleConfig/color";
+@import "~styleConfig/borders";
 
 .v-select {
   @include font();
-  color: color('dark') !important;
+  color: color("dark") !important;
 
   a {
     border: none !important;
@@ -140,8 +137,8 @@ export default {
 
   .vs__dropdown-toggle {
     @include border();
-    padding: space('xxnarrow') !important;
-    background-color: color('light') !important;
+    padding: space("xxnarrow") !important;
+    background-color: color("light") !important;
 
     // clear button
     .vs__clear {
@@ -157,15 +154,17 @@ export default {
       width: $size !important;
 
       > * {
-        @include hide-visually(); // hide child span with &times; text but keep it accessible to screen readers
+        @include hide-visually(
+
+        ); // hide child span with &times; text but keep it accessible to screen readers
       }
     }
   }
 
   .vs__dropdown-menu {
     .highlight > a {
-      background: color('accent');
-      color: color('white');
+      background: color("accent");
+      color: color("white");
     }
   }
 }

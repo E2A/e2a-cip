@@ -1,15 +1,15 @@
-import { Model } from '@vuex-orm/core'
-import Activity from './Activity'
+import { Model } from "@vuex-orm/core";
+import Activity from "./Activity";
 
 export default class Comment extends Model {
-  static entity = 'comments'
+  static entity = "comments";
 
-  static fields () {
+  static fields() {
     return {
       id: this.increment(),
-      text: this.string(''),
+      text: this.string(""),
       activity_id: this.number(0),
-      activity: this.belongsTo(Activity, 'activity_id')
-    }
+      activity: this.belongsTo(Activity, "activity_id"),
+    };
   }
 }

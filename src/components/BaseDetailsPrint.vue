@@ -15,13 +15,13 @@
 
 <script>
 export default {
-  name: 'BaseDetails',
-  data () {
+  name: "BaseDetails",
+  data() {
     return {
-      open: true
-    }
-  }
-}
+      open: true,
+    };
+  },
+};
 </script>
 
 <style lang="scss" module="base">
@@ -32,7 +32,6 @@ export default {
     display: flex;
     align-items: center;
   }
-
 }
 
 .summaryContent {

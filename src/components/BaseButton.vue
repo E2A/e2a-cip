@@ -1,15 +1,12 @@
 <template>
-  <button
-    @click="$emit('click')"
-    :class="defaultClassList"
-  >
+  <button :class="defaultClassList" @click="$emit('click')">
     <BaseIcon
       v-if="iconLeft !== 'none'"
       :class="button.iconLeft"
       :name="iconLeft"
       :size="iconSize"
     />
-    {{label}}
+    {{ label }}
     <BaseIcon
       v-if="iconRight !== 'none'"
       :class="button.iconRight"
@@ -20,16 +17,16 @@
 </template>
 
 <script>
-import { buttonStyles } from './mixins/buttonStyles'
-import BaseIcon from './BaseIcon.vue'
+import { buttonStyles } from "./mixins/buttonStyles";
+import BaseIcon from "./BaseIcon.vue";
 
 export default {
-  name: 'BaseButton',
-  mixins: [buttonStyles],
+  name: "BaseButton",
   components: {
-    BaseIcon
-  }
-}
+    BaseIcon,
+  },
+  mixins: [buttonStyles],
+};
 </script>
 
 <style src="styleShared/button.scss" lang="scss" module="button"></style>

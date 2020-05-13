@@ -1,7 +1,7 @@
 // Global border classes
 
-@import '../config/helpers';
-@import '../config/borders';
+@import "../config/helpers";
+@import "../config/borders";
 
 // border width, e.g. '.thick'
 @each $name, $width in $border-widths {
@@ -16,7 +16,7 @@
 
   // border style, e.g. '.default.secondary'
   @each $name, $style in $border-styles {
-    @if ($name != 'default') {
+    @if ($name != "default") {
       &.#{$name} {
         border-style: $style;
       }
@@ -31,7 +31,7 @@
 
     // border style, e.g. '.top.secondary'
     @each $name, $style in $border-styles {
-      @if ($name != 'default') {
+      @if ($name != "default") {
         &.#{$name} {
           border-#{$side}-style: $style;
         }

@@ -1,31 +1,34 @@
 <template>
-  <NavFooter
-    :rightButtons="this.getNavButtons().right"
-  >
-    <NavBreadcrumbs/>
+  <NavFooter :right-buttons="this.getNavButtons().right">
+    <NavBreadcrumbs />
     <BaseWidthWrapper>
-      <BasePageIntro :title="$t('plan.title')"/>
+      <BasePageIntro :title="$t('plan.title')" />
       <BaseGutterWrapper>
         <BaseBodyText :content="this.$t('plan.body')" />
-        <BaseHeading :class="[base.note]" :level="4" :centered="false">{{this.$t('plan.note')}}</BaseHeading>
-        <BaseBodyText :content="this.$t('plan.noteBody')" :class="[space.paddingBottomWide]" />
+        <BaseHeading :class="[base.note]" :level="4" :centered="false">{{
+          this.$t("plan.note")
+        }}</BaseHeading>
+        <BaseBodyText
+          :content="this.$t('plan.noteBody')"
+          :class="[space.paddingBottomWide]"
+        />
       </BaseGutterWrapper>
     </BaseWidthWrapper>
   </NavFooter>
 </template>
 
 <script>
-import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
-import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
-import BaseHeading from '@/components/BaseHeading.vue'
-import BaseBodyText from '@/components/BaseBodyText.vue'
-import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
-import NavFooter from '@/components/NavFooter.vue'
-import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
-import BasePageIntro from '@/components/BasePageIntro.vue'
+import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
+import BaseSectionWrapper from "@/components/BaseSectionWrapper.vue";
+import BaseHeading from "@/components/BaseHeading.vue";
+import BaseBodyText from "@/components/BaseBodyText.vue";
+import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
+import NavFooter from "@/components/NavFooter.vue";
+import NavBreadcrumbs from "@/components/NavBreadcrumbs.vue";
+import BasePageIntro from "@/components/BasePageIntro.vue";
 
 export default {
-  name: 'Plan',
+  name: "Plan",
   components: {
     BaseSectionWrapper,
     BaseWidthWrapper,
@@ -34,10 +37,10 @@ export default {
     BaseGutterWrapper,
     NavFooter,
     NavBreadcrumbs,
-    BasePageIntro
+    BasePageIntro,
   },
   created: function () {
-    this.$store.commit('SET_PROGRESS', { plan: true })
+    this.$store.commit("SET_PROGRESS", { plan: true });
   },
   methods: {
     getNavButtons: function () {
@@ -45,16 +48,16 @@ export default {
         left: [],
         right: [
           {
-            to: { name: 'setup' },
-            label: this.$t('plan.getStartedButton').toUpperCase()
-          }
-        ]
-      }
+            to: { name: "setup" },
+            label: this.$t("plan.getStartedButton").toUpperCase(),
+          },
+        ],
+      };
 
-      return navButtons
-    }
-  }
-}
+      return navButtons;
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>

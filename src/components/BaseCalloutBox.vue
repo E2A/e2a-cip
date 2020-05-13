@@ -5,14 +5,14 @@
 
 <template>
   <aside
-    @click="clickable && $emit('click')"
     :class="[
       base.box,
       base[role],
-      {[base.pointer]: clickable},
-      {[color.shadow]: shadow},
-      {[color.shadowHover]: clickable}
+      { [base.pointer]: clickable },
+      { [color.shadow]: shadow },
+      { [color.shadowHover]: clickable },
     ]"
+    @click="clickable && $emit('click')"
   >
     <div :class="base.status">
       <BaseIcon
@@ -23,116 +23,107 @@
     </div>
     <BaseBodyText
       :content="message"
-      :class="[base.message, {[base.iconRight]: dismissable || clickable}]"
+      :class="[base.message, { [base.iconRight]: dismissable || clickable }]"
       font="display"
     />
     <button
       v-if="dismissable"
-      @click="dismissNotification"
       :class="base.action"
       :title="$t('dismissNotification')"
+      @click="dismissNotification"
     >
-      <BaseIcon
-        :class="base.icon"
-        name="close"
-        alt="X"
-      />
+      <BaseIcon :class="base.icon" name="close" alt="X" />
     </button>
-    <div
-      v-if="clickable"
-      :class="base.action"
-    >
-      <BaseIcon
-        :class="base.icon"
-        name="arrow-right"
-        alt=">"
-      />
+    <div v-if="clickable" :class="base.action">
+      <BaseIcon :class="base.icon" name="arrow-right" alt=">" />
     </div>
   </aside>
 </template>
 
 <script>
-import BaseIcon from './BaseIcon.vue'
-import BaseBodyText from './BaseBodyText'
+import BaseIcon from "./BaseIcon.vue";
+import BaseBodyText from "./BaseBodyText";
 
 export default {
-  name: 'BaseCalloutBox',
+  name: "BaseCalloutBox",
+  components: {
+    BaseIcon,
+    BaseBodyText,
+  },
   props: {
     message: {
       type: String,
-      required: true
+      required: true,
     },
     role: {
       type: String,
-      default: 'info',
+      default: "info",
       validator: function (value) {
-        return ['success', 'warning', 'info'].indexOf(value) !== -1
-      }
+        return ["success", "warning", "info"].indexOf(value) !== -1;
+      },
     },
     dismissable: {
       type: Boolean,
-      default: false
+      default: false,
     },
     clickable: {
       type: Boolean,
-      default: false
+      default: false,
     },
     shadow: {
       type: Boolean,
-      default: false
+      default: false,
     },
-    timeout: Number
+    timeout: Number,
   },
   data: function () {
     return {
       icons: {
         success: {
-          icon: 'success',
-          alt: '👍'
+          icon: "success",
+          alt: "👍",
         },
         info: {
-          icon: 'info',
-          alt: '( i )'
+          icon: "info",
+          alt: "( i )",
         },
         warning: {
-          icon: 'warning',
-          alt: '( ! )'
-        }
-      }
-    }
+          icon: "warning",
+          alt: "( ! )",
+        },
+      },
+    };
   },
-  components: {
-    BaseIcon,
-    BaseBodyText
+  mounted() {
+    if (this.timeout) {
+      setTimeout(() => {
+        this.dismissNotification();
+      }, this.timeout);
+    }
   },
   methods: {
     dismissNotification: function () {
-      this.$store.dispatch('entities/globalnotifications/deleteAll')
-      this.$emit('dismiss')
-    }
+      this.$store.dispatch("entities/globalnotifications/deleteAll");
+      this.$emit("dismiss");
+    },
   },
-  mounted () {
-    if (this.timeout) {
-      setTimeout(() => { this.dismissNotification() }, this.timeout)
-    }
-  }
-}
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/color.scss" lang="scss" module="color"></style>
 
 <style lang="scss" module="base">
-@import '~bourbon/core/bourbon';
-@import '~styleConfig/scale';
-@import '~styleConfig/spacing';
+@import "~bourbon/core/bourbon";
+@import "~styleConfig/scale";
+@import "~styleConfig/spacing";
 
-$size-icons: scale-type('epsilon');
-$gutter: space('xnarrow');
+$size-icons: scale-type("epsilon");
+$gutter: space("xnarrow");
 
 .box {
-  composes: default round from 'styles/borders.scss';
-  composes: whiteBg from 'styles/color.scss';
+  composes: default round from "styles/borders.scss";
+  composes: whiteBg from "styles/color.scss";
   position: relative;
 }
 
@@ -152,7 +143,7 @@ $gutter: space('xnarrow');
 
 .action {
   composes: status;
-  composes: midtone from 'styles/color.scss';
+  composes: midtone from "styles/color.scss";
   left: auto;
   right: 0;
   cursor: pointer;
@@ -166,8 +157,8 @@ $gutter: space('xnarrow');
 }
 
 .message {
-  composes: display scaleZeta from 'styles/type.scss';
-  composes: paddingVerticalXnarrow from 'styles/spacing.scss';
+  composes: display scaleZeta from "styles/type.scss";
+  composes: paddingVerticalXnarrow from "styles/spacing.scss";
   display: block;
   width: 100%;
   padding-left: ($size-icons + ($gutter * 2));
@@ -180,14 +171,14 @@ $gutter: space('xnarrow');
 
 // role styles
 .info {
-  composes: midtone from 'styles/color.scss';
+  composes: midtone from "styles/color.scss";
 }
 
 .warning {
-  composes: warningBorder warning from 'styles/color.scss';
+  composes: warningBorder warning from "styles/color.scss";
 }
 
 .success {
-  composes: successBorder success from 'styles/color.scss';
+  composes: successBorder success from "styles/color.scss";
 }
 </style>

@@ -4,20 +4,11 @@
 -->
 
 <template>
-  <component
-    :is="el"
-    :class="[
-      base.wrapper,
-      ...spacingClasses
-    ]"
-  >
+  <component :is="el" :class="[base.wrapper, ...spacingClasses]">
     <component
       v-for="(item, index) in items"
       :is="itemEl"
-      :class="[
-        base.item,
-        borders && base.border
-      ]"
+      :class="[base.item, borders && base.border]"
       :key="item.id || `list-${index}`"
     >
       <slot :item="item" :index="index">{{ item }}</slot>
@@ -26,58 +17,55 @@
 </template>
 
 <script>
-import { styleHelpers } from './mixins/helpers.js'
+import { styleHelpers } from "./mixins/helpers.js";
 
 export default {
-  name: 'BaseVerticalList',
+  name: "BaseVerticalList",
   mixins: [styleHelpers],
   props: {
     items: {
-      type: Array
+      type: Array,
     },
     el: {
       type: String,
-      default: 'ul'
+      default: "ul",
     },
     spacing: {
       type: String,
-      default: 'medium'
+      default: "medium",
     },
     borders: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     itemEl: function () {
-      const listEls = ['ul', 'ol']
-      return listEls.includes(this.el) ? 'li' : 'div'
+      const listEls = ["ul", "ol"];
+      return listEls.includes(this.el) ? "li" : "div";
     },
     spacingClasses: function () {
       const padding = this.spaceClass({
         size: this.spacing,
-        side: 'vertical',
-        between: true
-      })
+        side: "vertical",
+        between: true,
+      });
       const margin = this.spaceClass({
-        prop: 'margin',
+        prop: "margin",
         size: this.spacing,
-        side: 'vertical',
-        between: true
-      })
-      return [
-        this.space[padding],
-        this.borders && this.space[margin]
-      ]
-    }
-  }
-}
+        side: "vertical",
+        between: true,
+      });
+      return [this.space[padding], this.borders && this.space[margin]];
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 
 <style lang="scss" module="base">
-@import '~styleConfig/borders';
+@import "~styleConfig/borders";
 
 .wrapper {
   display: block;
@@ -92,7 +80,7 @@ export default {
 
 .border {
   & + & {
-    @include border('top');
+    @include border("top");
   }
 }
 </style>

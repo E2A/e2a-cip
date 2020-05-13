@@ -15,8 +15,8 @@
         <BaseGutterWrapper
           v-if="getGroupProp(group)"
           :class="type[group]"
-          gutterX="narrow"
-          gutterY="narrow"
+          gutter-x="narrow"
+          gutter-y="narrow"
         >
           <li
             v-for="(button, index) in getGroupProp(group)"
@@ -25,21 +25,21 @@
           >
             <BaseButton
               v-if="button.type === 'button'"
-              v-on:click.native="emitAction(button.action)"
               :label="button.label"
               :role="button.role || 'default'"
-              :iconLeft="button.iconLeft || getDefaultIcon(group, 'left')"
-              :iconRight="button.iconRight || getDefaultIcon(group, 'right')"
+              :icon-left="button.iconLeft || getDefaultIcon(group, 'left')"
+              :icon-right="button.iconRight || getDefaultIcon(group, 'right')"
+              @click.native="emitAction(button.action)"
             />
             <PrintPage v-if="button.type === 'print'" />
             <BaseButtonLink
               v-else
               :to="button.to"
-              v-on:click.native="emitAction(button.action)"
               :label="button.label"
               :role="button.role || 'default'"
-              :iconLeft="button.iconLeft || getDefaultIcon(group, 'left')"
-              :iconRight="button.iconRight || getDefaultIcon(group, 'right')"
+              :icon-left="button.iconLeft || getDefaultIcon(group, 'left')"
+              :icon-right="button.iconRight || getDefaultIcon(group, 'right')"
+              @click.native="emitAction(button.action)"
             />
           </li>
         </BaseGutterWrapper>
@@ -49,54 +49,54 @@
 </template>
 
 <script>
-import BaseButton from '@/components/BaseButton.vue'
-import PrintPage from '@/components/PrintPage.vue'
-import BaseButtonLink from '@/components/BaseButtonLink.vue'
-import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
-import { dataMethods } from '@/components/mixins/dataMethods.js'
+import BaseButton from "@/components/BaseButton.vue";
+import PrintPage from "@/components/PrintPage.vue";
+import BaseButtonLink from "@/components/BaseButtonLink.vue";
+import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
+import { dataMethods } from "@/components/mixins/dataMethods.js";
 
 export default {
-  name: 'NavFooter',
-  mixins: [dataMethods],
-  props: {
-    wrapperEl: {
-      type: String,
-      default: 'div'
-    },
-    leftButtons: Array,
-    rightButtons: Array
-  },
+  name: "NavFooter",
   components: {
     BaseGutterWrapper,
     BaseButton,
     BaseButtonLink,
-    PrintPage
+    PrintPage,
+  },
+  mixins: [dataMethods],
+  props: {
+    wrapperEl: {
+      type: String,
+      default: "div",
+    },
+    leftButtons: Array,
+    rightButtons: Array,
   },
   methods: {
     emitAction: function (action) {
       if (action) {
-        this.$eventHub.$emit(action)
+        this.$eventHub.$emit(action);
       }
-      this.saveReminder()
+      this.saveReminder();
     },
     getGroupProp: function (group) {
-      return group === 'left' ? this.leftButtons : this.rightButtons
+      return group === "left" ? this.leftButtons : this.rightButtons;
     },
     getDefaultIcon: function (group, side) {
-      if (side === 'left') {
-        return group === 'left' ? 'arrow-left' : 'none'
+      if (side === "left") {
+        return group === "left" ? "arrow-left" : "none";
       }
-      return group === 'right' ? 'arrow-right' : 'none'
+      return group === "right" ? "arrow-right" : "none";
     },
     saveReminder: function () {
       this.notify(
-        this.$root.$t('saveRecommended', { exportLink: '#' }),
-        'warning',
+        this.$root.$t("saveRecommended", { exportLink: "#" }),
+        "warning",
         10000
-      )
-    }
-  }
-}
+      );
+    },
+  },
+};
 </script>
 
 <!-- <style src="styles/spacing.scss" lang="scss" module="space"></style>
@@ -114,9 +114,9 @@ export default {
 }
 
 .nav {
-  composes: top from 'styles/borders.scss';
-  composes: whiteBg shadow from 'styles/color.scss';
-  composes: paddingHorizontal paddingVerticalNarrow from 'styles/spacing.scss';
+  composes: top from "styles/borders.scss";
+  composes: whiteBg shadow from "styles/color.scss";
+  composes: paddingHorizontal paddingVerticalNarrow from "styles/spacing.scss";
   display: block;
   position: fixed;
   z-index: 1000; // Breakpoint for content you want above/below footer

@@ -1,11 +1,7 @@
 <template>
   <div :class="[base.wrapper, type[typeScaleClass(labelSize)]]">
-    <label
-      v-if="label"
-      :for="id"
-      :class="[base.label, color[labelColor]]"
-    >
-      {{label}}
+    <label v-if="label" :for="id" :class="[base.label, color[labelColor]]">
+      {{ label }}
     </label>
     <progress
       :id="id"
@@ -13,19 +9,20 @@
       :value="percentage"
       max="100"
     >
-      {{percentage}}%
+      {{ percentage }}%
     </progress>
     <label
       :for="id"
       :class="[base.percentage, isComplete ? color.yes : color.midtone]"
-    >{{percentage}}%</label>
+      >{{ percentage }}%</label
+    >
   </div>
 </template>
 
 <script>
-import { styleHelpers } from './mixins/helpers.js'
+import { styleHelpers } from "./mixins/helpers.js";
 export default {
-  name: 'BaseProgressBar',
+  name: "BaseProgressBar",
   mixins: [styleHelpers],
   props: {
     id: String,
@@ -33,25 +30,25 @@ export default {
       type: Number,
       default: 0,
       validator: function (value) {
-        return value >= 0 && value <= 100
-      }
+        return value >= 0 && value <= 100;
+      },
     },
     label: String,
     labelColor: {
       type: String,
-      default: 'dark'
+      default: "dark",
     },
     labelSize: {
       type: String,
-      default: 'zeta'
-    }
+      default: "zeta",
+    },
   },
   computed: {
     isComplete: function () {
-      return this.percentage === 100
-    }
-  }
-}
+      return this.percentage === 100;
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
@@ -59,17 +56,17 @@ export default {
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
-@import '~styleConfig/borders';
-@import '~styleConfig/color';
+@import "~styleConfig/borders";
+@import "~styleConfig/color";
 
 $height: 0.5em;
 $radius: 1000px;
-$color-bar: color('light');
-$color-value: color('accent');
-$color-value-complete: color('yes');
+$color-bar: color("light");
+$color-value: color("accent");
+$color-value-complete: color("yes");
 
 .wrapper {
-  composes: marginHorizontalBetweenXnarrow from 'styles/spacing.scss';
+  composes: marginHorizontalBetweenXnarrow from "styles/spacing.scss";
   display: inline-block;
 
   // try to make webkit/chrome print background colors here
@@ -135,6 +132,6 @@ $color-value-complete: color('yes');
 
 .percentage {
   composes: label;
-  composes: bold from 'styles/type.scss';
+  composes: bold from "styles/type.scss";
 }
 </style>

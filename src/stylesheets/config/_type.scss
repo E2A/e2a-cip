@@ -2,29 +2,36 @@
 //  Type config & scale
 // =============================================================================
 
-@import '~bourbon/core/bourbon';
-@import '~include-media/dist/include-media';
-@import 'breakpoints';
-
+@import "~bourbon/core/bourbon";
+@import "~include-media/dist/include-media";
+@import "breakpoints";
 
 $leading: (
-  'tight': 1.3,
-  'default': 1.7
+  "tight": 1.3,
+  "default": 1.7,
 );
 
-@function leading($size: 'default') {
+@function leading($size: "default") {
   @return map-get($leading, $size);
 }
 
 // set type to default body size using REMs
 // -> useful for resetting type size on a container to override parents
-@mixin type-size-default { font-size: scale-type('epsilon'); }
+@mixin type-size-default {
+  font-size: scale-type("epsilon");
+}
 
 // set up viewport-sized fluid type scaling, with minimum and maximum sizes
 // -> a modified version of Indrek Paas' fluid type mixin: https://www.sassmeister.com/gist/7f22e44ace49b5124eec
 // -> which is based on Mike Riethmuller's formula: https://madebymike.com.au/writing/fluid-type-calc-examples/
 // -> also inspired by Eduardo Boucas' mixin: https://eduardoboucas.com/blog/2015/06/18/viewport-sized-typography-with-minimum-and-maximum-sizes.html
-@mixin type-fluid($properties, $size-min: 'eta', $size-max: 'alpha', $screen-min: 'xsmall', $screen-max: 'large') {
+@mixin type-fluid(
+  $properties,
+  $size-min: "eta",
+  $size-max: "alpha",
+  $screen-min: "xsmall",
+  $screen-max: "large"
+) {
   $size-default: 16px; // = 1 rem
   $size-min-px: (strip-unit(scale-type($size-min)) * $size-default);
   $size-max-px: (strip-unit(scale-type($size-max)) * $size-default);
@@ -39,13 +46,22 @@ $leading: (
   // start to scale up at the minimum screen size
   @include media(">#{$screen-min}") {
     // use an in-between value as the fallback where vw units or calc aren't supported
-    $size-middle-fallback: ((scale-type($size-min) + scale-type($size-max)) / 2);
+    $size-middle-fallback: (
+      (scale-type($size-min) + scale-type($size-max)) / 2
+    );
 
     @each $property in $properties {
       #{$property}: $size-middle-fallback;
 
       // use calc and vw units to make the type scale fluidly between two sizes
-      #{$property}: calc(#{$size-min-px} + #{strip-unit($size-max-px) - strip-unit($size-min-px)} * (100vw - #{$screen-min-px}) / #{strip-unit($screen-max-px) - strip-unit($screen-min-px)});
+      #{$property}: calc(
+        #{$size-min-px} +
+          #{strip-unit($size-max-px) -
+          strip-unit($size-min-px)} *
+          (100vw - #{$screen-min-px}) /
+          #{strip-unit($screen-max-px) -
+          strip-unit($screen-min-px)}
+      );
     }
   }
 
@@ -57,25 +73,26 @@ $leading: (
   }
 }
 
-
 // Font mixins
 // -----------------------------------------------------------------------------
 // -> PUBLIC, use these to style type globally & in modules
 
-@mixin font($role: 'display', $weight: regular, $style: normal) {
-  @if $role == 'display' {
-    font-family: 'lato-#{$weight}-#{$style}', $font-stack-helvetica;
-    @if $weight == 'light' {
+@mixin font($role: "display", $weight: regular, $style: normal) {
+  @if $role == "display" {
+    font-family: "lato-#{$weight}-#{$style}", $font-stack-helvetica;
+    @if $weight == "light" {
       font-weight: 300;
-    } @elseif $weight == 'bold' {
+    }
+    @elseif $weight == 'bold' {
       font-weight: 700;
     } @else {
       font-weight: normal;
     }
     font-style: #{if(type-of($style) != string, $style, unquote($style))};
-  } @elseif $role == 'body' {
-    font-family: 'lora-#{$weight}-#{$style}', $font-stack-georgia;
-    @if $weight == 'bold' {
+  }
+  @elseif $role == 'body' {
+    font-family: "lora-#{$weight}-#{$style}", $font-stack-georgia;
+    @if $weight == "bold" {
       font-weight: 700;
     } @else {
       font-weight: normal;

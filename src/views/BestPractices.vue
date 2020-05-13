@@ -1,6 +1,10 @@
 <template>
-  <NavFooter wrapperEl="article" :leftButtons="navButtons.left" :rightButtons="navButtons.right">
-    <NavBreadcrumbs v-if="this.$route.name === 'evidence-informed-practices'"/>
+  <NavFooter
+    :left-buttons="navButtons.left"
+    :right-buttons="navButtons.right"
+    wrapper-el="article"
+  >
+    <NavBreadcrumbs v-if="this.$route.name === 'evidence-informed-practices'" />
     <BasePageIntro
       :title="$t('bestPracticeTitle')"
       :subtitle="$t('bestPracticeSubtitle')"
@@ -10,12 +14,16 @@
     <div :class="space.paddingWide">
       <BaseWidthWrapper width="wide">
         <BaseColumnLayout :items="bestPractices" :borders="false">
-          <BaseGutterWrapper el="section" :class="base.card" slot-scope="{ item }">
+          <BaseGutterWrapper
+            slot-scope="{ item }"
+            :class="base.card"
+            el="section"
+          >
             <div :class="base.iconWrapper">
               <router-link
                 :to="{
                   name: 'evidence-informed-practice',
-                  params: {id: item.id}
+                  params: { id: item.id },
                 }"
                 :class="base.icon"
               >
@@ -31,30 +39,31 @@
               >
                 <router-link
                   :to="{
-                  name: 'evidence-informed-practice',
-                  params: {id: item.id}
-                }"
-                >{{ item.title }}</router-link>
+                    name: 'evidence-informed-practice',
+                    params: { id: item.id },
+                  }"
+                  >{{ item.title }}</router-link
+                >
               </BaseHeading>
               <BaseBodyText :content="item.teaser" size="epsilon" />
               <BaseButtonLink
                 :to="{
                   name: 'evidence-informed-practice',
-                  params: {id: item.id}
+                  params: { id: item.id },
                 }"
                 :label="$t('readMore')"
                 :class="space.marginTopNarrow"
                 size="small"
-                iconRight="arrow-right"
+                icon-right="arrow-right"
               />
               <BaseButtonLink
                 v-if="item.checkListName"
                 :to="`/uploads/checklists/${item.checkListName}`"
                 :label="$t('checkListButtonText')"
-                size="small"
-                role="primary"
                 :class="space.marginLeftNarrow"
                 :router="false"
+                size="small"
+                role="primary"
                 target="_blank"
               />
             </div>
@@ -66,21 +75,20 @@
 </template>
 
 <script>
-import { bestPracticeData } from '@/components/mixins/bestPracticeData.js'
-import BasePageIntro from '@/components/BasePageIntro.vue'
-import BaseHeading from '@/components/BaseHeading.vue'
-import BaseBodyText from '@/components/BaseBodyText.vue'
-import BaseIcon from '@/components/BaseIcon.vue'
-import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
-import BaseColumnLayout from '@/components/BaseColumnLayout.vue'
-import BaseGutterWrapper from '@/components/BaseGutterWrapper.vue'
-import BaseButtonLink from '@/components/BaseButtonLink.vue'
-import NavFooter from '@/components/NavFooter.vue'
-import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
+import { bestPracticeData } from "@/components/mixins/bestPracticeData.js";
+import BasePageIntro from "@/components/BasePageIntro.vue";
+import BaseHeading from "@/components/BaseHeading.vue";
+import BaseBodyText from "@/components/BaseBodyText.vue";
+import BaseIcon from "@/components/BaseIcon.vue";
+import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
+import BaseColumnLayout from "@/components/BaseColumnLayout.vue";
+import BaseGutterWrapper from "@/components/BaseGutterWrapper.vue";
+import BaseButtonLink from "@/components/BaseButtonLink.vue";
+import NavFooter from "@/components/NavFooter.vue";
+import NavBreadcrumbs from "@/components/NavBreadcrumbs.vue";
 
 export default {
-  name: 'BestPractices',
-  mixins: [bestPracticeData],
+  name: "BestPractices",
   components: {
     BasePageIntro,
     BaseHeading,
@@ -91,38 +99,39 @@ export default {
     BaseGutterWrapper,
     BaseButtonLink,
     NavFooter,
-    NavBreadcrumbs
+    NavBreadcrumbs,
   },
-  created: function () {
-    this.$store.commit('SET_PROGRESS', { analyze: true })
-  },
+  mixins: [bestPracticeData],
   computed: {
     navButtons: function () {
       return {
         left: [
           {
-            to: { name: 'summary' },
-            label: this.$t('goBack')
-          }
+            to: { name: "summary" },
+            label: this.$t("goBack"),
+          },
         ],
         right: [
           {
-            to: { name: 'assessment' },
-            label: this.$t('continue'),
-            role: 'primary'
-          }
-        ]
-      }
-    }
-  }
-}
+            to: { name: "assessment" },
+            label: this.$t("continue"),
+            role: "primary",
+          },
+        ],
+      };
+    },
+  },
+  created: function () {
+    this.$store.commit("SET_PROGRESS", { analyze: true });
+  },
+};
 </script>
 <style src="styles/color.scss" lang="scss" module="color"></style>
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/type.scss" lang="scss" module="type"></style>
 
 <style lang="scss" module="base">
-@import '~styleConfig/color';
+@import "~styleConfig/color";
 @import "~styleConfig/spacing";
 
 .card {

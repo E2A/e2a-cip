@@ -1,9 +1,19 @@
 <template>
   <article>
     <header
-      :class="[space.paddingHorizontal, space.paddingVerticalNarrow, color.well, border.bottom, base.header]"
+      :class="[
+        space.paddingHorizontal,
+        space.paddingVerticalNarrow,
+        color.well,
+        border.bottom,
+        base.header,
+      ]"
     >
-      <BaseGutterWrapper :class="base.leftPane" gutterY="xnarrow" gutterX="xnarrow">
+      <BaseGutterWrapper
+        :class="base.leftPane"
+        gutter-y="xnarrow"
+        gutter-x="xnarrow"
+      >
         <BaseHeading
           :class="display.inlineBlock"
           :centered="false"
@@ -11,39 +21,57 @@
           color="dark"
           weight="regular"
           sub
-        >{{$t('home.chooseLanguage')}}</BaseHeading>
+          >{{ $t("home.chooseLanguage") }}</BaseHeading
+        >
         <!-- Language selector -->
         <LanguageSwitcher />
       </BaseGutterWrapper>
       <!-- EIPs -->
-      <BaseGutterWrapper :class="base.rightPane" gutterY="xnarrow" gutterX="xnarrow">
-        <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
+      <BaseGutterWrapper
+        :class="base.rightPane"
+        gutter-y="xnarrow"
+        gutter-x="xnarrow"
+      >
+        <BaseGutterWrapper gutter-x="xnarrow" gutterY="xnarrow">
           <BaseButtonLink
             :to="this.$t('nav.userGuidePDF')"
             :router="false"
-            role="default"
             :label="this.$t('nav.userGuide')"
-            size="small"
             :target="this.checkElectron() ? '_self' : '_blank'"
+            role="default"
+            size="small"
           />
         </BaseGutterWrapper>
-        <BaseGutterWrapper :class="[space.marginLeftNarrow]" gutterX="xnarrow" gutterY="xnarrow">
+        <BaseGutterWrapper
+          :class="[space.marginLeftNarrow]"
+          gutter-x="xnarrow"
+          gutter-y="xnarrow"
+        >
           <BaseButtonLink
             :to="this.$t('nav.eipPdf')"
             :router="false"
-            role="default"
             :label="this.$t('nav.learnMore')"
-            size="small"
             :target="this.checkElectron() ? '_self' : '_blank'"
+            role="default"
+            size="small"
           />
         </BaseGutterWrapper>
       </BaseGutterWrapper>
     </header>
 
-    <BaseWidthWrapper :class="[space.paddingVerticalWide, space.paddingHorizontal, border.bottom]">
+    <BaseWidthWrapper
+      :class="[
+        space.paddingVerticalWide,
+        space.paddingHorizontal,
+        border.bottom,
+      ]"
+    >
       <BaseGutterWrapper :class="base.logoGrid">
         <div :class="base.logo">
-          <img src="@/assets/images/logos/usaid-lockup.svg" alt="USAID and E2A" />
+          <img
+            src="@/assets/images/logos/usaid-lockup.svg"
+            alt="USAID and E2A"
+          />
         </div>
         <div :class="base.logoSmall">
           <img src="@/assets/images/logos/pathfinder.png" alt="Pathfinder" />
@@ -64,35 +92,43 @@
     <!-- How it works -->
     <BaseSectionWrapper>
       <BaseWidthWrapper width="wide">
-        <BasePageIntro :title="$t('home.stepsTitle')" :subtitle="$t('home.stepsIntro')" />
+        <BasePageIntro
+          :title="$t('home.stepsTitle')"
+          :subtitle="$t('home.stepsIntro')"
+        />
       </BaseWidthWrapper>
-      <BaseWidthWrapper width="xwide" :class="space.paddingTop">
+      <BaseWidthWrapper :class="space.paddingTop" width="xwide">
         <BaseStepList :steps="steps" size="small" />
       </BaseWidthWrapper>
     </BaseSectionWrapper>
 
     <!-- Get started! -->
-    <BaseSectionWrapper el="div" :class="type.center" border>
+    <BaseSectionWrapper :class="type.center" el="div" border>
       <BaseButtonLink
-        :to="{name: 'plan'}"
+        :to="{ name: 'plan' }"
         :label="$t('home.getStartedButton').toUpperCase()"
         size="large"
         role="primary"
       />
       <div>
-        <ClearItems :clearType="['All']" :class="space.marginTop" />
+        <ClearItems :clear-type="['All']" :class="space.marginTop" />
       </div>
     </BaseSectionWrapper>
 
     <!-- Offline versions -->
     <BaseSectionWrapper v-if="!electron" :class="color.well" el="div" border>
-      <BaseHeading :level="2" centered>{{$t('home.downloadTitle')}}</BaseHeading>
+      <BaseHeading :level="2" centered>{{
+        $t("home.downloadTitle")
+      }}</BaseHeading>
       <BaseWidthWrapper :class="space.paddingTop">
-        <BaseBodyText :content="$t('home.downloadBlurb')" :class="base.centeredSubheads" />
+        <BaseBodyText
+          :content="$t('home.downloadBlurb')"
+          :class="base.centeredSubheads"
+        />
         <BaseGutterWrapper
           :class="[space.paddingTop, type.center]"
-          gutterX="xnarrow"
-          gutterY="xnarrow"
+          gutter-x="xnarrow"
+          gutter-y="xnarrow"
         >
           <li :class="base.gutterItem">
             <BaseButtonLink
@@ -114,7 +150,9 @@
 
     <!-- Acknowledgements -->
     <BaseSectionWrapper border>
-      <BaseHeading :level="2" scale="gamma">{{$t('home.acknowldgementTitle')}}</BaseHeading>
+      <BaseHeading :level="2" scale="gamma">{{
+        $t("home.acknowldgementTitle")
+      }}</BaseHeading>
       <BaseWidthWrapper :class="space.paddingTop">
         <BaseBodyText
           :content="$t('home.acknowledgementText')"
@@ -143,7 +181,6 @@ import { initData } from "@/components/mixins/initData.js";
 
 export default {
   name: "Home",
-  mixins: [dataMethods, initData],
   components: {
     LanguageSwitcher,
     BasePageIntro,
@@ -154,7 +191,13 @@ export default {
     BaseGutterWrapper,
     BaseStepList,
     BaseButtonLink,
-    ClearItems
+    ClearItems,
+  },
+  mixins: [dataMethods, initData],
+  data() {
+    return {
+      electron: this.checkElectron(),
+    };
   },
   computed: {
     steps() {
@@ -162,17 +205,12 @@ export default {
         (step, index) => {
           return {
             title: this.$t(`home.steps.step${index + 1}.title`),
-            blurb: this.$t(`home.steps.step${index + 1}.blurb`)
+            blurb: this.$t(`home.steps.step${index + 1}.blurb`),
           };
         }
       );
-    }
+    },
   },
-  data() {
-    return {
-      electron: this.checkElectron()
-    };
-  }
 };
 </script>
 

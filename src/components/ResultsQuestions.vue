@@ -8,40 +8,33 @@
       color="dark"
       weight="bold"
     >
-      {{$t('results.indicatorQuestions')}}
+      {{ $t("results.indicatorQuestions") }}
     </BaseHeading>
     <ol :class="base.questionList">
-      <li
-        v-for="(question, index) in questions"
-        :key="`question-${index}`"
-      >
-        <BaseBodyText
-          :content="question"
-          :class="color.dark"
-          font="display"
-        />
+      <li v-for="(question, index) in questions" :key="`question-${index}`">
+        <BaseBodyText :content="question" :class="color.dark" font="display" />
       </li>
     </ol>
   </div>
 </template>
 
 <script>
-import BaseHeading from './BaseHeading.vue'
-import BaseBodyText from './BaseBodyText.vue'
+import BaseHeading from "./BaseHeading.vue";
+import BaseBodyText from "./BaseBodyText.vue";
 
 export default {
-  name: 'ResultsQuestions',
+  name: "ResultsQuestions",
+  components: {
+    BaseHeading,
+    BaseBodyText,
+  },
   props: {
     questions: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
-  components: {
-    BaseHeading,
-    BaseBodyText
-  }
-}
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>

@@ -1,8 +1,8 @@
 <template>
   <NavFooter
-    wrapperEl="article"
-    :leftButtons="this.getNavButtons().left"
-    :rightButtons="this.getNavButtons().right"
+    :left-buttons="this.getNavButtons().left"
+    :right-buttons="this.getNavButtons().right"
+    wrapper-el="article"
   >
     <NavBreadcrumbs />
     <BasePageIntro
@@ -20,7 +20,9 @@
 
     <!-- Advocate Steps -->
     <BaseSectionWrapper border>
-      <BaseHeading :level="2" centered>{{$t('advocate.stepsTitle')}}</BaseHeading>
+      <BaseHeading :level="2" centered>{{
+        $t("advocate.stepsTitle")
+      }}</BaseHeading>
       <BaseWidthWrapper :class="space.paddingTop" width="wide">
         <BaseStepList :steps="steps" />
       </BaseWidthWrapper>
@@ -28,45 +30,50 @@
 
     <!-- Feedback -->
     <BaseSectionWrapper :class="[type.center, space.marginBottomXwide]" border>
-      <BaseWidthWrapper width="wide" :class="space.paddingBottom">
-        <BaseHeading :level="2" centered :class="space.paddingBottom">{{$t('advocate.done')}}</BaseHeading>
-        <BaseBodyText :content="$t('advocate.feedback')" :class="space.paddingBottom"/>
+      <BaseWidthWrapper :class="space.paddingBottom" width="wide">
+        <BaseHeading :level="2" centered :class="space.paddingBottom">{{
+          $t("advocate.done")
+        }}</BaseHeading>
+        <BaseBodyText
+          :content="$t('advocate.feedback')"
+          :class="space.paddingBottom"
+        />
       </BaseWidthWrapper>
       <div :class="space.paddingBottom">
         <BaseButtonLink
-          :to="{name: 'print'}"
+          :to="{ name: 'print' }"
           :label="$t('advocate.print')"
-          iconLeft="print"
+          icon-left="print"
           role="primary"
           size="large"
         />
       </div>
       <FileExport
+        :label="$t('fileUpload.exportLabel')"
+        :select-label="$t('fileUpload.exportSelectFormat')"
         size="default"
         align="center"
-        :label="$t('fileUpload.exportLabel')"
-        :selectLabel="$t('fileUpload.exportSelectFormat')"
       />
     </BaseSectionWrapper>
   </NavFooter>
 </template>
 
 <script>
-import i18n from '@/i18n.js'
-import NavFooter from '@/components/NavFooter.vue'
-import NavBreadcrumbs from '@/components/NavBreadcrumbs.vue'
-import BasePageIntro from '@/components/BasePageIntro.vue'
-import BaseStepList from '@/components/BaseStepList.vue'
-import BaseHeading from '@/components/BaseHeading.vue'
-import BaseBodyText from '@/components/BaseBodyText.vue'
-import BaseWidthWrapper from '@/components/BaseWidthWrapper.vue'
-import BaseSectionWrapper from '@/components/BaseSectionWrapper.vue'
-import FileExport from '@/components/FileExport.vue'
-import BaseButtonLink from '@/components/BaseButtonLink.vue'
-import GlobalRecommendation from '@/components/GlobalRecommendation.vue'
+import i18n from "@/i18n.js";
+import NavFooter from "@/components/NavFooter.vue";
+import NavBreadcrumbs from "@/components/NavBreadcrumbs.vue";
+import BasePageIntro from "@/components/BasePageIntro.vue";
+import BaseStepList from "@/components/BaseStepList.vue";
+import BaseHeading from "@/components/BaseHeading.vue";
+import BaseBodyText from "@/components/BaseBodyText.vue";
+import BaseWidthWrapper from "@/components/BaseWidthWrapper.vue";
+import BaseSectionWrapper from "@/components/BaseSectionWrapper.vue";
+import FileExport from "@/components/FileExport.vue";
+import BaseButtonLink from "@/components/BaseButtonLink.vue";
+import GlobalRecommendation from "@/components/GlobalRecommendation.vue";
 
 export default {
-  name: 'Advocate',
+  name: "Advocate",
   components: {
     NavFooter,
     NavBreadcrumbs,
@@ -78,34 +85,12 @@ export default {
     BaseButtonLink,
     BaseWidthWrapper,
     FileExport,
-    GlobalRecommendation
+    GlobalRecommendation,
   },
   beforeRouteEnter: function (to, from, next) {
-    next(vm => {
-      vm.previousRoute = from
-    })
-  },
-  methods: {
-    goBack: function () {
-      if (this.previousRoute) {
-        return this.previousRoute
-      }
-
-      return { 'name': 'results' }
-    },
-    getNavButtons: function () {
-      var navButtons = {
-        left: [
-          {
-            to: this.goBack(),
-            label: this.$t('goBack')
-          }
-        ],
-        right: []
-      }
-
-      return navButtons
-    }
+    next((vm) => {
+      vm.previousRoute = from;
+    });
   },
   computed: {
     steps: function () {
@@ -113,13 +98,35 @@ export default {
         (step, index) => {
           return {
             title: this.$t(`advocate.steps.step${index + 1}.title`),
-            blurb: this.$t(`advocate.steps.step${index + 1}.blurb`)
-          }
+            blurb: this.$t(`advocate.steps.step${index + 1}.blurb`),
+          };
         }
-      )
-    }
-  }
-}
+      );
+    },
+  },
+  methods: {
+    goBack: function () {
+      if (this.previousRoute) {
+        return this.previousRoute;
+      }
+
+      return { name: "results" };
+    },
+    getNavButtons: function () {
+      var navButtons = {
+        left: [
+          {
+            to: this.goBack(),
+            label: this.$t("goBack"),
+          },
+        ],
+        right: [],
+      };
+
+      return navButtons;
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>

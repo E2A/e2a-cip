@@ -2,60 +2,60 @@
   <div class="PrintPage">
     <BaseButton
       v-if="electron"
-      @click="exportPDF"
       :label="$t('results.exportPDF')"
       :size="size"
       :role="role"
-      iconLeft="print"
+      icon-left="print"
+      @click="exportPDF"
     />
     <BaseButton
-      @click="printPage"
       :label="$t('results.printPage')"
       :size="size"
       :role="role"
-      iconLeft="print"
       :class="space.marginLeft"
+      icon-left="print"
+      @click="printPage"
     />
-    <p v-if="pdfPrintError">{{$t('results.pdfPrintError')}}</p>
+    <p v-if="pdfPrintError">{{ $t("results.pdfPrintError") }}</p>
   </div>
 </template>
 
 <script>
-import { dataMethods } from './mixins/dataMethods'
-import { electronPDF } from '@/components/mixins/electronPDF'
-import BaseButton from '@/components/BaseButton.vue'
+import { dataMethods } from "./mixins/dataMethods";
+import { electronPDF } from "@/components/mixins/electronPDF";
+import BaseButton from "@/components/BaseButton.vue";
 
 export default {
-  name: 'PrintPage',
+  name: "PrintPage",
+  components: {
+    BaseButton,
+  },
   mixins: [electronPDF, dataMethods],
   props: {
     size: String,
     role: {
       type: String,
-      default: 'default'
-    }
+      default: "default",
+    },
   },
-  components: {
-    BaseButton
-  },
-  data () {
+  data() {
     return {
       pdfPrintError: false,
-      electron: this.checkElectron()
-    }
+      electron: this.checkElectron(),
+    };
   },
   methods: {
     printPage: function () {
       // Default browser printing
-      window.print()
+      window.print();
     },
     exportPDF: function () {
       // Electron printing - show error if electron PDF is false (ie could not open)
-      this.pdfPrintError = !this.printElectronPDF()
-      this.$router.push({ name: 'print' })
-    }
-  }
-}
+      this.pdfPrintError = !this.printElectronPDF();
+      this.$router.push({ name: "print" });
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>

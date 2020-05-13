@@ -22,23 +22,18 @@
       :align="align"
     >
       <div :class="space.paddingXnarrow">
-        <BaseHeading
-          :level="4"
-          scale="zeta"
-          color="dark"
-          weight="bold"
-        >
-          {{title}}
+        <BaseHeading :level="4" scale="zeta" color="dark" weight="bold">
+          {{ title }}
         </BaseHeading>
 
         <BaseHeading
           :level="4"
+          :class="space.paddingVerticalXnarrow"
           scale="zeta"
           color="dark"
           weight="light"
-          :class="space.paddingVerticalXnarrow"
         >
-          {{teaser}}
+          {{ teaser }}
         </BaseHeading>
 
         <!-- dots -->
@@ -46,9 +41,10 @@
 
       <!-- read more link -->
       <div :class="base.resourceLink">
-
-        <router-link :to="{name: 'evidence-informed-practice', params: {id: id}}">
-          {{$t('bestPracticeIconData')}} &rsaquo;
+        <router-link
+          :to="{ name: 'evidence-informed-practice', params: { id: id } }"
+        >
+          {{ $t("bestPracticeIconData") }} &rsaquo;
         </router-link>
       </div>
     </BaseFlyout>
@@ -56,137 +52,156 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import { bestPracticeData } from './mixins/bestPracticeData'
-import BaseHeading from './BaseHeading.vue'
-import BaseIcon from './BaseIcon.vue'
-import BaseFlyout from './BaseFlyout.vue'
+import { mapState } from "vuex";
+import { bestPracticeData } from "./mixins/bestPracticeData";
+import BaseHeading from "./BaseHeading.vue";
+import BaseIcon from "./BaseIcon.vue";
+import BaseFlyout from "./BaseFlyout.vue";
 
 export default {
-  name: 'bestPracticeInfoIcon',
+  name: "BestPracticeInfoIcon",
   mixins: [bestPracticeData],
   props: {
     id: {
       type: [String, Number],
-      required: true
+      required: true,
     },
     activityID: {
       type: [String, Number],
-      required: true
+      required: true,
     },
     // align the flyout to center or right
     align: {
       type: String,
-      default: 'center'
-    }
+      default: "center",
+    },
   },
   computed: {
     ...mapState({
-      flyout: state => state.infoFlyout
+      flyout: (state) => state.infoFlyout,
     }),
     icon: function () {
-      return this.findBestPracticeByID().icon
+      return this.findBestPracticeByID().icon;
     },
     title: function () {
-      return this.findBestPracticeByID().title
+      return this.findBestPracticeByID().title;
     },
     teaser: function () {
-      return this.findBestPracticeByID().teaser
+      return this.findBestPracticeByID().teaser;
     },
     // html id for flyout, for anchor to target
     flyoutID: function () {
-      return `${this.activityID}-${this.id}-flyout`
+      return `${this.activityID}-${this.id}-flyout`;
     },
     flyoutOpen: function () {
-      const flyoutPresent = this.flyout
+      const flyoutPresent = this.flyout;
       // check that a flyout exists, its an object, and it has the correct id
-      const isOpen = flyoutPresent && Object.keys(flyoutPresent).length !== 0 && flyoutPresent.flyout_id === this.flyoutID
-      return isOpen
+      const isOpen =
+        flyoutPresent &&
+        Object.keys(flyoutPresent).length !== 0 &&
+        flyoutPresent.flyout_id === this.flyoutID;
+      return isOpen;
     },
     selectedAssessment: function () {
-      return this.getSelectedAssessment(this.title) || this.bestPracticeOptions.empty
+      return (
+        this.getSelectedAssessment(this.title) || this.bestPracticeOptions.empty
+      );
     },
     selectedAssessmentClass: function () {
       const option = this.getSelectedAssessment(this.title)
         ? this.getSelectedAssessment(this.title).value.toLowerCase()
-        : this.bestPracticeOptions.empty.class
-      return this.bestPracticeOptions[option].class
-    }
+        : this.bestPracticeOptions.empty.class;
+      return this.bestPracticeOptions[option].class;
+    },
   },
   components: {
     BaseHeading,
     BaseFlyout,
-    BaseIcon
+    BaseIcon,
   },
   data: function () {
     return {
       bestPracticeOptions: {
         empty: {
-          class: 'empty',
-          value: this.$t('bestPracticeOptions.emptyKey')
+          class: "empty",
+          value: this.$t("bestPracticeOptions.emptyKey"),
         },
         no: {
-          class: 'no',
-          value: this.$t('bestPracticeOptions.noKey')
+          class: "no",
+          value: this.$t("bestPracticeOptions.noKey"),
         },
         partially: {
-          class: 'partially',
-          value: this.$t('bestPracticeOptions.partiallyKey')
+          class: "partially",
+          value: this.$t("bestPracticeOptions.partiallyKey"),
         },
         yes: {
-          class: 'yes',
-          value: this.$t('bestPracticeOptions.yesKey')
-        }
-      }
-    }
+          class: "yes",
+          value: this.$t("bestPracticeOptions.yesKey"),
+        },
+      },
+    };
   },
   methods: {
     findBestPracticeByID: function () {
-      return this.bestPractices.find(bp => bp.id === this.id)
+      return this.bestPractices.find((bp) => bp.id === this.id);
     },
     getSelectedAssessment: function (bestPracticeText) {
       // Check if assessment is present, if so add 'assessment-selected' class to selection
-      const assessmentPresent = this.$store.getters['entities/activities/query']()
-        .with('assessments', (query) => {
-          query.where('best_practice_id', this.id)
-        }).whereId(this.activityID).get()[0].assessments
+      const assessmentPresent = this.$store.getters[
+        "entities/activities/query"
+      ]()
+        .with("assessments", (query) => {
+          query.where("best_practice_id", this.id);
+        })
+        .whereId(this.activityID)
+        .get()[0].assessments;
 
       if (assessmentPresent && assessmentPresent.length > 0) {
-        return assessmentPresent[0]
+        return assessmentPresent[0];
       }
-      return false
+      return false;
     },
-    updateAssessment: function (bestPracticeText, bestPracticeValue, bestPracticeID) {
+    updateAssessment: function (
+      bestPracticeText,
+      bestPracticeValue,
+      bestPracticeID
+    ) {
       // Check if assessment for current activity is store
-      const assessmentPresent = this.$store.getters['entities/activities/query']().with('assessments', (query) => {
-        query.where('best_practice_id', bestPracticeID)
-      }).with('recommendations').whereId(this.activityID).get()[0].assessments[0]
+      const assessmentPresent = this.$store.getters[
+        "entities/activities/query"
+      ]()
+        .with("assessments", (query) => {
+          query.where("best_practice_id", bestPracticeID);
+        })
+        .with("recommendations")
+        .whereId(this.activityID)
+        .get()[0].assessments[0];
 
       if (assessmentPresent) {
         // Update assessment value if it already exists
-        this.$store.dispatch('entities/assessments/update', {
+        this.$store.dispatch("entities/assessments/update", {
           id: assessmentPresent.id,
           activity_id: this.activityID,
           text: bestPracticeText,
           value: bestPracticeValue,
-          best_practice_id: bestPracticeID
-        })
-        return
+          best_practice_id: bestPracticeID,
+        });
+        return;
       }
       // Add a new assessment
-      this.$store.dispatch('entities/assessments/insert', {
+      this.$store.dispatch("entities/assessments/insert", {
         data: {
           activity_id: this.activityID,
           text: bestPracticeText,
           value: bestPracticeValue,
-          best_practice_id: bestPracticeID
-        }
-      })
+          best_practice_id: bestPracticeID,
+        },
+      });
     },
     toggleFlyout: function () {
       if (this.flyoutOpen) {
         // Tell the store this flyout is closed
-        this.$store.commit('SET_INFO_FLYOUT', {})
+        this.$store.commit("SET_INFO_FLYOUT", {});
         // this.$store.dispatch('entities/bestpracticeicons/create', {
         //   data: {
         //     activity_id: this.activityID,
@@ -196,11 +211,11 @@ export default {
         // })
       } else {
         // Tell the store this flyout is open
-        this.$store.commit('SET_INFO_FLYOUT', {
+        this.$store.commit("SET_INFO_FLYOUT", {
           activity_id: this.activityID,
           best_practice_id: this.id,
-          flyout_id: this.flyoutID
-        })
+          flyout_id: this.flyoutID,
+        });
         // this.$store.dispatch('entities/bestpracticeicons/create', {
         //   data: {
         //     activity_id: this.activityID,
@@ -209,16 +224,16 @@ export default {
         //   }
         // })
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style src="styles/spacing.scss" lang="scss" module="space"></style>
 <style src="styles/color.scss" lang="scss" module="color"></style>
 
 <style lang="scss" module="base">
-@import '~styleConfig/color';
+@import "~styleConfig/color";
 $icon-size: 1.5rem;
 
 .wrapper {
@@ -238,7 +253,7 @@ $icon-size: 1.5rem;
 }
 
 .flyout {
-  composes: scaleZeta from 'styles/type.scss';
+  composes: scaleZeta from "styles/type.scss";
   text-align: center;
   top: ($icon-size + 1rem);
 }
@@ -255,7 +270,7 @@ $icon-size: 1.5rem;
   }
 
   &Inactive {
-    color: color('midtone');
+    color: color("midtone");
 
     &:hover {
       cursor: default;
@@ -264,20 +279,20 @@ $icon-size: 1.5rem;
 }
 
 .resourceLink {
-  composes: paddingXxnarrow from 'styles/spacing.scss';
-  composes: top from 'styles/borders.scss';
+  composes: paddingXxnarrow from "styles/spacing.scss";
+  composes: top from "styles/borders.scss";
 }
 </style>
 
 <style lang="scss" module="dot">
-@import '~styleConfig/color';
-@import '~styleConfig/borders';
+@import "~styleConfig/color";
+@import "~styleConfig/borders";
 
 .option {
   $size: 1.8rem;
   $margin: 0.4rem;
-  composes: default from 'styles/animation.scss';
-  composes: midtone from 'styles/color.scss';
+  composes: default from "styles/animation.scss";
+  composes: midtone from "styles/color.scss";
   background: transparent;
   border: none;
   cursor: pointer;
@@ -292,7 +307,7 @@ $icon-size: 1.5rem;
   &::before,
   &::after {
     border-radius: 50%;
-    content: ' ';
+    content: " ";
     display: inline-block;
     height: $size;
     left: 50%;
@@ -303,38 +318,38 @@ $icon-size: 1.5rem;
   }
 
   &::before {
-    background-color: color('no');
+    background-color: color("no");
   }
 
   &:hover,
   &:active {
     &::before {
-      @include border($w: 'thick');
-      border-color: color('white');
+      @include border($w: "thick");
+      border-color: color("white");
     }
 
     &::after {
-      @include border($w: 'medium');
-      border-color: border('light');
+      @include border($w: "medium");
+      border-color: border("light");
     }
   }
 }
 
 .selected {
   &::before {
-    border-color: color('white') !important;
+    border-color: color("white") !important;
   }
 
   &::after {
-    @include border($w: 'medium');
-    border-color: border('dark') !important;
+    @include border($w: "medium");
+    border-color: border("dark") !important;
   }
 }
 
-@each $color in ['yes', 'partially', 'no'] {
-  .#{$color}{
+@each $color in [ "yes", "partially", "no" ] {
+  .#{$color} {
     &::before {
-      @include border($w: 'thick', $color: $color);
+      @include border($w: "thick", $color: $color);
       background-color: color($color);
     }
   }
