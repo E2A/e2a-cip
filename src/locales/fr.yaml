@@ -47,11 +47,11 @@ fr:
       - Pour **Windows**, décompressez le dossier et exécutez le fichier .exe dans le dossier.
     downloadMac: Macintosh (51MB)
     # Do Not Translate
-    downloadMacUrl: https://github.com/E2A/e2a-electron-builds/raw/master/mac-installer.zip
+    downloadMacUrl: https://github.com/E2A/e2a-cip/releases/download/v0.2.3/TARP-0.2.0.dmg
     # # Do Not Translate
     downloadWindowsPortable: Windows (72MB)
     # Do Not Translate
-    downloadWindowsPortableUrl: https://github.com/E2A/e2a-electron-builds/raw/master/windows-installer-portable.zip
+    downloadWindowsPortableUrl: https://github.com/E2A/e2a-cip/releases/download/v0.2.3/TARP.0.2.0.exe
     acknowldgementTitle: Remerciements
     acknowledgementText: |-
       Le projet Evidence to Action (E2A) remercie l'Agence des États-Unis pour le Développement International (USAID) pour son généreux soutien dans le développement de ‘’ Pas sans nous’’ ! Un outil numérique pour une planification adaptée  à la SRAJ. En outre, nous aimerions remercier nos collègues de Pathfinder International, Family Planning 2020, Population Services International et STPH Institute pour leur contribution. Votre point de vue, vos commentaires et vos essais en tant qu’utilisateurs ont joué un rôle déterminant dans la création de cet outil.
