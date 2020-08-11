@@ -76,26 +76,26 @@ export default {
     BaseBodyText,
     BaseSectionWrapper,
     BaseWidthWrapper,
-    BaseGallery,
+    BaseGallery
   },
   mixins: [bestPracticeData],
   props: {
-    id: [String, Number],
+    id: [String, Number]
   },
   computed: {
-    resources: function () {
+    resources: function() {
       return (
         this.bestPractices[this.id - 1].resources &&
-        Object.values(this.bestPractices[this.id - 1].resources).map((item) => {
+        Object.values(this.bestPractices[this.id - 1].resources).map(item => {
           return {
             title: item.title,
             teaser: item.teaser,
-            url: item.url,
+            url: item.url
           };
         })
       );
-    },
-  },
+    }
+  }
 };
 </script>
 

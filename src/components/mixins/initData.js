@@ -3,12 +3,12 @@ import i18n from "@/i18n.js";
 
 export const initData = {
   computed: {
-    currentLocale: function () {
+    currentLocale: function() {
       return this.$i18n.locale;
     },
-    countryIndicators: function () {
+    countryIndicators: function() {
       return this.getTranslatedCountryIndicators();
-    },
+    }
   },
   created() {
     // Initialize data on create
@@ -19,12 +19,12 @@ export const initData = {
     }
   },
   watch: {
-    currentLocale: function (newLocale) {
+    currentLocale: function(newLocale) {
       this.setupCountryIndicators();
-    },
+    }
   },
   methods: {
-    getTranslatedCountryIndicators: function () {
+    getTranslatedCountryIndicators: function() {
       // Get indicators from i18n and pull into object
       return Object.values(i18n.messages[i18n.locale].countryIndicators).map(
         (countryIndicator, index) => {
@@ -45,7 +45,7 @@ export const initData = {
             ),
             indicatorValueUnit: this.$t(
               `${translatedIndicator}.indicatorValueUnit`
-            ),
+            )
           };
 
           // if there are questions, add to object
@@ -61,23 +61,23 @@ export const initData = {
         }
       );
     },
-    setupCountryIndicators: function () {
+    setupCountryIndicators: function() {
       // wipe out the indicators to make sure we have a clean slate
       this.$store.dispatch("entities/countryindicators/deleteAll");
       // For each indicator, parse file and send data to be stored
-      this.getTranslatedCountryIndicators().forEach((indicator) => {
+      this.getTranslatedCountryIndicators().forEach(indicator => {
         Papa.parse(`uploads/country_indicators/${indicator.fileName}`, {
           download: true,
           header: true,
-          complete: (results) => {
+          complete: results => {
             this.storeCountryIndicators(indicator, results.data);
-          },
+          }
         });
       });
     },
-    storeCountryIndicators: function (indicator, indicatorData) {
+    storeCountryIndicators: function(indicator, indicatorData) {
       // Map Data to Model format
-      const setupData = indicatorData.map((dataItem) => {
+      const setupData = indicatorData.map(dataItem => {
         return {
           countryCode: dataItem[indicator.iso2codeHeader],
           name: indicator.name,
@@ -87,14 +87,14 @@ export const initData = {
           unit: indicator.unit,
           sourceUrl: indicator.sourceUrl,
           citation: indicator.citation,
-          questions: indicator.questions || null,
+          questions: indicator.questions || null
         };
       });
 
       // Create for initial load
       this.$store.dispatch("entities/countryindicators/insert", {
-        data: setupData,
+        data: setupData
       });
-    },
-  },
+    }
+  }
 };

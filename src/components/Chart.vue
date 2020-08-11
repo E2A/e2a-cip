@@ -15,8 +15,8 @@
 
     <BaseGutterWrapper
       :class="base.chartWrapper"
-      gutter-y="narrow"
-      gutter-x="narrow"
+      gutterY="narrow"
+      gutterX="narrow"
     >
       <!-- Chart -->
       <div :id="chartName" :class="base.chart" />
@@ -46,62 +46,62 @@ export default {
     BaseHeading,
     BaseGutterWrapper,
     ChartLegend,
-    BaseTooltip,
+    BaseTooltip
   },
   mixins: [dataMethods],
   props: {
     chartName: {
       type: String,
-      required: true,
+      required: true
     },
     seriesData: {
       type: Array,
-      requred: true,
+      requred: true
     },
     labelData: {
       type: Array,
-      required: true,
+      required: true
     },
     isCurrency: {
       type: Boolean,
-      required: false,
+      required: false
     },
     toolTip: {
       type: String,
-      required: false,
-    },
+      required: false
+    }
   },
-  data: function () {
+  data: function() {
     return {
       filteredSeries: null,
       // Threshold for piece of pie
       // 2x is threshold for label
-      minimumPercent: 0.015,
+      minimumPercent: 0.015
     };
   },
   computed: {
-    activitiesPresent: function () {
+    activitiesPresent: function() {
       return this.getItemCount("activities") > 0;
     },
-    series: function () {
-      return this.seriesData.map((data) => data.value);
+    series: function() {
+      return this.seriesData.map(data => data.value);
     },
-    toolTipPresent: function () {
+    toolTipPresent: function() {
       return this.toolTip.length > 0;
     },
-    isSeriesEmpty: function () {
-      return this.series.every((val) => val === 0);
+    isSeriesEmpty: function() {
+      return this.series.every(val => val === 0);
     },
-    total: function () {
+    total: function() {
       if (this.isSeriesEmpty) return this.series.length;
       return this.series.reduce((total, value) => total + value, 0);
-    },
+    }
   },
   mounted() {
     this.filterSeries();
     const element = `#${this.chartName}`;
     const data = {
-      series: this.filteredSeries,
+      series: this.filteredSeries
     };
     const isCurrency = this.isCurrency;
     const setup = this.getItemValue("setup");
@@ -136,25 +136,25 @@ export default {
         }
 
         return `${parsedValue}${symbol}`;
-      },
-    }).on("draw", (context) => this.chartLabels(context));
+      }
+    }).on("draw", context => this.chartLabels(context));
   },
   methods: {
     filterSeries() {
       if (this.isSeriesEmpty) {
         // If everything is empty, give everything an equal share
         // Later, just make the labels 0
-        this.filteredSeries = this.seriesData.map((obj) => {
+        this.filteredSeries = this.seriesData.map(obj => {
           return {
             ...obj,
-            value: 1,
+            value: 1
           };
         });
         return;
       }
       // Filters series below a certain percentage of total
       this.filteredSeries = this.seriesData.filter(
-        (obj) => obj.value / this.total > this.minimumPercent
+        obj => obj.value / this.total > this.minimumPercent
       );
     },
     chartLabels(context) {
@@ -166,8 +166,8 @@ export default {
         // append `label-` to the classname and add it to the node's classlist
         context.element._node.classList.add(`label-${labelClass}`);
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

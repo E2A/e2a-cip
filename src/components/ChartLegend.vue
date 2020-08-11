@@ -18,13 +18,13 @@ export default {
   props: {
     chartName: {
       type: String,
-      required: true,
+      required: true
     },
     labelData: {
       type: Array,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 };
 </script>
 

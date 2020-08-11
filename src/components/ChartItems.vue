@@ -30,8 +30,7 @@
             v-if="questions && displayQuestions"
             :class="space.paddingTop"
             :questions="
-              questions.find((question) => question.name === chartName)
-                .questions
+              questions.find(question => question.name === chartName).questions
             "
           />
         </div>
@@ -57,18 +56,18 @@ export default {
     BaseButton,
     BaseHeading,
     BaseGutterWrapper,
-    ResultsQuestions,
+    ResultsQuestions
   },
   mixins: [dataIO, dataMethods, activityTypes],
   props: {
     displayQuestions: {
       type: [Boolean],
-      default: true,
+      default: true
     },
     viewType: {
       type: [String],
       required: false,
-      default: "full",
+      default: "full"
     },
     chartNames: {
       type: Array,
@@ -78,33 +77,33 @@ export default {
           "youthFocusBudget",
           "youthFocusCount",
           "activityTypeBudget",
-          "activityTypeCount",
+          "activityTypeCount"
         ];
       },
-      validator: (value) => {
+      validator: value => {
         // The value must match one of these strings
         const valueArray = value.map(
-          (v) =>
+          v =>
             [
               "youthFocusBudget",
               "youthFocusCount",
               "activityTypeBudget",
-              "activityTypeCount",
+              "activityTypeCount"
             ].indexOf(v) !== -1
         );
         return valueArray.indexOf(true) !== -1;
-      },
+      }
     },
     title: {
-      type: String,
+      type: String
     },
     questions: {
-      type: Array,
-    },
+      type: Array
+    }
   },
   data() {
     return {
-      chartData: this.renderChartData(),
+      chartData: this.renderChartData()
     };
   },
   computed: {
@@ -112,22 +111,22 @@ export default {
       return this.$i18n.locale;
     },
     parsedQuestions() {
-      return this.questions.map((question) => {
+      return this.questions.map(question => {
         return question.questions;
       });
-    },
+    }
   },
   watch: {
     // re-render the charts if the language changes
     // so the legend labels update
-    currentLocale: function (newLocale) {
+    currentLocale: function(newLocale) {
       this.chartData = this.renderChartData();
-    },
+    }
   },
   methods: {
     // Use Largest Remainder Method to ensure rounded percentages always add to 100
     // https://stackoverflow.com/questions/1410711/rounding-an-arrays-of-values-to-100
-    getRoundedPercentages: function (numbers) {
+    getRoundedPercentages: function(numbers) {
       let numberVersions = numbers
         .map((number, index) => {
           const rounded = Math.floor(number);
@@ -136,7 +135,7 @@ export default {
             index: index, // grab the original index so we can remember the order
             original: number, // a reference to the original decimal
             rounded: rounded, // the integer
-            remainder: number - rounded, // just the decimal value
+            remainder: number - rounded // just the decimal value
           };
         })
         .sort((a, b) => {
@@ -147,7 +146,7 @@ export default {
 
       // loop through the array and adjust the rounded integers to get the correct total
       // starting with the biggest remainders so they get rounded up first
-      numberVersions.forEach((number) => {
+      numberVersions.forEach(number => {
         // add up the integers
         const integerSum = numberVersions.reduce((sum, number) => {
           return sum + number.rounded;
@@ -165,9 +164,9 @@ export default {
           // restore the original order
           return a.index - b.index;
         })
-        .map((number) => number.rounded); // and output just the rounded numbers
+        .map(number => number.rounded); // and output just the rounded numbers
     },
-    renderChartData: function () {
+    renderChartData: function() {
       // Get Data
       const chartData = this.getChartData(this.getActvityData());
 
@@ -176,16 +175,16 @@ export default {
       var activtyTypeBudgetSeries = [];
 
       // Parse series data to be chartist friendly
-      chartData.activityTypeData.forEach(function (item) {
+      chartData.activityTypeData.forEach(function(item) {
         activtyTypeCountSeries.push({
           value: item.count,
           name: item.type,
-          className: item.class,
+          className: item.class
         });
         activtyTypeBudgetSeries.push({
           value: item.budgetAmount,
           name: item.type,
-          className: item.class,
+          className: item.class
         });
       });
 
@@ -195,31 +194,31 @@ export default {
         {
           value: chartData.youthCentricBudgetData[0].youthCentricBudget,
           name: this.$t("chartTitles.youthCentricLabel"),
-          className: "youthCentric",
+          className: "youthCentric"
         },
         {
           value: chartData.youthCentricBudgetData[0].notYouthCentricBudget,
           name: this.$t("chartTitles.notYouthCentricLabel"),
-          className: "notYouthCentric",
-        },
+          className: "notYouthCentric"
+        }
       ];
 
       const youthFocusedCountSeries = [
         {
           value: chartData.youthCentricActivityData[0].youthCentricCount,
           name: this.$t("chartTitles.youthCentricLabel"),
-          className: "youthCentric",
+          className: "youthCentric"
         },
         {
           value: chartData.youthCentricActivityData[0].notYouthCentricCount,
           name: this.$t("chartTitles.notYouthCentricLabel"),
-          className: "notYouthCentric",
-        },
+          className: "notYouthCentric"
+        }
       ];
 
       const youthFocusedCountRoundedPercentages = this.getRoundedPercentages([
         chartData.youthCentricActivityData[0].notYouthCentricPercent * 100,
-        chartData.youthCentricActivityData[0].youthCentricPercent * 100,
+        chartData.youthCentricActivityData[0].youthCentricPercent * 100
       ]);
 
       // Build Labels
@@ -227,35 +226,35 @@ export default {
         {
           value: youthFocusedCountRoundedPercentages[0],
           labelText: this.$t("chartTitles.notYouthCentricLabel"),
-          className: "notYouthCentric",
+          className: "notYouthCentric"
         },
         {
           value: youthFocusedCountRoundedPercentages[1],
           labelText: this.$t("chartTitles.youthCentricLabel"),
-          className: "youthCentric",
-        },
+          className: "youthCentric"
+        }
       ];
 
       const youthFocusedBudgetRoundedPercentages = this.getRoundedPercentages([
         chartData.youthCentricBudgetData[0].notYouthCentricPercent * 100,
-        chartData.youthCentricBudgetData[0].youthCentricPercent * 100,
+        chartData.youthCentricBudgetData[0].youthCentricPercent * 100
       ]);
 
       const youthFocusedBudgetLabel = [
         {
           value: youthFocusedBudgetRoundedPercentages[0],
           labelText: this.$t("chartTitles.notYouthCentricLabel"),
-          className: "notYouthCentric",
+          className: "notYouthCentric"
         },
         {
           value: youthFocusedBudgetRoundedPercentages[1],
           labelText: this.$t("chartTitles.youthCentricLabel"),
-          className: "youthCentric",
-        },
+          className: "youthCentric"
+        }
       ];
 
       const activtyTypeBudgetRoundedPercentages = this.getRoundedPercentages(
-        chartData.activityTypeData.map((item) => item.budgetPercent * 100)
+        chartData.activityTypeData.map(item => item.budgetPercent * 100)
       );
 
       const activtyTypeBudgetLabel = chartData.activityTypeData.map(
@@ -263,20 +262,20 @@ export default {
           return {
             value: activtyTypeBudgetRoundedPercentages[index],
             labelText: item.type,
-            className: item.class,
+            className: item.class
           };
         }
       );
 
       const activtyTypeCountRoundedPercentages = this.getRoundedPercentages(
-        chartData.activityTypeData.map((item) => item.countPercent * 100)
+        chartData.activityTypeData.map(item => item.countPercent * 100)
       );
       const activtyTypeCountLabel = chartData.activityTypeData.map(
         (item, index) => {
           return {
             value: activtyTypeCountRoundedPercentages[index],
             labelText: item.type,
-            className: item.class,
+            className: item.class
           };
         }
       );
@@ -287,23 +286,23 @@ export default {
           youthFocusBudget: true,
           youthFocusCount: false,
           activityTypeBudget: true,
-          activityTypeCount: false,
+          activityTypeCount: false
         },
         seriesData: {
           youthFocusBudget: youthFocusedBudgetSeries,
           youthFocusCount: youthFocusedCountSeries,
           activityTypeBudget: activtyTypeBudgetSeries,
-          activityTypeCount: activtyTypeCountSeries,
+          activityTypeCount: activtyTypeCountSeries
         },
         labelData: {
           youthFocusBudget: youthFocusedBudgetLabel,
           youthFocusCount: youthFocusedCountLabel,
           activityTypeBudget: activtyTypeBudgetLabel,
-          activityTypeCount: activtyTypeCountLabel,
-        },
+          activityTypeCount: activtyTypeCountLabel
+        }
       };
-    },
-  },
+    }
+  }
 };
 </script>
 

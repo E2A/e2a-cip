@@ -1,6 +1,6 @@
 export const dataMethods = {
   methods: {
-    getItemCount: function (objectType) {
+    getItemCount: function(objectType) {
       if (objectType === "all") {
         const activityCount = this.$store.getters[
           "entities/activities/query"
@@ -21,7 +21,7 @@ export const dataMethods = {
         return this.$store.getters[`entities/${objectType}/query`]().count();
       }
     },
-    getItemValue: function (objectType, objectField, objectId) {
+    getItemValue: function(objectType, objectField, objectId) {
       var objectItem = null;
       // Get object from store
       if (objectId) {
@@ -40,7 +40,7 @@ export const dataMethods = {
         return objectItem;
       }
     },
-    getNextActivity: function () {
+    getNextActivity: function() {
       const lastActivity = this.$store.getters[
         "entities/activities/query"
       ]().last();
@@ -50,13 +50,13 @@ export const dataMethods = {
       }
       return String(nextActivityId + 1);
     },
-    getLastItem: function () {
+    getLastItem: function() {
       const lastActivity = this.$store.getters[
         "entities/activities/query"
       ]().last();
       return lastActivity ? lastActivity.id : 0;
     },
-    setupPresent: function () {
+    setupPresent: function() {
       const setup = this.getItemValue("setup");
 
       // if setup entitly exists, ensure all fields are present
@@ -68,12 +68,12 @@ export const dataMethods = {
         return false;
       }
     },
-    checkElectron: function () {
+    checkElectron: function() {
       // Check if electron is being used
       var userAgent = navigator.userAgent.toLowerCase();
       return userAgent.indexOf(" electron/") > -1;
     },
-    getCountryIndicator: function (indicatorId) {
+    getCountryIndicator: function(indicatorId) {
       // Check for indicator presence, if so find name
       const indicator = this.$store.getters[
         "entities/countryindicators/query"
@@ -101,29 +101,29 @@ export const dataMethods = {
         return {
           name: indicatorName,
           error: this.$t("indicatorDataNotPresent", {
-            countryName: countryName,
-          }),
+            countryName: countryName
+          })
         };
       }
     },
-    getBudgetTotal: function (queryObject) {
+    getBudgetTotal: function(queryObject) {
       return queryObject.reduce((budgetTotal, entity) => {
         return budgetTotal + entity.budget;
       }, 0);
     },
-    getYouthCentricActivities: function () {
+    getYouthCentricActivities: function() {
       return this.$store.getters["entities/activities/query"]()
         .where("youthCentric", true)
         .count();
     },
-    getYouthCentricBudget: function () {
+    getYouthCentricBudget: function() {
       return this.getBudgetTotal(
         this.$store.getters["entities/activities/query"]()
           .where("youthCentric", true)
           .get()
       );
     },
-    getChartData: function (activityTypes) {
+    getChartData: function(activityTypes) {
       // Get chart data
       var chartDataObject = {};
 
@@ -167,7 +167,7 @@ export const dataMethods = {
                 this.getBudgetTotal(activityTypesObjects) / totalYouthBudget
               ).toFixed(3)
             : 0,
-          class: activityType.key,
+          class: activityType.key
         });
       }
       chartDataObject["activityTypeData"] = activityTypeData;
@@ -184,7 +184,7 @@ export const dataMethods = {
           : 0.5,
         notYouthCentricPercent: totalBudget
           ? (1 - youthCentricBudget / totalBudget).toFixed(3)
-          : 0.5,
+          : 0.5
       });
 
       chartDataObject["youthCentricBudgetData"] = youthCentricBudgetData;
@@ -204,7 +204,7 @@ export const dataMethods = {
           youthCentricCount / totalActivities
         ).toFixed(3),
         youthCentricCount: youthCentricCount,
-        notYouthCentricCount: totalActivities - youthCentricCount,
+        notYouthCentricCount: totalActivities - youthCentricCount
       });
 
       chartDataObject["youthCentricActivityData"] = youthCentricAcitivtyData;
@@ -212,7 +212,7 @@ export const dataMethods = {
       // Return chart data
       return chartDataObject;
     },
-    notify: function (message, role = "info", timeout = 4000, visible = true) {
+    notify: function(message, role = "info", timeout = 4000, visible = true) {
       // Clear notifications before adding a new one
       this.$store.dispatch("entities/globalnotifications/deleteAll");
 
@@ -221,9 +221,9 @@ export const dataMethods = {
           visible: visible,
           timeout: timeout,
           role: role,
-          message: message,
-        },
+          message: message
+        }
       });
-    },
-  },
+    }
+  }
 };

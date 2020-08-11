@@ -82,10 +82,10 @@ export default {
     vSelect,
     BaseFormInput,
     BaseFormLabel,
-    BaseFormSelect,
+    BaseFormSelect
   },
   props: {
-    clear: Boolean,
+    clear: Boolean
   },
   data() {
     return {
@@ -97,18 +97,18 @@ export default {
       setupRole: null,
       setupCurrency: null,
       setupDateStart: new Date(),
-      setupDateEnd: new Date(),
+      setupDateEnd: new Date()
     };
   },
   computed: {
-    setupRoles: function () {
+    setupRoles: function() {
       return Object.values(i18n.messages[i18n.locale].userRoles).map(
         (userRole, index) => {
           return this.$t(`userRoles.role${index + 1}`);
         }
       );
     },
-    yearsArray: function () {
+    yearsArray: function() {
       const currentYear = new Date().getFullYear();
 
       let array = [];
@@ -117,18 +117,18 @@ export default {
       }
 
       return array;
-    },
+    }
   },
   watch: {
-    clear: function (newVal) {
+    clear: function(newVal) {
       if (newVal) this.clearData();
-    },
+    }
   },
   created() {
     this.updateData();
   },
   methods: {
-    clearData: function () {
+    clearData: function() {
       // Changing the key (forceTitleUpdate) forces the title's BaseFormInput to re-render
       // https://michaelnthiessen.com/force-re-render
       this.forceTitleUpdate++;
@@ -140,7 +140,7 @@ export default {
       this.setupDateEnd = new Date();
       this.$emit("clear-success");
     },
-    updateData: function () {
+    updateData: function() {
       // Update data based on what is stored
       const setupData = this.getData();
 
@@ -150,14 +150,14 @@ export default {
       if (setupData && setupData.currencyCode) {
         setupCurrencyVal = {
           value: setupData.currencyCode,
-          label: setupData.currencyName,
+          label: setupData.currencyName
         };
       }
 
       if (setupData && setupData.countryCode) {
         setupCountryVal = {
           value: setupData.countryCode,
-          label: setupData.countryName,
+          label: setupData.countryName
         };
       }
 
@@ -170,7 +170,7 @@ export default {
         this.setupDateEnd = setupData.dateEnd;
       }
     },
-    getData: function () {
+    getData: function() {
       return this.$store.getters["entities/setup/query"]().first();
     },
     validateDates(dateChanged) {
@@ -182,7 +182,7 @@ export default {
         }
       }
     },
-    addSetup: function (dateChanged) {
+    addSetup: function(dateChanged) {
       this.validateDates(dateChanged);
 
       const currencyData = this.setupCurrency;
@@ -214,11 +214,11 @@ export default {
           currencyCode: currencyCodeData,
           currencyName: currencyNameData,
           dateStart: planDateStart,
-          dateEnd: planDateEnd,
-        },
+          dateEnd: planDateEnd
+        }
       });
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -39,21 +39,21 @@ export default {
   components: {
     BaseGutterWrapper,
     BaseHeading,
-    BaseBodyText,
+    BaseBodyText
   },
   props: {
     steps: {
       type: Array,
-      required: true,
+      required: true
     },
     size: {
       type: String,
       default: "default",
       validator(value) {
         return ["small", "default"].indexOf(value) !== -1;
-      },
-    },
-  },
+      }
+    }
+  }
 };
 </script>
 

@@ -18,9 +18,9 @@ export default {
   name: "BaseDetails",
   data() {
     return {
-      open: true,
+      open: true
     };
-  },
+  }
 };
 </script>
 

@@ -19,8 +19,8 @@
         <BaseGutterWrapper
           :class="base.buttonGroup"
           el="ul"
-          gutter-x="xnarrow"
-          gutter-y="xnarrow"
+          gutterX="xnarrow"
+          gutterY="xnarrow"
         >
           <li>
             <BaseButton
@@ -62,43 +62,43 @@ export default {
     BaseHeading,
     BaseBodyText,
     BaseGutterWrapper,
-    BaseButton,
+    BaseButton
   },
   mixins: [dataIO, dataMethods],
   props: {
     size: {
       type: String,
-      default: "small",
+      default: "small"
     },
     role: {
       type: String,
-      default: "default",
+      default: "default"
     },
     align: String,
     label: {
-      type: String,
+      type: String
     },
     selectLabel: {
-      type: String,
-    },
+      type: String
+    }
   },
-  data: function () {
+  data: function() {
     return {
-      exportOption: "",
+      exportOption: ""
     };
   },
   methods: {
-    exportData: function (option) {
+    exportData: function(option) {
       if (this.runExportData(option)) {
         this.notify(
           this.$t("fileUpload.exportSuccessful", {
-            filetype: option.toUpperCase(),
+            filetype: option.toUpperCase()
           }),
           "success"
         );
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

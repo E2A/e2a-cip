@@ -23,9 +23,9 @@ import BaseIcon from "./BaseIcon.vue";
 export default {
   name: "BaseButton",
   components: {
-    BaseIcon,
+    BaseIcon
   },
-  mixins: [buttonStyles],
+  mixins: [buttonStyles]
 };
 </script>
 

@@ -69,36 +69,36 @@ export default {
     ActivitiesList,
     ActivitiesTypeHeading,
     ActivitiesItemAssessment,
-    ActivitiesExportTray,
+    ActivitiesExportTray
   },
   mixins: [activityTypes, dataMethods],
   data() {
     return {
-      cipTitle: this.getItemValue("setup", "title"),
+      cipTitle: this.getItemValue("setup", "title")
     };
   },
   computed: {
-    groupedActivities: function () {
+    groupedActivities: function() {
       return this.getGroupedActivites();
     },
-    navButtons: function () {
+    navButtons: function() {
       return {
         left: [
           {
             to: { name: "setup" },
-            label: this.$t("summary.previousStep"),
-          },
+            label: this.$t("summary.previousStep")
+          }
         ],
         right: [
           {
             to: { name: "evidence-informed-practices" },
             label: this.$t("saveAndContinue"),
-            role: "primary",
-          },
-        ],
+            role: "primary"
+          }
+        ]
       };
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -108,10 +108,10 @@
             space.paddingTop,
             space.marginTop,
             border.top,
-            base.buttonContainer,
+            base.buttonContainer
           ]"
         >
-          <BaseGutterWrapper gutter-x="narrow" gutterY="narrow">
+          <BaseGutterWrapper gutterX="narrow" gutterY="narrow">
             <li :class="base.buttonWrapper">
               <BaseButton
                 v-if="getActivity()"
@@ -160,19 +160,19 @@ export default {
     BaseGutterWrapper,
     BaseWidthWrapper,
     BaseSectionWrapper,
-    BaseFormSelect,
+    BaseFormSelect
   },
   mixins: [
     activityBudget,
     activityTypes,
     customValidation,
     dataMethods,
-    stringHelpers,
+    stringHelpers
   ],
   props: {
     activityId: {
-      type: [String, Number],
-    },
+      type: [String, Number]
+    }
   },
   data() {
     return {
@@ -184,38 +184,38 @@ export default {
       setupTitle: this.getItemValue("setup", "title"),
       activityType: "",
       activityText: "",
-      currentLocale: this.$i18n.locale,
+      currentLocale: this.$i18n.locale
     };
   },
   computed: {
-    currencyRegex: function () {
+    currencyRegex: function() {
       const locale = this.$root.$i18n.locale;
       return locale === "en"
         ? /(?=.*?\d)^\$?(([1-9]\d{0,2}(,\d{3})*)|\d+)?(\.\d{1,2})?$/
         : /(?=.*?\d)^\$?(([1-9]\d{0,2}(\.\d{3})*)|\d+)?(,\d{1,2})?$/;
     },
-    canSubmit: function () {
+    canSubmit: function() {
       const activityInstance = this.getActivity();
 
       return !!activityInstance;
     },
-    activityTypeOptions: function () {
-      return this.getActvityData().map((activityType) => {
+    activityTypeOptions: function() {
+      return this.getActvityData().map(activityType => {
         return {
           label: activityType.title,
-          value: activityType.key,
+          value: activityType.key
         };
       });
     },
-    navItems: function () {
-      return this.getAllActivities().map((activity) => {
+    navItems: function() {
+      return this.getAllActivities().map(activity => {
         return {
           id: activity.id,
           label: activity.shortText,
-          url: { name: "activity", params: { activityId: activity.id } },
+          url: { name: "activity", params: { activityId: activity.id } }
         };
       });
-    },
+    }
   },
   created() {
     this.$eventHub.$on("addActivity", this.addActivity);
@@ -233,22 +233,22 @@ export default {
     }
   },
   methods: {
-    clickLearnMore: function (activityId) {
+    clickLearnMore: function(activityId) {
       let routeData = this.$router.resolve({
         name: "activity-type-info",
-        params: { backToActivityId: activityId },
+        params: { backToActivityId: activityId }
       });
 
       if (this.checkElectron()) {
         this.$router.push({
           name: "activity-type-info",
-          params: { backToActivityId: activityId },
+          params: { backToActivityId: activityId }
         });
       } else {
         window.open(routeData.href, "_blank");
       }
     },
-    maybeSaveOnChange: function () {
+    maybeSaveOnChange: function() {
       // only submit if an activity is already present
       if (this.canSubmit) {
         this.addActivity();
@@ -258,14 +258,14 @@ export default {
         this.informParent(true);
       }
     },
-    informParent: function (bool) {
+    informParent: function(bool) {
       // Tells parent whether the form is complete or not.
       this.$emit("changed", bool);
     },
-    getAllActivities: function () {
+    getAllActivities: function() {
       return this.$store.getters["entities/activities/all"]();
     },
-    getActivityTitle: function () {
+    getActivityTitle: function() {
       const activityInstance = this.getActivity();
       if (activityInstance) {
         return this.$t("editActivity");
@@ -273,7 +273,7 @@ export default {
         return this.$t("addActivity");
       }
     },
-    updateData: function () {
+    updateData: function() {
       // Update component data
       const activityInstance = this.getActivity();
       if (activityInstance && activityInstance.type) {
@@ -283,10 +283,10 @@ export default {
         );
         this.activityYouthCentric = activityInstance.youthCentric;
         this.activityType = {
-          label: this.activityTypeOptions.find((option) => {
+          label: this.activityTypeOptions.find(option => {
             return option.value === activityInstance.type;
           }).label,
-          value: activityInstance.type,
+          value: activityInstance.type
         };
         this.currentActivityID = this.activityId;
         this.activityText = activityInstance.text;
@@ -303,7 +303,7 @@ export default {
       this.activityNumber = "";
       this.informParent(false);
     },
-    clearForm: function () {
+    clearForm: function() {
       this.currentActivityID = this.activityId;
       this.existingActivity = {};
       this.activityBudgetBase = null;
@@ -312,12 +312,12 @@ export default {
       this.activityText = "";
       this.activityNumber = "";
     },
-    isFilled: function () {
+    isFilled: function() {
       if (this.activityType.value && this.activityNumber && this.activityText) {
         return true;
       }
     },
-    getActivity: function (field = "") {
+    getActivity: function(field = "") {
       const activityInstance = this.$store.getters["entities/activities/find"](
         this.activityId
       );
@@ -329,10 +329,10 @@ export default {
         return null;
       }
     },
-    addActivity: function () {
+    addActivity: function() {
       // Add or update activity
       const activityInstance = this.getActivity();
-      this.$validator.validate().then((result) => {
+      this.$validator.validate().then(result => {
         // If valid, add or update activity, else show errors.
         if (result) {
           if (activityInstance) {
@@ -342,7 +342,7 @@ export default {
               budget: +this.getLocalizedBudget(this.activityBudgetBase),
               youthCentric: this.activityYouthCentric,
               type: this.activityType.value,
-              activityNumber: this.activityNumber,
+              activityNumber: this.activityNumber
             });
           } else if (this.isFilled()) {
             this.$store.dispatch("entities/activities/insert", {
@@ -351,8 +351,8 @@ export default {
                 budget: +this.getLocalizedBudget(this.activityBudgetBase),
                 youthCentric: this.activityYouthCentric,
                 type: this.activityType.value,
-                activityNumber: this.activityNumber,
-              },
+                activityNumber: this.activityNumber
+              }
             });
           }
           this.notify(this.$root.$t("saveSuccess"), "success");
@@ -360,15 +360,15 @@ export default {
         }
       });
     },
-    deleteActivity: function () {
+    deleteActivity: function() {
       this.$store.dispatch(
         "entities/activities/delete",
         Number(this.activityId)
       );
       this.notify(this.$t("deleteSuccess"), "success");
       // todo go to new activity page
-    },
-  },
+    }
+  }
 };
 </script>
 

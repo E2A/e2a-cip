@@ -26,14 +26,14 @@ export default {
   name: "ResultsQuestions",
   components: {
     BaseHeading,
-    BaseBodyText,
+    BaseBodyText
   },
   props: {
     questions: {
       type: Array,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 };
 </script>
 

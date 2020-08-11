@@ -34,8 +34,8 @@
     <ResultsQuestions
       v-if="
         countryIndicator.questions &&
-        !countryIndicator.error &&
-        displayQuestions
+          !countryIndicator.error &&
+          displayQuestions
       "
       :questions="countryIndicator.questions"
       :class="base.questions"
@@ -81,25 +81,25 @@ export default {
     BaseBodyText,
     BaseGutterWrapper,
     BaseCalloutBox,
-    ResultsQuestions,
+    ResultsQuestions
   },
   mixins: [dataMethods, activityTypes],
   props: {
     countryIndicator: {
       type: Object,
-      required: true,
+      required: true
     },
     displayQuestions: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
-    roundedValue: function () {
+    roundedValue: function() {
       const parsedValue = this.countryIndicator.value.match(/^\d*\.?\d*/)[0];
       return Math.round(parsedValue * 10) / 10;
-    },
-  },
+    }
+  }
 };
 </script>
 

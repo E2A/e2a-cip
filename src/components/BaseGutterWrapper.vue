@@ -11,7 +11,7 @@
       base[`horizontal${gutterX}`],
       base[`vertical${gutterY}`],
       flush && base[`flushHorizontal${gutterX}`],
-      flush && base[`flushVertical${gutterY}`],
+      flush && base[`flushVertical${gutterY}`]
     ]"
   >
     <slot><!-- Add child elements here --></slot>
@@ -24,21 +24,21 @@ export default {
   props: {
     el: {
       type: String,
-      default: "div",
+      default: "div"
     },
     gutterX: {
       type: String,
-      default: "medium",
+      default: "medium"
     },
     gutterY: {
       type: String,
-      default: "medium",
+      default: "medium"
     },
     flush: {
       type: Boolean,
-      default: true,
-    },
-  },
+      default: true
+    }
+  }
 };
 </script>
 

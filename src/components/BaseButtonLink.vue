@@ -42,20 +42,20 @@ import BaseIcon from "./BaseIcon.vue";
 export default {
   name: "BaseButtonLink",
   components: {
-    BaseIcon,
+    BaseIcon
   },
   mixins: [buttonStyles],
   props: {
     to: [Object, String],
     router: {
       type: Boolean,
-      default: true,
+      default: true
     },
     target: {
       type: String,
-      default: "_self",
-    },
-  },
+      default: "_self"
+    }
+  }
 };
 </script>
 

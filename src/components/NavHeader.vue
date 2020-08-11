@@ -3,8 +3,8 @@
     <header :class="base.wrapper">
       <BaseGutterWrapper
         :class="base.leftPane"
-        gutter-y="xnarrow"
-        gutter-x="xnarrow"
+        gutterY="xnarrow"
+        gutterX="xnarrow"
       >
         <router-link :to="{ name: 'home' }" :class="base.logo" exact>
           <img
@@ -23,12 +23,12 @@
 
       <BaseGutterWrapper
         :class="base.rightPane"
-        gutter-y="xnarrow"
-        gutter-x="xnarrow"
+        gutterY="xnarrow"
+        gutterX="xnarrow"
       >
         <!-- Language selector -->
         <LanguageSwitcher :class="space.marginRightXnarrow" />
-        <BaseGutterWrapper gutter-x="xnarrow">
+        <BaseGutterWrapper gutterX="xnarrow">
           <BaseButtonLink
             :to="this.$t('nav.userGuidePDF')"
             :router="false"
@@ -41,8 +41,8 @@
         </BaseGutterWrapper>
         <BaseGutterWrapper
           :class="[space.marginLeftNarrow]"
-          gutter-x="xnarrow"
-          gutter-y="xnarrow"
+          gutterX="xnarrow"
+          gutterY="xnarrow"
         >
           <BaseButtonLink
             :to="this.$t('nav.eipPdf')"
@@ -88,91 +88,91 @@ export default {
     BaseCalloutBox,
     BaseButtonFlyout,
     BaseButtonLink,
-    BaseHeading,
+    BaseHeading
   },
   mixins: [dataMethods],
-  data: function () {
+  data: function() {
     return {
       notificationMessage: "",
       flyoutOpen: false,
-      electron: this.checkElectron(),
+      electron: this.checkElectron()
     };
   },
   computed: {
-    links: function () {
+    links: function() {
       return {
         setup: {
           name: "setup",
           text: this.$t("nav.setup"),
-          active: true,
+          active: true
         },
         activities: {
           name: "activity",
           params: {
-            activityId: "1",
+            activityId: "1"
           },
           text: this.$t("nav.activities"),
-          active: true,
+          active: true
         },
         summary: {
           name: "summary",
           text: this.$t("nav.summary"),
-          active: true,
+          active: true
         },
         bestPractices: {
           name: "evidence-informed-practices",
           childName: "evidence-informed-practice",
           text: this.$t("nav.bestPractices"),
-          active: true,
+          active: true
         },
         assessment: {
           name: "assessment",
           text: this.$t("nav.assessment"),
-          active: true,
+          active: true
         },
         results: {
           name: "results",
           text: this.$t("nav.results"),
-          active: false,
+          active: false
         },
         advocate: {
           name: "advocate",
           childName: "print",
           text: this.$t("nav.advocate"),
-          active: false,
-        },
+          active: false
+        }
       };
-    },
+    }
   },
   methods: {
-    getCurrentRoute: function () {
+    getCurrentRoute: function() {
       // get the (translated) name of the current route
-      return Object.values(this.links).find((link) => {
+      return Object.values(this.links).find(link => {
         return (
           link.name === this.$route.name || link.childName === this.$route.name
         );
       }).text;
     },
-    globalNotification: function (value) {
+    globalNotification: function(value) {
       const notification = this.$store.getters[
         "entities/globalnotifications/query"
       ]().first();
       return notification ? notification[value] : false;
     },
-    getLinks: function () {
+    getLinks: function() {
       this.updateActiveLinks();
       return this.links;
     },
-    closeNavFlyout: function (event) {
+    closeNavFlyout: function(event) {
       this.flyoutOpen = false;
     },
-    openNavFlyout: function (event) {
+    openNavFlyout: function(event) {
       this.flyoutOpen = true;
     },
-    notificationTrigger: function () {
+    notificationTrigger: function() {
       this.notify(this.notificationMessage, "info", 3000);
     },
-    updateActiveLinks: function () {
+    updateActiveLinks: function() {
       if (this.getItemCount("assessments") > 0) {
         this.notificationMessage = this.$t("nav.removeAssessment");
         this.links.activities.active = false;
@@ -216,8 +216,8 @@ export default {
         this.links.results.active = false;
         this.links.advocate.active = false;
       }
-    },
-  },
+    }
+  }
 };
 </script>
 <style src="styles/spacing.scss" lang="scss" module="space"></style>

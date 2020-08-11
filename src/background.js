@@ -5,7 +5,7 @@ import * as path from "path";
 import { format as formatUrl } from "url";
 import {
   createProtocol,
-  installVueDevtools,
+  installVueDevtools
 } from "vue-cli-plugin-electron-builder/lib";
 const isDevelopment = process.env.NODE_ENV !== "production";
 
@@ -14,7 +14,7 @@ let mainWindow;
 
 // Standard scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
-  { scheme: "app", privileges: { standard: true, secure: true } },
+  { scheme: "app", privileges: { standard: true, secure: true } }
 ]);
 
 function createMainWindow(language) {
@@ -22,8 +22,8 @@ function createMainWindow(language) {
     width: 1600,
     height: 1500,
     webPreferences: {
-      nodeIntegration: true,
-    },
+      nodeIntegration: true
+    }
   });
 
   if (isDevelopment) {

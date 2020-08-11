@@ -9,7 +9,7 @@ export default class GlobalNotification extends Model {
       visible: this.boolean(false),
       timeout: this.number(0),
       role: this.string(""),
-      message: this.string(""),
+      message: this.string("")
     };
   }
 }

@@ -22,9 +22,9 @@
       :align="align"
     >
       <div :class="space.paddingXnarrow">
-        <BaseHeading :level="4" scale="zeta" color="dark" weight="bold">
-          {{ title }}
-        </BaseHeading>
+        <BaseHeading :level="4" scale="zeta" color="dark" weight="bold">{{
+          title
+        }}</BaseHeading>
 
         <BaseHeading
           :level="4"
@@ -32,9 +32,8 @@
           scale="zeta"
           color="dark"
           weight="light"
+          >{{ teaser }}</BaseHeading
         >
-          {{ teaser }}
-        </BaseHeading>
 
         <!-- dots -->
       </div>
@@ -43,9 +42,8 @@
       <div :class="base.resourceLink">
         <router-link
           :to="{ name: 'evidence-informed-practice', params: { id: id } }"
+          >{{ $t("bestPracticeIconData") }} &rsaquo;</router-link
         >
-          {{ $t("bestPracticeIconData") }} &rsaquo;
-        </router-link>
       </div>
     </BaseFlyout>
   </div>
@@ -64,36 +62,36 @@ export default {
   props: {
     id: {
       type: [String, Number],
-      required: true,
+      required: true
     },
     activityID: {
       type: [String, Number],
-      required: true,
+      required: true
     },
     // align the flyout to center or right
     align: {
       type: String,
-      default: "center",
-    },
+      default: "center"
+    }
   },
   computed: {
     ...mapState({
-      flyout: (state) => state.infoFlyout,
+      flyout: state => state.infoFlyout
     }),
-    icon: function () {
+    icon: function() {
       return this.findBestPracticeByID().icon;
     },
-    title: function () {
+    title: function() {
       return this.findBestPracticeByID().title;
     },
-    teaser: function () {
+    teaser: function() {
       return this.findBestPracticeByID().teaser;
     },
     // html id for flyout, for anchor to target
-    flyoutID: function () {
+    flyoutID: function() {
       return `${this.activityID}-${this.id}-flyout`;
     },
-    flyoutOpen: function () {
+    flyoutOpen: function() {
       const flyoutPresent = this.flyout;
       // check that a flyout exists, its an object, and it has the correct id
       const isOpen =
@@ -102,55 +100,57 @@ export default {
         flyoutPresent.flyout_id === this.flyoutID;
       return isOpen;
     },
-    selectedAssessment: function () {
+    selectedAssessment: function() {
       return (
         this.getSelectedAssessment(this.title) || this.bestPracticeOptions.empty
       );
     },
-    selectedAssessmentClass: function () {
+    selectedAssessmentClass: function() {
       const option = this.getSelectedAssessment(this.title)
         ? this.getSelectedAssessment(this.title).value.toLowerCase()
         : this.bestPracticeOptions.empty.class;
       return this.bestPracticeOptions[option].class;
-    },
+    }
   },
   components: {
     BaseHeading,
     BaseFlyout,
-    BaseIcon,
+    BaseIcon
   },
-  data: function () {
+  data: function() {
     return {
       bestPracticeOptions: {
         empty: {
           class: "empty",
-          value: this.$t("bestPracticeOptions.emptyKey"),
+          value: this.$t("bestPracticeOptions.emptyKey")
         },
         no: {
           class: "no",
-          value: this.$t("bestPracticeOptions.noKey"),
+          value: this.$t("bestPracticeOptions.noKey")
         },
         partially: {
           class: "partially",
-          value: this.$t("bestPracticeOptions.partiallyKey"),
+          value: this.$t("bestPracticeOptions.partiallyKey")
         },
         yes: {
           class: "yes",
-          value: this.$t("bestPracticeOptions.yesKey"),
-        },
-      },
+          value: this.$t("bestPracticeOptions.yesKey")
+        }
+      }
     };
   },
   methods: {
-    findBestPracticeByID: function () {
-      return this.bestPractices.find((bp) => bp.id === this.id);
+    findBestPracticeByID: function() {
+      return this.bestPractices.find(bp => bp.id === this.id);
     },
-    getSelectedAssessment: function (bestPracticeText) {
+    getSelectedAssessment: function(bestPracticeText) {
+      const query = this.$store.getters["entities/activities/query"]().get();
+
       // Check if assessment is present, if so add 'assessment-selected' class to selection
       const assessmentPresent = this.$store.getters[
         "entities/activities/query"
       ]()
-        .with("assessments", (query) => {
+        .with("assessments", query => {
           query.where("best_practice_id", this.id);
         })
         .whereId(this.activityID)
@@ -161,7 +161,7 @@ export default {
       }
       return false;
     },
-    updateAssessment: function (
+    updateAssessment: function(
       bestPracticeText,
       bestPracticeValue,
       bestPracticeID
@@ -170,7 +170,7 @@ export default {
       const assessmentPresent = this.$store.getters[
         "entities/activities/query"
       ]()
-        .with("assessments", (query) => {
+        .with("assessments", query => {
           query.where("best_practice_id", bestPracticeID);
         })
         .with("recommendations")
@@ -184,7 +184,7 @@ export default {
           activity_id: this.activityID,
           text: bestPracticeText,
           value: bestPracticeValue,
-          best_practice_id: bestPracticeID,
+          best_practice_id: bestPracticeID
         });
         return;
       }
@@ -194,11 +194,11 @@ export default {
           activity_id: this.activityID,
           text: bestPracticeText,
           value: bestPracticeValue,
-          best_practice_id: bestPracticeID,
-        },
+          best_practice_id: bestPracticeID
+        }
       });
     },
-    toggleFlyout: function () {
+    toggleFlyout: function() {
       if (this.flyoutOpen) {
         // Tell the store this flyout is closed
         this.$store.commit("SET_INFO_FLYOUT", {});
@@ -214,7 +214,7 @@ export default {
         this.$store.commit("SET_INFO_FLYOUT", {
           activity_id: this.activityID,
           best_practice_id: this.id,
-          flyout_id: this.flyoutID,
+          flyout_id: this.flyoutID
         });
         // this.$store.dispatch('entities/bestpracticeicons/create', {
         //   data: {
@@ -224,8 +224,8 @@ export default {
         //   }
         // })
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

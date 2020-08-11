@@ -4,7 +4,7 @@
       <BaseHeading :class="space.paddingBottomNarrow" scale="beta">
         {{ setupTitle }}
       </BaseHeading>
-      <BaseGutterWrapper gutter-x="medium" gutterY="xnarrow">
+      <BaseGutterWrapper gutterX="medium" gutterY="xnarrow">
         <BaseHeading
           :class="base.byline"
           scale="zeta"
@@ -84,12 +84,12 @@
         :questions="[
           {
             name: 'activityTypeBudget',
-            questions: findQuestions('activityTypeBudgetQuestions'),
+            questions: findQuestions('activityTypeBudgetQuestions')
           },
           {
             name: 'activityTypeCount',
-            questions: findQuestions('activityTypeCountQuestions'),
-          },
+            questions: findQuestions('activityTypeCountQuestions')
+          }
         ]"
       />
     </BaseWidthWrapper>
@@ -117,33 +117,33 @@ export default {
     BaseWidthWrapper,
     ChartItems,
     CountryIndicator,
-    BaseGallery,
+    BaseGallery
   },
   mixins: [dataMethods, initData],
   props: {
     wrapperEl: {
       type: String,
-      default: "div",
+      default: "div"
     },
     displayQuestions: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   data() {
     return {
       setupTitle: this.getItemValue("setup", "title"),
       setupRole: this.getItemValue("setup", "role"),
-      setupCountry: this.getItemValue("setup", "countryName"),
+      setupCountry: this.getItemValue("setup", "countryName")
     };
   },
   computed: {
-    setupDate: function () {
+    setupDate: function() {
       const startTime = this.getItemValue("setup", "dateStart");
       const endTime = this.getItemValue("setup", "dateEnd");
 
       return `${startTime} - ${endTime}`;
-    },
+    }
   },
   methods: {
     findQuestions(translationKey) {
@@ -152,8 +152,8 @@ export default {
       ).map((question, index) =>
         this.$t(`chartTitles.${translationKey}.${index + 1}`)
       );
-    },
-  },
+    }
+  }
 };
 </script>
 

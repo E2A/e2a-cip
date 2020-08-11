@@ -1,13 +1,13 @@
 import i18n from "@/i18n.js";
 
 export const activityTypes = {
-  data: function () {
+  data: function() {
     return {
-      activityTypeDataset: this.getActvityData(),
+      activityTypeDataset: this.getActvityData()
     };
   },
   methods: {
-    getGroupedActivites: function () {
+    getGroupedActivites: function() {
       const activityTypeList = this.getActvityData();
       var groupedActivities = [];
 
@@ -18,19 +18,19 @@ export const activityTypes = {
           activityTypeName: activityType.title,
           activityTypeKey: activityType.key,
           activityObjects: this.$store.getters["entities/activities/query"]()
-            .with("assessments", (query) => {
+            .with("assessments", query => {
               query.where("value", [
                 this.$t("bestPracticeOptions.yesKey"),
-                this.$t("bestPracticeOptions.partiallyKey"),
+                this.$t("bestPracticeOptions.partiallyKey")
               ]);
             })
             .where("type", activityType.key)
-            .get(),
+            .get()
         });
       }
       return groupedActivities;
     },
-    getGroupedYouthActivities: function () {
+    getGroupedYouthActivities: function() {
       const activityTypeList = this.getActvityData();
       var groupedActivities = [];
 
@@ -41,30 +41,30 @@ export const activityTypes = {
           activityTypeName: activityType.title,
           activityTypeKey: activityType.key,
           activityObjects: this.$store.getters["entities/activities/query"]()
-            .with("assessments", (query) => {
+            .with("assessments", query => {
               query.where("value", [
                 this.$t("bestPracticeOptions.yesKey"),
-                this.$t("bestPracticeOptions.partiallyKey"),
+                this.$t("bestPracticeOptions.partiallyKey")
               ]);
             })
             .where("type", activityType.key)
             .where("youthCentric", true)
-            .get(),
+            .get()
         });
       }
       return groupedActivities;
     },
-    getActvityData: function () {
+    getActvityData: function() {
       return Object.values(i18n.messages[i18n.locale].activityTypes).map(
         (activityType, index) => {
           return {
             title: this.$t(`activityTypes.type${index + 1}.title`),
             // "key" is an untranslated, camelcase key used to match types across locales and also as class names for charts
             key: this.$t(`activityTypes.type${index + 1}.key`),
-            body: this.$t(`activityTypes.type${index + 1}.body`),
+            body: this.$t(`activityTypes.type${index + 1}.body`)
           };
         }
       );
-    },
-  },
+    }
+  }
 };

@@ -51,82 +51,82 @@ export default {
   components: {
     BaseHeading,
     BaseIcon,
-    vSelect,
+    vSelect
   },
   mixins: [bestPracticeData, paddingFix],
   props: {
     id: {
       type: [String, Number],
-      required: true,
+      required: true
     },
     activityID: {
       type: [String, Number],
-      required: true,
+      required: true
     },
     name: {
       type: String,
-      require: true,
-    },
+      require: true
+    }
   },
-  data: function () {
+  data: function() {
     return {
       bestPracticeOptions: {
         empty: {
           class: "empty",
           text: this.$t("bestPracticeOptions.emptyText"),
-          value: this.$t("bestPracticeOptions.emptyKey"),
+          value: this.$t("bestPracticeOptions.emptyKey")
         },
         no: {
           class: "no",
           text: this.$t("bestPracticeOptions.noText"),
-          value: this.$t("bestPracticeOptions.noKey"),
+          value: this.$t("bestPracticeOptions.noKey")
         },
         partially: {
           class: "partially",
           text: this.$t("bestPracticeOptions.partiallyText"),
-          value: this.$t("bestPracticeOptions.partiallyKey"),
+          value: this.$t("bestPracticeOptions.partiallyKey")
         },
         yes: {
           class: "yes",
           text: this.$t("bestPracticeOptions.yesText"),
-          value: this.$t("bestPracticeOptions.yesKey"),
-        },
-      },
+          value: this.$t("bestPracticeOptions.yesKey")
+        }
+      }
     };
   },
   computed: {
-    icon: function () {
+    icon: function() {
       return this.findBestPracticeByID().icon;
     },
-    title: function () {
+    title: function() {
       return this.findBestPracticeByID().title;
     },
-    selectedAssessment: function () {
+    selectedAssessment: function() {
       return (
         this.getSelectedAssessment(this.title) || this.bestPracticeOptions.empty
       );
     },
-    selectedAssessmentClass: function () {
+    selectedAssessmentClass: function() {
       const option = this.getSelectedAssessment(this.title)
         ? this.getSelectedAssessment(this.title).value.toLowerCase()
         : this.bestPracticeOptions.empty.class;
       return this.bestPracticeOptions[option].class;
     },
-    bestPracticeOptionsArray: function () {
+    bestPracticeOptionsArray: function() {
       const options = Object.values(this.bestPracticeOptions);
       return options;
-    },
+    }
   },
   methods: {
-    findBestPracticeByID: function () {
-      return this.bestPractices.find((bp) => bp.id === this.id);
+    findBestPracticeByID: function() {
+      return this.bestPractices.find(bp => bp.id === this.id);
     },
-    getSelectedAssessment: function () {
+    getSelectedAssessment: function() {
       // Check if assessment is present, if so add 'assessment-selected' class to selection
       const assessmentPresent = this.$store.getters[
         "entities/activities/query"
       ]()
-        .with("assessments", (query) => {
+        .with("assessments", query => {
           query.where("best_practice_id", this.id);
         })
         .whereId(this.activityID)
@@ -137,28 +137,28 @@ export default {
       }
       return false;
     },
-    updateAssessment: function (selectedObject) {
+    updateAssessment: function(selectedObject) {
       // Check if assessment for current activity is store
       const assessmentPresent = this.getSelectedAssessment();
       const data = {
         activity_id: this.activityID,
         text: this.title,
         value: selectedObject.value,
-        best_practice_id: this.id,
+        best_practice_id: this.id
       };
 
       if (assessmentPresent) {
         // Update assessment value if it already exists
         this.$store.dispatch("entities/assessments/update", {
           ...data,
-          id: assessmentPresent.id,
+          id: assessmentPresent.id
         });
       } else {
         // Add a new assessment
         this.$store.dispatch("entities/assessments/insert", { data });
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

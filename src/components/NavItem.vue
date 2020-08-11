@@ -6,7 +6,7 @@
       base.navItem,
       !link.active && base.navItemDisabled,
       base[getStepProgress],
-      this.isFurthestStep && base.furthestStep,
+      this.isFurthestStep && base.furthestStep
     ]"
   >
     <router-link
@@ -35,25 +35,25 @@ import BaseIcon from "./BaseIcon.vue";
 export default {
   name: "NavItem",
   components: {
-    BaseIcon,
+    BaseIcon
   },
   props: {
     link: [Object],
     objectIndex: [Number, String],
-    hideStep: [Boolean],
+    hideStep: [Boolean]
   },
   computed: {
-    stepIndex: function () {
+    stepIndex: function() {
       if (this.link.steps) {
         return (this.objectIndex + 1).toString();
       }
     },
-    isCurrentRoute: function () {
+    isCurrentRoute: function() {
       return this.link.name === this.$route.name;
     },
-    isFurthestStep: function () {
+    isFurthestStep: function() {
       const currentProgress = this.$store.getters.currentProgress;
-      const progArray = Object.keys(currentProgress).map((step) => {
+      const progArray = Object.keys(currentProgress).map(step => {
         return { name: step, active: currentProgress[step] };
       });
 
@@ -70,7 +70,7 @@ export default {
 
       return false;
     },
-    parentIsActive: function () {
+    parentIsActive: function() {
       // make sure there are children
       if (this.link.steps) {
         if (this.link.name === this.$route.fullPath) {
@@ -78,22 +78,22 @@ export default {
         }
 
         if (this.link.steps) {
-          return this.link.steps.find((link) => link.name === this.$route.name);
+          return this.link.steps.find(link => link.name === this.$route.name);
         }
       }
     },
-    getStepProgress: function () {
+    getStepProgress: function() {
       const percentMap = {
         50: "half",
         33: "third",
         25: "fourth",
         75: "threeFourth",
-        100: "whole",
+        100: "whole"
       };
 
       // get the index of the route in the steps array
       const indexOfStep = this.$props.link.steps.findIndex(
-        (item) => item.name === this.$route.name
+        item => item.name === this.$route.name
       );
 
       if (indexOfStep >= 0) {
@@ -103,8 +103,8 @@ export default {
         return percentMap[per];
       }
       return percentMap[100];
-    },
-  },
+    }
+  }
 };
 </script>
 

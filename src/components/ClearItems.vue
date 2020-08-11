@@ -16,39 +16,39 @@ import BaseButton from "./BaseButton";
 export default {
   name: "ClearItems",
   components: {
-    BaseButton,
+    BaseButton
   },
   mixins: [dataIO, dataMethods],
   props: {
     clearType: {
       type: Array,
       required: true,
-      default: function () {
+      default: function() {
         // Default to delete all
         return ["All"];
       },
-      validator: function (value) {
+      validator: function(value) {
         // The value must match one of these strings
         const stringCheck = [
           "Assessments",
           "Activities",
           "Recommendations",
-          "All",
+          "All"
         ].includes(value[0]);
         const arrayLength = value.length === 1;
         return stringCheck && arrayLength;
-      },
-    },
+      }
+    }
   },
   data() {
     return {
       itemsCount: 0,
       deleteSuccess: false,
-      removedItemsText: "",
+      removedItemsText: ""
     };
   },
   methods: {
-    setRemovedItemsText: function (deleteType) {
+    setRemovedItemsText: function(deleteType) {
       // adjust removed text to be more readable
       if (deleteType === "all") {
         this.removedItemsText = this.$t("successRemovedAll");
@@ -56,7 +56,7 @@ export default {
         this.removedItemsText = deleteType;
       }
     },
-    clearItems: function (deleteType) {
+    clearItems: function(deleteType) {
       const currentItemCount = this.getItemCount(deleteType);
 
       if (deleteType === "all") {
@@ -67,7 +67,7 @@ export default {
           plan: true,
           activities: false,
           analyze: false,
-          results: false,
+          results: false
         });
       } else {
         // Delete specific entity type
@@ -84,7 +84,7 @@ export default {
         );
         this.$emit("delete-success");
       }
-    },
-  },
+    }
+  }
 };
 </script>

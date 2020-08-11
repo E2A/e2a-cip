@@ -12,16 +12,16 @@ import { dataMethods } from "./mixins/dataMethods";
 export default {
   name: "FileUpload",
   components: {
-    TextReader,
+    TextReader
   },
   mixins: [dataIO, dataMethods],
   data() {
     return {
-      importText: "",
+      importText: ""
     };
   },
   methods: {
-    runImportData: function (fileData) {
+    runImportData: function(fileData) {
       // Parse file data and import, return import type
       const successful = this.parseFileData(fileData);
 
@@ -32,7 +32,7 @@ export default {
         );
         this.$emit("import-success");
       }
-    },
-  },
+    }
+  }
 };
 </script>

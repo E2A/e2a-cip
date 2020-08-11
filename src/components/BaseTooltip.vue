@@ -6,7 +6,7 @@
         base.text,
         type[typeScaleClass('eta')],
         space.paddingHorizontalXnarrow,
-        space.paddingVerticalXxnarrow,
+        space.paddingVerticalXxnarrow
       ]"
     >
       {{ body }}
@@ -21,15 +21,15 @@ import BaseIcon from "./BaseIcon.vue";
 export default {
   name: "BaseTooltip",
   components: {
-    BaseIcon,
+    BaseIcon
   },
   mixins: [styleHelpers],
   props: {
     body: {
       type: String,
-      default: "Default tooltip text",
-    },
-  },
+      default: "Default tooltip text"
+    }
+  }
 };
 </script>
 

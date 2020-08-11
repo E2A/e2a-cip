@@ -27,36 +27,36 @@ export default {
   name: "BaseButtonFlyout",
   components: {
     BaseButton,
-    BaseFlyout,
+    BaseFlyout
   },
   props: {
     label: String,
     role: {
       type: String,
-      default: "default",
+      default: "default"
     },
     size: {
-      type: String,
+      type: String
     },
     align: {
       type: String,
-      default: "right",
+      default: "right"
     },
     flyoutSize: {
-      type: Number,
+      type: Number
     },
     reverseColors: {
       type: Boolean,
-      default: false,
+      default: false
     },
     open: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   data() {
     return {
-      isOpen: this.open || false,
+      isOpen: this.open || false
     };
   },
   watch: {
@@ -64,12 +64,12 @@ export default {
     // -> so when its parent tells it to open, it's reflected in internal state
     open() {
       this.isOpen = this.open;
-    },
+    }
   },
-  mounted: function () {
+  mounted: function() {
     document.addEventListener("click", this.closeFlyout);
   },
-  beforeDestroy: function () {
+  beforeDestroy: function() {
     document.removeEventListener("click", this.closeFlyout);
   },
   methods: {
@@ -81,8 +81,8 @@ export default {
       if (!e.target.closest("#base-button-flyout")) {
         this.isOpen = false;
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

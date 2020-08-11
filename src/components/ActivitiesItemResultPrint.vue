@@ -24,8 +24,8 @@
           v-if="activityInstance.youthCentric"
           :class="base.icons"
           el="ul"
-          gutter-x="xnarrow"
-          gutter-y="xnarrow"
+          gutterX="xnarrow"
+          gutterY="xnarrow"
         >
           <li
             v-for="(bestPractice, index) of bestPractices"
@@ -34,7 +34,7 @@
           >
             <BestPracticeIconSelect
               :id="bestPractice.id"
-              :activity-id="activityInstance.id"
+              :activityID="activityInstance.id"
               :align="index > 4 ? 'right' : 'center'"
             />
           </li>
@@ -93,23 +93,23 @@ export default {
     BaseGutterWrapper,
     BaseDataGrid,
     BaseBodyText,
-    ActivitiesItemInput,
+    ActivitiesItemInput
   },
   mixins: [bestPracticeData, dataMethods],
   props: {
     activityInstance: {
       type: Object,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
       activeAssessments: this.activityInstance.assessments,
-      recommendationText: "",
+      recommendationText: ""
     };
   },
   computed: {
-    expandedData: function () {
+    expandedData: function() {
       return {
         [this.$t("activityTable.defaultID")]: this.activityInstance.id,
         [this.$t("activityTable.defaultBudget")]: `${
@@ -118,32 +118,32 @@ export default {
         [this.$t("activityTable.defaultYouthCentered")]: this.activityInstance
           .youthCentric
           ? this.$t("yesRaw")
-          : this.$t("noRaw"),
+          : this.$t("noRaw")
       };
     },
-    recommendationsNotPresent: function () {
+    recommendationsNotPresent: function() {
       return this.activityRecommendations.length === 0;
     },
-    activityRecommendations: function () {
+    activityRecommendations: function() {
       // Get current recommendations on a given activity
       return this.$store.getters["entities/activities/query"]()
         .with("recommendations")
         .find(this.activityInstance.id).recommendations;
-    },
+    }
   },
   methods: {
-    getActivityRecommendations: function () {
+    getActivityRecommendations: function() {
       // Get current recommendations on a given activity
       return this.$store.getters["entities/activities/query"]()
         .with("recommendations")
         .find(this.activityInstance.id).recommendations;
     },
-    getBestPracticePresence: function (bestPracticeText) {
+    getBestPracticePresence: function(bestPracticeText) {
       // Checks for the value of a best practice and shows the result, it defaults to no.
       const bestPracticeValue = this.$store.getters[
         "entities/activities/query"
       ]()
-        .with("assessments", (query) => {
+        .with("assessments", query => {
           query.where("text", bestPracticeText);
         })
         .find(this.activityInstance.id).assessments[0];
@@ -154,16 +154,16 @@ export default {
         return "no";
       }
     },
-    addRecommendation: function () {
+    addRecommendation: function() {
       // Add a new recommendation
       this.$store.dispatch("entities/recommendations/insert", {
         data: {
           activity_id: this.activityInstance.id,
-          text: "",
-        },
+          text: ""
+        }
       });
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -10,16 +10,16 @@ export const dataIO = {
         "setup",
         "globalrecommendations",
         "assessments",
-        "comments",
-      ],
+        "comments"
+      ]
     };
   },
   computed: {
-    emptyCsvRow: function () {
+    emptyCsvRow: function() {
       // proper csv formatting: each row has same # of fields, blank rows have empty fields
       let max = 0;
 
-      this.entityTypes.forEach((entity) => {
+      this.entityTypes.forEach(entity => {
         const data = this.$store.getters[
           `entities/${entity}/query`
         ]().model.fields();
@@ -29,20 +29,22 @@ export const dataIO = {
       });
 
       return this.commaSequence(max - 1);
-    },
+    }
   },
   methods: {
-    runExportData: function (exportType = "json") {
+    runExportData: function(exportType = "json") {
       const timestamp = Date.now();
 
       if (exportType === "json") {
         const defaultFilename = this.$t("fileUpload.jsonFileName", {
-          timestamp: timestamp,
+          timestamp: timestamp
         });
 
         // Get JSON for each data type, activities will include all relationships
         const activityData = JSON.stringify(
-          this.$store.getters["entities/activities/query"]().withAll().get()
+          this.$store.getters["entities/activities/query"]()
+            .withAll()
+            .get()
         );
         const setupData = JSON.stringify(
           this.$store.getters["entities/setup/all"]()
@@ -55,7 +57,7 @@ export const dataIO = {
         this.exportFile(jsonData, defaultFilename, "json");
       } else {
         const defaultFilename = this.$t("fileUpload.csvFileName", {
-          timestamp: timestamp,
+          timestamp: timestamp
         });
         let csvString = "";
 
@@ -80,7 +82,7 @@ export const dataIO = {
 
       return true;
     },
-    exportFile: function (data, name, type) {
+    exportFile: function(data, name, type) {
       if (type !== "csv" && type !== "json") {
         throw new Error('exportFile: type argument must be "csv" or "json"');
       }
@@ -94,11 +96,11 @@ export const dataIO = {
           filters:
             type === "csv"
               ? [{ name: "CSV files", extensions: ["csv"] }]
-              : [{ name: "JSON files", extensions: ["json"] }],
+              : [{ name: "JSON files", extensions: ["json"] }]
         };
         // open file - callback runs when user clicks save
         // https://electronjs.org/docs/api/dialog#dialogshowsavedialogbrowserwindow-options
-        dialog.showSaveDialog(options, (filename) => {
+        dialog.showSaveDialog(options, filename => {
           fs.writeFileSync(filename, data, "utf-8");
         });
       } else {
@@ -110,7 +112,7 @@ export const dataIO = {
       }
     },
 
-    parseFileData: function (fileData) {
+    parseFileData: function(fileData) {
       // Check file extension (windows cant seem find to find MIME data)
       const extension = fileData.fileObject.name.split(".").pop();
 
@@ -124,7 +126,7 @@ export const dataIO = {
           const entityData = updatedData[entity];
           if (entityData) {
             this.$store.dispatch(`entities/${entity}/create`, {
-              data: entityData,
+              data: entityData
             });
           }
         }
@@ -136,22 +138,22 @@ export const dataIO = {
       ) {
         const importDataObj = JSON.parse(fileData.text);
         this.$store.dispatch("entities/setup/create", {
-          data: importDataObj.setupData,
+          data: importDataObj.setupData
         });
         this.$store.dispatch("entities/activities/create", {
-          data: importDataObj.activityData,
+          data: importDataObj.activityData
         });
         return "all";
       }
     },
-    parseCsvData: function (csvData) {
+    parseCsvData: function(csvData) {
       let labeledData = {};
       // Each set of data is separated by a newline, commas (blank fields), and another new line
       const manyEntities = csvData.split(
         `\n${this.longestCommaSequence(csvData)}`
       );
 
-      manyEntities.forEach((elem) => {
+      manyEntities.forEach(elem => {
         const entity = elem.trim();
 
         // separate type and data
@@ -169,7 +171,7 @@ export const dataIO = {
 
       return labeledData;
     },
-    updateActivityIDs: function (data) {
+    updateActivityIDs: function(data) {
       // Since store auto increments activity ids, update entities that store an activity_id
       let belongsToActivity = [];
       let updatedData = data;
@@ -192,8 +194,8 @@ export const dataIO = {
           activity.id = newID;
 
           // update fields that use the old id
-          belongsToActivity.forEach((entity) => {
-            updatedData[entity].forEach((record) => {
+          belongsToActivity.forEach(entity => {
+            updatedData[entity].forEach(record => {
               if (record.activity_id === oldID) record.activity_id = newID;
             });
           });
@@ -202,7 +204,7 @@ export const dataIO = {
 
       return updatedData;
     },
-    longestCommaSequence: function (str) {
+    longestCommaSequence: function(str) {
       let max = 0;
       let current = 0;
 
@@ -215,7 +217,7 @@ export const dataIO = {
 
       return this.commaSequence(max);
     },
-    commaSequence: function (length) {
+    commaSequence: function(length) {
       let commas = "";
       let count = length;
 
@@ -225,6 +227,6 @@ export const dataIO = {
       }
 
       return commas;
-    },
-  },
+    }
+  }
 };

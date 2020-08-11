@@ -12,12 +12,12 @@ export default {
   props: {
     url: {
       type: [String, Object],
-      required: true,
+      required: true
     },
     label: {
-      type: String,
-    },
-  },
+      type: String
+    }
+  }
 };
 </script>
 

@@ -16,7 +16,7 @@
           border.top,
           border.secondary,
           space.paddingTop,
-          space.marginVerticalBetween,
+          space.marginVerticalBetween
         ]"
       >
         <li
@@ -37,7 +37,7 @@
 
           <!-- List comments -->
           <BaseVerticalList
-            :items="activity.comments.map((comment) => comment.text)"
+            :items="activity.comments.map(comment => comment.text)"
           />
         </li>
       </ul>
@@ -60,17 +60,17 @@ export default {
     BaseBodyText,
     BaseSectionWrapper,
     BaseWidthWrapper,
-    BaseVerticalList,
+    BaseVerticalList
   },
   computed: {
-    activitiesWithComments: function () {
+    activitiesWithComments: function() {
       const activities = this.$store.getters["entities/activities/query"]()
         .with("comments")
         .all();
 
-      return activities.filter((activity) => activity.comments.length > 0);
-    },
-  },
+      return activities.filter(activity => activity.comments.length > 0);
+    }
+  }
 };
 </script>
 

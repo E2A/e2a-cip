@@ -2,8 +2,8 @@
   <BaseGutterWrapper
     :class="[base.wrapper, condensed && base.condensed]"
     el="dl"
-    gutter-x="narrow"
-    gutter-y="narrow"
+    gutterX="narrow"
+    gutterY="narrow"
   >
     <div
       v-for="(value, key, index) in data"
@@ -22,22 +22,22 @@ import BaseGutterWrapper from "./BaseGutterWrapper";
 export default {
   name: "BaseDataGrid",
   components: {
-    BaseGutterWrapper,
+    BaseGutterWrapper
   },
   props: {
     data: {
       type: Object,
-      required: true,
+      required: true
     },
     gutter: {
       type: [String, Object],
-      default: "narrow",
+      default: "narrow"
     },
     condensed: {
       type: Boolean,
-      default: false,
-    },
-  },
+      default: false
+    }
+  }
 };
 </script>
 

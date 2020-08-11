@@ -3,7 +3,7 @@
     v-if="!table"
     :class="[
       base.activitiesTableWrapper,
-      (!showTray || !activityId) && base.noTray,
+      (!showTray || !activityId) && base.noTray
     ]"
   >
     <div :class="base.activitiesTable">
@@ -48,67 +48,67 @@ export default {
   props: {
     table: {
       type: Boolean,
-      default: false,
+      default: false
     },
     showTray: {
       type: Boolean,
-      default: false,
+      default: false
     },
     groupedActivities: {
-      type: Array,
+      type: Array
     },
     currentActivityId: {
-      type: String,
+      type: String
     },
     headings: {
       type: Array,
-      default: function () {
+      default: function() {
         return [
           {
-            title: "bestPractices.bestPractice1.title",
+            title: "bestPractices.bestPractice1.title"
           },
           {
-            title: "bestPractices.bestPractice2.title",
+            title: "bestPractices.bestPractice2.title"
           },
           {
-            title: "bestPractices.bestPractice3.title",
+            title: "bestPractices.bestPractice3.title"
           },
           {
-            title: "bestPractices.bestPractice4.title",
+            title: "bestPractices.bestPractice4.title"
           },
           {
-            title: "bestPractices.bestPractice5.title",
+            title: "bestPractices.bestPractice5.title"
           },
           {
-            title: "bestPractices.bestPractice6.title",
+            title: "bestPractices.bestPractice6.title"
           },
           {
-            title: "bestPractices.bestPractice7.title",
-          },
+            title: "bestPractices.bestPractice7.title"
+          }
         ];
-      },
+      }
     },
     translateHeadings: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
   computed: {
     ...mapState({
-      activityId: (state) => state.mountedActivity,
-    }),
+      activityId: state => state.mountedActivity
+    })
   },
   components: {
     TableHeading,
-    ActivityTray,
+    ActivityTray
   },
   methods: {
-    setActivityId: function (event, value) {
+    setActivityId: function(event, value) {
       if (value > 0) {
         this.$store.commit("SET_MOUNTED_ACTIVITY", value);
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

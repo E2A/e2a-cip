@@ -56,12 +56,12 @@ export default {
     BaseWidthWrapper,
     BaseVerticalList,
     BaseGutterWrapper,
-    BaseButtonLink,
+    BaseButtonLink
   },
   mixins: [activityTypes, dataMethods],
   props: {
-    backToActivityId: [String, Number],
-  },
+    backToActivityId: [String, Number]
+  }
 };
 </script>
 

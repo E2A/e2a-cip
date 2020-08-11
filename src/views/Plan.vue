@@ -37,26 +37,26 @@ export default {
     BaseGutterWrapper,
     NavFooter,
     NavBreadcrumbs,
-    BasePageIntro,
+    BasePageIntro
   },
-  created: function () {
+  created: function() {
     this.$store.commit("SET_PROGRESS", { plan: true });
   },
   methods: {
-    getNavButtons: function () {
+    getNavButtons: function() {
       var navButtons = {
         left: [],
         right: [
           {
             to: { name: "setup" },
-            label: this.$t("plan.getStartedButton").toUpperCase(),
-          },
-        ],
+            label: this.$t("plan.getStartedButton").toUpperCase()
+          }
+        ]
       };
 
       return navButtons;
-    },
-  },
+    }
+  }
 };
 </script>
 

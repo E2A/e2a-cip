@@ -18,19 +18,19 @@ export default {
   props: {
     margin: {
       type: String,
-      default: "wide",
+      default: "wide"
     },
     el: {
       type: String,
-      default: "section",
+      default: "section"
     },
-    border: Boolean,
+    border: Boolean
   },
   computed: {
-    marginClass: function () {
+    marginClass: function() {
       return this.space[this.spaceClass({ size: this.margin })];
-    },
-  },
+    }
+  }
 };
 </script>
 

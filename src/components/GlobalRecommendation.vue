@@ -43,47 +43,47 @@ export default {
   name: "GlobalRecommendation",
   components: {
     BaseButton,
-    ActivitiesItemInput,
+    ActivitiesItemInput
   },
   props: {
     insertText: {
-      type: String,
-    },
+      type: String
+    }
   },
-  data: function () {
+  data: function() {
     return {
       inputKey: 1000,
-      itemText: this.insertText,
+      itemText: this.insertText
     };
   },
   computed: {
-    recommendationsNotPresent: function () {
+    recommendationsNotPresent: function() {
       return this.globalRecommendations.length === 0;
     },
-    globalRecommendations: function () {
+    globalRecommendations: function() {
       // Get all global recommendations
       return this.$store.getters["entities/globalrecommendations/all"]();
-    },
+    }
   },
   methods: {
-    insertRecommendation: function (text) {
+    insertRecommendation: function(text) {
       this.itemText = text;
     },
-    addRecommendation: function () {
+    addRecommendation: function() {
       // Add a new recommendation
       this.$store.dispatch("entities/globalrecommendations/insert", {
         data: {
-          text: this.itemText,
-        },
+          text: this.itemText
+        }
       });
 
       this.clearText();
     },
-    clearText: function () {
+    clearText: function() {
       this.inputKey++;
       this.itemText = "";
-    },
-  },
+    }
+  }
 };
 </script>
 

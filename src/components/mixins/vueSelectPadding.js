@@ -1,18 +1,18 @@
 import $ from "jquery";
 
 export const paddingFix = {
-  data: function () {
+  data: function() {
     return {
       vSelectElement: null,
       dropdownToggle: null,
-      search: null,
+      search: null
     };
   },
   methods: {
-    handlePaddingClick: function (event) {
+    handlePaddingClick: function(event) {
       // v-select rejects events that occur in an element's padding
       // this method runs these events anyways
-      const clickedPadding = (className) =>
+      const clickedPadding = className =>
         event.target.classList.contains(className);
 
       const isOpen = this.vSelectElement.hasClass("vs--open");
@@ -30,13 +30,13 @@ export const paddingFix = {
         this.search.blur();
       }
     },
-    addElements: function () {
+    addElements: function() {
       this.vSelectElement = $(`#${this.name}`);
       this.dropdownToggle = this.vSelectElement.find(".vs__dropdown-toggle");
       this.search = this.dropdownToggle
         .find(".vs__selected-options")
         .find(".vs__search");
-    },
+    }
   },
   mounted() {
     this.addElements();
@@ -44,5 +44,5 @@ export const paddingFix = {
   },
   beforeDestroy() {
     this.dropdownToggle.unbind();
-  },
+  }
 };

@@ -74,7 +74,7 @@
                 :activity="activity"
                 :youth="activity.youthCentric"
                 :class="[
-                  mountedActivity === activity.id && instructions.itemSelected,
+                  mountedActivity === activity.id && instructions.itemSelected
                 ]"
                 @activitySelect="setActivityId"
               />
@@ -119,43 +119,43 @@ export default {
     ActivitiesTypeHeading,
     ActivitiesItemAssessment,
     ActivitiesExportTray,
-    ClearItems,
+    ClearItems
   },
   mixins: [activityTypes, dataMethods],
   computed: {
-    groupedActivities: function () {
+    groupedActivities: function() {
       return this.getGroupedYouthActivities();
     },
     ...mapState({
-      mountedActivity: (state) => state.mountedActivity,
+      mountedActivity: state => state.mountedActivity
     }),
-    navButtons: function () {
+    navButtons: function() {
       return {
         left: [
           {
             to: { name: "evidence-informed-practices" },
-            label: this.$t("analysis.previousStep"),
-          },
+            label: this.$t("analysis.previousStep")
+          }
         ],
         right: [
           {
             to: { name: "results" },
             label: this.$t("saveAndContinue"),
-            role: "primary",
-          },
-        ],
+            role: "primary"
+          }
+        ]
       };
-    },
+    }
   },
   data() {
     return {
-      cipTitle: this.getItemValue("setup", "title"),
+      cipTitle: this.getItemValue("setup", "title")
     };
   },
   created() {
     // Clear any open icons
     // this.$store.dispatch('entities/bestpracticeicons/deleteAll')
-  },
+  }
 };
 </script>
 

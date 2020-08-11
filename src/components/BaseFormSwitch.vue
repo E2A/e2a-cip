@@ -33,7 +33,7 @@ export default {
   name: "BaseFormSwitch",
   components: {
     BaseFormLabel,
-    BaseCalloutBox,
+    BaseCalloutBox
   },
   props: {
     label: String,
@@ -41,18 +41,18 @@ export default {
     value: Boolean,
     name: {
       type: String,
-      required: true,
+      required: true
     },
     // 'yes' and 'no' labels on the switch
     // -> default translations are above in the template
     labelOn: String,
     labelOff: String,
     error: String,
-    tooltipText: String,
+    tooltipText: String
   },
   data() {
     return {
-      supportStyledCheckbox: false,
+      supportStyledCheckbox: false
     };
   },
   created() {
@@ -64,12 +64,12 @@ export default {
     }
   },
   methods: {
-    emitInput: function (event) {
+    emitInput: function(event) {
       // use event.target.checked instead of value for checkboxes
       // https://medium.com/@relt24/dedicated-vue-js-checkbox-component-360a330a3eb
       this.$emit("input", event.target.checked);
-    },
-  },
+    }
+  }
 };
 </script>
 

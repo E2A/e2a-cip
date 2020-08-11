@@ -16,16 +16,16 @@ import BaseButton from "./BaseButton.vue";
 export default {
   name: "ExportChartData",
   components: {
-    BaseButton,
+    BaseButton
   },
   mixins: [dataIO, dataMethods, activityTypes],
   computed: {
-    showExport: function () {
+    showExport: function() {
       return this.viewType !== "print" && this.getItemCount("activities") > 0;
-    },
+    }
   },
   methods: {
-    exportChartData: function () {
+    exportChartData: function() {
       const chartDataObject = this.getChartData(this.getActvityData());
 
       this.csvExportItem(
@@ -42,7 +42,7 @@ export default {
       );
 
       this.notify(this.$t("results.exportChartSuccess"), "success");
-    },
-  },
+    }
+  }
 };
 </script>

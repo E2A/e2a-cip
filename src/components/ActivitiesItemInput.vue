@@ -9,8 +9,8 @@
     <div :class="{ [base.numberWrapper]: isActive }">
       <BaseGutterWrapper
         :class="base.flex"
-        :gutter-x="isActive ? 'narrow' : 'None'"
-        gutter-y="narrow"
+        :gutterX="isActive ? 'narrow' : 'None'"
+        gutterY="narrow"
       >
         <div :class="[base.gutter, base.fill]">
           <BaseFormInput
@@ -45,55 +45,55 @@ export default {
     BaseHeading,
     BaseButton,
     BaseFormInput,
-    BaseGutterWrapper,
+    BaseGutterWrapper
   },
   props: {
     activityInstance: {
       type: Object,
-      required: false,
+      required: false
     },
     id: {
       type: Number,
-      required: false,
+      required: false
     },
     action: {
       type: String,
       required: true,
-      validator: function (value) {
+      validator: function(value) {
         // The value must match one of these strings
         return ["insert", "update"].indexOf(value) !== -1;
-      },
+      }
     },
     inputType: {
       type: String,
       required: true,
-      validator: function (value) {
+      validator: function(value) {
         // The value must match one of these strings
         return (
           ["globalrecommendations", "recommendations", "comments"].indexOf(
             value
           ) !== -1
         );
-      },
+      }
     },
     // true => this component controls communication with the store
     isActive: {
       type: Boolean,
       required: false,
-      default: true,
+      default: true
     },
     existingText: {
       type: String,
-      required: false,
-    },
+      required: false
+    }
   },
   data() {
     return {
-      itemText: this.existingText,
+      itemText: this.existingText
     };
   },
   methods: {
-    updateItem: function () {
+    updateItem: function() {
       if (!this.active) {
         // Parent controls communication with the store
         this.updateParent();
@@ -107,8 +107,8 @@ export default {
         // https://medium.com/@mikeh91/conditionally-adding-keys-to-javascript-objects-using-spread-operators-and-short-circuit-evaluation-acf157488ede
         ...(this.action === "update" && { id: this.id }),
         ...(this.inputType !== "globalrecommendations" && {
-          activity_id: this.activityInstance.id,
-        }),
+          activity_id: this.activityInstance.id
+        })
       };
 
       if (this.action === "update") {
@@ -117,13 +117,13 @@ export default {
         this.$store.dispatch(`entities/${this.inputType}/insert`, { data });
       }
     },
-    deleteItem: function () {
+    deleteItem: function() {
       this.$store.dispatch(`entities/${this.inputType}/delete`, this.id);
     },
-    updateParent: function () {
+    updateParent: function() {
       this.$emit("change", this.itemText);
-    },
-  },
+    }
+  }
 };
 </script>
 

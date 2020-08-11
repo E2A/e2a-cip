@@ -5,13 +5,13 @@
       border.bottom,
       space.paddingVerticalNarrow,
       space.paddingHorizontal,
-      color.lightBg,
+      color.lightBg
     ]"
   >
-    <BaseGutterWrapper :class="base.flex" gutterY="xnarrow" gutter-x="xnarrow">
+    <BaseGutterWrapper :class="base.flex" gutterY="xnarrow" gutterX="xnarrow">
       <ClearItems v-if="clear" :clearType="clear" />
       <div :class="base.right">
-        <BaseGutterWrapper gutter-y="xnarrow" gutterX="xnarrow">
+        <BaseGutterWrapper gutterY="xnarrow" gutterX="xnarrow">
           <span v-if="files" :class="base.inlineBlock">
             <FileExport
               v-if="charts"
@@ -41,24 +41,24 @@ export default {
     BaseGutterWrapper,
     FileExport,
     ExportChartData,
-    ClearItems,
+    ClearItems
   },
   props: {
     clear: {
       type: Array,
-      validator: function (value) {
+      validator: function(value) {
         return ["Assessments"].indexOf !== -1;
-      },
+      }
     },
     files: {
       type: Boolean,
-      default: true,
+      default: true
     },
     charts: {
       type: Boolean,
-      default: false,
-    },
-  },
+      default: false
+    }
+  }
 };
 </script>
 

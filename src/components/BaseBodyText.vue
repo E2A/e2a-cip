@@ -5,7 +5,7 @@
       base.content,
       type[font],
       type[weight],
-      type[typeScaleClass(size)],
+      type[typeScaleClass(size)]
     ]"
   />
 </template>
@@ -17,32 +17,32 @@ import VueMarkdown from "vue-markdown";
 export default {
   name: "BaseBodyText",
   components: {
-    VueMarkdown,
+    VueMarkdown
   },
   mixins: [styleHelpers],
   props: {
     content: {
       type: String,
-      default: "",
+      default: ""
     },
     size: {
       type: String,
-      default: "epsilon",
+      default: "epsilon"
     },
     font: {
       type: String,
       default: "body",
-      validator: function (value) {
+      validator: function(value) {
         return ["body", "display"].indexOf(value) !== -1;
-      },
+      }
     },
     weight: {
       type: String,
-      validator: function (value) {
+      validator: function(value) {
         return ["bold", "light"].indexOf(value) !== -1;
-      },
-    },
-  },
+      }
+    }
+  }
 };
 </script>
 
@@ -117,8 +117,7 @@ $gutter: 0.7em; // eta on scale
       color: #000;
 
       &[href^="http://"],
-      &[href^="https://"]
-      {
+      &[href^="https://"] {
         word-wrap: break-word;
 
         &:after {

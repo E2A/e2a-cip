@@ -17,7 +17,7 @@ import { dataMethods } from "@/components/mixins/dataMethods";
 export default {
   name: "LanguageSwitcher",
   components: {
-    BaseFormSelect,
+    BaseFormSelect
   },
   mixins: [dataMethods],
   data() {
@@ -25,29 +25,29 @@ export default {
       langs: [
         {
           label: "Fran\u00E7ais", // Français w/unicode escape, so the dangly bit on the c will hopefully render consistently
-          value: "fr",
+          value: "fr"
         },
         {
           label: "English",
-          value: "en",
-        },
-      ],
+          value: "en"
+        }
+      ]
     };
   },
   computed: {
     language: {
       get() {
         return this.langs.filter(
-          (locale) => locale.value === this.$i18n.locale
+          locale => locale.value === this.$i18n.locale
         )[0];
       },
       set(locale) {
         if (locale.value !== this.$i18n.locale) {
           this.$i18n.locale = locale.value;
         }
-      },
-    },
-  },
+      }
+    }
+  }
 };
 </script>
 

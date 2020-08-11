@@ -5,7 +5,7 @@
   >
     <ActivityInput
       ref="activityInput"
-      :activity-id="currentActivity"
+      :activityID="currentActivity"
       :key="this.getLastItem()"
       :can-submit="isFormFilled"
       @changed="trackValidation"
@@ -22,56 +22,56 @@ export default {
   name: "Activity",
   components: {
     ActivityInput,
-    NavFooter,
+    NavFooter
   },
   mixins: [dataMethods],
   props: {
-    activityId: [String, Number],
+    activityId: [String, Number]
   },
-  data: function () {
+  data: function() {
     return {
       isFormFilled: false,
-      previousRoute: null,
+      previousRoute: null
     };
   },
   computed: {
-    nextActivity: function () {
+    nextActivity: function() {
       return this.getNextActivity;
     },
-    currentActivity: function () {
+    currentActivity: function() {
       return this.$props.activityId || this.nextActivity();
-    },
+    }
   },
-  beforeRouteEnter: function (to, from, next) {
-    next((vm) => {
+  beforeRouteEnter: function(to, from, next) {
+    next(vm => {
       vm.previousRoute = from;
     });
   },
-  created: function () {
+  created: function() {
     this.$store.commit("SET_PROGRESS", { activities: true });
   },
   methods: {
-    trackValidation: function (isFormFilled) {
+    trackValidation: function(isFormFilled) {
       // toggle form is filled
       this.isFormFilled = isFormFilled;
     },
-    goBack: function () {
+    goBack: function() {
       if (this.previousRoute) {
         return this.previousRoute;
       }
 
       return { name: "setup" };
     },
-    getNavButtons: function () {
+    getNavButtons: function() {
       var navButtons = {
         left: [
           {
             // to: { name: 'setup' },
             to: this.goBack(),
-            label: this.$t("goBack"),
-          },
+            label: this.$t("goBack")
+          }
         ],
-        right: [],
+        right: []
       };
 
       navButtons.right.push(
@@ -81,17 +81,17 @@ export default {
           iconLeft: "add",
           iconRight: "none",
           role: this.isFormFilled ? "primary" : "default",
-          action: "addActivity",
+          action: "addActivity"
         },
         {
           to: { name: "summary" },
           label: this.$t("saveAndContinue"),
-          action: "addActivity",
+          action: "addActivity"
         }
       );
 
       return navButtons;
-    },
-  },
+    }
+  }
 };
 </script>
