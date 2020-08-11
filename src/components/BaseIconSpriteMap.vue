@@ -9,8 +9,8 @@ export default {
   name: "BaseIconSpriteMap",
   data() {
     return {
-      sprites: spriteSource,
+      sprites: spriteSource
     };
-  },
+  }
 };
 </script>

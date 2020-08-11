@@ -18,7 +18,7 @@ export default class Activity extends Model {
       assessments: this.hasMany(Assessment, "activity_id"),
       recommendations: this.hasMany(Recommendation, "activity_id"),
       icons: this.hasMany(BestPracticeIcon, "activity_id"),
-      comments: this.hasMany(Comment, "activity_id"),
+      comments: this.hasMany(Comment, "activity_id")
     };
   }
 

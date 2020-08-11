@@ -6,7 +6,7 @@ export default class GlobalRecommendation extends Model {
   static fields() {
     return {
       id: this.increment(),
-      text: this.string(""),
+      text: this.string("")
     };
   }
 }

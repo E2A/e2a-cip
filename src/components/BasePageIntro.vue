@@ -4,7 +4,7 @@
       <BaseHeading
         :class="[
           subtitle ? space.paddingBottomXnarrow : space.paddingBottom,
-          base.title,
+          base.title
         ]"
       >
         {{ title }}
@@ -36,24 +36,24 @@ export default {
     BaseWidthWrapper,
     BaseGutterWrapper,
     BaseHeading,
-    BaseBodyText,
+    BaseBodyText
   },
   props: {
     title: {
       type: String,
-      required: true,
+      required: true
     },
     subtitle: {
-      type: String,
+      type: String
     },
     introHeader: {
-      type: String,
+      type: String
     },
     blurb: {
       type: String,
-      default: "",
-    },
-  },
+      default: ""
+    }
+  }
 };
 </script>
 

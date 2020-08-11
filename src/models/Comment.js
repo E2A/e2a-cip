@@ -9,7 +9,7 @@ export default class Comment extends Model {
       id: this.increment(),
       text: this.string(""),
       activity_id: this.number(0),
-      activity: this.belongsTo(Activity, "activity_id"),
+      activity: this.belongsTo(Activity, "activity_id")
     };
   }
 }

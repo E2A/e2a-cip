@@ -23,7 +23,7 @@
               <router-link
                 :to="{
                   name: 'evidence-informed-practice',
-                  params: { id: item.id },
+                  params: { id: item.id }
                 }"
                 :class="base.icon"
               >
@@ -40,7 +40,7 @@
                 <router-link
                   :to="{
                     name: 'evidence-informed-practice',
-                    params: { id: item.id },
+                    params: { id: item.id }
                   }"
                   >{{ item.title }}</router-link
                 >
@@ -49,7 +49,7 @@
               <BaseButtonLink
                 :to="{
                   name: 'evidence-informed-practice',
-                  params: { id: item.id },
+                  params: { id: item.id }
                 }"
                 :label="$t('readMore')"
                 :class="space.marginTopNarrow"
@@ -99,31 +99,31 @@ export default {
     BaseGutterWrapper,
     BaseButtonLink,
     NavFooter,
-    NavBreadcrumbs,
+    NavBreadcrumbs
   },
   mixins: [bestPracticeData],
   computed: {
-    navButtons: function () {
+    navButtons: function() {
       return {
         left: [
           {
             to: { name: "summary" },
-            label: this.$t("goBack"),
-          },
+            label: this.$t("goBack")
+          }
         ],
         right: [
           {
             to: { name: "assessment" },
             label: this.$t("continue"),
-            role: "primary",
-          },
-        ],
+            role: "primary"
+          }
+        ]
       };
-    },
+    }
   },
-  created: function () {
+  created: function() {
     this.$store.commit("SET_PROGRESS", { analyze: true });
-  },
+  }
 };
 </script>
 <style src="styles/color.scss" lang="scss" module="color"></style>

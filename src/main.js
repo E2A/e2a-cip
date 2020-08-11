@@ -11,13 +11,13 @@ Vue.config.productionTip = false;
 
 // Add validation
 Vue.use(VeeValidate, {
-  events: "change",
+  events: "change"
 });
 
 // Add analytics
 Vue.use(VueAnalytics, {
   id: "UA-126405331-1",
-  router,
+  router
 });
 
 // Add an event hub
@@ -27,5 +27,5 @@ new Vue({
   router,
   store,
   i18n,
-  render: (h) => h(App),
+  render: h => h(App)
 }).$mount("#app");

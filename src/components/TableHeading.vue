@@ -15,7 +15,7 @@ import { styleHelpers } from "./mixins/helpers.js";
 export default {
   name: "TableHeading",
   mixins: [styleHelpers],
-  props: {},
+  props: {}
 };
 </script>
 

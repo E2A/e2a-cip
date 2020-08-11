@@ -29,25 +29,25 @@ export default {
     percentage: {
       type: Number,
       default: 0,
-      validator: function (value) {
+      validator: function(value) {
         return value >= 0 && value <= 100;
-      },
+      }
     },
     label: String,
     labelColor: {
       type: String,
-      default: "dark",
+      default: "dark"
     },
     labelSize: {
       type: String,
-      default: "zeta",
-    },
+      default: "zeta"
+    }
   },
   computed: {
-    isComplete: function () {
+    isComplete: function() {
       return this.percentage === 100;
-    },
-  },
+    }
+  }
 };
 </script>
 

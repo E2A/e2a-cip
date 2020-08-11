@@ -68,16 +68,16 @@ export default {
   name: "BaseFormInput",
   components: {
     BaseFormLabel,
-    BaseCalloutBox,
+    BaseCalloutBox
   },
   mixins: [styleHelpers],
   props: {
     el: {
       type: String,
       default: "input",
-      validator: function (value) {
+      validator: function(value) {
         return ["input", "textarea"].indexOf(value) !== -1;
-      },
+      }
     },
     label: String,
     helpText: String,
@@ -89,61 +89,61 @@ export default {
     dataAs: String,
     type: {
       type: String,
-      default: "text",
+      default: "text"
     },
     error: {
       type: String,
-      required: false,
+      required: false
     },
     textSize: {
       type: String,
-      default: "epsilon",
+      default: "epsilon"
     },
     outline: {
       type: String,
-      default: "highlight",
+      default: "highlight"
     },
     labelTextSize: String,
     // number of rows the textarea shows
     height: {
       type: Number,
-      default: 4,
+      default: 4
     },
-    classItems: String,
+    classItems: String
   },
-  data: function () {
+  data: function() {
     return {
-      intialText: this.value,
+      intialText: this.value
     };
   },
   computed: {
-    contentValue: function () {
+    contentValue: function() {
       if (this.el === "textarea") {
         const text = this.intialText;
         return text;
       }
     },
-    inputClasses: function () {
+    inputClasses: function() {
       return [
         `${this.el}`,
         `${this.el}-${this.outline}`,
-        `scale-${this.textSize}`,
+        `scale-${this.textSize}`
       ];
-    },
+    }
   },
   methods: {
-    emitInput: function (e) {
+    emitInput: function(e) {
       this.$emit("input", e.target.value);
     },
-    emitChange: function (e) {
+    emitChange: function(e) {
       this.$emit("change", e.target.value);
     },
-    emitFocus: function (e) {
+    emitFocus: function(e) {
       this.$emit("focus", e.target.value);
     },
-    emitBlur: function (e) {
+    emitBlur: function(e) {
       this.$emit("blur", e.target.value);
-    },
+    }
   },
   $_veeValidate: {
     name() {
@@ -151,8 +151,8 @@ export default {
     },
     value() {
       return this.value;
-    },
-  },
+    }
+  }
 };
 </script>
 

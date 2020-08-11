@@ -13,7 +13,7 @@ export default class Setup extends Model {
       countryCode: this.attr(null),
       role: this.attr(null),
       currencyCode: this.attr(null),
-      currencyName: this.attr(null),
+      currencyName: this.attr(null)
     };
   }
 }

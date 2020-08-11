@@ -10,7 +10,7 @@ export default class BestPracticeIcon extends Model {
       flyout: this.boolean(false),
       activity_id: this.number(0),
       activity: this.belongsTo(Activity, "activity_id"),
-      best_practice_id: this.number(0),
+      best_practice_id: this.number(0)
     };
   }
 }

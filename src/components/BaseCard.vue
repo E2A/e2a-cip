@@ -16,9 +16,9 @@ export default {
   props: {
     padding: {
       type: String,
-      default: "narrow",
-    },
-  },
+      default: "narrow"
+    }
+  }
 };
 </script>
 

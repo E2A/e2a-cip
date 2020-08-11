@@ -28,33 +28,33 @@ import BaseButton from "@/components/BaseButton.vue";
 export default {
   name: "PrintPage",
   components: {
-    BaseButton,
+    BaseButton
   },
   mixins: [electronPDF, dataMethods],
   props: {
     size: String,
     role: {
       type: String,
-      default: "default",
-    },
+      default: "default"
+    }
   },
   data() {
     return {
       pdfPrintError: false,
-      electron: this.checkElectron(),
+      electron: this.checkElectron()
     };
   },
   methods: {
-    printPage: function () {
+    printPage: function() {
       // Default browser printing
       window.print();
     },
-    exportPDF: function () {
+    exportPDF: function() {
       // Electron printing - show error if electron PDF is false (ie could not open)
       this.pdfPrintError = !this.printElectronPDF();
       this.$router.push({ name: "print" });
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -24,31 +24,31 @@ export default {
   props: {
     headings: {
       type: Array,
-      default: function () {
+      default: function() {
         return [
           {
-            title: "activityTable.defaultTitle",
+            title: "activityTable.defaultTitle"
           },
           {
             title: "activityTable.defaultBudget",
-            align: "right",
+            align: "right"
           },
           {
             title: "activityTable.defaultYouthCentered",
-            align: "center",
-          },
+            align: "center"
+          }
         ];
-      },
+      }
     },
     actionColumn: {
       type: Boolean,
-      default: true,
+      default: true
     },
     translateHeadings: {
       type: Boolean,
-      default: true,
-    },
-  },
+      default: true
+    }
+  }
 };
 </script>
 

@@ -42,7 +42,7 @@ export default {
   components: {
     BaseFormLabel,
     BaseCalloutBox,
-    Datepicker,
+    Datepicker
   },
   mixins: [styleHelpers],
   props: {
@@ -52,22 +52,22 @@ export default {
     value: [String, Number, Object, Date],
     name: {
       type: String,
-      required: true,
+      required: true
     },
     placeholder: String,
     validate: String,
     error: {
       type: String,
-      required: false,
+      required: false
     },
-    classItems: String,
+    classItems: String
   },
   methods: {
-    emitChange: function (e) {
+    emitChange: function(e) {
       // debugger;
       this.$emit("input", e);
-    },
-  },
+    }
+  }
 };
 </script>
 

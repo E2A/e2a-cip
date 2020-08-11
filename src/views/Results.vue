@@ -41,7 +41,7 @@
                   :activity="activity"
                   :youth="activity.youthCentric"
                   :class="[
-                    mountedActivity === activity.id && base.itemSelected,
+                    mountedActivity === activity.id && base.itemSelected
                   ]"
                   number-index
                   @activitySelect="setActivityId"
@@ -101,39 +101,39 @@ export default {
     ClearItems,
     NavFooter,
     NavBreadcrumbs,
-    ActivitiesItemAssessment,
+    ActivitiesItemAssessment
   },
   mixins: [activityTypes, dataMethods, bestPracticeData],
   computed: {
-    groupedActivities: function () {
+    groupedActivities: function() {
       return this.getGroupedYouthActivities();
     },
     ...mapState({
-      mountedActivity: (state) => state.mountedActivity,
+      mountedActivity: state => state.mountedActivity
     }),
-    navButtons: function () {
+    navButtons: function() {
       return {
         left: [
           {
             to: { name: "assessment" },
-            label: this.$t("results.previousStep"),
-          },
+            label: this.$t("results.previousStep")
+          }
         ],
         right: [
           {
             to: { name: "advocate" },
             label: this.$t("results.nextStep"),
-            role: "primary",
-          },
-        ],
+            role: "primary"
+          }
+        ]
       };
-    },
+    }
   },
   created() {
     // Clear any open icons
     this.$store.dispatch("entities/bestpracticeicons/deleteAll");
     this.$store.commit("SET_PROGRESS", { results: true });
-  },
+  }
 };
 </script>
 

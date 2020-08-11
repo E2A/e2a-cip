@@ -11,13 +11,13 @@ import { dataIO } from "@/components/mixins/dataIO";
 export default {
   name: "Export",
   components: {
-    BaseBodyText,
+    BaseBodyText
   },
   mixins: [dataIO, dataMethods],
   props: {
     redirect: {
-      type: String,
-    },
+      type: String
+    }
   },
   created() {
     // Export data and redirect back to where you came from
@@ -27,6 +27,6 @@ export default {
       this.$t("fileUpload.exportSuccessful", { filetype: "JSON" }),
       "success"
     );
-  },
+  }
 };
 </script>

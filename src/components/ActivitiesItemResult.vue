@@ -23,15 +23,15 @@
       <template slot="summaryRight">
         <BaseGutterWrapper
           :class="type.right"
-          gutter-x="narrow"
-          gutter-y="narrow"
+          gutterX="narrow"
+          gutterY="narrow"
         >
           <div v-show="!isOpen" :class="base.gutter">
             <BaseGutterWrapper
               :class="base.icons"
               el="ul"
-              gutter-x="xnarrow"
-              gutter-y="xnarrow"
+              gutterX="xnarrow"
+              gutterY="xnarrow"
             >
               <li
                 v-for="(assessment, index) of activeAssessments"
@@ -40,7 +40,7 @@
               >
                 <BestPracticeIconSelect
                   :id="assessment.best_practice_id"
-                  :activity-id="assessment.activity_id"
+                  :activityID="assessment.activity_id"
                 />
               </li>
             </BaseGutterWrapper>
@@ -69,8 +69,8 @@
         <BaseGutterWrapper
           :class="base.icons"
           el="ul"
-          gutter-x="xnarrow"
-          gutter-y="xnarrow"
+          gutterX="xnarrow"
+          gutterY="xnarrow"
         >
           <li
             v-for="(bestPractice, index) of bestPractices"
@@ -79,7 +79,7 @@
           >
             <BestPracticeIconSelect
               :id="bestPractice.id"
-              :activity-id="activityInstance.id"
+              :activityID="activityInstance.id"
               :align="index > 4 ? 'right' : 'center'"
             />
           </li>
@@ -149,39 +149,38 @@ export default {
     BestPracticeIconSelect,
     BaseGutterWrapper,
     BaseDataGrid,
-    ActivitiesItemInput,
+    ActivitiesItemInput
   },
   mixins: [bestPracticeData, dataMethods],
   props: {
     activityInstance: {
       type: Object,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
       isOpen: false,
       activeAssessments: this.activityInstance.assessments,
       recommendationText: "",
-      displayText:
-        this.activityInstance.shortText || this.activityInstance.text,
+      displayText: this.activityInstance.shortText || this.activityInstance.text
     };
   },
   computed: {
-    youth: function () {
+    youth: function() {
       return this.activityInstance.youthCentric;
     },
-    recommendationsNotPresent: function () {
+    recommendationsNotPresent: function() {
       return this.activityRecommendations.length === 0;
     },
-    activityRecommendations: function () {
+    activityRecommendations: function() {
       // Get current recommendations on a given activity.
       return this.$store.getters["entities/activities/query"]()
         .with("recommendations")
         .whereId(this.activityInstance.id)
         .get()[0].recommendations;
     },
-    expandedData: function () {
+    expandedData: function() {
       return {
         [this.$t("activityTable.defaultID")]: this.activityInstance.id,
         [this.$t("activityTable.defaultBudget")]: `${
@@ -190,23 +189,23 @@ export default {
         [this.$t("activityTable.defaultYouthCentered")]: this.activityInstance
           .youthCentric
           ? this.$t("yesRaw")
-          : this.$t("noRaw"),
+          : this.$t("noRaw")
       };
-    },
+    }
   },
   methods: {
-    getActivityRecommendations: function () {
+    getActivityRecommendations: function() {
       // Get current recommendations on a given activity.
       return this.$store.getters["entities/activities/query"]()
         .with("recommendations")
         .find(this.activityInstance.id).recommendations;
     },
-    getBestPracticePresence: function (bestPracticeText) {
+    getBestPracticePresence: function(bestPracticeText) {
       // Checks for the value of a best practice and shows the result, it defaults to no.
       const bestPracticeValue = this.$store.getters[
         "entities/activities/query"
       ]()
-        .with("assessments", (query) => {
+        .with("assessments", query => {
           query.where("text", bestPracticeText);
         })
         .find(this.activityInstance.id).assessments[0];
@@ -217,30 +216,30 @@ export default {
         return "no";
       }
     },
-    addRecommendation: function () {
+    addRecommendation: function() {
       // Add a new recommendation
       this.$store.dispatch("entities/recommendations/insert", {
         data: {
           activity_id: this.activityInstance.id,
-          text: "",
-        },
+          text: ""
+        }
       });
     },
-    expandText: function () {
+    expandText: function() {
       this.displayText = this.activityInstance.text;
     },
-    truncateText: function () {
+    truncateText: function() {
       this.displayText = this.activityInstance.shortText;
     },
-    handleOpen: function () {
+    handleOpen: function() {
       this.expandText();
       this.isOpen = true;
     },
-    handleClose: function () {
+    handleClose: function() {
       this.truncateText();
       this.isOpen = false;
-    },
-  },
+    }
+  }
 };
 </script>
 

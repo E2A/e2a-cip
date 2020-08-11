@@ -5,8 +5,8 @@
         <BaseGutterWrapper
           :class="base.breadcrumbNavList"
           el="ul"
-          gutter-y="xnarrow"
-          gutter-x="medium"
+          gutterY="xnarrow"
+          gutterX="medium"
         >
           <NavItem
             v-for="(link, key, index) in this.getLinks()"
@@ -33,11 +33,11 @@ export default {
   components: {
     NavItem,
     BaseGutterWrapper,
-    BaseWidthWrapper,
+    BaseWidthWrapper
   },
   mixins: [dataMethods],
   computed: {
-    links: function () {
+    links: function() {
       return {
         plan: {
           name: "plan",
@@ -47,14 +47,14 @@ export default {
             {
               name: "plan",
               text: this.$t("nav.plan"),
-              active: true,
+              active: true
             },
             {
               name: "setup",
               text: this.$t("nav.setup"),
-              active: true,
-            },
-          ],
+              active: true
+            }
+          ]
         },
         activities: {
           name: "activity",
@@ -64,14 +64,14 @@ export default {
             {
               name: "activity",
               text: this.$t("nav.activities"),
-              active: true,
+              active: true
             },
             {
               name: "summary",
               text: this.$t("nav.summary"),
-              active: true,
-            },
-          ],
+              active: true
+            }
+          ]
         },
         analyze: {
           name: "evidence-informed-practices",
@@ -82,14 +82,14 @@ export default {
               name: "evidence-informed-practices",
               childName: "evidence-informed-practice",
               text: this.$t("nav.bestPractices"),
-              active: true,
+              active: true
             },
             {
               name: "assessment",
               text: this.$t("nav.assessment"),
-              active: true,
-            },
-          ],
+              active: true
+            }
+          ]
         },
         results: {
           name: "results",
@@ -99,53 +99,53 @@ export default {
             {
               name: "results",
               text: this.$t("nav.results"),
-              active: true,
+              active: true
             },
             {
               name: "advocate",
               childName: "print",
               text: this.$t("nav.advocate"),
-              active: true,
-            },
-          ],
-        },
+              active: true
+            }
+          ]
+        }
       };
-    },
+    }
   },
   methods: {
-    getCurrentRoute: function () {
+    getCurrentRoute: function() {
       // get the (translated) name of the current route
       return Object.values(this.links)
         .reduce((links, link) => {
           return links.concat(link.steps).concat(link);
         }, [])
-        .find((link) => {
+        .find(link => {
           return (
             link.name === this.$route.name ||
             link.childName === this.$route.name
           );
         }).text;
     },
-    globalNotification: function (value) {
+    globalNotification: function(value) {
       const notification = this.$store.getters[
         "entities/globalnotifications/query"
       ]().first();
       return notification ? notification[value] : false;
     },
-    getLinks: function () {
+    getLinks: function() {
       this.updateActiveLinks();
       return this.links;
     },
-    closeNavFlyout: function (event) {
+    closeNavFlyout: function(event) {
       this.flyoutOpen = false;
     },
-    openNavFlyout: function (event) {
+    openNavFlyout: function(event) {
       this.flyoutOpen = true;
     },
-    notificationTrigger: function () {
+    notificationTrigger: function() {
       this.notify(this.notificationMessage, "info", 3000);
     },
-    updateActiveLinks: function () {
+    updateActiveLinks: function() {
       const currentProgress = this.$store.getters.currentProgress;
 
       this.links.activities.active = currentProgress.activities;
@@ -174,8 +174,8 @@ export default {
       ) {
         this.notificationMessage = this.$t("nav.addAssessment");
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -23,32 +23,32 @@ import BaseButtonLink from "@/components/BaseButtonLink";
 export default {
   name: "ActivitiesItemSummary",
   components: {
-    BaseButtonLink,
+    BaseButtonLink
   },
   mixins: [dataMethods],
   props: {
     text: {
       type: String,
-      required: true,
+      required: true
     },
     budget: {
       type: Number,
-      default: 0,
+      default: 0
     },
     youth: {
       type: Boolean,
-      default: false,
+      default: false
     },
     id: {
       type: Number,
-      default: 1,
-    },
+      default: 1
+    }
   },
   computed: {
-    youthIcon: function () {
+    youthIcon: function() {
       return this.youth ? "Yes" : "No";
-    },
-  },
+    }
+  }
 };
 </script>
 

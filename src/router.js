@@ -21,75 +21,75 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home,
+      component: Home
     },
     {
       path: "/plan",
       name: "plan",
-      component: Plan,
+      component: Plan
     },
     {
       path: "/plan/setup/",
       name: "setup",
-      component: Setup,
+      component: Setup
     },
     {
       path: "/plan/activity/:activityId?",
       name: "activity",
       component: Activity,
-      props: true,
+      props: true
     },
     {
       path: "/activity-type-info/:backToActivityId",
       name: "activity-type-info",
       component: ActivityTypeInfo,
-      props: true,
+      props: true
     },
     {
       path: "/plan/summary",
       name: "summary",
-      component: Summary,
+      component: Summary
     },
     {
       path: "/analysis",
       name: "assessment",
-      component: Assessment,
+      component: Assessment
     },
     {
       path: "/analysis/evidence-informed-practices",
       name: "evidence-informed-practices",
-      component: BestPractices,
+      component: BestPractices
     },
     {
       path: "/evidence-informed-practice/:id",
       name: "evidence-informed-practice",
       component: BestPractice,
-      props: true,
+      props: true
     },
     {
       path: "/results",
       name: "results",
-      component: Results,
+      component: Results
     },
     {
       path: "/advocate",
       name: "advocate",
-      component: Advocate,
+      component: Advocate
     },
     {
       path: "/print",
       name: "print",
-      component: Print,
+      component: Print
     },
     {
       path: "/export/:redirect",
       name: "export",
       component: Export,
-      props: true,
-    },
+      props: true
+    }
   ],
   scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 };
   },
-  mode: "history",
+  mode: "history"
 });

@@ -3,8 +3,8 @@
   <BaseGutterWrapper
     :class="base.tableHeader"
     :el="wrapperEl"
-    gutter-x="narrow"
-    gutter-y="narrow"
+    gutterX="narrow"
+    gutterY="narrow"
   >
     <BaseHeading
       :class="display.inlineBlock"
@@ -50,40 +50,40 @@ export default {
     BaseHeading,
     BaseGutterWrapper,
     BaseProgressBar,
-    ClearItems,
+    ClearItems
   },
   mixins: [activityTypes, dataMethods, bestPracticeData],
   props: {
     wrapperEl: {
       type: String,
-      default: "header",
+      default: "header"
     },
     bestPracticePercentage: {
       type: Boolean,
-      default: true,
+      default: true
     },
     clearRecommendations: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
-    percentBPActivites: function () {
+    percentBPActivites: function() {
       return (
         (
           this.getActivitiesWithBP().length /
           this.getYouthCenteredActivitiesCount()
         ).toFixed(2) * 100
       );
-    },
+    }
   },
   methods: {
     getYouthCenteredActivitiesCount() {
       return this.$store.getters["entities/activities/query"]()
         .where("youthCentric", true)
         .count();
-    },
-  },
+    }
+  }
 };
 </script>
 

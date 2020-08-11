@@ -85,47 +85,47 @@ export default {
     BaseButtonLink,
     BaseWidthWrapper,
     FileExport,
-    GlobalRecommendation,
+    GlobalRecommendation
   },
-  beforeRouteEnter: function (to, from, next) {
-    next((vm) => {
+  beforeRouteEnter: function(to, from, next) {
+    next(vm => {
       vm.previousRoute = from;
     });
   },
   computed: {
-    steps: function () {
+    steps: function() {
       return Object.values(i18n.messages[i18n.locale].advocate.steps).map(
         (step, index) => {
           return {
             title: this.$t(`advocate.steps.step${index + 1}.title`),
-            blurb: this.$t(`advocate.steps.step${index + 1}.blurb`),
+            blurb: this.$t(`advocate.steps.step${index + 1}.blurb`)
           };
         }
       );
-    },
+    }
   },
   methods: {
-    goBack: function () {
+    goBack: function() {
       if (this.previousRoute) {
         return this.previousRoute;
       }
 
       return { name: "results" };
     },
-    getNavButtons: function () {
+    getNavButtons: function() {
       var navButtons = {
         left: [
           {
             to: this.goBack(),
-            label: this.$t("goBack"),
-          },
+            label: this.$t("goBack")
+          }
         ],
-        right: [],
+        right: []
       };
 
       return navButtons;
-    },
-  },
+    }
+  }
 };
 </script>
 

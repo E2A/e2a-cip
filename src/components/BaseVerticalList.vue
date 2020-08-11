@@ -24,41 +24,41 @@ export default {
   mixins: [styleHelpers],
   props: {
     items: {
-      type: Array,
+      type: Array
     },
     el: {
       type: String,
-      default: "ul",
+      default: "ul"
     },
     spacing: {
       type: String,
-      default: "medium",
+      default: "medium"
     },
     borders: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
-    itemEl: function () {
+    itemEl: function() {
       const listEls = ["ul", "ol"];
       return listEls.includes(this.el) ? "li" : "div";
     },
-    spacingClasses: function () {
+    spacingClasses: function() {
       const padding = this.spaceClass({
         size: this.spacing,
         side: "vertical",
-        between: true,
+        between: true
       });
       const margin = this.spaceClass({
         prop: "margin",
         size: this.spacing,
         side: "vertical",
-        between: true,
+        between: true
       });
       return [this.space[padding], this.borders && this.space[margin]];
-    },
-  },
+    }
+  }
 };
 </script>
 

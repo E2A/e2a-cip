@@ -14,7 +14,7 @@ export const customValidation = {
         const entityType = args[1];
         return this.$t("uniquenessError", {
           field: field,
-          entityType: entityType,
+          entityType: entityType
         });
       },
       validate: (value, args) => {
@@ -33,7 +33,7 @@ export const customValidation = {
         if (entityId) {
           existingEntity = this.$store.getters[`entities/${entityType}/query`]()
             .where(entityField, value)
-            .where((record) => record.id !== Number(entityId))
+            .where(record => record.id !== Number(entityId))
             .count();
         } else {
           existingEntity = this.$store.getters[`entities/${entityType}/query`]()
@@ -42,12 +42,12 @@ export const customValidation = {
         }
 
         return existingEntity === 0;
-      },
+      }
     });
 
     Validator.extend("decimal", {
-      validate: (value) => {
-        const hasCorrectDecimal = (decimal) => {
+      validate: value => {
+        const hasCorrectDecimal = decimal => {
           const valueString = String(value);
           const excludedDecimal = decimal === "." ? "," : ".";
 
@@ -62,7 +62,7 @@ export const customValidation = {
         // Check if decimal is correct
         if (this.$i18n.locale === "en") return hasCorrectDecimal(".");
         else if (this.$i18n.locale === "fr") return hasCorrectDecimal(",");
-      },
+      }
     });
-  },
+  }
 };

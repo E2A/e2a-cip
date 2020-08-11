@@ -23,29 +23,29 @@ export default {
   mixins: [styleHelpers],
   props: {
     items: {
-      type: Array,
+      type: Array
     },
     spacing: {
       type: String,
-      default: "medium",
-    },
+      default: "medium"
+    }
   },
   computed: {
-    spacingClasses: function () {
+    spacingClasses: function() {
       const padding = this.spaceClass({
         size: this.spacing,
         side: "vertical",
-        between: true,
+        between: true
       });
       const margin = this.spaceClass({
         prop: "margin",
         size: this.spacing,
         side: "vertical",
-        between: true,
+        between: true
       });
       return [this.space[padding]];
-    },
-  },
+    }
+  }
 };
 </script>
 

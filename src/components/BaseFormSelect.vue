@@ -47,7 +47,7 @@ export default {
   components: {
     BaseFormLabel,
     BaseCalloutBox,
-    vSelect,
+    vSelect
   },
   mixins: [styleHelpers, paddingFix],
   props: {
@@ -57,33 +57,33 @@ export default {
     value: [String, Number, Object, Date],
     name: {
       type: String,
-      required: true,
+      required: true
     },
     placeholder: String,
     validate: String,
     dataAs: String,
     error: {
       type: String,
-      required: false,
+      required: false
     },
     searchable: {
       type: Boolean,
-      default: false,
+      default: false
     },
     options: {
       type: [Array, Object],
-      required: true,
+      required: true
     },
     classItems: String,
     noClear: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   methods: {
-    emitInput: function (e) {
+    emitInput: function(e) {
       this.$emit("input", e);
-    },
+    }
   },
   $_veeValidate: {
     name() {
@@ -91,8 +91,8 @@ export default {
     },
     value() {
       return this.value;
-    },
-  },
+    }
+  }
 };
 </script>
 

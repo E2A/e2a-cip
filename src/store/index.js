@@ -14,19 +14,19 @@ const store = new Vuex.Store({
       plan: false,
       activities: false,
       analyze: false,
-      results: false,
-    },
+      results: false
+    }
   },
   getters: {
-    mountedActivity: (state) => {
+    mountedActivity: state => {
       return state.mountedActivity;
     },
-    infoFlyout: (state) => {
+    infoFlyout: state => {
       return state.infoFlyout;
     },
-    currentProgress: (state) => {
+    currentProgress: state => {
       return state.progress;
-    },
+    }
   },
   mutations: {
     SET_MOUNTED_ACTIVITY(state, activityId) {
@@ -43,9 +43,9 @@ const store = new Vuex.Store({
     },
     CLOSE_ACTIVITY_TRAY(state) {
       state.mountedActivity = null;
-    },
+    }
   },
-  plugins: [VuexORM.install(database), createPersistedState()],
+  plugins: [VuexORM.install(database), createPersistedState()]
 });
 
 export default store;

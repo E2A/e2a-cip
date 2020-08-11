@@ -8,7 +8,7 @@
             base.item,
             base.click,
             !reverseSpacing ? base.col5 : base.col7,
-            base.flex,
+            base.flex
           ]"
         >
           <slot name="summaryLeft">Add summary here</slot>
@@ -30,17 +30,17 @@ import BaseGutterWrapper from "./BaseGutterWrapper.vue";
 export default {
   name: "BaseDetails",
   components: {
-    BaseGutterWrapper,
+    BaseGutterWrapper
   },
   props: {
-    reverseSpacing: Boolean,
+    reverseSpacing: Boolean
   },
   computed: {
-    twoColSummary: function () {
+    twoColSummary: function() {
       // https://stackoverflow.com/questions/47432702/determining-if-slot-content-is-null-or-empty
       return this.$slots.summaryRight && this.base.split;
-    },
-  },
+    }
+  }
 };
 </script>
 

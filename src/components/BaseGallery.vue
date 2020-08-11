@@ -2,8 +2,8 @@
   <BaseGutterWrapper
     :class="[base.wrapper, sizeClass]"
     :el="el"
-    :gutter-x="gutter"
-    :gutter-y="gutter"
+    :gutterX="gutter"
+    :gutterY="gutter"
     :flush="flush"
   >
     <component
@@ -59,39 +59,39 @@ export default {
     BaseHeading,
     BaseBodyText,
     BaseButtonLink,
-    BaseCard,
+    BaseCard
   },
   props: {
     items: {
       type: Array,
-      required: true,
+      required: true
     },
     el: {
       type: String,
-      default: "ul",
+      default: "ul"
     },
     childEl: {
       type: String,
-      default: "li",
+      default: "li"
     },
     size: {
       type: String,
-      default: "default",
+      default: "default"
     },
     gutter: {
       type: String,
-      default: "medium",
+      default: "medium"
     },
     flush: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
   computed: {
-    sizeClass: function () {
+    sizeClass: function() {
       return this.size !== "default" && this.base[this.size];
-    },
-  },
+    }
+  }
 };
 </script>
 

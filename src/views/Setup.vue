@@ -72,35 +72,35 @@ export default {
     BaseButtonLink,
     FileUpload,
     ClearItems,
-    NavBreadcrumbs,
+    NavBreadcrumbs
   },
   mixins: [dataMethods],
   data() {
     return {
       inputKey: null,
-      clearSetup: false,
+      clearSetup: false
     };
   },
   computed: {
-    readyToAdd: function () {
+    readyToAdd: function() {
       return this.setupPresent();
     },
-    activityText: function () {
+    activityText: function() {
       if (this.getItemCount("activities") === 0) {
         return this.$t("setup.addActivities");
       } else {
         return this.$t("setup.editActivities");
       }
-    },
+    }
   },
   methods: {
-    updateInput: function () {
+    updateInput: function() {
       this.inputKey = this.getItemCount("all");
     },
-    toggleClearSetup: function () {
+    toggleClearSetup: function() {
       this.clearSetup = !this.clearSetup;
-    },
-  },
+    }
+  }
 };
 </script>
 

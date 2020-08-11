@@ -15,8 +15,8 @@
         <BaseGutterWrapper
           v-if="getGroupProp(group)"
           :class="type[group]"
-          gutter-x="narrow"
-          gutter-y="narrow"
+          gutterX="narrow"
+          gutterY="narrow"
         >
           <li
             v-for="(button, index) in getGroupProp(group)"
@@ -61,41 +61,41 @@ export default {
     BaseGutterWrapper,
     BaseButton,
     BaseButtonLink,
-    PrintPage,
+    PrintPage
   },
   mixins: [dataMethods],
   props: {
     wrapperEl: {
       type: String,
-      default: "div",
+      default: "div"
     },
     leftButtons: Array,
-    rightButtons: Array,
+    rightButtons: Array
   },
   methods: {
-    emitAction: function (action) {
+    emitAction: function(action) {
       if (action) {
         this.$eventHub.$emit(action);
       }
       this.saveReminder();
     },
-    getGroupProp: function (group) {
+    getGroupProp: function(group) {
       return group === "left" ? this.leftButtons : this.rightButtons;
     },
-    getDefaultIcon: function (group, side) {
+    getDefaultIcon: function(group, side) {
       if (side === "left") {
         return group === "left" ? "arrow-left" : "none";
       }
       return group === "right" ? "arrow-right" : "none";
     },
-    saveReminder: function () {
+    saveReminder: function() {
       this.notify(
         this.$root.$t("saveRecommended", { exportLink: "#" }),
         "warning",
         10000
       );
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -6,13 +6,13 @@
         space.paddingVerticalNarrow,
         color.well,
         border.bottom,
-        base.header,
+        base.header
       ]"
     >
       <BaseGutterWrapper
         :class="base.leftPane"
-        gutter-y="xnarrow"
-        gutter-x="xnarrow"
+        gutterY="xnarrow"
+        gutterX="xnarrow"
       >
         <BaseHeading
           :class="display.inlineBlock"
@@ -29,10 +29,10 @@
       <!-- EIPs -->
       <BaseGutterWrapper
         :class="base.rightPane"
-        gutter-y="xnarrow"
-        gutter-x="xnarrow"
+        gutterY="xnarrow"
+        gutterX="xnarrow"
       >
-        <BaseGutterWrapper gutter-x="xnarrow" gutterY="xnarrow">
+        <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
           <BaseButtonLink
             :to="this.$t('nav.userGuidePDF')"
             :router="false"
@@ -44,8 +44,8 @@
         </BaseGutterWrapper>
         <BaseGutterWrapper
           :class="[space.marginLeftNarrow]"
-          gutter-x="xnarrow"
-          gutter-y="xnarrow"
+          gutterX="xnarrow"
+          gutterY="xnarrow"
         >
           <BaseButtonLink
             :to="this.$t('nav.eipPdf')"
@@ -63,7 +63,7 @@
       :class="[
         space.paddingVerticalWide,
         space.paddingHorizontal,
-        border.bottom,
+        border.bottom
       ]"
     >
       <BaseGutterWrapper :class="base.logoGrid">
@@ -127,8 +127,8 @@
         />
         <BaseGutterWrapper
           :class="[space.paddingTop, type.center]"
-          gutter-x="xnarrow"
-          gutter-y="xnarrow"
+          gutterX="xnarrow"
+          gutterY="xnarrow"
         >
           <li :class="base.gutterItem">
             <BaseButtonLink
@@ -191,12 +191,12 @@ export default {
     BaseGutterWrapper,
     BaseStepList,
     BaseButtonLink,
-    ClearItems,
+    ClearItems
   },
   mixins: [dataMethods, initData],
   data() {
     return {
-      electron: this.checkElectron(),
+      electron: this.checkElectron()
     };
   },
   computed: {
@@ -205,12 +205,12 @@ export default {
         (step, index) => {
           return {
             title: this.$t(`home.steps.step${index + 1}.title`),
-            blurb: this.$t(`home.steps.step${index + 1}.blurb`),
+            blurb: this.$t(`home.steps.step${index + 1}.blurb`)
           };
         }
       );
-    },
-  },
+    }
+  }
 };
 </script>
 

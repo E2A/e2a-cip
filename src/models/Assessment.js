@@ -11,7 +11,7 @@ export default class Assessment extends Model {
       activity_id: this.number(0),
       text: this.string(""),
       value: this.string(""),
-      activity: this.belongsTo(Activity, "activity_id"),
+      activity: this.belongsTo(Activity, "activity_id")
     };
   }
 }

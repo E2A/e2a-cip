@@ -10,7 +10,7 @@
       base[role],
       { [base.pointer]: clickable },
       { [color.shadow]: shadow },
-      { [color.shadowHover]: clickable },
+      { [color.shadowHover]: clickable }
     ]"
     @click="clickable && $emit('click')"
   >
@@ -48,50 +48,50 @@ export default {
   name: "BaseCalloutBox",
   components: {
     BaseIcon,
-    BaseBodyText,
+    BaseBodyText
   },
   props: {
     message: {
       type: String,
-      required: true,
+      required: true
     },
     role: {
       type: String,
       default: "info",
-      validator: function (value) {
+      validator: function(value) {
         return ["success", "warning", "info"].indexOf(value) !== -1;
-      },
+      }
     },
     dismissable: {
       type: Boolean,
-      default: false,
+      default: false
     },
     clickable: {
       type: Boolean,
-      default: false,
+      default: false
     },
     shadow: {
       type: Boolean,
-      default: false,
+      default: false
     },
-    timeout: Number,
+    timeout: Number
   },
-  data: function () {
+  data: function() {
     return {
       icons: {
         success: {
           icon: "success",
-          alt: "👍",
+          alt: "👍"
         },
         info: {
           icon: "info",
-          alt: "( i )",
+          alt: "( i )"
         },
         warning: {
           icon: "warning",
-          alt: "( ! )",
-        },
-      },
+          alt: "( ! )"
+        }
+      }
     };
   },
   mounted() {
@@ -102,11 +102,11 @@ export default {
     }
   },
   methods: {
-    dismissNotification: function () {
+    dismissNotification: function() {
       this.$store.dispatch("entities/globalnotifications/deleteAll");
       this.$emit("dismiss");
-    },
-  },
+    }
+  }
 };
 </script>
 

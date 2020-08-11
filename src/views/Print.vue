@@ -21,7 +21,7 @@
             space.paddingTop,
             space.marginTop,
             border.top,
-            border.secondary,
+            border.secondary
           ]"
         >
           <template slot-scope="{ item, index }">
@@ -36,7 +36,7 @@
               >
                 {{
                   $t("print.globalRecommendations.recommendation", {
-                    count: index + 1,
+                    count: index + 1
                   })
                 }}
               </BaseHeading>
@@ -137,7 +137,7 @@ export default {
     ClearItems,
     ChartItems,
     ActivitiesItemAssessment,
-    NavFooter,
+    NavFooter
   },
   mixins: [activityTypes, dataMethods, bestPracticeData],
   data() {
@@ -147,30 +147,30 @@ export default {
       setupCountry: this.getItemValue("setup", "countryName"),
       globalRecommendations: this.$store.getters[
         "entities/globalrecommendations/all"
-      ](),
+      ]()
     };
   },
   computed: {
-    groupedActivities: function () {
+    groupedActivities: function() {
       return this.getGroupedActivites();
     },
-    navButtons: function () {
+    navButtons: function() {
       return {
         left: [
           {
             to: { name: "advocate" },
-            label: this.$t("print.previousStep"),
-          },
+            label: this.$t("print.previousStep")
+          }
         ],
         right: [
           {
             type: "print",
-            size: "default",
-          },
-        ],
+            size: "default"
+          }
+        ]
       };
-    },
-  },
+    }
+  }
 };
 </script>
 

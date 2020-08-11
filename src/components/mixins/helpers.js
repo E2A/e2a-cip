@@ -3,22 +3,22 @@
 export const stringHelpers = {
   methods: {
     // https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
-    capitalize: function (string) {
+    capitalize: function(string) {
       return `${string.charAt(0).toUpperCase()}${string.slice(1)}`;
     },
-    titleCase: function (str) {
+    titleCase: function(str) {
       return str
         .toLowerCase()
         .split(" ")
-        .map((word) => {
+        .map(word => {
           return word.charAt(0).toUpperCase() + word.slice(1);
         })
         .join(" ");
     },
-    stripWhitespace: function (str) {
+    stripWhitespace: function(str) {
       return str.replace(/(^\s+|\s+$)/g, "");
-    },
-  },
+    }
+  }
 };
 
 // some helpers for generating class names
@@ -27,17 +27,17 @@ export const styleHelpers = {
   methods: {
     // generate a type scale class name, e.g. scaleAlpha
     // usage: in your component, do type[typeScaleClass('alpha')]
-    typeScaleClass: function (size) {
+    typeScaleClass: function(size) {
       return `scale${stringHelpers.methods.capitalize(size)}`;
     },
     // generate a spacing class name, e.g. scaleAlpha
     // usage: in your component, do space[spaceClass('padding', 'wide', 'top')]
     // 'side' can be 'horizontal' or 'vertical' too
-    spaceClass: function ({
+    spaceClass: function({
       prop = "padding",
       size = "medium",
       side = "all",
-      between = false,
+      between = false
     } = {}) {
       const caps = stringHelpers.methods.capitalize;
 
@@ -47,22 +47,22 @@ export const styleHelpers = {
       return `${prop}${caps(side)}${between ? "Between" : ""}${
         size !== "medium" ? caps(size) : ""
       }`;
-    },
-  },
+    }
+  }
 };
 /**
  * Parses an integer into a string with the appropriate
  * metric suffix.
  * @param {int} n
  */
-export const parseIntWithSuffix = (n) => {
+export const parseIntWithSuffix = n => {
   const ranges = [
     { divider: 1e18, suffix: "E" },
     { divider: 1e15, suffix: "P" },
     { divider: 1e12, suffix: "T" },
     { divider: 1e9, suffix: "G" },
     { divider: 1e6, suffix: "M" },
-    { divider: 1e3, suffix: "k" },
+    { divider: 1e3, suffix: "k" }
   ];
 
   for (var i = 0; i < ranges.length; i++) {
@@ -84,7 +84,7 @@ export const getCurrencySymbol = (locale, currency) =>
       style: "currency",
       currency,
       minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
+      maximumFractionDigits: 0
     })
     .replace(/\d/g, "")
     .trim();

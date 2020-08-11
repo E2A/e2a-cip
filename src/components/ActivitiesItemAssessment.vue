@@ -16,7 +16,7 @@
             type.leadingDefault,
             base.tableIndex,
             space.marginRightNarrow,
-            numberIndex && base.numberIndex,
+            numberIndex && base.numberIndex
           ]"
           :color="'dark'"
           weight="regular"
@@ -38,11 +38,11 @@
       <template slot="summaryRight">
         <!-- list of best practice icons -->
         <BaseGutterWrapper
-          v-if="!editable"
+          v-if="!editable && activity"
           :class="base.right"
           el="ul"
-          gutter-x="xnarrow"
-          gutter-y="xnarrow"
+          gutterX="xnarrow"
+          gutterY="xnarrow"
         >
           <li
             v-for="(bestPractice, index) of bestPractices"
@@ -51,7 +51,7 @@
           >
             <BestPracticeInfoIcon
               :id="bestPractice.id"
-              :activity-id="id"
+              :activityID="activity.id"
               :align="index > 4 ? 'right' : 'center'"
             />
           </li>
@@ -60,8 +60,8 @@
         <BaseGutterWrapper
           v-if="editable"
           :class="[base.right, space.paddingHorizontalNone]"
-          gutter-y="xnarrow"
-          gutter-x="xnarrow"
+          gutterY="xnarrow"
+          gutterX="xnarrow"
         >
           <router-link
             :to="{ name: 'activity', params: { activityId: id } }"
@@ -96,19 +96,19 @@ export default {
     BaseButtonLink,
     BaseDataGrid,
     ActivitiesItemInput,
-    BaseButton,
+    BaseButton
   },
   mixins: [bestPracticeData, dataMethods],
   props: {
     activity: {
       type: Object,
-      required: true,
+      required: true
     },
     youth: Boolean,
     editable: Boolean,
-    numberIndex: Boolean,
+    numberIndex: Boolean
   },
-  data: function () {
+  data: function() {
     return {
       id: this.activity.id,
       number: this.activity.activityNumber,
@@ -117,11 +117,11 @@ export default {
       bestPracticeId: null,
       assessmentInstance: null,
       assessmentComments: null,
-      commentsNotPresent: false,
+      commentsNotPresent: false
     };
   },
   computed: {
-    expandedData: function () {
+    expandedData: function() {
       return {
         [this.$t("activityTable.defaultID")]: this.id,
         [this.$t("activityTable.defaultBudget")]: `${
@@ -129,18 +129,18 @@ export default {
         } <small>${this.getItemValue("setup", "currencyCode")}</small>`,
         [this.$t("activityTable.defaultYouthCentered")]: this.youth
           ? this.$t("yesRaw")
-          : this.$t("noRaw"),
+          : this.$t("noRaw")
       };
     },
-    url: function () {
+    url: function() {
       return { name: "activity", params: { activityId: this.id } };
-    },
+    }
   },
   methods: {
-    emitClick: function (event) {
+    emitClick: function(event) {
       this.$emit("activitySelect", event, this.id);
     },
-    getAssessmentInstance: function (bestPracticeId) {
+    getAssessmentInstance: function(bestPracticeId) {
       this.assessmentInstance = this.$store.getters[
         "entities/assessments/query"
       ]()
@@ -152,28 +152,28 @@ export default {
       this.assessmentComments = this.assessmentInstance.comments;
       this.commentsNotPresent = this.assessmentInstance.comments.length === 0;
     },
-    getNewAssessment: function () {
+    getNewAssessment: function() {
       this.getAssessmentInstance(this.bestPracticeId);
     },
 
-    expandText: function () {
+    expandText: function() {
       this.displayText = this.text;
     },
-    truncateText: function () {
+    truncateText: function() {
       if (this.shortText) {
         this.displayText = this.shortText;
       }
     },
-    handleOpen: function () {
+    handleOpen: function() {
       this.expandText();
       this.isOpen = true;
     },
-    handleClose: function () {
+    handleClose: function() {
       this.truncateText();
       this.isOpen = false;
       this.commentsOpen = false;
-    },
-  },
+    }
+  }
 };
 </script>
 

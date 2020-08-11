@@ -17,14 +17,14 @@ export default {
   name: "AppRoot",
   components: {
     NavHeader,
-    BaseIconSpriteMap,
+    BaseIconSpriteMap
   },
   mixins: [dataMethods],
   computed: {
     // should be a better way to do this but router props don't work here
-    showNav: function () {
+    showNav: function() {
       return this.$route.name !== "home";
-    },
+    }
   },
   created() {
     if (this.checkElectron()) {
@@ -36,7 +36,7 @@ export default {
     // This uses vue router vs. normal clicks for electron
     document.addEventListener(
       "click",
-      (event) => {
+      event => {
         // If the clicked element doesn't have the right selector, bail
         if (!event.target.matches(".electron-link")) return;
 
@@ -46,14 +46,14 @@ export default {
         // Log the clicked element in the console
         this.$router.push({
           name: "export",
-          params: { redirect: this.$route.name },
+          params: { redirect: this.$route.name }
         });
       },
       false
     );
   },
   methods: {
-    detectLanguage: function () {
+    detectLanguage: function() {
       let locale = "";
 
       // Browser sniff
@@ -71,15 +71,15 @@ export default {
         this.$i18n.locale = locale;
       }
     },
-    closeFlyouts: function () {
+    closeFlyouts: function() {
       this.$store.dispatch("entities/bestpracticeicons/create", {
         data: {
-          flyout: false,
-        },
+          flyout: false
+        }
       });
       this.$store.commit("CLOSE_FLYOUTS");
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -97,7 +97,7 @@ $base-type-sizes: (
   "xsmall": 105%,
   "small": 115%,
   "medium": 120%,
-  "large": 125%,
+  "large": 125%
 );
 
 @mixin font-face($name, $path, $weight: normal, $style: normal) {

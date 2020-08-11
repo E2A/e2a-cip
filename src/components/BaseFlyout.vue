@@ -13,24 +13,24 @@ export default {
     align: {
       type: String,
       default: "center",
-      validator: function (value) {
+      validator: function(value) {
         return ["left", "center", "align"].indexOf(value) !== 0;
-      },
+      }
     },
     size: {
       type: Number,
-      default: 12,
+      default: 12
     },
     el: {
       type: String,
-      default: "aside",
-    },
+      default: "aside"
+    }
   },
   computed: {
-    width: function () {
+    width: function() {
       return this.size ? { width: this.size + "rem" } : {};
-    },
-  },
+    }
+  }
 };
 </script>
 

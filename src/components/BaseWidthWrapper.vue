@@ -15,9 +15,9 @@ export default {
   props: {
     width: {
       default: "default",
-      type: String,
-    },
-  },
+      type: String
+    }
+  }
 };
 </script>
 
@@ -28,7 +28,7 @@ $layout-widths: (
   "default": 42.5rem,
   "wide": 54rem,
   "xwide": 75rem,
-  "xxwide": 100rem,
+  "xxwide": 100rem
 );
 
 .wrapper {

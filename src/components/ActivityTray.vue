@@ -39,7 +39,7 @@
       :class="[
         base.gutter,
         space.paddingVerticalNarrow,
-        space.paddingBottomXnarrow,
+        space.paddingBottomXnarrow
       ]"
     >
       <BaseHeading
@@ -51,12 +51,7 @@
         color="dark"
         >{{ $t("analysis.instructions.heading") }}:</BaseHeading
       >
-      <BaseGutterWrapper
-        :class="base.icons"
-        el="ul"
-        gutter-x
-        gutter-y="xnarrow"
-      >
+      <BaseGutterWrapper :class="base.icons" el="ul" gutterX gutterY="xnarrow">
         <li
           v-for="(bestPractice, index) of bestPractices"
           :key="index"
@@ -65,7 +60,7 @@
           <BestPracticeIconSelect
             :id="bestPractice.id"
             :name="`bestPracticeSelect-${bestPractice.id}`"
-            :activity-id="activity.id"
+            :activityID="activity.id"
           />
           <!-- <span :class="base.listIconTitle">{{bestPractice.title}}</span> -->
         </li>
@@ -77,7 +72,7 @@
           base.commentSection,
           base.paddingHorizontalNone,
           space.paddingTopXnarrow,
-          base.flushHorizontalNarrow,
+          base.flushHorizontalNarrow
         ]"
         :flush="false"
       >
@@ -96,7 +91,7 @@
             v-for="comment of comments"
             :key="comment.id"
             :comment="comment"
-            :activity-id="activity.id"
+            :activityID="activity.id"
             @click="deleteComment"
           />
         </div>
@@ -116,7 +111,7 @@
           space.paddingVerticalNarrow,
           space.paddingHorizontalNarrow,
           base.activtyFooter,
-          base.flushHorizontalNarrow,
+          base.flushHorizontalNarrow
         ]"
       >
         <BaseButton
@@ -160,32 +155,32 @@ export default {
     BaseGutterWrapper,
     BaseButton,
     ActivitiesItemInput,
-    ActivityComment,
+    ActivityComment
   },
   mixins: [bestPracticeData, dataMethods, activityTypes],
   props: {
-    activityId: [String, Number],
+    activityId: [String, Number]
   },
-  data: function () {
+  data: function() {
     return {
       inputKey: 0,
-      inputText: "",
+      inputText: ""
     };
   },
   computed: {
-    activity: function () {
+    activity: function() {
       return this.$store.getters["entities/activities/query"]()
         .with("comments")
         .whereId(this.activityId)
         .first();
     },
-    comments: function () {
+    comments: function() {
       return this.activity.comments;
     },
-    commentsNotPresent: function () {
+    commentsNotPresent: function() {
       return this.comments.length === 0;
     },
-    expandedData: function () {
+    expandedData: function() {
       return {
         [this.$t("activityTable.defaultID")]: this.activity.id,
         [this.$t("activityTable.defaultBudget")]: `${
@@ -194,59 +189,59 @@ export default {
         [this.$t("activityTable.defaultYouthCentered")]: this.activity
           .youthCentric
           ? this.$t("yesRaw")
-          : this.$t("noRaw"),
+          : this.$t("noRaw")
       };
-    },
+    }
   },
   methods: {
-    editActivity: function () {
+    editActivity: function() {
       this.$router.push({
         name: "activity",
-        params: { activityId: this.activityId },
+        params: { activityId: this.activityId }
       });
     },
-    addComment: function () {
+    addComment: function() {
       const data = {
         activity_id: this.activityId,
-        text: this.inputText,
+        text: this.inputText
       };
       this.$store.dispatch("entities/comments/insert", { data });
       this.emptyInput();
     },
-    deleteComment: function (event, commentId) {
+    deleteComment: function(event, commentId) {
       this.$store.dispatch("entities/comments/delete", commentId);
     },
-    getActivityType: function () {
+    getActivityType: function() {
       if (!this.activityId) {
         return null;
       }
       const needle = this.activity.type;
-      const type = this.activityTypeDataset.find((item) => {
+      const type = this.activityTypeDataset.find(item => {
         return item.key === needle;
       });
 
       return type.title;
     },
-    getActivityTitle: function () {
+    getActivityTitle: function() {
       return this.activity.activityNumber;
     },
-    getActivityText: function () {
+    getActivityText: function() {
       return this.activity.text;
     },
-    isYouthCentric: function () {
+    isYouthCentric: function() {
       return this.activity.youthCentric;
     },
-    updateInputText: function (newValue) {
+    updateInputText: function(newValue) {
       this.inputText = newValue;
     },
-    emptyInput: function () {
+    emptyInput: function() {
       this.inputKey++;
       this.inputText = "";
     },
-    close: function () {
+    close: function() {
       this.$store.commit("SET_MOUNTED_ACTIVITY", 0);
-    },
-  },
+    }
+  }
 };
 </script>
 

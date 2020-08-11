@@ -6,7 +6,7 @@
         :class="[base.flyout, 'activity-flyout']"
         :id="flyoutID(item.id)"
         :style="{
-          left: activeDotXPosition + 10 + 'px',
+          left: activeDotXPosition + 10 + 'px'
         }"
         :key="flyoutID(item.id)"
       >
@@ -20,7 +20,7 @@
       <div
         :class="base.timelineWrapper"
         :style="{
-          width: timelineWidth + 'rem',
+          width: timelineWidth + 'rem'
         }"
       >
         <ul :class="base.timeline">
@@ -29,7 +29,7 @@
               :class="[
                 base.dot,
                 item.id === currentActivityID() ? color.darkBg : color.lightBg,
-                'activity-button',
+                'activity-button'
               ]"
               :id="`activity-${item.id}`"
               href="`#${flyoutID}`"
@@ -40,7 +40,7 @@
       </div>
     </div>
     <div :class="base.rightPane">
-      <BaseGutterWrapper gutter-x="xnarrow" gutterY="xnarrow">
+      <BaseGutterWrapper gutterX="xnarrow" gutterY="xnarrow">
         <BaseHeading
           :class="display.inlineBlock"
           :centered="false"
@@ -72,55 +72,55 @@ export default {
     BaseHeading,
     BaseButtonLink,
     FileExport,
-    BaseGutterWrapper,
+    BaseGutterWrapper
   },
   props: {
     items: {
       type: Array,
-      required: true,
+      required: true
     },
     countLabel: String,
     borders: {
       type: [String, Array],
-      default: "bottom",
-    },
+      default: "bottom"
+    }
   },
-  data: function () {
+  data: function() {
     return {
       openFlyout: false,
       activeDot: false,
-      activeDotXPosition: false,
+      activeDotXPosition: false
     };
   },
   computed: {
-    timelineWidth: function () {
+    timelineWidth: function() {
       const dotSize = 1.2; // in rems
       const dotSpacing = 0.7; // in rems
       const leftMargin = 2; // in rems
       return (dotSize + dotSpacing) * this.items.length + leftMargin;
-    },
+    }
   },
-  mounted: function () {
+  mounted: function() {
     document.addEventListener("click", this.closeFlyout);
   },
-  destroyed: function () {
+  destroyed: function() {
     document.removeEventListener("click", this.closeFlyout);
   },
   methods: {
-    flyoutID: function (id) {
+    flyoutID: function(id) {
       return `activity-flyout-${id}`;
     },
-    currentActivityID: function (id) {
+    currentActivityID: function(id) {
       return +this.$router.history.current.params.activityId;
     },
-    updateActiveDotPosition: function () {
+    updateActiveDotPosition: function() {
       if (this.activeDot) {
         this.activeDotXPosition = this.activeDot.getBoundingClientRect().left;
         return;
       }
       this.activeDotXPosition = false;
     },
-    toggleFlyout: function (id, event) {
+    toggleFlyout: function(id, event) {
       if (this.openFlyout === id) {
         this.openFlyout = false;
         this.activeDot = false;
@@ -131,18 +131,18 @@ export default {
       this.activeDot = document.getElementById(event.target.id);
       this.updateActiveDotPosition();
     },
-    handleScroll: function () {
+    handleScroll: function() {
       this.updateActiveDotPosition();
     },
-    closeFlyout: function (event) {
+    closeFlyout: function(event) {
       if (
         !event.target.closest(".activity-flyout") &&
         !event.target.closest(".activity-button")
       ) {
         this.toggleFlyout(this.openFlyout, event);
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

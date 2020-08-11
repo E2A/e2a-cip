@@ -2,7 +2,7 @@ import * as path from "path";
 
 export const electronPDF = {
   methods: {
-    printElectronPDF: function () {
+    printElectronPDF: function() {
       // Import modules only in electron environment
       const fs = require("fs");
       const os = require("os");
@@ -29,7 +29,7 @@ export const electronPDF = {
         show: false,
         width: 1500,
         height: 1500,
-        webPreferences: { plugins: true },
+        webPreferences: { plugins: true }
       });
 
       // Use default printing options
@@ -47,11 +47,11 @@ export const electronPDF = {
           remote.dialog.showSaveDialog(
             {
               defaultPath: this.$t("fileUpload.pdfFileName", {
-                timestamp: formatDate(),
+                timestamp: formatDate()
               }),
-              filters: [{ name: "PDF files", extensions: ["pdf"] }],
+              filters: [{ name: "PDF files", extensions: ["pdf"] }]
             },
-            (filename) => {
+            filename => {
               fs.writeFileSync(filename, data, "utf-8");
               pdfViewWindow.loadURL("file://" + pdfPath);
               pdfSuccess = true;
@@ -62,6 +62,6 @@ export const electronPDF = {
 
       // Return outcome based on if file was open.
       return pdfSuccess;
-    },
-  },
+    }
+  }
 };

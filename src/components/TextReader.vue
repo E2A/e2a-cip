@@ -12,17 +12,17 @@
 <script>
 export default {
   methods: {
-    loadTextFromFile: function (ev) {
+    loadTextFromFile: function(ev) {
       const file = ev.target.files[0];
       const reader = new FileReader();
-      reader.onload = (e) =>
+      reader.onload = e =>
         this.$emit("file-read-successful", {
           text: e.target.result,
-          fileObject: file,
+          fileObject: file
         });
       reader.readAsText(file);
-    },
-  },
+    }
+  }
 };
 </script>
 

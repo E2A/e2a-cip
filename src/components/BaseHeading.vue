@@ -12,7 +12,7 @@
       colorPalette[color],
       scaleClass,
       type[weight],
-      centered === true && type.centered,
+      centered === true && type.centered
     ]"
   >
     <slot>Add a heading!</slot>
@@ -29,7 +29,7 @@ export default {
     // heading level, 1-6
     level: {
       type: Number,
-      default: 1,
+      default: 1
     },
     // optional: use a different scale class from the actual heading level
     // -> e.g. <h1 class="scaleGamma">
@@ -37,47 +37,47 @@ export default {
     weight: {
       type: String,
       default: "light",
-      validator: function (value) {
+      validator: function(value) {
         return ["light", "regular", "bold"].indexOf(value) !== -1;
-      },
+      }
     },
     color: {
       type: String,
-      default: "primary",
+      default: "primary"
     },
     centered: {
       type: Boolean,
-      default: true,
+      default: true
     },
     // is this a subheading?
     sub: {
       type: Boolean,
-      default: false,
+      default: false
     },
     // specify an html element, for special cases (e.g. td, dt, etc.)
     // -> will override level and sub props above
-    el: String,
+    el: String
   },
   data() {
     return {
       // default type scale names used for h1 - h6 tags
       // e.g. h1 = 'alpha', or <h1 :class="type.scaleAlpha">
       // see stylesheets/config/_scale.scss
-      scaleNames: ["alpha", "beta", "gamma", "delta", "epsilon", "zeta"],
+      scaleNames: ["alpha", "beta", "gamma", "delta", "epsilon", "zeta"]
     };
   },
   computed: {
-    tag: function () {
+    tag: function() {
       // -> if this is a subhead, render as a <p> instead of <h*>
       return this.sub ? "p" : `h${this.level}`;
     },
-    scaleClass: function () {
+    scaleClass: function() {
       if (this.scale) {
         return this.type[this.typeScaleClass(this.scale)];
       }
       return this.type[this.typeScaleClass(this.scaleNames[this.level - 1])];
-    },
-  },
+    }
+  }
 };
 </script>
 

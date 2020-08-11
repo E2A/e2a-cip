@@ -2,8 +2,8 @@
   <div :class="base.wrapper">
     <BaseGutterWrapper
       :class="base.flexWrapper"
-      gutter-y="xnarrow"
-      gutter-x="xnarrow"
+      gutterY="xnarrow"
+      gutterX="xnarrow"
     >
       <BaseHeading
         :level="3"
@@ -30,8 +30,8 @@ export default {
   name: "ActivitiesTypeHeading",
   components: {
     BaseHeading,
-    BaseGutterWrapper,
-  },
+    BaseGutterWrapper
+  }
 };
 </script>
 

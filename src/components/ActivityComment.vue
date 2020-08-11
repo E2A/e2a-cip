@@ -23,27 +23,27 @@ export default {
   name: "ActivityComment",
   components: {
     BaseIcon,
-    BaseHeading,
+    BaseHeading
   },
   mixins: [],
   props: {
     comment: {
-      type: Object,
+      type: Object
     },
     activityId: {
-      type: Number,
-    },
+      type: Number
+    }
   },
   computed: {
-    body: function () {
+    body: function() {
       return this.comment.text;
-    },
+    }
   },
   methods: {
-    emitDeleteClick: function (event) {
+    emitDeleteClick: function(event) {
       this.$emit("click", event, this.comment.id);
-    },
-  },
+    }
+  }
 };
 </script>
 

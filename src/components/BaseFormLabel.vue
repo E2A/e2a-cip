@@ -6,7 +6,7 @@
         :class="[
           base.label,
           type[typeScaleClass(textSize)],
-          !helpText && space.marginBottomNarrow,
+          !helpText && space.marginBottomNarrow
         ]"
       >
         {{ label }}
@@ -19,7 +19,7 @@
       :class="[
         base.label,
         type[typeScaleClass(textSize)],
-        !helpText && space.marginBottomNarrow,
+        !helpText && space.marginBottomNarrow
       ]"
     >
       {{ label }}
@@ -44,7 +44,7 @@ export default {
   name: "BaseFormLabel",
   components: {
     BaseBodyText,
-    BaseTooltip,
+    BaseTooltip
   },
   mixins: [styleHelpers],
   props: {
@@ -53,14 +53,14 @@ export default {
     helpText: String,
     textSize: {
       type: String,
-      default: "epsilon",
+      default: "epsilon"
     },
     helpTextSize: {
       type: String,
-      default: "zeta",
+      default: "zeta"
     },
-    tooltipText: String,
-  },
+    tooltipText: String
+  }
 };
 </script>
 

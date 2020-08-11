@@ -14,7 +14,7 @@ export default class CountryIndicator extends Model {
       unit: this.string("%"),
       sourceUrl: this.string(""),
       citation: this.string(""),
-      questions: this.attr(null),
+      questions: this.attr(null)
     };
   }
 }
