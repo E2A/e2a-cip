@@ -37,6 +37,18 @@ export const activityTypes = {
       // Build array of activities by type
       // We only get activity assessments that are yes / partially (no can be ignored given it is the default)
       for (const activityType of activityTypeList) {
+        var withAssesments = this.$store.getters["entities/activities/query"]()
+          .with("assessments", query => {
+            query
+              .where("value", [
+                this.$t("bestPracticeOptions.yesKey"),
+                this.$t("bestPracticeOptions.partiallyKey")
+              ])
+              .where("type", activityType.key)
+              .where("youthCentric", "true");
+          })
+          .get();
+
         groupedActivities.push({
           activityTypeName: activityType.title,
           activityTypeKey: activityType.key,
@@ -52,6 +64,7 @@ export const activityTypes = {
             .get()
         });
       }
+
       return groupedActivities;
     },
     getActvityData: function() {

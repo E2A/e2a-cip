@@ -180,7 +180,7 @@ export default {
       activityNumber: this.activityNumber,
       existingActivity: {},
       activityBudgetBase: "0",
-      activityYouthCentric: false,
+      activityYouthCentric: this.activityYouthCentric,
       setupTitle: this.getItemValue("setup", "title"),
       activityType: "",
       activityText: "",

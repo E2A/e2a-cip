@@ -9,11 +9,11 @@
       :class="[base.switch, { [base.enhanced]: supportStyledCheckbox }]"
       :name="name"
       :id="name"
-      :value="value"
+      v-model="value"
       :data-label-on="labelOn || $t('yesRaw')"
       :data-label-off="labelOff || $t('noRaw')"
       type="checkbox"
-      @input="emitInput($event)"
+      @change="emitInput($event)"
     />
     <BaseCalloutBox
       v-if="error"
