@@ -5,7 +5,7 @@
   >
     <ActivityInput
       ref="activityInput"
-      :activityID="currentActivity"
+      :activityId="currentActivity"
       :key="this.getLastItem()"
       :can-submit="isFormFilled"
       @changed="trackValidation"

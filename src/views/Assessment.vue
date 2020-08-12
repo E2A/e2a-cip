@@ -59,24 +59,22 @@
         </BaseHeading>
 
         <!-- table of activities -->
-        <ActivitiesList
-          :grouped-activities="groupedActivities"
-          :show-tray="true"
-        >
-          <template #activities="{ activities, setActivityId }">
-            <div v-if="activities.activityObjects.length > 0">
+        <ActivitiesList :groupedActivities="groupedActivities" :showTray="true">
+          <template v-slot:activities="slotProps">
+            <div v-if="slotProps.activities.activityObjects.length > 0">
               <ActivitiesTypeHeading>
-                {{ activities.activityTypeName }}
+                {{ slotProps.activities.activityTypeName }}
               </ActivitiesTypeHeading>
               <ActivitiesItemAssessment
-                v-for="(activity, index) in activities.activityObjects"
+                v-for="(activity, index) in slotProps.activities
+                  .activityObjects"
                 :key="`activity-${index}`"
                 :activity="activity"
                 :youth="activity.youthCentric"
                 :class="[
                   mountedActivity === activity.id && instructions.itemSelected
                 ]"
-                @activitySelect="setActivityId"
+                @activitySelect="slotProps.setActivityId"
               />
             </div>
           </template>
