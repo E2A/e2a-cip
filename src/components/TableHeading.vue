@@ -33,6 +33,7 @@ export default {
   max-width: 55px;
   margin: 0 10px;
   position: relative;
+  display: inline-block;
 
   &:hover {
     .fieldDesc {
