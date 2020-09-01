@@ -9,7 +9,8 @@
       :class="[base.switch, { [base.enhanced]: supportStyledCheckbox }]"
       :name="name"
       :id="name"
-      v-model="value"
+      v-model="renderedValue"
+      :value="renderedValue"
       :data-label-on="labelOn || $t('yesRaw')"
       :data-label-off="labelOff || $t('noRaw')"
       type="checkbox"
@@ -52,7 +53,8 @@ export default {
   },
   data() {
     return {
-      supportStyledCheckbox: false
+      supportStyledCheckbox: false,
+      renderedValue: this.value
     };
   },
   created() {

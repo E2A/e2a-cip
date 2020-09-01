@@ -118,19 +118,15 @@ export default {
   composes: darkBorder from "styles/color.scss";
   composes: paddingVerticalXxnarrow from "styles/spacing.scss";
 
-  @supports (display: flex) {
-    display: flex;
-    justify-content: flex-end;
-  }
+  display: flex;
+  justify-content: flex-end;
 }
 
 .headerRightPane {
   max-width: 58.3333%;
 
-  @supports (display: flex) {
-    display: flex;
-    justify-content: flex-end;
-  }
+  display: flex;
+  justify-content: flex-end;
 }
 
 .heading {
